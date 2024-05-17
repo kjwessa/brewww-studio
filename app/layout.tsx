@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "",
-  description: "",
+  title: "Brewww Studio",
+  description: "We craft unbounded brands.",
 };
 
 export default function RootLayout({
@@ -13,7 +13,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="bg-gray-950 text-gray-50 antialiased">
+        <main className="flex min-h-svh flex-col">{children}</main>
+      </body>
     </html>
   );
 }
