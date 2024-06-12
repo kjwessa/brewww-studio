@@ -1,9 +1,9 @@
-import { Landing } from "./components/home/Landing";
+import { AboutHero } from "./components/AboutHero";
 
 export default function Page() {
   return (
     <main>
-      <Landing />
+      <AboutHero />
     </main>
   );
 }
