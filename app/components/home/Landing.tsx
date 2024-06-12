@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Landing() {
   return (
-    <section className="flex min-h-dvh w-full flex-row items-center justify-center">
+    <section className="fixed z-50 flex min-h-dvh w-full flex-row items-center justify-center bg-black">
       <div>
         <Image
           src="/images/brewww_mark.png"
