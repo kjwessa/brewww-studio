@@ -12,7 +12,7 @@ export function Footer() {
           >
             <a
               className="col-start-1 col-end-4 row-start-1 row-end-2 m-auto inline-block max-w-full self-center justify-self-center text-[4.38rem] font-bold leading-none"
-              href="https://brewwwllc.webflow.io/hire-us"
+              href="/hire-us"
             >
               <div className="m-auto h-full w-full overflow-hidden py-3">
                 <h4 className="mx-auto mb-8 min-h-[0vw] max-w-[43.75rem] text-center">

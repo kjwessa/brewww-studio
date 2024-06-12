@@ -1,3 +1,9 @@
+import { CapabilitiesHero } from "./components/CapabilitiesHero";
+
 export default function Page() {
-  return <main></main>;
+  return (
+    <main>
+      <CapabilitiesHero />
+    </main>
+  );
 }
