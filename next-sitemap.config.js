@@ -7,6 +7,11 @@ module.exports = {
   },
   generateIndexSitemap: false,
   transform: async (config, path) => {
+    // Exclude /dev from the sitemap
+    if (path === "/dev") {
+      return null;
+    }
+
     // Default priority and change frequency
     let priority = 0.7;
     let changefreq = "daily";
