@@ -3,7 +3,7 @@ export function Footer() {
     <>
       <div>
         <footer
-          className="relative flex h-[39.06rem] w-full cursor-none flex-col items-center justify-end bg-zinc-950 font-light text-white"
+          className="relative flex h-[39.06rem] w-full flex-col items-center justify-end bg-zinc-950 font-light text-white"
           id="footer-1"
         >
           <div
