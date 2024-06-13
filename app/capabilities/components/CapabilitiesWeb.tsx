@@ -69,7 +69,7 @@ export function CapabilitiesWeb() {
                     </div>
                     <a
                       className="relative mb-1 inline-block max-w-full font-bold"
-                      href="https://brewwwllc.webflow.io/capabilities/web-design-and-ux"
+                      href="/capabilities/web-design-and-ux"
                     >
                       <div className="uppercase" id="div-11">
                         Learn More
@@ -103,7 +103,7 @@ export function CapabilitiesWeb() {
                     </div>
                     <a
                       className="relative mb-1 inline-block max-w-full font-bold"
-                      href="https://brewwwllc.webflow.io/capabilities/web-development"
+                      href="/capabilities/web-development"
                     >
                       <div className="uppercase" id="div-14">
                         Learn More
@@ -137,7 +137,7 @@ export function CapabilitiesWeb() {
                     </div>
                     <a
                       className="relative mb-1 inline-block max-w-full font-bold"
-                      href="https://brewwwllc.webflow.io/capabilities/seo-and-search"
+                      href="/capabilities/seo-and-search"
                     >
                       <div className="uppercase" id="div-17">
                         Learn More
