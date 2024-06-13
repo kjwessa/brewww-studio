@@ -31,7 +31,7 @@ export function HomePosts() {
         </div>
 
         <div
-          className="relative cursor-none content-stretch items-start justify-start bg-neutral-900 px-24 py-36 font-light text-white"
+          className="relative content-stretch items-start justify-start bg-neutral-900 px-24 py-36 font-light text-white"
           id="div-1"
         >
           <div

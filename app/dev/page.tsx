@@ -2,6 +2,7 @@ import { HomeHero } from "./components/HomeHero";
 import { HomeFeat } from "./components/HomeFeat";
 import { HomeFocus } from "./components/HomeFocus";
 import { HomePosts } from "./components/HomePosts";
+import { HomeImage } from "./components/HomeImage";
 
 export default function Page() {
   return (
@@ -10,6 +11,7 @@ export default function Page() {
       <HomeFeat />
       <HomeFocus />
       <HomePosts />
+      <HomeImage />
     </main>
   );
 }
