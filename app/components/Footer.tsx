@@ -1,4 +1,9 @@
 export function Footer() {
+  const getCurrentYear = (): number => {
+    const year = new Date().getFullYear();
+    return year;
+  };
+
   return (
     <>
       <div>
@@ -499,7 +504,9 @@ export function Footer() {
                 className="flex items-center justify-around text-white/[0.6]"
                 id="div-9"
               >
-                <div>© 2020 Brewww. All Rights Reserved. </div>
+                <div>
+                  © {getCurrentYear()} Brewww Studio. All Rights Reserved.{" "}
+                </div>
               </div>
             </div>
           </div>
