@@ -7,7 +7,7 @@ export function WhyReasons() {
           <div className="text-lg">🙅‍♂️ No Ego, Just Talent</div>
           <div className="text-sm text-neutral-400">
             We foster a collaborative and ego-free environment, where the best
-            ideas thrive, and our team's collective talent shines.
+            ideas thrive, and our teams collective talent shines.
           </div>
         </li>
         <li className="space-y-2">
