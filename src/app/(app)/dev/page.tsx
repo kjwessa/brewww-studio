@@ -1,4 +1,5 @@
 import { HomeHero } from "./HomeHero";
+
 import { HomeFeat } from "./HomeFeat";
 import { HomeFocus } from "./HomeFocus";
 import { HomePosts } from "./HomePosts";
@@ -10,6 +11,7 @@ export default function Page() {
   return (
     <main>
       <HomeHero />
+
       <HomeFeat />
       <HomeFocus />
       <HomePosts />
