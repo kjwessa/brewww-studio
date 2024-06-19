@@ -9,7 +9,7 @@ export function WhyHeroNumbers() {
           Strategy underpins everything we brewww, and we consider every
           touchpoint of your brand. From buttons to billboards, we aim for a
           strategic narrative that helps tell your story in a way that
-          resonates. Our brands are empowered for now, and ready for what's
+          resonates. Our brands are empowered for now, and ready for what is
           next.
         </p>
         <div className="mt-6 text-[10.63rem] leading-none min-[1000px]:mt-12">
