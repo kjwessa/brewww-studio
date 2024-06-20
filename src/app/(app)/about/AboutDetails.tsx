@@ -10,7 +10,7 @@ export function AboutDetails() {
           blend of strategic thinking and creative expression. Our process
           begins with a deep dive into your objectives, challenges, and target
           audience, allowing us to craft a tailored approach that resonates with
-          your brand's essence. We meticulously analyze social behaviors,
+          your brands essence. We meticulously analyze social behaviors,
           industry trends, and data-driven insights to inform our creative
           concepts, ensuring they are not only visually captivating but also
           strategically sound.
@@ -18,9 +18,9 @@ export function AboutDetails() {
         <p className="mb-4 max-w-3xl text-lg">
           Our multidisciplinary team seamlessly integrates strategy, design, and
           technology, fostering a collaborative environment where ideas flourish
-          and innovative solutions take shape. We don't just create campaigns;
+          and innovative solutions take shape. We do not just create campaigns;
           we weave together a holistic narrative that connects with your
-          audience on multiple levels, amplifying your brand's reach and impact.
+          audience on multiple levels, amplifying your brands reach and impact.
         </p>
         <p className="mb-16 max-w-3xl text-lg">
           Throughout the creative process, we embrace an iterative mindset,
