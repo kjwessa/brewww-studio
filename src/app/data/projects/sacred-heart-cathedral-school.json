@@ -1,0 +1,45 @@
+{
+  "id": "FL-SHCS",
+  "client": "Sacred Heart Cathedral School",
+  "location": "Pensacola, FL",
+  "year": "2024",
+  "title": "A Modern Website for a Historic Community",
+  "slug": "modern-catholic-school-website",
+  "category": ["strategy", "branding", "website", "design"],
+  "services": ["branding", "web design", "content strategy", "photography"],
+  "industry": ["education"],
+  "thumbnail": "url-to-thumbnail-image",
+  "heroImage": "https://assets-global.website-files.com/6399b4d7a8a9b7f2f7b2e9b5/63a0c5c5a8a9b7f2f7b2e9b6_Sacred%20Heart%20Cathedral%20School%20Hero%20Image.jpg",
+  "liveUrl": "https://www.shcs.ptdiocese.org/",
+  "seo": {
+    "title": "Modern Catholic School Website - Brewww Studio",
+    "description": "Discover how Sacred Heart Cathedral School's website was transformed to engage prospective parents, alumni, and donors with Brewww Studio."
+  },
+  "sections": [
+    {
+      "type": "challenge",
+      "title": "Creating a Modern Website for a Historic Community",
+      "content": "Sacred Heart Cathedral School, located in Pensacola, FL, needed a modern website that could effectively communicate their mission of educating hearts and minds for God. The challenge was to create a website that would appeal to prospective parents, alumni, and donors, while also reflecting the school's rich history and Catholic identity. The site needed to provide comprehensive information about the school's programs, facilitate easy navigation, and engage visitors with compelling content and visuals."
+    },
+    {
+      "type": "insight",
+      "title": "Key Insight",
+      "content": "A modern, user-friendly website is essential for engaging prospective parents, alumni, and donors. By providing clear, accessible information and showcasing the school's unique strengths, we could help Sacred Heart Cathedral School attract and retain its community."
+    },
+    {
+      "type": "strategy",
+      "title": "Our Strategy",
+      "content": "We aimed to create a visually appealing and user-friendly website that highlights Sacred Heart Cathedral School's commitment to academic excellence and Catholic values. The strategy involved developing a clean design, organizing content into clear categories, and using engaging visuals to illustrate the school's mission and programs. We focused on creating a balance between informative content and visual appeal to attract prospective parents, alumni, and donors."
+    },
+    {
+      "type": "solution",
+      "title": "Solution at a Glance",
+      "content": "Our solution was to design a modern, visually appealing website that effectively communicates Sacred Heart Cathedral School's mission and programs. The site features clear navigation, engaging content, and practical resources for prospective parents, alumni, and donors.",
+      "highlights": [
+        "Clean, modern design with intuitive navigation",
+        "Engaging content categories covering various aspects of the school",
+        "Integration of practical resources and tools for prospective parents, alumni, and donors"
+      ]
+    }
+  ]
+}
