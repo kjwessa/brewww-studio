@@ -2,18 +2,13 @@ export function CapabilitiesBranding() {
   return (
     <>
       <div>
-        <div
-          className="relative items-center justify-center overflow-visible font-light text-neutral-900"
-          id="div-1"
-        >
+        <div className="relative items-center justify-center overflow-visible font-light text-neutral-900">
           <div className="absolute left-0 right-0 top-0 z-[1] h-[40vh] bg-neutral-900" />
           <div className="relative mr-48" id="div-2">
             <div className="relative h-[75vh] overflow-hidden" id="div-3">
-              <div
-                className='absolute bottom-0 left-0 top-0 my-auto h-[120%] bg-[url("https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5ed6030ff722b820100aae21_branding-books.1920.jpg")] bg-cover'
-                style={{
-                  backgroundPosition: "50% 50%",
-                }}
+              <img
+                src="https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5ed6030ff722b820100aae21_branding-books.1920.jpg"
+                className="my-auto h-[120%]"
               />
             </div>
           </div>
