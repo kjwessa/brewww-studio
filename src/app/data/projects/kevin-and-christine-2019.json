@@ -1,0 +1,45 @@
+{
+  "id": "TN-KC",
+  "client": "Kevin and Christine",
+  "location": "Nashville, TN",
+  "year": "2019",
+  "title": "A Joyful Wedding Celebration",
+  "slug": "joyful-wedding-celebration",
+  "category": ["strategy", "branding", "website", "design"],
+  "services": ["branding", "web design", "content strategy", "photography"],
+  "industry": ["event"],
+  "thumbnail": "url-to-thumbnail-image",
+  "heroImage": "https://assets-global.website-files.com/6399b4d7a8a9b7f2f7b2e9b5/63a0c5c5a8a9b7f2f7b2e9b6_Kevin%20and%20Christine%20Hero%20Image.jpg",
+  "liveUrl": "https://www.kevinandchristine2019.com/",
+  "seo": {
+    "title": "Joyful Wedding Celebration - Brewww Studio",
+    "description": "Discover how Kevin and Christine's wedding website was designed to celebrate their joyful union with Brewww Studio."
+  },
+  "sections": [
+    {
+      "type": "challenge",
+      "title": "Creating a Joyful and Informative Wedding Website",
+      "content": "Kevin and Christine needed a wedding website that would not only provide essential information to their guests but also capture the joy and excitement of their special day. The challenge was to create a site that was both beautiful and functional, offering details about the wedding ceremony, reception, accommodations, and more. The website needed to reflect their personalities and love story while being easy to navigate for their guests."
+    },
+    {
+      "type": "insight",
+      "title": "Key Insight",
+      "content": "A wedding website should be a reflection of the couple's unique story and style. By creating a visually appealing and user-friendly site, we could help Kevin and Christine share their joy and excitement with their guests, making the planning process smoother and more enjoyable for everyone involved."
+    },
+    {
+      "type": "strategy",
+      "title": "Our Strategy",
+      "content": "We aimed to create a wedding website that was both beautiful and functional, capturing the essence of Kevin and Christine's love story. The strategy involved developing a clean design, organizing content into clear sections, and using engaging visuals to illustrate their journey. We focused on creating a balance between informative content and visual appeal to ensure guests had all the information they needed while feeling connected to the couple's story."
+    },
+    {
+      "type": "solution",
+      "title": "Solution at a Glance",
+      "content": "Our solution was to design a joyful and informative wedding website that effectively communicated all the essential details of Kevin and Christine's special day. The site features clear navigation, engaging content, and beautiful visuals that reflect their love story.",
+      "highlights": [
+        "Clean, modern design with intuitive navigation",
+        "Engaging content sections covering ceremony, reception, and guest information",
+        "Beautiful visuals that capture the couple's love story"
+      ]
+    }
+  ]
+}
