@@ -3,7 +3,7 @@ export function HomeHero() {
     <>
       <div>
         <div
-          className="relative min-h-[60vh] cursor-none content-stretch items-start justify-start bg-neutral-900 px-24 py-60 font-light text-white"
+          className="relative min-h-[60vh] content-stretch items-start justify-start bg-neutral-900 px-24 py-60 font-light text-white"
           id="div-1"
         >
           <div className="m-auto max-w-7xl px-5 py-12">
