@@ -1,0 +1,45 @@
+{
+  "id": "FL-IES",
+  "client": "IES National",
+  "location": "Pensacola, FL",
+  "year": "2021",
+  "title": "Lighting the Way for Energy Efficiency",
+  "slug": "led-lighting-solutions",
+  "category": ["strategy", "branding", "website", "design"],
+  "services": ["branding", "web design", "content strategy", "photography"],
+  "industry": ["industrial", "commercial"],
+  "thumbnail": "url-to-thumbnail-image",
+  "heroImage": "https://assets-global.website-files.com/6399b4d7a8a9b7f2f7b2e9b5/63a0c5c5a8a9b7f2f7b2e9b6_IES%20National%20Hero%20Image.jpg",
+  "liveUrl": "https://iesnational.com/",
+  "seo": {
+    "title": "LED Lighting Solutions - Brewww Studio",
+    "description": "Discover how IES National's website was transformed to showcase their LED lighting solutions and energy efficiency services with Brewww Studio."
+  },
+  "sections": [
+    {
+      "type": "challenge",
+      "title": "Creating a Comprehensive LED Lighting Solutions Website",
+      "content": "IES National, a leader in the LED lighting industry, needed a website that could effectively communicate their mission of providing energy-efficient lighting solutions for commercial and industrial facilities. The challenge was to create a site that would appeal to a wide range of clients, from small businesses to large corporations, while showcasing their extensive portfolio and unique business model. The website needed to highlight their expertise, showcase their projects, and provide clear information about their services."
+    },
+    {
+      "type": "insight",
+      "title": "Key Insight",
+      "content": "Many businesses are looking for ways to reduce energy costs and improve efficiency. By showcasing IES National's expertise in LED lighting solutions and their ability to deliver significant energy savings, we could help attract a broader range of clients and position IES as a leader in the industry."
+    },
+    {
+      "type": "strategy",
+      "title": "Our Strategy",
+      "content": "We aimed to create a visually appealing and user-friendly website that highlights IES National's commitment to energy efficiency and customer satisfaction. The strategy involved developing a clean design, organizing content into clear categories, and using engaging visuals to illustrate their projects and services. We focused on creating a balance between showcasing their extensive portfolio and providing detailed information about their unique business model and services."
+    },
+    {
+      "type": "solution",
+      "title": "Solution at a Glance",
+      "content": "Our solution was to design a modern, visually appealing website that effectively communicates IES National's mission and services. The site features clear navigation, engaging content, and beautiful visuals that reflect their commitment to energy efficiency and customer satisfaction.",
+      "highlights": [
+        "Clean, modern design with intuitive navigation",
+        "Engaging content sections covering portfolio, services, and client testimonials",
+        "Beautiful visuals that showcase their extensive portfolio and unique business model"
+      ]
+    }
+  ]
+}
