@@ -504,9 +504,7 @@ export function Footer() {
                 className="flex items-center justify-around text-white/[0.6]"
                 id="div-9"
               >
-                <div>
-                  © {getCurrentYear()} Brewww Studio. All Rights Reserved.{" "}
-                </div>
+                <div>© {getCurrentYear()} Brewww Studio. All Rights Reserved. </div>
               </div>
             </div>
           </div>
