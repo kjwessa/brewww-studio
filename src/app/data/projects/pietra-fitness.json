@@ -1,0 +1,46 @@
+{
+  "id": "OH-PF",
+  "client": "Pietra Fitness",
+  "location": "Cincinnati, OH",
+  "year": "2021",
+  "title": "Integrating Faith and Fitness",
+  "slug": "faith-and-fitness-online-community",
+  "category": ["strategy", "branding", "website", "design"],
+  "services": ["branding", "web design", "content strategy", "photography"],
+  "industry": ["fitness"],
+  "thumbnail": "url-to-thumbnail-image",
+  "heroImage": "https://assets-global.website-files.com/6399b4d7a8a9b7f2f7b2e9b5/63a0c5c5a8a9b7f2f7b2e9b6_Pietra%20Fitness%20Hero%20Image.jpg",
+  "liveUrl": "https://www.pietrafitness.com/",
+  "seo": {
+    "title": "Faith and Fitness Online Community - Brewww Studio",
+    "description": "Discover how Pietra Fitness' website was transformed to build an online community integrating faith and fitness with Brewww Studio."
+  },
+  "sections": [
+    {
+      "type": "challenge",
+      "title": "Building an Online Community for Faith and Fitness",
+      "content": "Pietra Fitness needed a modern website that could effectively communicate their mission of integrating faith and fitness. The challenge was to move away from their limited WordPress environment and create a dynamic online studio where people could engage with their lessons. The new platform needed to support a growing community of users seeking to strengthen their body, mind, and soul through Christian prayer and meditation combined with physical exercise."
+    },
+    {
+      "type": "insight",
+      "title": "Key Insight",
+      "content": "In a world where fitness and spirituality are often seen as separate pursuits, there is a unique opportunity to create a community that integrates both. By providing a platform that combines physical exercise with Christian prayer and meditation, Pietra Fitness can help users achieve holistic wellness and deepen their faith."
+    },
+    {
+      "type": "strategy",
+      "title": "Our Strategy",
+      "content": "We aimed to create a visually appealing and user-friendly website that highlights Pietra Fitness' unique approach to integrating faith and fitness. The strategy involved developing a clean design, organizing content into clear categories, and using engaging visuals to illustrate their workouts and resources. We focused on creating a balance between showcasing their fitness programs and emphasizing the spiritual benefits of their approach."
+    },
+    {
+      "type": "solution",
+      "title": "Solution at a Glance",
+      "content": "Our solution was to design a modern, visually engaging website that effectively communicates Pietra Fitness' mission and resources. The site features clear navigation, compelling content, and beautiful visuals that reflect their commitment to holistic wellness and spiritual growth.",
+      "highlights": [
+        "Clean, modern design with intuitive navigation",
+        "Engaging content sections highlighting workouts, resources, and community",
+        "Integration of multimedia elements to showcase workouts and meditations",
+        "Emphasis on holistic wellness and spiritual growth throughout the site"
+      ]
+    }
+  ]
+}
