@@ -2,13 +2,13 @@
 
 ## TL;DR
 
-The marketing site for [Brewww Studio](https://dev.brewww.studio), focused on crafting unbounded brands. With an emphasis on craft creative, Brewww Studio helps small to medium size businesses with their branding, marketing, and web presence. With clients all over the US, our focus is finding the places where needs, stories, and technology overlap. This results in obscure brands finding a foothold in the marketplace amongst their competition.
+The marketing site for [Brewww Studio](https://brewww.studio), focused on crafting unbounded brands. With an emphasis on craft creative, Brewww Studio helps small to medium size businesses with their branding, marketing, and web presence. With clients all over the US, our focus is finding the places where needs, stories, and technology overlap. This results in obscure brands finding a foothold in the marketplace amongst their competition.
 
-This build marks the 2.0 version of [Brewww](https://brewww.co), which has been in need of a site update since 2020.
+This build marks the 2.0 version of [Brewww](https://brewww.co), which has been in need of a site update since 2020. When fully built, the old site will redirect to the new.
 
 ### Live Link
 
-To access the live site, please [click here](https://dev.brewww.studio)
+To access the live site, please [click here](https://brewww.studio)
 
 ## Roadmap
 
