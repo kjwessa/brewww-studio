@@ -1,0 +1,45 @@
+{
+  "id": "GA-CC",
+  "client": "Concrete Catholic",
+  "location": "Atlanta, GA",
+  "year": "2020",
+  "title": "Encountering Christ in the Everyday",
+  "slug": "concrete-catholic-faith-media",
+  "category": ["strategy", "branding", "website", "design"],
+  "services": ["branding", "web design", "content strategy"],
+  "industry": ["media"],
+  "thumbnail": "url-to-thumbnail-image",
+  "heroImage": "https://assets-global.website-files.com/6399b4d7a8a9b7f2f7b2e9b5/63a0c5c5a8a9b7f2f7b2e9b6_Concrete%20Catholic%20Hero%20Image.jpg",
+  "liveUrl": "https://www.concretecatholic.com/",
+  "seo": {
+    "title": "Concrete Catholic - Encountering Christ in the Everyday",
+    "description": "Discover how Concrete Catholic's website was transformed to help people encounter Christ in their everyday lives through engaging content and design."
+  },
+  "sections": [
+    {
+      "type": "challenge",
+      "title": "Creating an Engaging Platform for Everyday Faith",
+      "content": "Concrete Catholic needed a digital platform that could effectively communicate the essential aspects of forming a relationship with Jesus Christ. The challenge was to create a website that could bridge the gap between faith and everyday life, making Catholic teachings accessible and relevant to a modern audience. The site needed to cover various topics, from prayer to encounter to sharing the Good News, in a way that was both engaging and informative."
+    },
+    {
+      "type": "insight",
+      "title": "Key Insight",
+      "content": "Many people struggle to connect their faith with their daily lives. By providing practical, relatable content that shows how to encounter Christ in everyday situations, we could help bridge this gap and make faith more tangible and accessible."
+    },
+    {
+      "type": "strategy",
+      "title": "Our Strategy",
+      "content": "We aimed to create a clean, modern website that presents Catholic teachings in a relatable and practical manner. The strategy involved developing a user-friendly interface, organizing content into clear categories, and using engaging visuals to illustrate key concepts. We focused on creating a balance between informative content and practical application to help visitors grow in their faith journey."
+    },
+    {
+      "type": "solution",
+      "title": "Solution at a Glance",
+      "content": "Our solution was to design a visually appealing and user-friendly website that presents Catholic teachings in a modern, accessible format. The site features clear navigation, engaging content, and practical resources for living out faith in everyday life.",
+      "highlights": [
+        "Clean, modern design with intuitive navigation",
+        "Engaging content categories covering various aspects of faith",
+        "Integration of practical resources and tools for spiritual growth"
+      ]
+    }
+  ]
+}
