@@ -3,7 +3,7 @@ export function CapabilitiesWeb() {
     <>
       <div>
         <div
-          className="relative cursor-none items-center justify-center bg-neutral-900 font-light text-white"
+          className="relative items-center justify-center bg-neutral-900 font-light text-white"
           id="div-1"
         >
           <div className="absolute left-0 right-0 top-0 z-[1] h-[40vh] bg-white" />

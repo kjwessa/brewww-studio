@@ -3,7 +3,7 @@ export function CapabilitiesContent() {
     <>
       <div>
         <div
-          className="relative cursor-none items-center justify-center overflow-visible font-light text-neutral-900"
+          className="relative items-center justify-center overflow-visible font-light text-neutral-900"
           id="div-1"
         >
           <div className="absolute left-0 right-0 top-0 z-[1] h-[40vh] bg-neutral-900" />
