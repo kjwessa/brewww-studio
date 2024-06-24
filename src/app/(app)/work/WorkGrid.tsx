@@ -1,35 +1,5 @@
-import fs from "fs";
-import path from "path";
 import { WorkCard } from "@/app/components/WorkCard";
-
-interface Project {
-  id: string;
-  client: string;
-
-  title: string;
-  thumbnail: string;
-}
-
-function getProjects(): Project[] {
-  const projectsDirectory = path.join(process.cwd(), "src/app/data/projects");
-  const fileNames = fs.readdirSync(projectsDirectory);
-
-  const allProjects = fileNames.map((fileName) => {
-    const filePath = path.join(projectsDirectory, fileName);
-    const fileContents = fs.readFileSync(filePath, "utf-8");
-    const projectData = JSON.parse(fileContents);
-
-    return {
-      id: projectData.id,
-      client: projectData.client,
-      title: projectData.title,
-      thumbnail: projectData.thumbnail,
-    };
-  });
-
-  return allProjects;
-}
-
+import { getProjects } from "@/app/lib/projects";
 export function WorkGrid() {
   const projects = getProjects();
 
@@ -45,6 +15,7 @@ export function WorkGrid() {
               client={project.client}
               thumbnail={project.thumbnail}
               title={project.title}
+              slug={project.slug}
             />
           ))}
         </div>
