@@ -8,8 +8,8 @@
   "category": ["strategy", "branding", "website", "design"],
   "services": ["branding", "web design", "content strategy", "photography"],
   "industry": ["education"],
-  "thumbnail": "url-to-thumbnail-image",
-  "heroImage": "https://assets-global.website-files.com/6399b4d7a8a9b7f2f7b2e9b5/63a0c5c5a8a9b7f2f7b2e9b6_Sacred%20Heart%20Cathedral%20School%20Hero%20Image.jpg",
+  "thumbnail": "/images/work.SHCS.morning-star.jpeg",
+  "heroImage": "/images/work.SHCS.morning-star.jpeg",
   "liveUrl": "https://www.shcs.ptdiocese.org/",
   "seo": {
     "title": "Modern Catholic School Website - Brewww Studio",

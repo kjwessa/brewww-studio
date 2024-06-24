@@ -8,8 +8,8 @@
   "category": ["strategy", "branding", "website", "design"],
   "services": ["branding", "web design", "content strategy", "photography"],
   "industry": ["non-profit", "media"],
-  "thumbnail": "url-to-thumbnail-image",
-  "heroImage": "https://assets-global.website-files.com/6399b4d7a8a9b7f2f7b2e9b5/63a0c5c5a8a9b7f2f7b2e9b6_Project%20Light%20Ministries%20Hero%20Image.jpg",
+  "thumbnail": "/images/work.SHCS.morning-star.jpeg",
+  "heroImage": "/images/work.SHCS.morning-star.jpeg",
   "liveUrl": "https://www.projectlightministries.com/",
   "seo": {
     "title": "Authentic Faith-Based Media - Brewww Studio",

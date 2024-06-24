@@ -8,8 +8,8 @@
   "category": ["strategy", "branding", "website", "design"],
   "services": ["branding", "web design", "content strategy"],
   "industry": ["media"],
-  "thumbnail": "url-to-thumbnail-image",
-  "heroImage": "https://assets-global.website-files.com/6399b4d7a8a9b7f2f7b2e9b5/63a0c5c5a8a9b7f2f7b2e9b6_Concrete%20Catholic%20Hero%20Image.jpg",
+  "thumbnail": "/images/work.CC.jack-at-a-brewery.jpeg",
+  "heroImage": "/images/work.CC.jack-at-a-brewery.jpeg",
   "liveUrl": "https://www.concretecatholic.com/",
   "seo": {
     "title": "Concrete Catholic - Encountering Christ in the Everyday",

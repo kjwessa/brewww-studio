@@ -8,8 +8,8 @@
   "category": ["strategy", "branding", "website", "design"],
   "services": ["branding", "web design", "content strategy", "photography"],
   "industry": ["home improvement"],
-  "thumbnail": "url-to-thumbnail-image",
-  "heroImage": "https://assets-global.website-files.com/6399b4d7a8a9b7f2f7b2e9b5/63a0c5c5a8a9b7f2f7b2e9b6_Custom%20Texas%20Living%20Hero%20Image.jpg",
+  "thumbnail": "/images/work.CTL.david-cutting-wood.jpeg",
+  "heroImage": "/images/work.CTL.david-cutting-wood.jpeg",
   "liveUrl": "https://www.customtexasliving.com/",
   "seo": {
     "title": "Custom Home Design in San Antonio - Brewww Studio",
