@@ -8,8 +8,8 @@
   "category": ["strategy", "branding", "website", "design"],
   "services": ["branding", "web design", "content strategy", "photography"],
   "industry": ["non-profit"],
-  "thumbnail": "url-to-thumbnail-image",
-  "heroImage": "https://www.josephhouseus.org/path-to-hero-image.jpg",
+  "thumbnail": "/images/work.KC.kevin-and-christine-wedding.jpeg",
+  "heroImage": "/images/work.KC.kevin-and-christine-wedding.jpeg",
   "liveUrl": "https://www.josephhouseus.org/",
   "seo": {
     "title": "Joseph House: Reentry Home for Ex-Offenders - Brewww Studio",
