@@ -1,0 +1,29 @@
+{
+  "id": "succinct-saints",
+  "brand": "Brewww",
+  "title": "Succinct Saints",
+  "type": "product-collection",
+  "featured": false,
+  "description": "A collection of Saint shirts, each depicting an aspect of the Saint's life in a single word.",
+  "thumbnail": "/images/play.SuccinctSaints.Literal.jpg",
+  "heroImage": "/images/play.SuccinctSaints.Literal.jpg",
+  "items": [
+    {
+      "id": "ss-literal",
+      "title": "The Literal - Saint Francis",
+      "description": "When St. Francis heard God say `Rebuild my Church`, he took the words literally and began to stone by stone rebuild a local church in Assisi that had fallen to disrepair.",
+      "images": [
+        {
+          "url": "/images/play.SuccinctSaints.Literal.jpg",
+          "alt": "Saint Francis shirt front"
+        }
+      ],
+      "externalLink": {
+        "url": "",
+        "label": "Buy Now"
+      }
+    }
+  ],
+
+  "tags": ["product", "shirt", "saints"]
+}
