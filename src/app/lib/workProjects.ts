@@ -27,11 +27,11 @@ export interface WorkProject {
 }
 
 export function getWorkProjects(): WorkProject[] {
-  const projectsDirectory = path.join(process.cwd(), "src/app/data/work");
-  const fileNames = fs.readdirSync(projectsDirectory);
+  const workProjectsDirectory = path.join(process.cwd(), "src/app/data/work");
+  const fileNames = fs.readdirSync(workProjectsDirectory);
 
   const allWorkProjects = fileNames.map((fileName) => {
-    const filePath = path.join(projectsDirectory, fileName);
+    const filePath = path.join(workProjectsDirectory, fileName);
     const fileContents = fs.readFileSync(filePath, "utf-8");
     return JSON.parse(fileContents) as WorkProject;
   });
