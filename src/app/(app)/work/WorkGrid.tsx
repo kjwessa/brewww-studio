@@ -1,7 +1,7 @@
 import { WorkCard } from "@/app/components/WorkCard";
-import { getProjects } from "@/app/lib/projects";
+import { getWorkProjects } from "@/app/lib/workProjects";
 export function WorkGrid() {
-  const projects = getProjects();
+  const projects = getWorkProjects();
 
   return (
     <>

@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-export interface Project {
+export interface WorkProject {
   id: string;
   client: string;
   location: string;
@@ -26,15 +26,15 @@ export interface Project {
   }[];
 }
 
-export function getProjects(): Project[] {
-  const projectsDirectory = path.join(process.cwd(), "src/app/data/projects");
+export function getWorkProjects(): WorkProject[] {
+  const projectsDirectory = path.join(process.cwd(), "src/app/data/work");
   const fileNames = fs.readdirSync(projectsDirectory);
 
-  const allProjects = fileNames.map((fileName) => {
+  const allWorkProjects = fileNames.map((fileName) => {
     const filePath = path.join(projectsDirectory, fileName);
     const fileContents = fs.readFileSync(filePath, "utf-8");
-    return JSON.parse(fileContents) as Project;
+    return JSON.parse(fileContents) as WorkProject;
   });
 
-  return allProjects;
+  return allWorkProjects;
 }
