@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://brewww.studio/about</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://brewww.studio/play/call-me-maeby</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://brewww.studio/play/succinct-saints</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://brewww.studio/contact</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 <url><loc>https://brewww.studio/work</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://brewww.studio/play</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://brewww.studio/insights</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://brewww.studio</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
-<url><loc>https://brewww.studio/why-us</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://brewww.studio/contact</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+<url><loc>https://brewww.studio/work/azle-storage-secure-self-storage</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://brewww.studio/work/concrete-catholic-faith-media</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://brewww.studio/work/custom-home-design-san-antonio</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://brewww.studio/work/from-his-heart-ministries-digital-presence</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://brewww.studio/work/led-lighting-solutions</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://brewww.studio/work/jonah-plan-confession-awareness</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://brewww.studio/work/reentry-home-for-ex-offenders</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://brewww.studio/work/joyful-wedding-celebration</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://brewww.studio/work/faith-and-fitness-online-community</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
@@ -20,7 +16,14 @@
 <url><loc>https://brewww.studio/work/catholic-church-discipleship-pathway</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://brewww.studio/work/dynamic-catholic-church-website</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://brewww.studio/work/acoustical-ceiling-installation</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://brewww.studio/about</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://brewww.studio/play</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://brewww.studio/capabilities</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://brewww.studio</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://brewww.studio/why-us</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://brewww.studio/insights</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://brewww.studio/play/call-me-maeby</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://brewww.studio/play/succinct-saints</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://brewww.studio/think</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://brewww.studio/think/hello-there-how-do-ya-brewww</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
