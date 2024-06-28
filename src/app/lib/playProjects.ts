@@ -8,6 +8,21 @@ export interface PlayProject {
   thumbnail: string;
   heroImage: string;
   description: string;
+  brand?: string;
+  type?: string;
+  items?: Array<{
+    title: string;
+    description: string;
+    images: Array<{
+      url: string;
+      alt: string;
+    }>;
+    externalLink?: {
+      url: string;
+      label: string;
+    };
+  }>;
+  tags?: string[];
 }
 
 export function getPlayProjects(): PlayProject[] {
