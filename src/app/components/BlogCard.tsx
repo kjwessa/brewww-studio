@@ -27,7 +27,7 @@ export function BlogCard({
           </p>
         </div>
         <Link
-          href={`blog/${slug}`}
+          href={`think/${slug}`}
           className="text-indigo-600 hover:text-indigo-900"
         >
           Read More
