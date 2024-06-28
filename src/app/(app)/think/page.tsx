@@ -18,12 +18,8 @@ interface Post {
 //* Set the location of the posts directory
 const postsDirectory = path.join(process.cwd(), "src/app/posts");
 
-console.log(postsDirectory);
-
 //* Find all the files in the blog directory
 const files = fs.readdirSync(path.join("src/app/posts"));
-
-console.log(files);
 
 //* Map over each post, extract the frontMatter, and adjust the slug
 const posts: Post[] = files.map((filename) => {
@@ -47,8 +43,6 @@ const posts: Post[] = files.map((filename) => {
     slug: frontMatter.slug,
   };
 });
-
-console.log(posts);
 
 export default function Page() {
   return (
