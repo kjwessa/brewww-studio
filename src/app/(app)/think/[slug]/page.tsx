@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import { MDXHeroImage } from "@/app/components/MDXHeroImage";
 
 //* Read the directory of posts
 const files = fs.readdirSync(path.join("src/app/posts"));
@@ -49,11 +50,18 @@ export default async function Page({ params }: { params: { slug: string } }) {
   // Add components for MDX rendering (optional)
   // const components = {}
   // Build the individual article
-  console.log(props.frontMatter.title);
+
   return (
     <div className="bg-white text-black">
+      <MDXHeroImage
+        src={props.frontMatter.heroImg}
+        width={500}
+        height={500}
+        alt={props.frontMatter.heroImgAlt}
+      />
+
       <article className="mx-auto flex max-w-4xl flex-col justify-center p-4">
-        <h1 className="mb-4 text-4xl font-bold">{props.frontMatter.title}</h1>
+        <h1 className="mb-4 text-5xl font-bold">{props.frontMatter.title}</h1>
         <p>{props.frontMatter.publishedAt}</p>
         <div className="prose prose-lg mx-auto pb-24 pt-12">
           <MDXRemote source={props.content} />
