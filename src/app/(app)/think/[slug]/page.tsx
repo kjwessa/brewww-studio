@@ -49,11 +49,16 @@ export default async function Page({ params }: { params: { slug: string } }) {
   // Add components for MDX rendering (optional)
   // const components = {}
   // Build the individual article
+  console.log(props.frontMatter.title);
   return (
-    <article className="mx-auto max-w-6xl p-4">
-      <h1>{props.frontMatter.title}</h1>
-      <p>{props.frontMatter.publishedAt}</p>
-      <MDXRemote source={props.content} />
-    </article>
+    <div className="bg-white text-black">
+      <article className="mx-auto flex max-w-4xl flex-col justify-center p-4">
+        <h1 className="mb-4 text-4xl font-bold">{props.frontMatter.title}</h1>
+        <p>{props.frontMatter.publishedAt}</p>
+        <div className="prose prose-lg mx-auto pb-24 pt-12">
+          <MDXRemote source={props.content} />
+        </div>
+      </article>
+    </div>
   );
 }

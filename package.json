@@ -11,12 +11,13 @@
   },
   "dependencies": {
     "@million/lint": "^1.0.0-rc.26",
+    "@tailwindcss/typography": "^0.5.13",
     "@vercel/speed-insights": "^1.0.12",
+    "gray-matter": "^4.0.3",
     "next": "14.2.4",
-    "next-sitemap": "^4.2.3",
     "next-mdx-remote": "^5.0.0",
     "next-seo": "^6.5.0",
-    "gray-matter": "^4.0.3",
+    "next-sitemap": "^4.2.3",
     "react": "^18",
     "react-dom": "^18",
     "sharp": "^0.33.4"
