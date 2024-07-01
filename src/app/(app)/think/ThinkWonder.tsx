@@ -1,4 +1,4 @@
-export function InsightsWonder() {
+export function ThinkWonder() {
   return (
     <>
       <div>
