@@ -1,16 +1,5 @@
 import { allPosts } from "content-collections";
 import { BlogCard } from "@/app/components/BlogCard";
-interface PostMeta {
-  title: string;
-  publishedAt: string;
-  description: string;
-  author: string;
-}
-
-interface Post {
-  slug: string;
-  meta: PostMeta;
-}
 
 export function ThinkBody() {
   return (
@@ -28,6 +17,8 @@ export function ThinkBody() {
                   title={post.title}
                   publishedAt={post.publishedAt}
                   description={post.description}
+                  image={post.featuredImg}
+                  alt={post.featuredImgAlt}
                   slug={post.slug}
                 />
               ))}
