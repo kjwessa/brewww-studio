@@ -12,6 +12,7 @@ const posts = defineCollection({
     description: z.string(),
     featuredImg: z.string(),
     featuredImgAlt: z.string(),
+    categories: z.array(z.string()),
   }),
   transform: async (document, context) => {
     const mdx = await compileMDX(context, document);
