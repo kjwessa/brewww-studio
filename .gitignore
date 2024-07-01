@@ -30,6 +30,9 @@ yarn-error.log*
 .env*.local
 .env
 
+# content collections
+.content-collections
+
 # vercel
 .vercel
 
