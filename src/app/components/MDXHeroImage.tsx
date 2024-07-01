@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-interface MDXHeroImageProps {
+export interface MDXHeroImageProps {
   src: string;
   alt: string;
   width: number;
