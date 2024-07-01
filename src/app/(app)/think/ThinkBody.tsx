@@ -2,6 +2,10 @@ import { allPosts } from "content-collections";
 import { BlogCard } from "@/app/components/BlogCard";
 
 export function ThinkBody() {
+  const sortedPosts = allPosts.sort(
+    (a, b) =>
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  );
   return (
     <>
       <section>
@@ -11,7 +15,7 @@ export function ThinkBody() {
           </div>
           <div className="relative">
             <div className="grid grid-cols-2 gap-4">
-              {allPosts.map((post) => (
+              {sortedPosts.map((post) => (
                 <BlogCard
                   key={post.title}
                   title={post.title}
