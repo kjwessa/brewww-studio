@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface WorkCardProps {
   id: string;
@@ -17,11 +18,18 @@ export function WorkCard({
 }: WorkCardProps) {
   return (
     <Link href={`/work/${slug}`}>
-      <div className="m-4 max-w-sm overflow-hidden rounded shadow-lg">
-        <img className="w-full" src={thumbnail} alt={title} />
-        <div className="px-6 py-4">
-          <div className="mb-2 text-xl font-bold">{title}</div>
-          <p className="text-base text-gray-700">{client}</p>
+      <div className="relative h-0 w-full pb-[66%]">
+        <Image
+          src={thumbnail}
+          alt={title}
+          fill
+          style={{ objectFit: "cover" }}
+        />
+      </div>
+      <div className="m-2 max-w-sm overflow-hidden rounded shadow-lg">
+        <div className="py-4">
+          <p className="text-base text-gray-400">{client}</p>
+          <div className="mt-2 text-xl font-bold">{title}</div>
         </div>
       </div>
     </Link>
