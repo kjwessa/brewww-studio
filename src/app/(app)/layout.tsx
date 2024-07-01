@@ -1,8 +1,11 @@
-import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Footer } from "../components/Footer";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Metadata } from "next";
+import { SEO_Config } from "./seo-config";
+
+export const metadata: Metadata = SEO_Config;
 
 const DMSans = localFont({
   variable: "--font-dm-sans",
@@ -11,11 +14,6 @@ const DMSans = localFont({
     { path: "../fonts/DMSans.ttf", weight: "100 400 900", style: "normal" },
   ],
 });
-
-export const metadata: Metadata = {
-  title: "Brewww Studio",
-  description: "We craft unbounded brands.",
-};
 
 export default function RootLayout({
   children,
