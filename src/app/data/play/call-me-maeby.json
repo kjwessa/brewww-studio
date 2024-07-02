@@ -6,8 +6,8 @@
   "type": "illustration-series",
   "featured": false,
   "description": "A series of illustrations featuring our mascot, Maeby the black lab, in various funny situations.",
-  "thumbnail": "/images/play.Maeby.merry-christmas.jpg",
-  "heroImage": "/images/play.Maeby.merry-christmas.jpg",
+  "thumbnail": "/images/play/call-me-maeby/play.Maeby.feat.merry-christmas.jpg",
+  "heroImage": "/images/play/call-me-maeby/play.Maeby.feat.merry-christmas.jpg",
   "items": [
     {
       "id": "maeby-001",
@@ -15,7 +15,7 @@
       "description": "Maeby wearing antlers and wishing everyone a happy Christmas.",
       "images": [
         {
-          "url": "/images/play.Maeby.merry-christmas.jpg",
+          "url": "/images/play/call-me-maeby/play.Maeby.feat.merry-christmas.jpg",
           "alt": "Maeby during Christmas time"
         }
       ]
