@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function ServicesIntro() {
   return (
@@ -32,6 +33,9 @@ export function ServicesIntro() {
                 color palettes—we create a kinetic brand experience that
                 resonates with your audience and propels your business forward.
               </p>
+              <Link href="/services/branding" className="font-bold">
+                Learn More
+              </Link>
             </div>
             <div>
               <h2 className="mb-3 text-4xl font-bold uppercase">Websites</h2>
@@ -51,6 +55,9 @@ export function ServicesIntro() {
                 interfaces; theyre strategic tools designed to engage your
                 audience and drive meaningful action.
               </p>
+              <Link href="/services/websites" className="font-bold">
+                Learn More
+              </Link>
             </div>
             <div>
               <h2 className="mb-3 text-4xl font-bold uppercase">Content</h2>
@@ -70,6 +77,9 @@ export function ServicesIntro() {
                 create content that not only speaks to your audience but moves
                 them to action.
               </p>
+              <Link href="/services/content" className="font-bold">
+                Learn More
+              </Link>
             </div>
           </div>
         </div>
