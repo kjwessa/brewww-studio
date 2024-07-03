@@ -5,6 +5,7 @@ export interface ServiceData {
   id: string;
   pageTitle: string;
   slug: string;
+  featuredImg: string;
 }
 
 export function getServiceData(): ServiceData[] {
