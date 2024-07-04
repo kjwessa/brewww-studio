@@ -1,0 +1,28 @@
+{
+  "id": "websites",
+  "pageTitle": "Custom-built websites",
+  "slug": "websites",
+  "featuredImg": "/images/macbook-opening-lid.1920.jpg",
+  "heroSection": {
+    "headline": "We create digital universes that captivate, engage, and inspire.",
+    "description": "At Brewww Studio, we don't just build websites - we create digital universes that captivate, engage, and inspire. Our approach goes beyond the traditional static experience, weaving together innovative design, strategic thinking, and cutting-edge technology to craft brand experiences that resonate on a deeper level. We believe your website should be more than just a digital brochure. It's an opportunity to tell your brand's unique story in a way that moves your audience. Through immersive interactions, kinetic typography, and thoughtful user journeys, we transform your digital presence into a narrative that unfolds with every scroll and click. Our process begins with meticulous planning and strategy. We dive deep into your brand's essence, mapping out user flows and information architecture that align with your goals. This foundation ensures that every design decision and line of code serves a purpose, creating a seamless and intuitive experience for your visitors. Whether you're an e-commerce pioneer, a creative visionary showcasing your portfolio, or a startup ready to make your mark, we craft bespoke digital solutions that reflect your unique identity. Our collaborative approach means we work closely with you to refine and perfect every aspect of your online presence. While visual appeal is crucial, we understand that true digital excellence goes further. We fine-tune every element - from compelling content creation to search engine optimization - to ensure your website not only looks extraordinary but performs exceptionally. Our goal is to create digital experiences that convert visitors into devoted customers and brand advocates."
+  },
+  "services": {
+    "serviceOne": [
+      "Sitemaps",
+      "UI/UX Design",
+      "Wrireframes",
+      "Copywriting",
+      "Responsive Web Design",
+      "User Journey"
+    ],
+    "serviceTwo": [
+      "Front-End Development",
+      "Back-End Development",
+      "CMS Implementation",
+      "Analytics & Tracking",
+      "SEO Optimization",
+      "AWS Hosting"
+    ]
+  }
+}

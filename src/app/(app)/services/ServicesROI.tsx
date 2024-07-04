@@ -4,7 +4,7 @@ export function ServicesROI() {
       <div>
         <div className="flex max-w-6xl items-start justify-between bg-white px-8 py-12 text-stone-950">
           <div className="w-[calc(42%_-_12px)] text-4xl font-medium">
-            <p>Design that makes you look good, ROI and impressions.</p>
+            <p>Design that makes a good impression and investment.</p>
           </div>
 
           <div className="mt-16 w-[calc(50%_-_12px)] text-xl">
@@ -12,9 +12,7 @@ export function ServicesROI() {
             experiences that not only look good but drive real results. Our
             superior design nurtures relationships and delivers value, proven
             across industries like fitness, non-profits, media & entertainment,
-            and e-commerce. --- This version maintains the core message about
-            the importance of ROI and the broad applicability of your services
-            while being concise and impactful.
+            and e-commerce.
             <div className="mt-12">
               <p className="mt-5 font-medium text-neutral-800 opacity-60">
                 {" "}
