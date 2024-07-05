@@ -29,6 +29,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
       <article className="mx-auto flex max-w-4xl flex-col justify-center p-4">
         <h1 className="mb-4 text-5xl font-bold">{post.title}</h1>
+        <p>{post.preamble}</p>
         <div className="prose prose-lg mx-auto pb-24 pt-12">
           <MDXContent code={post.mdx} />
         </div>
