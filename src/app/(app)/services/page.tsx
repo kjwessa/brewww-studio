@@ -1,5 +1,6 @@
 import { ServicesHero } from "./ServicesHero";
 import { ServicesIntro } from "./ServicesIntro";
+import { ServicesSpecialty } from "./ServicesSpeciality";
 import { ServicesTestimonial } from "./ServicesTestimonial";
 
 export default function Page() {
@@ -7,6 +8,7 @@ export default function Page() {
     <>
       <ServicesHero />
       <ServicesIntro />
+      <ServicesSpecialty />
       <ServicesTestimonial />
     </>
   );
