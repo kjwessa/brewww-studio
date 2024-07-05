@@ -1,11 +1,22 @@
 import fs from "fs";
 import path from "path";
 
+export interface HeroSection {
+  headline: string;
+  description: string;
+}
+
+export interface Services {
+  serviceOne: string[];
+  serviceTwo: string[];
+}
+
 export interface ServiceData {
   id: string;
   pageTitle: string;
   slug: string;
   featuredImg: string;
+  heroSection: HeroSection;
 }
 
 export function getServiceData(): ServiceData[] {
