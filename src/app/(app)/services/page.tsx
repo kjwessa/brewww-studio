@@ -2,6 +2,7 @@ import { ServicesHero } from "./ServicesHero";
 import { ServicesIntro } from "./ServicesIntro";
 import { ServicesSpecialty } from "./ServicesSpeciality";
 import { ServicesImpact } from "./ServicesImpact";
+import { ServicesROI } from "./ServicesROI";
 import { ServicesTestimonial } from "./ServicesTestimonial";
 
 export default function Page() {
@@ -11,6 +12,7 @@ export default function Page() {
       <ServicesIntro />
       <ServicesSpecialty />
       <ServicesImpact />
+      <ServicesROI />
       <ServicesTestimonial />
     </>
   );
