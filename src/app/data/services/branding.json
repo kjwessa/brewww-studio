@@ -1,0 +1,28 @@
+{
+  "id": "branding",
+  "pageTitle": "Branding & System Design",
+  "slug": "branding",
+  "featuredImg": "/images/branding-books.1920.jpg",
+  "heroSection": {
+    "headline": "Your business values visualized through brand storytelling",
+    "description": "A bold, strategic brand identity is what lies behind a strong first impression. There are two parts to a strong brand: strategy and identity. Your brand strategy personifies your business, and your brand identity visualizes it."
+  },
+  "services": {
+    "brandStrategy": [
+      "Brand Consulting",
+      "User Personas",
+      "Competitive Analysis",
+      "Brand Messaging",
+      "Positioning & Differentiation",
+      "Journey Mapping"
+    ],
+    "brandIdentity": [
+      "Art Direction",
+      "Logo Design",
+      "Design System",
+      "Brand Naming",
+      "Brand Guidelines",
+      "Collateral Design"
+    ]
+  }
+}
