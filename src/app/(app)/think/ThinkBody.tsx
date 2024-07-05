@@ -20,6 +20,7 @@ export function ThinkBody() {
                   key={post.title}
                   title={post.title}
                   publishedAt={post.publishedAt}
+                  categories={post.categories ?? []}
                   description={post.description}
                   image={post.featuredImg}
                   alt={post.featuredImgAlt}

@@ -8,6 +8,7 @@ interface BlogCardProps {
   image: string;
   slug: string;
   alt: string;
+  categories: string[];
 }
 
 export function BlogCard({
@@ -17,6 +18,7 @@ export function BlogCard({
   image,
   alt,
   slug,
+  categories,
 }: BlogCardProps) {
   return (
     <div>
@@ -33,6 +35,13 @@ export function BlogCard({
         </div>
 
         <div className="flex-1">
+          <div className="pt-2">
+            {categories.map((category) => (
+              <span key={category} className="text-sm uppercase">
+                {category}
+              </span>
+            ))}
+          </div>
           <h3 className="my-2 text-xl font-bold">{title}</h3>
           <p className="mb-4 text-base text-gray-800">{description}</p>
         </div>
