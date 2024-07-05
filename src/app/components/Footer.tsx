@@ -15,16 +15,6 @@ export function Footer() {
             className="m-auto grid auto-cols-fr grid-cols-[1fr_1fr_1fr] grid-rows-[auto_auto] gap-4 px-12 pb-8"
             id="div-1"
           >
-            <a
-              className="col-start-1 col-end-4 row-start-1 row-end-2 m-auto inline-block max-w-full self-center justify-self-center text-[4.38rem] font-bold leading-none"
-              href="/hire-us"
-            >
-              <div className="m-auto h-full w-full overflow-hidden py-3">
-                <h4 className="mx-auto mb-8 min-h-[0vw] max-w-[43.75rem] text-center">
-                  Creative That Just Works.
-                </h4>
-              </div>
-            </a>
             <div
               className="col-start-1 col-end-2 row-start-2 row-end-3 justify-self-center font-bold"
               id="div-2"
@@ -504,7 +494,9 @@ export function Footer() {
                 className="flex items-center justify-around text-white/[0.6]"
                 id="div-9"
               >
-                <div>© {getCurrentYear()} Brewww Studio. All Rights Reserved. </div>
+                <div>
+                  © {getCurrentYear()} Brewww Studio. All Rights Reserved.{" "}
+                </div>
               </div>
             </div>
           </div>
