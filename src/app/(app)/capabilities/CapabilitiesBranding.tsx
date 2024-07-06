@@ -4,8 +4,8 @@ export function CapabilitiesBranding() {
       <div>
         <div className="relative items-center justify-center overflow-visible font-light text-neutral-900">
           <div className="absolute left-0 right-0 top-0 z-[1] h-[40vh] bg-neutral-900" />
-          <div className="relative mr-48" id="div-2">
-            <div className="relative h-[75vh] overflow-hidden" id="div-3">
+          <div className="relative mr-48">
+            <div className="relative h-[75vh] overflow-hidden">
               <img
                 src="https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5ed6030ff722b820100aae21_branding-books.1920.jpg"
                 className="my-auto h-[120%]"
@@ -16,9 +16,9 @@ export function CapabilitiesBranding() {
             className="grid auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto_auto] gap-4 pb-12"
             id="div-4"
           >
-            <div className="mx-auto mt-48" id="div-5">
+            <div className="mx-auto mt-48">
               <div className="grid auto-cols-fr grid-cols-[1fr] grid-rows-[auto] gap-x-4 gap-y-48">
-                <div className="w-96" id="div-6">
+                <div className="w-96">
                   <div
                     className="relative h-[37.50rem] overflow-hidden"
                     id="div-7"
@@ -51,7 +51,7 @@ export function CapabilitiesBranding() {
                     </a>
                   </div>
                 </div>
-                <div className="w-96" id="div-9">
+                <div className="w-96">
                   <div
                     className="relative h-[37.50rem] overflow-hidden"
                     id="div-10"
@@ -80,15 +80,12 @@ export function CapabilitiesBranding() {
                       <div className="uppercase text-neutral-900" id="div-11">
                         Learn More
                       </div>
-                      <div className="absolute bottom-0 left-0 right-0 h-0.5 w-1/5 bg-neutral-900" />
+                      <div className="absolute bottom-0 left-0 right-0 w-1/5 bg-neutral-900" />
                     </a>
                   </div>
                 </div>
                 <div className="w-96" id="div-12">
-                  <div
-                    className="relative h-[37.50rem] overflow-hidden"
-                    id="div-13"
-                  >
+                  <div className="relative h-[37.50rem] overflow-hidden">
                     <div
                       className='absolute bottom-0 left-0 top-0 my-auto h-[120%] bg-[url("https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5f4549ec2590e22ab1deffc9_black-and-white-pencil.1920.jpg")] bg-cover'
                       style={{
@@ -104,7 +101,7 @@ export function CapabilitiesBranding() {
                       <p className="mb-8 text-xl">
                         Amplify your voice and be heard, be shared, be
                         intentional. Generate great content for your audiences,
-                        big and small.{" "}
+                        big and small.
                       </p>
                     </div>
                     <a
@@ -120,12 +117,9 @@ export function CapabilitiesBranding() {
                 </div>
               </div>
             </div>
-            <div className="pr-12" id="div-15">
-              <div
-                className="sticky h-screen items-center justify-center"
-                id="div-16"
-              >
-                <div className="sticky -mt-12" id="div-17">
+            <div className="pr-12">
+              <div className="sticky h-screen items-center justify-center">
+                <div className="sticky -mt-12">
                   <h2 className="min-h-[0vw] text-[8.38rem] font-bold leading-none">
                     Branding + Strategy
                   </h2>
