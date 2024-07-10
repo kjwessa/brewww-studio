@@ -1,8 +1,9 @@
+import Image from "next/image";
+import Link from "next/link";
 import { allPosts } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
+import { MetaDot } from "@/app/components/MetaDot";
 import { formatDate } from "@/app/utils/dateFormatter";
 
 export async function generateStaticParams() {
@@ -29,19 +30,18 @@ const HeroSection = ({ post }: HeroSectionProps) => {
           {post.title}
         </h1>
         <p className="mb-8 max-w-3xl text-xl text-gray-700">
-          {post.description}Branding is who you are, the very identity and
-          character of your business, while marketing is how you build brand
-          awareness. Branding is your strategy, while marketing encompasses your
-          tactical goals.
+          {post.description}
         </p>
-        <div className="flex items-center gap-4 text-sm text-gray-500">
+        <div className="flex items-center gap-1 text-sm text-gray-500">
           <span>
             By{" "}
             <Link className="text-gray-950" href={""}>
               Kevin Wessa
             </Link>
           </span>
+          <MetaDot />
           <span>{formatDate(post.publishedAt)}</span>
+          <MetaDot />
           <span>{`${post.readTime} min read`}</span>
         </div>
       </div>
