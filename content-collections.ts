@@ -10,6 +10,7 @@ const posts = defineCollection({
     slug: z.string(),
     publishedAt: z.string(),
     description: z.string(),
+    preamble: z.string().optional(),
     featuredImg: z.string(),
     featuredImgAlt: z.string(),
     categories: z.array(z.string()),
