@@ -64,6 +64,23 @@ const ImageSection = ({ post }: ImageSectionProps) => {
   );
 };
 
+interface ArticleSectionProps {
+  post: {
+    mdx: string;
+  };
+}
+
+const ArticleSection = ({ post }: ArticleSectionProps) => {
+  return (
+    <>
+      {" "}
+      <article className="prose prose-lg mx-auto pb-24 pt-12">
+        <MDXContent code={post.mdx} />
+      </article>
+    </>
+  );
+};
+
 //* Build the individual blog page
 export default async function Page({ params }: { params: { slug: string } }) {
   // Fetch the post based on the slug
@@ -77,14 +94,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
     <div className="bg-white pt-24 text-black">
       <HeroSection post={post} />
       <ImageSection post={post} />
-
-      <article className="mx-auto flex max-w-4xl flex-col justify-center py-12">
-        <h1 className="mb-12 text-balance text-5xl font-medium"></h1>
-
-        <div className="prose prose-lg mx-auto pb-24 pt-12">
-          <MDXContent code={post.mdx} />
-        </div>
-      </article>
+      <div></div>
+      <div className="mx-auto flex max-w-4xl flex-col justify-center py-12">
+        <ArticleSection post={post} />
+      </div>
     </div>
   );
 }
