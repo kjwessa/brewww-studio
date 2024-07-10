@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { formatDate } from "@/utils/dateFormatter";
 
 interface BlogCardProps {
   title: string;
@@ -17,6 +18,9 @@ export function BlogCard({
   slug,
   categories,
 }: BlogCardProps) {
+  // Format the appearance of the date
+  const formattedDate = formatDate(publishedAt);
+
   return (
     <Link className="h-full" href={`think/${slug}`}>
       <div className="overflow-hidden">
@@ -43,7 +47,7 @@ export function BlogCard({
         {title}
       </h3>
       <div className="mt-3 flex items-center text-sm font-medium text-slate-500">
-        <p className="pr-1.5 min-[1250px]:pr-3">{publishedAt}</p>
+        <p className="pr-1.5 min-[1250px]:pr-3">{formattedDate}</p>
         <svg
           className="h-0.5 w-0.5"
           fill="none"
