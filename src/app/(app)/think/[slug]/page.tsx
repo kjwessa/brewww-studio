@@ -3,6 +3,7 @@ import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { formatDate } from "@/app/utils/dateFormatter";
 
 export async function generateStaticParams() {
   return allPosts.map((post) => {
@@ -15,6 +16,7 @@ interface HeroSectionProps {
     title: string;
     description?: string;
     publishedAt: string;
+    readTime: number;
   };
 }
 
@@ -32,7 +34,16 @@ const HeroSection = ({ post }: HeroSectionProps) => {
           awareness. Branding is your strategy, while marketing encompasses your
           tactical goals.
         </p>
-        <div className=""></div>
+        <div className="flex items-center gap-4 text-sm text-gray-500">
+          <span>
+            By{" "}
+            <Link className="text-gray-950" href={""}>
+              Kevin Wessa
+            </Link>
+          </span>
+          <span>{formatDate(post.publishedAt)}</span>
+          <span>{`${post.readTime} min read`}</span>
+        </div>
       </div>
     </section>
   );
