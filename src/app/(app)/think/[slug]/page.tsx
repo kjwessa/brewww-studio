@@ -24,7 +24,7 @@ interface HeroSectionProps {
 //* HeroSection
 const HeroSection = ({ post }: HeroSectionProps) => {
   return (
-    <section className="container mx-auto px-4 pt-24 md:pt-32 lg:pt-40">
+    <section className="container mx-auto px-4 pb-12 pt-24 md:pt-32 lg:pt-40">
       <div className="max-w-5xl">
         <h1 className="mb-4 text-5xl font-medium leading-tight md:text-6xl">
           {post.title}
@@ -49,6 +49,21 @@ const HeroSection = ({ post }: HeroSectionProps) => {
   );
 };
 
+interface ImageSectionProps {
+  post: {
+    featImg: string;
+    featImgAlt: string;
+  };
+}
+
+const ImageSection = ({ post }: ImageSectionProps) => {
+  return (
+    <div className="relative h-0 w-full pb-[66%]">
+      <Image src={post.featImg} fill alt={post.featImgAlt} />
+    </div>
+  );
+};
+
 //* Build the individual blog page
 export default async function Page({ params }: { params: { slug: string } }) {
   // Fetch the post based on the slug
@@ -61,13 +76,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <div className="bg-white pt-24 text-black">
       <HeroSection post={post} />
+      <ImageSection post={post} />
 
       <article className="mx-auto flex max-w-4xl flex-col justify-center py-12">
         <h1 className="mb-12 text-balance text-5xl font-medium"></h1>
 
-        <div className="relative h-0 w-full pb-[66%]">
-          <Image src={post.featImg} fill alt={post.featImgAlt} />{" "}
-        </div>
         <div className="prose prose-lg mx-auto pb-24 pt-12">
           <MDXContent code={post.mdx} />
         </div>
