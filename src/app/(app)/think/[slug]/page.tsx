@@ -66,7 +66,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <h1 className="mb-12 text-balance text-5xl font-medium"></h1>
 
         <div className="relative h-0 w-full pb-[66%]">
-          <Image src={post.featuredImg} fill alt={post.featuredImgAlt} />{" "}
+          <Image src={post.featImg} fill alt={post.featImgAlt} />{" "}
         </div>
         <div className="prose prose-lg mx-auto pb-24 pt-12">
           <MDXContent code={post.mdx} />
