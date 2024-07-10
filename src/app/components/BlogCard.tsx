@@ -9,7 +9,6 @@ interface BlogCardProps {
   alt: string;
   categories: string[];
 }
-
 export function BlogCard({
   title,
   publishedAt,
