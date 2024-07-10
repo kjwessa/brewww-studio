@@ -18,6 +18,7 @@ const posts = defineCollection({
   }),
   transform: async (document, context) => {
     const mdx = await compileMDX(context, document);
+
     return {
       ...document,
       mdx,

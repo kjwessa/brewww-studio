@@ -5,6 +5,7 @@ import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
 import { MetaDot } from "@/app/components/MetaDot";
 import { formatDate } from "@/app/utils/dateFormatter";
+import aboutImage from "/public/images/Aldridge-02665.1200-p-1080.jpeg";
 
 export async function generateStaticParams() {
   return allPosts.map((post) => {
@@ -12,6 +13,7 @@ export async function generateStaticParams() {
   });
 }
 
+//* HeroSection
 interface HeroSectionProps {
   post: {
     title: string;
@@ -21,7 +23,6 @@ interface HeroSectionProps {
   };
 }
 
-//* HeroSection
 const HeroSection = ({ post }: HeroSectionProps) => {
   return (
     <section className="container mx-auto px-4 pb-12 pt-24 md:pt-32 lg:pt-40">
@@ -49,6 +50,7 @@ const HeroSection = ({ post }: HeroSectionProps) => {
   );
 };
 
+//* ImageSection
 interface ImageSectionProps {
   post: {
     featImg: string;
@@ -64,6 +66,7 @@ const ImageSection = ({ post }: ImageSectionProps) => {
   );
 };
 
+//* ArticleSection
 interface ArticleSectionProps {
   post: {
     mdx: string;
@@ -72,11 +75,49 @@ interface ArticleSectionProps {
 
 const ArticleSection = ({ post }: ArticleSectionProps) => {
   return (
+    <article className="prose prose-lg mx-auto pb-24 pt-12">
+      <MDXContent code={post.mdx} />
+    </article>
+  );
+};
+
+const AboutSection = () => {
+  return (
     <>
-      {" "}
-      <article className="prose prose-lg mx-auto pb-24 pt-12">
-        <MDXContent code={post.mdx} />
-      </article>
+      <div className="relative text-lg text-gray-950">
+        <div className="w-lg relative h-96">
+          <Image src={aboutImage} alt="brewww" />
+        </div>
+        <img className="h-40 w-60 object-cover" src="" />
+        <div className="relative bg-neutral-100 py-6 pl-5 pr-4">
+          <div className="absolute bottom-[16.13rem] left-[1.00rem] right-[11.75rem] top-[-1.00rem] rounded-full">
+            <img className="h-8 w-8 object-contain" src="" />
+          </div>
+          <div>
+            <p className="text-base">About Brewww Studio</p>
+            <p className="text-sm">
+              Brewww is a branding and web studio in Cleveland. We work with
+              startups and emerging brands to craft meaningful digital
+              transformations.
+            </p>
+            <a className="relative inline-block text-sm font-medium" href="">
+              <span className="inline-flex cursor-pointer items-center">
+                <span className="relative">
+                  <span
+                    className="bg-currentcolor absolute bottom-[-0.19rem] left-0 z-[1] h-0 w-full"
+                    style={{
+                      transform: "scaleX(0)",
+                      transformOrigin: "0px 50%",
+                    }}
+                  />
+                  Learn more
+                  <span className="absolute bottom-[-0.19rem] left-0 z-0 h-0 w-full bg-slate-300" />
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
@@ -94,10 +135,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
     <div className="bg-white pt-24 text-black">
       <HeroSection post={post} />
       <ImageSection post={post} />
-      <div></div>
       <div className="mx-auto flex max-w-4xl flex-col justify-center py-12">
         <ArticleSection post={post} />
       </div>
+      <AboutSection />
     </div>
   );
 }
