@@ -3,7 +3,6 @@ import Image from "next/image";
 
 interface BlogCardProps {
   title: string;
-  description: string;
   publishedAt: string;
   image: string;
   slug: string;
@@ -13,7 +12,6 @@ interface BlogCardProps {
 
 export function BlogCard({
   title,
-  description,
   publishedAt,
   image,
   alt,
@@ -21,9 +19,9 @@ export function BlogCard({
   categories,
 }: BlogCardProps) {
   return (
-    <div>
-      <Link href={`think/${slug}`}>
-        <div className="relative h-0 w-full pb-[66%]">
+    <Link className="h-full" href={`think/${slug}`}>
+      <div className="overflow-hidden">
+        <div className="relative h-0 w-full max-w-full pb-[66%]">
           <Image
             src={image}
             alt={alt}
@@ -33,19 +31,30 @@ export function BlogCard({
             }}
           />
         </div>
-
-        <div className="flex-1">
-          <div className="pt-2">
-            {categories.map((category) => (
-              <span key={category} className="text-sm uppercase">
-                {category}
-              </span>
-            ))}
-          </div>
-          <h3 className="my-2 text-xl font-bold">{title}</h3>
-          <p className="mb-4 text-base text-gray-800">{description}</p>
-        </div>
-      </Link>
-    </div>
+      </div>
+      <p className="mt-3 text-sm font-medium text-slate-500">
+        {" "}
+        {categories.map((category) => (
+          <span key={category} className="text-sm uppercase">
+            {category}
+          </span>
+        ))}
+      </p>
+      <h3 className="mt-2 text-[1.38rem] font-medium leading-7 min-[1920px]:pr-60">
+        {title}
+      </h3>
+      <div className="mt-3 flex items-center text-sm font-medium text-slate-500">
+        <p className="pr-1.5 min-[1250px]:pr-3">{publishedAt}</p>
+        <svg
+          className="h-0.5 w-0.5"
+          fill="none"
+          height="2"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="1" cy="1" fill="rgb(99, 118, 149)" r="1" />
+        </svg>
+        <p className="pl-1.5 min-[1250px]:pl-3">8 min read</p>
+      </div>
+    </Link>
   );
 }
