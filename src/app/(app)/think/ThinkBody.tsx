@@ -24,6 +24,7 @@ export function ThinkBody() {
                   image={post.featuredImg}
                   alt={post.featuredImgAlt}
                   slug={post.slug}
+                  readTime={post.readTime}
                 />
               ))}
             </div>

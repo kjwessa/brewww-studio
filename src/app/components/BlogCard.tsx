@@ -9,6 +9,7 @@ interface BlogCardProps {
   slug: string;
   alt: string;
   categories: string[];
+  readTime: number;
 }
 export function BlogCard({
   title,
@@ -17,6 +18,7 @@ export function BlogCard({
   alt,
   slug,
   categories,
+  readTime,
 }: BlogCardProps) {
   // Format the appearance of the date
   const formattedDate = formatDate(publishedAt);
@@ -36,7 +38,6 @@ export function BlogCard({
         </div>
       </div>
       <p className="mt-3 text-sm font-medium text-slate-500">
-        {" "}
         {categories.map((category) => (
           <span key={category} className="text-sm uppercase">
             {category}
@@ -56,7 +57,7 @@ export function BlogCard({
         >
           <circle cx="1" cy="1" fill="rgb(99, 118, 149)" r="1" />
         </svg>
-        <p className="pl-1.5 min-[1250px]:pl-3">8 min read</p>
+        <p className="pl-1.5 min-[1250px]:pl-3">{`${readTime} min read`}</p>
       </div>
     </Link>
   );
