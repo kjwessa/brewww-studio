@@ -94,20 +94,23 @@ const AboutCard = () => {
             style={{ objectFit: "cover" }}
           />
         </div>
-        <div className="relative bg-neutral-100 px-5 pb-4 pt-8">
-          <div className="absolute rounded-full bg-black">
+        <div className="relative -mt-4 bg-neutral-100 px-5 pb-4 pt-12">
+          <div className="absolute left-8 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-neutral-100 p-2">
             <div className="relative">
-              <Image src={aboutLogo} alt="" width={32} height={32} />
+              <Image src={aboutLogo} alt="Brewww Logo" width={32} height={32} />
             </div>
           </div>
           <div>
-            <p className="text-base">About Brewww Studio</p>
-            <p className="text-sm">
+            <p className="text-base font-semibold">About Brewww Studio</p>
+            <p className="mt-2 text-sm">
               Brewww is a branding and web studio in Cleveland. We work with
               startups and emerging brands to craft meaningful digital
               transformations.
             </p>
-            <Link href="/studio" className="text-sm font-medium">
+            <Link
+              href="/studio"
+              className="mt-2 inline-block text-sm font-medium"
+            >
               Learn More
             </Link>
           </div>
