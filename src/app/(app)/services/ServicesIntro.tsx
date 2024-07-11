@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { LinkMain } from "@/app/components/LinkMain";
 
 export function ServicesIntro() {
   return (
@@ -33,6 +34,8 @@ export function ServicesIntro() {
                 color palettes—we create a kinetic brand experience that
                 resonates with your audience and propels your business forward.
               </p>
+              <LinkMain />
+
               <Link href="/services/branding" className="font-bold">
                 Learn More
               </Link>

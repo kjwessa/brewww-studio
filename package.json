@@ -17,6 +17,9 @@
     "next-sitemap": "^4.2.3",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
+    "remark": "^15.0.1",
+    "remark-mdx-toc": "^0.3.1",
+    "remark-toc": "^9.0.0",
     "sharp": "^0.33.4"
   },
   "devDependencies": {

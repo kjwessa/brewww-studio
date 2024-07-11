@@ -70,14 +70,14 @@ const ImageSection = ({ post }: ImageSectionProps) => {
 //* ArticleSection
 interface ArticleSectionProps {
   post: {
-    mdx: string;
+    content: string;
   };
 }
 
 const ArticleSection = ({ post }: ArticleSectionProps) => {
   return (
     <article className="prose prose-lg mx-auto pb-24 pt-12">
-      <MDXContent code={post.mdx} />
+      <MDXContent code={post.content} />
     </article>
   );
 };
