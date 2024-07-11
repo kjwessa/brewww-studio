@@ -34,7 +34,7 @@ export function ServicesIntro() {
                 color palettes—we create a kinetic brand experience that
                 resonates with your audience and propels your business forward.
               </p>
-              <LinkMain />
+              <LinkMain text="Learn More" />
 
               <Link href="/services/branding" className="font-bold">
                 Learn More
