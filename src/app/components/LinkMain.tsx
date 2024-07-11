@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 export function LinkMain() {
   return (
     <>
-      <a className="flex text-lg font-medium text-gray-950" href="">
+      <Link className="flex text-lg font-medium text-gray-950" href="">
         <span className="flex cursor-pointer items-center">
           <span>Text</span>
           <svg
@@ -18,7 +20,7 @@ export function LinkMain() {
             />
           </svg>
         </span>
-      </a>
+      </Link>
     </>
   );
 }
