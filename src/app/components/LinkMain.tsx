@@ -2,11 +2,12 @@ import Link from "next/link";
 
 interface LinkMainProps {
   text: string;
+  href: string;
 }
-export function LinkMain({ text }: LinkMainProps) {
+export function LinkMain({ text, href }: LinkMainProps) {
   return (
     <>
-      <Link className="flex text-lg font-medium text-gray-950" href="">
+      <Link className="flex text-lg font-medium text-gray-950" href={href}>
         <span className="flex cursor-pointer items-center">
           <span>{text}</span>
           <svg
