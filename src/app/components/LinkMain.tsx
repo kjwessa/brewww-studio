@@ -1,14 +1,26 @@
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 
 interface LinkMainProps {
   text: string;
   href: string;
   showArrow?: boolean;
+  size?: "large" | "medium" | "small";
 }
-export function LinkMain({ text, href, showArrow = true }: LinkMainProps) {
+export function LinkMain({
+  text,
+  href,
+  showArrow = true,
+  size = "medium",
+}: LinkMainProps) {
+  const sizeClass =
+    size === "large" ? "text-lg" : size === "medium" ? "text-base" : "text-sm";
+
+  const linkClass = twMerge("flex items-center font-medium", sizeClass);
+
   return (
     <>
-      <Link className="flex text-base font-medium text-gray-950" href={href}>
+      <Link className={linkClass} href={href}>
         <span className="flex cursor-pointer items-center">
           <span>{text}</span>
           {showArrow && (
