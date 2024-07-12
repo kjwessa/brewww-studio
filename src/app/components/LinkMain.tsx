@@ -25,7 +25,7 @@ export function LinkMain({
           <span>{text}</span>
           {showArrow && (
             <svg
-              className="h-6 w-6 text-slate-300"
+              className="h-4 w-4 text-slate-300"
               fill="rgb(187, 196, 210)"
               preserveAspectRatio="none"
               role="presentation"
