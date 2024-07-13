@@ -1,5 +1,6 @@
 import { defineCollection, defineConfig } from "@content-collections/core";
 import { compileMDX } from "@content-collections/mdx";
+// import { remarkMdxToc } from "remark-mdx-toc";
 
 const posts = defineCollection({
   name: "posts",
@@ -17,11 +18,12 @@ const posts = defineCollection({
     categories: z.array(z.string()),
   }),
   transform: async (document, context) => {
-    const mdx = await compileMDX(context, document);
+    // const content = await compileMDX(context, document);
+    const result = await compileMDX(context, document);
 
     return {
       ...document,
-      mdx,
+      content: result,
     };
   },
 });
