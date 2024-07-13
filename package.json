@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "node generate-sitemap.js",
+    "postbuild": "tsc && node generate-sitemap.mjs",
+    "tsc": "tsc",
     "start": "next start",
     "lint": "next lint",
     "clean": "rm -rf .next/ && rm -rf node_modules/ && npm install"
