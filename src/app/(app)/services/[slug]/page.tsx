@@ -1,6 +1,9 @@
 import { getServiceData } from "@/app/lib/serviceData";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { ServicePageHero as ServicePageHeroTypes } from "@/app/types/serviceTypes";
+import { ServicePageImage as ServicePageImageTypes } from "@/app/types/serviceTypes";
+import { ServicePageIntro as ServicePageIntroTypes } from "@/app/types/serviceTypes";
 
 export async function generateStaticParams() {
   const services = getServiceData();
@@ -8,48 +11,55 @@ export async function generateStaticParams() {
 }
 
 //* HeroSection
+interface ServicePageHeroProps {
+  service: ServicePageHeroTypes;
+}
 
-const HeroSection = ({ service }: HeroSectionProps) => {
+const HeroSection = ({ service }: ServicePageHeroProps) => {
   return (
     <section className="flex items-end px-16 pt-44 text-center">
       <div className="flex flex-wrap justify-center">
         <h1 className="flex flex-col justify-center text-[5.13rem] leading-none">
           <div className="table pr-1">
             <div>
-              <h1>{service.pageTitle}</h1>
+              <h1>{}</h1>
             </div>
           </div>
         </h1>
-
         <div className="flex w-full justify-between pb-4 pt-16 text-4xl font-bold uppercase">
           <h2>Service</h2>
           <h2>Contact Us</h2>
-        </div>
-
-        <div className="relative flex h-0 w-full items-end pb-[66%]">
-          <Image
-            src={service.featImg}
-            alt={service.featImgAlt}
-            fill
-            style={{ objectFit: "cover" }}
-          />
         </div>
       </div>
     </section>
   );
 };
 
-//* Intro Section
-interface IntroSectionProps {
-  service: {
-    introSection: {
-      headline: string;
-      description: string;
-    };
-  };
+//* Image Section
+interface ServicePageImageProps {
+  service: ServicePageImageTypes;
 }
 
-const IntroSection = ({ service }: IntroSectionProps) => {
+const ImageSection = ({ service }: ServicePageImageProps) => {
+  return (
+    <section>
+      <div className="relative flex h-0 w-full items-end pb-[66%]">
+        <Image
+          src={service.featImg}
+          alt={service.featImgAlt}
+          fill
+          style={{ objectFit: "cover" }}
+        />
+      </div>
+    </section>
+  );
+};
+
+//* Intro Section
+interface ServicePageIntroProps {
+  service: ServicePageIntroTypes;
+}
+const IntroSection = ({ service }: ServicePageIntroProps) => {
   return (
     <section className="px-16 pt-20">
       <div className="m-auto w-full max-w-[120.00rem]">
@@ -60,13 +70,13 @@ const IntroSection = ({ service }: IntroSectionProps) => {
           >
             <h2 className="overflow-hidden">
               <div className="">
-                <h2>{service.introSection.headline}</h2>
+                <h2>{}</h2>
               </div>
             </h2>
           </div>
 
           <div className="flex w-[45%] flex-col" id="div-3">
-            <p>{service.introSection.description}</p>
+            <p>{}</p>
           </div>
         </div>
       </div>
@@ -85,6 +95,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
   return (
     <div className="bg-white pt-24 text-black">
       <HeroSection service={service} />
+      <ImageSection service={service} />
       <IntroSection service={service} />
     </div>
   );

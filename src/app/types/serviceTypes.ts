@@ -12,8 +12,22 @@ export interface ServiceData {
       description: string;
     };
   };
-  introSection: {
-    headline: string;
-    description: string;
+  card: {
+    cardTitle: string;
+    cardDescription: string;
   };
 }
+
+export interface ServicePageHero {
+  page: {
+    pageTitle: string;
+    pageNumber: string;
+  };
+}
+
+export interface ServicePageImage {
+  featImg: string;
+  featImgAlt: string;
+}
+
+export interface ServicePageIntro {}

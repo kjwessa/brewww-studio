@@ -12,6 +12,10 @@
       "description": "A bold, strategic brand identity is what lies behind a strong first impression. There are two parts to a strong brand: strategy and identity. Your brand strategy personifies your business, and your brand identity visualizes it."
     }
   },
+  "card": {
+    "cardTitle": "Branding",
+    "cardDescription": "We distill your companys essence into a compelling visual and narrative identity. Our branding process goes beyond logos and color palettes—we create a kinetic brand experience that resonates with your audience and propels your business forward."
+  },
   "services": {
     "serviceOne": [
       "Brand Consulting",
