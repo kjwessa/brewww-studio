@@ -19,8 +19,15 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["src/*"],
+      "@/app/*": ["src/app/*"],
+      "@/components/*": ["src/app/components/*"],
+      "@/data/*": ["src/app/data/*"],
+      "@/lib/*": ["src/app/lib/*"],
       "@/public/*": ["./public/*"],
+      "@/styles/*": ["src/app/styles/*"],
+      "@/types/*": ["src/app/types/*"],
+      "@/utils/*": ["src/app/utils/*"],
       "content-collections": ["./.content-collections/generated"]
     },
     "target": "ES2017"
