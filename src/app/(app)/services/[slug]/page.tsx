@@ -17,8 +17,8 @@ interface ServicePageHeroProps {
 
 const HeroSection = ({ service }: ServicePageHeroProps) => {
   return (
-    <section className="flex items-end px-16 pt-44 text-center">
-      <div className="flex flex-wrap justify-center">
+    <section className="flex w-full items-end px-16 pt-44 text-center">
+      <div className="flex w-full flex-wrap justify-center">
         <h1 className="flex flex-col justify-center text-[5.13rem] leading-none">
           <div className="table pr-1">
             <div>
@@ -26,7 +26,7 @@ const HeroSection = ({ service }: ServicePageHeroProps) => {
             </div>
           </div>
         </h1>
-        <div className="flex w-full justify-between pb-4 pt-16 text-4xl font-bold uppercase">
+        <div className="flex w-full justify-between pb-4 pt-16 text-2xl font-bold uppercase">
           <h2>Service</h2>
           <h2>{service.pageHero.heroNumber}</h2>
         </div>
@@ -76,7 +76,9 @@ const IntroSection = ({ service }: ServicePageIntroProps) => {
           </div>
 
           <div className="flex w-[45%] flex-col" id="div-3">
-            <p>{service.pageIntro.introDescription}</p>
+            <p className="whitespace-pre-line">
+              {service.pageIntro.introDescription}
+            </p>
           </div>
         </div>
       </div>

@@ -23,6 +23,7 @@
       "@/app/*": ["src/app/*"],
       "@/components/*": ["src/app/components/*"],
       "@/data/*": ["src/app/data/*"],
+      "@/images/*": ["./public/images/*"],
       "@/lib/*": ["src/app/lib/*"],
       "@/public/*": ["./public/*"],
       "@/styles/*": ["src/app/styles/*"],
