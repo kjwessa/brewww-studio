@@ -1,4 +1,4 @@
-import { getWorkProjects } from "@/app/lib/workProjects";
+import { getWorkProjects } from "@/app/lib/getWorkProjects";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 

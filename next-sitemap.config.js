@@ -1,3 +1,5 @@
+const { getWorkProjects } = require("./src/app/lib/getWorkProjects.ts");
+
 module.exports = {
   siteUrl: "https://brewww.studio",
   generateRobotsTxt: true,
@@ -6,15 +8,11 @@ module.exports = {
     additionalSitemaps: ["https://brewww.studio/sitemap.xml"],
   },
   generateIndexSitemap: false,
+  exclude: ["/dev"],
   transform: async (config, path) => {
-    // Exclude /dev from the sitemap
-    if (path === "/dev") {
-      return null;
-    }
-
     // Default priority and change frequency
     let priority = 0.7;
-    let changefreq = "daily";
+    let changefreq = "weekly";
 
     // Custom settings for specific pages
     if (path === "/") {
