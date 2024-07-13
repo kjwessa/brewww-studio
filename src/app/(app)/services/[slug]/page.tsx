@@ -22,13 +22,13 @@ const HeroSection = ({ service }: ServicePageHeroProps) => {
         <h1 className="flex flex-col justify-center text-[5.13rem] leading-none">
           <div className="table pr-1">
             <div>
-              <h1>{}</h1>
+              <h1>{service.pageHero.heroTitle}</h1>
             </div>
           </div>
         </h1>
         <div className="flex w-full justify-between pb-4 pt-16 text-4xl font-bold uppercase">
           <h2>Service</h2>
-          <h2>Contact Us</h2>
+          <h2>{service.pageHero.heroNumber}</h2>
         </div>
       </div>
     </section>
@@ -70,13 +70,13 @@ const IntroSection = ({ service }: ServicePageIntroProps) => {
           >
             <h2 className="overflow-hidden">
               <div className="">
-                <h2>{}</h2>
+                <h2>{service.pageIntro.introTitle}</h2>
               </div>
             </h2>
           </div>
 
           <div className="flex w-[45%] flex-col" id="div-3">
-            <p>{}</p>
+            <p>{service.pageIntro.introDescription}</p>
           </div>
         </div>
       </div>

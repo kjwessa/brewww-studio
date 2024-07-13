@@ -4,13 +4,13 @@
   "published": true,
   "featImg": "/images/branding-books.1920.jpg",
   "featImgAlt": "",
-  "page": {
-    "pageTitle": "Branding & System Design",
-    "pageNumber": "01/03",
-    "pageIntro": {
-      "headline": "Your brand tells the story of your company values",
-      "description": "A bold, strategic brand identity is what lies behind a strong first impression. There are two parts to a strong brand: strategy and identity. Your brand strategy personifies your business, and your brand identity visualizes it."
-    }
+  "pageHero": {
+    "heroTitle": "Branding & System Design",
+    "heroNumber": "01/03"
+  },
+  "pageIntro": {
+    "introTitle": "Your brand tells the story of your company values",
+    "introDescription": "A bold, strategic brand identity is what lies behind a strong first impression. There are two parts to a strong brand: strategy and identity. Your brand strategy personifies your business, and your brand identity visualizes it."
   },
   "card": {
     "cardTitle": "Branding",

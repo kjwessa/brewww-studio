@@ -4,13 +4,13 @@ export interface ServiceData {
   published: boolean;
   featImg: string;
   featImgAlt: string;
-  page: {
-    pageTitle: string;
-    pageNumber: string;
-    pageIntro: {
-      headline: string;
-      description: string;
-    };
+  pageHero: {
+    heroTitle: string;
+    heroNumber: string;
+  };
+  pageIntro: {
+    introTitle: string;
+    introDescription: string;
   };
   card: {
     cardTitle: string;
@@ -19,9 +19,9 @@ export interface ServiceData {
 }
 
 export interface ServicePageHero {
-  page: {
-    pageTitle: string;
-    pageNumber: string;
+  pageHero: {
+    heroTitle: string;
+    heroNumber: string;
   };
 }
 
@@ -30,4 +30,9 @@ export interface ServicePageImage {
   featImgAlt: string;
 }
 
-export interface ServicePageIntro {}
+export interface ServicePageIntro {
+  pageIntro: {
+    introTitle: string;
+    introDescription: string;
+  };
+}
