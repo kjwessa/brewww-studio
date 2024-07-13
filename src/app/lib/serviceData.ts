@@ -1,25 +1,8 @@
 import fs from "fs";
 import path from "path";
+import { Service } from "@/types/serviceTypes";
 
-export interface HeroSection {
-  headline: string;
-  description: string;
-}
-
-export interface Services {
-  serviceOne: string[];
-  serviceTwo: string[];
-}
-
-export interface ServiceData {
-  id: string;
-  pageTitle: string;
-  slug: string;
-  featuredImg: string;
-  heroSection: HeroSection;
-}
-
-export function getServiceData(): ServiceData[] {
+export function getServiceData(): Service[] {
   const serviceDataDirectory = path.join(
     process.cwd(),
     "src/app/data/services",
@@ -29,7 +12,7 @@ export function getServiceData(): ServiceData[] {
   const allServicePages = fileNames.map((fileName) => {
     const filePath = path.join(serviceDataDirectory, fileName);
     const fileContents = fs.readFileSync(filePath, "utf-8");
-    return JSON.parse(fileContents) as ServiceData;
+    return JSON.parse(fileContents) as Service;
   });
 
   return allServicePages;

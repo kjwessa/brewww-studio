@@ -1,7 +1,6 @@
 import fs from "fs";
 import path from "path";
 
-
 export interface WorkProject {
   id: string;
   client: string;
