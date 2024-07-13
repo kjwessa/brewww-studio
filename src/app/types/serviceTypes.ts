@@ -1,4 +1,5 @@
-export interface Service {
+export interface ServiceData {
+  published: boolean;
   id: string;
   pageTitle: string;
   slug: string;

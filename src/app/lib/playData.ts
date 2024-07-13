@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-export interface PlayProject {
+export interface PlayData {
   id: string;
   title: string;
   slug: string;
@@ -25,14 +25,14 @@ export interface PlayProject {
   tags?: string[];
 }
 
-export function getPlayProjects(): PlayProject[] {
+export function getPlayProjects(): PlayData[] {
   const playProjectsDirectory = path.join(process.cwd(), "src/app/data/play");
   const fileNames = fs.readdirSync(playProjectsDirectory);
 
   const allPlayProjects = fileNames.map((fileName) => {
     const filePath = path.join(playProjectsDirectory, fileName);
     const fileContents = fs.readFileSync(filePath, "utf-8");
-    return JSON.parse(fileContents) as PlayProject;
+    return JSON.parse(fileContents) as PlayData;
   });
 
   return allPlayProjects;

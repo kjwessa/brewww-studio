@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
-import { Service } from "@/types/serviceTypes";
+import { ServiceData } from "@/types/serviceTypes";
 
-export function getServiceData(): Service[] {
+export function getServiceData(): ServiceData[] {
   const serviceDataDirectory = path.join(
     process.cwd(),
     "src/app/data/services",
@@ -12,7 +12,7 @@ export function getServiceData(): Service[] {
   const allServicePages = fileNames.map((fileName) => {
     const filePath = path.join(serviceDataDirectory, fileName);
     const fileContents = fs.readFileSync(filePath, "utf-8");
-    return JSON.parse(fileContents) as Service;
+    return JSON.parse(fileContents) as ServiceData;
   });
 
   return allServicePages;
