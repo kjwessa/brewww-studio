@@ -8,13 +8,6 @@ export async function generateStaticParams() {
 }
 
 //* HeroSection
-interface HeroSectionProps {
-  service: {
-    pageTitle: string;
-    featImg: string;
-    featImgAlt: string;
-  };
-}
 
 const HeroSection = ({ service }: HeroSectionProps) => {
   return (
