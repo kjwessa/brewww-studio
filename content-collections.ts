@@ -13,6 +13,7 @@ const posts = defineCollection({
     preamble: z.string().optional(),
     featuredImg: z.string(),
     featuredImgAlt: z.string(),
+    readTime: z.number(),
     categories: z.array(z.string()),
   }),
   transform: async (document, context) => {
