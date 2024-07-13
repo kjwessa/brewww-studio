@@ -1,9 +1,13 @@
 const fs = require("fs");
 const path = require("path");
 
+const pageConfig = {
+  home: { changefreq: "weekly", priority: 1.0 },
+};
+
 function generateSitemap() {
   const baseUrl = "https://brewww.studio";
-  const staticPages = ["/"];
+  const staticPages = [{ url: "/", config: pageConfig.home }];
 
   const pages = [...staticPages];
 
@@ -13,9 +17,9 @@ function generateSitemap() {
       .map(
         (page) => `
       <url>
-        <loc>${baseUrl}${page}</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <loc>${baseUrl}${page.url}</loc>
+        <changefreq>${page.config.changefreq}</changefreq>
+        <priority>${page.config.priority}</priority>
       </url>
     `,
       )

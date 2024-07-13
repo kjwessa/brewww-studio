@@ -3,8 +3,8 @@
     
       <url>
         <loc>https://brewww.studio/</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <changefreq>weekly</changefreq>
+        <priority>1</priority>
       </url>
     
   </urlset>
