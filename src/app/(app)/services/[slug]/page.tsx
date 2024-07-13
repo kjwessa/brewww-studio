@@ -1,7 +1,6 @@
 import { getServiceData } from "@/app/lib/serviceData";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { HeroSection as HeroSectionTypes } from "@/app/types/serviceTypes";
 
 export async function generateStaticParams() {
   const services = getServiceData();
@@ -10,7 +9,11 @@ export async function generateStaticParams() {
 
 //* HeroSection
 interface HeroSectionProps {
-  service: HeroSectionTypes;
+  service: {
+    pageTitle: string;
+    featImg: string;
+    featImgAlt: string;
+  };
 }
 
 const HeroSection = ({ service }: HeroSectionProps) => {
@@ -43,6 +46,41 @@ const HeroSection = ({ service }: HeroSectionProps) => {
   );
 };
 
+//* Intro Section
+interface IntroSectionProps {
+  service: {
+    introSection: {
+      headline: string;
+      description: string;
+    };
+  };
+}
+
+const IntroSection = ({ service }: IntroSectionProps) => {
+  return (
+    <section className="px-16 pt-20">
+      <div className="m-auto w-full max-w-[120.00rem]">
+        <div className="flex" id="div-1">
+          <div
+            className="flex w-[55%] flex-col pr-[calc(min(6vw,_115px)_*_2)] text-3xl font-bold uppercase"
+            id="div-2"
+          >
+            <h2 className="overflow-hidden">
+              <div className="">
+                <h2>{service.introSection.headline}</h2>
+              </div>
+            </h2>
+          </div>
+
+          <div className="flex w-[45%] flex-col" id="div-3">
+            <p>{service.introSection.description}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export default function ServicePage({ params }: { params: { slug: string } }) {
   const services = getServiceData();
   const service = services.find((s) => s.slug === params.slug);
@@ -54,27 +92,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
   return (
     <div className="bg-white pt-24 text-black">
       <HeroSection service={service} />
-
-      <section className="px-16 pt-20">
-        <div className="m-auto w-full max-w-[120.00rem]">
-          <div className="flex" id="div-1">
-            <div
-              className="flex w-[55%] flex-col pr-[calc(min(6vw,_115px)_*_2)] text-3xl font-bold uppercase"
-              id="div-2"
-            >
-              <h2 className="overflow-hidden">
-                <div className="">
-                  <h2>{}</h2>
-                </div>
-              </h2>
-            </div>
-
-            <div className="flex w-[45%] flex-col" id="div-3">
-              <p>{}</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <IntroSection service={service} />
     </div>
   );
 }
