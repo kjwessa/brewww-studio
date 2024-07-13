@@ -21,8 +21,8 @@ export function ThinkBody() {
                   title={post.title}
                   publishedAt={post.publishedAt}
                   categories={post.categories ?? []}
-                  image={post.featuredImg}
-                  alt={post.featuredImgAlt}
+                  image={post.featImg}
+                  alt={post.featImgAlt}
                   slug={post.slug}
                   readTime={post.readTime}
                 />

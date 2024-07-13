@@ -11,13 +11,14 @@ const posts = defineCollection({
     publishedAt: z.string(),
     description: z.string(),
     preamble: z.string().optional(),
-    featuredImg: z.string(),
-    featuredImgAlt: z.string(),
+    featImg: z.string(),
+    featImgAlt: z.string(),
     readTime: z.number(),
     categories: z.array(z.string()),
   }),
   transform: async (document, context) => {
     const mdx = await compileMDX(context, document);
+
     return {
       ...document,
       mdx,
