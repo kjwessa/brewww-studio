@@ -1,6 +1,5 @@
-const fs = require("fs");
-const path = require("path");
-import { getWorkProjects } from "./src/app/lib/getWorkProjects";
+import fs from "fs";
+import path from "path";
 
 const pageConfig = {
   home: { changefreq: "weekly", priority: 1.0 },
@@ -11,7 +10,6 @@ function generateSitemap() {
   const staticPages = [{ url: "/", config: pageConfig.home }];
 
   const pages = [...staticPages];
-  console.log(getWorkProjects());
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
