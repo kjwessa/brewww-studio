@@ -1,3 +1,5 @@
+import { ImpactCard } from "@/app/components/ImpactCard";
+
 export function ServicesImpact() {
   return (
     <>
