@@ -11,7 +11,7 @@ export function ServiceCard({
 }: ServiceCardProps) {
   return (
     <div>
-      <h2 className="mb-3 text-4xl font-bold uppercase">{title}</h2>
+      <h2 className="mb-3 text-3xl font-bold uppercase">{title}</h2>
       <div>
         <div className="relative h-32 w-full pb-[66%]">
           <Image
