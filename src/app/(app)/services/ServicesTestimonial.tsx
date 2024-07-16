@@ -2,7 +2,6 @@ import { TestimonialCard } from "@/app/components/TestimonialCard";
 import { getTestimonialData } from "@/lib/testimonialData";
 export function ServicesTestimonial() {
   const allTestimonials = getTestimonialData();
-  console.log(allTestimonials);
   const testimonial = allTestimonials.find((t) => t.id === "TX-AZL");
 
   if (!testimonial) {
