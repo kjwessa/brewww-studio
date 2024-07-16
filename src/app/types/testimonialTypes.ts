@@ -12,6 +12,6 @@ export interface TestimonialCard {
   published: boolean;
   client: string;
   name: string;
-  callout: string;
+  callout?: string;
   full: string;
 }
