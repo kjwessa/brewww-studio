@@ -18,7 +18,7 @@ export function TestimonialCard({
         {callout && (
           <h2 className="text-4xl font-bold uppercase">{`"${callout}"`}</h2>
         )}
-        <p className="p-8">{`"${full}"`}</p>
+        <p className="whitespace-pre-line p-8">{`"${full}"`}</p>
         <p className="text-base font-semibold">{name}</p>
         <p className="text-base"> {client}</p>
       </div>
