@@ -9,7 +9,7 @@ export function ServicesTestimonial() {
   }
 
   return (
-    <section className="border-t-2 border-solid border-stone-950 bg-white px-16 py-32 text-center text-stone-950">
+    <section className="bg-white px-16 py-32 text-center text-stone-950">
       <TestimonialCard {...testimonial} />
     </section>
   );
