@@ -3,13 +3,13 @@ import { twMerge } from "tailwind-merge";
 
 interface LinkMainProps {
   text: string;
-  href: string;
+  link: string;
   showArrow?: boolean;
   size?: "large" | "medium" | "small";
 }
 export function LinkMain({
   text,
-  href,
+  link,
   showArrow = true,
   size = "medium",
 }: LinkMainProps) {
@@ -20,7 +20,7 @@ export function LinkMain({
 
   return (
     <>
-      <Link className={linkClass} href={href}>
+      <Link className={linkClass} href={link}>
         <span className="flex cursor-pointer items-center">
           <span>{text}</span>
           {showArrow && (
