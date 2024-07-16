@@ -41,4 +41,6 @@ export interface ServiceCard {
   image: string;
   imageAlt: string;
   slug: string;
+  title: string;
+  description: string;
 }

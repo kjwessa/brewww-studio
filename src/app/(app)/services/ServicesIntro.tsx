@@ -11,6 +11,8 @@ export function ServicesIntro() {
           image={service.featImg}
           imageAlt={service.featImgAlt}
           slug={service.slug}
+          title={service.card.cardTitle}
+          description={service.card.cardDescription}
         />
       ))}
     </section>

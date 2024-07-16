@@ -4,13 +4,13 @@
   "published": true,
   "featImg": "/images/macbook-opening-lid.1920.jpg",
   "featImgAlt": "",
-  "pageHero": {
-    "heroTitle": "Content creation & craft illustrations",
-    "heroNumber": "03/03"
-  },
   "card": {
     "cardTitle": "Websites",
     "cardDescription": "In the digital realm, we craft immersive online experiences that captivate and convert. Our websites are more than just pretty interfaces; theyre strategic tools designed to engage your audience and drive meaningful action."
+  },
+  "pageHero": {
+    "heroTitle": "Content creation & craft illustrations",
+    "heroNumber": "03/03"
   },
   "pageIntro": {
     "introTitle": "Unleashing the kinetic power of content.",
