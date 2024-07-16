@@ -14,7 +14,6 @@ export default function Page() {
       <LineFull />
       <ServicesSpecialty />
       <ServicesImpact />
-      <LineFull />
       <ServicesROI />
       <LineFull />
       <ServicesTestimonial />

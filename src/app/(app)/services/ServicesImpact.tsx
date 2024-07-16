@@ -4,7 +4,7 @@ export function ServicesImpact() {
   return (
     <>
       <div className="bg-white text-stone-950">
-        <div className="mx-auto w-full max-w-6xl px-8 py-12">
+        <div className="mx-auto w-full max-w-6xl px-8 py-24">
           <div className="text-2xl font-medium">Impact & Results</div>
           <div className="grid grid-cols-3 gap-8 pt-12">
             <ImpactCard
