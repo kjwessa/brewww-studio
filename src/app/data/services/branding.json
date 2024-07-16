@@ -2,7 +2,7 @@
   "id": "branding",
   "slug": "branding",
   "published": true,
-  "featImg": "@/images/branding-books.1920.jpg",
+  "featImg": "/images/branding-books.1920.jpg",
   "featImgAlt": "",
   "card": {
     "cardTitle": "Branding",

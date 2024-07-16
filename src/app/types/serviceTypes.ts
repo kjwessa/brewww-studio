@@ -36,3 +36,9 @@ export interface ServicePageIntro {
     introDescription: string;
   };
 }
+
+export interface ServiceCard {
+  image: string;
+  imageAlt: string;
+  slug: string;
+}
