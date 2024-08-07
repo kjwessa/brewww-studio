@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,20 +23,52 @@
       }
     ],
     "paths": {
-      "@/*": ["src/*"],
-      "@/app/*": ["src/app/*"],
-      "@/components/*": ["src/app/components/*"],
-      "@/data/*": ["src/app/data/*"],
-      "@/images/*": ["./public/images/*"],
-      "@/lib/*": ["src/app/lib/*"],
-      "@/public/*": ["./public/*"],
-      "@/styles/*": ["src/app/styles/*"],
-      "@/types/*": ["src/app/types/*"],
-      "@/utils/*": ["src/app/utils/*"],
-      "content-collections": ["./.content-collections/generated"]
+      "@/*": [
+        "src/*"
+      ],
+      "@/app/*": [
+        "src/app/*"
+      ],
+      "@/components/*": [
+        "src/app/components/*"
+      ],
+      "@/data/*": [
+        "src/app/data/*"
+      ],
+      "@/images/*": [
+        "./public/images/*"
+      ],
+      "@/lib/*": [
+        "src/app/lib/*"
+      ],
+      "@/public/*": [
+        "./public/*"
+      ],
+      "@/styles/*": [
+        "src/app/styles/*"
+      ],
+      "@/types/*": [
+        "src/app/types/*"
+      ],
+      "@/utils/*": [
+        "src/app/utils/*"
+      ],
+      "content-collections": [
+        "./.content-collections/generated"
+      ],
+      "@payload-config": [
+        "./src/payload.config.ts"
+      ]
     },
     "target": "ES2017"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
