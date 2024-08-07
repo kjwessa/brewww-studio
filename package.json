@@ -12,6 +12,7 @@
     "clean": "rm -rf .next/ && rm -rf node_modules/ && pnpm install"
   },
   "dependencies": {
+    "@payloadcms/live-preview-react": "3.0.0-beta.67",
     "@payloadcms/db-postgres": "3.0.0-beta.74",
     "@payloadcms/next": "3.0.0-beta.74",
     "@payloadcms/plugin-cloud": "3.0.0-beta.74",
