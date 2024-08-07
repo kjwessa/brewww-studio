@@ -15,6 +15,7 @@
     "@payloadcms/live-preview-react": "3.0.0-beta.67",
     "@payloadcms/db-postgres": "3.0.0-beta.74",
     "@payloadcms/next": "3.0.0-beta.74",
+    "@payloadcms/plugin-form-builder": "3.0.0-beta.67",
     "@payloadcms/plugin-cloud": "3.0.0-beta.74",
     "@payloadcms/richtext-lexical": "3.0.0-beta.74",
     "@tailwindcss/typography": "^0.5.13",
