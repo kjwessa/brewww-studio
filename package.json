@@ -20,6 +20,7 @@
     "@payloadcms/plugin-cloud": "3.0.0-beta.74",
     "@payloadcms/richtext-lexical": "3.0.0-beta.74",
     "@payloadcms/plugin-redirects": "3.0.0-beta.74",
+    "@payloadcms/plugin-seo": "3.0.0-beta.74",
     "@tailwindcss/typography": "^0.5.13",
     "@vercel/speed-insights": "^1.0.12",
     "graphql": "^16.9.0",
