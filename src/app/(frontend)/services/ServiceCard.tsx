@@ -23,7 +23,6 @@ export function ServiceCard({
         </div>
       </div>
       <p className="py-3 text-base">{description}</p>
-
       <LinkMain text="Learn More" link={`/services/${slug}`} size="medium" />
     </div>
   );
