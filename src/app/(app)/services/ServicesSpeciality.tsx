@@ -4,7 +4,7 @@ export function ServicesSpecialty() {
   return (
     <>
       <div className="bg-white text-stone-950">
-        <div className="grid min-h-[40rem] grid-cols-2 border-t-2 border-solid border-stone-950">
+        <div className="grid min-h-[40rem] grid-cols-2">
           <div className="flex flex-col justify-center px-12 py-24">
             <h2 className="pb-4 text-[3.13rem] leading-none">Our Specialty</h2>
             <p>
@@ -23,7 +23,7 @@ export function ServicesSpecialty() {
             />
           </div>
         </div>
-        <div className="grid min-h-[40rem] grid-cols-2 border-t-2 border-solid border-stone-950">
+        <div className="grid min-h-[40rem] grid-cols-2">
           <div className="relative flex flex-col justify-center px-24 py-16 opacity-[0.9501] blur-[0px]">
             <Image
               src="/images/broken-glass-light.1920.jpg"

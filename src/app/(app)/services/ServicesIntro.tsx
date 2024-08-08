@@ -4,7 +4,7 @@ import { ServiceCard } from "./ServiceCard";
 export function ServicesIntro() {
   const services = getServiceData();
   return (
-    <section className="bg-white px-8 py-12 text-stone-950">
+    <section className="bg-white px-8 py-20 text-stone-950">
       <div className="max-w-8xl container mx-auto">
         <h2 className="mb-16 text-4xl font-bold uppercase">
           <span className="mr-4 pb-4 text-base">Our Speciality</span>A Cleveland
