@@ -1,9 +1,9 @@
-import { getWorkProjects } from "@/app/lib/getWorkProjects";
+import { workProjects } from "@/app/lib/workData";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
 export async function generateStaticParams() {
-  const projects = getWorkProjects();
+  const projects = workProjects();
   return projects.map((project) => ({
     slug: project.slug,
   }));
@@ -14,7 +14,7 @@ export default function WorkProjectPage({
 }: {
   params: { slug: string };
 }) {
-  const projects = getWorkProjects();
+  const projects = workProjects();
   const project = projects.find((p) => p.slug === params.slug);
   if (!project) {
     notFound();

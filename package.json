@@ -1,11 +1,12 @@
 {
   "name": "brewww-studio",
   "version": "0.2.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "tsc && node generate-sitemap.mjs",
+    "postbuild": "tsc && node generate-sitemap.js",
     "tsc": "tsc",
     "start": "next start",
     "lint": "next lint",

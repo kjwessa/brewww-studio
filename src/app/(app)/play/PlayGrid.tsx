@@ -1,4 +1,4 @@
-import { getPlayProjects } from "@/app/lib/playProjects";
+import { getPlayProjects } from "@/app/lib/playData";
 import { PlayCard } from "@/app/components/PlayCard";
 
 export function PlayGrid() {

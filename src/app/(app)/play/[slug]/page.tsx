@@ -1,4 +1,4 @@
-import { getPlayProjects } from "@/app/lib/playProjects";
+import { getPlayProjects } from "@/app/lib/playData";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {

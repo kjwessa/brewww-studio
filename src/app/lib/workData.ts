@@ -26,7 +26,7 @@ export interface WorkProject {
   }[];
 }
 
-export function getWorkProjects(): WorkProject[] {
+export function workProjects(): WorkProject[] {
   const workProjectsDirectory = path.join(process.cwd(), "src/app/data/work");
   const fileNames = fs.readdirSync(workProjectsDirectory);
 
