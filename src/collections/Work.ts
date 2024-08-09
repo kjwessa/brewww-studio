@@ -6,13 +6,14 @@ export const Work: CollectionConfig = {
     useAsTitle: "name",
   },
   fields: [
-    { name: "name", type: "text", label: "Name", required: false },
+    { name: "name", type: "text", label: "Name", required: true },
     {
       name: "slug",
       type: "text",
       label: "Slug",
-      required: false,
+      required: true,
       admin: { position: "sidebar" },
     },
+    {name: "thumbnail", type: "upload", label: "Thumbnail", required: true, relationTo: "media", admin: {description: "This image appears on the WorkCard thumbnail images."}}
   ],
 };
