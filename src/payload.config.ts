@@ -7,6 +7,7 @@ import sharp from "sharp";
 import { s3Storage } from "@payloadcms/storage-s3";
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
+import { Work } from "./collections/Work";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -51,7 +52,7 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  collections: [Users, Media],
+  collections: [Users, Media, Work],
   editor: lexicalEditor(),
   secret: PAYLOAD_SECRET || "",
   typescript: {
