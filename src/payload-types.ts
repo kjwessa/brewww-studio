@@ -17,7 +17,7 @@ export interface Config {
     'payload-migrations': PayloadMigration;
   };
   db: {
-    defaultIDType: number;
+    defaultIDType: string;
   };
   globals: {};
   locale: null;
@@ -48,9 +48,8 @@ export interface UserAuthOperations {
  * via the `definition` "users".
  */
 export interface User {
-  id: number;
-  first_name?: string | null;
-  last_name?: string | null;
+  id: string;
+  name?: string | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -67,8 +66,9 @@ export interface User {
  * via the `definition` "media".
  */
 export interface Media {
-  id: number;
-  alt: string;
+  id: string;
+  alt?: string | null;
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -86,10 +86,10 @@ export interface Media {
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: number;
+  id: string;
   user: {
     relationTo: 'users';
-    value: number | User;
+    value: string | User;
   };
   key?: string | null;
   value?:
@@ -109,7 +109,7 @@ export interface PayloadPreference {
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: number;
+  id: string;
   name?: string | null;
   batch?: number | null;
   updatedAt: string;
