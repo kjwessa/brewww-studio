@@ -14,6 +14,7 @@ export interface Config {
     users: User;
     media: Media;
     work: Work;
+    clients: Client;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -88,8 +89,19 @@ export interface Media {
  */
 export interface Work {
   id: string;
+  name: string;
+  slug: string;
+  thumbnail: string | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "clients".
+ */
+export interface Client {
+  id: string;
   name?: string | null;
-  slug?: string | null;
   updatedAt: string;
   createdAt: string;
 }
