@@ -24,29 +24,28 @@ if (!DATABASE_URI) {
   throw new Error("DATABASE_URI environment variable is not defined");
 }
 
-const S3_BUCKET = process.env.S3_BUCKET;
-if (!S3_BUCKET) {
-  throw new Error("S3_BUCKET environment variable is not defined");
+const CLOUDFLARE_BUCKET = process.env.CLOUDFLARE_BUCKET;
+if (!CLOUDFLARE_BUCKET) {
+  throw new Error("CLOUDFLARE_BUCKET environment variable is not defined");
 }
 
-const S3_ACCESS_KEY_ID = process.env.S3_ACCESS_KEY_ID;
-if (!S3_ACCESS_KEY_ID) {
-  throw new Error("S3_ACCESS_KEY_ID environment variable is not defined");
+const CLOUDFLARE_ACCESS_KEY_ID = process.env.CLOUDFLARE_ACCESS_KEY_ID;
+if (!CLOUDFLARE_ACCESS_KEY_ID) {
+  throw new Error(
+    "CLOUDFLARE_ACCESS_KEY_ID environment variable is not defined",
+  );
 }
 
-const S3_SECRET_ACCESS_KEY = process.env.S3_SECRET_ACCESS_KEY;
-if (!S3_SECRET_ACCESS_KEY) {
-  throw new Error("S3_SECRET_ACCESS_KEY environment variable is not defined");
+const CLOUDFLARE_SECRET_ACCESS_KEY = process.env.CLOUDFLARE_SECRET_ACCESS_KEY;
+if (!CLOUDFLARE_SECRET_ACCESS_KEY) {
+  throw new Error(
+    "CLOUDFLARE_SECRET_ACCESS_KEY environment variable is not defined",
+  );
 }
 
-const S3_REGION = process.env.S3_REGION;
-if (!S3_REGION) {
-  throw new Error("S3_REGION environment variable is not defined");
-}
-
-const S3_ENDPOINT = process.env.S3_ENDPOINT;
-if (!S3_ENDPOINT) {
-  throw new Error("S3_ENDPOINT environment variable is not defined");
+const CLOUDFLARE_ENDPOINT = process.env.CLOUDFLARE_ENDPOINT;
+if (!CLOUDFLARE_ENDPOINT) {
+  throw new Error("CLOUDFLARE_ENDPOINT environment variable is not defined");
 }
 
 export default buildConfig({
@@ -70,14 +69,14 @@ export default buildConfig({
           prefix: "media",
         },
       },
-      bucket: S3_BUCKET,
+      bucket: CLOUDFLARE_BUCKET,
       config: {
         credentials: {
-          accessKeyId: S3_ACCESS_KEY_ID,
-          secretAccessKey: S3_SECRET_ACCESS_KEY,
+          accessKeyId: CLOUDFLARE_ACCESS_KEY_ID,
+          secretAccessKey: CLOUDFLARE_SECRET_ACCESS_KEY,
         },
-        region: S3_REGION,
-        endpoint: S3_ENDPOINT,
+        region: "auto",
+        endpoint: CLOUDFLARE_ENDPOINT,
         forcePathStyle: true,
       },
     }),
