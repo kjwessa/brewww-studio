@@ -15,6 +15,7 @@ export interface Config {
     media: Media;
     work: Work;
     clients: Client;
+    posts: Post;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -102,6 +103,20 @@ export interface Work {
 export interface Client {
   id: string;
   name?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts".
+ */
+export interface Post {
+  id: string;
+  name?: string | null;
+  description?: string | null;
+  imageMain?: string | Media | null;
+  slug?: string | null;
+  postedOn?: string | null;
   updatedAt: string;
   createdAt: string;
 }
