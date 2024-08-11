@@ -1,3 +1,4 @@
+import { relationship } from "node_modules/payload/dist/fields/validations";
 import type { CollectionConfig } from "payload";
 
 export const BlogPosts: CollectionConfig = {
@@ -16,7 +17,7 @@ export const BlogPosts: CollectionConfig = {
       },
     },
     {
-      name: "description",
+      name: "seoDescription",
       type: "text",
       label: "Meta Description",
       required: false,
@@ -53,6 +54,31 @@ export const BlogPosts: CollectionConfig = {
         date: {
           displayFormat: "dayAndTime",
         },
+      },
+    },
+    {
+      name: "seoKeywords",
+      type: "text",
+      label: "Keywords",
+      required: false,
+      admin: {
+        description: "Add some cool keywords here",
+      },
+    },
+    {
+      name: "category",
+      type: "relationship",
+      relationTo: "categories",
+      label: "Category",
+      required: false,
+    },
+    {
+      name: "content",
+      type: "richText",
+      label: "Main Content",
+      required: false,
+      admin: {
+        description: "Add some cool content here.",
       },
     },
   ],
