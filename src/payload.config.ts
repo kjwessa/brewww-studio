@@ -9,6 +9,8 @@ import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Work } from "./collections/Work";
 import { Clients } from "./collections/Clients";
+import { BlogPosts } from "./collections/BlogPosts";
+import { BlogCategories } from "./collections/BlogCategories";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -52,7 +54,7 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  collections: [Users, Media, Work, Clients],
+  collections: [Users, Media, Work, Clients, BlogPosts, BlogCategories],
   editor: lexicalEditor(),
   secret: PAYLOAD_SECRET || "",
   typescript: {
