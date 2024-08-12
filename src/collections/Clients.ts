@@ -13,6 +13,8 @@ export const Clients: CollectionConfig = {
       name: "name",
       type: "text",
       label: "Name",
+      required: true,
+      admin: { description: "Add the client name here." },
     },
   ],
 };

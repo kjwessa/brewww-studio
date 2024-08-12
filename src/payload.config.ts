@@ -5,6 +5,7 @@ import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
 import { s3Storage } from "@payloadcms/storage-s3";
+import { seoPlugin } from "@payloadcms/plugin-seo";
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Work } from "./collections/Work";
@@ -12,6 +13,7 @@ import { Clients } from "./collections/Clients";
 import { BlogPosts } from "./collections/BlogPosts";
 import { BlogCategories } from "./collections/BlogCategories";
 import { Services } from "./collections/Services";
+import { Testimonials } from "./collections/Testimonials";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -63,6 +65,7 @@ export default buildConfig({
     Clients,
     BlogPosts,
     BlogCategories,
+    Testimonials,
   ],
   editor: lexicalEditor(),
   secret: PAYLOAD_SECRET || "",
@@ -89,6 +92,15 @@ export default buildConfig({
         region: "auto",
         endpoint: CLOUDFLARE_ENDPOINT,
         forcePathStyle: true,
+      },
+    }),
+    seoPlugin({
+      collections: ["work", "posts"],
+      uploadsCollection: "media",
+      fieldOverrides: {
+        title: { required: false },
+        description: { required: false },
+        image: { required: false },
       },
     }),
   ],

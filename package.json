@@ -25,10 +25,10 @@
     "@tailwindcss/typography": "^0.5.14",
     "@vercel/speed-insights": "^1.0.12",
     "graphql": "^16.9.0",
-    "next": "15.0.0-canary.58",
+    "next": "15.0.0-canary.111",
     "payload": "3.0.0-beta.77",
-    "react": "19.0.0-rc-6230622a1a-20240610",
-    "react-dom": "19.0.0-rc-6230622a1a-20240610",
+    "react": "19.0.0-rc-2d2cc042-20240809",
+    "react-dom": "19.0.0-rc-2d2cc042-20240809",
     "sharp": "^0.33.4",
     "tailwind-merge": "^2.4.0"
   },
