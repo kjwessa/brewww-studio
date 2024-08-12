@@ -187,6 +187,11 @@ export interface Post {
     };
     [k: string]: unknown;
   } | null;
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    image?: string | Media | null;
+  };
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
