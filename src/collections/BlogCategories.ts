@@ -2,6 +2,9 @@ import { CollectionConfig } from "payload";
 
 export const BlogCategories: CollectionConfig = {
   slug: "categories",
+  versions: {
+    drafts: true,
+  },
   admin: {
     useAsTitle: "name",
   },

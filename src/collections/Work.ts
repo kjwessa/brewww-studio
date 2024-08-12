@@ -2,6 +2,9 @@ import type { CollectionConfig } from "payload";
 
 export const Work: CollectionConfig = {
   slug: "work",
+  versions: {
+    drafts: true,
+  },
   admin: {
     useAsTitle: "name",
   },
@@ -14,6 +17,15 @@ export const Work: CollectionConfig = {
       required: true,
       admin: { position: "sidebar" },
     },
-    {name: "thumbnail", type: "upload", label: "Thumbnail", required: true, relationTo: "media", admin: {description: "This image appears on the WorkCard thumbnail images."}}
+    {
+      name: "thumbnail",
+      type: "upload",
+      label: "Thumbnail",
+      required: true,
+      relationTo: "media",
+      admin: {
+        description: "This image appears on the WorkCard thumbnail images.",
+      },
+    },
   ],
 };

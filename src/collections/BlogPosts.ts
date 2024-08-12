@@ -3,6 +3,9 @@ import type { CollectionConfig } from "payload";
 
 export const BlogPosts: CollectionConfig = {
   slug: "posts",
+  versions: {
+    drafts: true,
+  },
   admin: {
     useAsTitle: "name",
   },
@@ -77,9 +80,6 @@ export const BlogPosts: CollectionConfig = {
       type: "richText",
       label: "Main Content",
       required: false,
-      admin: {
-        description: "Add some cool content here.",
-      },
     },
   ],
 };

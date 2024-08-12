@@ -1,13 +1,18 @@
 import type { CollectionConfig } from "payload";
 
 export const Clients: CollectionConfig = {
-  slug: "clients", 
-  admin: {
-    useAsTitle: "name"
+  slug: "clients",
+  versions: {
+    drafts: true,
   },
-  fields: [{
-    name: "name", 
-    type: "text",
-    label: "Name"
-  }]
-}
+  admin: {
+    useAsTitle: "name",
+  },
+  fields: [
+    {
+      name: "name",
+      type: "text",
+      label: "Name",
+    },
+  ],
+};
