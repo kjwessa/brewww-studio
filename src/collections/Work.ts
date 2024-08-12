@@ -32,6 +32,7 @@ export const Work: CollectionConfig = {
       name: "testimonial",
       type: "relationship",
       relationTo: "testimonials",
+      hasMany: false,
       required: false,
       admin: {
         description: "If a testimonial exists, add it here.",
@@ -41,6 +42,7 @@ export const Work: CollectionConfig = {
       name: "client",
       type: "relationship",
       relationTo: "clients",
+      hasMany: false,
       required: true,
       admin: {
         description: "Add the connected client here. ",

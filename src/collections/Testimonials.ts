@@ -49,6 +49,7 @@ export const Testimonials: CollectionConfig = {
       name: "client",
       type: "relationship",
       relationTo: "clients",
+      hasMany: false,
       required: true,
     },
   ],
