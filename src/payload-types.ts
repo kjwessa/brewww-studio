@@ -14,6 +14,7 @@ export interface Config {
     users: User;
     media: Media;
     work: Work;
+    services: Service;
     clients: Client;
     posts: Post;
     categories: Category;
@@ -97,6 +98,17 @@ export interface Work {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "services".
+ */
+export interface Service {
+  id: string;
+  name: string;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
