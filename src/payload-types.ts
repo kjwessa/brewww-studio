@@ -18,6 +18,7 @@ export interface Config {
     clients: Client;
     posts: Post;
     categories: Category;
+    testimonials: Testimonial;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -116,7 +117,7 @@ export interface Service {
  */
 export interface Client {
   id: string;
-  name?: string | null;
+  name: string;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -164,6 +165,16 @@ export interface Category {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials".
+ */
+export interface Testimonial {
+  id: string;
+  name?: string | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
