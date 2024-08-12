@@ -98,6 +98,11 @@ export interface Work {
   thumbnail?: string | Media | null;
   testimonial?: (string | null) | Testimonial;
   client: string | Client;
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    image?: string | Media | null;
+  };
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
