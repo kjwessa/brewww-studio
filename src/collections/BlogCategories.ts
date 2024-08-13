@@ -9,12 +9,12 @@ export const BlogCategories: CollectionConfig = {
     useAsTitle: "name",
   },
   fields: [
-    { name: "name", type: "text", label: "Name", required: false },
+    { name: "name", type: "text", label: "Category Name", required: true },
     {
       name: "slug",
       type: "text",
       label: "Slug",
-      required: false,
+      required: true,
       admin: {
         position: "sidebar",
         description: "Add a cool slug here",

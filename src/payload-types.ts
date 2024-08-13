@@ -19,6 +19,8 @@ export interface Config {
     posts: Post;
     categories: Category;
     testimonials: Testimonial;
+    in: In;
+    results: Result;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -34,7 +36,6 @@ export interface Config {
 export interface UserAuthOperations {
   forgotPassword: {
     email: string;
-    password: string;
   };
   login: {
     email: string;
@@ -46,7 +47,6 @@ export interface UserAuthOperations {
   };
   unlock: {
     email: string;
-    password: string;
   };
 }
 /**
@@ -202,11 +202,31 @@ export interface Post {
  */
 export interface Category {
   id: string;
-  name?: string | null;
-  slug?: string | null;
+  name: string;
+  slug: string;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "in".
+ */
+export interface In {
+  id: string;
+  name?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "results".
+ */
+export interface Result {
+  id: string;
+  name?: string | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

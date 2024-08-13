@@ -55,7 +55,7 @@ export const BlogPosts: CollectionConfig = {
         description: "Add a cool date here",
         position: "sidebar",
         date: {
-          displayFormat: "dayAndTime",
+          pickerAppearance: "dayAndTime",
         },
       },
     },
