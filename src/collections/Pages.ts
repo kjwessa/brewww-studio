@@ -8,6 +8,9 @@ export const Pages: CollectionConfig = {
       label: "Name",
       type: "text",
       required: true,
+      admin: {
+        position: "sidebar",
+      },
     },
   ],
 };
