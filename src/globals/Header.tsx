@@ -3,7 +3,13 @@ import { GlobalConfig } from "payload/dist";
 export const Header: GlobalConfig = {
   slug: "header",
   fields: [
-    { name: "logo", type: "upload", relationTo: "media", label: "logo" },
+    {
+      name: "logo",
+      type: "upload",
+      relationTo: "media",
+      label: "logo",
+      required: false,
+    },
     {
       name: "nav",
       type: "array",

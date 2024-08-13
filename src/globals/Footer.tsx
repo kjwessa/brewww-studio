@@ -3,7 +3,13 @@ import { GlobalConfig } from "payload/dist";
 export const Footer: GlobalConfig = {
   slug: "footer",
   fields: [
-    { name: "logo", type: "upload", relationTo: "media", label: "logo" },
+    {
+      name: "logo",
+      type: "upload",
+      relationTo: "media",
+      label: "logo",
+      required: false,
+    },
     {
       name: "nav",
       type: "array",
