@@ -14,6 +14,7 @@ import { BlogPosts } from "./collections/BlogPosts";
 import { BlogCategories } from "./collections/BlogCategories";
 import { Services } from "./collections/Services";
 import { Testimonials } from "./collections/Testimonials";
+import { Location } from "./collections/Locations";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -66,6 +67,7 @@ export default buildConfig({
     BlogPosts,
     BlogCategories,
     Testimonials,
+    Location,
   ],
   editor: lexicalEditor(),
   secret: PAYLOAD_SECRET || "",
