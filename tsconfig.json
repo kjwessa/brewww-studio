@@ -39,6 +39,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
+    "src/app/keep-alive",
     "src/app/keep-alive"
   ],
   "exclude": ["node_modules"]
