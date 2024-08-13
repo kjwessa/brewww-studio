@@ -28,5 +28,12 @@ export const Pages: CollectionConfig = {
         description: "The slug goes here.",
       },
     },
+    {
+      name: "layout",
+      type: "blocks",
+      label: "Layout",
+      required: false,
+      blocks: [],
+    },
   ],
 };
