@@ -1,7 +1,7 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Footer } from "../components/Footer";
 import localFont from "next/font/local";
-import "./globals.css";
+import "@/styles/globals.css";
 import { Metadata } from "next";
 import { SEO_Config } from "./seo-config";
 

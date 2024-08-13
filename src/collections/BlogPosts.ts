@@ -14,18 +14,9 @@ export const BlogPosts: CollectionConfig = {
       name: "name",
       type: "text",
       label: "Name",
-      required: false,
+      required: true,
       admin: {
         description: "Add a cool name here",
-      },
-    },
-    {
-      name: "seoDescription",
-      type: "text",
-      label: "Meta Description",
-      required: false,
-      admin: {
-        description: "Add a cool description here. ",
       },
     },
     {
@@ -39,6 +30,18 @@ export const BlogPosts: CollectionConfig = {
       },
     },
     {
+      name: "postedOn",
+      type: "date",
+      required: true,
+      admin: {
+        description: "Add a cool date here",
+        position: "sidebar",
+        date: {
+          pickerAppearance: "dayAndTime",
+        },
+      },
+    },
+    {
       name: "slug",
       type: "text",
       label: "Slug",
@@ -49,31 +52,15 @@ export const BlogPosts: CollectionConfig = {
       },
     },
     {
-      name: "postedOn",
-      type: "date",
-      admin: {
-        description: "Add a cool date here",
-        position: "sidebar",
-        date: {
-          pickerAppearance: "dayAndTime",
-        },
-      },
-    },
-    {
-      name: "seoKeywords",
-      type: "text",
-      label: "Keywords",
-      required: false,
-      admin: {
-        description: "Add some cool keywords here",
-      },
-    },
-    {
       name: "category",
       type: "relationship",
       relationTo: "categories",
       label: "Category",
-      required: false,
+      required: true,
+      admin: {
+        position: "sidebar",
+        description: "Add the post category here. ",
+      },
     },
     {
       name: "content",

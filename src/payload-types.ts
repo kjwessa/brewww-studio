@@ -165,13 +165,11 @@ export interface Service {
  */
 export interface Post {
   id: string;
-  name?: string | null;
-  seoDescription?: string | null;
+  name: string;
   imageMain?: string | Media | null;
+  postedOn: string;
   slug?: string | null;
-  postedOn?: string | null;
-  seoKeywords?: string | null;
-  category?: (string | null) | Category;
+  category: string | Category;
   content?: {
     root: {
       type: string;
