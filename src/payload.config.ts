@@ -16,6 +16,9 @@ import { Services } from "./collections/Services";
 import { Testimonials } from "./collections/Testimonials";
 import { Location } from "./collections/Locations";
 import { Results } from "./collections/Results";
+import { Pages } from "./collections/Pages";
+import { Header } from "./globals/Header";
+import { Footer } from "./globals/Footer";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -62,6 +65,7 @@ export default buildConfig({
   collections: [
     Users,
     Media,
+    Pages,
     Work,
     Services,
     Clients,
@@ -71,6 +75,7 @@ export default buildConfig({
     Location,
     Results,
   ],
+  globals: [Header, Footer],
   editor: lexicalEditor(),
   secret: PAYLOAD_SECRET || "",
   typescript: {

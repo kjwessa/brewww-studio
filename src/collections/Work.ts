@@ -1,4 +1,3 @@
-import { describe } from "node:test";
 import type { CollectionConfig } from "payload";
 
 export const Work: CollectionConfig = {

@@ -1,7 +1,7 @@
 import type { CollectionConfig } from "payload";
 
-export const Services: CollectionConfig = {
-  slug: "services",
+export const Pages: CollectionConfig = {
+  slug: "pages",
   versions: {
     drafts: true,
   },
@@ -11,11 +11,11 @@ export const Services: CollectionConfig = {
   fields: [
     {
       name: "name",
-      type: "text",
       label: "Name",
+      type: "text",
       required: true,
       admin: {
-        description: "add a cool name here",
+        description: "The internal name of the page",
       },
     },
     {
@@ -24,9 +24,16 @@ export const Services: CollectionConfig = {
       label: "Slug",
       required: true,
       admin: {
-        description: "add a cool slug",
         position: "sidebar",
+        description: "The slug goes here.",
       },
+    },
+    {
+      name: "layout",
+      type: "blocks",
+      label: "Layout",
+      required: false,
+      blocks: [],
     },
   ],
 };
