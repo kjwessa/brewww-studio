@@ -1,4 +1,3 @@
-import { relationship } from "node_modules/payload/dist/fields/validations";
 import type { CollectionConfig } from "payload";
 
 export const BlogPosts: CollectionConfig = {

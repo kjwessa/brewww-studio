@@ -1,4 +1,4 @@
-import { GlobalConfig } from "payload/dist";
+import type { GlobalConfig } from "payload";
 
 export const Header: GlobalConfig = {
   slug: "header",
