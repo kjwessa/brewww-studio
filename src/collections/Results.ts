@@ -7,6 +7,7 @@ export const Results: CollectionConfig = {
       name: "name",
       type: "text",
       label: "Name",
+      required: true,
     },
   ],
 };
