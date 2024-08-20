@@ -9,6 +9,10 @@ export const Clients: CollectionConfig = {
   admin: {
     useAsTitle: "name",
   },
+  labels: {
+    singular: "Client",
+    plural: "Clients",
+  },
   fields: [
     {
       name: "name",

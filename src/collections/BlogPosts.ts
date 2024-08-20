@@ -9,6 +9,10 @@ export const BlogPosts: CollectionConfig = {
   admin: {
     useAsTitle: "name",
   },
+  labels: {
+    singular: "Post",
+    plural: "Posts",
+  },
   fields: [
     {
       name: "name",
