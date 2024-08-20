@@ -2,6 +2,13 @@ import type { CollectionConfig } from "payload";
 
 export const Results: CollectionConfig = {
   slug: "results",
+  versions: {
+    drafts: true,
+    maxPerDoc: 25,
+  },
+  admin: {
+    useAsTitle: "name",
+  },
   fields: [
     {
       name: "name",

@@ -4,6 +4,7 @@ export const Work: CollectionConfig = {
   slug: "work",
   versions: {
     drafts: true,
+    maxPerDoc: 25,
   },
   admin: {
     useAsTitle: "name",

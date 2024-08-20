@@ -4,6 +4,7 @@ export const Testimonials: CollectionConfig = {
   slug: "testimonials",
   versions: {
     drafts: true,
+    maxPerDoc: 25,
   },
   admin: {
     useAsTitle: "name",

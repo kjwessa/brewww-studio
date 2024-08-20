@@ -4,6 +4,7 @@ export const Pages: CollectionConfig = {
   slug: "pages",
   versions: {
     drafts: true,
+    maxPerDoc: 25,
   },
   admin: {
     useAsTitle: "name",
