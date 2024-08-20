@@ -1,18 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import { allPosts } from "content-collections";
-import { MDXContent } from "@content-collections/mdx/react";
+// import { allPosts } from "content-collections";
+// import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
 import { MetaDot } from "@/app/components/MetaDot";
 import { formatDate } from "@/app/utils/dateFormatter";
 import aboutImage from "/public/images/Aldridge-02665.1200-p-1080.jpeg";
 import aboutLogo from "/public/images/brand/brewww_mark.png";
 
-export async function generateStaticParams() {
-  return allPosts.map((post) => {
-    slug: post.slug;
-  });
-}
+// export async function generateStaticParams() {
+//   return allPosts.map((post) => {
+//     slug: post.slug;
+//   });
+// }
 
 //* HeroSection
 interface HeroSectionProps {
@@ -77,7 +77,7 @@ interface ArticleSectionProps {
 const ArticleSection = ({ post }: ArticleSectionProps) => {
   return (
     <article className="prose prose-lg mx-auto pb-24 pt-12">
-      <MDXContent code={post.content} />
+      {/* <MDXContent code={post.content} /> */}
     </article>
   );
 };
@@ -121,27 +121,27 @@ const AboutCard = () => {
 };
 
 //* Build the individual blog page
-export default async function Page({ params }: { params: { slug: string } }) {
-  // Fetch the post based on the slug
-  const post = allPosts.find((post) => post.slug === params.slug);
-  // Return 404 if no matching post slug is found
-  if (!post) {
-    notFound();
-  }
+// export default async function Page({ params }: { params: { slug: string } }) {
+//   // Fetch the post based on the slug
+//   // const post = allPosts.find((post) => post.slug === params.slug);
+//   // Return 404 if no matching post slug is found
+//   if (!post) {
+//     notFound();
+//   }
 
-  return (
-    <div className="bg-white pt-24 text-black">
-      <HeroSection post={post} />
-      <ImageSection post={post} />
-      <div className="grid grid-cols-3 pt-4">
-        <div></div>
-        <div className="mx-auto flex max-w-4xl flex-col justify-center py-4">
-          <ArticleSection post={post} />
-        </div>
-        <div className="flex flex-col content-center items-center justify-start pt-4">
-          <AboutCard />
-        </div>
-      </div>
-    </div>
-  );
-}
+//   return (
+//     <div className="bg-white pt-24 text-black">
+//       <HeroSection post={post} />
+//       <ImageSection post={post} />
+//       <div className="grid grid-cols-3 pt-4">
+//         <div></div>
+//         <div className="mx-auto flex max-w-4xl flex-col justify-center py-4">
+//           <ArticleSection post={post} />
+//         </div>
+//         <div className="flex flex-col content-center items-center justify-start pt-4">
+//           <AboutCard />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
