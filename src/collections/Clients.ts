@@ -4,6 +4,7 @@ export const Clients: CollectionConfig = {
   slug: "clients",
   versions: {
     drafts: true,
+    maxPerDoc: 25,
   },
   admin: {
     useAsTitle: "name",

@@ -4,7 +4,9 @@ export const BlogCategories: CollectionConfig = {
   slug: "categories",
   versions: {
     drafts: true,
+    maxPerDoc: 25,
   },
+
   admin: {
     useAsTitle: "name",
   },

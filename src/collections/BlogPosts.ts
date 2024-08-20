@@ -4,6 +4,7 @@ export const BlogPosts: CollectionConfig = {
   slug: "posts",
   versions: {
     drafts: true,
+    maxPerDoc: 25,
   },
   admin: {
     useAsTitle: "name",
