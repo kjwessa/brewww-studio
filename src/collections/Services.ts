@@ -9,6 +9,10 @@ export const Services: CollectionConfig = {
   admin: {
     useAsTitle: "name",
   },
+  labels: {
+    singular: "Service",
+    plural: "Services",
+  },
   fields: [
     {
       name: "name",

@@ -6,9 +6,12 @@ export const BlogCategories: CollectionConfig = {
     drafts: true,
     maxPerDoc: 25,
   },
-
   admin: {
     useAsTitle: "name",
+  },
+  labels: {
+    singular: "Category",
+    plural: "Categories",
   },
   fields: [
     { name: "name", type: "text", label: "Category Name", required: true },

@@ -9,6 +9,10 @@ export const Work: CollectionConfig = {
   admin: {
     useAsTitle: "name",
   },
+  labels: {
+    singular: "Work",
+    plural: "Works",
+  },
   fields: [
     { name: "name", type: "text", label: "Name", required: true },
     {
