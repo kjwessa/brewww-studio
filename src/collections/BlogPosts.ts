@@ -109,7 +109,13 @@ export const BlogPosts: CollectionConfig = {
   },
   admin: {
     useAsTitle: "name",
-    defaultColumns: ["name"],
+    defaultColumns: ["name", "postedOn", "updatedAt"],
+
+    pagination: {
+      defaultLimit: 25,
+      limits: [10, 25, 50, 100],
+    },
+    description: "Writing brings clarity.",
   },
   labels: {
     singular: "Post",

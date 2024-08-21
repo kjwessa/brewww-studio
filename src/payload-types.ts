@@ -208,6 +208,9 @@ export interface Play {
   name: string;
   slug?: string | null;
   thumbnail?: string | Media | null;
+  image?: string | Media | null;
+  title?: string | null;
+  description?: string | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
