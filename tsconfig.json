@@ -29,7 +29,6 @@
       "@/styles/*": ["src/styles/*"],
       "@/types/*": ["src/app/types/*"],
       "@/utils/*": ["src/app/utils/*"],
-      "content-collections": ["./.content-collections/generated"],
       "@payload-config": ["./src/payload.config.ts"]
     },
     "target": "ES2017"
