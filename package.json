@@ -9,6 +9,7 @@
     "postbuild": "node generate-sitemap.js",
     "start": "next start",
     "lint": "next lint",
+    "generate:importmap": "payload generate:importmap",
     "clean": "rm -rf .next/ && rm -rf node_modules/ && pnpm install"
   },
   "dependencies": {
@@ -36,7 +37,7 @@
     "react": "19.0.0-rc-06d0b89e-20240801",
     "react-dom": "19.0.0-rc-06d0b89e-20240801",
     "react-hook-form": "7.45.4",
-    "sharp": "0.32.6",
+    "sharp": "^0.33.4",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7"
   },
