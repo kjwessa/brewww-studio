@@ -19,6 +19,7 @@ import { Results } from "./collections/Results";
 import { Pages } from "./collections/Pages";
 import { Header } from "./globals/Header";
 import { Footer } from "./globals/Footer";
+import { Playground } from "./collections/Playground";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -63,17 +64,18 @@ export default buildConfig({
     user: Users.slug,
   },
   collections: [
-    Users,
     Media,
     Pages,
-    Work,
-    Services,
-    Clients,
     BlogPosts,
     BlogCategories,
+    Work,
+    Playground,
+    Services,
+    Clients,
     Testimonials,
     Location,
     Results,
+    Users,
   ],
   globals: [Header, Footer],
   editor: lexicalEditor(),
