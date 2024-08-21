@@ -2,17 +2,7 @@ import type { CollectionConfig } from "payload";
 
 export const Services: CollectionConfig = {
   slug: "services",
-  versions: {
-    drafts: true,
-    maxPerDoc: 25,
-  },
-  admin: {
-    useAsTitle: "name",
-  },
-  labels: {
-    singular: "Service",
-    plural: "Services",
-  },
+
   fields: [
     {
       name: "name",
@@ -34,4 +24,15 @@ export const Services: CollectionConfig = {
       },
     },
   ],
+  versions: {
+    drafts: true,
+    maxPerDoc: 25,
+  },
+  admin: {
+    useAsTitle: "name",
+  },
+  labels: {
+    singular: "Service",
+    plural: "Services",
+  },
 };

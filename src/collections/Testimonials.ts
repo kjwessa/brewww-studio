@@ -2,17 +2,6 @@ import type { CollectionConfig } from "payload";
 
 export const Testimonials: CollectionConfig = {
   slug: "testimonials",
-  versions: {
-    drafts: true,
-    maxPerDoc: 25,
-  },
-  admin: {
-    useAsTitle: "name",
-  },
-  labels: {
-    singular: "Testimonial",
-    plural: "Testimonials",
-  },
   fields: [
     {
       name: "name",
@@ -58,4 +47,15 @@ export const Testimonials: CollectionConfig = {
       required: true,
     },
   ],
+  versions: {
+    drafts: true,
+    maxPerDoc: 25,
+  },
+  admin: {
+    useAsTitle: "name",
+  },
+  labels: {
+    singular: "Testimonial",
+    plural: "Testimonials",
+  },
 };

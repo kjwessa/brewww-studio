@@ -2,6 +2,7 @@ import type { CollectionConfig } from "payload";
 
 export const Location: CollectionConfig = {
   slug: "in",
+  fields: [{ name: "name", type: "text", label: "Name" }],
   admin: {
     useAsTitle: "name",
   },
@@ -13,5 +14,4 @@ export const Location: CollectionConfig = {
     singular: "Location",
     plural: "Locations",
   },
-  fields: [{ name: "name", type: "text", label: "Name" }],
 };
