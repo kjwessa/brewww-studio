@@ -9,12 +9,12 @@ import {
 
 export const BlogPosts: CollectionConfig = {
   slug: "posts",
-
   fields: [
     {
       type: "tabs",
       tabs: [
         {
+          label: "Content",
           fields: [
             {
               name: "name",
@@ -42,10 +42,8 @@ export const BlogPosts: CollectionConfig = {
               required: false,
             },
           ],
-          label: "Content",
         },
         {
-          name: "meta",
           label: "SEO",
           fields: [
             OverviewField({
@@ -111,6 +109,7 @@ export const BlogPosts: CollectionConfig = {
   },
   admin: {
     useAsTitle: "name",
+    defaultColumns: ["name"],
   },
   labels: {
     singular: "Post",
