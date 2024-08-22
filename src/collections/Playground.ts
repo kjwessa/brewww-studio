@@ -2,17 +2,6 @@ import type { CollectionConfig } from "payload";
 
 export const Playground: CollectionConfig = {
   slug: "play",
-  versions: {
-    drafts: true,
-    maxPerDoc: 25,
-  },
-  admin: {
-    useAsTitle: "name",
-  },
-  labels: {
-    singular: "Playground",
-    plural: "Playgrounds",
-  },
   fields: [
     { name: "name", type: "text", label: "Name", required: true },
     {
@@ -33,4 +22,15 @@ export const Playground: CollectionConfig = {
       },
     },
   ],
+  versions: {
+    drafts: true,
+    maxPerDoc: 25,
+  },
+  admin: {
+    useAsTitle: "name",
+  },
+  labels: {
+    singular: "Playground",
+    plural: "Playgrounds",
+  },
 };

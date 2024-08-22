@@ -2,13 +2,6 @@ import type { CollectionConfig } from "payload";
 
 export const Pages: CollectionConfig = {
   slug: "pages",
-  versions: {
-    drafts: true,
-    maxPerDoc: 25,
-  },
-  admin: {
-    useAsTitle: "name",
-  },
   fields: [
     {
       name: "name",
@@ -37,4 +30,11 @@ export const Pages: CollectionConfig = {
       blocks: [],
     },
   ],
+  versions: {
+    drafts: true,
+    maxPerDoc: 25,
+  },
+  admin: {
+    useAsTitle: "name",
+  },
 };

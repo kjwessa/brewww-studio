@@ -68,6 +68,7 @@ export const BlogCategories: CollectionConfig = {
   },
   admin: {
     useAsTitle: "name",
+    defaultColumns: ["name"],
   },
   labels: {
     singular: "Category",

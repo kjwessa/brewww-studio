@@ -144,15 +144,13 @@ export interface Category {
 export interface Work {
   id: string;
   name: string;
-  slug?: string | null;
   thumbnail?: string | Media | null;
   testimonial?: (string | null) | Testimonial;
   client: string | Client;
-  meta?: {
-    title?: string | null;
-    description?: string | null;
-    image?: string | Media | null;
-  };
+  image?: string | Media | null;
+  title?: string | null;
+  description?: string | null;
+  slug?: string | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;

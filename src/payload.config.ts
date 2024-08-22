@@ -106,7 +106,6 @@ export default buildConfig({
       },
     }),
     seoPlugin({
-      collections: ["work"],
       uploadsCollection: "media",
       fieldOverrides: {
         title: { required: false },
