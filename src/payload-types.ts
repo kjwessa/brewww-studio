@@ -112,11 +112,9 @@ export interface Post {
     };
     [k: string]: unknown;
   } | null;
-  meta?: {
-    image?: string | Media | null;
-    title?: string | null;
-    description?: string | null;
-  };
+  image?: string | Media | null;
+  title?: string | null;
+  description?: string | null;
   slug?: string | null;
   postedOn: string;
   category: string | Category;
@@ -131,6 +129,9 @@ export interface Post {
 export interface Category {
   id: string;
   name: string;
+  image?: string | Media | null;
+  title?: string | null;
+  description?: string | null;
   slug: string;
   updatedAt: string;
   createdAt: string;
