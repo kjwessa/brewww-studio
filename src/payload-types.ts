@@ -206,11 +206,11 @@ export interface Client {
 export interface Play {
   id: string;
   name: string;
-  slug?: string | null;
   thumbnail?: string | Media | null;
   image?: string | Media | null;
   title?: string | null;
   description?: string | null;
+  slug?: string | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -311,7 +311,7 @@ export interface PayloadMigration {
  */
 export interface Header {
   id: string;
-  logo?: string | Media | null;
+  logo: string | Media;
   nav?:
     | {
         label?: string | null;
@@ -336,6 +336,7 @@ export interface Footer {
         id?: string | null;
       }[]
     | null;
+  copyrightNotice?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }

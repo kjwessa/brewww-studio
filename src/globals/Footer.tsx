@@ -15,9 +15,18 @@ export const Footer: GlobalConfig = {
       type: "array",
       label: "Navigation",
       fields: [
-        { name: "label", label: "Label", type: "text" },
-        { name: "link", label: "Link", type: "text" },
+        { name: "label", label: "Label", type: "text", required: false },
+        { name: "link", label: "Link", type: "text", required: false },
       ],
+    },
+    {
+      name: "copyrightNotice",
+      label: "Copyright Notice",
+      type: "text",
+      required: false,
+      admin: {
+        description: "Appears in the footer",
+      },
     },
   ],
 };
