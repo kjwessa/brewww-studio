@@ -1,36 +1,84 @@
 import type { CollectionConfig } from "payload";
+import {
+  MetaDescriptionField,
+  MetaImageField,
+  MetaTitleField,
+  OverviewField,
+  PreviewField,
+} from "@payloadcms/plugin-seo/fields";
 
 export const BlogPosts: CollectionConfig = {
   slug: "posts",
-  versions: {
-    drafts: true,
-    maxPerDoc: 25,
-  },
-  admin: {
-    useAsTitle: "name",
-  },
-  labels: {
-    singular: "Post",
-    plural: "Posts",
-  },
+
   fields: [
     {
-      name: "name",
-      type: "text",
-      label: "Name",
-      required: true,
-      admin: {
-        description: "Add a cool name here",
-      },
+      type: "tabs",
+      tabs: [
+        {
+          fields: [
+            {
+              name: "name",
+              type: "text",
+              label: "Post Title",
+              required: true,
+              admin: {
+                description: "Add a cool name here",
+              },
+            },
+            {
+              name: "imageMain",
+              type: "upload",
+              relationTo: "media",
+              label: "Main Image",
+              required: false,
+              admin: {
+                description: "Add a cool image here.",
+              },
+            },
+            {
+              name: "content",
+              type: "richText",
+              label: "Main Content",
+              required: false,
+            },
+          ],
+          label: "Content",
+        },
+        {
+          name: "meta",
+          label: "SEO",
+          fields: [
+            OverviewField({
+              titlePath: "meta.title",
+              descriptionPath: "meta.description",
+              imagePath: "meta.image",
+            }),
+            MetaImageField({
+              relationTo: "media",
+            }),
+            MetaTitleField({
+              hasGenerateFn: true,
+            }),
+            MetaDescriptionField({}),
+            PreviewField({
+              // if the `generateUrl` function is configured
+              hasGenerateFn: true,
+              // field paths to match the target field for data
+              titlePath: "meta.title",
+              descriptionPath: "meta.description",
+            }),
+          ],
+        },
+      ],
     },
     {
-      name: "imageMain",
-      type: "upload",
-      relationTo: "media",
-      label: "Main Image",
+      name: "slug",
+      type: "text",
+      label: "Slug",
       required: false,
       admin: {
-        description: "Add a cool image here.",
+        position: "sidebar",
+        description: "Add the slug here",
       },
     },
     {
@@ -46,16 +94,6 @@ export const BlogPosts: CollectionConfig = {
       },
     },
     {
-      name: "slug",
-      type: "text",
-      label: "Slug",
-      required: false,
-      admin: {
-        position: "sidebar",
-        description: "Add the slug here",
-      },
-    },
-    {
       name: "category",
       type: "relationship",
       relationTo: "categories",
@@ -66,11 +104,16 @@ export const BlogPosts: CollectionConfig = {
         description: "Add the post category here. ",
       },
     },
-    {
-      name: "content",
-      type: "richText",
-      label: "Main Content",
-      required: false,
-    },
   ],
+  versions: {
+    drafts: true,
+    maxPerDoc: 25,
+  },
+  admin: {
+    useAsTitle: "name",
+  },
+  labels: {
+    singular: "Post",
+    plural: "Posts",
+  },
 };

@@ -97,9 +97,6 @@ export interface Post {
   id: string;
   name: string;
   imageMain?: string | Media | null;
-  postedOn: string;
-  slug?: string | null;
-  category: string | Category;
   content?: {
     root: {
       type: string;
@@ -116,10 +113,13 @@ export interface Post {
     [k: string]: unknown;
   } | null;
   meta?: {
+    image?: string | Media | null;
     title?: string | null;
     description?: string | null;
-    image?: string | Media | null;
   };
+  slug?: string | null;
+  postedOn: string;
+  category: string | Category;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
