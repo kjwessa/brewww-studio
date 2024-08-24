@@ -17,8 +17,12 @@ export const Playground: CollectionConfig = {
         {
           label: "Content",
           fields: [
-            { name: "name", type: "text", label: "Name", required: true },
-
+            {
+              name: "name",
+              type: "text",
+              label: "Name",
+              required: true,
+            },
             {
               name: "thumbnail",
               type: "upload",
@@ -58,6 +62,7 @@ export const Playground: CollectionConfig = {
         },
       ],
     },
+
     {
       name: "slug",
       type: "text",
@@ -72,6 +77,7 @@ export const Playground: CollectionConfig = {
   },
   admin: {
     useAsTitle: "name",
+    defaultColumns: ["name", "updatedAt"],
   },
   labels: {
     singular: "Playground",
