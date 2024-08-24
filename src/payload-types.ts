@@ -62,7 +62,8 @@ export interface UserAuthOperations {
  */
 export interface Media {
   id: string;
-  alt?: string | null;
+  name?: string | null;
+  altText?: string | null;
   prefix?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -206,6 +207,7 @@ export interface Client {
 export interface Play {
   id: string;
   name: string;
+  shortPitch?: string | null;
   thumbnail?: string | Media | null;
   image?: string | Media | null;
   title?: string | null;

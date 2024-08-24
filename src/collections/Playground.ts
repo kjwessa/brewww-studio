@@ -24,6 +24,12 @@ export const Playground: CollectionConfig = {
               required: true,
             },
             {
+              name: "shortPitch",
+              type: "text",
+              label: "Short Pitch",
+              required: false,
+            },
+            {
               name: "thumbnail",
               type: "upload",
               label: "Thumbnail",
@@ -77,7 +83,11 @@ export const Playground: CollectionConfig = {
   },
   admin: {
     useAsTitle: "name",
-    defaultColumns: ["name", "updatedAt"],
+    defaultColumns: ["name", "shortPitch", "updatedAt"],
+    pagination: {
+      defaultLimit: 25,
+      limits: [25, 50],
+    },
   },
   labels: {
     singular: "Playground",
