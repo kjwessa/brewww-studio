@@ -16,10 +16,10 @@ export const Media: CollectionConfig = {
       required: false,
     },
   ],
-  // admin: { useAsTitle: "name", },
 
   access: {
     read: () => true,
   },
+
   upload: true,
 };

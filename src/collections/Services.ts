@@ -30,6 +30,13 @@ export const Services: CollectionConfig = {
   },
   admin: {
     useAsTitle: "name",
+    description: "How we help people.",
+    defaultColumns: ["name"],
+    listSearchableFields: ["name"],
+    pagination: {
+      defaultLimit: 25,
+      limits: [10, 25, 50],
+    },
   },
   labels: {
     singular: "Service",

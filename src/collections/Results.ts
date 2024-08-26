@@ -30,6 +30,7 @@ export const Results: CollectionConfig = {
   },
   admin: {
     useAsTitle: "name",
+    description: "The impact of our work",
   },
   labels: {
     singular: "Result",

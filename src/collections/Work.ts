@@ -93,7 +93,15 @@ export const Work: CollectionConfig = {
   },
   admin: {
     useAsTitle: "name",
+    description: "All we do is work, work, work.",
+    defaultColumns: ["name", "testimonial"],
+    listSearchableFields: ["name"],
+    pagination: {
+      defaultLimit: 25,
+      limits: [10, 25, 50],
+    },
   },
+  defaultSort: "name",
   labels: {
     singular: "Work",
     plural: "Works",
