@@ -1,4 +1,6 @@
 import type { CollectionConfig } from "payload";
+import { authenticated } from "@/payload/access/authenticated";
+import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
 
 import {
   MetaDescriptionField,
@@ -81,6 +83,12 @@ export const Playground: CollectionConfig = {
   ],
 
   //* Admin Settings
+  access: {
+    create: authenticated,
+    delete: authenticated,
+    read: authenticatedOrPublished,
+    update: authenticated,
+  },
   admin: {
     description: "Interior Brewww projects",
     defaultColumns: ["name", "updatedAt"],

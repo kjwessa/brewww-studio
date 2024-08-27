@@ -1,4 +1,6 @@
 import type { CollectionConfig } from "payload";
+import { authenticated } from "@/payload/access/authenticated";
+import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
 
 import {
   MetaDescriptionField,
@@ -90,7 +92,10 @@ export const Work: CollectionConfig = {
 
   //* Admin Settings
   access: {
-    read: () => true,
+    create: authenticated,
+    delete: authenticated,
+    read: authenticatedOrPublished,
+    update: authenticated,
   },
   admin: {
     useAsTitle: "name",

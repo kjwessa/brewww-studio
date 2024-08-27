@@ -25,6 +25,7 @@
       "@/data/*": ["src/app/data/*"],
       "@/images/*": ["./public/images/*"],
       "@/lib/*": ["src/app/lib/*"],
+      "@/access/*": ["src/payload/access"],
       "@/public/*": ["./public/*"],
       "@/styles/*": ["src/styles/*"],
       "@/types/*": ["src/app/types/*"],
