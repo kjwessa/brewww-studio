@@ -2,6 +2,8 @@ import type { CollectionConfig } from "payload";
 
 export const Clients: CollectionConfig = {
   slug: "clients",
+
+  //* Collection Fields
   fields: [
     {
       name: "name",
@@ -53,23 +55,29 @@ export const Clients: CollectionConfig = {
       },
     },
   ],
-  versions: {
-    drafts: true,
-    maxPerDoc: 25,
+
+  //* Admin Settings
+  access: {
+    read: () => true,
   },
   admin: {
-    useAsTitle: "name",
+    description: "Our bread and butter.",
     defaultColumns: ["name", "logoLight", "city", "state"],
-    // TODO figure out why pagination doesn't override local preferences
+    group: "Portfolio",
+    listSearchableFields: ["name", "city", "state"],
     pagination: {
       defaultLimit: 10,
       limits: [10, 20, 50],
     },
-    listSearchableFields: ["name", "city", "state"],
+    useAsTitle: "name",
   },
-  defaultSort: "-city",
+  defaultSort: "name",
   labels: {
     singular: "Client",
     plural: "Clients",
+  },
+  versions: {
+    drafts: true,
+    maxPerDoc: 25,
   },
 };

@@ -87,14 +87,16 @@ export const Work: CollectionConfig = {
       admin: { position: "sidebar" },
     },
   ],
-  versions: {
-    drafts: true,
-    maxPerDoc: 25,
+
+  //* Admin Settings
+  access: {
+    read: () => true,
   },
   admin: {
     useAsTitle: "name",
     description: "All we do is work, work, work.",
     defaultColumns: ["name", "testimonial"],
+    group: "Portfolio",
     listSearchableFields: ["name"],
     pagination: {
       defaultLimit: 25,
@@ -105,5 +107,9 @@ export const Work: CollectionConfig = {
   labels: {
     singular: "Work",
     plural: "Works",
+  },
+  versions: {
+    drafts: true,
+    maxPerDoc: 25,
   },
 };

@@ -10,6 +10,8 @@ import {
 
 export const BlogCategories: CollectionConfig = {
   slug: "categories",
+
+  //* Collection Fields
   fields: [
     {
       type: "tabs",
@@ -62,17 +64,29 @@ export const BlogCategories: CollectionConfig = {
       },
     },
   ],
-  versions: {
-    drafts: true,
-    maxPerDoc: 25,
+
+  //* Admin Settings
+  access: {
+    read: () => true,
   },
   admin: {
-    useAsTitle: "name",
     description: "Categories for blog posts.",
     defaultColumns: ["name"],
+    group: "Blog Posts",
+    listSearchableFields: ["name"],
+    pagination: {
+      defaultLimit: 25,
+      limits: [10, 25, 50, 100],
+    },
+    useAsTitle: "name",
   },
+  defaultSort: "name",
   labels: {
     singular: "Category",
     plural: "Categories",
+  },
+  versions: {
+    drafts: true,
+    maxPerDoc: 25,
   },
 };

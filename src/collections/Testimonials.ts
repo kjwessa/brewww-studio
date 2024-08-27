@@ -2,6 +2,8 @@ import type { CollectionConfig } from "payload";
 
 export const Testimonials: CollectionConfig = {
   slug: "testimonials",
+
+  //* Collection Fields
   fields: [
     {
       name: "name",
@@ -47,23 +49,29 @@ export const Testimonials: CollectionConfig = {
       required: true,
     },
   ],
-  versions: {
-    drafts: true,
-    maxPerDoc: 25,
+
+  //* Admin Settings
+  access: {
+    read: () => true,
   },
   admin: {
-    useAsTitle: "name",
     description: "Kind clients saying kind things.",
     defaultColumns: ["name", "callout", "author"],
+    group: "Portfolio",
     listSearchableFields: ["name", "callout", "author"],
     pagination: {
       defaultLimit: 25,
       limits: [10, 25, 50],
     },
+    useAsTitle: "name",
   },
   defaultSort: "name",
   labels: {
     singular: "Testimonial",
     plural: "Testimonials",
+  },
+  versions: {
+    drafts: true,
+    maxPerDoc: 25,
   },
 };

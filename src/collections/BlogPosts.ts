@@ -9,6 +9,8 @@ import {
 
 export const BlogPosts: CollectionConfig = {
   slug: "posts",
+
+  //* Collection Fields
   fields: [
     {
       type: "tabs",
@@ -103,22 +105,29 @@ export const BlogPosts: CollectionConfig = {
       },
     },
   ],
-  versions: {
-    drafts: true,
-    maxPerDoc: 25,
+
+  //* Admin Settings
+  access: {
+    read: () => true,
   },
   admin: {
-    useAsTitle: "name",
+    description: "Writing brings clarity.",
     defaultColumns: ["name", "postedOn", "updatedAt"],
-
+    group: "Blog Posts",
+    listSearchableFields: ["name"],
     pagination: {
       defaultLimit: 25,
       limits: [10, 25, 50, 100],
     },
-    description: "Writing brings clarity.",
+    useAsTitle: "name",
   },
+  defaultSort: "postedOn",
   labels: {
     singular: "Post",
     plural: "Posts",
+  },
+  versions: {
+    drafts: true,
+    maxPerDoc: 25,
   },
 };

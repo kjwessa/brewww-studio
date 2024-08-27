@@ -10,6 +10,8 @@ import {
 
 export const Playground: CollectionConfig = {
   slug: "play",
+
+  //* Collection Fields
   fields: [
     {
       type: "tabs",
@@ -77,21 +79,26 @@ export const Playground: CollectionConfig = {
       admin: { position: "sidebar" },
     },
   ],
-  versions: {
-    drafts: true,
-    maxPerDoc: 25,
-  },
+
+  //* Admin Settings
   admin: {
-    useAsTitle: "name",
+    description: "Interior Brewww projects",
     defaultColumns: ["name", "updatedAt"],
+    group: "Portfolio",
+    listSearchableFields: ["name"],
     pagination: {
       defaultLimit: 25,
       limits: [25, 50],
     },
-    listSearchableFields: ["name"],
+    useAsTitle: "name",
   },
+  defaultSort: "name",
   labels: {
     singular: "Playground",
     plural: "Playgrounds",
+  },
+  versions: {
+    drafts: true,
+    maxPerDoc: 25,
   },
 };
