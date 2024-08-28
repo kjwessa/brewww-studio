@@ -1,30 +1,36 @@
-import { mongooseAdapter } from "@payloadcms/db-mongodb";
-import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import path from "path";
 import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
+
+//* Import Plugins
 import { s3Storage } from "@payloadcms/storage-s3";
 import { seoPlugin } from "@payloadcms/plugin-seo";
-import { Users } from "./collections/Users";
-import { Media } from "./collections/Media";
-import { Work } from "./collections/Work";
-import { Clients } from "./collections/Clients";
-import { BlogPosts } from "./collections/BlogPosts";
-import { BlogCategories } from "./collections/BlogCategories";
-import { Services } from "./collections/Services";
-import { Testimonials } from "./collections/Testimonials";
-import { Location } from "./collections/Locations";
-import { Results } from "./collections/Results";
-import { Pages } from "./collections/Pages";
+import { mongooseAdapter } from "@payloadcms/db-mongodb";
+import { lexicalEditor } from "@payloadcms/richtext-lexical";
+
+//* Import Collections
+import { Users } from "./payload/collections/Users";
+import { Media } from "./payload/collections/Media";
+import { Work } from "./payload/collections/Work";
+import { Clients } from "./payload/collections/Clients";
+import { BlogPosts } from "./payload/collections/BlogPosts";
+import { BlogCategories } from "./payload/collections/BlogCategories";
+import { Services } from "./payload/collections/Services";
+import { Testimonials } from "./payload/collections/Testimonials";
+import { Location } from "./payload/collections/Locations";
+import { Results } from "./payload/collections/Results";
+import { Pages } from "./payload/collections/Pages";
+import { Playground } from "./payload/collections/Playground";
+
+//* Import Globals
 import { Header } from "./payload/globals/Header";
 import { Footer } from "./payload/globals/Footer";
-import { Playground } from "./collections/Playground";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
-// Ensure required environment variables are defined
+//* Ensure required environment variables are defined
 const PAYLOAD_SECRET = process.env.PAYLOAD_SECRET;
 if (!PAYLOAD_SECRET) {
   throw new Error("PAYLOAD_SECRET environment variable is not defined");
@@ -59,6 +65,7 @@ if (!CLOUDFLARE_ENDPOINT) {
   throw new Error("CLOUDFLARE_ENDPOINT environment variable is not defined");
 }
 
+//* Build Configuration
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -80,9 +87,6 @@ export default buildConfig({
   globals: [Header, Footer],
   editor: lexicalEditor(),
   secret: PAYLOAD_SECRET || "",
-  typescript: {
-    outputFile: path.resolve(dirname, "payload-types.ts"),
-  },
   db: mongooseAdapter({
     url: DATABASE_URI || "",
   }),
@@ -114,4 +118,7 @@ export default buildConfig({
       },
     }),
   ],
+  typescript: {
+    outputFile: path.resolve(dirname, "payload-types.ts"),
+  },
 });

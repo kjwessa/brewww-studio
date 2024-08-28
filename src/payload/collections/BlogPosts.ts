@@ -88,6 +88,7 @@ export const BlogPosts: CollectionConfig = {
       name: "postedOn",
       type: "date",
       required: true,
+      label: "Published Date",
       admin: {
         description: "Add a cool date here",
         position: "sidebar",
