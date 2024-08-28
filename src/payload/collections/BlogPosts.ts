@@ -1,4 +1,6 @@
 import type { CollectionConfig } from "payload";
+import { authenticated } from "@/payload/access/authenticated";
+import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
 
 import {
   MetaDescriptionField,
@@ -8,8 +10,8 @@ import {
   PreviewField,
 } from "@payloadcms/plugin-seo/fields";
 
-export const BlogCategories: CollectionConfig = {
-  slug: "categories",
+export const BlogPosts: CollectionConfig = {
+  slug: "posts",
 
   //* Collection Fields
   fields: [
@@ -22,8 +24,27 @@ export const BlogCategories: CollectionConfig = {
             {
               name: "name",
               type: "text",
-              label: "Category Name",
+              label: "Post Title",
               required: true,
+              admin: {
+                description: "Add a cool name here",
+              },
+            },
+            {
+              name: "imageMain",
+              type: "upload",
+              relationTo: "media",
+              label: "Main Image",
+              required: false,
+              admin: {
+                description: "Add a cool image here.",
+              },
+            },
+            {
+              name: "content",
+              type: "richText",
+              label: "Main Content",
+              required: false,
             },
           ],
         },
@@ -57,21 +78,47 @@ export const BlogCategories: CollectionConfig = {
       name: "slug",
       type: "text",
       label: "Slug",
+      required: false,
+      admin: {
+        position: "sidebar",
+        description: "Add the slug here",
+      },
+    },
+    {
+      name: "postedOn",
+      type: "date",
+      required: true,
+      admin: {
+        description: "Add a cool date here",
+        position: "sidebar",
+        date: {
+          pickerAppearance: "dayAndTime",
+        },
+      },
+    },
+    {
+      name: "category",
+      type: "relationship",
+      relationTo: "categories",
+      label: "Category",
       required: true,
       admin: {
         position: "sidebar",
-        description: "Add a cool slug here",
+        description: "Add the post category here. ",
       },
     },
   ],
 
   //* Admin Settings
   access: {
-    read: () => true,
+    create: authenticated,
+    delete: authenticated,
+    read: authenticatedOrPublished,
+    update: authenticated,
   },
   admin: {
-    description: "Categories for blog posts.",
-    defaultColumns: ["name"],
+    description: "Writing brings clarity.",
+    defaultColumns: ["name", "postedOn", "updatedAt"],
     group: "Blog Posts",
     listSearchableFields: ["name"],
     pagination: {
@@ -80,10 +127,10 @@ export const BlogCategories: CollectionConfig = {
     },
     useAsTitle: "name",
   },
-  defaultSort: "name",
+  defaultSort: "postedOn",
   labels: {
-    singular: "Category",
-    plural: "Categories",
+    singular: "Post",
+    plural: "Posts",
   },
   versions: {
     drafts: true,

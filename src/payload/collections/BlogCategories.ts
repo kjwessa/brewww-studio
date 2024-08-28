@@ -1,4 +1,6 @@
 import type { CollectionConfig } from "payload";
+import { authenticated } from "@/payload/access/authenticated";
+import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
 
 import {
   MetaDescriptionField,
@@ -8,9 +10,10 @@ import {
   PreviewField,
 } from "@payloadcms/plugin-seo/fields";
 
-export const Work: CollectionConfig = {
-  slug: "work",
+export const BlogCategories: CollectionConfig = {
+  slug: "categories",
 
+  //* Collection Fields
   fields: [
     {
       type: "tabs",
@@ -18,37 +21,11 @@ export const Work: CollectionConfig = {
         {
           label: "Content",
           fields: [
-            { name: "name", type: "text", label: "Name", required: true },
             {
-              name: "thumbnail",
-              type: "upload",
-              label: "Thumbnail",
-              required: false,
-              relationTo: "media",
-              admin: {
-                description:
-                  "This image appears on the WorkCard thumbnail images.",
-              },
-            },
-            {
-              name: "testimonial",
-              type: "relationship",
-              relationTo: "testimonials",
-              hasMany: false,
-              required: false,
-              admin: {
-                description: "If a testimonial exists, add it here.",
-              },
-            },
-            {
-              name: "client",
-              type: "relationship",
-              relationTo: "clients",
-              hasMany: false,
+              name: "name",
+              type: "text",
+              label: "Category Name",
               required: true,
-              admin: {
-                description: "Add the connected client here. ",
-              },
             },
           ],
         },
@@ -78,35 +55,40 @@ export const Work: CollectionConfig = {
         },
       ],
     },
-
     {
       name: "slug",
       type: "text",
       label: "Slug",
-      required: false,
-      admin: { position: "sidebar" },
+      required: true,
+      admin: {
+        position: "sidebar",
+        description: "Add a cool slug here",
+      },
     },
   ],
 
   //* Admin Settings
   access: {
-    read: () => true,
+    create: authenticated,
+    delete: authenticated,
+    read: authenticatedOrPublished,
+    update: authenticated,
   },
   admin: {
-    useAsTitle: "name",
-    description: "All we do is work, work, work.",
-    defaultColumns: ["name", "testimonial"],
-    group: "Portfolio",
+    description: "Categories for blog posts.",
+    defaultColumns: ["name"],
+    group: "Blog Posts",
     listSearchableFields: ["name"],
     pagination: {
       defaultLimit: 25,
-      limits: [10, 25, 50],
+      limits: [10, 25, 50, 100],
     },
+    useAsTitle: "name",
   },
   defaultSort: "name",
   labels: {
-    singular: "Work",
-    plural: "Works",
+    singular: "Category",
+    plural: "Categories",
   },
   versions: {
     drafts: true,

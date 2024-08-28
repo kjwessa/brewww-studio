@@ -1,4 +1,6 @@
 import type { CollectionConfig } from "payload";
+import { authenticated } from "@/payload/access/authenticated";
+import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
 
 export const Testimonials: CollectionConfig = {
   slug: "testimonials",
@@ -52,7 +54,10 @@ export const Testimonials: CollectionConfig = {
 
   //* Admin Settings
   access: {
-    read: () => true,
+    create: authenticated,
+    delete: authenticated,
+    read: authenticatedOrPublished,
+    update: authenticated,
   },
   admin: {
     description: "Kind clients saying kind things.",

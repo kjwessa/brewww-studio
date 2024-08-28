@@ -17,8 +17,8 @@ import { Testimonials } from "./collections/Testimonials";
 import { Location } from "./collections/Locations";
 import { Results } from "./collections/Results";
 import { Pages } from "./collections/Pages";
-import { Header } from "./globals/Header";
-import { Footer } from "./globals/Footer";
+import { Header } from "./payload/globals/Header";
+import { Footer } from "./payload/globals/Footer";
 import { Playground } from "./collections/Playground";
 
 const filename = fileURLToPath(import.meta.url);

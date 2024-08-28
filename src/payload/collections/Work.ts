@@ -1,4 +1,7 @@
 import type { CollectionConfig } from "payload";
+import { authenticated } from "@/payload/access/authenticated";
+import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
+
 import {
   MetaDescriptionField,
   MetaImageField,
@@ -7,10 +10,9 @@ import {
   PreviewField,
 } from "@payloadcms/plugin-seo/fields";
 
-export const BlogPosts: CollectionConfig = {
-  slug: "posts",
+export const Work: CollectionConfig = {
+  slug: "work",
 
-  //* Collection Fields
   fields: [
     {
       type: "tabs",
@@ -18,30 +20,37 @@ export const BlogPosts: CollectionConfig = {
         {
           label: "Content",
           fields: [
+            { name: "name", type: "text", label: "Name", required: true },
             {
-              name: "name",
-              type: "text",
-              label: "Post Title",
+              name: "thumbnail",
+              type: "upload",
+              label: "Thumbnail",
+              required: false,
+              relationTo: "media",
+              admin: {
+                description:
+                  "This image appears on the WorkCard thumbnail images.",
+              },
+            },
+            {
+              name: "testimonial",
+              type: "relationship",
+              relationTo: "testimonials",
+              hasMany: false,
+              required: false,
+              admin: {
+                description: "If a testimonial exists, add it here.",
+              },
+            },
+            {
+              name: "client",
+              type: "relationship",
+              relationTo: "clients",
+              hasMany: false,
               required: true,
               admin: {
-                description: "Add a cool name here",
+                description: "Add the connected client here. ",
               },
-            },
-            {
-              name: "imageMain",
-              type: "upload",
-              relationTo: "media",
-              label: "Main Image",
-              required: false,
-              admin: {
-                description: "Add a cool image here.",
-              },
-            },
-            {
-              name: "content",
-              type: "richText",
-              label: "Main Content",
-              required: false,
             },
           ],
         },
@@ -71,60 +80,38 @@ export const BlogPosts: CollectionConfig = {
         },
       ],
     },
+
     {
       name: "slug",
       type: "text",
       label: "Slug",
       required: false,
-      admin: {
-        position: "sidebar",
-        description: "Add the slug here",
-      },
-    },
-    {
-      name: "postedOn",
-      type: "date",
-      required: true,
-      admin: {
-        description: "Add a cool date here",
-        position: "sidebar",
-        date: {
-          pickerAppearance: "dayAndTime",
-        },
-      },
-    },
-    {
-      name: "category",
-      type: "relationship",
-      relationTo: "categories",
-      label: "Category",
-      required: true,
-      admin: {
-        position: "sidebar",
-        description: "Add the post category here. ",
-      },
+      admin: { position: "sidebar" },
     },
   ],
 
   //* Admin Settings
   access: {
-    read: () => true,
+    create: authenticated,
+    delete: authenticated,
+    read: authenticatedOrPublished,
+    update: authenticated,
   },
   admin: {
-    description: "Writing brings clarity.",
-    defaultColumns: ["name", "postedOn", "updatedAt"],
-    group: "Blog Posts",
+    useAsTitle: "name",
+    description: "All we do is work, work, work.",
+    defaultColumns: ["name", "testimonial"],
+    group: "Portfolio",
     listSearchableFields: ["name"],
     pagination: {
       defaultLimit: 25,
-      limits: [10, 25, 50, 100],
+      limits: [10, 25, 50],
     },
-    useAsTitle: "name",
   },
-  defaultSort: "postedOn",
+  defaultSort: "name",
   labels: {
-    singular: "Post",
-    plural: "Posts",
+    singular: "Work",
+    plural: "Works",
   },
   versions: {
     drafts: true,
