@@ -331,11 +331,6 @@ export interface Header {
 export interface Footer {
   id: string;
   logo: string | Media;
-  nav: {
-    label: string;
-    link: string;
-    id?: string | null;
-  }[];
   copyrightNotice: string;
   updatedAt?: string | null;
   createdAt?: string | null;

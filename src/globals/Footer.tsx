@@ -10,16 +10,7 @@ export const Footer: GlobalConfig = {
       label: "logo",
       required: true,
     },
-    {
-      name: "nav",
-      type: "array",
-      label: "Navigation",
-      fields: [
-        { name: "label", label: "Label", type: "text", required: true },
-        { name: "link", label: "Link", type: "text", required: true },
-      ],
-      required: true,
-    },
+
     {
       name: "copyrightNotice",
       label: "Copyright Notice",

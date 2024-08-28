@@ -59,7 +59,7 @@ export const Clients: CollectionConfig = {
   },
   admin: {
     useAsTitle: "name",
-    defaultColumns: ["name", "city", "state"],
+    defaultColumns: ["name", "logoLight", "city", "state"],
     // TODO figure out why pagination doesn't override local preferences
     pagination: {
       defaultLimit: 10,
@@ -67,6 +67,7 @@ export const Clients: CollectionConfig = {
     },
     listSearchableFields: ["name", "city", "state"],
   },
+  defaultSort: "-city",
   labels: {
     singular: "Client",
     plural: "Clients",

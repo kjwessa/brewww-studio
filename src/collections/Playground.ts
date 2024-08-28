@@ -26,7 +26,7 @@ export const Playground: CollectionConfig = {
             {
               name: "shortPitch",
               type: "text",
-              label: "Short Pitch",
+              label: "Tagline",
               required: false,
             },
             {
@@ -83,11 +83,12 @@ export const Playground: CollectionConfig = {
   },
   admin: {
     useAsTitle: "name",
-    defaultColumns: ["name", "shortPitch", "updatedAt"],
+    defaultColumns: ["name", "updatedAt"],
     pagination: {
       defaultLimit: 25,
       limits: [25, 50],
     },
+    listSearchableFields: ["name"],
   },
   labels: {
     singular: "Playground",
