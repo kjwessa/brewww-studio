@@ -3,6 +3,7 @@ import type { CollectionConfig } from "payload";
 export const Services: CollectionConfig = {
   slug: "services",
 
+  //* Collection Fields
   fields: [
     {
       name: "name",
@@ -24,22 +25,26 @@ export const Services: CollectionConfig = {
       },
     },
   ],
-  versions: {
-    drafts: true,
-    maxPerDoc: 25,
-  },
+
+  //* Admin Settings
   admin: {
     useAsTitle: "name",
     description: "How we help people.",
     defaultColumns: ["name"],
+    group: "Service",
     listSearchableFields: ["name"],
     pagination: {
       defaultLimit: 25,
       limits: [10, 25, 50],
     },
   },
+  defaultSort: "name",
   labels: {
     singular: "Service",
     plural: "Services",
+  },
+  versions: {
+    drafts: true,
+    maxPerDoc: 25,
   },
 };

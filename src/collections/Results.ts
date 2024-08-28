@@ -2,6 +2,8 @@ import type { CollectionConfig } from "payload";
 
 export const Results: CollectionConfig = {
   slug: "results",
+
+  //* Collection Fields
   fields: [
     {
       name: "name",
@@ -24,16 +26,26 @@ export const Results: CollectionConfig = {
       required: false,
     },
   ],
-  versions: {
-    drafts: true,
-    maxPerDoc: 25,
-  },
+
+  //* Admin Settings
   admin: {
-    useAsTitle: "name",
     description: "The impact of our work",
+    defaultColumns: ["name"],
+    group: "Portfolio",
+    listSearchableFields: ["name"],
+    pagination: {
+      defaultLimit: 25,
+      limits: [25, 50],
+    },
+    useAsTitle: "name",
   },
+  defaultSort: "name",
   labels: {
     singular: "Result",
     plural: "Results",
+  },
+  versions: {
+    drafts: true,
+    maxPerDoc: 25,
   },
 };

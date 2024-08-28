@@ -2,6 +2,8 @@ import type { CollectionConfig } from "payload";
 
 export const Media: CollectionConfig = {
   slug: "media",
+
+  //* Collection Fields
   fields: [
     {
       name: "name",
@@ -17,9 +19,9 @@ export const Media: CollectionConfig = {
     },
   ],
 
+  //* Admin Settings
   access: {
     read: () => true,
   },
-
   upload: true,
 };
