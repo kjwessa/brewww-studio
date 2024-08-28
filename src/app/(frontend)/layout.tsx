@@ -1,5 +1,4 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Footer } from "../components/Footer";
 import localFont from "next/font/local";
 import "@/styles/globals.css";
 import { Metadata } from "next";
@@ -24,7 +23,6 @@ export default function RootLayout({
     <html lang="en" className={`${DMSans.variable}`}>
       <body className="bg-gray-950 text-gray-50 antialiased">
         <main className="flex min-h-svh flex-col">{children}</main>
-        <Footer />
         <SpeedInsights />
       </body>
     </html>

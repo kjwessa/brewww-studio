@@ -18,13 +18,7 @@ export const Playground: CollectionConfig = {
           label: "Content",
           fields: [
             { name: "name", type: "text", label: "Name", required: true },
-            {
-              name: "slug",
-              type: "text",
-              label: "Slug",
-              required: false,
-              admin: { position: "sidebar" },
-            },
+
             {
               name: "thumbnail",
               type: "upload",
@@ -63,6 +57,13 @@ export const Playground: CollectionConfig = {
           ],
         },
       ],
+    },
+    {
+      name: "slug",
+      type: "text",
+      label: "Slug",
+      required: false,
+      admin: { position: "sidebar" },
     },
   ],
   versions: {

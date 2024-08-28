@@ -8,7 +8,7 @@ export const Header: GlobalConfig = {
       type: "upload",
       relationTo: "media",
       label: "logo",
-      required: false,
+      required: true,
     },
     {
       name: "nav",
