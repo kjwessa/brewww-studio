@@ -2,6 +2,8 @@ import type { GlobalConfig } from "payload";
 
 export const Footer: GlobalConfig = {
   slug: "footer",
+
+  //* Global Fields
   fields: [
     {
       name: "logo",
@@ -21,4 +23,9 @@ export const Footer: GlobalConfig = {
       },
     },
   ],
+
+  //* Admin Settings
+  access: {
+    read: () => true,
+  },
 };
