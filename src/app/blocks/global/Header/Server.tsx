@@ -2,6 +2,7 @@ import React from "react";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import config from "@payload-config";
 import Image from "next/image";
+import Link from "next/link";
 
 interface HeaderData {
   logo: {
@@ -13,15 +14,17 @@ export default async function HeaderServer() {
   const header = (await payload.findGlobal({ slug: "header" })) as HeaderData;
 
   return (
-    <header>
-      <div className="relative h-20 w-44">
-        <Image
-          src={header.logo.url}
-          alt="logo"
-          fill
-          className="object-contain"
-        />
-      </div>
-    </header>
+    <div className="flex h-32 flex-row items-center">
+      <Link href={"/"}>
+        <div className="relative h-12 w-44">
+          <Image
+            src={header.logo.url}
+            alt="logo"
+            fill
+            className="object-contain"
+          />
+        </div>
+      </Link>
+    </div>
   );
 }

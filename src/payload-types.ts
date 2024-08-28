@@ -330,15 +330,13 @@ export interface Header {
  */
 export interface Footer {
   id: string;
-  logo?: string | Media | null;
-  nav?:
-    | {
-        label?: string | null;
-        link?: string | null;
-        id?: string | null;
-      }[]
-    | null;
-  copyrightNotice?: string | null;
+  logo: string | Media;
+  nav: {
+    label: string;
+    link: string;
+    id?: string | null;
+  }[];
+  copyrightNotice: string;
   updatedAt?: string | null;
   createdAt?: string | null;
 }

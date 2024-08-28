@@ -2,7 +2,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import localFont from "next/font/local";
 import "@/styles/globals.css";
 import { Metadata } from "next";
-import { SEO_Config } from "./seo-config";
+import { SEO_Config } from "../seo-config";
 
 export const metadata: Metadata = SEO_Config;
 
@@ -10,7 +10,7 @@ const DMSans = localFont({
   variable: "--font-dm-sans",
   display: "swap",
   src: [
-    { path: "../fonts/DMSans.ttf", weight: "100 400 900", style: "normal" },
+    { path: "../../fonts/DMSans.ttf", weight: "100 400 900", style: "normal" },
   ],
 });
 
