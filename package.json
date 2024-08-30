@@ -10,6 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "generate:importmap": "payload generate:importmap",
+    "build:verbose": "set NODE_ENV=production && set NEXT_TELEMETRY_DISABLED=1 && set NODE_OPTIONS=--trace-warnings && next build",
     "clean": "rm -rf .next/ && rm -rf node_modules/ && pnpm install"
   },
   "dependencies": {

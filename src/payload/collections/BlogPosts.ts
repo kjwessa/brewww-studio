@@ -27,7 +27,8 @@ export const BlogPosts: CollectionConfig = {
               label: "Post Title",
               required: true,
               admin: {
-                description: "Add a cool name here",
+                description:
+                  "The name of the article as it appears around the site.",
               },
             },
             {
@@ -37,7 +38,8 @@ export const BlogPosts: CollectionConfig = {
               label: "Main Image",
               required: false,
               admin: {
-                description: "Add a cool image here.",
+                description:
+                  "The main image of the article that appears on the page and in the list of posts.",
               },
             },
             {
@@ -90,11 +92,23 @@ export const BlogPosts: CollectionConfig = {
       required: true,
       label: "Published Date",
       admin: {
-        description: "Add a cool date here",
+        description:
+          "The date the article was published. This is used to sort the articles.",
         position: "sidebar",
         date: {
           pickerAppearance: "dayAndTime",
         },
+      },
+    },
+    {
+      name: "readTime",
+      type: "number",
+      required: false,
+      label: "Read Time",
+      admin: {
+        description:
+          "The estimated time it takes to read the article in minutes.",
+        position: "sidebar",
       },
     },
     {
@@ -105,7 +119,8 @@ export const BlogPosts: CollectionConfig = {
       required: true,
       admin: {
         position: "sidebar",
-        description: "Add the post category here. ",
+        description:
+          "Add the post category here. This is used to group the articles.",
       },
     },
   ],
@@ -118,17 +133,18 @@ export const BlogPosts: CollectionConfig = {
     update: authenticated,
   },
   admin: {
-    description: "Writing brings clarity.",
+    description:
+      "Writing brings clarity. Writing is a way to make sense of the world.",
     defaultColumns: ["name", "publishedDate", "updatedAt"],
     group: "Blog Posts",
     listSearchableFields: ["name"],
     pagination: {
       defaultLimit: 100,
-      limits: [10, 25, 50, 100],
+      limits: [25, 50, 100],
     },
     useAsTitle: "name",
   },
-  defaultSort: "publishedDate",
+  defaultSort: "-publishedDate",
   labels: {
     singular: "Post",
     plural: "Posts",

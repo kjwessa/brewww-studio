@@ -118,6 +118,7 @@ export interface Post {
   description?: string | null;
   slug?: string | null;
   publishedDate: string;
+  readTime?: number | null;
   category: string | Category;
   updatedAt: string;
   createdAt: string;
