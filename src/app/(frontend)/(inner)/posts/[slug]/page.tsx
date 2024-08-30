@@ -12,6 +12,7 @@ import aboutImage from "/public/images/Aldridge-02665.1200-p-1080.jpeg";
 import aboutLogo from "/public/images/brand/brewww_mark.png";
 import { Media } from "@/payload-types";
 import TableOfContents from "@/components/TableOfContents/index";
+import { LexicalNode } from "@/app/components/RichText/lexicalNodeFormat";
 
 //* Generate static params for all posts
 export async function generateStaticParams() {
@@ -21,7 +22,11 @@ export async function generateStaticParams() {
     limit: 1000,
     overrideAccess: false,
   });
-  return posts.docs?.map(({ slug }) => ({ slug }));
+  return (
+    posts.docs?.map(({ slug }) => ({
+      params: { slug },
+    })) || []
+  );
 }
 
 // //* HeroSection
@@ -184,7 +189,9 @@ export default async function PostPage({
       <div className="grid grid-cols-3 gap-8 pt-8">
         <div>
           <div>
-            <TableOfContents content={post.content.root.children} />
+            <TableOfContents
+              content={(post.content?.root?.children || []) as LexicalNode[]}
+            />
           </div>
         </div>
         <div className="flex flex-col justify-start">

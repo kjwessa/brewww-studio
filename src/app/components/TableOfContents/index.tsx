@@ -1,11 +1,15 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import {
-  LexicalNode,
-  ElementNode,
-  TextNode,
-} from "../RichText/lexicalNodeFormat";
+
+interface LexicalNode {
+  type: string;
+  tag?: string;
+  children?: LexicalNode[];
+  text?: string;
+  version?: number;
+  [key: string]: unknown;
+}
 
 interface TOCItem {
   id: string;
@@ -24,15 +28,14 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content }) => {
 
   const extractHeadings = (nodes: LexicalNode[]): TOCItem[] => {
     const headings: TOCItem[] = [];
-    nodes.forEach((node) => {
+    nodes.forEach((node, index) => {
       if (node.type === "heading") {
-        const headingNode = node as ElementNode;
-        const textNode = headingNode.children[0] as TextNode;
-        const tag = headingNode.tag || "1"; // Default to h1 if tag is undefined
+        const tag = node.tag || "1"; // Default to h1 if tag is undefined
+        const text = node.children?.[0]?.text || `Heading ${index + 1}`;
 
         headings.push({
           id: `heading-${headings.length}`,
-          text: textNode.text || "",
+          text: text,
           level: parseInt(tag.slice(1)),
         });
       }
@@ -73,7 +76,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content }) => {
   };
 
   return (
-    <nav className="table-of-contents max-w-sm">
+    <nav className="table-of-contents">
       <h2 className="mb-2 text-lg font-bold">Table of Contents</h2>
       <ul className="space-y-1">
         {toc.map((item) => (
@@ -85,7 +88,6 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content }) => {
             style={{ marginLeft: `${(item.level - 1) * 12}px` }}
             onClick={() => handleClick(item.id)}
           >
-            {activeId === item.id && "- "}
             {item.text}
           </li>
         ))}
