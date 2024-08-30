@@ -73,7 +73,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content }) => {
   };
 
   return (
-    <nav className="table-of-contents">
+    <nav className="table-of-contents max-w-sm">
       <h2 className="mb-2 text-lg font-bold">Table of Contents</h2>
       <ul className="space-y-1">
         {toc.map((item) => (
@@ -85,6 +85,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content }) => {
             style={{ marginLeft: `${(item.level - 1) * 12}px` }}
             onClick={() => handleClick(item.id)}
           >
+            {activeId === item.id && "- "}
             {item.text}
           </li>
         ))}
