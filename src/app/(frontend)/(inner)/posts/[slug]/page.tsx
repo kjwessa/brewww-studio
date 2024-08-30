@@ -7,7 +7,7 @@ import { Post } from "@/payload-types";
 import Image from "next/image";
 import Link from "next/link";
 import { MetaDot } from "@/app/components/MetaDot";
-// import { formatDate } from "@/app/utils/dateFormatter";
+import { formatDate } from "@/app/utils/dateFormatter";
 import aboutImage from "/public/images/Aldridge-02665.1200-p-1080.jpeg";
 import aboutLogo from "/public/images/brand/brewww_mark.png";
 
@@ -33,16 +33,21 @@ interface HeroSectionProps {
 const HeroSection = ({
   name,
   description,
-  publishedDate, // Changed from publishedAt
+  publishedDate,
   readTime,
 }: HeroSectionProps) => {
+  const fallbackDescription =
+    "Bacon ipsum dolor amet short ribs brisket venison rump drumstick pig sausage prosciutto chicken spare ribs salami picanha doner. Kevin capicola sausage, buffalo bresaola venison turkey shoulder picanha ham pork tri-tip meatball meatloaf ribeye.";
+
   return (
     <section className="container mx-auto px-4 pb-12 pt-24 md:pt-32 lg:pt-40">
       <div className="max-w-5xl">
         <h1 className="mb-4 text-5xl font-medium leading-tight md:text-6xl">
           {name}
         </h1>
-        <p className="mb-8 max-w-3xl text-xl text-gray-700">{description}</p>
+        <p className="mb-8 max-w-3xl text-xl text-gray-700">
+          {description || fallbackDescription}
+        </p>
         <div className="flex items-center gap-1 text-sm text-gray-500">
           <span>
             By{" "}
@@ -51,7 +56,9 @@ const HeroSection = ({
             </Link>
           </span>
           <MetaDot />
-          <span>{publishedDate || "Date not available"}</span>
+          <span>
+            {publishedDate ? formatDate(publishedDate) : "Date not available"}
+          </span>
           <MetaDot />
           <span>
             {readTime ? `${readTime} min read` : "Read time not available"}
@@ -82,7 +89,7 @@ const ImageSection = ({ featuredImage }: ImageSectionProps) => {
 
 // //* ArticleSection
 interface ArticleSectionProps {
-  content: any; // Use the correct type from your Post type
+  content: any;
 }
 
 const ArticleSection = ({ content }: ArticleSectionProps) => {
@@ -154,11 +161,11 @@ export default async function PostPage({
     <article className="bg-white pt-24 text-black">
       <HeroSection
         name={post.name}
-        description={post.description}
+        description={post.description || ""}
         publishedDate={post.publishedDate}
-        readTime={post.readTime}
+        // readTime={post.readTime}
       />
-      <ImageSection featuredImage={post.featuredImage} />
+      {/* <ImageSection featuredImage={post.featuredImage} /> */}
       <div className="grid grid-cols-3 pt-4">
         <div></div>
         <div className="mx-auto flex max-w-4xl flex-col justify-center py-4">
