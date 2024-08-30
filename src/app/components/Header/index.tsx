@@ -9,7 +9,7 @@ interface HeaderData {
     url: string;
   };
 }
-export default async function HeaderServer() {
+export default async function Header() {
   const payload = await getPayloadHMR({ config });
   const header = (await payload.findGlobal({ slug: "header" })) as HeaderData;
 
