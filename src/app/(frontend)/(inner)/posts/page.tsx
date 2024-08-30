@@ -1,6 +1,7 @@
 import React from "react";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import configPromise from "@payload-config";
+import Link from "next/link";
 
 export const dynamic = "force-static";
 export const revalidate = 600;
@@ -19,10 +20,12 @@ export default async function Page() {
         <div>
           {posts.docs.map((post: any) => {
             return (
-              <div key={post.id} className="mb-2">
-                <h2 className="text-3xl">{post.name}</h2>
-                <p>{post.slug}</p>
-              </div>
+              <Link href={`/posts/${post.slug}`} key={post.id}>
+                <div className="mb-2">
+                  <h2 className="text-3xl">{post.name}</h2>
+                  <p>{post.slug}</p>
+                </div>
+              </Link>
             );
           })}
         </div>
