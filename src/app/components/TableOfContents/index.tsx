@@ -1,5 +1,11 @@
+"use client";
+
 import React, { useState, useEffect, useRef } from "react";
-import { LexicalNode } from "../RichText/lexicalNodeFormat";
+import {
+  LexicalNode,
+  ElementNode,
+  TextNode,
+} from "../RichText/lexicalNodeFormat";
 
 interface TOCItem {
   id: string;
@@ -11,12 +17,28 @@ interface TableOfContentsProps {
   content: LexicalNode[];
 }
 
-export const TableOfContents: React.FC<TableOfContentsProps> = ({
-  content,
-}) => {
+const TableOfContents: React.FC<TableOfContentsProps> = ({ content }) => {
   const [toc, setToc] = useState<TOCItem[]>([]);
   const [activeId, setActiveId] = useState<string>("");
   const observer = useRef<IntersectionObserver | null>(null);
+
+  const extractHeadings = (nodes: LexicalNode[]): TOCItem[] => {
+    const headings: TOCItem[] = [];
+    nodes.forEach((node) => {
+      if (node.type === "heading") {
+        const headingNode = node as ElementNode;
+        const textNode = headingNode.children[0] as TextNode;
+        const tag = headingNode.tag || "1"; // Default to h1 if tag is undefined
+
+        headings.push({
+          id: `heading-${headings.length}`,
+          text: textNode.text || "",
+          level: parseInt(tag.slice(1)),
+        });
+      }
+    });
+    return headings;
+  };
 
   useEffect(() => {
     const headings = extractHeadings(content);
@@ -35,27 +57,13 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
     );
 
     // Observe all headings
-    headings.forEach((heading) => {
+    headings.forEach((heading: TOCItem) => {
       const element = document.getElementById(heading.id);
       if (element) observer.current?.observe(element);
     });
 
     return () => observer.current?.disconnect();
   }, [content]);
-
-  const extractHeadings = (nodes: LexicalNode[]): TOCItem[] => {
-    const headings: TOCItem[] = [];
-    nodes.forEach((node) => {
-      if (node.type === "heading") {
-        headings.push({
-          id: `heading-${headings.length}`,
-          text: node.children[0].text,
-          level: parseInt(node.tag.slice(1)),
-        });
-      }
-    });
-    return headings;
-  };
 
   const handleClick = (id: string) => {
     const element = document.getElementById(id);
@@ -84,3 +92,5 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
     </nav>
   );
 };
+
+export default TableOfContents;
