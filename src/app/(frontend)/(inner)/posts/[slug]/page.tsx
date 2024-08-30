@@ -10,6 +10,7 @@ import { MetaDot } from "@/app/components/MetaDot";
 import { formatDate } from "@/app/utils/dateFormatter";
 import aboutImage from "/public/images/Aldridge-02665.1200-p-1080.jpeg";
 import aboutLogo from "/public/images/brand/brewww_mark.png";
+import { Media } from "@/payload-types";
 
 //* Generate static params for all posts
 export async function generateStaticParams() {
@@ -40,7 +41,7 @@ const HeroSection = ({
     "Bacon ipsum dolor amet short ribs brisket venison rump drumstick pig sausage prosciutto chicken spare ribs salami picanha doner. Kevin capicola sausage, buffalo bresaola venison turkey shoulder picanha ham pork tri-tip meatball meatloaf ribeye.";
 
   return (
-    <section className="container mx-auto px-4 pb-12 pt-12 md:pt-32 lg:pt-40">
+    <section className="container mx-auto px-4 pb-12 pt-12">
       <div className="max-w-5xl">
         <h1 className="mb-4 text-5xl font-medium leading-tight md:text-6xl">
           {name}
@@ -60,29 +61,42 @@ const HeroSection = ({
             {publishedDate ? formatDate(publishedDate) : "Date not available"}
           </span>
           <MetaDot />
-          <span>
-            {readTime ? `${readTime} min read` : "Read time not available"}
-          </span>
+          <span>{readTime ? `${readTime} min read` : ""}</span>
         </div>
       </div>
     </section>
   );
 };
 
-// //* ImageSection
+//* ImageSection
 interface ImageSectionProps {
-  featuredImage?: {
-    url?: string;
-    alt?: string;
-  };
+  featuredImage?: Media | string | null;
 }
 
 const ImageSection = ({ featuredImage }: ImageSectionProps) => {
-  if (!featuredImage?.url) return null;
+  let imageUrl: string =
+    typeof featuredImage === "string"
+      ? featuredImage
+      : featuredImage?.url || aboutImage.src;
+  let imageAlt =
+    typeof featuredImage === "object"
+      ? featuredImage?.altText
+      : "Featured image for blog post";
 
   return (
-    <div className="relative h-0 w-full pb-[66%]">
-      <Image src={featuredImage.url} fill alt={featuredImage.alt || ""} />
+    <div className="w-full">
+      <div className="px-2">
+        <div className="relative aspect-[3/2] w-full">
+          <Image
+            src={imageUrl}
+            fill
+            alt={imageAlt || ""}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="rounded-md object-cover"
+            priority
+          />
+        </div>
+      </div>
     </div>
   );
 };
@@ -94,7 +108,7 @@ interface ArticleSectionProps {
 
 const ArticleSection = ({ content }: ArticleSectionProps) => {
   return (
-    <article className="prose prose-lg mx-auto pb-24 pt-12">
+    <article className="prose prose-lg mx-auto pb-24">
       <RichText
         className="prose text-black"
         content={content || ""}
@@ -165,13 +179,13 @@ export default async function PostPage({
         publishedDate={post.publishedDate}
         readTime={post.readTime || 0}
       />
-      {/* <ImageSection featuredImage={post.featuredImage} /> */}
-      <div className="grid grid-cols-3 pt-4">
+      <ImageSection featuredImage={post.imageMain} />
+      <div className="grid grid-cols-3 gap-8 pt-8">
         <div></div>
-        <div className="mx-auto flex max-w-4xl flex-col justify-center py-4">
+        <div className="flex flex-col justify-start">
           <ArticleSection content={post.content} />
         </div>
-        <div className="flex flex-col content-center items-center justify-start pt-4">
+        <div className="flex flex-col content-center items-start">
           <AboutCard />
         </div>
       </div>
