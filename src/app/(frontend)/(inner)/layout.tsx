@@ -2,8 +2,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import localFont from "next/font/local";
 import "@/styles/globals.css";
 import { Metadata } from "next";
-import HeaderServer from "@/app/blocks/global/Header/Server";
-import FooterServer from "@/app/blocks/global/Footer/Server";
+import Header from "@/app/components/Header/index";
+import Footer from "@/app/components/Footer/index";
 
 const DMSans = localFont({
   variable: "--font-dm-sans",
@@ -25,9 +25,9 @@ export default function InnerLayout({
   return (
     <html lang="en" className={`${DMSans.variable}`}>
       <body className="bg-gray-950 text-gray-50 antialiased">
-        <HeaderServer />
+        <Header />
         <div className="">{children}</div>
-        <FooterServer />
+        <Footer />
         <SpeedInsights />
       </body>
     </html>
