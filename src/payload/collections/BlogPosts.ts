@@ -85,7 +85,7 @@ export const BlogPosts: CollectionConfig = {
       },
     },
     {
-      name: "postedOn",
+      name: "publishedDate",
       type: "date",
       required: true,
       label: "Published Date",
@@ -119,16 +119,16 @@ export const BlogPosts: CollectionConfig = {
   },
   admin: {
     description: "Writing brings clarity.",
-    defaultColumns: ["name", "postedOn", "updatedAt"],
+    defaultColumns: ["name", "publishedDate", "updatedAt"],
     group: "Blog Posts",
     listSearchableFields: ["name"],
     pagination: {
-      defaultLimit: 25,
+      defaultLimit: 100,
       limits: [10, 25, 50, 100],
     },
     useAsTitle: "name",
   },
-  defaultSort: "postedOn",
+  defaultSort: "publishedDate",
   labels: {
     singular: "Post",
     plural: "Posts",

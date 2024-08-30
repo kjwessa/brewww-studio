@@ -10,15 +10,8 @@ export default async function Page() {
   const posts = await payload.find({
     collection: "posts",
     limit: 1000,
-    depth: 1,
     sort: "-publishedDate",
-    where: {
-      slug: {
-        exists: true,
-      },
-    },
   });
-
   return (
     <div className="pb-24 pt-24">
       <div className="container mx-auto mb-16">
