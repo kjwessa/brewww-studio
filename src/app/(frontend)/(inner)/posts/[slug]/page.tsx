@@ -1,7 +1,7 @@
 import configPromise from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import React from "react";
-import RichText from "@/components/RichText/RichText";
+import RichText from "@/components/RichText/index";
 import { notFound } from "next/navigation";
 import { Post } from "@/payload-types";
 
@@ -27,17 +27,13 @@ export default async function PostPage({
   params: { slug?: string };
 }) {
   console.log("Received params:", params);
-
   if (!params.slug) {
     console.error("Slug is undefined");
     notFound();
   }
-
   console.log("Fetching post for slug:", params.slug);
   const post = await queryPostBySlug({ slug: params.slug });
-
   console.log("Fetched post:", post);
-
   if (!post) {
     console.error("Post not found for slug:", params.slug);
     notFound();
@@ -49,8 +45,8 @@ export default async function PostPage({
       <div className="flex flex-col gap-4 pt-8">
         <div className="">
           <RichText
-            className=""
-            content={post.content || []}
+            className="prose"
+            content={post.content || ""}
             enableGutter={false}
           />
         </div>
