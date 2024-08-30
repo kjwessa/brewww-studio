@@ -26,7 +26,7 @@ export async function generateStaticParams() {
 interface HeroSectionProps {
   name?: string;
   description?: string;
-  publishedDate?: string; // Changed from publishedAt
+  publishedDate?: string;
   readTime?: number;
 }
 
@@ -40,7 +40,7 @@ const HeroSection = ({
     "Bacon ipsum dolor amet short ribs brisket venison rump drumstick pig sausage prosciutto chicken spare ribs salami picanha doner. Kevin capicola sausage, buffalo bresaola venison turkey shoulder picanha ham pork tri-tip meatball meatloaf ribeye.";
 
   return (
-    <section className="container mx-auto px-4 pb-12 pt-24 md:pt-32 lg:pt-40">
+    <section className="container mx-auto px-4 pb-12 pt-12 md:pt-32 lg:pt-40">
       <div className="max-w-5xl">
         <h1 className="mb-4 text-5xl font-medium leading-tight md:text-6xl">
           {name}
@@ -106,7 +106,7 @@ const ArticleSection = ({ content }: ArticleSectionProps) => {
 
 const AboutCard = () => {
   return (
-    <div className="relative max-w-xs text-lg text-gray-950">
+    <div className="relative max-w-xs overflow-hidden rounded-md text-lg text-gray-950">
       <div className="flex flex-col">
         <div className="relative h-0 w-full pb-[50%]">
           <Image
@@ -116,7 +116,7 @@ const AboutCard = () => {
             style={{ objectFit: "cover" }}
           />
         </div>
-        <div className="relative -mt-4 bg-neutral-100 px-5 pb-4 pt-12">
+        <div className="relative -mt-4 rounded-b-md bg-neutral-100 px-5 pb-4 pt-12">
           <div className="absolute left-8 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-neutral-100 p-2">
             <div className="relative">
               <Image src={aboutLogo} alt="Brewww Logo" width={32} height={32} />
@@ -163,7 +163,7 @@ export default async function PostPage({
         name={post.name}
         description={post.description || ""}
         publishedDate={post.publishedDate}
-        // readTime={post.readTime}
+        readTime={post.readTime || 0}
       />
       {/* <ImageSection featuredImage={post.featuredImage} /> */}
       <div className="grid grid-cols-3 pt-4">
