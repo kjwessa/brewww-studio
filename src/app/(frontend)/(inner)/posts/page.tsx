@@ -13,8 +13,8 @@ type Post = {
   category: string;
   publishedDate: string; // Changed from date
   readTime?: string; // Make it optional
-  url: string;
-  imageUrl: string;
+  url?: string; // Make url optional
+  imageUrl?: string; // Make imageUrl optional
   featuredImage?: { url: string }; // Add this to match the actual data structure
 };
 
@@ -27,11 +27,11 @@ type Guide = {
 
 export default async function Page() {
   const payload = await getPayloadHMR({ config: configPromise });
-  const postsFeatured = (await payload.find({
+  const postsFeatured = await payload.find({
     collection: "posts",
     limit: 4,
     sort: "-publishedDate",
-  })) as { docs: Post[] };
+  });
   const postsLatest = await payload.find({
     collection: "posts",
     limit: 5,
@@ -64,7 +64,7 @@ export default async function Page() {
 
   return (
     <>
-      <FeaturedSection postsFeatured={postsFeatured.docs} />
+      <FeaturedSection postsFeatured={postsFeatured.docs as Post[]} />
       <LatestPostsSection posts={postsLatest.docs} />
       <DesignGuidesSection guides={designGuides} />
       <WebDesignSection posts={webDesignPosts} />
@@ -214,7 +214,7 @@ const GuideCard = ({ guide }: { guide: Guide }) => (
     >
       <Image
         src={placeholderImage}
-        alt={guide.title}
+        alt={guide.title || ""} // Provide a default empty string
         width={1080}
         height={720}
         className="object-cover"
