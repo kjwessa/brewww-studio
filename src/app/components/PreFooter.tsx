@@ -15,7 +15,7 @@ export function PreFooter() {
                         alt="Waves on the beach"
                         sizes="(max-width: 500px) 500px, 800px"
                         className="inline-block h-full w-full max-w-full object-cover align-middle"
-                        src="/5e6978ff0936456344b8032b_b-waves-home.1200.jpg"
+                        src="/b-waves-home.1200.jpg"
                         width={1000}
                         height={1000}
                       />
@@ -35,7 +35,7 @@ export function PreFooter() {
                         alt="Bride and groom smiling"
                         sizes="(max-width: 1080px) 1080px, 1200px"
                         className="inline-block h-full w-full max-w-full object-cover align-middle"
-                        src="/5e6979bb1958ea05484725f4_k%26c-bride-and-groom-smiling.1200.jpg"
+                        src="/kc-bride-and-groom-smiling.1200.jpg"
                         width={1000}
                         height={1000}
                       />
@@ -55,7 +55,7 @@ export function PreFooter() {
                         alt="Approach background"
                         sizes="(max-width: 500px) 500px, 800px"
                         className="inline-block h-full w-full max-w-full object-cover align-middle"
-                        src="/5e40f2f2c6829fb27fc7560e_bg-approach.1200.jpg"
+                        src="/bg-approach.1200.jpg"
                         width={1000}
                         height={1000}
                       />
@@ -75,7 +75,7 @@ export function PreFooter() {
                         alt="Christine beautiful sky"
                         sizes="(max-width: 500px) 500px, 799px"
                         className="inline-block h-full w-full max-w-full object-cover align-middle"
-                        src="/5e697af349a01f58309d775e_Christine-beautiful-sky.1200.jpg"
+                        src="/Christine-beautiful-sky.1200.jpg"
                         width={1000}
                         height={1000}
                       />
@@ -95,7 +95,7 @@ export function PreFooter() {
                         alt="Services background"
                         sizes="(max-width: 500px) 500px, 800px"
                         className="inline-block h-full w-full max-w-full object-cover align-middle"
-                        src="/5e40f2f21b7f2bcbeb4fe6c4_bg-services.1200.jpg"
+                        src="/bg-services.1200.jpg"
                         width={1000}
                         height={1000}
                       />
@@ -115,7 +115,7 @@ export function PreFooter() {
                         alt="Contact background"
                         sizes="(max-width: 800px) 800px, (max-width: 1080px) 1080px, 1200px"
                         className="inline-block h-full w-full max-w-full object-cover align-middle"
-                        src="/5e40f2f11b7f2b9a534fe6a1_bg-contact.1200.jpg"
+                        src="/bg-contact.1200.jpg"
                         width={1000}
                         height={1000}
                       />
