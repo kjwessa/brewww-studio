@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function AboutGood() {
   return (
     <>
@@ -10,13 +12,14 @@ export function AboutGood() {
             className="flex h-screen w-full max-w-full overflow-visible"
             id="div-2"
           >
-            <img
-              src="https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5f53f60a0033860407ff3718_ThebyWessa2020-6960.jpeg"
+            <Image
+              src="/5f53f60a0033860407ff3718_ThebyWessa2020-6960.jpg"
+              width={1000}
+              height={1000}
               alt="Theby Wessa 2020"
               className="h-full w-full object-cover"
               style={{
                 objectPosition: "50% 50%",
-                backgroundAttachment: "fixed",
               }}
             />
           </div>

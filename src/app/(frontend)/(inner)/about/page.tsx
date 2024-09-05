@@ -1,5 +1,5 @@
 import { AboutHero } from "./AboutHero";
-import { AboutDetails } from "./AboutDetails";
+
 import { AboutIntro } from "./AboutIntro";
 import { AboutPartner } from "./AboutPartner";
 import { AboutGood } from "./AboutGood";
@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <main>
       <AboutHero />
-      <AboutDetails />
+
       <AboutIntro />
       <AboutPartner />
       <AboutGood />
