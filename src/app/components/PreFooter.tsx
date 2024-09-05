@@ -9,10 +9,10 @@ export function PreFooter() {
                 <div className="relative w-64 px-1">
                   <div className="relative">
                     <div className="h-80" id="div-6">
-                      <img
+                      <Image alt="Replace with an informative alt text" sizes="500w, 800w"
                         className="inline-block h-full w-full max-w-full object-cover align-middle"
-                        src="https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e6978ff0936456344b8032b_b-waves-home.1200.jpg"
-                        srcSet="https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e6978ff0936456344b8032b_b-waves-home.1200-p-500.jpeg 500w, https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e6978ff0936456344b8032b_b-waves-home.1200.jpg 800w"
+                        src="/5e6978ff0936456344b8032b_b-waves-home.1200.jpg" width={1000} height={1000}
+                        src="/5e6978ff0936456344b8032b_b-waves-home.1200-p-500.jpg" width={1000} height={1000}
                       />
                     </div>
                     <div className="absolute left-1/2 top-[98%] z-0 text-7xl font-bold lowercase text-white/[0.8]">
@@ -26,10 +26,10 @@ export function PreFooter() {
                 <div className="w-64 px-1">
                   <div className="relative">
                     <div className="h-80">
-                      <img
+                      <Image alt="Replace with an informative alt text" sizes="1080w, 1200w"
                         className="inline-block h-full w-full max-w-full object-cover align-middle"
-                        src="https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e6979bb1958ea05484725f4_k%26c-bride-and-groom-smiling.1200.JPG"
-                        srcSet="https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e6979bb1958ea05484725f4_k%26c-bride-and-groom-smiling.1200-p-1080.jpeg 1080w, https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e6979bb1958ea05484725f4_k%26c-bride-and-groom-smiling.1200.JPG 1200w"
+                        src="/5e6979bb1958ea05484725f4_k%26c-bride-and-groom-smiling.1200.jpg" width={1000} height={1000}
+                        src="/5e6979bb1958ea05484725f4_k%26c-bride-and-groom-smiling.1200-p-1080.jpg" width={1000} height={1000}
                       />
                     </div>
                     <div className="absolute left-1/2 top-[98%] z-0 text-7xl font-bold lowercase text-white/[0.8]">
@@ -43,10 +43,10 @@ export function PreFooter() {
                 <div className="w-64 px-1">
                   <div className="relative">
                     <div className="h-80">
-                      <img
+                      <Image alt="Replace with an informative alt text" sizes="500w, 800w"
                         className="inline-block h-full w-full max-w-full object-cover align-middle"
-                        src="https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e40f2f2c6829fb27fc7560e_bg-approach.1200.jpg"
-                        srcSet="https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e40f2f2c6829fb27fc7560e_bg-approach.1200-p-500.jpeg 500w, https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e40f2f2c6829fb27fc7560e_bg-approach.1200.jpg 800w"
+                        src="/5e40f2f2c6829fb27fc7560e_bg-approach.1200.jpg" width={1000} height={1000}
+                        src="/5e40f2f2c6829fb27fc7560e_bg-approach.1200-p-500.jpg" width={1000} height={1000}
                       />
                     </div>
                     <div className="absolute left-1/2 top-[98%] z-0 text-7xl font-bold lowercase text-white/[0.8]">
@@ -60,10 +60,10 @@ export function PreFooter() {
                 <div className="w-64 px-1" id="div-11">
                   <div className="relative">
                     <div className="h-80" id="div-12">
-                      <img
+                      <Image alt="Replace with an informative alt text" sizes="500w, 799w"
                         className="inline-block h-full w-full max-w-full object-cover align-middle"
-                        src="https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e697af349a01f58309d775e_Christine-beautiful-sky.1200.jpg"
-                        srcSet="https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e697af349a01f58309d775e_Christine-beautiful-sky.1200-p-500.jpeg 500w, https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e697af349a01f58309d775e_Christine-beautiful-sky.1200.jpg 799w"
+                        src="/5e697af349a01f58309d775e_Christine-beautiful-sky.1200.jpg" width={1000} height={1000}
+                        src="/5e697af349a01f58309d775e_Christine-beautiful-sky.1200-p-500.jpg" width={1000} height={1000}
                       />
                     </div>
                     <div className="absolute left-1/2 top-[98%] z-0 text-7xl font-bold lowercase text-white/[0.8]">
@@ -77,10 +77,10 @@ export function PreFooter() {
                 <div className="w-64 px-1" id="div-13">
                   <div className="relative">
                     <div className="h-80" id="div-14">
-                      <img
+                      <Image alt="Replace with an informative alt text" sizes="500w, 800w"
                         className="inline-block h-full w-full max-w-full object-cover align-middle"
-                        src="https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e40f2f21b7f2bcbeb4fe6c4_bg-services.1200.jpg"
-                        srcSet="https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e40f2f21b7f2bcbeb4fe6c4_bg-services.1200-p-500.jpeg 500w, https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e40f2f21b7f2bcbeb4fe6c4_bg-services.1200.jpg 800w"
+                        src="/5e40f2f21b7f2bcbeb4fe6c4_bg-services.1200.jpg" width={1000} height={1000}
+                        src="/5e40f2f21b7f2bcbeb4fe6c4_bg-services.1200-p-500.jpg" width={1000} height={1000}
                       />
                     </div>
                     <div className="absolute left-1/2 top-[98%] z-0 text-7xl font-bold lowercase text-white/[0.8]">
@@ -94,10 +94,10 @@ export function PreFooter() {
                 <div className="w-64 px-1" id="div-15">
                   <div className="relative">
                     <div className="h-80" id="div-16">
-                      <img
+                      <Image alt="Replace with an informative alt text" sizes="800w, 1080w, 1200w"
                         className="inline-block h-full w-full max-w-full object-cover align-middle"
-                        src="https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e40f2f11b7f2b9a534fe6a1_bg-contact.1200.jpg"
-                        srcSet="https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e40f2f11b7f2b9a534fe6a1_bg-contact.1200-p-800.jpeg 800w, https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e40f2f11b7f2b9a534fe6a1_bg-contact.1200-p-1080.jpeg 1080w, https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5e40f2f11b7f2b9a534fe6a1_bg-contact.1200.jpg 1200w"
+                        src="/5e40f2f11b7f2b9a534fe6a1_bg-contact.1200.jpg" width={1000} height={1000}
+                        src="/5e40f2f11b7f2b9a534fe6a1_bg-contact.1200-p-800.jpg" width={1000} height={1000}
                       />
                     </div>
                     <div className="absolute left-1/2 top-[98%] z-0 text-7xl font-bold lowercase text-white/[0.8]">
