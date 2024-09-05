@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import configPromise from "@payload-config";
 import placeholderImage from "/public/images/Aldridge-02665.1200-p-1080.jpeg";
+import { PreFooter } from "@/app/components/PreFooter"; // Add this import
 
 // Define types for our data
 type Post = {
@@ -10,26 +11,27 @@ type Post = {
   slug: string;
   name: string; // Changed from title to name
   category: string;
-  date: string;
-  readTime: string;
+  publishedDate: string; // Changed from date
+  readTime?: string; // Make it optional
   url: string;
   imageUrl: string;
+  featuredImage?: { url: string }; // Add this to match the actual data structure
 };
 
 type Guide = {
   id: string;
-  title: string;
-  category: string;
-  slug: string; // Add this if your CMS provides a slug
+  title: string | null | undefined;
+  category: string | { name: string }; // Allow for nested category object
+  slug: string | null | undefined;
 };
 
 export default async function Page() {
   const payload = await getPayloadHMR({ config: configPromise });
-  const postsFeatured = await payload.find({
+  const postsFeatured = (await payload.find({
     collection: "posts",
     limit: 4,
     sort: "-publishedDate",
-  });
+  })) as { docs: Post[] };
   const postsLatest = await payload.find({
     collection: "posts",
     limit: 5,
@@ -66,11 +68,12 @@ export default async function Page() {
       <LatestPostsSection posts={postsLatest.docs} />
       <DesignGuidesSection guides={designGuides} />
       <WebDesignSection posts={webDesignPosts} />
+      <PreFooter />
     </>
   );
 }
 
-const FeaturedSection = ({ postsFeatured }) => (
+const FeaturedSection = ({ postsFeatured }: { postsFeatured: Post[] }) => (
   <section className="bg-zinc-900 py-14 text-lg text-white md:py-16">
     <div className="container mx-auto px-6 md:px-10">
       <h1 className="mb-6 text-5xl">Blog</h1>
@@ -88,7 +91,7 @@ const FeaturedSection = ({ postsFeatured }) => (
         </div>
       </div>
       <div className="flex overflow-x-auto">
-        {postsFeatured.map((post) => (
+        {postsFeatured.map((post: Post) => (
           <FeaturedPostCard key={post.name} post={post} />
         ))}
       </div>
@@ -274,9 +277,12 @@ async function fetchDesignGuides(): Promise<Guide[]> {
 
   return guides.docs.map((guide) => ({
     id: guide.id,
-    title: guide.title,
-    category: guide.category,
-    slug: guide.slug,
+    title: guide.title || "", // Provide a default empty string if title is null or undefined
+    category:
+      typeof guide.category === "string"
+        ? guide.category
+        : guide.category?.name || "",
+    slug: guide.slug || "",
   }));
 }
 
