@@ -22,7 +22,6 @@ export default async function Header() {
             alt="logo"
             fill
             className="object-contain"
-            unoptimized
           />
         </div>
       </Link>
