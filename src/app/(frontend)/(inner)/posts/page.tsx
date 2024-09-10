@@ -38,17 +38,17 @@ export default async function Page() {
   });
   const postsBranding = await payload.find({
     collection: "posts",
-    limit: 4,
+    limit: 5,
     sort: "-publishedDate",
   });
   const postsWeb = await payload.find({
     collection: "posts",
-    limit: 4,
+    limit: 5,
     sort: "-publishedDate",
   });
   const postsContent = await payload.find({
     collection: "posts",
-    limit: 4,
+    limit: 5,
     sort: "-publishedDate",
   });
   const postsGuides = await payload.find({
@@ -65,7 +65,9 @@ export default async function Page() {
       <FeaturedSection postsFeatured={postsFeatured.docs as Post[]} />
       <LatestPostsSection posts={postsLatest.docs} />
       <DesignGuidesSection guides={designGuides} />
-      <WebDesignSection posts={webDesignPosts} />
+      <BrandingPostsSection posts={postsBranding.docs as Post[]} />
+      <WebDesignPostsSection posts={postsWeb.docs as Post[]} />
+      <ContentPostsSection posts={postsContent.docs as Post[]} />
       <PreFooter />
     </>
   );
@@ -141,7 +143,24 @@ const DesignGuidesSection = ({ guides }: { guides: Guide[] }) => (
   </section>
 );
 
-const WebDesignSection = ({ posts }: { posts: Post[] }) => (
+const BrandingPostsSection = ({ posts }: { posts: Post[] }) => (
+  <section className="py-14 md:py-20">
+    <div className="container mx-auto px-6 md:px-10">
+      <h2 className="mb-5 text-4xl">Branding</h2>
+      <p className="mb-10 text-xl">
+        Tips and insights on branding and marketing
+      </p>
+      <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post) => (
+          <OrdinaryPostCard key={post.id} post={post} />
+        ))}
+      </ul>
+      <ViewMoreLink href="/blog/category/branding" text="View all articles" />
+    </div>
+  </section>
+);
+
+const WebDesignPostsSection = ({ posts }: { posts: Post[] }) => (
   <section className="py-14 md:py-20">
     <div className="container mx-auto px-6 md:px-10">
       <h2 className="mb-5 text-4xl">Web Design</h2>
@@ -154,6 +173,23 @@ const WebDesignSection = ({ posts }: { posts: Post[] }) => (
         ))}
       </ul>
       <ViewMoreLink href="/blog/category/web-design" text="View all articles" />
+    </div>
+  </section>
+);
+
+const ContentPostsSection = ({ posts }: { posts: Post[] }) => (
+  <section className="py-14 md:py-20">
+    <div className="container mx-auto px-6 md:px-10">
+      <h2 className="mb-5 text-4xl">Content</h2>
+      <p className="mb-10 text-xl">
+        The latest news and insights on content creation and marketing
+      </p>
+      <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post) => (
+          <OrdinaryPostCard key={post.id} post={post} />
+        ))}
+      </ul>
+      <ViewMoreLink href="/blog/category/content" text="View all articles" />
     </div>
   </section>
 );
