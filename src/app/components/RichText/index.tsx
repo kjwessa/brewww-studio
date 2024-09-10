@@ -15,8 +15,6 @@ const RichText: React.FC<Props> = ({
   enableGutter = true,
   enableProse = true,
 }) => {
-  console.log("RichText content:", content); // Debug log
-
   const renderContent = () => {
     if (typeof content === "string") {
       // If content is a string, render it directly after decoding HTML entities
@@ -27,7 +25,6 @@ const RichText: React.FC<Props> = ({
         nodes: content.root.children as LexicalNode[],
       });
     } else {
-      console.log("Invalid content structure"); // Debug log
       return null;
     }
   };

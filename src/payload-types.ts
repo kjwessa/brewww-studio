@@ -97,7 +97,7 @@ export interface Page {
 export interface Post {
   id: string;
   name: string;
-  imageMain?: string | Media | null;
+  imageMain?: (string | null) | Media;
   content?: {
     root: {
       type: string;
@@ -113,7 +113,7 @@ export interface Post {
     };
     [k: string]: unknown;
   } | null;
-  image?: string | Media | null;
+  image?: (string | null) | Media;
   title?: string | null;
   description?: string | null;
   slug?: string | null;
@@ -131,7 +131,7 @@ export interface Post {
 export interface Category {
   id: string;
   name: string;
-  image?: string | Media | null;
+  image?: (string | null) | Media;
   title?: string | null;
   description?: string | null;
   slug: string;
@@ -146,10 +146,10 @@ export interface Category {
 export interface Work {
   id: string;
   name: string;
-  thumbnail?: string | Media | null;
+  thumbnail?: (string | null) | Media;
   testimonial?: (string | null) | Testimonial;
   client: string | Client;
-  image?: string | Media | null;
+  image?: (string | null) | Media;
   title?: string | null;
   description?: string | null;
   slug?: string | null;
@@ -193,8 +193,8 @@ export interface Testimonial {
 export interface Client {
   id: string;
   name: string;
-  logoLight?: string | Media | null;
-  logoDark?: string | Media | null;
+  logoLight?: (string | null) | Media;
+  logoDark?: (string | null) | Media;
   city: string;
   state: string;
   updatedAt: string;
@@ -209,8 +209,8 @@ export interface Play {
   id: string;
   name: string;
   shortPitch?: string | null;
-  thumbnail?: string | Media | null;
-  image?: string | Media | null;
+  thumbnail?: (string | null) | Media;
+  image?: (string | null) | Media;
   title?: string | null;
   description?: string | null;
   slug?: string | null;
