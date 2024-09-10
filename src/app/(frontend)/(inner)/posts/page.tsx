@@ -3,9 +3,8 @@ import Link from "next/link";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import configPromise from "@payload-config";
 import placeholderImage from "/public/images/Aldridge-02665.1200-p-1080.jpeg";
-import { PreFooter } from "@/app/components/PreFooter"; // Add this import
+import { PreFooter } from "@/app/components/PreFooter";
 
-// Define types for our data
 type Post = {
   id: string;
   slug: string;
@@ -58,7 +57,6 @@ export default async function Page() {
     sort: "-publishedDate",
   });
 
-  // Fetch other data (replace with actual API calls)
   const designGuides: Guide[] = await fetchDesignGuides();
   const webDesignPosts: Post[] = await fetchWebDesignPosts();
 
@@ -73,37 +71,39 @@ export default async function Page() {
   );
 }
 
-const FeaturedSection = ({ postsFeatured }: { postsFeatured: Post[] }) => (
-  <section className="overflow-hidden bg-zinc-900 py-14 text-lg text-white md:py-16">
-    <div className="container mx-auto px-6 md:px-10">
-      <h1 className="mb-6 text-5xl font-bold">Blog</h1>
-      <div className="mb-7 flex flex-col md:flex-row md:items-end">
-        <p className="mb-4 w-full text-2xl md:mb-0 md:w-2/3">
-          News and insights on all things design by Brewww
-        </p>
-        <div className="ml-auto flex">
-          <button className="mr-5 opacity-20 md:mr-10">
-            <ArrowIcon direction="left" />
-          </button>
-          <button>
-            <ArrowIcon direction="right" />
-          </button>
+const FeaturedSection = ({ postsFeatured }: { postsFeatured: Post[] }) => {
+  return (
+    <section className="bg-zinc-900 py-14 text-lg text-white md:py-16">
+      <div className="container mx-auto">
+        <h1 className="mb-6 text-5xl font-bold">Blog</h1>
+        <div className="mb-7 flex flex-col md:flex-row md:items-end">
+          <p className="mb-4 w-full text-2xl md:mb-0 md:w-2/3">
+            News and insights on all things design by Brewww
+          </p>
+          <div className="ml-auto flex">
+            <button className="mr-5 opacity-20 md:mr-10">
+              <ArrowIcon direction="left" />
+            </button>
+            <button>
+              <ArrowIcon direction="right" />
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    <div className="relative">
-      <div
-        className="flex gap-6 overflow-x-auto pb-8 pl-6 md:pl-10"
-        style={{ scrollSnapType: "x mandatory" }}
-      >
-        {postsFeatured.map((post: Post, index: number) => (
-          <FeaturedPostCard key={post.id} post={post} index={index} />
-        ))}
+      <div className="relative overflow-hidden">
+        <div className="container mx-auto px-6 md:px-10">
+          <div className="-mx-6 flex md:-mx-10">
+            <div className="flex gap-6 overflow-x-auto pb-8">
+              {postsFeatured.map((post: Post) => (
+                <FeaturedPostCard key={post.id} post={post} />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-24 bg-gradient-to-l from-zinc-900 to-transparent"></div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const LatestPostsSection = ({ posts }: { posts: any[] }) => (
   <section className="py-14 md:py-16">
@@ -159,12 +159,9 @@ const WebDesignSection = ({ posts }: { posts: Post[] }) => (
 );
 
 const FeaturedPostCard = ({ post }: { post: Post }) => (
-  <div
-    className="relative w-[calc(75vw-3rem)] flex-shrink-0 overflow-hidden rounded-lg md:w-[calc(40vw-3rem)]"
-    style={{ scrollSnapAlign: "start" }}
-  >
+  <div className="relative w-[85vw] flex-shrink-0 overflow-hidden rounded-lg sm:w-[70vw] md:w-[60vw] lg:w-[50vw]">
     <Link href={`/blog/${post.slug}`}>
-      <div className="relative aspect-[4/3]">
+      <div className="relative aspect-[16/9]">
         <Image
           src={post.featuredImage?.url || placeholderImage}
           alt={post.name || ""}
@@ -180,7 +177,7 @@ const FeaturedPostCard = ({ post }: { post: Post }) => (
             ? post.category
             : post.category?.name || "Uncategorized"}
         </p>
-        <h2 className="mb-2 text-xl font-bold">
+        <h2 className="mb-2 text-2xl font-bold">
           {post.name || "Untitled Post"}
         </h2>
         <p className="text-sm opacity-75">
@@ -193,6 +190,7 @@ const FeaturedPostCard = ({ post }: { post: Post }) => (
     </Link>
   </div>
 );
+
 const OrdinaryPostCard = ({
   post,
   featured = false,
