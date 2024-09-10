@@ -3,25 +3,24 @@ import Link from "next/link";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import configPromise from "@payload-config";
 import placeholderImage from "/public/images/Aldridge-02665.1200-p-1080.jpeg";
-import { PreFooter } from "@/app/components/PreFooter"; // Add this import
+import { PreFooter } from "@/app/components/PreFooter";
 
-// Define types for our data
 type Post = {
   id: string;
   slug: string;
-  name: string; // Changed from title to name
-  category: string;
-  publishedDate: string; // Changed from date
-  readTime?: string; // Make it optional
-  url?: string; // Make url optional
-  imageUrl?: string; // Make imageUrl optional
-  featuredImage?: { url: string }; // Add this to match the actual data structure
+  name: string;
+  category?: string | { name: string };
+  publishedDate: string;
+  readTime?: string;
+  url?: string;
+  imageUrl?: string;
+  featuredImage?: { url: string };
 };
 
 type Guide = {
   id: string;
   title: string | null | undefined;
-  category: string | { name: string }; // Allow for nested category object
+  category: string | { name: string };
   slug: string | null | undefined;
 };
 
@@ -39,17 +38,17 @@ export default async function Page() {
   });
   const postsBranding = await payload.find({
     collection: "posts",
-    limit: 4,
+    limit: 5,
     sort: "-publishedDate",
   });
   const postsWeb = await payload.find({
     collection: "posts",
-    limit: 4,
+    limit: 5,
     sort: "-publishedDate",
   });
   const postsContent = await payload.find({
     collection: "posts",
-    limit: 4,
+    limit: 5,
     sort: "-publishedDate",
   });
   const postsGuides = await payload.find({
@@ -58,7 +57,6 @@ export default async function Page() {
     sort: "-publishedDate",
   });
 
-  // Fetch other data (replace with actual API calls)
   const designGuides: Guide[] = await fetchDesignGuides();
   const webDesignPosts: Post[] = await fetchWebDesignPosts();
 
@@ -67,37 +65,47 @@ export default async function Page() {
       <FeaturedSection postsFeatured={postsFeatured.docs as Post[]} />
       <LatestPostsSection posts={postsLatest.docs} />
       <DesignGuidesSection guides={designGuides} />
-      <WebDesignSection posts={webDesignPosts} />
+      <BrandingPostsSection posts={postsBranding.docs as Post[]} />
+      <WebDesignPostsSection posts={postsWeb.docs as Post[]} />
+      <ContentPostsSection posts={postsContent.docs as Post[]} />
       <PreFooter />
     </>
   );
 }
 
-const FeaturedSection = ({ postsFeatured }: { postsFeatured: Post[] }) => (
-  <section className="bg-zinc-900 py-14 text-lg text-white md:py-16">
-    <div className="container mx-auto px-6 md:px-10">
-      <h1 className="mb-6 text-5xl">Blog</h1>
-      <div className="mb-7 flex flex-col md:flex-row md:items-end">
-        <p className="mb-4 w-full text-2xl md:mb-0 md:w-2/3">
-          News and insights on all things design by Brewww
-        </p>
-        <div className="ml-auto flex">
-          <button className="mr-5 opacity-20 md:mr-10">
-            <ArrowIcon direction="left" />
-          </button>
-          <button>
-            <ArrowIcon direction="right" />
-          </button>
+const FeaturedSection = ({ postsFeatured }: { postsFeatured: Post[] }) => {
+  return (
+    <section className="bg-zinc-900 py-14 text-lg text-white md:py-16">
+      <div className="container mx-auto">
+        <h1 className="mb-6 text-5xl font-bold">Blog</h1>
+        <div className="mb-7 flex flex-col md:flex-row md:items-end">
+          <p className="mb-4 w-full text-2xl md:mb-0 md:w-2/3">
+            News and insights on all things design by Brewww
+          </p>
+          <div className="ml-auto flex">
+            <button className="mr-5 opacity-20 md:mr-10">
+              <ArrowIcon direction="left" />
+            </button>
+            <button>
+              <ArrowIcon direction="right" />
+            </button>
+          </div>
         </div>
       </div>
-      <div className="flex overflow-x-auto">
-        {postsFeatured.map((post: Post) => (
-          <FeaturedPostCard key={post.name} post={post} />
-        ))}
+      <div className="relative overflow-hidden">
+        <div className="container mx-auto px-6 md:px-10">
+          <div className="-mx-6 flex md:-mx-10">
+            <div className="flex gap-6 overflow-x-auto pb-8">
+              {postsFeatured.map((post: Post) => (
+                <FeaturedPostCard key={post.id} post={post} />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const LatestPostsSection = ({ posts }: { posts: any[] }) => (
   <section className="py-14 md:py-16">
@@ -135,7 +143,24 @@ const DesignGuidesSection = ({ guides }: { guides: Guide[] }) => (
   </section>
 );
 
-const WebDesignSection = ({ posts }: { posts: Post[] }) => (
+const BrandingPostsSection = ({ posts }: { posts: Post[] }) => (
+  <section className="py-14 md:py-20">
+    <div className="container mx-auto px-6 md:px-10">
+      <h2 className="mb-5 text-4xl">Branding</h2>
+      <p className="mb-10 text-xl">
+        Tips and insights on branding and marketing
+      </p>
+      <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post) => (
+          <OrdinaryPostCard key={post.id} post={post} />
+        ))}
+      </ul>
+      <ViewMoreLink href="/blog/category/branding" text="View all articles" />
+    </div>
+  </section>
+);
+
+const WebDesignPostsSection = ({ posts }: { posts: Post[] }) => (
   <section className="py-14 md:py-20">
     <div className="container mx-auto px-6 md:px-10">
       <h2 className="mb-5 text-4xl">Web Design</h2>
@@ -152,19 +177,51 @@ const WebDesignSection = ({ posts }: { posts: Post[] }) => (
   </section>
 );
 
+const ContentPostsSection = ({ posts }: { posts: Post[] }) => (
+  <section className="py-14 md:py-20">
+    <div className="container mx-auto px-6 md:px-10">
+      <h2 className="mb-5 text-4xl">Content</h2>
+      <p className="mb-10 text-xl">
+        The latest news and insights on content creation and marketing
+      </p>
+      <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post) => (
+          <OrdinaryPostCard key={post.id} post={post} />
+        ))}
+      </ul>
+      <ViewMoreLink href="/blog/category/content" text="View all articles" />
+    </div>
+  </section>
+);
+
 const FeaturedPostCard = ({ post }: { post: Post }) => (
-  <div className="relative mr-4 w-64 flex-shrink-0 overflow-hidden rounded-sm">
+  <div className="relative w-[85vw] flex-shrink-0 overflow-hidden rounded-lg sm:w-[70vw] md:w-[60vw] lg:w-[50vw]">
     <Link href={`/blog/${post.slug}`}>
-      <Image
-        src={post.imageUrl || placeholderImage}
-        alt={post.name || ""}
-        width={1080}
-        height={720}
-        className="h-full w-full object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-      <div className="absolute bottom-4 left-4 right-4 text-white">
-        <p className="text-2xl font-bold">{post.name}</p>
+      <div className="relative aspect-[16/9]">
+        <Image
+          src={post.featuredImage?.url || placeholderImage}
+          alt={post.name || ""}
+          layout="fill"
+          objectFit="cover"
+          className="rounded-lg"
+        />
+        <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/60 to-transparent" />
+      </div>
+      <div className="absolute bottom-6 left-6 right-6 text-white">
+        <p className="mb-2 text-sm uppercase tracking-wider">
+          {typeof post.category === "string"
+            ? post.category
+            : post.category?.name || "Uncategorized"}
+        </p>
+        <h2 className="mb-2 text-2xl font-bold">
+          {post.name || "Untitled Post"}
+        </h2>
+        <p className="text-sm opacity-75">
+          {post.publishedDate
+            ? new Date(post.publishedDate).toLocaleDateString()
+            : "No date"}{" "}
+          • {post.readTime || "5 min read"}
+        </p>
       </div>
     </Link>
   </div>
