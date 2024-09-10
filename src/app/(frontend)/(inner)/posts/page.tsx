@@ -90,13 +90,17 @@ const FeaturedSection = ({ postsFeatured }: { postsFeatured: Post[] }) => (
           </button>
         </div>
       </div>
-      <div className="relative">
-        <div className="-mx-6 flex gap-6 overflow-x-auto px-6 pb-8 md:-mx-10 md:px-10">
-          {postsFeatured.map((post: Post, index: number) => (
-            <FeaturedPostCard key={post.id} post={post} index={index} />
-          ))}
-        </div>
+    </div>
+    <div className="relative">
+      <div
+        className="flex gap-6 overflow-x-auto pb-8 pl-6 md:pl-10"
+        style={{ scrollSnapType: "x mandatory" }}
+      >
+        {postsFeatured.map((post: Post, index: number) => (
+          <FeaturedPostCard key={post.id} post={post} index={index} />
+        ))}
       </div>
+      <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-24 bg-gradient-to-l from-zinc-900 to-transparent"></div>
     </div>
   </section>
 );
@@ -154,12 +158,13 @@ const WebDesignSection = ({ posts }: { posts: Post[] }) => (
   </section>
 );
 
-const FeaturedPostCard = ({ post, index }: { post: Post; index: number }) => (
+const FeaturedPostCard = ({ post }: { post: Post }) => (
   <div
-    className={`relative flex-shrink-0 overflow-hidden rounded-lg ${index === 0 ? "w-full md:w-2/3" : "w-4/5 md:w-1/2"}`}
+    className="relative w-[calc(75vw-3rem)] flex-shrink-0 overflow-hidden rounded-lg md:w-[calc(40vw-3rem)]"
+    style={{ scrollSnapAlign: "start" }}
   >
     <Link href={`/blog/${post.slug}`}>
-      <div className="relative aspect-[16/9]">
+      <div className="relative aspect-[4/3]">
         <Image
           src={post.featuredImage?.url || placeholderImage}
           alt={post.name || ""}
@@ -175,7 +180,7 @@ const FeaturedPostCard = ({ post, index }: { post: Post; index: number }) => (
             ? post.category
             : post.category?.name || "Uncategorized"}
         </p>
-        <h2 className="mb-2 text-2xl font-bold">
+        <h2 className="mb-2 text-xl font-bold">
           {post.name || "Untitled Post"}
         </h2>
         <p className="text-sm opacity-75">
