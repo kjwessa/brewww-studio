@@ -196,7 +196,7 @@ const ContentPostsSection = ({ posts }: { posts: Post[] }) => (
 
 const FeaturedPostCard = ({ post }: { post: Post }) => (
   <div className="relative w-[85vw] flex-shrink-0 overflow-hidden rounded-lg sm:w-[70vw] md:w-[60vw] lg:w-[50vw]">
-    <Link href={`/blog/${post.slug}`}>
+    <Link href={`/posts/${post.slug}`}>
       <div className="relative aspect-[16/9]">
         <Image
           src={post.featuredImage?.url || placeholderImage}
@@ -220,7 +220,7 @@ const FeaturedPostCard = ({ post }: { post: Post }) => (
           {post.publishedDate
             ? new Date(post.publishedDate).toLocaleDateString()
             : "No date"}{" "}
-          • {post.readTime || "5 min read"}
+          • {post.readTime ? `${post.readTime} min read` : "Add Read Time"}
         </p>
       </div>
     </Link>
@@ -237,7 +237,7 @@ const OrdinaryPostCard = ({
   <li
     className={`flex flex-col overflow-hidden rounded-sm shadow-sm ${featured ? "h-full" : ""}`}
   >
-    <Link href={`/blog/${post.slug}`} className="block flex-grow">
+    <Link href={`/posts/${post.slug}`} className="block flex-grow">
       <div
         className={`overflow-hidden ${featured ? "aspect-video md:aspect-[16/9]" : "aspect-video"}`}
       >
@@ -256,7 +256,9 @@ const OrdinaryPostCard = ({
         <div className="mt-3 flex items-center text-sm text-gray-500">
           <span>{new Date(post.publishedDate).toLocaleDateString()}</span>
           <span className="mx-2">•</span>
-          <span>{post.readTime || "5 min read"}</span>
+          <span>
+            {post.readTime ? `${post.readTime} min read` : "Add Read Time"}
+          </span>
         </div>
       </div>
     </Link>

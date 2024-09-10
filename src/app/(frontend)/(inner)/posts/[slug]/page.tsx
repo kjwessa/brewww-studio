@@ -43,8 +43,7 @@ const HeroSection = ({
   publishedDate,
   readTime,
 }: HeroSectionProps) => {
-  const fallbackDescription =
-    "Bacon ipsum dolor amet short ribs brisket venison rump drumstick pig sausage prosciutto chicken spare ribs salami picanha doner. Kevin capicola sausage, buffalo bresaola venison turkey shoulder picanha ham pork tri-tip meatball meatloaf ribeye.";
+  const fallbackDescription = "Add a cool description here.";
 
   return (
     <section className="container mx-auto px-4 pb-12 pt-12">
@@ -67,7 +66,7 @@ const HeroSection = ({
             {publishedDate ? formatDate(publishedDate) : "Date not available"}
           </span>
           <MetaDot />
-          <span>{readTime ? `${readTime} min read` : ""}</span>
+          <span>{readTime ? `${readTime} min read` : "Add Read Time"}</span>
         </div>
       </div>
     </section>
