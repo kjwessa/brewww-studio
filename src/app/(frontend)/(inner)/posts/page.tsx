@@ -9,19 +9,19 @@ import { PreFooter } from "@/app/components/PreFooter"; // Add this import
 type Post = {
   id: string;
   slug: string;
-  name: string; // Changed from title to name
-  category: string;
-  publishedDate: string; // Changed from date
-  readTime?: string; // Make it optional
-  url?: string; // Make url optional
-  imageUrl?: string; // Make imageUrl optional
-  featuredImage?: { url: string }; // Add this to match the actual data structure
+  name: string;
+  category?: string | { name: string };
+  publishedDate: string;
+  readTime?: string;
+  url?: string;
+  imageUrl?: string;
+  featuredImage?: { url: string };
 };
 
 type Guide = {
   id: string;
   title: string | null | undefined;
-  category: string | { name: string }; // Allow for nested category object
+  category: string | { name: string };
   slug: string | null | undefined;
 };
 
@@ -74,9 +74,9 @@ export default async function Page() {
 }
 
 const FeaturedSection = ({ postsFeatured }: { postsFeatured: Post[] }) => (
-  <section className="bg-zinc-900 py-14 text-lg text-white md:py-16">
+  <section className="overflow-hidden bg-zinc-900 py-14 text-lg text-white md:py-16">
     <div className="container mx-auto px-6 md:px-10">
-      <h1 className="mb-6 text-5xl">Blog</h1>
+      <h1 className="mb-6 text-5xl font-bold">Blog</h1>
       <div className="mb-7 flex flex-col md:flex-row md:items-end">
         <p className="mb-4 w-full text-2xl md:mb-0 md:w-2/3">
           News and insights on all things design by Brewww
@@ -90,10 +90,12 @@ const FeaturedSection = ({ postsFeatured }: { postsFeatured: Post[] }) => (
           </button>
         </div>
       </div>
-      <div className="flex overflow-x-auto">
-        {postsFeatured.map((post: Post) => (
-          <FeaturedPostCard key={post.name} post={post} />
-        ))}
+      <div className="relative">
+        <div className="-mx-6 flex gap-6 overflow-x-auto px-6 pb-8 md:-mx-10 md:px-10">
+          {postsFeatured.map((post: Post, index: number) => (
+            <FeaturedPostCard key={post.id} post={post} index={index} />
+          ))}
+        </div>
       </div>
     </div>
   </section>
@@ -152,24 +154,40 @@ const WebDesignSection = ({ posts }: { posts: Post[] }) => (
   </section>
 );
 
-const FeaturedPostCard = ({ post }: { post: Post }) => (
-  <div className="relative mr-4 w-64 flex-shrink-0 overflow-hidden rounded-sm">
+const FeaturedPostCard = ({ post, index }: { post: Post; index: number }) => (
+  <div
+    className={`relative flex-shrink-0 overflow-hidden rounded-lg ${index === 0 ? "w-full md:w-2/3" : "w-4/5 md:w-1/2"}`}
+  >
     <Link href={`/blog/${post.slug}`}>
-      <Image
-        src={post.imageUrl || placeholderImage}
-        alt={post.name || ""}
-        width={1080}
-        height={720}
-        className="h-full w-full object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-      <div className="absolute bottom-4 left-4 right-4 text-white">
-        <p className="text-2xl font-bold">{post.name}</p>
+      <div className="relative aspect-[16/9]">
+        <Image
+          src={post.featuredImage?.url || placeholderImage}
+          alt={post.name || ""}
+          layout="fill"
+          objectFit="cover"
+          className="rounded-lg"
+        />
+        <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/60 to-transparent" />
+      </div>
+      <div className="absolute bottom-6 left-6 right-6 text-white">
+        <p className="mb-2 text-sm uppercase tracking-wider">
+          {typeof post.category === "string"
+            ? post.category
+            : post.category?.name || "Uncategorized"}
+        </p>
+        <h2 className="mb-2 text-2xl font-bold">
+          {post.name || "Untitled Post"}
+        </h2>
+        <p className="text-sm opacity-75">
+          {post.publishedDate
+            ? new Date(post.publishedDate).toLocaleDateString()
+            : "No date"}{" "}
+          • {post.readTime || "5 min read"}
+        </p>
       </div>
     </Link>
   </div>
 );
-
 const OrdinaryPostCard = ({
   post,
   featured = false,
