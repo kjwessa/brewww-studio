@@ -1,23 +1,52 @@
+// ServiceLinks component
+const ServiceLinks = ({
+  title,
+  links,
+}: {
+  title: string;
+  links: { name: string; href: string }[];
+}) => (
+  <div className="flex flex-col items-start">
+    <h4 className="min-h-[0vw] text-lg">{title}</h4>
+    {links.map((link) => (
+      <a
+        key={link.href}
+        className="relative mb-1 inline-block max-w-full font-bold text-white"
+        href={link.href}
+      >
+        <div className="uppercase text-neutral-900">{link.name}</div>
+        <div className="absolute bottom-0 left-0 right-0 h-0.5 w-1/5 bg-neutral-900" />
+      </a>
+    ))}
+  </div>
+);
+
 export function HomeServices() {
+  const brandingLinks = [
+    { name: "Brand Strategy", href: "/capabilities/brand-strategy" },
+    { name: "Brand Identity", href: "/capabilities/brand-identity" },
+    { name: "Brand Content", href: "/capabilities/brand-content" },
+  ];
+
+  const webLinks = [
+    { name: "Web Design & UX", href: "/capabilities/web-design-and-ux" },
+    { name: "Web Development", href: "/capabilities/web-development" },
+    { name: "SEO & Search", href: "/capabilities/seo-and-search" },
+  ];
+
+  const creativeLinks = [
+    { name: "Graphic Design", href: "/capabilities/graphic-design" },
+    { name: "Photography", href: "/capabilities/photography" },
+    { name: "Social Media", href: "/capabilities/social-media-management" },
+  ];
+
   return (
     <>
       <div>
-        <div
-          className="relative content-stretch items-start justify-start bg-white px-24 py-36 font-light text-neutral-900"
-          id="div-1"
-        >
-          <div
-            className="relative m-auto flex w-full max-w-[62.50rem] flex-grow auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto_auto] flex-col items-stretch justify-center self-start"
-            id="div-2"
-          >
-            <div
-              className="relative grid auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto_auto_auto_auto_auto_auto] gap-4"
-              id="div-3"
-            >
-              <div
-                className="col-span-4 row-span-1 self-end overflow-hidden font-bold uppercase"
-                id="div-4"
-              >
+        <div className="relative content-stretch items-start justify-start bg-white px-6 py-24 font-light text-neutral-900 sm:px-12 sm:py-36 md:px-24">
+          <div className="relative m-auto flex w-full max-w-[62.50rem] flex-grow auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto_auto] flex-col items-stretch justify-center self-start">
+            <div className="relative grid auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto_auto_auto_auto_auto_auto] gap-4">
+              <div className="col-span-4 row-span-1 self-end overflow-hidden font-bold uppercase">
                 <div className="flex flex-col items-start">
                   <div className="pb-5">
                     <span className="text-orange-400">/</span> What we do (and
@@ -25,7 +54,7 @@ export function HomeServices() {
                   </div>
                 </div>
               </div>
-              <div className="col-span-6 row-span-2 overflow-hidden text-[3.63rem] leading-none">
+              <div className="col-span-6 row-span-2 overflow-hidden text-3xl leading-tight sm:text-4xl md:text-5xl lg:text-[3.63rem]">
                 <div className="flex flex-col items-start">
                   <h2 className="min-h-[0vw]">
                     Brewww is a creative studio that finds the places where{" "}
@@ -36,110 +65,14 @@ export function HomeServices() {
                   </h2>
                 </div>
               </div>
-              <div
-                className="col-start-1 col-end-3 row-start-5 row-end-7 overflow-hidden"
-                id="div-5"
-              >
-                <div className="flex flex-col items-start">
-                  <h4 className="min-h-[0vw] text-lg">Branding</h4>
-                  <a
-                    className="relative mb-1 inline-block max-w-full font-bold text-white"
-                    href="/capabilities/brand-strategy"
-                  >
-                    <div className="uppercase text-neutral-900" id="div-6">
-                      Brand Strategy
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 w-1/5 bg-neutral-900" />
-                  </a>
-                  <a
-                    className="relative mb-1 inline-block max-w-full font-bold text-white"
-                    href="/capabilities/brand-identity"
-                  >
-                    <div className="uppercase text-neutral-900" id="div-7">
-                      Brand Identity
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 w-1/5 bg-neutral-900" />
-                  </a>
-                  <a
-                    className="relative mb-1 inline-block max-w-full font-bold text-white"
-                    href="/capabilities/brand-content"
-                  >
-                    <div className="uppercase text-neutral-900" id="div-8">
-                      Brand Content
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 w-1/5 bg-neutral-900" />
-                  </a>
-                </div>
+              <div className="col-start-1 col-end-3 row-start-5 row-end-7 overflow-hidden">
+                <ServiceLinks title="Branding" links={brandingLinks} />
               </div>
-              <div
-                className="col-start-3 col-end-6 row-start-5 row-end-7 overflow-hidden"
-                id="div-9"
-              >
-                <div className="flex flex-col items-start">
-                  <h4 className="min-h-[0vw] text-lg">Web</h4>
-                  <a
-                    className="relative mb-1 inline-block max-w-full font-bold text-white"
-                    href="/capabilities/web-design-and-ux"
-                  >
-                    <div className="uppercase text-neutral-900" id="div-10">
-                      Web Design & UX
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 w-1/5 bg-neutral-900" />
-                  </a>
-                  <a
-                    className="relative mb-1 inline-block max-w-full font-bold text-white"
-                    href="/capabilities/web-development"
-                  >
-                    <div className="uppercase text-neutral-900" id="div-11">
-                      Web Development
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 w-1/5 bg-neutral-900" />
-                  </a>
-                  <a
-                    className="relative mb-1 inline-block max-w-full font-bold text-white"
-                    href="/capabilities/seo-and-search"
-                  >
-                    <div className="uppercase text-neutral-900" id="div-12">
-                      SEO & Search
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 w-1/5 bg-neutral-900" />
-                  </a>
-                </div>
+              <div className="col-start-3 col-end-6 row-start-5 row-end-7 overflow-hidden">
+                <ServiceLinks title="Web" links={webLinks} />
               </div>
-              <div
-                className="col-start-5 col-end-6 row-end-7 overflow-hidden"
-                id="div-13"
-              >
-                <div className="flex flex-col items-start">
-                  <h4 className="min-h-[0vw] text-lg">Creative</h4>
-                  <a
-                    className="relative mb-1 inline-block max-w-full font-bold text-white"
-                    href="/capabilities/graphic-design"
-                  >
-                    <div className="uppercase text-neutral-900" id="div-14">
-                      Graphic Design
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 w-1/5 bg-neutral-900" />
-                  </a>
-                  <a
-                    className="relative mb-1 inline-block max-w-full font-bold text-white"
-                    href="/capabilities/photography"
-                  >
-                    <div className="uppercase text-neutral-900" id="div-15">
-                      Photography
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 w-1/5 bg-neutral-900" />
-                  </a>
-                  <a
-                    className="relative mb-1 inline-block max-w-full font-bold text-white"
-                    href="/capabilities/social-media-management"
-                  >
-                    <div className="uppercase text-neutral-900" id="div-16">
-                      Social Media
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 w-1/5 bg-neutral-900" />
-                  </a>
-                </div>
+              <div className="col-start-5 col-end-6 row-end-7 overflow-hidden">
+                <ServiceLinks title="Creative" links={creativeLinks} />
               </div>
             </div>
           </div>

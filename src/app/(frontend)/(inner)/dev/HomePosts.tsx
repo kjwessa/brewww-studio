@@ -1,28 +1,62 @@
 import Image from "next/image";
 
+interface BlogPostCardProps {
+  href: string;
+  imageSrc: string;
+  imageAlt: string;
+  category: string;
+  title: string;
+}
+
+const BlogPostCard: React.FC<BlogPostCardProps> = ({
+  href,
+  imageSrc,
+  imageAlt,
+  category,
+  title,
+}) => (
+  <div className="auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto_auto]">
+    <a className="inline-block max-w-full" href={href}>
+      <div className="relative h-96 w-full overflow-hidden rounded-md">
+        <Image
+          alt={imageAlt}
+          className="object-cover"
+          src={imageSrc}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+      </div>
+      <div className="relative flex items-stretch justify-start pb-3 pt-5">
+        <div className="relative">
+          <div className="ml-auto">{category}</div>
+          <div className="absolute bottom-[0.25rem] left-0 right-0 top-auto z-[-2] h-1 bg-orange-400" />
+        </div>
+      </div>
+      <div className="relative">
+        <h4 className="min-h-[0vw] text-4xl">{title}</h4>
+        <div className="absolute bottom-[-0.50rem] left-0 right-0 top-auto h-0.5 w-96 bg-orange-400" />
+      </div>
+    </a>
+  </div>
+);
+
 export function HomePosts() {
   return (
     <>
       <div>
         <div>
-          <div
-            className="content-stretch items-start justify-start bg-neutral-900 px-24 py-12 font-light text-white"
-            id="div-1"
-          >
-            <div
-              className="m-auto flex w-full max-w-[62.50rem] flex-grow auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto_auto] flex-col items-stretch justify-center gap-4 self-start"
-              id="div-2"
-            >
+          <div className="content-stretch items-start justify-start bg-neutral-900 px-4 py-8 font-light text-white sm:px-8 sm:py-10 md:px-16 lg:px-24">
+            <div className="m-auto flex w-full max-w-[62.50rem] flex-grow flex-col items-stretch justify-center gap-2 self-start">
               <div className="overflow-hidden font-bold uppercase">
                 <div className="flex flex-col items-start">
-                  <div className="pb-5 text-center">
+                  <div className="pb-2 text-center sm:pb-3">
                     <span className="text-orange-400">/</span> Featured insights
                   </div>
                 </div>
               </div>
-              <div className="overflow-hidden text-[3.63rem] leading-none">
+              <div className="overflow-visible text-2xl leading-tight sm:text-3xl md:text-4xl lg:text-[3.63rem] lg:leading-tight">
                 <div className="flex flex-col items-start">
-                  <h2 className="min-h-[0vw]">
+                  <h2 className="min-h-[0vw] pb-2">
                     Branding, tech, and business{" "}
                     <strong className="font-extrabold">insights.</strong>
                   </h2>
@@ -32,166 +66,60 @@ export function HomePosts() {
           </div>
         </div>
 
-        <div
-          className="relative content-stretch items-start justify-start bg-neutral-900 px-24 py-36 font-light text-white"
-          id="div-1"
-        >
-          <div
-            className="relative m-auto flex w-full max-w-[100.00rem] flex-grow auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto_auto] flex-col items-stretch justify-center self-start font-bold"
-            id="div-2"
-          >
-            <div
-              className="m-auto grid auto-cols-fr grid-cols-[.5fr_1fr_1fr_1fr_1fr_.5fr_.5fr_1fr_1fr_1fr_1fr_.5fr] grid-rows-[auto_auto_auto_auto_auto_auto_auto_auto_auto_auto_auto] gap-[0.63rem]"
-              id="div-3"
-            >
+        <div className="relative content-stretch items-start justify-start bg-neutral-900 px-4 py-8 font-light text-white sm:px-8 sm:py-12 md:px-16 md:py-16 lg:px-24 lg:py-24">
+          <div className="relative m-auto flex w-full max-w-[100.00rem] flex-grow auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto_auto] flex-col items-stretch justify-center self-start font-bold">
+            <div className="m-auto grid auto-cols-fr grid-cols-[.5fr_1fr_1fr_1fr_1fr_.5fr_.5fr_1fr_1fr_1fr_1fr_.5fr] grid-rows-[auto_auto_auto_auto_auto_auto_auto_auto_auto_auto] gap-4 sm:gap-6 md:gap-8">
               <div
                 className="relative col-start-1 col-end-6 row-start-1 row-end-5"
-                id="div-4"
-                style={{
-                  gridArea: "1/1/5/6",
-                }}
+                style={{ gridArea: "1/1/5/6" }}
               >
-                <div className="auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto_auto]">
-                  <a
-                    className="inline-block max-w-full"
-                    href="/insights/project-launch-ies-national-sustainable-lighting-by-design"
-                  >
-                    <div className="relative h-96 w-full overflow-hidden rounded-md">
-                      <Image
-                        alt="IES National Sustainable Lighting by Design"
-                        className="object-cover"
-                        src="/ies-mark.jpg"
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    </div>
-                    <div className="relative flex items-stretch justify-start pb-3 pt-5">
-                      <div className="relative">
-                        <div className="ml-auto">Branding</div>
-                        <div className="absolute bottom-[0.25rem] left-0 right-0 top-auto z-[-2] h-1 bg-orange-400" />
-                      </div>
-                    </div>
-                    <div className="relative">
-                      <h4 className="min-h-[0vw] text-4xl">
-                        Project Launch: IES National - Sustainable Lighting by
-                        Design
-                      </h4>
-                      <div className="absolute bottom-[-0.50rem] left-0 right-0 top-auto h-0.5 w-96 bg-orange-400" />
-                    </div>
-                  </a>
-                </div>
+                <BlogPostCard
+                  href="/insights/project-launch-ies-national-sustainable-lighting-by-design"
+                  imageSrc="/ies-mark.jpg"
+                  imageAlt="IES National Sustainable Lighting by Design"
+                  category="Branding"
+                  title="Project Launch: IES National - Sustainable Lighting by Design"
+                />
               </div>
               <div
                 className="relative col-start-7 col-end-12 row-start-2 row-end-6"
-                id="div-5"
-                style={{
-                  gridArea: "2/7/6/12",
-                }}
+                style={{ gridArea: "2/7/6/12" }}
               >
-                <div className="auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto_auto]">
-                  <a
-                    className="inline-block max-w-full"
-                    href="/insights/the-importance-of-a-mobile-friendly-website-and-how-to-test-yours"
-                  >
-                    <div className="relative h-96 w-full overflow-hidden rounded-md">
-                      <Image
-                        alt="Mobile-friendly website importance"
-                        className="object-cover"
-                        src="/5f629a4559811072bbfe7192_mobile-friendly-hero.1920.jpg"
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    </div>
-                    <div className="relative flex items-stretch justify-start pb-3 pt-5">
-                      <div className="relative">
-                        <div className="ml-auto">Web</div>
-                        <div className="absolute bottom-[0.25rem] left-0 right-0 top-auto z-[-2] h-1 bg-orange-400" />
-                      </div>
-                    </div>
-                    <div className="relative">
-                      <h4 className="min-h-[0vw] text-4xl">
-                        The Importance of a Mobile-Friendly Website (and How to
-                        Test Yours)
-                      </h4>
-                      <div className="absolute bottom-[-0.50rem] left-0 right-0 top-auto h-0.5 w-96 bg-orange-400" />
-                    </div>
-                  </a>
-                </div>
+                <BlogPostCard
+                  href="/insights/the-importance-of-a-mobile-friendly-website-and-how-to-test-yours"
+                  imageSrc="/5f629a4559811072bbfe7192_mobile-friendly-hero.1920.jpg"
+                  imageAlt="Mobile-friendly website importance"
+                  category="Web"
+                  title="The Importance of a Mobile-Friendly Website (and How to Test Yours)"
+                />
               </div>
               <div
                 className="relative col-start-2 col-end-7 row-start-7"
-                id="div-6"
-                style={{
-                  gridArea: "7/2/11/7",
-                  gridRowEnd: "11",
-                }}
+                style={{ gridArea: "7/2/11/7", gridRowEnd: "11" }}
               >
-                <div className="auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto_auto]">
-                  <a
-                    className="inline-block max-w-full"
-                    href="/insights/what-are-the-differences-between-branding-and-marketing"
-                  >
-                    <div className="relative h-96 w-full overflow-hidden rounded-md">
-                      <Image
-                        alt="Branding vs Marketing"
-                        className="object-cover"
-                        src="/5f4ae76042e3d8ce344a2b23_mountain-and-couch.1920.jpg"
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    </div>
-                    <div className="relative flex items-stretch justify-start pb-3 pt-5">
-                      <div className="relative">
-                        <div className="ml-auto">Branding</div>
-                        <div className="absolute bottom-[0.25rem] left-0 right-0 top-auto z-[-2] h-1 bg-orange-400" />
-                      </div>
-                    </div>
-                    <div className="relative">
-                      <h4 className="min-h-[0vw] text-4xl">
-                        What Are the Differences Between Branding and Marketing?
-                      </h4>
-                      <div className="absolute bottom-[-0.50rem] left-0 right-0 top-auto h-0.5 w-96 bg-orange-400" />
-                    </div>
-                  </a>
-                </div>
+                <BlogPostCard
+                  href="/insights/what-are-the-differences-between-branding-and-marketing"
+                  imageSrc="/5f4ae76042e3d8ce344a2b23_mountain-and-couch.1920.jpg"
+                  imageAlt="Branding vs Marketing"
+                  category="Branding"
+                  title="What Are the Differences Between Branding and Marketing?"
+                />
               </div>
               <div
                 className="relative col-start-8 col-end-13"
-                id="div-7"
                 style={{
                   gridArea: "8/8/12/13",
                   gridRowEnd: "12",
                   gridRowStart: "8",
                 }}
               >
-                <div className="auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto_auto]">
-                  <a
-                    className="inline-block max-w-full"
-                    href="/insights/savoring-the-sweetness-meet-the-leadership-of-brewww"
-                  >
-                    <div className="relative h-96 w-full overflow-hidden rounded-md">
-                      <Image
-                        alt="Brewww Leadership"
-                        className="object-cover"
-                        src="/bride-and-groom-smiling.jpg"
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    </div>
-                    <div className="relative flex items-stretch justify-start pb-3 pt-5">
-                      <div className="relative">
-                        <div className="ml-auto">Studio</div>
-                        <div className="absolute bottom-[0.25rem] left-0 right-0 top-auto z-[-2] h-1 bg-orange-400" />
-                      </div>
-                    </div>
-                    <div className="relative">
-                      <h4 className="min-h-[0vw] text-4xl">
-                        Savoring the Sweetness: Meet the Leadership of Brewww
-                      </h4>
-                      <div className="absolute bottom-[-0.50rem] left-0 right-0 top-auto h-0.5 w-96 bg-orange-400" />
-                    </div>
-                  </a>
-                </div>
+                <BlogPostCard
+                  href="/insights/savoring-the-sweetness-meet-the-leadership-of-brewww"
+                  imageSrc="/bride-and-groom-smiling.jpg"
+                  imageAlt="Brewww Leadership"
+                  category="Studio"
+                  title="Savoring the Sweetness: Meet the Leadership of Brewww"
+                />
               </div>
             </div>
           </div>

@@ -1,30 +1,17 @@
 export function HomeHero() {
   return (
-    <>
-      <div>
-        <div
-          className="relative min-h-[60vh] content-stretch items-start justify-start bg-neutral-900 px-24 py-60 font-light text-white"
-          id="div-1"
-        >
-          <div className="m-auto max-w-7xl px-5 py-12">
-            <h1 className="mx-0 my-3 min-h-[0vw] text-center text-[4.38rem] font-bold leading-none">
-              A creative studio that crafts unbounded brands.
-            </h1>
-            <div
-              className="absolute bottom-0 left-0 right-0 z-40 flex h-full max-h-[9.38rem] min-h-[6.25rem] w-full items-center justify-center"
-              id="div-2"
-            >
-              <a
-                className="relative inline-block h-full w-3 max-w-full self-end overflow-hidden"
-                href="/#start"
-              >
-                <div className="absolute left-[0.38rem] top-0 z-[1] h-full w-0 bg-white/[0.35]" />
-                <div className="absolute left-[0.38rem] top-0 h-full w-0 bg-white" />
-              </a>
-            </div>
+    <section className="flex min-h-[90vh] items-center justify-center bg-neutral-900 text-white">
+      <div className="container mx-auto px-4 py-8 md:px-6">
+        <h1 className="mx-auto mb-6 max-w-5xl text-center text-5xl font-bold leading-[0.9] tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
+          Some brands are content with silver. Others aim for gold.
+        </h1>
+        <div className="mt-10 flex justify-center">
+          <div className="relative inline-block h-20 w-3 overflow-hidden md:h-28">
+            <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 transform bg-white/35" />
+            <div className="absolute left-1/2 top-0 h-1/2 w-px -translate-x-1/2 transform bg-white" />
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }
