@@ -197,21 +197,6 @@ const CategorySection = () => {
             </Link>
           </li>
         </ul>
-        <button className="p-2">
-          <svg
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              clipRule="evenodd"
-              d="M14.497 15.557a7.5 7.5 0 1 1 1.06-1.06l5.473 5.473-1.06 1.06-5.473-5.473ZM15.75 9.75a6 6 0 1 1-12 0 6 6 0 0 1 12 0Z"
-              fill="currentColor"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
       </div>
     </div>
   );
