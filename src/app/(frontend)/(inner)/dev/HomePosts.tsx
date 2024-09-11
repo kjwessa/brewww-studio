@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function HomePosts() {
   return (
     <>
@@ -39,7 +41,7 @@ export function HomePosts() {
             id="div-2"
           >
             <div
-              className="m-auto grid auto-cols-fr grid-cols-[.5fr_1fr_1fr_1fr_1fr_.5fr_.5fr_1fr_1fr_1fr_1fr_.5fr] grid-rows-[auto_auto_auto_auto_auto_auto_auto_auto_auto_auto_auto_auto] gap-[0.63rem]"
+              className="m-auto grid auto-cols-fr grid-cols-[.5fr_1fr_1fr_1fr_1fr_.5fr_.5fr_1fr_1fr_1fr_1fr_.5fr] grid-rows-[auto_auto_auto_auto_auto_auto_auto_auto_auto_auto_auto] gap-[0.63rem]"
               id="div-3"
             >
               <div
@@ -54,11 +56,13 @@ export function HomePosts() {
                     className="inline-block max-w-full"
                     href="/insights/project-launch-ies-national-sustainable-lighting-by-design"
                   >
-                    <div className="h-96 w-full overflow-hidden rounded-md">
-                      <img
-                        className="inline-block h-full w-full max-w-full object-cover align-middle"
-                        src="https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5fff5a156b619199f61e880f_IES%20Mark%20300x300.jpg"
-                        srcSet="https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5fff5a156b619199f61e880f_IES%20Mark%20300x300-p-500.jpeg 500w, https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5fff5a156b619199f61e880f_IES%20Mark%20300x300-p-800.jpeg 800w, https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5fff5a156b619199f61e880f_IES%20Mark%20300x300-p-1080.jpeg 1080w, https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5fff5a156b619199f61e880f_IES%20Mark%20300x300.jpg 1251w"
+                    <div className="relative h-96 w-full overflow-hidden rounded-md">
+                      <Image
+                        alt="IES National Sustainable Lighting by Design"
+                        className="object-cover"
+                        src="/ies-mark.jpg"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     </div>
                     <div className="relative flex items-stretch justify-start pb-3 pt-5">
@@ -89,11 +93,13 @@ export function HomePosts() {
                     className="inline-block max-w-full"
                     href="/insights/the-importance-of-a-mobile-friendly-website-and-how-to-test-yours"
                   >
-                    <div className="h-96 w-full overflow-hidden rounded-md">
-                      <img
-                        className="inline-block h-full w-full max-w-full object-cover align-middle"
-                        src="https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5f629a4559811072bbfe7192_mobile-friendly-hero.1920.jpg"
-                        srcSet="https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5f629a4559811072bbfe7192_mobile-friendly-hero.1920-p-500.jpeg 500w, https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5f629a4559811072bbfe7192_mobile-friendly-hero.1920-p-800.jpeg 800w, https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5f629a4559811072bbfe7192_mobile-friendly-hero.1920-p-1080.jpeg 1080w, https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5f629a4559811072bbfe7192_mobile-friendly-hero.1920.jpg 1280w"
+                    <div className="relative h-96 w-full overflow-hidden rounded-md">
+                      <Image
+                        alt="Mobile-friendly website importance"
+                        className="object-cover"
+                        src="/5f629a4559811072bbfe7192_mobile-friendly-hero.1920.jpg"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     </div>
                     <div className="relative flex items-stretch justify-start pb-3 pt-5">
@@ -125,11 +131,13 @@ export function HomePosts() {
                     className="inline-block max-w-full"
                     href="/insights/what-are-the-differences-between-branding-and-marketing"
                   >
-                    <div className="h-96 w-full overflow-hidden rounded-md">
-                      <img
-                        className="inline-block h-full w-full max-w-full object-cover align-middle"
-                        src="https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5f4ae76042e3d8ce344a2b23_mountain-and-couch.1920.jpg"
-                        srcSet="https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5f4ae76042e3d8ce344a2b23_mountain-and-couch.1920-p-1080.jpeg 1080w, https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5f4ae76042e3d8ce344a2b23_mountain-and-couch.1920-p-1600.jpeg 1600w, https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5f4ae76042e3d8ce344a2b23_mountain-and-couch.1920.jpg 1920w"
+                    <div className="relative h-96 w-full overflow-hidden rounded-md">
+                      <Image
+                        alt="Branding vs Marketing"
+                        className="object-cover"
+                        src="/5f4ae76042e3d8ce344a2b23_mountain-and-couch.1920.jpg"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     </div>
                     <div className="relative flex items-stretch justify-start pb-3 pt-5">
@@ -161,11 +169,13 @@ export function HomePosts() {
                     className="inline-block max-w-full"
                     href="/insights/savoring-the-sweetness-meet-the-leadership-of-brewww"
                   >
-                    <div className="h-96 w-full overflow-hidden rounded-md">
-                      <img
-                        className="inline-block h-full w-full max-w-full object-cover align-middle"
-                        src="https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5de2f67a3719a10bf3e510ae_k%26c-bride-and-groom-smiling.JPG"
-                        srcSet="https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5de2f67a3719a10bf3e510ae_k%26c-bride-and-groom-smiling-p-1080.jpeg 1080w, https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5de2f67a3719a10bf3e510ae_k%26c-bride-and-groom-smiling-p-1600.jpeg 1600w, https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5de2f67a3719a10bf3e510ae_k%26c-bride-and-groom-smiling.JPG 1920w"
+                    <div className="relative h-96 w-full overflow-hidden rounded-md">
+                      <Image
+                        alt="Brewww Leadership"
+                        className="object-cover"
+                        src="/bride-and-groom-smiling.jpg"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     </div>
                     <div className="relative flex items-stretch justify-start pb-3 pt-5">

@@ -5,7 +5,7 @@
  * Usage:
  * 1. Save this script as `scripts/download-images.mjs`.
  * 2. Run the script with the file path of the component you want to process:
- *    node scripts/download-images.mjs src/app/components/PreFooter.tsx
+ *    node scripts/download-images.mjs "src/app/components/PreFooter.tsx"
  *
  * The script will:
  * - Read the content of the specified file.
