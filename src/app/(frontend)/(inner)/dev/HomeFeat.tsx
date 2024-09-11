@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function HomeFeat() {
   return (
     <>
@@ -7,24 +9,23 @@ export function HomeFeat() {
           id="div-1"
         >
           <div
-            className="col-start-1 row-start-1 h-screen w-full"
+            className="relative col-start-1 row-start-1 h-screen w-full"
             id="div-2"
             style={{
               gridArea: "1/1/10/6",
               gridRowEnd: "10",
             }}
           >
-            <div className="h-full w-full overflow-hidden object-cover">
-              <img
-                src="https://cdn.prod.website-files.com/5dad037b65b2d9bc97118b77/5ffde49e22ac4c70dd0e883e_DSCF6786.1920.jpg"
-                alt="Background"
-                className="h-full w-full object-cover opacity-[0.975112]"
-                id="img-1"
-                style={{
-                  objectPosition: "50% 50%",
-                }}
-              />
-            </div>
+            <Image
+              src="/5ffde49e22ac4c70dd0e883e_DSCF6786.1920.jpg"
+              alt="Background"
+              fill
+              className="object-cover opacity-[0.975112]"
+              id="img-1"
+              style={{
+                objectPosition: "50% 50%",
+              }}
+            />
           </div>
           <h6
             className="col-start-6 col-end-9 row-start-4 row-end-5 min-h-[0vw] self-end text-4xl"

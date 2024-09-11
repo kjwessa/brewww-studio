@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function HomeFocus() {
   return (
     <>
@@ -31,11 +33,12 @@ export function HomeFocus() {
               </div>
               <div className="col-start-4 col-end-11 row-start-1 grid h-[37.50rem] w-full auto-cols-fr grid-cols-[.25fr_1fr_1fr_1fr_1fr_1fr_1fr_.25fr] grid-rows-[auto_auto_auto_auto_auto_auto_auto_auto] overflow-hidden">
                 <div className="relative col-start-1 col-end-9 row-start-1 h-[37.50rem] w-full">
-                  <img
-                    className="inline-block h-[37.50rem] w-full max-w-full object-cover align-middle"
-                    id="img-1"
-                    src="https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5efa9cb3a8fd7ff9d3b48a92_broken-glass-light.1920.jpg"
-                    srcSet="https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5efa9cb3a8fd7ff9d3b48a92_broken-glass-light.1920-p-500.jpeg 500w, https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5efa9cb3a8fd7ff9d3b48a92_broken-glass-light.1920-p-800.jpeg 800w, https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5efa9cb3a8fd7ff9d3b48a92_broken-glass-light.1920-p-1080.jpeg 1080w, https://cdn.prod.website-files.com/5dad037b65b2d91cb0118b62/5efa9cb3a8fd7ff9d3b48a92_broken-glass-light.1920.jpg 1536w"
+                  <Image
+                    alt="Broken glass light"
+                    className="object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    src="/5efa9cb3a8fd7ff9d3b48a92_broken-glass-light.1920.jpg"
                   />
                 </div>
                 <div className="col-start-1 col-end-2 row-start-1 row-end-5 w-16" />
