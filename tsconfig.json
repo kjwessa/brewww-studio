@@ -21,6 +21,7 @@
     "paths": {
       "@/*": ["src/*"],
       "@/app/*": ["src/app/*"],
+      "@/blocks/*": ["src/app/blocks/*"],
       "@/components/*": ["src/app/components/*"],
       "@/data/*": ["src/app/data/*"],
       "@/images/*": ["./public/images/*"],
@@ -29,18 +30,12 @@
       "@/public/*": ["./public/*"],
       "@/styles/*": ["src/styles/*"],
       "@/types/*": ["src/app/types/*"],
-      "@/utils/*": ["src/app/utils/*"],
-      "@payload-config": ["./src/payload.config.ts"]
+      "@/utils/*": ["src/app/utilities/*"],
+      "@payload-config": ["./src/payload.config.ts"],
+      "@payload-types": ["./src/payload-types.ts"]
     },
     "target": "ES2017"
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "src/app/keep-alive",
-    "src/app/keep-alive"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

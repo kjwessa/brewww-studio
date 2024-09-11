@@ -1,8 +1,7 @@
 import type { CollectionConfig } from "payload";
 import { authenticated } from "@/payload/access/authenticated";
 import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
-import { UnderlineFeature, lexicalEditor } from "@payloadcms/richtext-lexical";
-
+import { Cover } from "@/app/blocks/Cover/config";
 import {
   MetaDescriptionField,
   MetaImageField,
@@ -11,11 +10,20 @@ import {
   PreviewField,
 } from "@payloadcms/plugin-seo/fields";
 
-export const BlogCategories: CollectionConfig = {
-  slug: "categories",
+export const Pages: CollectionConfig = {
+  slug: "pages",
 
   //* Collection Fields
   fields: [
+    {
+      name: "title",
+      label: "Title",
+      type: "text",
+      required: true,
+      admin: {
+        description: "The title of the page.",
+      },
+    },
     {
       type: "tabs",
       tabs: [
@@ -23,18 +31,16 @@ export const BlogCategories: CollectionConfig = {
           label: "Content",
           fields: [
             {
-              name: "name",
-              type: "text",
-              label: "Category Name",
+              name: "layout",
+              type: "blocks",
+              label: "Layout",
               required: true,
-            },
-            {
-              name: "content",
-              type: "richText",
+              blocks: [Cover],
             },
           ],
         },
         {
+          name: "meta",
           label: "SEO",
           fields: [
             OverviewField({
@@ -42,17 +48,15 @@ export const BlogCategories: CollectionConfig = {
               descriptionPath: "meta.description",
               imagePath: "meta.image",
             }),
-            MetaImageField({
-              relationTo: "media",
-            }),
             MetaTitleField({
               hasGenerateFn: true,
             }),
+            MetaImageField({
+              relationTo: "media",
+            }),
             MetaDescriptionField({}),
             PreviewField({
-              // if the `generateUrl` function is configured
               hasGenerateFn: true,
-              // field paths to match the target field for data
               titlePath: "meta.title",
               descriptionPath: "meta.description",
             }),
@@ -60,6 +64,7 @@ export const BlogCategories: CollectionConfig = {
         },
       ],
     },
+
     {
       name: "slug",
       type: "text",
@@ -67,7 +72,7 @@ export const BlogCategories: CollectionConfig = {
       required: true,
       admin: {
         position: "sidebar",
-        description: "Add a cool slug here",
+        description: "The slug goes here.",
       },
     },
   ],
@@ -80,23 +85,14 @@ export const BlogCategories: CollectionConfig = {
     update: authenticated,
   },
   admin: {
-    description: "Categories for blog posts.",
-    defaultColumns: ["name"],
-    group: "Blog Posts",
-    listSearchableFields: ["name"],
-    pagination: {
-      defaultLimit: 25,
-      limits: [10, 25, 50, 100],
-    },
-    useAsTitle: "name",
-  },
-  defaultSort: "name",
-  labels: {
-    singular: "Category",
-    plural: "Categories",
+    useAsTitle: "title",
   },
   versions: {
-    drafts: true,
-    maxPerDoc: 25,
+    drafts: {
+      autosave: {
+        interval: 100,
+      },
+    },
+    maxPerDoc: 50,
   },
 };

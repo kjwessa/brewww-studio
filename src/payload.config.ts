@@ -6,6 +6,7 @@ import sharp from "sharp";
 //* Import Plugins
 import { s3Storage } from "@payloadcms/storage-s3";
 import { seoPlugin } from "@payloadcms/plugin-seo";
+import { GenerateTitle, GenerateURL } from "@payloadcms/plugin-seo/types";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 
@@ -20,15 +21,25 @@ import { Services } from "./payload/collections/Services";
 import { Testimonials } from "./payload/collections/Testimonials";
 import { Location } from "./payload/collections/Locations";
 import { Results } from "./payload/collections/Results";
-import { Pages } from "./payload/collections/Pages";
+import { Pages } from "./payload/collections/Pages/index";
 import { Playground } from "./payload/collections/Playground";
-
+import { Page, Post } from "src/payload-types";
 //* Import Globals
 import { Header } from "./payload/globals/Header";
 import { Footer } from "./payload/globals/Footer";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
+
+const generateTitle: GenerateTitle<Page | Post> = ({ doc }) => {
+  return doc?.title ? `${doc.title} | Brewww Studio` : "Brewww Studio ";
+};
+
+const generateURL: GenerateURL<Page | Post> = ({ doc }) => {
+  return doc?.slug
+    ? `${process.env.NEXT_PUBLIC_SERVER_URL!}/${doc.slug}`
+    : process.env.NEXT_PUBLIC_SERVER_URL!;
+};
 
 //* Ensure required environment variables are defined
 const PAYLOAD_SECRET = process.env.PAYLOAD_SECRET;
@@ -85,7 +96,15 @@ export default buildConfig({
     Users,
   ],
   globals: [Header, Footer],
-  editor: lexicalEditor(),
+  editor: lexicalEditor({
+    // features: ({ rootFeatures }) => {
+    //   return [
+    //     ...rootFeatures,
+    //     BlocksFeature(),
+    //     HeadingFeature({ enabledHeadingSizes: ["h1", "h2", "h3", "h4"] }),
+    //   ];
+    // },
+  }),
   secret: PAYLOAD_SECRET || "",
   db: mongooseAdapter({
     url: DATABASE_URI || "",
@@ -110,6 +129,8 @@ export default buildConfig({
       },
     }),
     seoPlugin({
+      generateTitle,
+      generateURL,
       uploadsCollection: "media",
       fieldOverrides: {
         title: { required: false },

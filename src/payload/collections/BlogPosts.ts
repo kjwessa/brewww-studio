@@ -58,11 +58,11 @@ export const BlogPosts: CollectionConfig = {
               descriptionPath: "meta.description",
               imagePath: "meta.image",
             }),
-            MetaImageField({
-              relationTo: "media",
-            }),
             MetaTitleField({
               hasGenerateFn: true,
+            }),
+            MetaImageField({
+              relationTo: "media",
             }),
             MetaDescriptionField({}),
             PreviewField({
