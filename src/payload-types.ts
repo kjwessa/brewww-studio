@@ -83,17 +83,20 @@ export interface Media {
  */
 export interface Page {
   id: string;
-  name: string;
+  title: string;
+  layout: {
+    title?: string | null;
+    subtitle?: string | null;
+    id?: string | null;
+    blockName?: string | null;
+    blockType: 'cover';
+  }[];
+  meta?: {
+    title?: string | null;
+    image?: (string | null) | Media;
+    description?: string | null;
+  };
   slug: string;
-  layout?:
-    | {
-        title?: string | null;
-        subtitle?: string | null;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'cover';
-      }[]
-    | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;

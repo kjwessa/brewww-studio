@@ -7,7 +7,7 @@ import { Post } from "@/payload-types";
 import Image from "next/image";
 import Link from "next/link";
 import { MetaDot } from "@/app/components/MetaDot";
-import { formatDate } from "@/app/utils/dateFormatter";
+import { formatDate } from "@/app/utilities/dateFormatter";
 import aboutImage from "/public/images/Aldridge-02665.1200-p-1080.jpeg";
 import aboutLogo from "/public/images/brand/brewww_mark.png";
 import { Media } from "@/payload-types";

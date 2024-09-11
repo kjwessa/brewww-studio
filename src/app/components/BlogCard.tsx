@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { formatDate } from "@/utils/dateFormatter";
+import { formatDate } from "@/app/utilities/dateFormatter";
 
 interface BlogCardProps {
   title: string;

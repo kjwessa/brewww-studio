@@ -21,6 +21,7 @@
     "paths": {
       "@/*": ["src/*"],
       "@/app/*": ["src/app/*"],
+      "@/blocks/*": ["src/app/blocks/*"],
       "@/components/*": ["src/app/components/*"],
       "@/data/*": ["src/app/data/*"],
       "@/images/*": ["./public/images/*"],
@@ -29,7 +30,7 @@
       "@/public/*": ["./public/*"],
       "@/styles/*": ["src/styles/*"],
       "@/types/*": ["src/app/types/*"],
-      "@/utils/*": ["src/app/utils/*"],
+      "@/utils/*": ["src/app/utilities/*"],
       "@payload-config": ["./src/payload.config.ts"],
       "@payload-types": ["./src/payload-types.ts"]
     },

@@ -3,7 +3,7 @@ import { getPayloadHMR } from "@payloadcms/next/utilities";
 import React, { cache } from "react";
 import type { Page as PageType } from "@/payload-types";
 import { notFound } from "next/navigation";
-import { RenderBlocks } from "@/app/utils/RenderBlocks";
+import { RenderBlocks } from "@/app/blocks/RenderBlocks";
 
 //* Function to generate static params for all pages except the index page
 export async function generateStaticParams() {
@@ -24,19 +24,29 @@ export async function generateStaticParams() {
     .map(({ slug }) => slug); // Return an array of slugs
 }
 
+// Default export for the Page component
 export default async function Page({ params: { slug = "home" } }) {
+  // Construct the full URL for the page
   const url = "/" + slug;
+
+  // Declare a variable to hold the page data
   let page: PageType | null;
+
+  // Query the page data using the slug
   page = await queryPageBySlug({ slug });
 
+  // If no page is found, return a 404 Not Found response
   if (!page) {
     return notFound();
   }
 
+  // Destructure the layout from the page data
   const { layout } = page;
 
+  // Render the page content
   return (
     <article className="bg-blue-500">
+      {/* Render the layout blocks for the page */}
       <RenderBlocks blocks={page.layout} />
     </article>
   );

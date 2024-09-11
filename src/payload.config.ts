@@ -8,16 +8,7 @@ import { s3Storage } from "@payloadcms/storage-s3";
 import { seoPlugin } from "@payloadcms/plugin-seo";
 import { GenerateTitle, GenerateURL } from "@payloadcms/plugin-seo/types";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
-import {
-  BoldFeature,
-  ItalicFeature,
-  FixedToolbarFeature,
-  HeadingFeature,
-  UnderlineFeature,
-  LinkFeature,
-  BlocksFeature,
-  lexicalEditor,
-} from "@payloadcms/richtext-lexical";
+import { lexicalEditor } from "@payloadcms/richtext-lexical";
 
 //* Import Collections
 import { Users } from "./payload/collections/Users";
@@ -41,7 +32,7 @@ const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 const generateTitle: GenerateTitle<Page | Post> = ({ doc }) => {
-  return doc?.name ? `${doc.name} | Brewww Studio` : "Payload Website Template";
+  return doc?.title ? `${doc.title} | Brewww Studio` : "Brewww Studio ";
 };
 
 const generateURL: GenerateURL<Page | Post> = ({ doc }) => {
