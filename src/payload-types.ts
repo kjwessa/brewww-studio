@@ -85,7 +85,15 @@ export interface Page {
   id: string;
   name: string;
   slug: string;
-  layout?: unknown[] | null;
+  layout?:
+    | {
+        title?: string | null;
+        subtitle?: string | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'cover';
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -113,8 +121,8 @@ export interface Post {
     };
     [k: string]: unknown;
   } | null;
-  image?: (string | null) | Media;
   title?: string | null;
+  image?: (string | null) | Media;
   description?: string | null;
   slug?: string | null;
   publishedDate: string;
@@ -131,6 +139,21 @@ export interface Post {
 export interface Category {
   id: string;
   name: string;
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   image?: (string | null) | Media;
   title?: string | null;
   description?: string | null;

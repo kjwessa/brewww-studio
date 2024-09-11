@@ -1,6 +1,7 @@
 import type { CollectionConfig } from "payload";
 import { authenticated } from "@/payload/access/authenticated";
 import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
+import { Cover } from "@/app/blocks/Cover/config";
 
 export const Pages: CollectionConfig = {
   slug: "pages",
@@ -31,7 +32,7 @@ export const Pages: CollectionConfig = {
       type: "blocks",
       label: "Layout",
       required: false,
-      blocks: [],
+      blocks: [Cover],
     },
   ],
 

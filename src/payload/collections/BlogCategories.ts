@@ -1,6 +1,7 @@
 import type { CollectionConfig } from "payload";
 import { authenticated } from "@/payload/access/authenticated";
 import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
+import { UnderlineFeature, lexicalEditor } from "@payloadcms/richtext-lexical";
 
 import {
   MetaDescriptionField,
@@ -26,6 +27,10 @@ export const BlogCategories: CollectionConfig = {
               type: "text",
               label: "Category Name",
               required: true,
+            },
+            {
+              name: "content",
+              type: "richText",
             },
           ],
         },
