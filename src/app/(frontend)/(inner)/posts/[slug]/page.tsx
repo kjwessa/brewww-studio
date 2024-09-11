@@ -161,6 +161,62 @@ const AboutCard = () => {
   );
 };
 
+const CategorySection = () => {
+  return (
+    <div className="container mx-auto px-4 py-4">
+      <div className="flex items-center justify-between">
+        <ul className="hidden list-none flex-wrap gap-4 md:flex">
+          <li>
+            <Link href="/posts" className="hover:underline">
+              All Posts
+            </Link>
+          </li>
+          <li>
+            <Link href="/posts/category/branding" className="hover:underline">
+              Branding
+            </Link>
+          </li>
+          <li>
+            <Link href="/posts/category/web-design" className="hover:underline">
+              Web Design
+            </Link>
+          </li>
+          <li>
+            <Link href="/posts/category/content" className="hover:underline">
+              Content
+            </Link>
+          </li>
+          <li>
+            <Link href="/posts/category/guides" className="hover:underline">
+              Guides
+            </Link>
+          </li>
+          <li>
+            <Link href="/posts/category/updates" className="hover:underline">
+              Updates
+            </Link>
+          </li>
+        </ul>
+        <button className="p-2">
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clipRule="evenodd"
+              d="M14.497 15.557a7.5 7.5 0 1 1 1.06-1.06l5.473 5.473-1.06 1.06-5.473-5.473ZM15.75 9.75a6 6 0 1 1-12 0 6 6 0 0 1 12 0Z"
+              fill="currentColor"
+              fillRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  );
+};
+
 //* Render the post page
 export default async function PostPage({
   params,
@@ -178,6 +234,7 @@ export default async function PostPage({
 
   return (
     <article className="bg-white pt-24 text-black">
+      <CategorySection />
       <HeroSection
         name={post.name}
         description={post.description || ""}
