@@ -1,63 +1,33 @@
 export default function IndividualPage() {
   return (
     <>
-      <div>
-        <style
-          dangerouslySetInnerHTML={{
-            __html:
-              "@media (max-width: 670px) {\n/* DivMagic Note: Tailwind does not support max-width. We will fix this soon. */\n\n#div-1 {\npadding-bottom: 50px !important; padding-top: 50px !important;\n}\n#h3-1 {\npadding-left: 21px !important;\n}\n#span-1 {\npadding-top: 14px !important; padding-right: 25px !important; padding-bottom: 14px !important; padding-left: 25px !important;\n}\n#span-2 {\npadding-top: 14px !important; padding-right: 25px !important; padding-bottom: 14px !important; padding-left: 25px !important;\n}\n}\n@media (max-width: 1920px) {\n/* DivMagic Note: Tailwind does not support max-width. We will fix this soon. */\n\n#div-1 {\nmax-width: 1670px !important;\n}\n}\n@media (max-width: 768px) {\n/* DivMagic Note: Tailwind does not support max-width. We will fix this soon. */\n\n#h2-1 {\nmargin-top: 30px !important;\n}\n#p-1 {\nmargin-top: 30px !important;\n}\n}\n",
-          }}
-        />
-
-        <div
-          className="w-[92%] bg-neutral-900 text-white min-[1600px]:pb-16 min-[1600px]:pt-20 min-[1920px]:pb-24 min-[1920px]:pt-28 min-[1921px]:max-w-[118.75rem] min-[1921px]:pb-24 min-[1921px]:pt-28"
-          id="div-1"
-        >
-          <div>
-            <h3
-              className="inline-block text-lg uppercase min-[671px]:pl-6"
-              id="h3-1"
-            >
-              Beautifully bespoke WordPress websites
-            </h3>
-            {"            "}
-            <h2
-              className="text-[10.00rem] uppercase leading-none min-[769px]:mt-8"
-              id="h2-1"
-            >
-              <span className="inline-block overflow-hidden">A</span>{" "}
-              <span className="inline-block overflow-hidden">leading</span>{" "}
-              <span className="inline-block overflow-hidden">London</span>{" "}
-              <span className="inline-block overflow-hidden">WordPress</span>{" "}
-              <span className="inline-block overflow-hidden">Agency</span>
-            </h2>
-            {"            "}
-            <p className="text-4xl min-[769px]:mt-12" id="p-1">
-              Since 2008 we’ve been in love with WordPress and have never looked
-              back. In fact, we’re so confident in its abilities we consider
-              ourselves a leading WordPress agency in London, the UK, and even
-              the world.
-            </p>
-            {"            "}
+      <section className="w-full bg-neutral-900 text-white min-[1600px]:pb-16 min-[1600px]:pt-20 min-[1920px]:pb-24 min-[1920px]:pt-28 min-[1921px]:pb-24 min-[1921px]:pt-28">
+        <div className="mx-auto w-full max-w-[118.75rem] px-[4%]">
+          <h3 className="inline-block text-lg uppercase min-[671px]:pl-6">
+            Beautifully bespoke websites
+          </h3>
+          <h2 className="text-[10.00rem] uppercase leading-none min-[769px]:mt-8">
+            A leading Cleveland creative studio
+          </h2>
+          <p className="text-4xl min-[769px]:mt-12">
+            Since 2017 we&apos;ve been in love with crafting beautiful web
+            experiences and have never looked back. In fact, we&apos;re so
+            confident in its abilities we consider ourselves a leading creative
+            studio in Cleveland, Ohio, and even the world.
+          </p>
+          <div className="mt-8">
             <a
               className="relative inline-block overflow-hidden rounded-full bg-white text-center text-lg uppercase text-neutral-900"
-              href="https://www.fhoke.com/contact/"
+              href=""
             >
-              <span
-                className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5"
-                id="span-1"
-              >
-                Let's Work Together
-                <span
-                  className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5"
-                  id="span-2"
-                />
+              <span className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5">
+                Let&apos;s Work Together
+                <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5" />
               </span>
             </a>
-            {"        "}
           </div>
         </div>
-      </div>
+      </section>
 
       <div>
         <style
