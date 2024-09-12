@@ -149,118 +149,29 @@ export default function ProductPage() {
                   </a>
                 </div>
                 <div className="m-auto grid max-w-full grid-cols-[120px_120px_120px] grid-rows-[48px_48px_48px_48px] gap-2 rounded">
-                  <div
-                    className="flex h-12 cursor-pointer items-center justify-center rounded border-2 border-solid border-neutral-200"
-                    style={{
-                      gridColumnStart: "span 1",
-                    }}
-                  >
-                    <input
-                      className="absolute bottom-[51.00rem] left-[66.38rem] right-[39.13rem] top-[34.25rem] h-0 w-0 overflow-hidden text-black"
-                      defaultValue="XS"
-                      type="radio"
-                    />
-                    <label className="flex h-full w-full items-center justify-center">
-                      {" "}
-                      XS
-                    </label>
-                  </div>
-                  <div
-                    className="flex h-12 cursor-pointer items-center justify-center rounded border-2 border-solid border-neutral-200"
-                    style={{
-                      gridColumnStart: "span 1",
-                    }}
-                  >
-                    <input
-                      className="absolute bottom-[51.00rem] left-[74.25rem] right-[31.25rem] top-[34.25rem] h-0 w-0 overflow-hidden text-black"
-                      defaultValue="S"
-                      type="radio"
-                    />
-                    <label className="flex h-full w-full items-center justify-center">
-                      {" "}
-                      S
-                    </label>
-                  </div>
-                  <div
-                    className="flex h-12 cursor-pointer items-center justify-center rounded border-2 border-solid border-neutral-200"
-                    style={{
-                      gridColumnStart: "span 1",
-                    }}
-                  >
-                    <input
-                      className="absolute bottom-[47.63rem] left-[66.38rem] right-[39.13rem] top-[37.63rem] h-0 w-0 overflow-hidden text-black"
-                      defaultValue="M"
-                      type="radio"
-                    />
-                    <label className="flex h-full w-full items-center justify-center">
-                      {" "}
-                      M
-                    </label>
-                  </div>
-                  <div
-                    className="flex h-12 cursor-pointer items-center justify-center rounded border-2 border-solid border-neutral-200"
-                    style={{
-                      gridColumnStart: "span 1",
-                    }}
-                  >
-                    <input
-                      className="absolute bottom-[47.63rem] left-[82.25rem] right-[23.25rem] top-[37.63rem] h-0 w-0 overflow-hidden text-black"
-                      defaultValue="L"
-                      type="radio"
-                    />
-                    <label className="flex h-full w-full items-center justify-center">
-                      {" "}
-                      L
-                    </label>
-                  </div>
-                  <div
-                    className="flex h-12 cursor-pointer items-center justify-center rounded border-2 border-solid border-neutral-200"
-                    style={{
-                      gridColumnStart: "span 1",
-                    }}
-                  >
-                    <input
-                      className="absolute bottom-[44.13rem] left-[74.25rem] right-[31.25rem] top-[41.13rem] h-0 w-0 overflow-hidden text-black"
-                      defaultValue="XL"
-                      type="radio"
-                    />
-                    <label className="flex h-full w-full items-center justify-center">
-                      {" "}
-                      XL
-                    </label>
-                  </div>
-                  <div
-                    className="flex h-12 cursor-pointer items-center justify-center rounded border-2 border-solid border-neutral-200"
-                    style={{
-                      gridColumnStart: "span 1",
-                    }}
-                  >
-                    <input
-                      className="absolute bottom-[40.75rem] left-[66.38rem] right-[39.13rem] top-[44.50rem] h-0 w-0 overflow-hidden text-black"
-                      defaultValue="XXL"
-                      type="radio"
-                    />
-                    <label className="flex h-full w-full items-center justify-center">
-                      {" "}
-                      XXL
-                    </label>
-                  </div>
-                  <div
-                    className="flex h-12 cursor-pointer items-center justify-center rounded border-2 border-solid border-neutral-200"
-                    style={{
-                      gridColumnStart: "span 1",
-                    }}
-                  >
-                    <input
-                      className="absolute bottom-[40.75rem] left-[82.25rem] right-[23.25rem] top-[44.50rem] h-0 w-0 overflow-hidden text-black"
-                      defaultValue="3XL"
-                      type="radio"
-                    />
-                    <label className="flex h-full w-full items-center justify-center">
-                      {" "}
-                      3XL
-                    </label>
-                  </div>
+                  {["XS", "S", "M", "L", "XL", "XXL", "3XL"].map((size) => (
+                    <div
+                      key={size}
+                      className="flex h-12 cursor-pointer items-center justify-center rounded border-2 border-solid border-neutral-200"
+                      style={{
+                        gridColumnStart: "span 1",
+                      }}
+                    >
+                      <input
+                        className="hidden"
+                        id={`size-${size}`}
+                        name="size"
+                        type="radio"
+                        value={size}
+                      />
+                      <label
+                        htmlFor={`size-${size}`}
+                        className="flex h-full w-full cursor-pointer items-center justify-center"
+                      >
+                        {size}
+                      </label>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -325,13 +236,7 @@ export default function ProductPage() {
             <div className="py-6">
               <div className="mb-6">
                 <div className="font-medium">Shipping</div>
-                You&apos;ll see our shipping options at checkout.
-              </div>
-              <div className="font-medium">
-                <div>Free Pickup</div>
-                <button className="inline-block h-7 w-24 cursor-pointer items-start overflow-visible pb-1 text-center">
-                  Find a Store
-                </button>
+                You'll see our shipping options at checkout.
               </div>
             </div>
             <div className="pt-7">
@@ -420,12 +325,7 @@ export default function ProductPage() {
             }}
           >
             <div className="mt-5">
-              <div className="-m-6 min-[960px]:ml-[initial] min-[960px]:mr-[initial]">
-                <iframe
-                  className="h-36 w-[99.44rem]"
-                  src="https://photos.pixlee.co/widget?widget_id=7372194&product_id=HQ2432&api_key=GCJQ804EuO6jQdTgdYKX&parent_url=https%3A%2F%2Fwww.nike.com%2Ft%2Fsportswear-mens-max90-t-shirt-NZcG6m%2FHQ2432-133"
-                />
-              </div>
+              <div className="-m-6 min-[960px]:ml-[initial] min-[960px]:mr-[initial]"></div>
             </div>
           </div>
           <div
@@ -451,261 +351,7 @@ export default function ProductPage() {
             style={{
               gridColumnStart: "span 12",
             }}
-          >
-            <section className="mt-12">
-              <aside className="overflow-x-hidden">
-                <div className="flex h-full flex-col justify-start">
-                  <section className="relative min-[1920px]:mb-0 min-[1920px]:ml-auto min-[1920px]:mr-auto min-[1920px]:mt-0 min-[1920px]:w-full min-[1920px]:max-w-[120.00rem] min-[1920px]:overflow-x-hidden min-[1920px]:overflow-y-hidden">
-                    <h3 className="items-center capitalize">
-                      <span className="text-2xl font-medium">
-                        You Might Also Like
-                      </span>
-                      <div className="flex items-center justify-end">
-                        <button className="flex h-12 w-12 items-center justify-center overflow-visible rounded-3xl text-stone-300">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-neutral-100">
-                            <svg
-                              className="h-6 w-6"
-                              fill="none"
-                              focusable="false"
-                              height="24px"
-                              role="img"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                d="M15.525 18.966L8.558 12l6.967-6.967"
-                                fill="none"
-                                stroke="#cacacb"
-                              />
-                            </svg>
-                          </div>
-                        </button>
-                        <button className="flex h-12 w-12 cursor-pointer items-center justify-center overflow-visible rounded-3xl">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-neutral-200">
-                            <svg
-                              className="h-6 w-6"
-                              fill="none"
-                              focusable="false"
-                              height="24px"
-                              role="img"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                d="M8.474 18.966L15.44 12 8.474 5.033"
-                                fill="none"
-                                stroke="#111111"
-                              />
-                            </svg>
-                          </div>
-                        </button>
-                      </div>
-                    </h3>
-                    <ul className="flex list-none overflow-x-auto">
-                      <li className="list-item min-w-[auto] basis-[calc(33%_-_18px)] flex-col font-medium min-[960px]:m-[]">
-                        <a href="https://www.nike.com/t/waffle-debut-vintage-womens-shoes-rfRkv2/DX2931-100">
-                          <figure className="flex h-full w-full cursor-pointer flex-col justify-start">
-                            <div className="relative">
-                              <div className="h-full w-full overflow-hidden rounded">
-                                <div className="relative w-auto">
-                                  <img
-                                    className="absolute left-0 top-0 h-full w-full max-w-full rounded"
-                                    src="https://static.nike.com/a/images/t_PDP_864_v1,f_auto,q_auto:eco/66fb40da-e5dd-4624-a6de-8e6e48ea177a/waffle-debut-vintage-womens-shoes-rfRkv2.png"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="mt-3 flex h-full flex-col justify-start">
-                              <div>
-                                Nike Waffle Debut Vintage
-                                <h2 className="text-neutral-500">
-                                  Women&apos;s Shoes
-                                </h2>
-                              </div>
-                              <div className="pt-2">
-                                <div className="flex flex-col">
-                                  $68.97
-                                  <h3 className="text-neutral-500 line-through">
-                                    $80.00
-                                  </h3>
-                                </div>
-                              </div>
-                            </div>
-                          </figure>
-                        </a>
-                      </li>
-                      <li className="list-item min-w-[auto] basis-[calc(33%_-_18px)] flex-col font-medium min-[960px]:m-[]">
-                        <a href="https://www.nike.com/t/sportswear-mens-t-shirt-KR1BbW/FZ5397-325">
-                          <figure className="flex h-full w-full cursor-pointer flex-col justify-start">
-                            <div className="relative">
-                              <div className="h-full w-full overflow-hidden rounded">
-                                <div className="relative w-auto">
-                                  <img
-                                    className="absolute left-0 top-0 h-full w-full max-w-full rounded"
-                                    src="https://static.nike.com/a/images/t_PDP_864_v1,f_auto,q_auto:eco/6cedffab-7871-4cc3-acf1-bfd7871ee8a5/sportswear-mens-t-shirt-KR1BbW.png"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="mt-3 flex h-full flex-col justify-start">
-                              <div>
-                                Nike Sportswear
-                                <h2 className="text-neutral-500">
-                                  Men&apos;s T-Shirt
-                                </h2>
-                              </div>
-                              <div className="pt-2">
-                                <div className="flex flex-col">$35.00</div>
-                              </div>
-                            </div>
-                          </figure>
-                        </a>
-                      </li>
-                      <li className="list-item min-w-[auto] basis-[calc(33%_-_18px)] flex-col font-medium min-[960px]:m-[]">
-                        <a href="https://www.nike.com/t/los-angeles-lakers-club-fleece-2023-24-city-edition-womens-nba-funnel-neck-hoodie-vp8RPj/DZ0392-504">
-                          <figure className="flex h-full w-full cursor-pointer flex-col justify-start">
-                            <div className="relative">
-                              <div className="h-full w-full overflow-hidden rounded">
-                                <div className="relative w-auto">
-                                  <img
-                                    className="absolute left-0 top-0 h-full w-full max-w-full rounded"
-                                    src="https://static.nike.com/a/images/t_PDP_864_v1,f_auto,q_auto:eco/8adc7bcc-f60a-4d71-93b7-a2634b4e0c2d/los-angeles-lakers-club-fleece-2023-24-city-edition-womens-nba-funnel-neck-hoodie-vp8RPj.png"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="mt-3 flex h-full flex-col justify-start">
-                              <div>
-                                Los Angeles Lakers Club Fleece 2023/24 City
-                                Edition
-                                <h2 className="text-neutral-500">
-                                  Women&apos;s Nike NBA Funnel-Neck Hoodie
-                                </h2>
-                              </div>
-                              <div className="pt-2">
-                                <div className="flex flex-col">
-                                  $59.97
-                                  <h3 className="text-neutral-500 line-through">
-                                    $75.00
-                                  </h3>
-                                </div>
-                              </div>
-                            </div>
-                          </figure>
-                        </a>
-                      </li>
-                      <li className="list-item min-w-[auto] basis-[calc(33%_-_18px)] flex-col font-medium min-[960px]:m-[]">
-                        <a href="https://www.nike.com/t/houston-astros-authentic-collection-player-mens-dri-fit-pullover-jacket-QqTPRc/015C160NHUS-5Z2">
-                          <figure className="flex h-full w-full cursor-pointer flex-col justify-start">
-                            <div className="relative">
-                              <div className="h-full w-full overflow-hidden rounded">
-                                <div className="relative w-auto">
-                                  <img
-                                    className="absolute left-0 top-0 h-full w-full max-w-full rounded"
-                                    src="https://static.nike.com/a/images/t_PDP_864_v1,f_auto,q_auto:eco/bb7cd534-02b0-41da-bd5d-64d7432bd1b8/houston-astros-authentic-collection-player-mens-dri-fit-pullover-jacket-QqTPRc.png"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="mt-3 flex h-full flex-col justify-start">
-                              <div>
-                                Houston Astros Authentic Collection Player
-                                <h2 className="text-neutral-500">
-                                  Men&apos;s Nike Dri-FIT MLB Pullover Jacket
-                                </h2>
-                              </div>
-                              <div className="pt-2">
-                                <div className="flex flex-col">$100.00</div>
-                              </div>
-                            </div>
-                          </figure>
-                        </a>
-                      </li>
-                      <li className="list-item min-w-[auto] basis-[calc(33%_-_18px)] flex-col font-medium min-[960px]:m-[]">
-                        <a href="https://www.nike.com/t/express-yourself-little-kids-printed-t-shirt-WrmJmP/86M333-001">
-                          <figure className="flex h-full w-full cursor-pointer flex-col justify-start">
-                            <div className="relative">
-                              <div className="h-full w-full overflow-hidden rounded">
-                                <div className="relative w-auto">
-                                  <img
-                                    className="absolute left-0 top-0 h-full w-full max-w-full rounded"
-                                    src="https://static.nike.com/a/images/t_PDP_864_v1,f_auto,q_auto:eco/e3f619b1-48f5-4124-a7aa-6e42fdf86b1b/express-yourself-little-kids-printed-t-shirt-WrmJmP.png"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="mt-3 flex h-full flex-col justify-start">
-                              <div>
-                                Nike &quot;Express Yourself&quot;
-                                <h2 className="text-neutral-500">
-                                  Little Kids&apos; Printed T-Shirt
-                                </h2>
-                              </div>
-                              <div className="pt-2">
-                                <div className="flex flex-col">$25.00</div>
-                              </div>
-                            </div>
-                          </figure>
-                        </a>
-                      </li>
-                      <li className="list-item min-w-[auto] basis-[calc(33%_-_18px)] flex-col font-medium min-[960px]:m-[]">
-                        <a href="https://www.nike.com/t/lebron-xxi-tahitian-big-kids-basketball-shoes-4VW2k1/FB7699-001">
-                          <figure className="flex h-full w-full cursor-pointer flex-col justify-start">
-                            <div>
-                              <div className="h-full w-full overflow-hidden rounded border-2 border-solid border-stone-300 bg-stone-300 opacity-[0.446576]">
-                                <div className="w-auto">
-                                  <picture />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="mt-3 flex h-full flex-col justify-start">
-                              <div>
-                                LeBron XXI &quot;Tahitian&quot;
-                                <h2 className="text-neutral-500">
-                                  Big Kids&apos; Basketball Shoes
-                                </h2>
-                              </div>
-                              <div className="pt-2">
-                                <div className="flex flex-col">
-                                  $89.97
-                                  <h3 className="text-neutral-500 line-through">
-                                    $160.00
-                                  </h3>
-                                </div>
-                              </div>
-                            </div>
-                          </figure>
-                        </a>
-                      </li>
-                      <li className="list-item min-w-[auto] basis-[calc(33%_-_18px)] flex-col font-medium min-[960px]:m-0">
-                        <a href="https://www.nike.com/t/jordan-brooklyn-fleece-mens-pants-QgKQGd/FV7277-010">
-                          <figure className="flex h-full w-full cursor-pointer flex-col justify-start">
-                            <div>
-                              <div className="h-full w-full overflow-hidden rounded border-2 border-solid border-stone-300 bg-stone-300 opacity-[0.446576]">
-                                <div className="w-auto">
-                                  <picture />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="mt-3 flex h-full flex-col justify-start">
-                              <div>
-                                Jordan Brooklyn Fleece
-                                <h2 className="text-neutral-500">
-                                  Men&apos;s Pants
-                                </h2>
-                              </div>
-                              <div className="pt-2">
-                                <div className="flex flex-col">$65.00</div>
-                              </div>
-                            </div>
-                          </figure>
-                        </a>
-                      </li>
-                      <li className="list-item min-w-[auto] basis-6 flex-col min-[960px]:m-[] min-[1920px]:m-0" />
-                    </ul>
-                  </section>
-                </div>
-              </aside>
-            </section>
-          </div>
+          ></div>
         </div>
       </div>
     </>
