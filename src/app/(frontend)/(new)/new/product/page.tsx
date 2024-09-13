@@ -179,7 +179,6 @@ export default function ProductPage() {
               <span className="flex">
                 <span className="flex items-center justify-center">
                   <svg
-                    alt=""
                     className="h-4 w-6"
                     fill="none"
                     height="16"
