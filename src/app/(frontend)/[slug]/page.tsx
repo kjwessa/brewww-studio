@@ -7,70 +7,87 @@ import { RenderBlocks } from "@/app/blocks/RenderBlocks";
 
 //* Function to generate static params for all pages except the index page
 export async function generateStaticParams() {
-  // Get the Payload CMS instance with Hot Module Replacement support
-  const payload = await getPayloadHMR({ config: configPromise });
+  console.log("Starting generateStaticParams");
+  try {
+    const payload = await getPayloadHMR({ config: configPromise });
+    console.log("Payload instance created");
 
-  // Query all non-draft pages from the 'pages' collection
-  const pages = await payload.find({
-    collection: "pages",
-    draft: false,
-    limit: 1000, // Limit to 1000 pages
-    overrideAccess: false,
-  });
+    const pages = await payload.find({
+      collection: "pages",
+      draft: false,
+      limit: 1000, // Limit to 1000 pages
+      overrideAccess: false,
+    });
+    console.log(`Found ${pages.docs?.length} pages`);
 
-  // Filter out the home page and map the remaining pages to their slugs
-  return pages.docs
-    ?.filter((doc) => doc.slug !== "home") // Exclude the home page
-    .map(({ slug }) => slug); // Return an array of slugs
+    const slugs = pages.docs
+      ?.filter((doc) => doc.slug !== "home") // Exclude the home page
+      .map(({ slug }) => slug); // Return an array of slugs
+    console.log(`Generated ${slugs.length} slugs`);
+
+    return slugs;
+  } catch (error) {
+    console.error("Error in generateStaticParams:", error);
+    return [];
+  }
 }
 
 // Default export for the Page component
 export default async function Page({ params: { slug = "home" } }) {
-  // Construct the full URL for the page
-  const url = "/" + slug;
-
-  // Declare a variable to hold the page data
+  console.log(`Rendering page for slug: ${slug}`);
   let page: PageType | null;
 
-  // Query the page data using the slug
-  page = await queryPageBySlug({ slug });
+  try {
+    page = await queryPageBySlug({ slug });
+    console.log(`Page data fetched for slug: ${slug}`);
 
-  // If no page is found, return a 404 Not Found response
-  if (!page) {
+    if (!page) {
+      console.log(`Page not found for slug: ${slug}`);
+      return notFound();
+    }
+
+    return (
+      <article className="bg-blue-500">
+        {/* Render the layout blocks for the page */}
+        <RenderBlocks blocks={page.layout} />
+      </article>
+    );
+  } catch (error) {
+    console.error(`Error rendering page for slug ${slug}:`, error);
     return notFound();
   }
-
-  // Destructure the layout from the page data
-  const { layout } = page;
-
-  // Render the page content
-  return (
-    <article className="bg-blue-500">
-      {/* Render the layout blocks for the page */}
-      <RenderBlocks blocks={page.layout} />
-    </article>
-  );
 }
 
 //* Function to query a page by its slug, wrapped in React's cache for performance
 const queryPageBySlug = cache(async ({ slug }: { slug: string }) => {
-  // Decode the URL-encoded slug
+  console.log(`Querying page for slug: ${slug}`);
   const parsedSlug = decodeURIComponent(slug);
+  console.log(`Parsed slug: ${parsedSlug}`);
 
-  // Get the Payload CMS instance with Hot Module Replacement support
-  const payload = await getPayloadHMR({ config: configPromise });
+  try {
+    const payload = await getPayloadHMR({ config: configPromise });
+    console.log("Payload instance created for query");
 
-  // Query the 'pages' collection for a page matching the slug
-  const result = await payload.find({
-    collection: "pages",
-    limit: 1, // Limit to one result
-    where: {
-      slug: {
-        equals: parsedSlug, // Match the exact slug
+    const result = await payload.find({
+      collection: "pages",
+      limit: 1, // Limit to one result
+      where: {
+        slug: {
+          equals: parsedSlug, // Match the exact slug
+        },
       },
-    },
-  });
+    });
+    console.log(`Query result:`, result);
 
-  // Return the first matching page or null if not found
-  return result.docs?.[0] || null;
+    if (result.docs?.[0]) {
+      console.log(`Page found for slug: ${parsedSlug}`);
+      return result.docs[0];
+    } else {
+      console.log(`No page found for slug: ${parsedSlug}`);
+      return null;
+    }
+  } catch (error) {
+    console.error(`Error querying page for slug ${parsedSlug}:`, error);
+    throw error;
+  }
 });

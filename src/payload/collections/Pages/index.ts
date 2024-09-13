@@ -9,6 +9,7 @@ import {
   OverviewField,
   PreviewField,
 } from "@payloadcms/plugin-seo/fields";
+import { generatePreviewPath } from "@/app/utilities/generatePreviewPath";
 
 export const Pages: CollectionConfig = {
   slug: "pages",
@@ -86,6 +87,18 @@ export const Pages: CollectionConfig = {
   },
   admin: {
     useAsTitle: "title",
+    livePreview: {
+      url: ({ data }) => {
+        const path = generatePreviewPath({
+          path: `/${typeof data?.slug === "string" ? data.slug : ""}`,
+        });
+        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`;
+      },
+    },
+    preview: (doc) =>
+      generatePreviewPath({
+        path: `/${typeof doc?.slug === "string" ? doc.slug : ""}`,
+      }),
   },
   versions: {
     drafts: {
