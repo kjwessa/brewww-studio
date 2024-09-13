@@ -17,13 +17,25 @@ const DMSans = localFont({
   ],
 });
 
+const BebasNeue = localFont({
+  variable: "--font-bebas-neue",
+  display: "swap",
+  src: [
+    {
+      path: "../../fonts/BebasNeue.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+});
+
 export default function InnerLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${DMSans.variable}`}>
+    <html lang="en" className={`${DMSans.variable} ${BebasNeue.variable}`}>
       <body className="bg-gray-950 text-gray-50 antialiased">
         <HeaderNew />
         <div className="">{children}</div>

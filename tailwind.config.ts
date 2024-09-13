@@ -20,7 +20,12 @@ const config: Config = {
     // },
     extend: {
       fontFamily: {
-        sans: [`var(--font-dm-sans), "ui-sans-serif", "system-ui"`],
+        sans: [
+          `var(--font-dm-sans), "ui-sans-serif", "system-ui", "sans-serif"`,
+        ],
+        mono: [
+          `var(--font-bebas-neue), "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"`,
+        ],
       },
       borderWidth: {
         6: "6px",

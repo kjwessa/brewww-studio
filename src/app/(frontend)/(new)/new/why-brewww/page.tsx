@@ -16,7 +16,7 @@ export default function WhyPage() {
         <span className="text-[20.75rem] font-bold leading-none text-white">
           <span className="relative flex items-center justify-between">
             <span className="inline-block">
-              <span className="inline-block">Why</span>
+              <span className="text-outline inline-block">Why</span>
             </span>
             <div className="w-40"></div>
             <span className="inline-block">
