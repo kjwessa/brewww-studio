@@ -6,7 +6,7 @@ export default function IndividualPage() {
           <h3 className="inline-block text-lg uppercase min-[671px]:pl-6">
             Beautifully bespoke websites
           </h3>
-          <h2 className="text-[10.00rem] uppercase leading-none min-[769px]:mt-8">
+          <h2 className="text-[8.25rem] font-bold uppercase leading-none min-[769px]:mt-8">
             A leading Cleveland creative studio
           </h2>
           <p className="text-4xl min-[769px]:mt-12">
@@ -28,333 +28,105 @@ export default function IndividualPage() {
           </div>
         </div>
       </section>
-
-      <div>
-        <style
-          dangerouslySetInnerHTML={{
-            __html:
-              "@media (max-width: 670px) {\n/* DivMagic Note: Tailwind does not support max-width. We will fix this soon. */\n\n#section-1 {\npadding-top: 50px !important; padding-bottom: 50px !important;\n}\n#span-2 {\npadding-top: 6px !important; padding-right: 15px !important; padding-bottom: 6px !important; padding-left: 15px !important;\n}\n#span-3 {\npadding-top: 6px !important; padding-right: 15px !important; padding-bottom: 6px !important; padding-left: 15px !important;\n}\n#span-5 {\npadding-top: 6px !important; padding-right: 15px !important; padding-bottom: 6px !important; padding-left: 15px !important;\n}\n#span-6 {\npadding-top: 6px !important; padding-right: 15px !important; padding-bottom: 6px !important; padding-left: 15px !important;\n}\n#span-8 {\npadding-top: 6px !important; padding-right: 15px !important; padding-bottom: 6px !important; padding-left: 15px !important;\n}\n#span-9 {\npadding-top: 6px !important; padding-right: 15px !important; padding-bottom: 6px !important; padding-left: 15px !important;\n}\n#span-11 {\npadding-top: 6px !important; padding-right: 15px !important; padding-bottom: 6px !important; padding-left: 15px !important;\n}\n#span-12 {\npadding-top: 6px !important; padding-right: 15px !important; padding-bottom: 6px !important; padding-left: 15px !important;\n}\n}\n@media (max-width: 1920px) {\n/* DivMagic Note: Tailwind does not support max-width. We will fix this soon. */\n\n#div-1 {\nmax-width: 1670px !important;\n}\n}\n@media (max-width: 768px) {\n/* DivMagic Note: Tailwind does not support max-width. We will fix this soon. */\n\n#ul-1 {\nwidth: 100% !important;\n}\n}\n@media (max-width: 1024px) {\n/* DivMagic Note: Tailwind does not support max-width. We will fix this soon. */\n\n#span-1 {\npadding: 20px !important;\n}\n#div-2 {\nmargin-top: 10px !important;\n}\n#div-3 {\ndisplay: none !important;\n}\n#span-4 {\npadding: 20px !important;\n}\n#div-4 {\nmargin-top: 10px !important;\n}\n#div-5 {\ndisplay: none !important;\n}\n#span-7 {\npadding: 20px !important;\n}\n#div-6 {\nmargin-top: 10px !important;\n}\n#div-7 {\ndisplay: none !important;\n}\n#span-10 {\npadding: 20px !important;\n}\n#div-8 {\nmargin-top: 10px !important;\n}\n#div-9 {\ndisplay: none !important;\n}\n}\n@media (max-width: 768px) and (max-width: 670px) {\n/* DivMagic Note: Tailwind does not support max-width. We will fix this soon. */\n\n#li-1 {\nmargin-top: 30px !important;\n}\n#li-2 {\nmargin-top: 30px !important;\n}\n#li-3 {\nmargin-top: 30px !important;\n}\n}\n",
-          }}
-        />
-
-        <section
-          className="relative overflow-hidden bg-neutral-900 text-[1.38rem] leading-7 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28"
-          id="section-1"
-        >
-          <div
-            className="m-auto w-[92%] min-[1921px]:max-w-[118.75rem]"
-            id="div-1"
-          >
-            <div className="relative">
-              <ul className="list-none flex-wrap min-[769px]:flex" id="ul-1">
-                <li className="relative list-item min-[769px]:w-[30.9474%]">
-                  <span
-                    className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8"
-                    id="span-1"
-                  >
-                    Websites
-                  </span>
-
-                  <a
-                    className="w-full overflow-hidden"
-                    href="https://www.fhoke.com/projects/heritage-driven/"
-                  >
-                    <picture className="h-auto max-w-full cursor-pointer">
-                      <source srcSet="https://www.fhoke.com/wp-content/uploads/2022/03/heritage-driven-header-706x460.jpg 1x, https://www.fhoke.com/wp-content/uploads/2022/03/heritage-driven-header-1412x920.jpg 2x" />
-                      {"            "}
-                      <img
-                        className="h-auto w-full max-w-full"
-                        src="https://www.fhoke.com/wp-content/uploads/2022/03/heritage-driven-header-588x700.jpg"
-                        srcSet="https://www.fhoke.com/wp-content/uploads/2022/03/heritage-driven-header-588x700.jpg 1x, https://www.fhoke.com/wp-content/uploads/2022/03/heritage-driven-header-1176x1400.jpg 2x"
-                      />
-                      {"        "}
-                    </picture>
-                  </a>
-
-                  <div
-                    className="flex justify-between min-[1025px]:mt-5"
-                    id="div-2"
-                  >
-                    <div className="flex-grow">
-                      <h5>
-                        <a
-                          className="inline-block"
-                          href="https://www.fhoke.com/projects/heritage-driven/"
-                        >
-                          Heritage Driven
-                        </a>
-                      </h5>
-
-                      <p className="opacity-50">
-                        Redefining an automotive icon.
-                      </p>
-                    </div>
-
-                    <div className="ml-5 text-lg uppercase" id="div-3">
-                      <a
-                        className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
-                        href="https://www.fhoke.com/projects/heritage-driven/"
-                      >
-                        <span
-                          className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5"
-                          id="span-2"
-                        >
-                          View
-                          <span
-                            className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5"
-                            id="span-3"
-                          />
-                        </span>
-                      </a>
-                      {"        "}
-                    </div>
-                  </div>
-                </li>
-
+      <section className="relative overflow-hidden bg-neutral-900 text-[1.38rem] leading-7 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
+        <div className="m-auto w-[92%] max-w-[118.75rem]">
+          <div className="relative">
+            <ul className="flex list-none flex-wrap">
+              {[
+                {
+                  type: "Websites",
+                  title: "Heritage Driven",
+                  description: "Redefining an automotive icon.",
+                  imageSrc:
+                    "https://www.fhoke.com/wp-content/uploads/2022/03/heritage-driven-header-588x700.jpg",
+                  width: "30.9474%",
+                },
+                {
+                  type: "Shops",
+                  title: "Combat Fuel",
+                  description: "Giving supplements a shake-up.",
+                  imageSrc:
+                    "https://www.fhoke.com/wp-content/uploads/2021/12/combat-fuel-header-1244x700.jpg",
+                  width: "65.4737%",
+                },
+                {
+                  type: "Websites",
+                  title: "Neck of The Woods",
+                  description: "A powerful story can change everything.",
+                  imageSrc:
+                    "https://www.fhoke.com/wp-content/uploads/2020/11/neck-of-the-woods-films-header-1244x700.png",
+                  width: "65.4737%",
+                },
+                {
+                  type: "Websites",
+                  title: "Metal & Gas",
+                  description: "Drive what they don't.",
+                  imageSrc:
+                    "https://www.fhoke.com/wp-content/uploads/2020/03/MetalandGas-Banner-588x700.jpg",
+                  width: "30.9474%",
+                },
+              ].map((item, index) => (
                 <li
-                  className="relative list-item md:mt-10 md:mt-12 min-[769px]:ml-auto min-[769px]:w-[65.4737%]"
-                  id="li-1"
+                  key={index}
+                  className={`relative list-item ${index > 0 ? "md:mt-10 md:mt-12 min-[769px]:mt-12 min-[769px]:mt-20 min-[769px]:mt-28" : ""} ${index % 2 !== 0 ? "min-[769px]:ml-auto" : ""} min-[769px]:w-[${item.width}]`}
                 >
-                  <span
-                    className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8"
-                    id="span-4"
-                  >
-                    Shops
+                  <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
+                    {item.type}
                   </span>
 
-                  <a
-                    className="w-full overflow-hidden"
-                    href="https://www.fhoke.com/projects/combat-fuel/"
-                  >
-                    <picture className="h-auto max-w-full cursor-pointer">
-                      <source srcSet="https://www.fhoke.com/wp-content/uploads/2021/12/combat-fuel-header-706x460.jpg 1x, https://www.fhoke.com/wp-content/uploads/2021/12/combat-fuel-header-1412x920.jpg 2x" />
-                      {"            "}
-                      <img
-                        className="h-auto w-full max-w-full"
-                        src="https://www.fhoke.com/wp-content/uploads/2021/12/combat-fuel-header-1244x700.jpg"
-                      />
-                      {"        "}
-                    </picture>
+                  <a className="w-full overflow-hidden" href="">
+                    <img
+                      className="h-auto w-full max-w-full"
+                      src={item.imageSrc}
+                      alt={item.title}
+                    />
                   </a>
 
-                  <div
-                    className="flex justify-between min-[1025px]:mt-5"
-                    id="div-4"
-                  >
+                  <div className="flex justify-between min-[1025px]:mt-5">
                     <div className="flex-grow">
                       <h5>
-                        <a
-                          className="inline-block"
-                          href="https://www.fhoke.com/projects/combat-fuel/"
-                        >
-                          Combat Fuel
+                        <a className="inline-block" href="">
+                          {item.title}
                         </a>
                       </h5>
 
-                      <p className="opacity-50">
-                        Giving supplements a shake-up.
-                      </p>
+                      <p className="opacity-50">{item.description}</p>
                     </div>
 
-                    <div className="ml-5 text-lg uppercase" id="div-5">
+                    <div className="ml-5 text-lg uppercase">
                       <a
                         className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
-                        href="https://www.fhoke.com/projects/combat-fuel/"
+                        href=""
                       >
-                        <span
-                          className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5"
-                          id="span-5"
-                        >
+                        <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
                           View
-                          <span
-                            className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5"
-                            id="span-6"
-                          />
+                          <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
                         </span>
                       </a>
-                      {"        "}
                     </div>
                   </div>
                 </li>
-
-                <li
-                  className="relative list-item md:mt-10 md:mt-12 min-[769px]:mt-12 min-[769px]:mt-20 min-[769px]:mt-28 min-[769px]:w-[65.4737%]"
-                  id="li-2"
-                >
-                  <span
-                    className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8"
-                    id="span-7"
-                  >
-                    Websites
-                  </span>
-
-                  <a
-                    className="w-full overflow-hidden"
-                    href="https://www.fhoke.com/projects/neck-of-the-woods-films/"
-                  >
-                    <picture className="h-auto max-w-full cursor-pointer">
-                      <source srcSet="https://www.fhoke.com/wp-content/uploads/2020/11/neck-of-the-woods-films-header-706x460.png 1x, https://www.fhoke.com/wp-content/uploads/2020/11/neck-of-the-woods-films-header-1412x920.png 2x" />
-                      {"            "}
-                      <img
-                        className="h-auto w-full max-w-full"
-                        src="https://www.fhoke.com/wp-content/uploads/2020/11/neck-of-the-woods-films-header-1244x700.png"
-                      />
-                      {"        "}
-                    </picture>
-                  </a>
-
-                  <div
-                    className="flex justify-between min-[1025px]:mt-5"
-                    id="div-6"
-                  >
-                    <div className="flex-grow">
-                      <h5>
-                        <a
-                          className="inline-block"
-                          href="https://www.fhoke.com/projects/neck-of-the-woods-films/"
-                        >
-                          Neck of The Woods
-                        </a>
-                      </h5>
-
-                      <p className="opacity-50">
-                        A powerful story can change everything.
-                      </p>
-                    </div>
-
-                    <div className="ml-5 text-lg uppercase" id="div-7">
-                      <a
-                        className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
-                        href="https://www.fhoke.com/projects/neck-of-the-woods-films/"
-                      >
-                        <span
-                          className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5"
-                          id="span-8"
-                        >
-                          View
-                          <span
-                            className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5"
-                            id="span-9"
-                          />
-                        </span>
-                      </a>
-                      {"        "}
-                    </div>
-                  </div>
-                </li>
-
-                <li
-                  className="relative list-item md:mt-10 md:mt-12 min-[769px]:ml-auto min-[769px]:mt-12 min-[769px]:mt-20 min-[769px]:mt-28 min-[769px]:w-[30.9474%]"
-                  id="li-3"
-                >
-                  <span
-                    className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8"
-                    id="span-10"
-                  >
-                    Websites
-                  </span>
-
-                  <a
-                    className="w-full overflow-hidden"
-                    href="https://www.fhoke.com/projects/metal-and-gas/"
-                  >
-                    <picture className="h-auto max-w-full cursor-pointer">
-                      <source srcSet="https://www.fhoke.com/wp-content/uploads/2020/03/MetalandGas-Banner-706x460.jpg 1x, https://www.fhoke.com/wp-content/uploads/2020/03/MetalandGas-Banner-1412x920.jpg 2x" />
-                      {"            "}
-                      <img
-                        className="h-auto w-full max-w-full"
-                        src="https://www.fhoke.com/wp-content/uploads/2020/03/MetalandGas-Banner-588x700.jpg"
-                        srcSet="https://www.fhoke.com/wp-content/uploads/2020/03/MetalandGas-Banner-588x700.jpg 1x, https://www.fhoke.com/wp-content/uploads/2020/03/MetalandGas-Banner-1176x1400.jpg 2x"
-                      />
-                      {"        "}
-                    </picture>
-                  </a>
-
-                  <div
-                    className="flex justify-between min-[1025px]:mt-5"
-                    id="div-8"
-                  >
-                    <div className="flex-grow">
-                      <h5>
-                        <a
-                          className="inline-block"
-                          href="https://www.fhoke.com/projects/metal-and-gas/"
-                        >
-                          Metal & Gas
-                        </a>
-                      </h5>
-
-                      <p className="opacity-50">Drive what they don't.</p>
-                    </div>
-
-                    <div className="ml-5 text-lg uppercase" id="div-9">
-                      <a
-                        className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
-                        href="https://www.fhoke.com/projects/metal-and-gas/"
-                      >
-                        <span
-                          className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5"
-                          id="span-11"
-                        >
-                          View
-                          <span
-                            className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5"
-                            id="span-12"
-                          />
-                        </span>
-                      </a>
-                      {"        "}
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
+      <section className="bg-white py-24 text-black sm:py-32">
+        <div className="container mx-auto w-[92%] max-w-[77.75rem]">
+          <h2 className="inline-block text-lg uppercase min-[671px]:pl-6">
+            Powerful and scalable WordPress agency websites
+          </h2>
+
+          <p className="text-4xl lg:mt-8 min-[1025px]:mt-12">
+            From interactive brochure sites and online stores to digital
+            products that make your life easier, you can rely on WordPress to
+            make your project a huge success. We'll plan, design, and deliver
+            your website on time and within budget.
+          </p>
+        </div>
+      </section>
       <div>
-        <style
-          dangerouslySetInnerHTML={{
-            __html:
-              "@media (max-width: 670px) {\n/* DivMagic Note: Tailwind does not support max-width. We will fix this soon. */\n\n#section-1 {\npadding-top: 50px !important; padding-bottom: 50px !important;\n}\n#h2-1 {\npadding-left: 21px !important;\n}\n#p-1 {\nmargin-top: 15px !important;\n}\n}\n@media (max-width: 1920px) {\n/* DivMagic Note: Tailwind does not support max-width. We will fix this soon. */\n\n#div-1 {\nmax-width: 1244px !important;\n}\n}\n",
-          }}
-        />
-
-        <section
-          className="text-neutral-900 min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28"
-          id="section-1"
-        >
-          <div
-            className="m-auto w-[92%] min-[1921px]:max-w-[77.75rem]"
-            id="div-1"
-          >
-            <div>
-              <h2
-                className="inline-block text-lg uppercase min-[671px]:pl-6"
-                id="h2-1"
-              >
-                Powerful and scalable WordPress agency websites
-              </h2>
-
-              <p className="text-4xl lg:mt-8 min-[1025px]:mt-12" id="p-1">
-                From interactive brochure sites and online stores to digital
-                products that make your life easier, you can rely on WordPress
-                to make your project a huge success. We’ll plan, design, and
-                deliver your website on time and within budget.
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
-      <div>
-        <style
-          dangerouslySetInnerHTML={{
-            __html:
-              "@media (max-width: 670px) {\n/* DivMagic Note: Tailwind does not support max-width. We will fix this soon. */\n\n#section-1 {\npadding-top: 50px !important; padding-bottom: 50px !important;\n}\n#div-1 {\nmargin-bottom: 50px !important;\n}\n#h6-1 {\npadding-left: 21px !important;\n}\n#h2-1 {\nmargin-top: 15px !important;\n}\n#li-1 {\nwidth: 100% !important; margin-top: 50px !important;\n}\n#li-2 {\nwidth: 100% !important; margin-top: 50px !important;\n}\n#li-3 {\nwidth: 100% !important; margin-top: 50px !important;\n}\n#li-4 {\nwidth: 100% !important; margin-top: 50px !important;\n}\n}\n@media (max-width: 1920px) {\n/* DivMagic Note: Tailwind does not support max-width. We will fix this soon. */\n\n#div-1 {\nmax-width: 1670px !important;\n}\n#div-2 {\nmax-width: 1670px !important;\n}\n}\n",
-          }}
-        />
-
         <section
           className="bg-neutral-900 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28"
           id="section-1"
@@ -557,208 +329,70 @@ export default function IndividualPage() {
           </div>
         </section>
       </div>
-      <div>
-        <style
-          dangerouslySetInnerHTML={{
-            __html:
-              "@media (max-width: 670px) {\n/* DivMagic Note: Tailwind does not support max-width. We will fix this soon. */\n\n#section-1 {\npadding-top: 50px !important; padding-bottom: 50px !important;\n}\n#div-3 {\nmargin-top: 30px !important;\n}\n#p-1 {\nmargin-top: 15px !important;\n}\n#p-2 {\nmargin-top: 20px !important;\n}\n#ul-1 {\nmargin-top: 20px !important;\n}\n#svg-1 {\ntop: 8px !important;\n}\n#li-1 {\nmargin-top: 10px !important;\n}\n#svg-2 {\ntop: 8px !important;\n}\n#li-2 {\nmargin-top: 10px !important;\n}\n#svg-3 {\ntop: 8px !important;\n}\n#li-3 {\nmargin-top: 10px !important;\n}\n#svg-4 {\ntop: 8px !important;\n}\n#li-4 {\nmargin-top: 10px !important;\n}\n#svg-5 {\ntop: 8px !important;\n}\n#li-5 {\nmargin-top: 10px !important;\n}\n#svg-6 {\ntop: 8px !important;\n}\n#li-6 {\nmargin-top: 10px !important;\n}\n#svg-7 {\ntop: 8px !important;\n}\n}\n@media (max-width: 1920px) {\n/* DivMagic Note: Tailwind does not support max-width. We will fix this soon. */\n\n#div-1 {\nmax-width: 1670px !important;\n}\n}\n@media (max-width: 768px) {\n/* DivMagic Note: Tailwind does not support max-width. We will fix this soon. */\n\n#div-2 {\nmargin-left: auto !important; margin-right: auto !important;\n}\n}\n",
-          }}
-        />
 
-        <section
-          className="relative bg-neutral-900 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28"
-          id="section-1"
-        >
-          <div
-            className="m-auto w-[92%] min-[1921px]:max-w-[118.75rem]"
-            id="div-1"
-          >
-            <div className="min-[769px]:flex min-[769px]:items-center">
-              <div
-                className="overflow-hidden min-[769px]:w-[48.2105%]"
-                id="div-2"
-              >
-                <img
-                  className="h-auto w-full max-w-full"
-                  src="https://www.fhoke.com/wp-content/uploads/2022/08/Wordpress-Recap-Tall.jpg"
-                />
+      <section className="relative bg-neutral-900 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
+        <div className="m-auto w-[92%] min-[1921px]:max-w-[118.75rem]">
+          <div className="min-[769px]:flex min-[769px]:items-center">
+            <div className="overflow-hidden min-[769px]:w-[48.2105%]">
+              <img
+                className="h-auto w-full max-w-full"
+                src="https://www.fhoke.com/wp-content/uploads/2022/08/Wordpress-Recap-Tall.jpg"
+              />
+            </div>
+
+            <div className="md:mt-10 min-[769px]:ml-auto lg:w-[48.2105%] min-[1025px]:w-[39.5789%]">
+              <div>
+                <h3 className="text-[5.5rem] font-bold uppercase leading-none">
+                  Building with WordPress
+                </h3>
+
+                <p className="text-[1.38rem] leading-7 lg:mt-8 min-[1025px]:mt-12">
+                  WordPress started in 2003 and was designed for building
+                  self-hosted blogs. While we still use it to power your blog,
+                  it&apos;s now capable of managing every aspect of your
+                  website. It&apos;s completely customisable, we can use it for
+                  almost anything you throw at us.
+                </p>
+
+                <p className="text-[1.38rem] leading-7 lg:mt-8 min-[1025px]:mt-9">
+                  We use WordPress to create everything from:
+                </p>
               </div>
 
-              <div
-                className="md:mt-10 min-[769px]:ml-auto lg:w-[48.2105%] min-[1025px]:w-[39.5789%]"
-                id="div-3"
-              >
-                <div>
-                  <h3 className="text-[7.50rem] uppercase leading-none">
-                    <span className="text-[6.25rem] leading-none">
-                      <span className="inline-block overflow-hidden">
-                        Building
-                      </span>{" "}
-                      <span className="inline-block overflow-hidden">with</span>{" "}
-                      <span className="inline-block overflow-hidden">
-                        WordPress
-                      </span>
-                    </span>
-                  </h3>
+              <ul className="list-none flex-wrap text-lg min-[671px]:flex min-[1600px]:mt-8 min-[1920px]:mt-8 min-[1921px]:mt-8">
+                <li className="relative list-item pl-7 min-[671px]:w-[48.2105%]">
+                  Brochure Websites
+                </li>
 
-                  <p
-                    className="text-[1.38rem] leading-7 lg:mt-8 min-[1025px]:mt-12"
-                    id="p-1"
-                  >
-                    WordPress started in 2003 and was designed for building
-                    self-hosted blogs. While we still use it to power your blog,
-                    it’s now capable of managing every aspect of your website.
-                    It’s completely customisable, we can use it for almost
-                    anything you throw at us.
-                  </p>
+                <li className="relative list-item pl-7 min-[671px]:ml-auto min-[671px]:w-[48.2105%]">
+                  Online Magazines
+                </li>
 
-                  <p
-                    className="text-[1.38rem] leading-7 lg:mt-8 min-[1025px]:mt-9"
-                    id="p-2"
-                  >
-                    We use WordPress to create everything from:
-                  </p>
-                </div>
+                <li className="relative list-item pl-7 min-[671px]:mt-3 min-[671px]:w-[48.2105%]">
+                  eCommerce Shops and Stores
+                </li>
 
-                <ul
-                  className="list-none flex-wrap text-lg min-[671px]:flex min-[1600px]:mt-8 min-[1920px]:mt-8 min-[1921px]:mt-8"
-                  id="ul-1"
-                >
-                  <li className="relative list-item pl-7 min-[671px]:w-[48.2105%]">
-                    <svg
-                      className="absolute left-0 h-2.5 w-4 min-[1440px]:top-[0.56rem] min-[1441px]:top-[0.69rem]"
-                      fill="rgb(0, 0, 0)"
-                      id="svg-1"
-                      viewBox="0 0 16 10"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="m12,0h-2c0,1.54.59,2.94,1.54,4H0v2h11.54c-.95,1.06-1.54,2.46-1.54,4h2c0-2.21,1.79-4,4-4v-2c-2.21,0-4-1.79-4-4Z"
-                        fill="rgb(255, 255, 255)"
-                      />
-                    </svg>
-                    Brochure Websites
-                  </li>
+                <li className="relative list-item pl-7 min-[671px]:ml-auto min-[671px]:mt-3 min-[671px]:w-[48.2105%]">
+                  Client Portals
+                </li>
 
-                  <li
-                    className="relative list-item pl-7 min-[671px]:ml-auto min-[671px]:w-[48.2105%]"
-                    id="li-1"
-                  >
-                    <svg
-                      className="absolute left-0 h-2.5 w-4 min-[1440px]:top-[0.56rem] min-[1441px]:top-[0.69rem]"
-                      fill="rgb(0, 0, 0)"
-                      id="svg-2"
-                      viewBox="0 0 16 10"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="m12,0h-2c0,1.54.59,2.94,1.54,4H0v2h11.54c-.95,1.06-1.54,2.46-1.54,4h2c0-2.21,1.79-4,4-4v-2c-2.21,0-4-1.79-4-4Z"
-                        fill="rgb(255, 255, 255)"
-                      />
-                    </svg>
-                    Online Magazines
-                  </li>
+                <li className="relative list-item pl-7 min-[671px]:mt-3 min-[671px]:w-[48.2105%]">
+                  Online Proposal Systems
+                </li>
 
-                  <li
-                    className="relative list-item pl-7 min-[671px]:mt-3 min-[671px]:w-[48.2105%]"
-                    id="li-2"
-                  >
-                    <svg
-                      className="absolute left-0 h-2.5 w-4 min-[1440px]:top-[0.56rem] min-[1441px]:top-[0.69rem]"
-                      fill="rgb(0, 0, 0)"
-                      id="svg-3"
-                      viewBox="0 0 16 10"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="m12,0h-2c0,1.54.59,2.94,1.54,4H0v2h11.54c-.95,1.06-1.54,2.46-1.54,4h2c0-2.21,1.79-4,4-4v-2c-2.21,0-4-1.79-4-4Z"
-                        fill="rgb(255, 255, 255)"
-                      />
-                    </svg>
-                    eCommerce Shops and Stores
-                  </li>
+                <li className="relative list-item pl-7 min-[671px]:ml-auto min-[671px]:mt-3 min-[671px]:w-[48.2105%]">
+                  Microsites
+                </li>
 
-                  <li
-                    className="relative list-item pl-7 min-[671px]:ml-auto min-[671px]:mt-3 min-[671px]:w-[48.2105%]"
-                    id="li-3"
-                  >
-                    <svg
-                      className="absolute left-0 h-2.5 w-4 min-[1440px]:top-[0.56rem] min-[1441px]:top-[0.69rem]"
-                      fill="rgb(0, 0, 0)"
-                      id="svg-4"
-                      viewBox="0 0 16 10"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="m12,0h-2c0,1.54.59,2.94,1.54,4H0v2h11.54c-.95,1.06-1.54,2.46-1.54,4h2c0-2.21,1.79-4,4-4v-2c-2.21,0-4-1.79-4-4Z"
-                        fill="rgb(255, 255, 255)"
-                      />
-                    </svg>
-                    Client Portals
-                  </li>
-
-                  <li
-                    className="relative list-item pl-7 min-[671px]:mt-3 min-[671px]:w-[48.2105%]"
-                    id="li-4"
-                  >
-                    <svg
-                      className="absolute left-0 h-2.5 w-4 min-[1440px]:top-[0.56rem] min-[1441px]:top-[0.69rem]"
-                      fill="rgb(0, 0, 0)"
-                      id="svg-5"
-                      viewBox="0 0 16 10"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="m12,0h-2c0,1.54.59,2.94,1.54,4H0v2h11.54c-.95,1.06-1.54,2.46-1.54,4h2c0-2.21,1.79-4,4-4v-2c-2.21,0-4-1.79-4-4Z"
-                        fill="rgb(255, 255, 255)"
-                      />
-                    </svg>
-                    Online Proposal Systems
-                  </li>
-
-                  <li
-                    className="relative list-item pl-7 min-[671px]:ml-auto min-[671px]:mt-3 min-[671px]:w-[48.2105%]"
-                    id="li-5"
-                  >
-                    <svg
-                      className="absolute left-0 h-2.5 w-4 min-[1440px]:top-[0.56rem] min-[1441px]:top-[0.69rem]"
-                      fill="rgb(0, 0, 0)"
-                      id="svg-6"
-                      viewBox="0 0 16 10"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="m12,0h-2c0,1.54.59,2.94,1.54,4H0v2h11.54c-.95,1.06-1.54,2.46-1.54,4h2c0-2.21,1.79-4,4-4v-2c-2.21,0-4-1.79-4-4Z"
-                        fill="rgb(255, 255, 255)"
-                      />
-                    </svg>
-                    Microsites
-                  </li>
-
-                  <li
-                    className="relative list-item pl-7 min-[671px]:mt-3 min-[671px]:w-[48.2105%]"
-                    id="li-6"
-                  >
-                    <svg
-                      className="absolute left-0 h-2.5 w-4 min-[1440px]:top-[0.56rem] min-[1441px]:top-[0.69rem]"
-                      fill="rgb(0, 0, 0)"
-                      id="svg-7"
-                      viewBox="0 0 16 10"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="m12,0h-2c0,1.54.59,2.94,1.54,4H0v2h11.54c-.95,1.06-1.54,2.46-1.54,4h2c0-2.21,1.79-4,4-4v-2c-2.21,0-4-1.79-4-4Z"
-                        fill="rgb(255, 255, 255)"
-                      />
-                    </svg>
-                    Membership Platforms
-                  </li>
-                </ul>
-              </div>
+                <li className="relative list-item pl-7 min-[671px]:mt-3 min-[671px]:w-[48.2105%]">
+                  Membership Platforms
+                </li>
+              </ul>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
       <div>
         <style
           dangerouslySetInnerHTML={{
