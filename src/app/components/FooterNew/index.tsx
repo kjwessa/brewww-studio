@@ -3,7 +3,7 @@ import BrewwwLogo from "/public/images/brewww-logotype-gold.png";
 export function FooterNew() {
   return (
     <>
-      <footer className="border-b-4 border-[#f8ac43] bg-[#060D0E]">
+      <footer className="border-b-6 border-[#f8ac43] bg-[#060D0E]">
         <div className="py-12 text-lg text-white">
           <div className="m-auto w-full px-12 min-[100px]:max-w-full min-[100px]:px-16 min-[1920px]:max-w-[120rem] min-[1920px]:px-10">
             <div className="flex justify-between">
