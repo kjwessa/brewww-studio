@@ -2,6 +2,98 @@ export default function ServicesPage() {
   return (
     <>
       <div>
+        <section className="relative grid grid-cols-[105.50rem] grid-rows-[1155px_104px] items-center justify-items-center bg-zinc-950 text-center uppercase text-neutral-400">
+          <span className="text-[13.00rem] font-bold leading-none text-white">
+            <span>
+              <span className="inline-block">
+                <span className="inline-block">We build Software</span>
+              </span>
+              <br />
+              <span className="inline-block">
+                <span className="inline-block">
+                  <svg
+                    className="h-40 w-9"
+                    fill="none"
+                    height="96"
+                    id="svg-1"
+                    viewBox="0 0 23 96"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22.1538 92.6733C11.1716 79.7465 5.68047 64.9188 5.68047 48.095c0-9.4099 1.60947-17.9643 4.82843-25.4732 3.3136-7.5089 7.1952-13.97229 11.6449-19.29506L17.8935 0C5.9645 14.5426 0 30.5109 0 48.095 0 65.4891 5.9645 81.4574 17.8935 96l4.2603-3.3267Z"
+                      fill="rgb(255, 255, 255)"
+                    />
+                  </svg>
+                  <div
+                    className="inline-block align-middle text-black"
+                    id="div-1"
+                  >
+                    <div className="grid-cols-[repeat(2,_1fr)] items-center gap-x-5">
+                      <div
+                        className="relative col-start-1"
+                        style={{
+                          gridColumnEnd: "span 2",
+                        }}
+                      >
+                        <video className="h-24 w-40 object-contain">
+                          <source
+                            src="https://www.datocms-assets.com/57452/1639733929-services-cover-looper.mp4"
+                            type="video/mp4"
+                          />
+                          <p className="text-sm">
+                            Your browser does not support HTML5 video. Here is a{" "}
+                            <a
+                              className="inline-block underline"
+                              href="https://www.datocms-assets.com/57452/1639733929-services-cover-looper.mp4"
+                            >
+                              link to the video
+                            </a>
+                            .
+                          </p>
+                        </video>
+                      </div>
+                    </div>
+                  </div>
+                  <svg
+                    className="h-40 w-9"
+                    fill="none"
+                    height="96"
+                    id="svg-2"
+                    viewBox="0 0 23 96"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M.84615 92.6733C11.8284 79.7465 17.3195 64.9188 17.3195 48.095c0-9.4099-1.6094-17.9643-4.8284-25.4732C9.17752 15.1129 5.29586 8.64951.84615 3.32674L5.10651 0C17.0355 14.5426 23 30.5109 23 48.095 23 65.4891 17.0355 81.4574 5.10651 96L.84615 92.6733Z"
+                      fill="rgb(255, 255, 255)"
+                    />
+                  </svg>{" "}
+                  Solutions
+                </span>
+              </span>
+            </span>
+          </span>
+          <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-20 pb-10 text-sm font-semibold text-white">
+            <span>↓ Scroll to learn how</span>
+            <span>
+              <svg
+                className="inline-block h-3 w-3"
+                fill="none"
+                height="12"
+                viewBox="0 0 12 12"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m6 0 .87252 3.89355 3.37008-2.13619-2.13615 3.37012L12 6l-3.89355.87252 2.13615 3.37008-3.37008-2.13615L6 12l-.87252-3.89355-3.37012 2.13615 2.13619-3.37008L0 6l3.89355-.87252-2.13619-3.37012 3.37012 2.13619L6 0Z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </svg>{" "}
+              7 Services available
+            </span>
+          </div>
+        </section>
+      </div>
+
+      <div>
         <div className="w-full text-neutral-900">
           <div className="m-auto flex min-h-screen w-full flex-col overflow-clip">
             <section className="bg-neutral-900 uppercase text-white min-[1000px]:pt-20 min-[1001px]:pt-28">
@@ -642,7 +734,7 @@ export default function ServicesPage() {
                     </li>
 
                     <li
-                      className="relative list-item md:mt-10 md:mt-12 min-[769px]:ml-auto min-[769px]:w-[48.2105%]"
+                      className="relative list-item md:mt-12 min-[769px]:ml-auto min-[769px]:w-[48.2105%]"
                       id="li-7"
                     >
                       <span
@@ -662,6 +754,7 @@ export default function ServicesPage() {
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://www.fhoke.com/wp-content/uploads/2022/10/Xpert-Header-916x1100.jpg"
+                            alt="Xpert Workwear"
                           />
                           {"        "}
                         </picture>
@@ -1075,7 +1168,7 @@ export default function ServicesPage() {
                     </li>
 
                     <li
-                      className="relative list-item md:mt-10 md:mt-12 min-[769px]:ml-auto min-[769px]:w-[48.2105%]"
+                      className="relative list-item md:mt-12 min-[769px]:ml-auto min-[769px]:w-[48.2105%]"
                       id="li-8"
                     >
                       <span
@@ -1098,6 +1191,7 @@ export default function ServicesPage() {
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://www.fhoke.com/wp-content/uploads/2018/09/NL4x4-Banner-916x1100.jpg"
+                            alt="New Legend 4x4"
                           />
                           {"        "}
                         </picture>
@@ -1120,20 +1214,14 @@ export default function ServicesPage() {
                           <p className="opacity-50">True legends never die.</p>
                         </div>
 
-                        <div className="ml-5 text-lg uppercase" id="div-35">
+                        <div className="ml-5 text-lg uppercase">
                           <a
                             className="relative inline-block overflow-hidden rounded-full bg-gray-200 text-center"
                             href="https://www.fhoke.com/projects/new-legend/"
                           >
-                            <span
-                              className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5"
-                              id="span-32"
-                            >
+                            <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
                               View
-                              <span
-                                className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5"
-                                id="span-33"
-                              />
+                              <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
                             </span>
                           </a>
                           {"        "}
@@ -1145,10 +1233,7 @@ export default function ServicesPage() {
               </div>
             </section>
 
-            <section
-              className="relative bg-neutral-900 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28"
-              id="section-9"
-            >
+            <section className="relative bg-neutral-900 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
               <div
                 className="m-auto w-[92%] min-[769px]:flex min-[1921px]:max-w-[118.75rem]"
                 id="div-36"
