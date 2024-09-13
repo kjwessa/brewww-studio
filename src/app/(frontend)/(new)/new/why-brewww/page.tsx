@@ -12,7 +12,6 @@ import AboutImageTen from "/public/images/brewww-ten.jpeg";
 export default function WhyPage() {
   return (
     <>
-      <div className="container">hello</div>
       <section className="relative grid grid-cols-[105.63rem] grid-rows-[1155px_104px] items-center justify-items-center bg-zinc-950 text-center uppercase text-neutral-400">
         <span className="text-[20.75rem] font-bold leading-none text-white">
           <span className="relative flex items-center justify-between">

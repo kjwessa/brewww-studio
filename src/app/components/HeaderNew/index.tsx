@@ -1,3 +1,80 @@
+import Link from "next/link";
+
+import BrewwwLogo from "/public/images/brewww-logotype-gold.png";
 export function HeaderNew() {
-  return <div>HeaderNew</div>;
+  return (
+    <header className="w-full bg-zinc-950 text-sm text-neutral-400">
+      <div className="mx-auto max-w-[120rem] px-12">
+        <div className="grid grid-cols-3 items-center py-4">
+          <nav className="flex items-center space-x-10 font-semibold uppercase text-white">
+            <Link
+              className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+              href="/new/work"
+            >
+              Our work
+            </Link>
+            <Link
+              className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+              href="/new/services"
+            >
+              Services
+            </Link>
+            <Link
+              className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+              href="/new/why-brewww"
+            >
+              Why Brewww?
+            </Link>
+            <Link
+              className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+              href="/new/blog"
+            >
+              Blog
+            </Link>
+          </nav>
+          <div className="flex justify-center">
+            <img
+              className="w-36 max-w-full cursor-pointer"
+              src={BrewwwLogo.src}
+              alt="Brewww Logo"
+            />
+          </div>
+          <div className="flex items-center justify-end space-x-4 text-white">
+            <div className="flex items-center space-x-4 uppercase">
+              <a
+                className="relative inline-block min-w-max font-semibold after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                href="mailto:hello@brewww.studio"
+              >
+                hello@brewww.studio
+              </a>
+              <a
+                className="bg-brand-gold inline-block h-12 min-w-[9.88rem] px-5 font-bold text-black md:min-w-[10.63rem] min-[1680px]:h-16 min-[1680px]:min-w-[13.75rem]"
+                href="/new/contact"
+              >
+                <span className="flex h-full w-full cursor-pointer items-center justify-center">
+                  Let's talk
+                </span>
+              </a>
+            </div>
+            <button className="h-12 min-w-8 cursor-pointer">
+              <span className="flex h-full w-full items-center justify-center">
+                <svg
+                  className="block h-4 w-4 max-w-full"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16 5H0v2h16V5Zm0 4H0v2h16V9Z"
+                    fill="rgb(255, 255, 255)"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
 }
