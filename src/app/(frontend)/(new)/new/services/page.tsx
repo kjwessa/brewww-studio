@@ -2,6 +2,7 @@ export default function ServicesPage() {
   return (
     <>
       <div>
+
         <section className="relative grid grid-cols-[105.50rem] grid-rows-[1155px_104px] items-center justify-items-center bg-zinc-950 text-center uppercase text-neutral-400">
           <span className="text-[13.00rem] font-bold leading-none text-white">
             <span>
@@ -94,6 +95,7 @@ export default function ServicesPage() {
       </div>
 
       <div>
+
         <div className="w-full text-neutral-900">
           <div className="m-auto flex min-h-screen w-full flex-col overflow-clip">
             <section className="bg-neutral-900 uppercase text-white min-[1000px]:pt-20 min-[1001px]:pt-28">
@@ -734,7 +736,11 @@ export default function ServicesPage() {
                     </li>
 
                     <li
+
                       className="relative list-item md:mt-12 min-[769px]:ml-auto min-[769px]:w-[48.2105%]"
+
+                    
+
                       id="li-7"
                     >
                       <span
@@ -754,7 +760,9 @@ export default function ServicesPage() {
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://www.fhoke.com/wp-content/uploads/2022/10/Xpert-Header-916x1100.jpg"
+
                             alt="Xpert Workwear"
+
                           />
                           {"        "}
                         </picture>
@@ -1168,7 +1176,11 @@ export default function ServicesPage() {
                     </li>
 
                     <li
+
                       className="relative list-item md:mt-12 min-[769px]:ml-auto min-[769px]:w-[48.2105%]"
+
+                   
+
                       id="li-8"
                     >
                       <span
@@ -1191,7 +1203,10 @@ export default function ServicesPage() {
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://www.fhoke.com/wp-content/uploads/2018/09/NL4x4-Banner-916x1100.jpg"
+
                             alt="New Legend 4x4"
+
+
                           />
                           {"        "}
                         </picture>
@@ -1214,14 +1229,26 @@ export default function ServicesPage() {
                           <p className="opacity-50">True legends never die.</p>
                         </div>
 
+
                         <div className="ml-5 text-lg uppercase">
+
+                 
+
                           <a
                             className="relative inline-block overflow-hidden rounded-full bg-gray-200 text-center"
                             href="https://www.fhoke.com/projects/new-legend/"
                           >
-                            <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
+
+                            <span
+                              className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5"
+                              id="span-32"
+                            >
                               View
-                              <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
+                              <span
+                                className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5"
+                                id="span-33"
+                              />
+
                             </span>
                           </a>
                           {"        "}
@@ -1233,7 +1260,12 @@ export default function ServicesPage() {
               </div>
             </section>
 
-            <section className="relative bg-neutral-900 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
+
+            <section
+              className="relative bg-neutral-900 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28"
+              id="section-9"
+            >
+
               <div
                 className="m-auto w-[92%] min-[769px]:flex min-[1921px]:max-w-[118.75rem]"
                 id="div-36"
