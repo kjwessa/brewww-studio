@@ -37,6 +37,12 @@ async function main() {
   let input = fs.readFileSync(filePath, "utf-8");
   const downloads = {};
 
+  // Create the /public/images directory if it doesn't exist
+  const publicImagesDir = path.join(__dirname, "../public/images");
+  if (!fs.existsSync(publicImagesDir)) {
+    fs.mkdirSync(publicImagesDir, { recursive: true });
+  }
+
   // Find all the <img> tags and process them
   input = input.replace(/<img\s+(.*?)\/>/gms, (val) => {
     if (val.includes("src=")) {
@@ -92,22 +98,28 @@ async function main() {
           } else if (type.includes("jpeg") || type.includes("jpg")) {
             ext = "jpg";
           }
+          // Modify the file path for saving images
+          const imagePath = path.join(
+            __dirname,
+            `../public/images/${downloads[url]}.${ext}`,
+          );
+          const file = fs.createWriteStream(imagePath);
+
           // Download the image to the /public directory
           await new Promise((frs) => {
-            const file = fs.createWriteStream(
-              path.join(__dirname, `../public/${downloads[url]}.${ext}`),
-            );
             response.pipe(file);
             file.on("finish", () => {
               file.close();
               frs();
             });
           });
+
           // Replace the temporary local URL with the correct URL
           input = input.replace(
             `"/${downloads[url]}.unk"`,
-            `"/${downloads[url]}.${ext}"`,
+            `"/images/${downloads[url]}.${ext}"`,
           );
+
           // Determine the image dimensions (required for Next.js <Image>)
           let width = 1000;
           let height = 1000;
@@ -119,11 +131,13 @@ async function main() {
             width = svgCode.match(/width="(.*?)"/)[1];
             height = svgCode.match(/height="(.*?)"/)[1];
           }
-          // Add the width and height attributes to the <Image> component
+
+          // Update the width and height attribute addition
           input = input.replace(
-            `"/${downloads[url]}.${ext}"`,
-            `"/${downloads[url]}.${ext}" width={${width}} height={${height}}`,
+            `"/images/${downloads[url]}.${ext}"`,
+            `"/images/${downloads[url]}.${ext}" width={${width}} height={${height}}`,
           );
+
           resolve();
         });
       });

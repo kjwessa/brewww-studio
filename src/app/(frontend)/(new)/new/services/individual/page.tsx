@@ -1,3 +1,4 @@
+
 export default function IndividualPage() {
   return (
     <>
@@ -236,11 +237,13 @@ export default function IndividualPage() {
             Powerful and scalable WordPress agency websites
           </h2>
 
+
           <p className="text-4xl lg:mt-8 min-[1025px]:mt-12">
             From interactive brochure sites and online stores to digital
             products that make your life easier, you can rely on WordPress to
             make your project a huge success. We'll plan, design, and deliver
             your website on time and within budget.
+
           </p>
         </div>
       </section>
@@ -383,8 +386,12 @@ export default function IndividualPage() {
               simple terms, WordPress is a tool that we lean on to manage and
               maintain a websites content. Brands like TechCrunch and Mashable
               use WordPress as do many other famous blogs, music sites, and
+
+            
+
               Fortune 500 companies, so you're in good company when choosing to
               use it.
+
             </p>
           </div>
         </div>
