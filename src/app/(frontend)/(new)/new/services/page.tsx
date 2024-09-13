@@ -2,7 +2,6 @@ export default function ServicesPage() {
   return (
     <>
       <div>
-
         <section className="relative grid grid-cols-[105.50rem] grid-rows-[1155px_104px] items-center justify-items-center bg-zinc-950 text-center uppercase text-neutral-400">
           <span className="text-[13.00rem] font-bold leading-none text-white">
             <span>
@@ -95,7 +94,6 @@ export default function ServicesPage() {
       </div>
 
       <div>
-
         <div className="w-full text-neutral-900">
           <div className="m-auto flex min-h-screen w-full flex-col overflow-clip">
             <section className="bg-neutral-900 uppercase text-white min-[1000px]:pt-20 min-[1001px]:pt-28">
@@ -736,11 +734,7 @@ export default function ServicesPage() {
                     </li>
 
                     <li
-
                       className="relative list-item md:mt-12 min-[769px]:ml-auto min-[769px]:w-[48.2105%]"
-
-                    
-
                       id="li-7"
                     >
                       <span
@@ -760,9 +754,7 @@ export default function ServicesPage() {
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://www.fhoke.com/wp-content/uploads/2022/10/Xpert-Header-916x1100.jpg"
-
                             alt="Xpert Workwear"
-
                           />
                           {"        "}
                         </picture>
@@ -1176,11 +1168,7 @@ export default function ServicesPage() {
                     </li>
 
                     <li
-
                       className="relative list-item md:mt-12 min-[769px]:ml-auto min-[769px]:w-[48.2105%]"
-
-                   
-
                       id="li-8"
                     >
                       <span
@@ -1203,10 +1191,7 @@ export default function ServicesPage() {
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://www.fhoke.com/wp-content/uploads/2018/09/NL4x4-Banner-916x1100.jpg"
-
                             alt="New Legend 4x4"
-
-
                           />
                           {"        "}
                         </picture>
@@ -1229,16 +1214,11 @@ export default function ServicesPage() {
                           <p className="opacity-50">True legends never die.</p>
                         </div>
 
-
                         <div className="ml-5 text-lg uppercase">
-
-                 
-
                           <a
                             className="relative inline-block overflow-hidden rounded-full bg-gray-200 text-center"
                             href="https://www.fhoke.com/projects/new-legend/"
                           >
-
                             <span
                               className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5"
                               id="span-32"
@@ -1248,7 +1228,6 @@ export default function ServicesPage() {
                                 className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5"
                                 id="span-33"
                               />
-
                             </span>
                           </a>
                           {"        "}
@@ -1260,12 +1239,10 @@ export default function ServicesPage() {
               </div>
             </section>
 
-
             <section
               className="relative bg-neutral-900 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28"
               id="section-9"
             >
-
               <div
                 className="m-auto w-[92%] min-[769px]:flex min-[1921px]:max-w-[118.75rem]"
                 id="div-36"
@@ -1606,265 +1583,6 @@ export default function ServicesPage() {
                 </div>
               </div>
             </section>
-
-            <footer className="mt-auto bg-white">
-              <div
-                className="m-auto w-[92%] min-[1600px]:pb-5 min-[1600px]:pt-16 min-[1920px]:pb-5 min-[1920px]:pt-24 min-[1921px]:max-w-[118.75rem] min-[1921px]:pb-5 min-[1921px]:pt-24"
-                id="div-45"
-              >
-                <div className="gap-x-[3.57895%] min-[769px]:flex min-[769px]:items-start">
-                  <div className="uppercase lg:w-[48.2105%] min-[1025px]:w-[56.8421%]">
-                    <h6
-                      className="inline-block text-lg min-[671px]:pl-6"
-                      id="h6-1"
-                    >
-                      Let’s Collaborate
-                    </h6>
-                    <h2
-                      className="text-[8.75rem] leading-none lg:mt-10 min-[1025px]:mt-16"
-                      id="h2-2"
-                    >
-                      <span className="text-[6.25rem] leading-none">
-                        We love working with ambitious brands, across every
-                        sector
-                      </span>
-                    </h2>
-
-                    <p
-                      className="text-[1.38rem] leading-7 lg:mt-8 min-[1025px]:mt-12"
-                      id="p-9"
-                    >
-                      <a
-                        className="relative inline-block overflow-hidden rounded-full bg-gray-200 text-center text-lg"
-                        href="https://www.fhoke.com/contact/"
-                      >
-                        <span
-                          className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5"
-                          id="span-45"
-                        >
-                          Let’s Work Together
-                          <span
-                            className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5"
-                            id="span-46"
-                          />
-                        </span>
-                      </a>{" "}
-                      <a
-                        className="relative inline-block overflow-hidden rounded-full bg-neutral-900 text-center text-lg text-white lg:mt-8 min-[1025px]:mt-9"
-                        href="https://calendly.com/fhoke/15-minute-chat"
-                        id="a-28"
-                      >
-                        <span
-                          className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5"
-                          id="span-47"
-                        >
-                          Book a Call
-                          <span
-                            className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5"
-                            id="span-48"
-                          />
-                        </span>
-                      </a>
-                    </p>
-                  </div>
-
-                  <div
-                    className="ml-auto md:mt-16 md:mt-24 lg:w-[48.2105%] min-[1025px]:w-[30.9474%]"
-                    id="div-46"
-                  >
-                    <div className="flex justify-between">
-                      <div
-                        className="flex w-[44.2177%] flex-col min-[769px]:w-[44.2177%]"
-                        id="div-47"
-                      >
-                        <h6
-                          className="inline-block text-lg uppercase min-[671px]:pl-6 min-[1600px]:mb-10 min-[1920px]:mb-12 min-[1921px]:mb-12"
-                          id="h6-2"
-                        >
-                          London
-                        </h6>
-
-                        <div className="text-[1.38rem] leading-7">
-                          <a href="https://www.google.com/maps/dir//Fhoke+Limited/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x48760531aa1f60c7:0xde0764dccb3817ff?sa=X&hl=en-GB&ved=2ahUKEwjx84WpmNT_AhUKT8AKHWZAAbEQ9Rd6BAhNEAU">
-                            107-111 Fleet Street,
-                            <br className="cursor-pointer" />
-                            Ludgate House,
-                            <br className="cursor-pointer" />
-                            London, EC4A 2AB
-                          </a>
-                        </div>
-
-                        <p className="text-[1.38rem] leading-7">
-                          020 7936 9450
-                        </p>
-
-                        <p
-                          className="mt-auto text-[1.38rem] leading-7 min-[1600px]:pt-10 min-[1920px]:pt-16 min-[1921px]:pt-16"
-                          id="p-10"
-                        >
-                          hello@fhoke.com
-                        </p>
-                      </div>
-
-                      <div
-                        className="flex w-[44.2177%] flex-col min-[769px]:w-[44.2177%]"
-                        id="div-48"
-                      >
-                        <h6
-                          className="inline-block text-lg uppercase min-[671px]:pl-6 min-[1600px]:mb-10 min-[1920px]:mb-12 min-[1921px]:mb-12"
-                          id="h6-3"
-                        >
-                          Salisbury
-                        </h6>
-
-                        <div className="text-[1.38rem] leading-7">
-                          <a href="https://www.google.com/maps/dir//fhoke/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x4873f73af0550763:0x4ff58d49938218ba?sa=X&ved=2ahUKEwi-soLUmNT_AhXSa8AKHQrsBbIQ9Rd6BAg6EAU">
-                            7 The Beeches,
-                            <br className="cursor-pointer" />
-                            Dean Hill Park,
-                            <br className="cursor-pointer" />
-                            Salisbury, SP5 1EZ
-                          </a>
-                        </div>
-
-                        <p className="text-[1.38rem] leading-7">
-                          01794 342 113
-                        </p>
-
-                        <div
-                          className="mt-auto min-[1600px]:pt-10 min-[1920px]:pt-16 min-[1921px]:pt-16"
-                          id="div-49"
-                        >
-                          <ul className="flex list-disc items-center gap-[1.13rem] pb-2">
-                            <li className="list-item pt-1">
-                              <a
-                                className="flex items-center justify-center"
-                                href="https://www.awwwards.com/fhoke/"
-                              >
-                                <svg
-                                  className="h-auto max-h-[1.13rem] w-full max-w-[1.13rem] cursor-pointer"
-                                  fill="rgb(0, 0, 0)"
-                                  viewBox="0 0 18 11.08"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="m12.74,0l-1.94,7.51-1.83-7.51h-2.5l-1.83,7.51L2.69,0H0l3.47,10.95h2.37l1.87-7.08,1.88,7.08h2.37L15.43,0h-2.69,0Zm1.64,9.25c0,1.04.78,1.82,1.81,1.82s1.81-.78,1.81-1.82-.78-1.82-1.81-1.82-1.81.78-1.81,1.82Z"
-                                    fill="rgb(18, 18, 18)"
-                                  />
-                                </svg>
-                              </a>
-                            </li>
-                            <li className="list-item">
-                              <a
-                                className="flex items-center justify-center"
-                                href="https://www.linkedin.com/company/fhoke/"
-                              >
-                                <svg
-                                  className="h-auto max-h-[1.13rem] w-full max-w-[1.13rem] cursor-pointer"
-                                  fill="rgb(0, 0, 0)"
-                                  viewBox="0 0 18 18"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="m16.67,0H1.33C.6,0,0,.58,0,1.3v15.4c0,.72.6,1.3,1.33,1.3h15.34c.73,0,1.33-.58,1.33-1.3V1.3c0-.72-.6-1.3-1.33-1.3ZM5.34,15.34h-2.67V6.75h2.67v8.59Zm-1.34-9.76c-.86,0-1.55-.69-1.55-1.55s.69-1.55,1.55-1.55,1.55.69,1.55,1.55-.69,1.55-1.55,1.55Zm11.33,9.76h-2.67v-4.18c0-1-.02-2.28-1.39-2.28s-1.6,1.09-1.6,2.21v4.25h-2.67V6.75h2.56v1.17h.04c.36-.68,1.23-1.39,2.53-1.39,2.7,0,3.2,1.78,3.2,4.09v4.71Z"
-                                    fill="rgb(18, 18, 18)"
-                                  />
-                                </svg>
-                              </a>
-                            </li>
-                            <li className="list-item">
-                              <a
-                                className="flex items-center justify-center"
-                                href="https://www.instagram.com/fhoke/"
-                              >
-                                <svg
-                                  className="h-auto max-h-[1.13rem] w-full max-w-[1.13rem] cursor-pointer"
-                                  fill="rgb(0, 0, 0)"
-                                  viewBox="0 0 28 28"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M21 3a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4h14m0-3H7a7 7 0 0 0-7 7v14a7 7 0 0 0 7 7h14a7 7 0 0 0 7-7V7a7 7 0 0 0-7-7z"
-                                    fill="rgb(18, 18, 18)"
-                                  />
-                                  <path
-                                    d="M14 9.91A4.09 4.09 0 1 1 9.91 14 4.09 4.09 0 0 1 14 9.91m0-3A7.09 7.09 0 1 0 21.09 14 7.1 7.1 0 0 0 14 6.91z"
-                                    fill="rgb(18, 18, 18)"
-                                  />
-                                  <circle
-                                    cx="21.5"
-                                    cy="6.5"
-                                    fill="rgb(18, 18, 18)"
-                                    r="1.5"
-                                  />
-                                </svg>
-                              </a>
-                            </li>
-                            <li className="list-item">
-                              <a
-                                className="flex items-center justify-center"
-                                href="https://www.facebook.com/FhokeAgency"
-                              >
-                                <svg
-                                  className="h-auto max-h-[1.13rem] w-full max-w-[1.13rem] cursor-pointer"
-                                  fill="rgb(0, 0, 0)"
-                                  viewBox="0 0 18 18"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="m18,9.06C18,4.05,13.97,0,9,0S0,4.05,0,9.06c0,4.52,3.29,8.27,7.59,8.94v-6.33h-2.29v-2.62h2.29v-1.99c0-2.27,1.34-3.52,3.4-3.52.98,0,2.01.18,2.01.18v2.23h-1.13c-1.12,0-1.47.7-1.47,1.41v1.7h2.5l-.4,2.62h-2.1v6.33c4.3-.68,7.59-4.43,7.59-8.94Z"
-                                    fill="rgb(18, 18, 18)"
-                                  />
-                                </svg>
-                              </a>
-                            </li>
-                            <li className="list-item">
-                              <a
-                                className="flex items-center justify-center"
-                                href="https://twitter.com/fhoke"
-                              >
-                                <svg
-                                  className="h-auto max-h-[1.13rem] w-full max-w-[1.13rem] cursor-pointer"
-                                  fill="rgb(0, 0, 0)"
-                                  viewBox="0 0 29.95 24.34"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M26.88 6.06v.79c.02 8.13-6.16 17.49-17.43 17.49a17.39 17.39 0 0 1-9.42-2.76 12.46 12.46 0 0 0 1.47.09 12.33 12.33 0 0 0 7.63-2.63 6.15 6.15 0 0 1-5.74-4.27 6.16 6.16 0 0 0 2.77-.11 6.15 6.15 0 0 1-4.93-6v-.08a6.12 6.12 0 0 0 2.78.77 6.15 6.15 0 0 1-1.9-8.2 17.44 17.44 0 0 0 12.66 6.42 6.15 6.15 0 0 1 10.47-5.6 12.3 12.3 0 0 0 3.9-1.49 6.16 6.16 0 0 1-2.7 3.4 12.28 12.28 0 0 0 3.53-1 12.48 12.48 0 0 1-3.09 3.18z"
-                                    fill="rgb(18, 18, 18)"
-                                  />
-                                </svg>
-                              </a>
-                            </li>
-                          </ul>
-                          {"                    "}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className="gap-x-[3.57895%] uppercase min-[769px]:flex min-[769px]:items-start min-[1600px]:mt-16 min-[1920px]:mt-24 min-[1921px]:mt-24"
-                  id="div-50"
-                >
-                  <ul className="list-none lg:w-[48.2105%] min-[1025px]:w-[56.8421%]">
-                    <li className="inline-block">Privacy</li>
-
-                    <li className="ml-8 inline-block">Careers</li>
-
-                    <li className="ml-8 inline-block">Working With Us</li>
-                  </ul>
-
-                  <div
-                    className="ml-auto lg:w-[48.2105%] min-[1025px]:w-[30.9474%]"
-                    id="div-51"
-                  >
-                    <p>© Fhoke 2024</p>
-                  </div>
-                </div>
-              </div>
-            </footer>
           </div>
         </div>
       </div>
