@@ -3,6 +3,14 @@ import AboutImageEight from "/public/images/brewww-eight.jpeg";
 export default function About() {
   return (
     <>
+      <div className="flex h-screen w-full items-center justify-center bg-zinc-950 bg-[linear-gradient(rgba(8,_8,_8,_0.75),_rgba(8,_8,_8,_0.75))] font-mono text-[20.25rem] font-bold uppercase leading-none text-neutral-400">
+        <h1 className="text-center text-white">
+          <span className="text-outline inline-block">All</span>
+          <span className="block">About</span>
+          <span className="text-brand-gold block">Brewww</span>
+        </h1>
+      </div>
+
       <section className="relative overflow-hidden bg-white pb-48 pt-24 font-medium text-black">
         <div className="relative m-auto w-full max-w-[120.00rem] flex-col px-8">
           <div className="relative m-auto flex max-h-[93.00rem] min-h-screen w-full max-w-[100.50rem] items-center justify-center py-96">
