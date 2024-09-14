@@ -32,6 +32,7 @@
     "@tailwindcss/typography": "^0.5.14",
     "@vercel/speed-insights": "^1.0.12",
     "graphql": "^16.9.0",
+    "gsap": "^3.12.5",
     "next": "15.0.0-canary.104",
     "payload": "beta",
     "payload-admin-bar": "^1.0.6",
