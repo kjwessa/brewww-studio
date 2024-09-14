@@ -4,6 +4,7 @@
 
 .text-outline {
   -webkit-text-stroke: 2px white;
-
+  text-rendering: optimizeLegibility;
+  paint-order: stroke fill;
   -webkit-text-fill-color: transparent;
 }

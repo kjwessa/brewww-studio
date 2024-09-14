@@ -33,6 +33,12 @@ export function HeaderNew() {
             </Link>
             <Link
               className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+              href="/new/play"
+            >
+              Play
+            </Link>
+            <Link
+              className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
               href="/new/blog"
             >
               Blog
