@@ -107,7 +107,7 @@ export interface Page {
  */
 export interface Post {
   id: string;
-  name: string;
+  title: string;
   imageMain?: (string | null) | Media;
   content?: {
     root: {
@@ -124,13 +124,16 @@ export interface Post {
     };
     [k: string]: unknown;
   } | null;
-  title?: string | null;
-  image?: (string | null) | Media;
-  description?: string | null;
-  slug?: string | null;
+  relatedPosts?: (string | Post)[] | null;
+  categories: (string | Category)[];
+  readTime: number;
+  metadata?: {
+    title?: string | null;
+    image?: (string | null) | Media;
+    description?: string | null;
+  };
+  slug: string;
   publishedDate: string;
-  readTime?: number | null;
-  category: string | Category;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -141,25 +144,7 @@ export interface Post {
  */
 export interface Category {
   id: string;
-  name: string;
-  content?: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  image?: (string | null) | Media;
-  title?: string | null;
-  description?: string | null;
+  title: string;
   slug: string;
   updatedAt: string;
   createdAt: string;
