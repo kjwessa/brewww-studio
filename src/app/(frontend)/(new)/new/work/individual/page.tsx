@@ -52,7 +52,7 @@ export default function WorkIndividual() {
                 <ul className="space-y-4">
                   <li>
                     <Link
-                      className="hover:text-brand-gold hover:after:bg-brand-gold text-brand-gold after:bg-brand-gold relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-[100px] after:transition-all after:duration-300 hover:after:w-full"
+                      className="relative inline-block min-w-max text-brand-gold after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-[100px] after:bg-brand-gold after:transition-all after:duration-300 hover:text-brand-gold hover:after:w-full hover:after:bg-brand-gold"
                       href="#what-we-did"
                     >
                       What we did
@@ -60,7 +60,7 @@ export default function WorkIndividual() {
                   </li>
                   <li>
                     <Link
-                      className="hover:text-brand-gold hover:after:bg-brand-gold text-brand-gold after:bg-brand-gold relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-[100px] after:transition-all after:duration-300 hover:after:w-full"
+                      className="relative inline-block min-w-max text-brand-gold after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-[100px] after:bg-brand-gold after:transition-all after:duration-300 hover:text-brand-gold hover:after:w-full hover:after:bg-brand-gold"
                       href="#highlights"
                     >
                       Highlights
@@ -68,7 +68,7 @@ export default function WorkIndividual() {
                   </li>
                   <li>
                     <Link
-                      className="hover:text-brand-gold hover:after:bg-brand-gold text-brand-gold after:bg-brand-gold relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-[100px] after:transition-all after:duration-300 hover:after:w-full"
+                      className="relative inline-block min-w-max text-brand-gold after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-[100px] after:bg-brand-gold after:transition-all after:duration-300 hover:text-brand-gold hover:after:w-full hover:after:bg-brand-gold"
                       href="#key-insights"
                     >
                       Key insights
@@ -109,7 +109,7 @@ export default function WorkIndividual() {
               <div className="relative h-72">
                 <Image
                   src={AudioImageOne}
-                  alt="Porsche 02"
+                  alt="Audio Image One"
                   fill
                   className="object-cover"
                 />
@@ -119,7 +119,7 @@ export default function WorkIndividual() {
               <div className="relative h-[47.09rem]">
                 <Image
                   src={AudioImageTwo}
-                  alt="Porsche 01"
+                  alt="Audio Image Two"
                   fill
                   className="object-cover"
                 />
