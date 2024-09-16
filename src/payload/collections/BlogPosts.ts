@@ -9,7 +9,6 @@ import {
   OverviewField,
   PreviewField,
 } from "@payloadcms/plugin-seo/fields";
-import { metadata } from "@payloadcms/next/layouts";
 
 export const BlogPosts: CollectionConfig = {
   slug: "posts",

@@ -27,9 +27,9 @@ export default function WorkIndividual() {
           <div className="relative aspect-video w-full overflow-hidden rounded-lg">
             <Image
               src={AudioImageSix}
-              alt="Project image"
-              layout="fill"
-              objectFit="cover"
+              alt="The Merry Beggars audio entertainment platform showcase"
+              fill
+              style={{ objectFit: "cover" }}
               className="cursor-pointer"
             />
           </div>
@@ -109,9 +109,9 @@ export default function WorkIndividual() {
               <div className="relative h-72">
                 <Image
                   src={AudioImageOne}
-                  alt="Audio Image One"
+                  alt="Audio production studio equipment"
                   fill
-                  className="object-cover"
+                  style={{ objectFit: "cover" }}
                 />
               </div>
             </div>
@@ -119,71 +119,67 @@ export default function WorkIndividual() {
               <div className="relative h-[47.09rem]">
                 <Image
                   src={AudioImageTwo}
-                  alt="Audio Image Two"
+                  alt="Voice actor recording in studio"
                   fill
-                  className="object-cover"
+                  style={{ objectFit: "cover" }}
                 />
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="bg-zinc-950 text-neutral-400">
-        <div className="grid-rows-[183.109px_332px_288px_46.5px] gap-5">
-          <h1 className="text-[8.75rem] font-bold uppercase leading-none text-white">
-            What we did
-          </h1>
-          <div>
-            <span className="text-sm uppercase text-stone-500">
-              <sub>#AUDIOENTERTAINER</sub>
-            </span>
-            <div className="text-[1.75rem] leading-8 text-white">
-              Brewww supported The Merry Beggars with a fully self-empowered
-              team across design, web development, backend development and QA.
-              We continue working closely with The Merry Beggars' product
-              management to this day.
-            </div>
-          </div>
-          <div>
-            <p>
-              <span>
-                — Web and backend development for The Merry Beggars platform
-                <br />
-                — Design and development of features used by all The Merry
-                Beggars digital products
-                <br />
-                — Cross-departmental collaboration
-                <br />— Ongoing support and post-launch optimization{" "}
-              </span>
-            </p>
-
-            <h4 className="text-xs font-bold uppercase text-stone-500">
-              Links
-            </h4>
-
-            <p>
-              <a className="text-red-700 underline" href="#">
-                <span className="cursor-pointer">Website</span>
-              </a>
-              <br />
-              <a className="text-red-700 underline" href="#">
-                <span className="cursor-pointer">Mobile app</span>
-              </a>
-            </p>
-          </div>
-          <div className="row-start-2">
-            <div>
-              <div className="relative">
-                <img
-                  className="h-[41.16rem] w-[30.98rem] max-w-full"
-                  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTIwIiBoZWlnaHQ9IjE0ODgiPjwvc3ZnPg=="
+      <section className="bg-zinc-950 py-32 text-neutral-400">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-row">
+            <div className="w-1/2 pr-8">
+              <div className="relative h-full">
+                <Image
+                  src={AudioImageThree}
+                  alt="Audio production studio setup"
+                  fill
+                  style={{ objectFit: "cover" }}
                 />
-                <picture className="max-w-full">
-                  <img
-                    className="absolute bottom-0 left-0 top-0 h-[41.16rem] w-[30.98rem] max-w-full"
-                    src="https://www.datocms-assets.com/57452/1706221189-porsche_03.png"
-                  />
-                </picture>
+              </div>
+            </div>
+            <div className="w-1/2 pl-8">
+              <h1 className="mb-16 text-[6rem] font-bold uppercase leading-none text-white">
+                What we did
+              </h1>
+              <div className="mt-8 text-[1.75rem] leading-8 text-white">
+                <span className="mr-4 text-sm uppercase text-stone-500">
+                  <sub>#AUDIOENTERTAINER</sub>
+                </span>
+                Brewww supported The Merry Beggars with a fully self-empowered
+                team across design, web development, backend development and QA.
+                We continue working closely with The Merry Beggars' product
+                management to this day.
+              </div>
+              <div className="mt-16">
+                <p className="mb-8">
+                  <span>
+                    — Web and backend development for The Merry Beggars platform
+                    <br />
+                    — Design and development of features used by all The Merry
+                    Beggars digital products
+                    <br />
+                    — Cross-departmental collaboration
+                    <br />— Ongoing support and post-launch optimization
+                  </span>
+                </p>
+
+                <h4 className="mt-12 text-xs font-bold uppercase text-stone-500">
+                  Links
+                </h4>
+
+                <p className="mt-4">
+                  <a className="text-red-700 underline" href="#">
+                    <span className="cursor-pointer">Website</span>
+                  </a>
+                  <br />
+                  <a className="text-red-700 underline" href="#">
+                    <span className="cursor-pointer">Mobile app</span>
+                  </a>
+                </p>
               </div>
             </div>
           </div>
@@ -384,6 +380,332 @@ export default function WorkIndividual() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="bg-zinc-950 text-neutral-400">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-7">
+              <div className="relative">
+                <Image
+                  src={AudioImageSix}
+                  alt="Audio Image Six"
+                  width={623}
+                  height={623}
+                  className="max-w-full"
+                />
+              </div>
+            </div>
+            <div className="col-span-5">
+              <div className="relative">
+                <Image
+                  src={AudioImageEight}
+                  alt="Audio Image Eight"
+                  width={384}
+                  height={488}
+                  className="max-w-full"
+                />
+              </div>
+              <figure className="mt-8">
+                <blockquote className="mt-4 italic">
+                  I've worked in software development for 8 years, and I'd never
+                  experienced a provider that always delivers such high quality
+                  on time. Usually, if you have a large provider that brings all
+                  types of people to the table, you can have someone who isn't
+                  that good. However, we have nothing to complain about Brewww.
+                </blockquote>
+                <div className="mt-4 text-xs uppercase">
+                  <div>
+                    <span className="font-bold text-white">Peter Atkinson</span>
+                    <span className="ml-2 text-stone-500">
+                      President, The Merry Beggars
+                    </span>
+                  </div>
+                </div>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-zinc-950 pb-20 text-neutral-400">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+            <div className="relative">
+              <div className="-rotate-90 transform text-[35rem] font-bold uppercase text-white opacity-10">
+                02
+              </div>
+            </div>
+            <div>
+              <h1 className="mb-8 text-[6rem] font-bold uppercase leading-none text-white">
+                Matching TMB Audio quality
+              </h1>
+              <h3 className="text-[1.75rem] font-semibold leading-8 text-white">
+                Removing all decision fatigue
+              </h3>
+              <p className="mt-4">
+                To elevate The Merry Beggars platform, we drew inspiration from
+                industry leaders like Disney and Headspace, focusing on
+                streamlining the user experience and eliminating decision
+                fatigue. Our strategy centered on creating an intuitive
+                interface that guides users effortlessly to their desired
+                content. We implemented smart categorization, personalized
+                recommendations, and a simplified navigation system, making it
+                easier than ever for listeners to discover, enjoy, and share
+                episodes. By reducing cognitive load and enhancing content
+                accessibility, we transformed the platform into a seamless audio
+                entertainment destination that keeps users engaged and coming
+                back for more.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="relative overflow-hidden bg-zinc-950 py-20 pl-12 text-neutral-400">
+        <div className="animate-slider flex space-x-12">
+          <div className="relative flex-shrink-0">
+            <div className="relative h-[59.63rem] w-[59.63rem]">
+              <Image
+                src={AudioImageSeven}
+                alt="Audio production studio"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          </div>
+          <div className="relative flex-shrink-0">
+            <div className="relative h-[59.63rem] w-[48.90rem]">
+              <Image
+                src={AudioImageEight}
+                alt="Voice actor recording"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          </div>
+          <div className="relative flex-shrink-0">
+            <div className="relative h-[59.63rem] w-[48.90rem]">
+              <Image
+                src={AudioImageFour}
+                alt="Sound mixing console"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          </div>
+          <div className="relative flex-shrink-0">
+            <div className="relative h-[59.63rem] w-[59.63rem]">
+              <Image
+                src={AudioImageTwo}
+                alt="Podcast recording session"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          </div>
+          <div className="relative flex-shrink-0">
+            <div className="relative h-[59.63rem] w-[59.63rem]">
+              <Image
+                src={AudioImageFive}
+                alt="Audio editing workstation"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          </div>
+          <div className="relative flex-shrink-0">
+            <div className="relative h-[59.63rem] w-[48.90rem]">
+              <Image
+                src={AudioImageOne}
+                alt="Microphone in recording booth"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          </div>
+          <div className="relative flex-shrink-0">
+            <div className="relative h-[59.63rem] w-[59.63rem]">
+              <Image
+                src={AudioImageFive}
+                alt="Audio production team meeting"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="mt-16 flex cursor-grab justify-center bg-zinc-950 text-neutral-400">
+          <span className="inline-block h-[2px] w-[100px] bg-stone-400" />
+          <span className="inline-block h-[2px] w-[100px] bg-neutral-600" />
+          <span className="inline-block h-[2px] w-[100px] bg-neutral-600" />
+          <span className="inline-block h-[2px] w-[100px] bg-neutral-600" />
+          <span className="inline-block h-[2px] w-[100px] bg-neutral-600" />
+          <span className="inline-block h-[2px] w-[100px] bg-neutral-600" />
+          <span className="inline-block h-[2px] w-[100px] bg-neutral-600" />
+        </div>
+      </section>
+      <section className="bg-zinc-950 py-32 text-neutral-400">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-12">
+            <div className="col-start-6 col-end-11">
+              <h3 className="mb-8 text-[1.75rem] font-semibold leading-8 text-white">
+                <b className="font-bold">Cross-team collaboration</b>
+              </h3>
+              <p>
+                Our cross-team collaboration is a key strength that allows us to
+                deliver high-quality audio productions efficiently. We have a
+                dedicated team of writers, voice actors, sound designers, and
+                producers who work together seamlessly to bring each production
+                to life. This collaborative approach ensures that our shows are
+                not only engaging but also consistent in quality and style.
+                allows for faster development of new shows while maintaining our
+                commitment to excellence. At any given time, we may have
+                multiple teams working on various projects, from podcasts to
+                audio dramas. Our writers, voice actors, sound designers, and
+                producers collaborate seamlessly, often co-leading their
+                respective productions from concept to final release. This
+                structure enables us to consistently deliver engaging and
+                innovative audio entertainment to our listeners.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-zinc-950 text-neutral-400">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-7">
+              <div className="relative">
+                <Image
+                  src={AudioImageSix}
+                  alt="Audio Image Six"
+                  width={623}
+                  height={623}
+                  className="max-w-full"
+                />
+              </div>
+            </div>
+            <div className="col-span-5">
+              <div className="relative">
+                <Image
+                  src={AudioImageEight}
+                  alt="Audio Image Eight"
+                  width={384}
+                  height={488}
+                  className="max-w-full"
+                />
+              </div>
+              <figure className="mt-8">
+                <blockquote className="mt-4 italic">
+                  I've worked in software development for 8 years, and I'd never
+                  experienced a provider that always delivers such high quality
+                  on time. Usually, if you have a large provider that brings all
+                  types of people to the table, you can have someone who isn't
+                  that good. However, we have nothing to complain about Brewww.
+                </blockquote>
+                <div className="mt-4 text-xs uppercase">
+                  <div>
+                    <span className="font-bold text-white">Peter Atkinson</span>
+                    <span className="ml-2 text-stone-500">
+                      President, The Merry Beggars
+                    </span>
+                  </div>
+                </div>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-zinc-950 pb-20 text-neutral-400">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+            <div className="relative">
+              <div className="-rotate-90 transform text-[35rem] font-bold uppercase text-white opacity-10">
+                03
+              </div>
+            </div>
+            <div>
+              <h1 className="mb-8 text-[6rem] font-bold uppercase leading-none text-white">
+                All-in-one audio platform
+              </h1>
+              <h3 className="text-[1.75rem] font-semibold leading-8 text-white">
+                Creating the ultimate entertainment experience
+              </h3>
+              <p className="mt-4">
+                To make The Merry Beggars platform the ultimate audio
+                entertainment destination, we first focused on user experience
+                and content curation — to understand how to better engage and
+                delight our listeners. We developed a range of features across
+                the platform, including personalized recommendations, seamless
+                playlist creation, podcast subscriptions, interactive
+                storytelling experiences, community forums for fans, and
+                exclusive behind-the-scenes content from our original
+                productions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-zinc-950 py-20 text-neutral-400">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 gap-5">
+            <div className="relative" style={{ aspectRatio: "1/1" }}>
+              <Image
+                src={AudioImageSix}
+                alt="Audio Image Six"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+            <div className="relative" style={{ aspectRatio: "1/1" }}>
+              <Image
+                src={AudioImageSix}
+                alt="Audio Image Six"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-zinc-950 py-32 text-neutral-400">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-12">
+            <div className="col-start-6 col-end-11">
+              <h3 className="mb-8 text-[1.75rem] font-semibold leading-8 text-white">
+                <b className="font-bold">Cross-team collaboration</b>
+              </h3>
+              <p>
+                Our cross-team collaboration is a key strength that allows us to
+                deliver high-quality audio productions efficiently. We have a
+                dedicated team of writers, voice actors, sound designers, and
+                producers who work together seamlessly to bring each production
+                to life. This collaborative approach ensures that our shows are
+                not only engaging but also consistent in quality and style.
+                allows for faster development of new shows while maintaining our
+                commitment to excellence. At any given time, we may have
+                multiple teams working on various projects, from podcasts to
+                audio dramas. Our writers, voice actors, sound designers, and
+                producers collaborate seamlessly, often co-leading their
+                respective productions from concept to final release. This
+                structure enables us to consistently deliver engaging and
+                innovative audio entertainment to our listeners.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-zinc-950 pt-20 text-neutral-400">
+        <div
+          className="container relative mx-auto px-0"
+          style={{ aspectRatio: "3/2" }}
+        >
+          <Image
+            src={AudioImageSeven}
+            alt="Audio platform showcase"
+            fill
+            style={{ objectFit: "cover" }}
+          />
         </div>
       </section>
     </>

@@ -1,4 +1,3 @@
-import { subtle } from "crypto";
 import type { Block } from "payload";
 
 export const Cover: Block = {
