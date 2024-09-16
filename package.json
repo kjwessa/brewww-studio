@@ -30,7 +30,6 @@
     "@radix-ui/react-select": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.0",
     "@tailwindcss/typography": "^0.5.14",
-    "@vercel/speed-insights": "^1.0.12",
     "babel-plugin-react-compiler": "0.0.0-experimental-de2cfda-20240912",
     "eslint-plugin-react-compiler": "0.0.0-experimental-75b9fd4-20240912",
     "graphql": "^16.9.0",
