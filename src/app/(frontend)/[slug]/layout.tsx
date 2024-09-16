@@ -1,4 +1,3 @@
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import localFont from "next/font/local";
 import "@/styles/globals.css";
 import { Metadata } from "next";
@@ -28,7 +27,6 @@ export default function InnerLayout({
         <Header />
         <div className="">{children}</div>
         <Footer />
-        <SpeedInsights />
       </body>
     </html>
   );
