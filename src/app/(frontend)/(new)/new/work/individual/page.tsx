@@ -248,6 +248,144 @@ export default function WorkIndividual() {
           </ul>
         </div>
       </section>
+      <section className="bg-zinc-950 py-20 text-neutral-400">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-row items-start gap-24">
+            <div className="w-3/5 pt-48">
+              <div className="relative">
+                <Image
+                  className="h-auto w-full max-w-full object-cover"
+                  src={AudioImageFive}
+                  alt="Audio Image Five"
+                  width={820}
+                  height={1088}
+                />
+              </div>
+            </div>
+            <div className="w-2/5">
+              <div>
+                <Image
+                  className="h-auto w-4/5 max-w-full object-contain"
+                  src={AudioImageFour}
+                  alt="Audio Image Four"
+                  width={800}
+                  height={600}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-zinc-950 py-20 text-neutral-400">
+        <div className="container mx-auto px-4">
+          <div className="flex items-start justify-between">
+            <div className="flex items-center">
+              <h3 className="mr-4 whitespace-nowrap text-9xl font-bold uppercase text-stone-500">
+                Key Insights
+              </h3>
+              <svg
+                className="max-w-full text-brand-gold"
+                fill="none"
+                height="20"
+                width="20"
+                viewBox="0 0 16 16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clipRule="evenodd"
+                  d="M11.2396 6.99425 6.58589 2.34052 7.99896.92517l7.06694 7.06695-.0005.00056.0044.00446-7.06126 7.07266-1.41421-1.4142 4.65307-4.66055-9.02388.00363-.0445.00002-.00081-2.00081.0445-.00002.00041 1.00041-.0004-1.00041 9.01688-.00362Z"
+                  fill="currentColor"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+            <div className="ml-8 flex-1">
+              <p className="my-4">
+                <Link className="text-brand-gold underline" href="">
+                  01. All-in-one native mobile app
+                </Link>
+                <br />
+                <Link className="text-brand-gold underline" href="">
+                  02. Matching TMB Audio quality
+                </Link>
+                <br />
+                <Link className="text-brand-gold underline" href="">
+                  03. Cross-team collaboration
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-zinc-950 pb-20 text-neutral-400">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+            <div className="relative">
+              <div className="-rotate-90 transform text-[35rem] font-bold uppercase text-white opacity-10">
+                01
+              </div>
+            </div>
+            <div>
+              <h1 className="mb-8 text-[6rem] font-bold uppercase leading-none text-white">
+                All-in-one audio platform
+              </h1>
+              <h3 className="text-[1.75rem] font-semibold leading-8 text-white">
+                Creating the ultimate entertainment experience
+              </h3>
+              <p className="mt-4">
+                To make The Merry Beggars platform the ultimate audio
+                entertainment destination, we first focused on user experience
+                and content curation — to understand how to better engage and
+                delight our listeners. We developed a range of features across
+                the platform, including personalized recommendations, seamless
+                playlist creation, podcast subscriptions, interactive
+                storytelling experiences, community forums for fans, and
+                exclusive behind-the-scenes content from our original
+                productions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-zinc-950 pt-20 text-neutral-400">
+        <div
+          className="container relative mx-auto px-0"
+          style={{ aspectRatio: "3/2" }}
+        >
+          <Image
+            src={AudioImageSeven}
+            alt="Audio platform showcase"
+            fill
+            style={{ objectFit: "cover" }}
+          />
+        </div>
+      </section>
+      <section className="bg-zinc-950 py-32 text-neutral-400">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-12">
+            <div className="col-start-6 col-end-11">
+              <h3 className="mb-8 text-[1.75rem] font-semibold leading-8 text-white">
+                <b className="font-bold">
+                  Specialized teams for each production
+                </b>
+              </h3>
+              <p>
+                Throughout our creative process, The Merry Beggars assigns
+                specialized teams to each audio production, ensuring
+                high-quality content and efficient storytelling. Our approach
+                allows for faster development of new shows while maintaining our
+                commitment to excellence. At any given time, we may have
+                multiple teams working on various projects, from podcasts to
+                audio dramas. Our writers, voice actors, sound designers, and
+                producers collaborate seamlessly, often co-leading their
+                respective productions from concept to final release. This
+                structure enables us to consistently deliver engaging and
+                innovative audio entertainment to our listeners.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
