@@ -189,6 +189,29 @@ export default function WorkIndividual() {
           </div>
         </div>
       </section>
+      <section className="overflow-hidden bg-zinc-950">
+        <div className="relative flex whitespace-nowrap">
+          <div className="animate-marquee-reverse flex items-center">
+            <span className="mx-4 text-[45.00rem] font-bold leading-none text-neutral-400">
+              HIGHLIGHTS
+            </span>
+            <span className="mx-4 text-[45.00rem] font-bold leading-none text-neutral-400">
+              &nbsp;&nbsp;&nbsp;&nbsp;HIGHLIGHTS
+            </span>
+          </div>
+          <div
+            className="animate-marquee-reverse flex items-center"
+            aria-hidden="true"
+          >
+            <span className="mx-4 text-[45.00rem] font-bold leading-none text-neutral-400">
+              HIGHLIGHTS
+            </span>
+            <span className="mx-4 text-[45.00rem] font-bold leading-none text-neutral-400">
+              &nbsp;&nbsp;&nbsp;&nbsp;HIGHLIGHTS
+            </span>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

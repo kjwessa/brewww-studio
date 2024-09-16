@@ -46,3 +46,16 @@ html {
     scrollbar-color: theme("colors.brand.gold") transparent;
   }
 }
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 80s linear infinite;
+}
