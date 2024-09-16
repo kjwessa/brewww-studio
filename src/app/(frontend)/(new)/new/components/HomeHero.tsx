@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function HomeHero() {
+export function HomeHero() {
   return (
     <section className="bg-brand-black flex min-h-[90vh] items-center justify-center text-white">
       <div className="container mx-auto px-4 py-8 md:px-6">

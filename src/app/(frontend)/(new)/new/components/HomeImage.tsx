@@ -5,7 +5,7 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function HomeImage() {
+export function HomeImage() {
   const imageContainerRef = useRef(null);
   const imageRef = useRef(null);
 
@@ -14,13 +14,13 @@ export default function HomeImage() {
 
     gsap.set(imageContainerRef.current, {
       height: "68vh",
-      width: "85%",
+      width: "calc(85% - 1rem)",
       margin: "auto",
     });
 
     gsap.to(imageContainerRef.current, {
       height: "80vh",
-      width: "100%",
+      width: "calc(100% - 1rem)",
       scrollTrigger: {
         trigger: imageContainerRef.current,
         start: "top bottom",
@@ -29,10 +29,13 @@ export default function HomeImage() {
       },
     });
 
-    // Parallax effect and subtle image size increase
+    gsap.set(imageRef.current, {
+      scale: 1.18,
+      y: "15%",
+    });
+
     gsap.to(imageRef.current, {
-      scale: 1.08, // 8% increase in size
-      y: "-10%", // Move image up by 10% for parallax effect
+      y: "0%",
       ease: "none",
       scrollTrigger: {
         trigger: imageContainerRef.current,
@@ -46,17 +49,14 @@ export default function HomeImage() {
   return (
     <section
       ref={imageContainerRef}
-      className="relative w-full overflow-hidden bg-neutral-900 text-white"
+      className="relative w-full overflow-hidden rounded-sm bg-neutral-900 px-2 text-white"
     >
-      <div ref={imageRef} className="h-full w-full">
+      <div ref={imageRef} className="h-full w-full overflow-hidden rounded-sm">
         <Image
           src="/5f109d8acc3b4cf5ce8f9ebe_DSC04349-Edit.1920.jpg"
           alt="Background"
           fill
-          className="object-cover"
-          style={{
-            objectPosition: "50% 30%",
-          }}
+          className="rounded-sm object-cover"
         />
       </div>
     </section>
