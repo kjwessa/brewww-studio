@@ -212,6 +212,42 @@ export default function WorkIndividual() {
           </div>
         </div>
       </section>
+      <section className="bg-zinc-950">
+        <div className="container mx-auto px-4">
+          <ul className="grid list-none grid-cols-[630.922px_374.844px_481.234px] grid-rows-[19.75rem] gap-5 text-neutral-400">
+            <li className="list-item">
+              <div>
+                <h3 className="text-[11.75rem] font-bold leading-none text-white">
+                  150K+
+                </h3>
+                <span className="text-[1.38rem] leading-7 text-zinc-500">
+                  Active app users in a few months post-release
+                </span>
+              </div>
+            </li>
+            <li className="list-item">
+              <div>
+                <h3 className="text-[11.75rem] font-bold leading-none text-white">
+                  47
+                </h3>
+                <span className="text-[1.38rem] leading-7 text-zinc-500">
+                  Countries using app
+                </span>
+              </div>
+            </li>
+            <li className="list-item">
+              <div>
+                <h3 className="text-[11.75rem] font-bold leading-none text-white">
+                  2x
+                </h3>
+                <span className="text-[1.38rem] leading-7 text-zinc-500">
+                  Winner of eMobility Excellence
+                </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
     </>
   );
 }
