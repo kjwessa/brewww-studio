@@ -17,48 +17,14 @@ export const BlogCategories: CollectionConfig = {
   //* Collection Fields
   fields: [
     {
-      type: "tabs",
-      tabs: [
-        {
-          label: "Content",
-          fields: [
-            {
-              name: "name",
-              type: "text",
-              label: "Category Name",
-              required: true,
-            },
-            {
-              name: "content",
-              type: "richText",
-            },
-          ],
-        },
-        {
-          label: "SEO",
-          fields: [
-            OverviewField({
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-              imagePath: "meta.image",
-            }),
-            MetaImageField({
-              relationTo: "media",
-            }),
-            MetaTitleField({
-              hasGenerateFn: true,
-            }),
-            MetaDescriptionField({}),
-            PreviewField({
-              // if the `generateUrl` function is configured
-              hasGenerateFn: true,
-              // field paths to match the target field for data
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-            }),
-          ],
-        },
-      ],
+      name: "title",
+      type: "text",
+      label: "Category Title",
+      unique: true,
+      admin: {
+        description: "The title of the category as it appears around the site.",
+      },
+      required: true,
     },
     {
       name: "slug",
@@ -81,16 +47,16 @@ export const BlogCategories: CollectionConfig = {
   },
   admin: {
     description: "Categories for blog posts.",
-    defaultColumns: ["name"],
+    defaultColumns: ["title"],
     group: "Blog Posts",
-    listSearchableFields: ["name"],
+    listSearchableFields: ["title"],
     pagination: {
       defaultLimit: 25,
       limits: [10, 25, 50, 100],
     },
-    useAsTitle: "name",
+    useAsTitle: "title",
   },
-  defaultSort: "name",
+  defaultSort: "title",
   labels: {
     singular: "Category",
     plural: "Categories",

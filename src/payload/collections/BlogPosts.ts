@@ -16,21 +16,21 @@ export const BlogPosts: CollectionConfig = {
   //* Collection Fields
   fields: [
     {
+      name: "title",
+      type: "text",
+      label: "Post Title",
+      unique: true,
+      required: true,
+      admin: {
+        description: "The title of the article as it appears around the site.",
+      },
+    },
+    {
       type: "tabs",
       tabs: [
         {
           label: "Content",
           fields: [
-            {
-              name: "name",
-              type: "text",
-              label: "Post Title",
-              required: true,
-              admin: {
-                description:
-                  "The name of the article as it appears around the site.",
-              },
-            },
             {
               name: "imageMain",
               type: "upload",
@@ -51,6 +51,51 @@ export const BlogPosts: CollectionConfig = {
           ],
         },
         {
+          label: "Meta",
+          fields: [
+            {
+              name: "relatedPosts",
+              type: "relationship",
+              admin: {
+                position: "sidebar",
+              },
+              filterOptions: ({ id }) => {
+                return {
+                  id: {
+                    not_in: [id],
+                  },
+                };
+              },
+              hasMany: true,
+              relationTo: "posts",
+            },
+            {
+              name: "categories",
+              type: "relationship",
+              admin: {
+                position: "sidebar",
+                description:
+                  "Add the post categories here. This is used to group the articles.",
+              },
+              hasMany: true,
+              relationTo: "categories",
+              required: true,
+            },
+            {
+              name: "readTime",
+              type: "number",
+              required: true,
+              label: "Read Time",
+              admin: {
+                description:
+                  "The estimated time it takes to read the article in minutes. Every 200 words is approximately one minute.",
+                position: "sidebar",
+              },
+            },
+          ],
+        },
+        {
+          name: "metadata",
           label: "SEO",
           fields: [
             OverviewField({
@@ -80,7 +125,8 @@ export const BlogPosts: CollectionConfig = {
       name: "slug",
       type: "text",
       label: "Slug",
-      required: false,
+      required: true,
+      unique: true,
       admin: {
         position: "sidebar",
         description: "Add the slug here",
@@ -100,29 +146,6 @@ export const BlogPosts: CollectionConfig = {
         },
       },
     },
-    {
-      name: "readTime",
-      type: "number",
-      required: false,
-      label: "Read Time",
-      admin: {
-        description:
-          "The estimated time it takes to read the article in minutes.",
-        position: "sidebar",
-      },
-    },
-    {
-      name: "category",
-      type: "relationship",
-      relationTo: "categories",
-      label: "Category",
-      required: true,
-      admin: {
-        position: "sidebar",
-        description:
-          "Add the post category here. This is used to group the articles.",
-      },
-    },
   ],
 
   //* Admin Settings
@@ -135,14 +158,14 @@ export const BlogPosts: CollectionConfig = {
   admin: {
     description:
       "Writing brings clarity. Writing is a way to make sense of the world.",
-    defaultColumns: ["name", "publishedDate", "updatedAt"],
+    defaultColumns: ["title", "publishedDate", "updatedAt"],
     group: "Blog Posts",
-    listSearchableFields: ["name"],
+    listSearchableFields: ["title"],
     pagination: {
       defaultLimit: 100,
       limits: [25, 50, 100],
     },
-    useAsTitle: "name",
+    useAsTitle: "title",
   },
   defaultSort: "-publishedDate",
   labels: {
