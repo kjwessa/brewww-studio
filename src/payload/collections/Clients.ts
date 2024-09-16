@@ -8,7 +8,7 @@ export const Clients: CollectionConfig = {
   //* Collection Fields
   fields: [
     {
-      name: "name",
+      name: "title",
       type: "text",
       label: "Name",
       required: true,
@@ -66,17 +66,18 @@ export const Clients: CollectionConfig = {
     update: authenticated,
   },
   admin: {
-    description: "Our bread and butter.",
-    defaultColumns: ["name", "logoLight", "city", "state"],
+    description:
+      "Our bread and butter. Add (or remove) clients from this list carefully.",
+    defaultColumns: ["title", "logoLight", "city", "state"],
     group: "Portfolio",
-    listSearchableFields: ["name", "city", "state"],
+    listSearchableFields: ["title", "city", "state"],
     pagination: {
       defaultLimit: 10,
       limits: [10, 20, 50],
     },
-    useAsTitle: "name",
+    useAsTitle: "title",
   },
-  defaultSort: "name",
+  defaultSort: "title",
   labels: {
     singular: "Client",
     plural: "Clients",

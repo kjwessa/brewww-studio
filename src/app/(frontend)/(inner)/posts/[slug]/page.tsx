@@ -221,10 +221,10 @@ export default async function PostPage({
     <article className="bg-white pt-24 text-black">
       <CategorySection />
       <HeroSection
-        name={post.name}
-        description={post.description || ""}
-        publishedDate={post.publishedDate}
-        readTime={post.readTime || 0}
+      // name={post.title}
+      // description={post.description || ""}
+      // publishedDate={post.publishedDate}
+      // readTime={post.readTime || 0}
       />
       <ImageSection featuredImage={post.imageMain} />
       <div className="grid grid-cols-3 gap-8 pt-8">

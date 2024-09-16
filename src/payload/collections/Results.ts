@@ -8,9 +8,9 @@ export const Results: CollectionConfig = {
   //* Collection Fields
   fields: [
     {
-      name: "name",
+      name: "title",
       type: "text",
-      label: "Name (Internal)",
+      label: "Result Title",
       required: true,
     },
     {
@@ -38,16 +38,16 @@ export const Results: CollectionConfig = {
   },
   admin: {
     description: "The impact of our work",
-    defaultColumns: ["name"],
+    defaultColumns: ["title"],
     group: "Portfolio",
-    listSearchableFields: ["name"],
+    listSearchableFields: ["title"],
     pagination: {
       defaultLimit: 25,
       limits: [25, 50],
     },
-    useAsTitle: "name",
+    useAsTitle: "title",
   },
-  defaultSort: "name",
+  defaultSort: "title",
   labels: {
     singular: "Result",
     plural: "Results",

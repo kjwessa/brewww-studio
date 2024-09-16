@@ -16,17 +16,29 @@ export const Playground: CollectionConfig = {
   //* Collection Fields
   fields: [
     {
+      name: "title",
+      type: "text",
+      label: "Title",
+      required: true,
+      unique: true,
+      admin: {
+        description: "Add the title of the Playground case study here.",
+      },
+    },
+    {
+      name: "slug",
+      type: "text",
+      label: "Slug",
+      required: false,
+      admin: { position: "sidebar" },
+    },
+    {
       type: "tabs",
       tabs: [
         {
+          name: "content",
           label: "Content",
           fields: [
-            {
-              name: "name",
-              type: "text",
-              label: "Name",
-              required: true,
-            },
             {
               name: "shortPitch",
               type: "text",
@@ -47,6 +59,31 @@ export const Playground: CollectionConfig = {
           ],
         },
         {
+          name: "metadata",
+          label: "Meta",
+          fields: [
+            {
+              name: "relatedPlaygrounds",
+              type: "relationship",
+              label: "Related Playgrounds",
+              admin: {
+                position: "sidebar",
+                description: "Add the related playgrounds here.",
+              },
+              filterOptions: ({ id }) => {
+                return {
+                  id: {
+                    not_in: [id],
+                  },
+                };
+              },
+              hasMany: true,
+              relationTo: "play",
+            },
+          ],
+        },
+        {
+          name: "seo",
           label: "SEO",
           fields: [
             OverviewField({
@@ -62,23 +99,13 @@ export const Playground: CollectionConfig = {
             }),
             MetaDescriptionField({}),
             PreviewField({
-              // if the `generateUrl` function is configured
               hasGenerateFn: true,
-              // field paths to match the target field for data
               titlePath: "meta.title",
               descriptionPath: "meta.description",
             }),
           ],
         },
       ],
-    },
-
-    {
-      name: "slug",
-      type: "text",
-      label: "Slug",
-      required: false,
-      admin: { position: "sidebar" },
     },
   ],
 
@@ -91,19 +118,19 @@ export const Playground: CollectionConfig = {
   },
   admin: {
     description: "Interior Brewww projects",
-    defaultColumns: ["name", "updatedAt"],
+    defaultColumns: ["title", "updatedAt"],
     group: "Portfolio",
-    listSearchableFields: ["name"],
+    listSearchableFields: ["title"],
     pagination: {
       defaultLimit: 25,
       limits: [25, 50],
     },
-    useAsTitle: "name",
+    useAsTitle: "title",
   },
-  defaultSort: "name",
+  defaultSort: "title",
   labels: {
     singular: "Playground",
-    plural: "Playgrounds",
+    plural: "Playground",
   },
   versions: {
     drafts: true,

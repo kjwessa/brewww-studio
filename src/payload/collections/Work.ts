@@ -15,17 +15,37 @@ export const Work: CollectionConfig = {
 
   fields: [
     {
+      name: "title",
+      type: "text",
+      label: "Project Title",
+      required: true,
+      unique: true,
+      admin: {
+        description: "The title of the project as it appears around the site.",
+      },
+    },
+    {
+      name: "slug",
+      type: "text",
+      label: "Slug",
+      required: true,
+      unique: true,
+      admin: {
+        position: "sidebar",
+        description: "Add a unique and SEO compelling slug here.",
+      },
+    },
+    {
       type: "tabs",
       tabs: [
         {
           label: "Content",
           fields: [
-            { name: "name", type: "text", label: "Name", required: true },
             {
               name: "thumbnail",
               type: "upload",
               label: "Thumbnail",
-              required: false,
+              required: true,
               relationTo: "media",
               admin: {
                 description:
@@ -42,6 +62,12 @@ export const Work: CollectionConfig = {
                 description: "If a testimonial exists, add it here.",
               },
             },
+          ],
+        },
+        {
+          name: "metadata",
+          label: "Meta",
+          fields: [
             {
               name: "client",
               type: "relationship",
@@ -49,14 +75,37 @@ export const Work: CollectionConfig = {
               hasMany: false,
               required: true,
               admin: {
-                description: "Add the connected client here. ",
+                description: "Add the name of the client here.",
               },
+            },
+            {
+              name: "relatedWorks",
+              type: "relationship",
+              label: "Related Case Studies",
+              admin: {
+                position: "sidebar",
+              },
+              filterOptions: ({ id }) => {
+                return {
+                  id: {
+                    not_in: [id],
+                  },
+                };
+              },
+              hasMany: true,
+              relationTo: "work",
             },
           ],
         },
         {
+          name: "seo",
           label: "SEO",
           fields: [
+            PreviewField({
+              hasGenerateFn: true,
+              titlePath: "meta.title",
+              descriptionPath: "meta.description",
+            }),
             OverviewField({
               titlePath: "meta.title",
               descriptionPath: "meta.description",
@@ -69,24 +118,9 @@ export const Work: CollectionConfig = {
               hasGenerateFn: true,
             }),
             MetaDescriptionField({}),
-            PreviewField({
-              // if the `generateUrl` function is configured
-              hasGenerateFn: true,
-              // field paths to match the target field for data
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-            }),
           ],
         },
       ],
-    },
-
-    {
-      name: "slug",
-      type: "text",
-      label: "Slug",
-      required: false,
-      admin: { position: "sidebar" },
     },
   ],
 
@@ -98,17 +132,17 @@ export const Work: CollectionConfig = {
     update: authenticated,
   },
   admin: {
-    useAsTitle: "name",
+    useAsTitle: "title",
     description: "All we do is work, work, work.",
-    defaultColumns: ["name", "testimonial"],
+    defaultColumns: ["title", "testimonial"],
     group: "Portfolio",
-    listSearchableFields: ["name"],
+    listSearchableFields: ["title"],
     pagination: {
       defaultLimit: 25,
       limits: [10, 25, 50],
     },
   },
-  defaultSort: "name",
+  defaultSort: "title",
   labels: {
     singular: "Work",
     plural: "Works",

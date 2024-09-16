@@ -9,6 +9,7 @@ import {
   OverviewField,
   PreviewField,
 } from "@payloadcms/plugin-seo/fields";
+import { metadata } from "@payloadcms/next/layouts";
 
 export const BlogPosts: CollectionConfig = {
   slug: "posts",
@@ -45,12 +46,13 @@ export const BlogPosts: CollectionConfig = {
             {
               name: "content",
               type: "richText",
-              label: "Main Content",
+              label: "Content",
               required: false,
             },
           ],
         },
         {
+          name: "metadata",
           label: "Meta",
           fields: [
             {
@@ -95,9 +97,14 @@ export const BlogPosts: CollectionConfig = {
           ],
         },
         {
-          name: "metadata",
+          name: "seo",
           label: "SEO",
           fields: [
+            PreviewField({
+              hasGenerateFn: true,
+              titlePath: "meta.title",
+              descriptionPath: "meta.description",
+            }),
             OverviewField({
               titlePath: "meta.title",
               descriptionPath: "meta.description",
@@ -110,13 +117,6 @@ export const BlogPosts: CollectionConfig = {
               relationTo: "media",
             }),
             MetaDescriptionField({}),
-            PreviewField({
-              // if the `generateUrl` function is configured
-              hasGenerateFn: true,
-              // field paths to match the target field for data
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-            }),
           ],
         },
       ],
