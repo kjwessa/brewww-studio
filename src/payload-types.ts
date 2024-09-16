@@ -198,8 +198,8 @@ export interface Testimonial {
     };
     [k: string]: unknown;
   };
-  author: string;
   client: string | Client;
+  author: string;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
