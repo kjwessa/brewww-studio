@@ -8,12 +8,12 @@ export const Testimonials: CollectionConfig = {
   //* Collection Fields
   fields: [
     {
-      name: "name",
+      name: "title",
       type: "text",
-      label: "Name",
+      label: "Title",
       required: true,
       admin: {
-        description: "Add the name of the client here.",
+        description: "Add the title of the testimonial here.",
       },
     },
     {
@@ -61,16 +61,16 @@ export const Testimonials: CollectionConfig = {
   },
   admin: {
     description: "Kind clients saying kind things.",
-    defaultColumns: ["name", "callout", "author"],
+    defaultColumns: ["title", "callout", "author"],
     group: "Portfolio",
-    listSearchableFields: ["name", "callout", "author"],
+    listSearchableFields: ["title", "callout", "author"],
     pagination: {
       defaultLimit: 25,
       limits: [10, 25, 50],
     },
-    useAsTitle: "name",
+    useAsTitle: "title",
   },
-  defaultSort: "name",
+  defaultSort: "title",
   labels: {
     singular: "Testimonial",
     plural: "Testimonials",

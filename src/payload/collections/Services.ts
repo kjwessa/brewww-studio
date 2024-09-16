@@ -8,9 +8,9 @@ export const Services: CollectionConfig = {
   //* Collection Fields
   fields: [
     {
-      name: "name",
+      name: "title",
       type: "text",
-      label: "Name",
+      label: "ServiceTitle",
       required: true,
       admin: {
         description: "add a cool name here",
@@ -36,17 +36,17 @@ export const Services: CollectionConfig = {
     update: authenticated,
   },
   admin: {
-    useAsTitle: "name",
-    description: "How we help people.",
-    defaultColumns: ["name"],
+    useAsTitle: "title",
+    description: "How we help people. Be specific.",
+    defaultColumns: ["title"],
     group: "Service",
-    listSearchableFields: ["name"],
+    listSearchableFields: ["title"],
     pagination: {
       defaultLimit: 25,
       limits: [10, 25, 50],
     },
   },
-  defaultSort: "name",
+  defaultSort: "title",
   labels: {
     singular: "Service",
     plural: "Services",

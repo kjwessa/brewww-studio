@@ -124,10 +124,12 @@ export interface Post {
     };
     [k: string]: unknown;
   } | null;
-  relatedPosts?: (string | Post)[] | null;
-  categories: (string | Category)[];
-  readTime: number;
-  metadata?: {
+  metadata: {
+    relatedPosts?: (string | Post)[] | null;
+    categories: (string | Category)[];
+    readTime: number;
+  };
+  seo?: {
     title?: string | null;
     image?: (string | null) | Media;
     description?: string | null;
@@ -156,14 +158,19 @@ export interface Category {
  */
 export interface Work {
   id: string;
-  name: string;
-  thumbnail?: (string | null) | Media;
+  title: string;
+  slug: string;
+  thumbnail: string | Media;
   testimonial?: (string | null) | Testimonial;
-  client: string | Client;
-  image?: (string | null) | Media;
-  title?: string | null;
-  description?: string | null;
-  slug?: string | null;
+  metadata: {
+    client: string | Client;
+    relatedWorks?: (string | Work)[] | null;
+  };
+  seo?: {
+    image?: (string | null) | Media;
+    title?: string | null;
+    description?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -174,7 +181,7 @@ export interface Work {
  */
 export interface Testimonial {
   id: string;
-  name: string;
+  title: string;
   callout: string;
   testimonial: {
     root: {
@@ -203,7 +210,7 @@ export interface Testimonial {
  */
 export interface Client {
   id: string;
-  name: string;
+  title: string;
   logoLight?: (string | null) | Media;
   logoDark?: (string | null) | Media;
   city: string;
@@ -218,13 +225,20 @@ export interface Client {
  */
 export interface Play {
   id: string;
-  name: string;
-  shortPitch?: string | null;
-  thumbnail?: (string | null) | Media;
-  image?: (string | null) | Media;
-  title?: string | null;
-  description?: string | null;
+  title: string;
   slug?: string | null;
+  content?: {
+    shortPitch?: string | null;
+    thumbnail?: (string | null) | Media;
+  };
+  metadata?: {
+    relatedPlaygrounds?: (string | Play)[] | null;
+  };
+  seo?: {
+    image?: (string | null) | Media;
+    title?: string | null;
+    description?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -235,7 +249,7 @@ export interface Play {
  */
 export interface Service {
   id: string;
-  name: string;
+  title: string;
   slug: string;
   updatedAt: string;
   createdAt: string;
@@ -258,7 +272,7 @@ export interface In {
  */
 export interface Result {
   id: string;
-  name: string;
+  title: string;
   client: string | Client;
   number: string;
   support: string;
