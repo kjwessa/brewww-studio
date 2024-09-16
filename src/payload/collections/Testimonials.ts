@@ -17,38 +17,60 @@ export const Testimonials: CollectionConfig = {
       },
     },
     {
-      name: "callout",
-      type: "textarea",
-      label: "Callout",
-      required: true,
-      admin: {
-        description: "Add a short excerpt of the testimonial here.",
-      },
-    },
-    {
-      name: "testimonial",
-      type: "richText",
-      label: "Testimonial",
-      required: true,
-      admin: {
-        description: "Add the full testimonial content here. ",
-      },
-    },
-    {
-      name: "author",
-      type: "text",
-      label: "Testimonial Author",
-      required: true,
-      admin: {
-        description: "Add the name of the person that left the testimonial",
-      },
-    },
-    {
-      name: "client",
-      type: "relationship",
-      relationTo: "clients",
-      hasMany: false,
-      required: true,
+      type: "tabs",
+      tabs: [
+        {
+          label: "Content",
+          fields: [
+            {
+              name: "callout",
+              type: "textarea",
+              label: "Callout",
+              required: true,
+              admin: {
+                description: "Add a short excerpt of the testimonial here.",
+              },
+            },
+            {
+              name: "testimonial",
+              type: "richText",
+              label: "Full Testimonial",
+              required: true,
+              admin: {
+                description: "Add the full testimonial content here. ",
+              },
+            },
+          ],
+        },
+        {
+          label: "Meta",
+          fields: [
+            {
+              name: "client",
+              type: "relationship",
+              relationTo: "clients",
+              required: true,
+              hasMany: false,
+              unique: true,
+              admin: {
+                position: "sidebar",
+                description: "Select the client that left the testimonial.",
+              },
+            },
+            {
+              name: "author",
+              type: "text",
+              label: "Testimonial Author",
+              unique: true,
+              required: true,
+              admin: {
+                description:
+                  "Add the name of the person that left the testimonial",
+              },
+            },
+          ],
+        },
+      ],
     },
   ],
 
