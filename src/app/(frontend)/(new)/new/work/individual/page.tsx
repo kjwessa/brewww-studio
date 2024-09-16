@@ -128,6 +128,67 @@ export default function WorkIndividual() {
           </div>
         </div>
       </section>
+      <section className="bg-zinc-950 text-neutral-400">
+        <div className="grid-rows-[183.109px_332px_288px_46.5px] gap-5">
+          <h1 className="text-[8.75rem] font-bold uppercase leading-none text-white">
+            What we did
+          </h1>
+          <div>
+            <span className="text-sm uppercase text-stone-500">
+              <sub>#AUDIOENTERTAINER</sub>
+            </span>
+            <div className="text-[1.75rem] leading-8 text-white">
+              Brewww supported The Merry Beggars with a fully self-empowered
+              team across design, web development, backend development and QA.
+              We continue working closely with The Merry Beggars' product
+              management to this day.
+            </div>
+          </div>
+          <div>
+            <p>
+              <span>
+                — Web and backend development for The Merry Beggars platform
+                <br />
+                — Design and development of features used by all The Merry
+                Beggars digital products
+                <br />
+                — Cross-departmental collaboration
+                <br />— Ongoing support and post-launch optimization{" "}
+              </span>
+            </p>
+
+            <h4 className="text-xs font-bold uppercase text-stone-500">
+              Links
+            </h4>
+
+            <p>
+              <a className="text-red-700 underline" href="#">
+                <span className="cursor-pointer">Website</span>
+              </a>
+              <br />
+              <a className="text-red-700 underline" href="#">
+                <span className="cursor-pointer">Mobile app</span>
+              </a>
+            </p>
+          </div>
+          <div className="row-start-2">
+            <div>
+              <div className="relative">
+                <img
+                  className="h-[41.16rem] w-[30.98rem] max-w-full"
+                  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTIwIiBoZWlnaHQ9IjE0ODgiPjwvc3ZnPg=="
+                />
+                <picture className="max-w-full">
+                  <img
+                    className="absolute bottom-0 left-0 top-0 h-[41.16rem] w-[30.98rem] max-w-full"
+                    src="https://www.datocms-assets.com/57452/1706221189-porsche_03.png"
+                  />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
