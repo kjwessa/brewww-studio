@@ -1,6 +1,7 @@
 import type { CollectionConfig } from "payload";
 import { authenticated } from "@/payload/access/authenticated";
 import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
+import { slugField } from "@/fields/slug";
 
 import {
   MetaDescriptionField,
@@ -24,17 +25,7 @@ export const Work: CollectionConfig = {
         description: "The title of the project as it appears around the site.",
       },
     },
-    {
-      name: "slug",
-      type: "text",
-      label: "Slug",
-      required: true,
-      unique: true,
-      admin: {
-        position: "sidebar",
-        description: "Add a unique and SEO compelling slug here.",
-      },
-    },
+    ...slugField(),
     {
       type: "tabs",
       tabs: [
@@ -93,6 +84,7 @@ export const Work: CollectionConfig = {
                 };
               },
               hasMany: true,
+              required: false,
               relationTo: "work",
             },
           ],
@@ -111,11 +103,11 @@ export const Work: CollectionConfig = {
               descriptionPath: "meta.description",
               imagePath: "meta.image",
             }),
-            MetaImageField({
-              relationTo: "media",
-            }),
             MetaTitleField({
               hasGenerateFn: true,
+            }),
+            MetaImageField({
+              relationTo: "media",
             }),
             MetaDescriptionField({}),
           ],

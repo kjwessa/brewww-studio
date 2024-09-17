@@ -47,7 +47,7 @@ export const Results: CollectionConfig = {
     },
     useAsTitle: "title",
   },
-  defaultSort: "title",
+  defaultSort: "-title",
   labels: {
     singular: "Result",
     plural: "Results",

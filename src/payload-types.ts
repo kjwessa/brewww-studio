@@ -20,7 +20,7 @@ export interface Config {
     services: Service;
     clients: Client;
     testimonials: Testimonial;
-    in: In;
+    locations: Location;
     results: Result;
     users: User;
     'payload-preferences': PayloadPreference;
@@ -97,6 +97,7 @@ export interface Page {
     description?: string | null;
   };
   slug: string;
+  slugLock?: boolean | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -134,7 +135,7 @@ export interface Post {
     image?: (string | null) | Media;
     description?: string | null;
   };
-  slug?: string | null;
+  slug: string;
   slugLock?: boolean | null;
   publishedAt: string;
   updatedAt: string;
@@ -149,6 +150,7 @@ export interface Category {
   id: string;
   title: string;
   slug: string;
+  slugLock?: boolean | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -161,6 +163,7 @@ export interface Work {
   id: string;
   title: string;
   slug: string;
+  slugLock?: boolean | null;
   thumbnail: string | Media;
   testimonial?: (string | null) | Testimonial;
   metadata: {
@@ -168,8 +171,8 @@ export interface Work {
     relatedWorks?: (string | Work)[] | null;
   };
   seo?: {
-    image?: (string | null) | Media;
     title?: string | null;
+    image?: (string | null) | Media;
     description?: string | null;
   };
   updatedAt: string;
@@ -228,6 +231,7 @@ export interface Play {
   id: string;
   title: string;
   slug: string;
+  slugLock?: boolean | null;
   publishedAt: string;
   content: {
     imageThumbnail: string | Media;
@@ -252,17 +256,26 @@ export interface Service {
   id: string;
   title: string;
   slug: string;
+  slugLock?: boolean | null;
+  metadata?: {};
+  seo?: {
+    title?: string | null;
+    image?: (string | null) | Media;
+    description?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "in".
+ * via the `definition` "locations".
  */
-export interface In {
+export interface Location {
   id: string;
-  name?: string | null;
+  title: string;
+  slug: string;
+  slugLock?: boolean | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;

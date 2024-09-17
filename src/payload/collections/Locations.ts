@@ -1,12 +1,25 @@
 import type { CollectionConfig } from "payload";
 import { authenticated } from "@/payload/access/authenticated";
 import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
+import { slugField } from "@/fields/slug";
 
 export const Location: CollectionConfig = {
-  slug: "in",
+  slug: "locations",
 
   //* Collection Fields
-  fields: [{ name: "name", type: "text", label: "Name" }],
+  fields: [
+    {
+      name: "title",
+      type: "text",
+      label: "Location Title",
+      required: true,
+      unique: true,
+      admin: {
+        description: "The title of the location as it appears around the site.",
+      },
+    },
+    ...slugField(),
+  ],
 
   //* Admin Settings
   access: {
@@ -18,7 +31,7 @@ export const Location: CollectionConfig = {
   admin: {
     description: "Landing pages for services",
     group: "Service",
-    useAsTitle: "name",
+    useAsTitle: "title",
   },
 
   labels: {
