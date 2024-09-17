@@ -1,11 +1,7 @@
-import { ContactHero } from "./ContactHero";
-import { ContactBody } from "./ContactBody";
-
-export default function Page() {
+export default function Contact() {
   return (
-    <main>
-      <ContactHero />
-      <ContactBody />
-    </main>
+    <div>
+      <h1>Contact</h1>
+    </div>
   );
 }

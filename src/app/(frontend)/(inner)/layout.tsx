@@ -1,8 +1,8 @@
 import localFont from "next/font/local";
 import "@/styles/globals.css";
 import { Metadata } from "next";
-import Header from "@/app/components/Header/index";
-import Footer from "@/app/components/Footer/index";
+import { HeaderNew } from "@/app/components/HeaderNew";
+import { FooterNew } from "@/app/components/FooterNew";
 
 const DMSans = localFont({
   variable: "--font-dm-sans",
@@ -16,17 +16,29 @@ const DMSans = localFont({
   ],
 });
 
+const BebasNeue = localFont({
+  variable: "--font-bebas-neue",
+  display: "swap",
+  src: [
+    {
+      path: "../../fonts/BebasNeue.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+});
+
 export default function InnerLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${DMSans.variable}`}>
+    <html lang="en" className={`${DMSans.variable} ${BebasNeue.variable}`}>
       <body className="bg-gray-950 text-gray-50 antialiased">
-        <Header />
+        <HeaderNew />
         <div className="">{children}</div>
-        <Footer />
+        <FooterNew />
       </body>
     </html>
   );
