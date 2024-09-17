@@ -24,42 +24,55 @@ export default async function PlayPage() {
               <div className="mb-4 mt-6 h-0.5 bg-zinc-900" />
               <div className="mb-4 text-xs uppercase">Selected Projects</div>
             </div>
-            {projects.docs.map((project) => (
-              <Link
-                key={project.id}
-                className="col-span-2 row-span-1 inline-block w-full max-w-full"
-                href={`/play/${project.slug}`}
-              >
-                <div className="relative flex w-full cursor-pointer overflow-hidden rounded-md">
-                  <div className="relative w-full pt-[56.25%]">
-                    <Image
-                      className="absolute inset-0 h-full w-full"
-                      src={
-                        typeof project.content.imageThumbnail === "string"
-                          ? project.content.imageThumbnail
-                          : project.content.imageThumbnail?.url ||
-                            "https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10ccaad8365d669c95e70_63c91a92dc0c340932978b8f_image-ueno-template-04-p-3200.jpeg"
-                      }
-                      alt={"Project Thumbnail"}
-                      layout="fill"
-                      style={{ objectFit: "cover" }}
-                    />
-                  </div>
-                </div>
-                <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1">
-                  <div>
-                    <div className="inline-block font-semibold uppercase">
-                      {project.title || "Untitled Project"}
+            {projects.docs.map((project) => {
+              console.log("Project:", project.title);
+              console.log("Image data:", project.content.imageThumbnail);
+              const imageSrc =
+                typeof project.content.imageThumbnail === "string"
+                  ? project.content.imageThumbnail
+                  : project.content.imageThumbnail?.url ||
+                    "https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10ccaad8365d669c95e70_63c91a92dc0c340932978b8f_image-ueno-template-04-p-3200.jpeg";
+
+              console.log("Resolved image src:", imageSrc);
+
+              return (
+                <Link
+                  key={project.id}
+                  className="col-span-2 row-span-1 inline-block w-full max-w-full"
+                  href={`/play/${project.slug}`}
+                >
+                  <div className="relative flex w-full cursor-pointer overflow-hidden rounded-md">
+                    <div className="relative w-full pt-[56.25%]">
+                      <Image
+                        className="absolute inset-0 h-full w-full"
+                        src={
+                          typeof project.content.imageThumbnail === "string"
+                            ? project.content.imageThumbnail
+                            : project.content.imageThumbnail?.url ||
+                              "https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10ccaad8365d669c95e70_63c91a92dc0c340932978b8f_image-ueno-template-04-p-3200.jpeg"
+                        }
+                        alt={"Project Thumbnail"}
+                        layout="fill"
+                        style={{ objectFit: "cover" }}
+                      />
                     </div>
-                    <div className="m-1 inline-block">·</div>
-                    {"Write a cool subtitle here"}
                   </div>
-                  <div className="text-neutral-400">
-                    {"Write a cool category here"}
+                  <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1">
+                    <div>
+                      <div className="inline-block font-semibold uppercase">
+                        {project.title || "Untitled Project"}
+                      </div>
+                      <div className="m-1 inline-block">·</div>
+                      {"Write a cool subtitle here"}
+                    </div>
+                    <div className="text-neutral-400">
+                      {"Write a cool category here"}
+                    </div>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
+
             <div className="flex flex-col gap-y-[7.38rem]">
               <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] items-start gap-y-[7.38rem]">
                 <div
