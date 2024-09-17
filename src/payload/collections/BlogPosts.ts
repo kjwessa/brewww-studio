@@ -1,6 +1,7 @@
 import type { CollectionConfig } from "payload";
 import { authenticated } from "@/payload/access/authenticated";
 import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
+import { slugField } from "@/fields/slug";
 
 import {
   MetaDescriptionField,
@@ -120,19 +121,20 @@ export const BlogPosts: CollectionConfig = {
         },
       ],
     },
+    // {
+    //   name: "slug",
+    //   type: "text",
+    //   label: "Slug",
+    //   required: true,
+    //   unique: true,
+    //   admin: {
+    //     position: "sidebar",
+    //     description: "Add the slug here",
+    //   },
+    // },
+    ...slugField(),
     {
-      name: "slug",
-      type: "text",
-      label: "Slug",
-      required: true,
-      unique: true,
-      admin: {
-        position: "sidebar",
-        description: "Add the slug here",
-      },
-    },
-    {
-      name: "publishedDate",
+      name: "publishedAt",
       type: "date",
       required: true,
       label: "Published Date",
@@ -157,7 +159,7 @@ export const BlogPosts: CollectionConfig = {
   admin: {
     description:
       "Writing brings clarity. Writing is a way to make sense of the world.",
-    defaultColumns: ["title", "publishedDate", "updatedAt"],
+    defaultColumns: ["title", "publishedAt", "updatedAt"],
     group: "Blog Posts",
     listSearchableFields: ["title"],
     pagination: {
@@ -166,7 +168,7 @@ export const BlogPosts: CollectionConfig = {
     },
     useAsTitle: "title",
   },
-  defaultSort: "-publishedDate",
+  defaultSort: "-publishedAt",
   labels: {
     singular: "Post",
     plural: "Posts",

@@ -134,8 +134,9 @@ export interface Post {
     image?: (string | null) | Media;
     description?: string | null;
   };
-  slug: string;
-  publishedDate: string;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  publishedAt: string;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -226,10 +227,10 @@ export interface Client {
 export interface Play {
   id: string;
   title: string;
-  slug?: string | null;
-  content?: {
-    shortPitch?: string | null;
-    thumbnail?: (string | null) | Media;
+  slug: string;
+  publishedAt: string;
+  content: {
+    imageThumbnail: string | Media;
   };
   metadata?: {
     relatedPlaygrounds?: (string | Play)[] | null;
