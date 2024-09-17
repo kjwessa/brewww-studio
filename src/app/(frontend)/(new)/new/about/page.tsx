@@ -3,11 +3,11 @@ import AboutImageEight from "/public/images/brewww-eight.jpeg";
 export default function About() {
   return (
     <>
-      <section className="flex h-screen w-full items-center justify-center bg-zinc-950 bg-[linear-gradient(rgba(8,_8,_8,_0.75),_rgba(8,_8,_8,_0.75))] font-mono text-[20.25rem] font-bold uppercase leading-none text-neutral-400">
+      <section className="flex h-screen w-full items-center justify-center bg-zinc-950 bg-[linear-gradient(rgba(8,_8,_8,_0.75),_rgba(8,_8,_8,_0.75))] font-serif text-[20.25rem] font-bold uppercase leading-none text-neutral-400">
         <h1 className="text-center text-white">
-          <span className="text-outline block">All</span>
+          <span className="ghost-text block">All</span>
           <span className="-mt-16 block">About</span>
-          <span className="text-brand-gold -mt-16 block">Brewww</span>
+          <span className="-mt-16 block text-brand-gold">Brewww</span>
         </h1>
       </section>
 
@@ -216,7 +216,7 @@ export default function About() {
           >
             <div className="grid grid-flow-col grid-cols-[220px_220px] grid-rows-[3.75rem] justify-start gap-10">
               <a
-                className="bg-brand-gold flex items-center justify-center rounded-sm px-5 text-black"
+                className="flex items-center justify-center rounded-sm bg-brand-gold px-5 text-black"
                 href=""
               >
                 <span className="flex cursor-pointer items-center justify-between">

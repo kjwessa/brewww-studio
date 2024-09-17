@@ -26,6 +26,7 @@ import { StrikethroughFeatureClient as StrikethroughFeatureClient_24 } from '@pa
 import { UnderlineFeatureClient as UnderlineFeatureClient_25 } from '@payloadcms/richtext-lexical/client'
 import { BoldFeatureClient as BoldFeatureClient_26 } from '@payloadcms/richtext-lexical/client'
 import { ItalicFeatureClient as ItalicFeatureClient_27 } from '@payloadcms/richtext-lexical/client'
+import { SlugComponent as SlugComponent_28 } from '@/fields/slug/SlugComponent'
 
 export const importMap = {
   "@payloadcms/plugin-seo/client#OverviewComponent": OverviewComponent_0,
@@ -55,5 +56,6 @@ export const importMap = {
   "@payloadcms/richtext-lexical/client#StrikethroughFeatureClient": StrikethroughFeatureClient_24,
   "@payloadcms/richtext-lexical/client#UnderlineFeatureClient": UnderlineFeatureClient_25,
   "@payloadcms/richtext-lexical/client#BoldFeatureClient": BoldFeatureClient_26,
-  "@payloadcms/richtext-lexical/client#ItalicFeatureClient": ItalicFeatureClient_27
+  "@payloadcms/richtext-lexical/client#ItalicFeatureClient": ItalicFeatureClient_27,
+  "@/fields/slug/SlugComponent#SlugComponent": SlugComponent_28
 }

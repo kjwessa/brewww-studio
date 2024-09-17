@@ -29,8 +29,26 @@ export const Playground: CollectionConfig = {
       name: "slug",
       type: "text",
       label: "Slug",
-      required: false,
-      admin: { position: "sidebar" },
+      required: true,
+      unique: true,
+      admin: {
+        position: "sidebar",
+        description: "Add a unique and SEO compelling slug here.",
+      },
+    },
+    {
+      name: "publishedAt",
+      type: "date",
+      required: true,
+      label: "Published Date",
+      admin: {
+        description:
+          "The date the article was published. This is used to sort the articles.",
+        position: "sidebar",
+        date: {
+          pickerAppearance: "dayAndTime",
+        },
+      },
     },
     {
       type: "tabs",
@@ -40,20 +58,13 @@ export const Playground: CollectionConfig = {
           label: "Content",
           fields: [
             {
-              name: "shortPitch",
-              type: "text",
-              label: "Tagline",
-              required: false,
-            },
-            {
-              name: "thumbnail",
+              name: "imageThumbnail",
               type: "upload",
-              label: "Thumbnail",
-              required: false,
               relationTo: "media",
+              label: "Image Thumbnail",
+              required: true,
               admin: {
-                description:
-                  "This image appears on the PlayCard thumbnail images.",
+                description: "Add the image thumbnail for the playground here.",
               },
             },
           ],
