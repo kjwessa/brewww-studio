@@ -35,13 +35,12 @@ export default async function PlayPage() {
                     <Image
                       className="absolute inset-0 h-full w-full"
                       src={
-                        project.content.imageThumbnail?.url ||
-                        "https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10ccaad8365d669c95e70_63c91a92dc0c340932978b8f_image-ueno-template-04-p-3200.jpeg"
+                        typeof project.content.imageThumbnail === "string"
+                          ? project.content.imageThumbnail
+                          : project.content.imageThumbnail?.url ||
+                            "https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10ccaad8365d669c95e70_63c91a92dc0c340932978b8f_image-ueno-template-04-p-3200.jpeg"
                       }
-                      alt={
-                        project.content.imageThumbnail?.alt ||
-                        "Project Thumbnail"
-                      }
+                      alt={"Project Thumbnail"}
                       layout="fill"
                       style={{ objectFit: "cover" }}
                     />
@@ -53,11 +52,10 @@ export default async function PlayPage() {
                       {project.title || "Untitled Project"}
                     </div>
                     <div className="m-1 inline-block">·</div>
-                    {project.subtitle || "Write a cool subtitle here"}
+                    {"Write a cool subtitle here"}
                   </div>
                   <div className="text-neutral-400">
-                    {project.categories?.join(", ") ||
-                      "Write a cool category here"}
+                    {"Write a cool category here"}
                   </div>
                 </div>
               </Link>
