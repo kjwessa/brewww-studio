@@ -121,23 +121,12 @@ export const BlogPosts: CollectionConfig = {
         },
       ],
     },
-    // {
-    //   name: "slug",
-    //   type: "text",
-    //   label: "Slug",
-    //   required: true,
-    //   unique: true,
-    //   admin: {
-    //     position: "sidebar",
-    //     description: "Add the slug here",
-    //   },
-    // },
     ...slugField(),
     {
       name: "publishedAt",
       type: "date",
       required: true,
-      label: "Published Date",
+      label: "Published At",
       admin: {
         description:
           "The date the article was published. This is used to sort the articles.",

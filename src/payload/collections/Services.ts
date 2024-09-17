@@ -1,6 +1,14 @@
 import type { CollectionConfig } from "payload";
 import { authenticated } from "@/payload/access/authenticated";
 import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
+import { slugField } from "@/fields/slug";
+import {
+  MetaDescriptionField,
+  MetaImageField,
+  MetaTitleField,
+  OverviewField,
+  PreviewField,
+} from "@payloadcms/plugin-seo/fields";
 
 export const Services: CollectionConfig = {
   slug: "services",
@@ -10,21 +18,50 @@ export const Services: CollectionConfig = {
     {
       name: "title",
       type: "text",
-      label: "ServiceTitle",
+      label: "Service Title",
       required: true,
+      unique: true,
       admin: {
-        description: "add a cool name here",
+        description: "The name of the service as it appears around the site.",
       },
     },
+    ...slugField(),
     {
-      name: "slug",
-      type: "text",
-      label: "Slug",
-      required: true,
-      admin: {
-        description: "add a cool slug",
-        position: "sidebar",
-      },
+      type: "tabs",
+      tabs: [
+        {
+          label: "Content",
+          fields: [],
+        },
+        {
+          name: "metadata",
+          label: "Meta",
+          fields: [],
+        },
+        {
+          name: "seo",
+          label: "SEO",
+          fields: [
+            PreviewField({
+              hasGenerateFn: true,
+              titlePath: "meta.title",
+              descriptionPath: "meta.description",
+            }),
+            OverviewField({
+              titlePath: "meta.title",
+              descriptionPath: "meta.description",
+              imagePath: "meta.image",
+            }),
+            MetaTitleField({
+              hasGenerateFn: true,
+            }),
+            MetaImageField({
+              relationTo: "media",
+            }),
+            MetaDescriptionField({}),
+          ],
+        },
+      ],
     },
   ],
 
@@ -36,7 +73,6 @@ export const Services: CollectionConfig = {
     update: authenticated,
   },
   admin: {
-    useAsTitle: "title",
     description: "How we help people. Be specific.",
     defaultColumns: ["title"],
     group: "Service",
@@ -45,8 +81,9 @@ export const Services: CollectionConfig = {
       defaultLimit: 25,
       limits: [10, 25, 50],
     },
+    useAsTitle: "title",
   },
-  defaultSort: "title",
+  defaultSort: "-title",
   labels: {
     singular: "Service",
     plural: "Services",

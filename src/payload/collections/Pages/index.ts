@@ -1,6 +1,7 @@
 import type { CollectionConfig } from "payload";
 import { authenticated } from "@/payload/access/authenticated";
 import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
+import { slugField } from "@/fields/slug";
 import { Cover } from "@/app/blocks/Cover/config";
 import {
   MetaDescriptionField,
@@ -65,17 +66,7 @@ export const Pages: CollectionConfig = {
         },
       ],
     },
-
-    {
-      name: "slug",
-      type: "text",
-      label: "Slug",
-      required: true,
-      admin: {
-        position: "sidebar",
-        description: "The slug goes here.",
-      },
-    },
+    ...slugField(),
   ],
 
   //* Admin Settings

@@ -1,7 +1,7 @@
 import type { CollectionConfig } from "payload";
 import { authenticated } from "@/payload/access/authenticated";
 import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
-
+import { slugField } from "@/fields/slug";
 import {
   MetaDescriptionField,
   MetaImageField,
@@ -25,17 +25,7 @@ export const Playground: CollectionConfig = {
         description: "Add the title of the Playground case study here.",
       },
     },
-    {
-      name: "slug",
-      type: "text",
-      label: "Slug",
-      required: true,
-      unique: true,
-      admin: {
-        position: "sidebar",
-        description: "Add a unique and SEO compelling slug here.",
-      },
-    },
+    ...slugField(),
     {
       name: "publishedAt",
       type: "date",

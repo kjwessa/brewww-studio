@@ -2,7 +2,7 @@ import type { CollectionConfig } from "payload";
 import { authenticated } from "@/payload/access/authenticated";
 import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
 import { UnderlineFeature, lexicalEditor } from "@payloadcms/richtext-lexical";
-
+import { slugField } from "@/fields/slug";
 import {
   MetaDescriptionField,
   MetaImageField,
@@ -26,16 +26,7 @@ export const BlogCategories: CollectionConfig = {
       },
       required: true,
     },
-    {
-      name: "slug",
-      type: "text",
-      label: "Slug",
-      required: true,
-      admin: {
-        position: "sidebar",
-        description: "Add a cool slug here",
-      },
-    },
+    ...slugField(),
   ],
 
   //* Admin Settings

@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, MouseEvent } from "react";
 
 import {
   useField,
@@ -55,9 +55,8 @@ export const SlugComponent: React.FC<SlugComponentProps> = ({
   }, [fieldToUseValue, checkboxValue, setValue, value]);
 
   const handleLock = useCallback(
-    (e) => {
+    (e: MouseEvent<Element>) => {
       e.preventDefault();
-
       setCheckboxValue(!checkboxValue);
     },
     [checkboxValue, setCheckboxValue],
