@@ -11,18 +11,18 @@ import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 
 //* Import Collections
-import { Users } from "./payload/collections/Users";
-import { Media } from "./payload/collections/Media";
-import { Work } from "./payload/collections/Work";
-import { Clients } from "./payload/collections/Clients";
-import { BlogPosts } from "./payload/collections/BlogPosts";
-import { BlogCategories } from "./payload/collections/BlogCategories";
-import { Services } from "./payload/collections/Services";
-import { Testimonials } from "./payload/collections/Testimonials";
-import { Location } from "./payload/collections/Locations";
-import { Results } from "./payload/collections/Results";
+import { Users } from "./payload/collections/Users/index";
+import { Media } from "./payload/collections/Media/index";
+import { Work } from "./payload/collections/Work/index";
+import { Clients } from "./payload/collections/Clients/index";
+import { BlogPosts } from "./payload/collections/Posts/index";
+import { BlogCategories } from "./payload/collections/Categories/index";
+import { Services } from "./payload/collections/Services/index";
+import { Testimonials } from "./payload/collections/Testimonials/index";
+import { Location } from "./payload/collections/Locations/index";
+import { Results } from "./payload/collections/Results/index";
 import { Pages } from "./payload/collections/Pages/index";
-import { Playground } from "./payload/collections/Playground";
+import { Playground } from "./payload/collections/Playground/index";
 import { Page, Post } from "src/payload-types";
 //* Import Globals
 import { Header } from "./payload/globals/Header";
