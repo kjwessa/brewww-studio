@@ -1,8 +1,8 @@
 import localFont from "next/font/local";
 import "@/styles/globals.css";
 import { Metadata } from "next";
-import { HeaderNew } from "@/app/components/HeaderNew";
-import { FooterNew } from "@/app/components/FooterNew";
+import Header from "@/app/components/Header/index";
+import Footer from "@/app/components/Footer/index";
 
 const DMSans = localFont({
   variable: "--font-dm-sans",
@@ -36,9 +36,9 @@ export default function InnerLayout({
   return (
     <html lang="en" className={`${DMSans.variable} ${BebasNeue.variable}`}>
       <body className="bg-gray-950 text-gray-50 antialiased">
-        <HeaderNew />
+        <Header />
         <div className="">{children}</div>
-        <FooterNew />
+        <Footer />
       </body>
     </html>
   );
