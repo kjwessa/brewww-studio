@@ -563,6 +563,269 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      <div>
+        <div className="max-w-[100vw] overflow-x-hidden">
+          <main>
+            <div className="text-black">
+              <div>
+                <div className="rounded-tl-3xl rounded-tr-3xl bg-[#D2B48C]">
+                  <section className="rounded-3xl bg-[#D2B48C]">
+                    <div className="grid grid-cols-[371.75px_743.5px_371.75px] grid-rows-[12.25rem] gap-10 py-28">
+                      <div />
+
+                      <div className="flex flex-col justify-center px-8 text-center">
+                        <div className="text-5xl">
+                          <p>
+                            We <span className="inline-block">challenge</span>{" "}
+                            what creative <em className="italic">can do</em>,
+                            and{" "}
+                          </p>
+                          <div className="underline">brands</div>{" "}
+                          <em className="italic">can be.</em>
+                          <p />
+                        </div>
+
+                        <a
+                          className="items-center justify-center rounded-full bg-stone-900 py-4 pl-8 pr-12 text-lg text-white"
+                          href=""
+                        >
+                          Explore our work
+                        </a>
+                      </div>
+
+                      <div className="flex items-center justify-start">
+                        <img
+                          className="h-44 w-28"
+                          src="https://www.robot-food.com/images/pen-jetpack.svg"
+                        />
+                      </div>
+                    </div>
+                  </section>
+                  <div className="bg-white text-2xl">
+                    <div className="container mx-auto px-4">
+                      <div className="flex flex-wrap py-12">
+                        <div className="flex w-full">
+                          <div className="w-1/2 pr-6">
+                            <p>
+                              Ever noticed how the best ideas feel like common
+                              sense?
+                            </p>
+
+                            <p>
+                              They're effortlessly gettable, and disruptive in
+                              the right way. The kind of disruption that
+                              silences, rather than shouts.
+                            </p>
+                          </div>
+
+                          <div className="w-1/2 pl-6">
+                            <p>
+                              Common sense is simple, but simple isn't easy. Ask
+                              the right questions, and an idea can silence the
+                              whole category.
+                            </p>
+
+                            <p>
+                              When big plans need big ideas, we're your first,
+                              last and best call.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <section className="bg-white">
+                    <div
+                      className="grid grid-cols-[522.328px_522.328px_522.328px] grid-rows-[619.188px_618.5px] gap-[3.75rem]"
+                      style={{
+                        gridTemplateAreas: '"col1 col1 col2" "col3 col4 col4"',
+                      }}
+                    >
+                      <div
+                        style={{
+                          gridColumn: "col1",
+                          gridRow: "col1",
+                        }}
+                      >
+                        <img
+                          className="h-[38.70rem] w-[69.04rem] object-cover"
+                          src="https://www.robot-food.com/images/About/about-1-2023.jpg"
+                        />
+                      </div>
+
+                      <div
+                        style={{
+                          gridColumn: "col2",
+                          gridRow: "col2",
+                        }}
+                      >
+                        <img
+                          className="h-[38.70rem] w-[32.65rem] object-cover"
+                          src="https://www.robot-food.com/images/About/about-2-2023-editted.jpg"
+                        />
+                      </div>
+
+                      <div
+                        style={{
+                          gridColumn: "col3",
+                          gridRow: "col3",
+                        }}
+                      >
+                        <img
+                          className="h-[38.66rem] w-[32.65rem] object-cover"
+                          src="https://www.robot-food.com/images/About/about-3-2023.jpg"
+                        />
+                      </div>
+
+                      <div
+                        style={{
+                          gridColumn: "col4",
+                          gridRow: "col4",
+                        }}
+                      >
+                        <img
+                          className="h-[38.66rem] w-[69.04rem] object-cover"
+                          src="https://www.robot-food.com/images/About/about-4-2023.jpg"
+                        />
+                      </div>
+                    </div>
+                  </section>
+                  <section className="rounded-3xl bg-white">
+                    <div className="grid grid-cols-[371.75px_743.5px_371.75px] grid-rows-[10.25rem] gap-10 py-28">
+                      <div />
+
+                      <div className="flex flex-col justify-center px-8 text-center text-5xl">
+                        <div>
+                          <p>
+                            We <em className="italic">build</em> brands.
+                          </p>
+                          <p>
+                            We <em className="italic">elevate</em> brands.
+                          </p>
+                          <p>
+                            We <em className="italic">connect</em> brands{" "}
+                          </p>
+                          <div className="underline">with people</div>
+                          .
+                          <br />
+                          <p />
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <div className="bg-white">
+                    <div className="container mx-auto text-2xl">
+                      <div className="flex flex-wrap py-12">
+                        <div className="mb-6 w-full px-4 md:mb-0 md:w-1/2">
+                          <p className="mb-4">
+                            What gets us out of bed in the morning? Being bold,
+                            challenging convention and making an impact.
+                          </p>
+                          <p>
+                            We don't validate ourselves by paying to enter
+                            awards. Because we'd rather spend our time where it
+                            really counts.
+                          </p>
+                        </div>
+                        <div className="w-full px-4 md:w-1/2">
+                          <p className="mb-4">
+                            The success of your brand is all that matters.
+                          </p>
+                          <p>
+                            In every part of the process, from brand positioning
+                            to artwork rollout, we're just as invested as you
+                            are. Your challenges are our challenges. Your wins
+                            are our wins.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <section className="bg-gray-100">
+                    <div className="container mx-auto">
+                      <div className="flex py-28">
+                        <div className="w-1/3 pr-8">
+                          <h2 className="text-[4.13rem] leading-none">
+                            Brands we partner with:
+                          </h2>
+                        </div>
+                        <div className="w-2/3">
+                          <div className="grid grid-cols-3 gap-8">
+                            <div className="flex items-center justify-center">
+                              <img
+                                className="h-32 w-44"
+                                src="https://www.robot-food.com/images/Client-Logos/_thumbnailFeatured/c-logos-01.svg"
+                                alt="Brand logo"
+                              />
+                            </div>
+                            <div className="flex items-center justify-center">
+                              <img
+                                className="h-32 w-44"
+                                src="https://www.robot-food.com/images/Client-Logos/_thumbnailFeatured/c-logos-02.svg"
+                                alt="Brand logo"
+                              />
+                            </div>
+                            <div className="flex items-center justify-center">
+                              <img
+                                className="h-32 w-44"
+                                src="https://www.robot-food.com/images/Client-Logos/_thumbnailFeatured/c-logos-10.svg"
+                                alt="Brand logo"
+                              />
+                            </div>
+                            <div className="flex items-center justify-center">
+                              <img
+                                className="h-32 w-44"
+                                src="https://www.robot-food.com/images/Client-Logos/_thumbnailFeatured/c-logos-12.svg"
+                                alt="Brand logo"
+                              />
+                            </div>
+                            <div className="flex items-center justify-center">
+                              <img
+                                className="h-32 w-44"
+                                src="https://www.robot-food.com/images/Client-Logos/_thumbnailFeatured/c-logos-07.svg"
+                                alt="Brand logo"
+                              />
+                            </div>
+                            <div className="flex items-center justify-center">
+                              <img
+                                className="h-32 w-44"
+                                src="https://www.robot-food.com/images/Client-Logos/_thumbnailFeatured/c-logos-14.svg"
+                                alt="Brand logo"
+                              />
+                            </div>
+                            <div className="flex items-center justify-center">
+                              <img
+                                className="h-32 w-44"
+                                src="https://www.robot-food.com/images/Client-Logos/_thumbnailFeatured/Client_Logos_197x144_v5-2023-302.svg"
+                                alt="Brand logo"
+                              />
+                            </div>
+                            <div className="flex items-center justify-center">
+                              <img
+                                className="h-32 w-44"
+                                src="https://www.robot-food.com/images/Client-Logos/_thumbnailFeatured/c-logos-21.svg"
+                                alt="Brand logo"
+                              />
+                            </div>
+                            <div className="flex items-center justify-center">
+                              <img
+                                className="h-32 w-44"
+                                src="https://www.robot-food.com/images/Client-Logos/_thumbnailFeatured/c-logos-20.svg"
+                                alt="Brand logo"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
     </>
   );
 }
