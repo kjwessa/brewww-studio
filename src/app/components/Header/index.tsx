@@ -5,76 +5,63 @@ import Image from "next/image";
 import Link from "next/link";
 import BrewwwLogo from "/public/images/brewww-logotype-gold.png";
 
-interface HeaderData {
-  logo: {
-    url: string;
-  };
-}
 export default async function Header() {
-  const payload = await getPayloadHMR({ config });
-  const header = (await payload.findGlobal({ slug: "header" })) as HeaderData;
+  // TODO: bring back the Payload call when the design is completed
+  // const payload = await getPayloadHMR({ config });
+  // TODO: bring back the header when the design is completed
+  // const header = (await payload.findGlobal({ slug: "header" })) as HeaderData;
 
   return (
     <>
-      <div className="flex h-32 flex-row items-center">
-        <Link href="/">
-          <div className="relative h-12 w-44">
-            <Image
-              src={header.logo.url}
-              alt="logo"
-              fill
-              className="object-contain"
-            />
-          </div>
-        </Link>
-      </div>
-      <header className="w-full bg-brand-black text-sm text-neutral-400">
+      <header className="sticky top-0 z-50 w-full bg-brand-black text-sm text-neutral-400">
         <div className="mx-auto max-w-[120rem] px-12">
           <div className="grid grid-cols-3 items-center py-4">
             <nav className="flex items-center space-x-10 font-semibold uppercase text-white">
               <Link
                 className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/new/work"
+                href="/work"
               >
-                Our work
+                Work
               </Link>
               <Link
                 className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/new/services"
-              >
-                Services
-              </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/new/why-brewww"
-              >
-                Why Brewww?
-              </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/new/about"
-              >
-                About
-              </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/new/play"
+                href="/play"
               >
                 Play
               </Link>
               <Link
                 className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/new/blog"
+                href="/services"
+              >
+                Services
+              </Link>
+              <Link
+                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                href="/why-brewww"
+              >
+                Why
+              </Link>
+              <Link
+                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                href="/about"
+              >
+                About
+              </Link>
+              <Link
+                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                href="/blog"
               >
                 Blog
               </Link>
             </nav>
             <div className="flex justify-center">
-              <Link href="/new">
-                <img
+              <Link href="/home">
+                <Image
                   className="w-36 max-w-full cursor-pointer"
-                  src={BrewwwLogo.src}
+                  src={BrewwwLogo}
                   alt="Brewww Logo"
+                  width={144}
+                  height={40}
                 />
               </Link>
             </div>
@@ -88,7 +75,7 @@ export default async function Header() {
                 </Link>
                 <Link
                   className="inline-block h-12 min-w-[9.88rem] rounded-sm bg-brand-gold px-5 font-bold text-black md:min-w-[10.63rem] min-[1680px]:h-16 min-[1680px]:min-w-[13.75rem]"
-                  href="/new/contact"
+                  href="/contact"
                 >
                   <span className="flex h-full w-full cursor-pointer items-center justify-center">
                     Let's talk

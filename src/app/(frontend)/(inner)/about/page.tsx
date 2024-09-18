@@ -4,6 +4,53 @@ import Image from "next/image";
 export default function About() {
   return (
     <>
+      <section>
+        <div className="relative content-stretch items-start justify-start bg-neutral-900 pb-80 pl-60 pr-24 pt-64 font-light text-white">
+          <div className="grid-rows-auto grid-cols-[repeat(6, 1fr)] relative grid auto-cols-fr gap-4">
+            <div className="col-span-4 row-start-1 row-end-2 flex h-full w-full flex-col items-start justify-start self-start font-bold uppercase">
+              <div className="pb-5">+ About Our Studio</div>
+            </div>
+            <div className="col-start-1 col-end-6 row-start-2 flex h-full w-full flex-col items-center justify-center self-stretch text-[3.13rem] leading-none">
+              <h1 className="mx-0 my-3 min-h-[0vw]">
+                We are Brewww Studio. We craft creative for the kind-hearted,
+                the hustlers, and the visionaries.
+              </h1>
+            </div>
+            <div className="relative col-start-2 col-end-6 row-start-4 row-end-6 h-[50vh] self-stretch overflow-hidden">
+              <Image
+                src="/5ecf34cf4752d3558ae5764d_IMG_0301.1200.jpg"
+                width={1000}
+                height={1000}
+                alt="Studio Image"
+                className="h-[120%] w-full object-cover"
+                style={{
+                  objectPosition: "50% 50%",
+                }}
+              />
+            </div>
+            <div className="relative col-start-1 col-end-2 row-start-4 row-end-5 flex h-full max-h-[9.38rem] min-h-[6.25rem] w-full items-end justify-start">
+              <a
+                className="relative inline-block h-full w-3 max-w-full self-end overflow-hidden"
+                href=""
+              >
+                <div className="absolute left-[0.38rem] top-0 z-[1] h-full w-0 bg-white/[0.35]" />
+                <div className="absolute left-[0.38rem] top-0 h-full w-0 bg-white" />
+              </a>
+            </div>
+            <div className="col-start-3 col-end-6 row-start-5 row-end-7 flex h-full w-full flex-col items-center justify-end self-end text-xl">
+              <p className="z-10 mb-8">
+                Since day one, weve have focused on collaborative relationships,
+                expansive creativity, and consistently delivering results.{" "}
+                <strong className="font-extrabold">
+                  Creative That Just Works
+                </strong>{" "}
+                - thats what sets us apart from everyone else.
+                <br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="about-intro">
         <div className="relative bg-gray-800 pb-12 pr-24 pt-4 text-white">
           <div className="relative -mt-36 mr-24 h-[75vh] overflow-hidden">
@@ -44,53 +91,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      <div>
-        <div className="relative content-stretch items-start justify-start bg-neutral-900 pb-80 pl-60 pr-24 pt-64 font-light text-white">
-          <div className="grid-rows-auto grid-cols-[repeat(6, 1fr)] relative grid auto-cols-fr gap-4">
-            <div className="col-span-4 row-start-1 row-end-2 flex h-full w-full flex-col items-start justify-start self-start font-bold uppercase">
-              <div className="pb-5">+ About Our Studio</div>
-            </div>
-            <div className="col-start-1 col-end-6 row-start-2 flex h-full w-full flex-col items-center justify-center self-stretch text-[3.13rem] leading-none">
-              <h1 className="mx-0 my-3 min-h-[0vw]">
-                We are Brewww Studio. We craft creative for the kind-hearted,
-                the hustlers, and the visionaries.
-              </h1>
-            </div>
-            <div className="relative col-start-2 col-end-6 row-start-4 row-end-6 h-[50vh] self-stretch overflow-hidden">
-              <Image
-                src="/5ecf34cf4752d3558ae5764d_IMG_0301.1200.jpg"
-                width={1000}
-                height={1000}
-                alt="Studio Image"
-                className="h-[120%] w-full object-cover"
-                style={{
-                  objectPosition: "50% 50%",
-                }}
-              />
-            </div>
-            <div className="relative col-start-1 col-end-2 row-start-4 row-end-5 flex h-full max-h-[9.38rem] min-h-[6.25rem] w-full items-end justify-start">
-              <a
-                className="relative inline-block h-full w-3 max-w-full self-end overflow-hidden"
-                href="https://brewwwllc.webflow.io/#start"
-              >
-                <div className="absolute left-[0.38rem] top-0 z-[1] h-full w-0 bg-white/[0.35]" />
-                <div className="absolute left-[0.38rem] top-0 h-full w-0 bg-white" />
-              </a>
-            </div>
-            <div className="col-start-3 col-end-6 row-start-5 row-end-7 flex h-full w-full flex-col items-center justify-end self-end text-xl">
-              <p className="z-10 mb-8">
-                Since day one, weve have focused on collaborative relationships,
-                expansive creativity, and consistently delivering results.{" "}
-                <strong className="font-extrabold">
-                  Creative That Just Works
-                </strong>{" "}
-                - thats what sets us apart from everyone else.
-                <br />
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+
       <div className="bg-black text-white">
         <div className="mx-auto mb-72 max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <h1 className="mb-8 max-w-3xl text-4xl font-bold">
@@ -122,25 +123,6 @@ export default function About() {
             boundaries, challenge conventions, and craft experiences that
             captivate and inspire.
           </p>
-          <div className="mb-8">
-            <h2 className="mb-4 text-3xl font-bold">Clients</h2>
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-              <p className="text-xl">Azle Storage</p>
-              <p className="text-xl">Bexar Collective</p>
-              <p className="text-xl">Blessed Kettle Brewing</p>
-              <p className="text-xl">Crafts with Tina</p>
-              <p className="text-xl">Custom Texas Living</p>
-              <p className="text-xl">Fem Catholic</p>
-              <p className="text-xl">IES National</p>
-              <p className="text-xl">Pietra Fitness</p>
-              <p className="text-xl">Project Light Ministries</p>
-              <p className="text-xl">South Rock Storage</p>
-              <p className="text-xl">Specialty Ceilings</p>
-              <p className="text-xl">St. Dominic</p>
-              <p className="text-xl">St. John the Evangelist</p>
-              <p className="text-xl">The Merry Beggars</p>
-            </div>
-          </div>
         </div>
       </div>
       <div>
@@ -173,14 +155,8 @@ export default function About() {
         </div>
       </div>
       <div>
-        <div
-          className="h-full w-full cursor-none bg-neutral-900 pl-0 pr-28 text-white"
-          id="div-1"
-        >
-          <div
-            className="flex h-screen w-full max-w-full overflow-visible"
-            id="div-2"
-          >
+        <div className="h-full w-full bg-neutral-900 pl-0 pr-28 text-white">
+          <div className="flex h-screen w-full max-w-full overflow-visible">
             <Image
               src="/5f53f60a0033860407ff3718_ThebyWessa2020-6960.jpg"
               width={1000}
@@ -234,9 +210,9 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section className="flex h-screen w-full items-center justify-center bg-zinc-950 bg-[linear-gradient(rgba(8,_8,_8,_0.75),_rgba(8,_8,_8,_0.75))] font-serif text-[20.25rem] font-bold uppercase leading-none text-neutral-400">
+      <section className="flex h-screen w-full items-center justify-center bg-zinc-950 bg-[linear-gradient(rgba(8,_8,_8,_0.75),_rgba(8,_8,_8,_0.75))] text-[20.25rem] font-bold uppercase leading-none text-neutral-400">
         <h1 className="text-center text-white">
-          <span className="ghost-text block">All</span>
+          <span className="block">All</span>
           <span className="-mt-16 block">About</span>
           <span className="-mt-16 block text-brand-gold">Brewww</span>
         </h1>
