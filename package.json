@@ -11,7 +11,8 @@
     "lint": "next lint",
     "generate:importmap": "payload generate:importmap",
     "build:verbose": "set NODE_ENV=production && set NEXT_TELEMETRY_DISABLED=1 && set NODE_OPTIONS=--trace-warnings && next build",
-    "clean": "rm -rf .next/ && rm -rf node_modules/ && pnpm install"
+    "clean": "rm -rf .next/ && rm -rf node_modules/ && pnpm install",
+    "unused": "next-unused --debug"
   },
   "dependencies": {
     "@payloadcms/db-mongodb": "beta",
@@ -50,6 +51,7 @@
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.4",
+    "next-unused": "^0.0.6",
     "postcss": "^8.4.41",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",
@@ -65,5 +67,17 @@
   "overrides": {
     "@types/react": "npm:types-react@19.0.0-rc.0",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.0"
+  },
+  "next-unused": {
+    "alias": {},
+    "include": [
+      "src"
+    ],
+    "exclude": [
+      "node_modules"
+    ],
+    "entrypoints": [
+      "src/app"
+    ]
   }
 }
