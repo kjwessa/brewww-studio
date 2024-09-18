@@ -27,205 +27,163 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div>
-        <section
-          className="relative text-[1.38rem] leading-7 min-[650px]:mb-[40.00rem]"
-          style={{
-            fontKerning: "none",
-          }}
-        >
-          <div className="m-auto flex w-full flex-col px-9 pb-12 min-[650px]:flex-row min-[650px]:items-end min-[650px]:justify-between min-[650px]:pb-24 min-[650px]:pl-24 min-[650px]:pr-24">
-            <div className="order-last hidden w-full max-w-[56.50rem] items-end justify-between pb-4 min-[650px]:flex">
-              <p className="w-full max-w-sm">
-                From fast-growing brands to Fortune 50’s.
-              </p>{" "}
-              (Projects)
-            </div>{" "}
-            <h2 className="relative order-first -ml-0 h-3 w-full overflow-hidden pr-4 text-[15.50rem] font-bold uppercase leading-none">
-              <div className="absolute top-0">
-                <div className="inline-flex overflow-hidden pr-4">
-                  <div className="inline-flex">W</div>
-                  <div className="inline-flex">o</div>
-                  <div className="inline-flex">r</div>
-                  <div className="inline-flex">k</div>
+      <section className="bg-stone-950 py-16 text-zinc-50">
+        <div className="container mx-auto px-4">
+          <div className="grid auto-cols-fr grid-cols-[1fr_1fr_1fr] grid-rows-[1fr_1fr_1fr] gap-8">
+            <div
+              className="col-start-3 col-end-4 row-start-2 row-end-3 flex min-h-[20vw] flex-col justify-between gap-[6.50rem] overflow-hidden rounded-lg bg-zinc-900 p-6"
+              style={{ gridArea: "2 / 3 / 3 / 4" }}
+            >
+              <div className="text-right text-[5.88rem] font-medium leading-none">
+                <div>+26</div>
+              </div>
+              <div className="flex flex-col gap-[1.13rem]">
+                <div className="text-5xl font-medium">Awards</div>
+                <div className="text-base opacity-80">
+                  <div>
+                    Celebrating our commitment to excellence, innovation, and
+                    the transformative power of outstanding design.
+                  </div>
                 </div>
               </div>
-            </h2>
-          </div>{" "}
-          <div className="grid grid-cols-[816.516px_816.531px] grid-rows-[61.00rem] gap-x-[1.13rem] gap-y-10 px-9 min-[650px]:pl-6 min-[650px]:pr-6">
-            <article className="relative col-span-2" id="article-1">
-              <a href="https://vucko.co/project/back-market-motion-identity">
-                <div
-                  className="relative mb-8 cursor-pointer overflow-hidden rounded-xl min-[650px]:mb-6"
-                  style={{
-                    maskImage:
-                      "-webkit-radial-gradient(center, rgb(255, 255, 255), rgb(0, 0, 0))",
-                  }}
-                >
-                  <div className="relative">
-                    <figure className="w-full overflow-hidden">
-                      {"  "}
-                      <picture className="absolute bottom-0 left-0 top-0">
-                        <source
-                          srcSet="https://www.datocms-assets.com/98180/1722635027-vucko_webassets_project-thumbnails_2x_backmarket_clear.jpg?fit=max&fm=webp&h=3000&w=2000"
-                          type="image/webp"
-                        />{" "}
-                        <source
-                          srcSet="https://www.datocms-assets.com/98180/1722635027-vucko_webassets_project-thumbnails_2x_backmarket_clear.jpg?fit=max&fm=jpg&h=1920&w=1920"
-                          type="image/jpg"
-                        />{" "}
-                        <img
-                          className="absolute left-0 top-0 h-full w-full max-w-full object-cover"
-                          src="https://www.datocms-assets.com/98180/1722635027-vucko_webassets_project-thumbnails_2x_backmarket_clear.jpg"
-                        />
-                      </picture>
-                    </figure>{" "}
-                  </div>{" "}
-                </div>{" "}
-                <h2 className="cursor-pointer font-medium">Motion Identity</h2>{" "}
-                <h3 className="cursor-pointer">(Back Market)</h3>
-              </a>
-            </article>
-            <article className="relative col-span-2" id="article-2">
-              <a href="https://vucko.co/project/wrapped-2023">
-                <div
-                  className="relative mb-8 cursor-pointer overflow-hidden rounded-xl min-[650px]:mb-6"
-                  style={{
-                    maskImage:
-                      "-webkit-radial-gradient(center, rgb(255, 255, 255), rgb(0, 0, 0))",
-                  }}
-                >
-                  <div className="relative">
-                    <figure className="w-full overflow-hidden">
-                      {"  "}
-                      <picture className="absolute bottom-0 left-0 top-0">
-                        <source
-                          srcSet="https://www.datocms-assets.com/98180/1713273448-vucko_webassets_project-thumbnails_2x_wrapped23.jpg?fit=max&fm=webp&h=3000&w=2000"
-                          type="image/webp"
-                        />{" "}
-                        <source
-                          srcSet="https://www.datocms-assets.com/98180/1713273448-vucko_webassets_project-thumbnails_2x_wrapped23.jpg?fit=max&fm=jpg&h=1920&w=1920"
-                          type="image/jpg"
-                        />{" "}
-                        <img
-                          className="absolute left-0 top-0 h-full w-full max-w-full object-cover"
-                          src="https://www.datocms-assets.com/98180/1713273448-vucko_webassets_project-thumbnails_2x_wrapped23.jpg"
-                        />
-                      </picture>
-                    </figure>{" "}
-                  </div>{" "}
-                </div>{" "}
-                <h2 className="cursor-pointer font-medium">Wrapped 2023</h2>{" "}
-                <h3 className="cursor-pointer">(Spotify)</h3>
-              </a>
-            </article>
-          </div>
-          {"  "}
-          <div className="mt-32 grid grid-cols-[816.516px_816.531px] grid-rows-[5.25rem] gap-x-[1.13rem] px-9 text-[4.63rem] leading-none min-[650px]:mt-48 min-[650px]:pl-6 min-[650px]:pr-6">
-            <div className="col-span-2 min-[650px]:col-start-2" id="div-1">
-              <a
-                className="inline-flex items-start"
-                href="https://vucko.co/projects"
-              >
-                → See all projects
-                <span className="hidden cursor-pointer text-[1.63rem] leading-8 min-[650px]:inline-flex">
-                  (17)
-                </span>
-              </a>
             </div>
-          </div>
-        </section>
-      </div>
-      <section className="flex min-h-[90vh] items-center justify-center bg-neutral-900 text-white">
-        <div className="container mx-auto px-4 py-8 md:px-6">
-          <h1 className="mx-auto mb-6 max-w-5xl text-center text-5xl font-bold leading-[0.9] tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
-            Some brands are content with silver. Others aim for{" "}
-            <span className="text-amber-400">gold</span>.
-          </h1>
-          <div className="mt-10 flex justify-center">
-            <div className="relative inline-block h-20 w-3 overflow-hidden md:h-28">
-              <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 transform bg-white/35" />
-              <div className="absolute left-1/2 top-0 h-1/2 w-px -translate-x-1/2 transform bg-white" />
+            <div
+              className="col-start-1 col-end-2 row-start-1 row-end-2 flex min-h-[20vw] flex-col justify-between gap-[6.50rem] overflow-hidden rounded-lg bg-zinc-900 p-6"
+              style={{ gridArea: "1 / 1 / 2 / 2" }}
+            >
+              <div className="text-right text-[5.88rem] font-medium leading-none">
+                <div>2024</div>
+              </div>
+              <div className="flex flex-col gap-[1.13rem]">
+                <div className="text-5xl font-medium">Years of experience</div>
+                <div className="text-base opacity-80">
+                  <div>
+                    We elevated our design agency to new heights, embracing
+                    cutting-edge trends and innovative practices
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="col-start-3 col-end-4 row-start-1 row-end-2 flex min-h-[20vw] flex-col justify-between gap-[6.50rem] overflow-hidden rounded-lg bg-zinc-900 p-6"
+              style={{ gridArea: "1 / 3 / 2 / 4" }}
+            >
+              <div className="text-right text-[5.88rem] font-medium leading-none">
+                <div>137%</div>
+              </div>
+              <div className="flex flex-col gap-[1.13rem]">
+                <div className="text-5xl font-medium">Growth</div>
+                <div className="text-base opacity-80">
+                  <div>
+                    The trust our clients place in our ability to deliver
+                    exceptional design solutions.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="col-start-2 col-end-3 row-start-2 row-end-3 flex min-h-[20vw] flex-col justify-between gap-[6.50rem] overflow-hidden rounded-lg bg-zinc-900 p-6"
+              style={{ gridArea: "2 / 2 / 3 / 3" }}
+            >
+              <div className="text-right text-[5.88rem] font-medium leading-none">
+                <div>+30</div>
+              </div>
+              <div className="flex flex-col gap-[1.13rem]">
+                <div className="text-5xl font-medium">Clients</div>
+                <div className="text-base opacity-80">
+                  <div>
+                    Bringing unique challenges that have enriched our creative
+                    journey and expanded our industry impact.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="col-start-2 col-end-3 row-start-3 row-end-4 flex min-h-[20vw] flex-col justify-between gap-[6.50rem] overflow-hidden rounded-lg bg-zinc-900 p-6"
+              style={{ gridArea: "3 / 2 / 4 / 3" }}
+            >
+              <div className="text-right text-[5.88rem] font-medium leading-none">
+                <div>+56</div>
+              </div>
+              <div className="flex flex-col gap-[1.13rem]">
+                <div className="text-5xl font-medium">Cases</div>
+                <div className="text-base opacity-80">
+                  <div>
+                    Our diverse project experience showcases our ability to
+                    tailor bespoke solutions that drive success
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <div>
-        <div
-          className="relative grid auto-cols-fr grid-cols-[.75fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_.75fr_1fr] grid-rows-[auto_auto_auto_auto_auto_auto_auto_auto_auto] gap-4 bg-neutral-900 font-light text-white"
-          id="div-1"
-        >
-          <div
-            className="relative col-start-1 row-start-1 h-screen w-full"
-            id="div-2"
-            style={{
-              gridArea: "1/1/10/6",
-              gridRowEnd: "10",
-            }}
-          >
-            <Image
-              src="/5ffde49e22ac4c70dd0e883e_DSCF6786.1920.jpg"
-              alt="Background"
-              fill
-              className="object-cover opacity-[0.975112]"
-              id="img-1"
+
+      <section className="bg-neutral-900 text-white">
+        <div className="py-16">
+          <div className="relative grid auto-cols-fr grid-cols-[.75fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_.75fr_1fr] grid-rows-[auto_auto_auto_auto_auto_auto_auto_auto_auto] gap-4">
+            <div
+              className="relative col-start-1 row-start-1 h-screen w-full"
               style={{
-                objectPosition: "50% 50%",
+                gridArea: "1/1/10/6",
+                gridRowEnd: "10",
               }}
-            />
-          </div>
-          <h6
-            className="col-start-6 col-end-9 row-start-4 row-end-5 min-h-[0vw] self-end text-4xl"
-            id="h6-1"
-            style={{
-              gridArea: "4/6/5/9",
-            }}
-          >
-            IES National
-          </h6>
-          <div
-            className="col-start-4 row-start-5 row-end-6 flex flex-col items-center justify-center self-stretch justify-self-center overflow-visible py-4 pr-9 text-[5.25rem] font-bold leading-none"
-            id="div-4"
-            style={{
-              gridArea: "5/4/6/9",
-            }}
-          >
-            <h2 className="mb-8 min-h-[0vw]" id="h2-1">
-              Sustainability by Design
-            </h2>
-          </div>
-          <div
-            className="col-start-4 row-start-5 row-end-6 flex flex-col items-center justify-center self-stretch justify-self-center overflow-visible py-4 pr-9 text-[5.25rem] font-bold leading-none"
-            id="div-5"
-            style={{
-              gridArea: "5/4/6/9",
-            }}
-          >
-            <h2 className="z-10 mb-8 min-h-[0vw] overflow-visible" id="h2-2">
-              Sustainability by Design
-            </h2>
-          </div>
-          <div
-            className="col-start-8 col-end-10 p-5 font-bold"
-            id="div-6"
-            style={{
-              gridArea: "8/8/9/10",
-              gridRowEnd: "9",
-              gridRowStart: "8",
-            }}
-          >
-            <a
-              className="relative inline-block max-w-full"
-              href="/work/ies-national-pensacola-fl"
             >
-              <div className="uppercase" id="div-7">
-                View Project
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 w-1/5 bg-white" />
-            </a>
+              <Image
+                src="/5ffde49e22ac4c70dd0e883e_DSCF6786.1920.jpg"
+                alt="Background"
+                fill
+                className="object-cover opacity-[0.975112]"
+                style={{
+                  objectPosition: "50% 50%",
+                }}
+              />
+            </div>
+            <h6
+              className="col-start-6 col-end-9 row-start-4 row-end-5 min-h-[0vw] self-end text-4xl"
+              style={{
+                gridArea: "4/6/5/9",
+              }}
+            >
+              IES National
+            </h6>
+            <div
+              className="col-start-4 row-start-5 row-end-6 flex flex-col items-center justify-center self-stretch justify-self-center overflow-visible py-4 pr-9 text-[5.25rem] font-bold leading-none"
+              style={{
+                gridArea: "5/4/6/9",
+              }}
+            >
+              <h2 className="mb-8 min-h-[0vw]">Sustainability by Design</h2>
+            </div>
+            <div
+              className="col-start-4 row-start-5 row-end-6 flex flex-col items-center justify-center self-stretch justify-self-center overflow-visible py-4 pr-9 text-[5.25rem] font-bold leading-none"
+              style={{
+                gridArea: "5/4/6/9",
+              }}
+            >
+              <h2 className="z-10 mb-8 min-h-[0vw] overflow-visible">
+                Sustainability by Design
+              </h2>
+            </div>
+            <div
+              className="col-start-8 col-end-10 p-5 font-bold"
+              style={{
+                gridArea: "8/8/9/10",
+                gridRowEnd: "9",
+                gridRowStart: "8",
+              }}
+            >
+              <a
+                className="relative inline-block max-w-full"
+                href="/work/ies-national-pensacola-fl"
+              >
+                <div className="uppercase">View Project</div>
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 w-1/5 bg-white" />
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
       <div>
         <div className="relative content-stretch items-start justify-start bg-neutral-900 px-24 py-48 font-light text-white">
           <div className="relative m-auto flex w-full max-w-[62.50rem] flex-grow auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto_auto] flex-col items-stretch justify-center self-start">
