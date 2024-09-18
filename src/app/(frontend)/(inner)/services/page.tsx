@@ -19,6 +19,25 @@ export default function ServicesPage() {
           />
         </div>
       </div>
+      <section className="bg-white px-16 py-32 text-center text-stone-950">
+        <div className="mx-auto max-w-4xl">
+          <div>
+            <h2 className="text-4xl font-bold uppercase">
+              "I would recommend using his services to anyone."
+            </h2>
+            <p className="whitespace-pre-line p-8">
+              "Kevin created a website for me that is out of this world! I would
+              recommend using his services to anyone. I literally expressed an
+              idea and together we conceived a concrete plan and he created a
+              stellar one of a kind website for me. Kevin Wessa is a man of
+              integrity, artistic genius, and knows all the latest technology to
+              create exactly what you're looking for plus more!"
+            </p>
+            <p className="text-base font-semibold">Fr. Jack Knight</p>
+            <p className="text-base">Concrete Catholic</p>
+          </div>
+        </div>
+      </section>
       <div className="bg-white text-stone-950">
         <div className="grid min-h-[40rem] grid-cols-2">
           <div className="flex flex-col justify-center px-12 py-24">
