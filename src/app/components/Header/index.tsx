@@ -188,8 +188,14 @@ export default function Header() {
           isMenuOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
-        <div className="m-2 flex h-[calc(100vh-1rem)] w-[calc(100vw-1rem)] flex-col justify-between rounded-md bg-black p-6">
-          <div className="flex justify-end">
+        <div className="relative m-2 flex h-[calc(100vh-1rem)] w-[calc(100vw-1rem)] flex-col justify-between overflow-hidden rounded-md bg-black p-6">
+          <Image
+            src="/static.gif"
+            alt="Static GIF"
+            fill
+            className="object-cover opacity-[0.03]"
+          />
+          <div className="relative z-10 flex justify-end">
             <button
               onClick={toggleMenu}
               className="text-white focus:outline-none"
@@ -220,7 +226,7 @@ export default function Header() {
               </svg>
             </button>
           </div>
-          <div className="flex flex-col gap-y-4 pb-6 pl-6">
+          <div className="relative z-10 flex flex-col gap-y-4 pb-6 pl-6">
             <div className="w-full overflow-hidden text-8xl uppercase leading-none text-white">
               <Link
                 className="group relative flex w-full max-w-full items-center justify-start opacity-[0.35] transition-opacity duration-300 hover:opacity-100"

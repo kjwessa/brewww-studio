@@ -544,6 +544,25 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <section className="bg-sky-50 pt-5 min-[766px]:pt-8">
+        <div className="mx-auto flex max-w-3xl flex-col items-center justify-center px-8 py-12 text-center min-[766px]:pb-16 min-[766px]:pl-10 min-[766px]:pr-10 min-[766px]:pt-16 min-[1025px]:pb-20 min-[1025px]:pt-20">
+          <div className="text-[3.5rem] leading-tight text-black">
+            <p>
+              Got a creative <em className="italic">challenge</em> we
+            </p>
+            <p>
+              should <span className="underline">hear</span>?
+            </p>
+          </div>
+
+          <a
+            className="mt-8 inline-block items-center justify-center overflow-hidden rounded-full bg-stone-900 py-3 pl-6 pr-12 text-xl text-white min-[766px]:mt-10 min-[766px]:pb-3.5 min-[766px]:pl-8 min-[766px]:pr-8 min-[766px]:pt-3.5 min-[1025px]:mt-16"
+            href=""
+          >
+            Let's Chat
+          </a>
+        </div>
+      </section>
     </>
   );
 }
