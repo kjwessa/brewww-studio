@@ -1,7 +1,217 @@
+import Image from "next/image";
 
 export default function IndividualPage() {
   return (
     <>
+      <div className="bg-white pt-24 text-black">
+        {/* Branding & System Design */}
+        <section className="flex w-full items-end px-16 pt-44 text-center">
+          <div className="flex w-full flex-wrap justify-center">
+            <h1 className="flex flex-col justify-center text-[5.13rem] leading-none">
+              <div className="table pr-1">
+                <div>
+                  <h1>Branding & System Design</h1>
+                </div>
+              </div>
+            </h1>
+            <div className="flex w-full justify-between pb-4 pt-16 text-2xl font-bold uppercase">
+              <h2>Service</h2>
+              <h2>01/03</h2>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div className="relative flex h-0 w-full items-end pb-[66%]">
+            <Image
+              src="/images/branding-books.1920.jpg"
+              alt=""
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+        </section>
+
+        <section className="px-16 pt-20">
+          <div className="m-auto w-full max-w-[120.00rem]">
+            <div className="flex" id="div-1">
+              <div
+                className="flex w-[55%] flex-col pr-[calc(min(6vw,_115px)_*_2)] text-3xl font-bold uppercase"
+                id="div-2"
+              >
+                <h2 className="overflow-hidden">
+                  <div className="">
+                    <h2>Your brand tells the story of your company values</h2>
+                  </div>
+                </h2>
+              </div>
+
+              <div className="flex w-[45%] flex-col" id="div-3">
+                <p className="whitespace-pre-line">
+                  A bold, strategic brand identity is what lies behind a strong
+                  first impression. There are two parts to a strong brand:
+                  strategy and identity. Your brand strategy personifies your
+                  business, and your brand identity visualizes it.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Content creation & craft illustrations */}
+        <section className="flex w-full items-end px-16 pt-44 text-center">
+          <div className="flex w-full flex-wrap justify-center">
+            <h1 className="flex flex-col justify-center text-[5.13rem] leading-none">
+              <div className="table pr-1">
+                <div>
+                  <h1>Content creation & craft illustrations</h1>
+                </div>
+              </div>
+            </h1>
+            <div className="flex w-full justify-between pb-4 pt-16 text-2xl font-bold uppercase">
+              <h2>Service</h2>
+              <h2>03/03</h2>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div className="relative flex h-0 w-full items-end pb-[66%]">
+            <Image
+              src="/images/macbook-opening-lid.1920.jpg"
+              alt=""
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+        </section>
+
+        <section className="px-16 pt-20">
+          <div className="m-auto w-full max-w-[120.00rem]">
+            <div className="flex" id="div-1">
+              <div
+                className="flex w-[55%] flex-col pr-[calc(min(6vw,_115px)_*_2)] text-3xl font-bold uppercase"
+                id="div-2"
+              >
+                <h2 className="overflow-hidden">
+                  <div className="">
+                    <h2>Unleashing the kinetic power of content.</h2>
+                  </div>
+                </h2>
+              </div>
+
+              <div className="flex w-[45%] flex-col" id="div-3">
+                <p className="whitespace-pre-line">
+                  At Brewww Studio, we don't just create content — we craft
+                  experiences that move. As pioneers of unbounded branding, we
+                  believe that powerful content is the rocket fuel that propels
+                  your brand across the cosmos of communication. Our approach is
+                  simple yet revolutionary: we align our creative process with
+                  your brand's unique story, ensuring that every piece of
+                  content we create resonates with your audience on a deeper
+                  level. From captivating brand photography to engaging blog
+                  articles, from eye-catching graphic design to innovative
+                  product concepts, we weave your brand's essence into every
+                  medium. Picture motion-filled illustrations that bring your
+                  ideas to life, or branded apparel that turns your customers
+                  into walking billboards. Imagine iconography that simplifies
+                  complex ideas into instantly recognizable symbols, or brand
+                  collateral that maintains a consistent visual identity across
+                  all touchpoints. At Brewww, we understand that content
+                  creation and design are not just complementary—they're a
+                  cosmic duo in the realm of communication. By fusing
+                  imaginative designs with compelling narratives, we achieve the
+                  most profound form of connection with your audience. Ready to
+                  break free from the gravitational pull of ordinary content?
+                  Let's craft something extraordinary together and set your
+                  brand in motion across the universe.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Custom-built websites */}
+        <section className="flex w-full items-end px-16 pt-44 text-center">
+          <div className="flex w-full flex-wrap justify-center">
+            <h1 className="flex flex-col justify-center text-[5.13rem] leading-none">
+              <div className="table pr-1">
+                <div>
+                  <h1>Custom-built websites</h1>
+                </div>
+              </div>
+            </h1>
+            <div className="flex w-full justify-between pb-4 pt-16 text-2xl font-bold uppercase">
+              <h2>Service</h2>
+              <h2>02/03</h2>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div className="relative flex h-0 w-full items-end pb-[66%]">
+            <Image
+              src="/images/background-capabilities.1200.jpg"
+              alt=""
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+        </section>
+
+        <section className="px-16 pt-20">
+          <div className="m-auto w-full max-w-[120.00rem]">
+            <div className="flex" id="div-1">
+              <div
+                className="flex w-[55%] flex-col pr-[calc(min(6vw,_115px)_*_2)] text-3xl font-bold uppercase"
+                id="div-2"
+              >
+                <h2 className="overflow-hidden">
+                  <div className="">
+                    <h2>
+                      We create digital universes that captivate, engage, and
+                      inspire.
+                    </h2>
+                  </div>
+                </h2>
+              </div>
+
+              <div className="flex w-[45%] flex-col" id="div-3">
+                <p className="whitespace-pre-line">
+                  At Brewww Studio, we don't just build websites - we create
+                  digital universes that captivate, engage, and inspire. Our
+                  approach goes beyond the traditional static experience,
+                  weaving together innovative design, strategic thinking, and
+                  cutting-edge technology to craft brand experiences that
+                  resonate on a deeper level. We believe your website should be
+                  more than just a digital brochure. It's an opportunity to tell
+                  your brand's unique story in a way that moves your audience.
+                  Through immersive interactions, kinetic typography, and
+                  thoughtful user journeys, we transform your digital presence
+                  into a narrative that unfolds with every scroll and click. Our
+                  process begins with meticulous planning and strategy. We dive
+                  deep into your brand's essence, mapping out user flows and
+                  information architecture that align with your goals. This
+                  foundation ensures that every design decision and line of code
+                  serves a purpose, creating a seamless and intuitive experience
+                  for your visitors. Whether you're an e-commerce pioneer, a
+                  creative visionary showcasing your portfolio, or a startup
+                  ready to make your mark, we craft bespoke digital solutions
+                  that reflect your unique identity. Our collaborative approach
+                  means we work closely with you to refine and perfect every
+                  aspect of your online presence. While visual appeal is
+                  crucial, we understand that true digital excellence goes
+                  further. We fine-tune every element - from compelling content
+                  creation to search engine optimization - to ensure your
+                  website not only looks extraordinary but performs
+                  exceptionally. Our goal is to create digital experiences that
+                  convert visitors into devoted customers and brand advocates.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
       <section className="w-full bg-neutral-900 text-white min-[1600px]:pb-16 min-[1600px]:pt-20 min-[1920px]:pb-24 min-[1920px]:pt-28 min-[1921px]:pb-24 min-[1921px]:pt-28">
         <div className="mx-auto w-full max-w-[118.75rem] px-[4%]">
           <h3 className="inline-block text-lg uppercase min-[671px]:pl-6">
@@ -237,13 +447,11 @@ export default function IndividualPage() {
             Powerful and scalable WordPress agency websites
           </h2>
 
-
           <p className="text-4xl lg:mt-8 min-[1025px]:mt-12">
             From interactive brochure sites and online stores to digital
             products that make your life easier, you can rely on WordPress to
             make your project a huge success. We'll plan, design, and deliver
             your website on time and within budget.
-
           </p>
         </div>
       </section>
@@ -386,12 +594,8 @@ export default function IndividualPage() {
               simple terms, WordPress is a tool that we lean on to manage and
               maintain a websites content. Brands like TechCrunch and Mashable
               use WordPress as do many other famous blogs, music sites, and
-
-            
-
               Fortune 500 companies, so you're in good company when choosing to
               use it.
-
             </p>
           </div>
         </div>
