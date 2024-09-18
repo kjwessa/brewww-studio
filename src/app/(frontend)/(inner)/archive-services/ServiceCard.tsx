@@ -2,7 +2,7 @@ import { LinkMain } from "@/app/components/LinkMain";
 import Image from "next/image";
 import { ServiceCard as ServiceCardProps } from "@/app/types/serviceTypes";
 
-export function ServiceCard({
+function ServiceCard({
   image,
   imageAlt,
   slug,

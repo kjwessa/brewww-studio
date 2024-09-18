@@ -1,4 +1,75 @@
-import { ImpactCard } from "@/app/components/ImpactCard";
+export interface ServiceData {
+  id: string;
+  slug: string;
+  published: boolean;
+  featImg: string;
+  featImgAlt: string;
+  pageHero: {
+    heroTitle: string;
+    heroNumber: string;
+  };
+  pageIntro: {
+    introTitle: string;
+    introDescription: string;
+  };
+  card: {
+    cardTitle: string;
+    cardDescription: string;
+  };
+}
+
+export interface ServicePageHero {
+  pageHero: {
+    heroTitle: string;
+    heroNumber: string;
+  };
+}
+
+export interface ServicePageImage {
+  featImg: string;
+  featImgAlt: string;
+}
+
+export interface ServicePageIntro {
+  pageIntro: {
+    introTitle: string;
+    introDescription: string;
+  };
+}
+
+export interface ServiceCard {
+  image: string;
+  imageAlt: string;
+  slug: string;
+  title: string;
+  description: string;
+}
+
+function ServiceCard({
+  image,
+  imageAlt,
+  slug,
+  title,
+  description,
+}: ServiceCard) {
+  return (
+    <div>
+      <h2 className="mb-3 text-3xl font-bold uppercase">{title}</h2>
+      <div>
+        <div className="relative h-32 w-full pb-[66%]">
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            style={{ objectFit: "cover" }}
+          />
+        </div>
+      </div>
+      <p className="py-3 text-base">{description}</p>
+      <LinkMain text="Learn More" link={`/services/${slug}`} size="medium" />
+    </div>
+  );
+}
 
 export function ServicesImpact() {
   return (

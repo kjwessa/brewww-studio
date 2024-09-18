@@ -1,6 +1,91 @@
+import Image from "next/image";
+
 export default function ServicesPage() {
   return (
     <>
+      <div className="relative flex bg-white text-stone-950">
+        <h1 className="absolute bottom-0 left-0 right-[17.88rem] top-[23.75rem] z-[1] p-16 text-[5rem] leading-none text-white">
+          <div className="max-w-4xl">
+            <div>Creative storytelling for unbounded brands</div>
+          </div>
+        </h1>
+
+        <div className="relative flex h-[50.46rem] w-full flex-grow items-end object-cover">
+          <Image
+            src="/images/Aldridge-02665.1200-p-1080.jpeg"
+            alt="text"
+            fill
+            style={{ objectFit: "cover" }}
+          />
+        </div>
+      </div>
+      <div className="bg-white text-stone-950">
+        <div className="grid min-h-[40rem] grid-cols-2">
+          <div className="flex flex-col justify-center px-12 py-24">
+            <h2 className="pb-4 text-[3.13rem] leading-none">Our Specialty</h2>
+            <p>
+              At Brewww Studio, every project is a journey to explore new
+              creative frontiers. Partnering closely with our clients, we aim to
+              design captivating visuals that make an immediate impact and leave
+              a lasting legacy.
+            </p>
+          </div>
+          <div className="relative flex flex-col justify-center px-24 py-16 opacity-[0.9501] blur-[0px]">
+            <Image
+              src="/images/beer-delivery.1920.jpg"
+              alt="text"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+        </div>
+        <div className="grid min-h-[40rem] grid-cols-2">
+          <div className="relative flex flex-col justify-center px-24 py-16 opacity-[0.9501] blur-[0px]">
+            <Image
+              src="/images/broken-glass-light.1920.jpg"
+              alt="text"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className="flex flex-col justify-center px-12 py-24">
+            <h2 className="pb-4 text-[3.13rem] leading-none">Your Growth</h2>
+            <p>
+              We are always looking ahead. As your dedicated digital design
+              studio, we collaborate with you to tackle real-world challenges in
+              a dynamic environment. From logo creation to comprehensive digital
+              marketing campaigns, we implement diverse strategies that drive
+              growth and ensure your brand thrives.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className="flex max-w-6xl items-start justify-between bg-white px-8 py-12 text-stone-950">
+          <div className="w-[calc(42%_-_12px)] text-4xl font-medium">
+            <p>Design that makes a good impression and investment.</p>
+          </div>
+          <div className="mt-16 w-[calc(50%_-_12px)] text-xl">
+            At Brewww Studio, ROI isnt optional—its essential. We create brand
+            experiences that not only look good but drive real results. Our
+            superior design nurtures relationships and delivers value, proven
+            across industries like fitness, non-profits, media & entertainment,
+            and e-commerce.
+            <div className="mt-12">
+              <p className="mt-5 font-medium text-neutral-800 opacity-60">
+                5.0/5.0 Avg. Rating on{" "}
+                <a className="underline" href="">
+                  Facebook
+                </a>
+                {" and "}
+                <a className="underline" href="">
+                  Google
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div>
         <section className="relative grid grid-cols-[105.50rem] grid-rows-[1155px_104px] items-center justify-items-center bg-zinc-950 text-center uppercase text-neutral-400">
           <span className="text-[13.00rem] font-bold leading-none text-white">
