@@ -9,13 +9,14 @@ export const Header: GlobalConfig = {
       name: "logo",
       type: "upload",
       relationTo: "media",
-      label: "logo",
-      required: true,
+      label: "Logo",
+      required: false,
     },
     {
       name: "nav",
       type: "array",
       label: "Navigation",
+      required: false,
       fields: [
         { name: "label", label: "Label", type: "text" },
         { name: "link", label: "Link", type: "text" },

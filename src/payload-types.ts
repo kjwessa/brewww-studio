@@ -63,7 +63,7 @@ export interface UserAuthOperations {
  */
 export interface Media {
   id: string;
-  name?: string | null;
+  title?: string | null;
   altText?: string | null;
   prefix?: string | null;
   updatedAt: string;
@@ -379,7 +379,7 @@ export interface PayloadMigration {
  */
 export interface Header {
   id: string;
-  logo: string | Media;
+  logo?: (string | null) | Media;
   nav?:
     | {
         label?: string | null;
@@ -396,8 +396,8 @@ export interface Header {
  */
 export interface Footer {
   id: string;
-  logo: string | Media;
-  copyrightNotice: string;
+  logo?: (string | null) | Media;
+  copyrightNotice?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }

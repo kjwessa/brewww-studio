@@ -10,14 +10,14 @@ export const Footer: GlobalConfig = {
       type: "upload",
       relationTo: "media",
       label: "logo",
-      required: true,
+      required: false,
     },
 
     {
       name: "copyrightNotice",
       label: "Copyright Notice",
       type: "text",
-      required: true,
+      required: false,
       admin: {
         description: "Appears in the footer",
       },

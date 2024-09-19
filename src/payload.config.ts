@@ -11,23 +11,24 @@ import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 
 //* Import Collections
-import { Users } from "./payload/collections/Users/index";
-import { Media } from "./payload/collections/Media/index";
-import { Work } from "./payload/collections/Work/index";
-import { Clients } from "./payload/collections/Clients/index";
-import { BlogPosts } from "./payload/collections/Posts/index";
-import { BlogCategories } from "./payload/collections/Categories/index";
-import { Services } from "./payload/collections/Services/index";
-import { Testimonials } from "./payload/collections/Testimonials/index";
-import { Location } from "./payload/collections/Locations/index";
-import { Results } from "./payload/collections/Results/index";
-import { Pages } from "./payload/collections/Pages/index";
-import { Playground } from "./payload/collections/Playground/index";
-import { FAQ } from "./payload/collections/FAQ/index";
+import { Users } from "./payload/collections/Users/config";
+import { Media } from "./payload/collections/Media/config";
+import { Work } from "./payload/collections/Work/config";
+import { Clients } from "./payload/collections/Clients/config";
+import { BlogPosts } from "./payload/collections/Posts/config";
+import { BlogCategories } from "./payload/collections/Categories/config";
+import { Services } from "./payload/collections/Services/config";
+import { Testimonials } from "./payload/collections/Testimonials/config";
+import { Location } from "./payload/collections/Locations/config";
+import { Results } from "./payload/collections/Results/config";
+import { Pages } from "./payload/collections/Pages/config";
+import { Playground } from "./payload/collections/Play/config";
+import { FAQ } from "./payload/collections/FAQ/config";
 import { Page, Post } from "src/payload-types";
+
 //* Import Globals
-import { Header } from "./payload/globals/Header";
-import { Footer } from "./payload/globals/Footer";
+import { Header } from "./payload/globals/Header/index";
+import { Footer } from "./payload/globals/Footer/index";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);

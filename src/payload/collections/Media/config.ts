@@ -6,7 +6,7 @@ export const Media: CollectionConfig = {
   //* Collection Fields
   fields: [
     {
-      name: "name",
+      name: "title",
       type: "text",
       label: "File Name",
       required: false,
@@ -20,6 +20,10 @@ export const Media: CollectionConfig = {
   ],
 
   //* Admin Settings
+  admin: {
+    useAsTitle: "title",
+    listSearchableFields: ["title", "altText, url"],
+  },
   access: {
     read: () => true,
   },
