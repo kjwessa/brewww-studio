@@ -23,6 +23,7 @@ import { Location } from "./payload/collections/Locations/index";
 import { Results } from "./payload/collections/Results/index";
 import { Pages } from "./payload/collections/Pages/index";
 import { Playground } from "./payload/collections/Playground/index";
+import { FAQ } from "./payload/collections/FAQ/index";
 import { Page, Post } from "src/payload-types";
 //* Import Globals
 import { Header } from "./payload/globals/Header";
@@ -111,6 +112,7 @@ export default buildConfig({
     Work,
     Playground,
     Services,
+    FAQ,
     Clients,
     Testimonials,
     Location,
