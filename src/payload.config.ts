@@ -134,8 +134,6 @@ export default buildConfig({
       collections: {
         media: {
           prefix: "media",
-        },
-        [Media.url]: {
           disablePayloadAccessControl: true,
         },
       },
@@ -150,24 +148,7 @@ export default buildConfig({
         forcePathStyle: true,
       },
     }),
-    // cloudStorage({
-    //   collections: {
-    //     media: {
-    //       prefix: "media",
-    //       adapter: s3Adapter({
-    //         config: {
-    //           credentials: {
-    //             accessKeyId: CLOUDFLARE_ACCESS_KEY_ID,
-    //             secretAccessKey: CLOUDFLARE_SECRET_ACCESS_KEY,
-    //           },
-    //           region: "auto",
-    //           endpoint: CLOUDFLARE_ENDPOINT,
-    //         },
-    //         bucket: CLOUDFLARE_BUCKET,
-    //       }),
-    //     },
-    //   },
-    // }),
+
     seoPlugin({
       generateTitle,
       generateURL,
