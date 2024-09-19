@@ -194,6 +194,7 @@ export default function Header() {
             alt="Static GIF"
             fill
             className="object-cover opacity-[0.03]"
+            unoptimized
           />
           <div className="relative z-10 flex justify-end">
             <button
