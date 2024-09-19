@@ -27,6 +27,30 @@ export default function Header() {
             <nav className="flex items-center space-x-4 font-semibold uppercase text-white">
               <Link
                 className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                href="/about"
+              >
+                About
+              </Link>
+              <Link
+                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                href="/why-brewww"
+              >
+                Why
+              </Link>
+              <Link
+                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                href="/blog"
+              >
+                Blog
+              </Link>
+              <Link
+                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                href="/play"
+              >
+                Play
+              </Link>
+              <Link
+                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
                 href="/work"
               >
                 Work
@@ -37,18 +61,7 @@ export default function Header() {
               >
                 /IN
               </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/play"
-              >
-                Play
-              </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/play/individual"
-              >
-                /IN
-              </Link>
+
               <Link
                 className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
                 href="/services"
@@ -60,30 +73,6 @@ export default function Header() {
                 href="/services/individual"
               >
                 /IN
-              </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/blog"
-              >
-                Blog
-              </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/blog/individual"
-              >
-                /IN
-              </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/why-brewww"
-              >
-                Why
-              </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/about"
-              >
-                About
               </Link>
             </nav>
             <div className="flex justify-center">
