@@ -33,11 +33,21 @@ export const Playground: CollectionConfig = {
       label: "Published Date",
       admin: {
         description:
-          "The date the article was published. This is used to sort the articles.",
+          "The date the Play Case Study was published. This is used to sort the Play Case Studies.",
         position: "sidebar",
         date: {
           pickerAppearance: "dayAndTime",
         },
+      },
+      hooks: {
+        beforeChange: [
+          ({ siblingData, value }) => {
+            if (siblingData._status === "published" && !value) {
+              return new Date();
+            }
+            return value;
+          },
+        ],
       },
     },
     {
@@ -48,13 +58,31 @@ export const Playground: CollectionConfig = {
           label: "Content",
           fields: [
             {
-              name: "imageThumbnail",
+              name: "imageMain",
               type: "upload",
               relationTo: "media",
-              label: "Image Thumbnail",
+              label: "Main Image",
               required: true,
               admin: {
-                description: "Add the image thumbnail for the playground here.",
+                description: "Add the main image for the playground here.",
+              },
+            },
+            {
+              name: "tagline",
+              type: "text",
+              label: "Tagline",
+              required: false,
+              admin: {
+                description: "Add the tagline for the playground here.",
+              },
+            },
+            {
+              name: "description",
+              type: "textarea",
+              label: "Description",
+              required: false,
+              admin: {
+                description: "Add the description for the playground here.",
               },
             },
           ],

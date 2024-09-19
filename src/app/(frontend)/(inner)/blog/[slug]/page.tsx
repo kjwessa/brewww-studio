@@ -85,7 +85,7 @@ const ImageSection = ({ featuredImage }: ImageSectionProps) => {
       : featuredImage?.url || aboutImage.src;
   let imageAlt =
     typeof featuredImage === "object"
-      ? featuredImage?.altText
+      ? featuredImage?.alt
       : "Featured image for blog post";
 
   return (
