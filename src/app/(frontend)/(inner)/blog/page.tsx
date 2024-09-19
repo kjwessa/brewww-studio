@@ -1,6 +1,20 @@
 export default function BlogPage() {
   return (
     <>
+      <div>
+        <div className="flex flex-col content-stretch items-start justify-end bg-neutral-900 px-24 pb-24 pt-60 font-light text-white">
+          <div className="m-auto flex w-full max-w-[62.50rem] flex-grow auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto_auto] flex-col items-stretch justify-center gap-4 self-start font-bold">
+            <div className="pb-5 text-center uppercase">+ Insights</div>
+            <h1 className="mx-0 my-3 mb-8 min-h-[0vw] text-center text-[6.75rem] leading-none">
+              Their insights are simply...brilliant.
+            </h1>
+            <div className="pb-5 text-center uppercase text-neutral-400">
+              - Our Moms (probably)
+            </div>
+          </div>
+        </div>
+      </div>
+
       <section className="bg-neutral-900 py-24">
         <div className="container mx-auto">
           <h1 className="mb-12 text-4xl font-bold text-white">Insights</h1>
@@ -168,6 +182,21 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
+      <div>
+        <div className="content-stretch items-start justify-start bg-neutral-900 px-24 py-36 font-light text-white">
+          <div className="m-auto content-stretch items-start justify-start px-24 py-36">
+            <div className="pb-5 text-center font-bold uppercase">
+              + Its time to wonder
+            </div>
+            <h2 className="mb-8 min-h-[0vw] text-center text-[2.63rem] leading-none">
+              Brewww is a creative studio that finds the places where{" "}
+              <strong className="font-extrabold">needs</strong>,{" "}
+              <strong className="font-extrabold">stories</strong>, and{" "}
+              <strong className="font-extrabold">technology</strong> overlap.
+            </h2>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
