@@ -66,6 +66,7 @@ export default async function PlayPage() {
                         alt={"Project Thumbnail"}
                         layout="fill"
                         style={{ objectFit: "cover" }}
+                        unoptimized
                       />
                     </div>
                   </div>
