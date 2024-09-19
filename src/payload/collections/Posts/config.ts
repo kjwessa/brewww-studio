@@ -157,6 +157,7 @@ export const BlogPosts: CollectionConfig = {
     },
     useAsTitle: "title",
   },
+
   defaultSort: "-publishedAt",
   labels: {
     singular: "Post",

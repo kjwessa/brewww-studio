@@ -63,8 +63,23 @@ export interface UserAuthOperations {
  */
 export interface Media {
   id: string;
-  title?: string | null;
-  altText?: string | null;
+  title: string;
+  alt: string;
+  caption?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   prefix?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -235,7 +250,9 @@ export interface Play {
   slugLock?: boolean | null;
   publishedAt: string;
   content: {
-    imageThumbnail: string | Media;
+    imageMain: string | Media;
+    tagline?: string | null;
+    description?: string | null;
   };
   metadata?: {
     relatedPlaygrounds?: (string | Play)[] | null;
