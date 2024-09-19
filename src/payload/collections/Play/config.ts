@@ -25,6 +25,25 @@ export const Playground: CollectionConfig = {
         description: "Add the title of the Playground case study here.",
       },
     },
+    {
+      name: "tagline",
+      type: "text",
+      label: "Tagline",
+      required: true,
+      admin: {
+        description: "Add the tagline for the playground here.",
+      },
+    },
+    {
+      name: "description",
+      type: "textarea",
+      label: "Description",
+      required: false,
+      admin: {
+        description: "Add the description for the playground here.",
+      },
+    },
+    // TODO: make sure the slug locks after being published
     ...slugField(),
     {
       name: "publishedAt",
@@ -65,24 +84,6 @@ export const Playground: CollectionConfig = {
               required: true,
               admin: {
                 description: "Add the main image for the playground here.",
-              },
-            },
-            {
-              name: "tagline",
-              type: "text",
-              label: "Tagline",
-              required: false,
-              admin: {
-                description: "Add the tagline for the playground here.",
-              },
-            },
-            {
-              name: "description",
-              type: "textarea",
-              label: "Description",
-              required: false,
-              admin: {
-                description: "Add the description for the playground here.",
               },
             },
           ],
@@ -147,12 +148,12 @@ export const Playground: CollectionConfig = {
   },
   admin: {
     description: "Interior Brewww projects",
-    defaultColumns: ["title", "updatedAt"],
+    defaultColumns: ["title", "tagline", "publishedAt", "updatedAt"],
     group: "Portfolio",
-    listSearchableFields: ["title"],
+    listSearchableFields: ["title", "tagline", "description"],
     pagination: {
       defaultLimit: 25,
-      limits: [25, 50],
+      limits: [25, 50, 100],
     },
     useAsTitle: "title",
   },
@@ -160,6 +161,20 @@ export const Playground: CollectionConfig = {
   labels: {
     singular: "Playground",
     plural: "Playground",
+  },
+  hooks: {
+    afterRead: [
+      ({ doc }) => {
+        if (
+          doc.publishedAt &&
+          typeof doc.publishedAt === "object" &&
+          "$date" in doc.publishedAt
+        ) {
+          doc.publishedAt = new Date(doc.publishedAt.$date);
+        }
+        return doc;
+      },
+    ],
   },
   versions: {
     drafts: true,

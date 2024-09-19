@@ -125,6 +125,8 @@ export interface Page {
 export interface Post {
   id: string;
   title: string;
+  tagline?: string | null;
+  description?: string | null;
   imageMain?: (string | null) | Media;
   content?: {
     root: {
@@ -246,13 +248,13 @@ export interface Client {
 export interface Play {
   id: string;
   title: string;
+  tagline: string;
+  description?: string | null;
   slug: string;
   slugLock?: boolean | null;
   publishedAt: string;
   content: {
     imageMain: string | Media;
-    tagline?: string | null;
-    description?: string | null;
   };
   metadata?: {
     relatedPlaygrounds?: (string | Play)[] | null;

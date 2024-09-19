@@ -27,6 +27,26 @@ export const BlogPosts: CollectionConfig = {
       },
     },
     {
+      name: "tagline",
+      type: "text",
+      label: "Post Tagline",
+      required: false,
+      admin: {
+        description:
+          "The tagline of the article as it appears around the site.",
+      },
+    },
+    {
+      name: "description",
+      type: "textarea",
+      label: "Post Description",
+      required: false,
+      admin: {
+        description:
+          "The description of the article as it appears around the site.",
+      },
+    },
+    {
       type: "tabs",
       tabs: [
         {

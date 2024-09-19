@@ -9,7 +9,6 @@ export default async function PlayPage() {
     limit: 4,
     sort: "-publishedAt",
   });
-  console.log(projects);
 
   return (
     <>
@@ -71,7 +70,7 @@ export default async function PlayPage() {
                         {project.title || "Untitled Project"}
                       </div>
                       <div className="m-1 inline-block">·</div>
-                      {"Write a cool subtitle here"}
+                      {project?.tagline || "Untitled Tagline"}
                     </div>
                     <div className="text-neutral-400">
                       {"Write a cool category here"}
