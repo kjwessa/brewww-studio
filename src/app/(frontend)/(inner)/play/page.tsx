@@ -37,15 +37,11 @@ export default async function PlayPage() {
               <div className="mb-4 text-xs uppercase">Selected Projects</div>
             </div>
             {projects.docs.map((project) => {
-              console.log("Project:", project.title);
-              console.log("Image data:", project.content.imageThumbnail);
               const imageSrc =
                 typeof project.content.imageThumbnail === "string"
                   ? project.content.imageThumbnail
                   : project.content.imageThumbnail?.url ||
                     "https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10ccaad8365d669c95e70_63c91a92dc0c340932978b8f_image-ueno-template-04-p-3200.jpeg";
-
-              console.log("Resolved image src:", imageSrc);
 
               return (
                 <Link
@@ -66,7 +62,6 @@ export default async function PlayPage() {
                         alt={"Project Thumbnail"}
                         layout="fill"
                         style={{ objectFit: "cover" }}
-                        unoptimized
                       />
                     </div>
                   </div>

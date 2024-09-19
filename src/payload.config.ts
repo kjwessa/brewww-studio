@@ -5,8 +5,6 @@ import sharp from "sharp";
 
 //* Import Plugins
 import { s3Storage } from "@payloadcms/storage-s3";
-// import { cloudStorage } from "@payloadcms/plugin-cloud-storage";
-// import { s3Adapter } from "@payloadcms/plugin-cloud-storage/s3";
 import { seoPlugin } from "@payloadcms/plugin-seo";
 import { GenerateTitle, GenerateURL } from "@payloadcms/plugin-seo/types";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
@@ -35,11 +33,11 @@ import { Footer } from "./payload/globals/Footer/index";
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
-const generateTitle: GenerateTitle<Page | Post> = ({ doc }) => {
+const generateTitle: GenerateTitle<Page | Post> = ({ doc }: { doc: any }) => {
   return doc?.title ? `${doc.title} | Brewww Studio` : "Brewww Studio ";
 };
 
-const generateURL: GenerateURL<Page | Post> = ({ doc }) => {
+const generateURL: GenerateURL<Page | Post> = ({ doc }: { doc: any }) => {
   return doc?.slug
     ? `${process.env.NEXT_PUBLIC_SERVER_URL!}/${doc.slug}`
     : process.env.NEXT_PUBLIC_SERVER_URL!;
@@ -78,6 +76,11 @@ if (!CLOUDFLARE_SECRET_ACCESS_KEY) {
 const CLOUDFLARE_ENDPOINT = process.env.CLOUDFLARE_ENDPOINT;
 if (!CLOUDFLARE_ENDPOINT) {
   throw new Error("CLOUDFLARE_ENDPOINT environment variable is not defined");
+}
+
+const CLOUDFLARE_PUBLIC_URL = process.env.CLOUDFLARE_PUBLIC_URL;
+if (!CLOUDFLARE_PUBLIC_URL) {
+  throw new Error("CLOUDFLARE_PUBLIC_URL environment variable is not defined");
 }
 
 //* Build Configuration
@@ -135,6 +138,9 @@ export default buildConfig({
         media: {
           prefix: "media",
           disablePayloadAccessControl: true,
+          generateFileURL: (file: { filename: string }) => {
+            return `${CLOUDFLARE_PUBLIC_URL}/${file.filename}`;
+          },
         },
       },
       bucket: CLOUDFLARE_BUCKET,
