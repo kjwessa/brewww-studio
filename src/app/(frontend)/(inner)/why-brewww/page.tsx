@@ -12,6 +12,117 @@ import AboutImageTen from "/public/images/brewww-ten.jpeg";
 export default function WhyPage() {
   return (
     <>
+      <div className="grid w-full max-w-6xl grid-cols-4 grid-rows-[15.63rem] gap-x-10 bg-black px-6 pb-10 pt-16 text-[2.63rem] font-light leading-none text-white min-[1000px]:grid-cols-12 min-[1000px]:p-16">
+        <div className="col-span-4 min-[1000px]:col-span-10">
+          <h1>
+            We imagine and craft brands that are more than symbols; they are
+            catalysts for change.
+            <br /> <br />
+            Our brands inspire people to embrace new values, rally behind
+            meaningful causes, and take impactful action.
+          </h1>
+        </div>
+      </div>
+      <div className="grid w-full grid-cols-3 gap-x-20 bg-black px-6 py-10 font-light text-white">
+        <div className="mb-10 pb-10 min-[1000px]:mb-0 min-[1000px]:pb-0">
+          <h2 className="mb-6 text-[2.63rem] leading-none min-[1000px]:mb-8 min-[1000px]:max-w-[84%]">
+            Brand Strategy
+          </h2>
+          <p className="text-lg text-zinc-400">
+            Strategy underpins everything we brewww, and we consider every
+            touchpoint of your brand. From buttons to billboards, we aim for a
+            strategic narrative that helps tell your story in a way that
+            resonates. Our brands are empowered for now, and ready for what is
+            next.
+          </p>
+          <div className="mt-6 text-[10.63rem] leading-none min-[1000px]:mt-12">
+            01
+          </div>
+        </div>
+        <div className="mb-10 pb-10 min-[1000px]:mb-0 min-[1000px]:pb-0">
+          <h2 className="mb-6 text-[2.63rem] leading-none min-[1000px]:mb-8 min-[1000px]:max-w-[84%]">
+            Design Systems
+          </h2>
+          <p className="text-lg text-zinc-400">
+            Design goes beyond pixels and color palletes - it needs a home and a
+            structure. We build design systems that echo across print, social,
+            and web. We seek to empower marketing teams and owners to utilize
+            their branding to the fullest extent. We aim for the atomic, solving
+            the now, and adaptable for tomorrow. Made for your audience to help
+            recognize who you are.
+          </p>
+          <div className="mt-6 text-[10.63rem] leading-none min-[1000px]:mt-12">
+            02
+          </div>
+        </div>
+        <div>
+          <h2 className="mb-6 text-[2.63rem] leading-none min-[1000px]:mb-8 min-[1000px]:max-w-[84%]">
+            Digital Execution
+          </h2>
+          <p className="text-lg text-zinc-400">
+            Our web team builds SEO optimised CMS websites in either Webflow or
+            Next: giving your team a drop-dead simple to use system to update
+            content, drive growth, and create a unique experience for your
+            users.
+          </p>
+          <div className="mt-6 text-[10.63rem] leading-none min-[1000px]:mt-12">
+            03
+          </div>
+        </div>
+      </div>
+      <div className="mx-auto w-full max-w-6xl bg-black px-6 py-16 font-light text-white">
+        <h2 className="mb-10 text-center text-3xl leading-none">Why Us</h2>
+        <ul className="grid gap-10 border-t-2 border-neutral-600 pt-10 sm:grid-cols-2 lg:grid-cols-3">
+          <li className="space-y-2">
+            <div className="text-lg">🙅‍♂️ No Ego, Just Talent</div>
+            <div className="text-sm text-neutral-400">
+              We foster a collaborative and ego-free environment, where the best
+              ideas thrive, and our teams collective talent shines.
+            </div>
+          </li>
+          <li className="space-y-2">
+            <div className="text-lg">🧠 Strategy First, Design Second</div>
+            <div className="text-sm text-neutral-400">
+              Our process begins with a deep understanding of your business
+              goals and target audience, ensuring our designs are strategic and
+              purposeful.
+            </div>
+          </li>
+          <li className="space-y-2">
+            <div className="text-lg">🚀 Client Empowerment</div>
+            <div className="text-sm text-neutral-400">
+              We equip you with the tools and knowledge to succeed
+              independently, while remaining available for support whenever you
+              need us.
+            </div>
+          </li>
+          <li className="space-y-2">
+            <div className="text-lg">
+              🤝 True Collaboration, Not Just Execution
+            </div>
+            <div className="text-sm text-neutral-400">
+              We see ourselves as an extension of your team, working alongside
+              you in a collaborative process to bring your vision to life.
+            </div>
+          </li>
+          <li className="space-y-2">
+            <div className="text-lg">🗣️ Honesty and Transparency</div>
+            <div className="text-sm text-neutral-400">
+              We value open communication and honesty above all else, providing
+              you with candid feedback and realistic expectations throughout our
+              partnership.
+            </div>
+          </li>
+          <li className="space-y-2">
+            <div className="text-lg">💪 Passion and Hard Work</div>
+            <div className="text-sm text-neutral-400">
+              Our team is driven by a passion for creating exceptional work and
+              a commitment to putting in the hard work necessary to achieve
+              outstanding results.
+            </div>
+          </li>
+        </ul>
+      </div>
       <section className="relative grid grid-cols-[105.63rem] grid-rows-[1155px_104px] items-center justify-items-center bg-zinc-950 text-center uppercase text-neutral-400">
         <span className="text-[20.75rem] font-bold leading-none text-white">
           <span className="relative flex items-center justify-between">
