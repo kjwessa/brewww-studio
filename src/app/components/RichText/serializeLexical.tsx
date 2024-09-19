@@ -67,19 +67,52 @@ export const serializeLexical = ({
           <p key={i}>{serializeLexical({ nodes: elementNode.children })}</p>
         );
       case "heading":
-        const HeadingTag = `h${elementNode.tag}` as
-          | "h1"
-          | "h2"
-          | "h3"
-          | "h4"
-          | "h5"
-          | "h6";
+        const headingLevel = parseInt(elementNode.tag?.slice(1) || "1", 10);
         const headingId = `heading-${headingCounter++}`;
-        return (
-          <HeadingTag key={i} id={headingId}>
-            {serializeLexical({ nodes: elementNode.children })}
-          </HeadingTag>
-        );
+        switch (headingLevel) {
+          case 1:
+            return (
+              <h1 key={i} id={headingId}>
+                {serializeLexical({ nodes: elementNode.children })}
+              </h1>
+            );
+          case 2:
+            return (
+              <h2 key={i} id={headingId}>
+                {serializeLexical({ nodes: elementNode.children })}
+              </h2>
+            );
+          case 3:
+            return (
+              <h3 key={i} id={headingId}>
+                {serializeLexical({ nodes: elementNode.children })}
+              </h3>
+            );
+          case 4:
+            return (
+              <h4 key={i} id={headingId}>
+                {serializeLexical({ nodes: elementNode.children })}
+              </h4>
+            );
+          case 5:
+            return (
+              <h5 key={i} id={headingId}>
+                {serializeLexical({ nodes: elementNode.children })}
+              </h5>
+            );
+          case 6:
+            return (
+              <h6 key={i} id={headingId}>
+                {serializeLexical({ nodes: elementNode.children })}
+              </h6>
+            );
+          default:
+            return (
+              <h1 key={i} id={headingId}>
+                {serializeLexical({ nodes: elementNode.children })}
+              </h1>
+            );
+        }
       case "quote":
         return (
           <blockquote key={i}>

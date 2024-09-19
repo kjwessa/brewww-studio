@@ -127,8 +127,8 @@ export interface Post {
   title: string;
   tagline?: string | null;
   description?: string | null;
-  imageMain?: (string | null) | Media;
-  content?: {
+  imageMain: string | Media;
+  content: {
     root: {
       type: string;
       children: {
@@ -142,7 +142,7 @@ export interface Post {
       version: number;
     };
     [k: string]: unknown;
-  } | null;
+  };
   metadata: {
     relatedPosts?: (string | Post)[] | null;
     categories: (string | Category)[];

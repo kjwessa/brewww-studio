@@ -46,6 +46,96 @@ const config: Config = {
           },
         },
       },
+      typography: (theme: any) => ({
+        DEFAULT: {
+          css: {
+            "--tw-prose-headings": theme("colors.brand.light.text"),
+            h1: {
+              color: theme("colors.brand.light.text"),
+            },
+            h2: {
+              color: theme("colors.brand.light.text"),
+            },
+            h3: {
+              color: theme("colors.brand.light.text"),
+            },
+            h4: {
+              color: theme("colors.brand.light.text"),
+            },
+            h5: {
+              color: theme("colors.brand.light.text"),
+            },
+            h6: {
+              color: theme("colors.brand.light.text"),
+            },
+            a: {
+              color: theme("colors.brand.light.text"),
+            },
+            strong: {
+              color: theme("colors.brand.light.text"),
+            },
+            em: {
+              color: theme("colors.brand.light.text"),
+            },
+            b: {
+              color: theme("colors.brand.light.text"),
+            },
+            p: {
+              color: theme("colors.brand.light.text"),
+            },
+            ul: {
+              color: theme("colors.brand.light.text"),
+            },
+            ol: {
+              color: theme("colors.brand.light.text"),
+            },
+          },
+        },
+        dark: {
+          css: {
+            "--tw-prose-headings": theme("colors.brand.dark.text"),
+            h1: {
+              color: theme("colors.brand.dark.text"),
+            },
+            h2: {
+              color: theme("colors.brand.dark.text"),
+            },
+            h3: {
+              color: theme("colors.brand.dark.text"),
+            },
+            h4: {
+              color: theme("colors.brand.dark.text"),
+            },
+            h5: {
+              color: theme("colors.brand.dark.text"),
+            },
+            h6: {
+              color: theme("colors.brand.dark.text"),
+            },
+            a: {
+              color: theme("colors.brand.dark.text"),
+            },
+            strong: {
+              color: theme("colors.brand.dark.text"),
+            },
+            em: {
+              color: theme("colors.brand.dark.text"),
+            },
+            b: {
+              color: theme("colors.brand.dark.text"),
+            },
+            p: {
+              color: theme("colors.brand.dark.text"),
+            },
+            ul: {
+              color: theme("colors.brand.dark.text"),
+            },
+            ol: {
+              color: theme("colors.brand.dark.text"),
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [require("@tailwindcss/typography")],

@@ -47,27 +47,27 @@ export const BlogPosts: CollectionConfig = {
       },
     },
     {
+      name: "imageMain",
+      type: "upload",
+      relationTo: "media",
+      label: "Main Image",
+      required: true,
+      admin: {
+        description:
+          "The main image of the article that appears on the page and in the list of posts.",
+      },
+    },
+    {
       type: "tabs",
       tabs: [
         {
           label: "Content",
           fields: [
             {
-              name: "imageMain",
-              type: "upload",
-              relationTo: "media",
-              label: "Main Image",
-              required: false,
-              admin: {
-                description:
-                  "The main image of the article that appears on the page and in the list of posts.",
-              },
-            },
-            {
               name: "content",
               type: "richText",
               label: "Content",
-              required: false,
+              required: true,
             },
           ],
         },
