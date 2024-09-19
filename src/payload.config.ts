@@ -5,6 +5,8 @@ import sharp from "sharp";
 
 //* Import Plugins
 import { s3Storage } from "@payloadcms/storage-s3";
+// import { cloudStorage } from "@payloadcms/plugin-cloud-storage";
+// import { s3Adapter } from "@payloadcms/plugin-cloud-storage/s3";
 import { seoPlugin } from "@payloadcms/plugin-seo";
 import { GenerateTitle, GenerateURL } from "@payloadcms/plugin-seo/types";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
@@ -121,15 +123,7 @@ export default buildConfig({
     Users,
   ],
   globals: [Header, Footer],
-  editor: lexicalEditor({
-    // features: ({ rootFeatures }) => {
-    //   return [
-    //     ...rootFeatures,
-    //     BlocksFeature(),
-    //     HeadingFeature({ enabledHeadingSizes: ["h1", "h2", "h3", "h4"] }),
-    //   ];
-    // },
-  }),
+  editor: lexicalEditor({}),
   secret: PAYLOAD_SECRET || "",
   db: mongooseAdapter({
     url: DATABASE_URI || "",
@@ -140,6 +134,9 @@ export default buildConfig({
       collections: {
         media: {
           prefix: "media",
+        },
+        [Media.url]: {
+          disablePayloadAccessControl: true,
         },
       },
       bucket: CLOUDFLARE_BUCKET,
@@ -153,6 +150,24 @@ export default buildConfig({
         forcePathStyle: true,
       },
     }),
+    // cloudStorage({
+    //   collections: {
+    //     media: {
+    //       prefix: "media",
+    //       adapter: s3Adapter({
+    //         config: {
+    //           credentials: {
+    //             accessKeyId: CLOUDFLARE_ACCESS_KEY_ID,
+    //             secretAccessKey: CLOUDFLARE_SECRET_ACCESS_KEY,
+    //           },
+    //           region: "auto",
+    //           endpoint: CLOUDFLARE_ENDPOINT,
+    //         },
+    //         bucket: CLOUDFLARE_BUCKET,
+    //       }),
+    //     },
+    //   },
+    // }),
     seoPlugin({
       generateTitle,
       generateURL,

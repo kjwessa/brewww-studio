@@ -21,7 +21,6 @@ export const Media: CollectionConfig = {
 
   //* Admin Settings
   admin: {
-    useAsTitle: "title",
     listSearchableFields: ["title", "altText, url"],
   },
   access: {
