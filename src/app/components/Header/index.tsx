@@ -21,7 +21,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-brand-black text-sm text-neutral-400">
+      <header className="sticky top-0 z-50 w-full bg-brand-dark-bg text-sm text-neutral-400">
         <div className="mx-auto max-w-[120rem] px-12">
           <div className="grid grid-cols-3 items-center py-4">
             <nav className="flex items-center space-x-4 font-semibold uppercase text-white">
@@ -177,12 +177,12 @@ export default function Header() {
           isMenuOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
-        <div className="relative m-2 flex h-[calc(100vh-1rem)] w-[calc(100vw-1rem)] flex-col justify-between overflow-hidden rounded-md bg-black p-6">
+        <div className="relative m-2 flex h-[calc(100vh-1rem)] w-[calc(100vw-1rem)] flex-col justify-between overflow-hidden rounded-md bg-brand-dark-surface p-6">
           <Image
             src="/static.gif"
             alt="Static GIF"
             fill
-            className="object-cover opacity-[0.03]"
+            className="object-cover opacity-[0.01]"
             unoptimized
           />
           <div className="relative z-10 flex justify-end">

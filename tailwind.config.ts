@@ -33,17 +33,12 @@ const config: Config = {
       colors: {
         brand: {
           gold: "#f8ac43",
-          black: "#060d0e",
-          light: {
-            bg: "#F5F5F5",
-            surface: "#FFFFFF",
-            text: "#333333",
-          },
-          dark: {
-            bg: "#121212",
-            surface: "#1E1E1E",
-            text: "#E0E0E0",
-          },
+          "dark-bg": "#151515",
+          "dark-surface": "#1D1D1D",
+          "dark-text": "#E0E0E0",
+          "light-bg": "#F5F5F5",
+          "light-surface": "#FFFFFF",
+          "light-text": "#333333",
         },
       },
       typography: (theme: any) => ({

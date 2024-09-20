@@ -1,194 +1,91 @@
-export default function BlogPage() {
+import Image from "next/image";
+import Link from "next/link";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
+import configPromise from "@payload-config";
+
+export default async function BlogPage() {
+  const payload = await getPayloadHMR({ config: configPromise });
+  const posts = await payload.find({
+    collection: "posts",
+    limit: 6,
+    sort: "-publishedAt",
+  });
+
   return (
     <>
-      <div>
-        <div className="flex flex-col content-stretch items-start justify-end bg-neutral-900 px-24 pb-24 pt-60 font-light text-white">
-          <div className="m-auto flex w-full max-w-[62.50rem] flex-grow auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto_auto] flex-col items-stretch justify-center gap-4 self-start font-bold">
-            <div className="pb-5 text-center uppercase">+ Insights</div>
-            <h1 className="mx-0 my-3 mb-8 min-h-[0vw] text-center text-[6.75rem] leading-none">
+      <section className="bg-neutral-900 text-white">
+        <div className="container mx-auto px-6 py-24">
+          <div className="mx-auto flex max-w-4xl flex-col items-center justify-center text-center">
+            <div className="mb-4 font-bold uppercase">+ Insights</div>
+            <h1 className="mb-6 text-6xl font-bold leading-tight sm:text-7xl lg:text-8xl">
               Their insights are simply...brilliant.
             </h1>
-            <div className="pb-5 text-center uppercase text-neutral-400">
+            <div className="uppercase text-neutral-400">
               - Our Moms (probably)
             </div>
           </div>
         </div>
-      </div>
-
+      </section>
       <section className="bg-neutral-900 py-24">
         <div className="container mx-auto">
           <h1 className="mb-12 text-4xl font-bold text-white">Insights</h1>
-          <div
-            className="relative grid auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr] grid-rows-[auto] flex-col items-start gap-x-5 gap-y-[6.25rem] text-sm font-semibold text-zinc-100"
-            id="div-1"
-          >
-            <div className="flex h-full items-stretch">
-              <a
-                className="flex w-full max-w-full flex-col items-stretch justify-between"
-                href="#"
-              >
-                <div className="cursor-pointer">
-                  <div className="relative w-full overflow-hidden rounded bg-zinc-500/[0.2] pt-[75%]">
-                    <img
-                      className="absolute bottom-0 left-0 top-0 inline-block h-[120%] w-full max-w-full object-cover align-middle"
-                      src="https://cdn.prod.website-files.com/66b6229adea369db31b34ab3/66cb3f740b23652ceaabc838_work-thumb-111.jpg"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-[0.38rem]">
-                    <h3 className="text-xl mix-blend-difference">
-                      We're one of the 50 companies that creatives 'would kill
-                      to work for'
-                    </h3>
-                    <div className="text-zinc-500">
-                      Our long journey with Destination NSW to study travel
-                      behaviours in a pre-pandemic world.
+          <div className="relative grid auto-rows-auto grid-cols-3 gap-8 text-sm font-semibold text-zinc-100">
+            {posts.docs.map((post) => (
+              <div key={post.id} className="flex flex-col">
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="flex h-full flex-col justify-between"
+                >
+                  <div className="cursor-pointer">
+                    <div className="group relative w-full overflow-hidden rounded bg-zinc-500/[0.2] pt-[80%]">
+                      <Image
+                        src={
+                          typeof post.imageMain === "string"
+                            ? post.imageMain
+                            : (post.imageMain as { url: string })?.url || ""
+                        }
+                        alt={
+                          typeof post.imageMain === "object"
+                            ? post.imageMain.alt
+                            : ""
+                        }
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="mt-5 flex flex-col gap-[0.5rem]">
+                      <div className="flex flex-wrap items-center justify-between gap-[0.15rem] text-xs uppercase text-zinc-500">
+                        <div>
+                          {(post as any).category?.name || "Uncategorized"}
+                        </div>
+                        <div>
+                          {post.metadata?.readTime
+                            ? `${post.metadata.readTime} min read`
+                            : "Add Read Time"}
+                        </div>
+                      </div>
+                      <h3 className="text-2xl mix-blend-difference">
+                        {post.title}
+                      </h3>
+                      <div className="text-base text-zinc-500">
+                        {post.tagline}
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="cursor-pointer">
-                  <div className="col-span-3 row-span-1 flex flex-wrap items-center justify-between gap-[0.13rem] text-xs uppercase text-zinc-500">
-                    <div className="col-span-5 row-span-1">Talks</div>
-                    <div>5 min</div>
+                  <div className="mt-auto cursor-pointer">
+                    <div className="my-4 h-0 w-full bg-zinc-500 opacity-25" />
                   </div>
-                  <div className="my-3 h-0 w-full bg-zinc-500 opacity-25" />
-                </div>
-              </a>
-            </div>
-            <div className="flex h-full items-stretch">
-              <a
-                className="flex w-full max-w-full flex-col items-stretch justify-between"
-                href="#"
-              >
-                <div className="cursor-pointer">
-                  <div className="relative w-full overflow-hidden rounded bg-zinc-500/[0.2] pt-[75%]">
-                    <img
-                      className="absolute bottom-0 left-0 top-0 inline-block h-[120%] w-full max-w-full object-cover align-middle"
-                      src="https://cdn.prod.website-files.com/66b6229adea369db31b34ab3/66cb3fc4e3d0eaf4e5a8feec_1.jpg"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-[0.38rem]">
-                    <h3 className="text-xl mix-blend-difference">
-                      New hires: Marlina Fletcher
-                    </h3>
-                    <div className="text-zinc-500">
-                      Our long journey with Destination NSW to study travel
-                      behaviours in a pre-pandemic world.
-                    </div>
-                  </div>
-                </div>
-                <div className="cursor-pointer">
-                  <div className="col-span-3 row-span-1 flex flex-wrap items-center justify-between gap-[0.13rem] text-xs uppercase text-zinc-500">
-                    <div className="col-span-5 row-span-1">News</div>
-                    <div>6 min</div>
-                  </div>
-                  <div className="my-3 h-0 w-full bg-zinc-500 opacity-25" />
-                </div>
-              </a>
-            </div>
-            <div className="flex h-full items-stretch">
-              <a
-                className="flex w-full max-w-full flex-col items-stretch justify-between"
-                href="#"
-              >
-                <div className="cursor-pointer">
-                  <div className="relative w-full overflow-hidden rounded bg-zinc-500/[0.2] pt-[75%]">
-                    <img
-                      className="absolute bottom-0 left-0 top-0 inline-block h-[120%] w-full max-w-full object-cover align-middle"
-                      src="https://cdn.prod.website-files.com/66b6229adea369db31b34ab3/66cb3fd69a584c42887a2cc1_1.jpg"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-[0.38rem]">
-                    <h3 className="text-xl mix-blend-difference">
-                      Another successful year at The Webbys
-                    </h3>
-                    <div className="text-zinc-500">
-                      Our long journey with Destination NSW to study travel
-                      behaviours in a pre-pandemic world.
-                    </div>
-                  </div>
-                </div>
-                <div className="cursor-pointer">
-                  <div className="col-span-3 row-span-1 flex flex-wrap items-center justify-between gap-[0.13rem] text-xs uppercase text-zinc-500">
-                    <div className="col-span-5 row-span-1">Awards</div>
-                    <div>6 min</div>
-                  </div>
-                  <div className="my-3 h-0 w-full bg-zinc-500 opacity-25" />
-                </div>
-              </a>
-            </div>
-            <div className="flex h-full items-stretch">
-              <a
-                className="flex w-full max-w-full flex-col items-stretch justify-between"
-                href="#"
-              >
-                <div className="cursor-pointer">
-                  <div className="relative w-full overflow-hidden rounded bg-zinc-500/[0.2] pt-[75%]">
-                    <img
-                      className="absolute bottom-0 left-0 top-0 inline-block h-[120%] w-full max-w-full object-cover align-middle"
-                      src="https://cdn.prod.website-files.com/66b6229adea369db31b34ab3/66cb3fe80b23652ceaac24b4_2.jpg"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-[0.38rem]">
-                    <h3 className="text-xl mix-blend-difference">
-                      Is all that Sparkles gold?
-                    </h3>
-                    <div className="text-zinc-500">
-                      Our long journey with Destination NSW to study travel
-                      behaviours in a pre-pandemic world.
-                    </div>
-                  </div>
-                </div>
-                <div className="cursor-pointer">
-                  <div className="col-span-3 row-span-1 flex flex-wrap items-center justify-between gap-[0.13rem] text-xs uppercase text-zinc-500">
-                    <div className="col-span-5 row-span-1">Awards</div>
-                    <div>6 min</div>
-                  </div>
-                  <div className="my-3 h-0 w-full bg-zinc-500 opacity-25" />
-                </div>
-              </a>
-            </div>
-            <div className="flex h-full items-stretch">
-              <a
-                className="flex w-full max-w-full flex-col items-stretch justify-between"
-                href="#"
-              >
-                <div className="cursor-pointer">
-                  <div className="relative w-full overflow-hidden rounded bg-zinc-500/[0.2] pt-[75%]">
-                    <img
-                      className="absolute bottom-0 left-0 top-0 inline-block h-[120%] w-full max-w-full object-cover align-middle"
-                      src="https://cdn.prod.website-files.com/66b6229adea369db31b34ab3/66cb3fffc6fa0145369b2214_framer-website-template-graphicdesign-001-3.jpg"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-[0.38rem]">
-                    <h3 className="text-xl mix-blend-difference">
-                      Why creative education for advertising is stuck in the
-                      dark ages
-                    </h3>
-                    <div className="text-zinc-500">
-                      Our long journey with Destination NSW to study travel
-                      behaviours in a pre-pandemic world.
-                    </div>
-                  </div>
-                </div>
-                <div className="cursor-pointer">
-                  <div className="col-span-3 row-span-1 flex flex-wrap items-center justify-between gap-[0.13rem] text-xs uppercase text-zinc-500">
-                    <div className="col-span-5 row-span-1">News</div>
-                    <div>5 min</div>
-                  </div>
-                  <div className="my-3 h-0 w-full bg-zinc-500 opacity-25" />
-                </div>
-              </a>
-            </div>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
-      <div>
-        <div className="content-stretch items-start justify-start bg-neutral-900 px-24 py-36 font-light text-white">
-          <div className="m-auto content-stretch items-start justify-start px-24 py-36">
-            <div className="pb-5 text-center font-bold uppercase">
-              + Its time to wonder
-            </div>
-            <h2 className="mb-8 min-h-[0vw] text-center text-[2.63rem] leading-none">
+      <section className="bg-neutral-900 py-36 text-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center">
+            <div className="pb-5 font-bold uppercase">+ Its time to wonder</div>
+            <h2 className="mb-8 text-[2.63rem] leading-none">
               Brewww is a creative studio that finds the places where{" "}
               <strong className="font-extrabold">needs</strong>,{" "}
               <strong className="font-extrabold">stories</strong>, and{" "}
@@ -196,17 +93,10 @@ export default function BlogPage() {
             </h2>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }
-
-// import Image from "next/image";
-// import Link from "next/link";
-// import { getPayloadHMR } from "@payloadcms/next/utilities";
-// import configPromise from "@payload-config";
-// import placeholderImage from "/public/images/Aldridge-02665.1200-p-1080.jpeg";
-// import { PreFooter } from "@/app/components/PreFooter";
 
 // type Post = {
 //   id: string;
