@@ -11,6 +11,15 @@ import {
   PreviewField,
 } from "@payloadcms/plugin-seo/fields";
 
+import {
+  BlocksFeature,
+  FixedToolbarFeature,
+  HeadingFeature,
+  HorizontalRuleFeature,
+  InlineToolbarFeature,
+  lexicalEditor,
+} from "@payloadcms/richtext-lexical";
+
 export const BlogPosts: CollectionConfig = {
   slug: "posts",
 
@@ -51,7 +60,7 @@ export const BlogPosts: CollectionConfig = {
       type: "upload",
       relationTo: "media",
       label: "Main Image",
-      required: true,
+      required: false,
       admin: {
         description:
           "The main image of the article that appears on the page and in the list of posts.",
@@ -67,6 +76,17 @@ export const BlogPosts: CollectionConfig = {
               name: "content",
               type: "richText",
               label: "Content",
+              editor: lexicalEditor({
+                features: [
+                  BlocksFeature(),
+                  FixedToolbarFeature(),
+                  HeadingFeature({
+                    enabledHeadingSizes: ["h2", "h3", "h4", "h5", "h6"],
+                  }),
+                  HorizontalRuleFeature(),
+                  InlineToolbarFeature(),
+                ],
+              }),
               required: true,
             },
           ],
@@ -168,7 +188,7 @@ export const BlogPosts: CollectionConfig = {
   admin: {
     description:
       "Writing brings clarity. Writing is a way to make sense of the world.",
-    defaultColumns: ["title", "publishedAt", "updatedAt"],
+    defaultColumns: ["title", "imageMain", "publishedAt", "updatedAt"],
     group: "Blog Posts",
     listSearchableFields: ["title"],
     pagination: {

@@ -6,26 +6,28 @@ export default async function PlayPage() {
   const payload = await getPayloadHMR({ config: configPromise });
   const projects = await payload.find({
     collection: "play",
-    limit: 4,
+    limit: 16,
     sort: "-publishedAt",
   });
 
   return (
     <>
-      <div>
-        <div className="max-w-[82.50rem] text-xl text-neutral-800 min-[480px]:max-w-[84.38rem] min-[720px]:max-w-[86.88rem] min-[720px]:pl-12 min-[720px]:pr-12 min-[1080px]:max-w-[89.38rem] min-[1080px]:pl-16 min-[1080px]:pr-16">
-          <h1 className="mb-1 mt-28 text-[2.88rem] font-light leading-none text-white">
-            Brewww Playground
-          </h1>
-          <p className="mb-24 max-w-[67.50rem] text-[2.88rem] leading-none text-neutral-500">
-            A playground where the artisans at Brewww share internal projects
-            that they are playing around with. From the ridiculous to the
-            somewhat useful, we hone skillsets through imagination and fun.
-          </p>
+      <section className="bg-neutral-900">
+        <div className="container mx-auto px-4 py-24">
+          <div className="max-w-[82.50rem] text-xl text-neutral-800 min-[480px]:max-w-[84.38rem] min-[720px]:max-w-[86.88rem] min-[720px]:pl-12 min-[720px]:pr-12 min-[1080px]:max-w-[89.38rem] min-[1080px]:pl-16 min-[1080px]:pr-16">
+            <h1 className="mb-1 mt-28 text-[2.88rem] font-light leading-none text-white">
+              Brewww Playground
+            </h1>
+            <p className="mb-24 max-w-[67.50rem] text-[2.88rem] leading-none text-neutral-500">
+              A playground where the artisans at Brewww share internal projects
+              that they are playing around with. From the ridiculous to the
+              somewhat useful, we hone skillsets through imagination and fun.
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="py-16">
-        <div>
+      </section>
+      <section className="py-16">
+        <div className="container mx-auto">
           <div className="w-full px-20 text-lg text-white">
             <div>
               <div className="-ml-0 flex max-w-[18ch] items-center text-[4.25rem] leading-none">
@@ -35,238 +37,240 @@ export default async function PlayPage() {
               <div className="mb-4 mt-6 h-0.5 bg-zinc-900" />
               <div className="mb-4 text-xs uppercase">Selected Projects</div>
             </div>
-            {projects.docs.map((project) => {
-              const imageSrc =
-                typeof project.content.imageMain === "string"
-                  ? project.content.imageMain
-                  : project.content.imageMain?.url ||
-                    "https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10ccaad8365d669c95e70_63c91a92dc0c340932978b8f_image-ueno-template-04-p-3200.jpeg";
+            <div className="grid auto-rows-auto grid-cols-2 gap-8">
+              {projects.docs.map((project) => {
+                const imageSrc =
+                  typeof project.content.imageMain === "string"
+                    ? project.content.imageMain
+                    : project.content.imageMain?.url ||
+                      "https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10ccaad8365d669c95e70_63c91a92dc0c340932978b8f_image-ueno-template-04-p-3200.jpeg";
 
-              return (
-                <Link
-                  key={project.id}
+                return (
+                  <Link
+                    key={project.id}
+                    className="block w-full"
+                    href={`/play/${project.slug}`}
+                  >
+                    <div className="relative flex w-full cursor-pointer overflow-hidden rounded-md">
+                      <div className="relative w-full pt-[56.25%]">
+                        <Image
+                          className="absolute inset-0 h-full w-full"
+                          src={
+                            typeof project.content.imageMain === "string"
+                              ? project.content.imageMain
+                              : project.content.imageMain?.url ||
+                                "https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10ccaad8365d669c95e70_63c91a92dc0c340932978b8f_image-ueno-template-04-p-3200.jpeg"
+                          }
+                          alt={"Project Thumbnail"}
+                          layout="fill"
+                          style={{ objectFit: "cover" }}
+                        />
+                      </div>
+                    </div>
+                    <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1">
+                      <div>
+                        <div className="inline-block font-semibold uppercase">
+                          {project.title || "Untitled Project"}
+                        </div>
+                        <div className="m-1 inline-block">·</div>
+                        {project?.tagline || "Untitled Tagline"}
+                      </div>
+                      <div className="text-neutral-400">
+                        {"Write a cool category here"}
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-white py-24">
+        <div className="container mx-auto px-6">
+          <h2 className="mb-6 text-2xl font-bold">Alternate Style</h2>
+          <div className="flex flex-col gap-y-[7.38rem]">
+            <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] items-start gap-y-[7.38rem]">
+              <div
+                className="col-start-4 col-end-9 row-start-1 row-end-2"
+                style={{
+                  gridArea: "1/4/2/9",
+                }}
+              >
+                <a
                   className="col-span-2 row-span-1 inline-block w-full max-w-full"
-                  href={`/play/${project.slug}`}
+                  href=""
+                >
+                  <div className="flex w-full cursor-pointer overflow-hidden rounded-md">
+                    <img
+                      className="inline-block h-full w-full max-w-full object-contain align-middle"
+                      src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10dcd8842ec2b57b28cb6_63c9187126433a43129cc944_image-ueno-template-02.jpeg"
+                    />
+                  </div>
+                  <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1 text-black">
+                    <div>
+                      <div className="inline-block font-semibold uppercase">
+                        Square
+                      </div>
+                      <div className="m-1 inline-block">·</div>
+                      The new norm of life
+                    </div>
+                    <div className="text-gray-600">Brand identity, Website</div>
+                  </div>
+                </a>
+              </div>
+              <div
+                className="col-start-9 col-end-13 row-start-1 row-end-2 flex-grow pl-28"
+                style={{
+                  gridArea: "1/9/2/13",
+                }}
+              >
+                <a
+                  className="col-span-2 row-span-1 inline-block w-full max-w-full"
+                  href=""
+                >
+                  <div className="flex w-full cursor-pointer overflow-hidden rounded-md">
+                    <img
+                      className="inline-block h-full w-full max-w-full object-contain align-middle"
+                      src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10dfd80f1f22872630cce_63c91c81185e3416e7ba7960_image-ueno-template-06-p-2000.jpeg"
+                    />
+                  </div>
+                  <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1 text-black">
+                    <div>
+                      <div className="inline-block font-semibold uppercase">
+                        Castro Capital
+                      </div>
+                      <div className="m-1 inline-block">·</div>
+                      The new norm of life
+                    </div>
+                    <div className="text-gray-600">
+                      Digital design system, Website, Print
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] items-start gap-y-[7.38rem]">
+              <div className="col-span-9 row-span-1 w-full">
+                <a
+                  className="col-span-2 row-span-1 inline-block w-full max-w-full"
+                  href=""
                 >
                   <div className="relative flex w-full cursor-pointer overflow-hidden rounded-md">
                     <div className="relative w-full pt-[56.25%]">
-                      <Image
-                        className="absolute inset-0 h-full w-full"
-                        src={
-                          typeof project.content.imageMain === "string"
-                            ? project.content.imageMain
-                            : project.content.imageMain?.url ||
-                              "https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10ccaad8365d669c95e70_63c91a92dc0c340932978b8f_image-ueno-template-04-p-3200.jpeg"
-                        }
-                        alt={"Project Thumbnail"}
-                        layout="fill"
-                        style={{ objectFit: "cover" }}
+                      <img
+                        className="absolute bottom-0 left-0 top-0 inline-block h-full w-full max-w-full object-cover align-middle"
+                        src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10e2f8842ec5dcab29324_63c91907a7ce6182b053ba02_image-ueno-template-03.jpeg"
                       />
                     </div>
                   </div>
-                  <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1">
+                  <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1 text-black">
                     <div>
                       <div className="inline-block font-semibold uppercase">
-                        {project.title || "Untitled Project"}
+                        Rucksack Magazine
                       </div>
                       <div className="m-1 inline-block">·</div>
-                      {project?.tagline || "Untitled Tagline"}
+                      All about photography
                     </div>
-                    <div className="text-neutral-400">
-                      {"Write a cool category here"}
+                    <div className="text-gray-600">
+                      Brand identity, Website, Print
                     </div>
                   </div>
-                </Link>
-              );
-            })}
-
-            <div className="flex flex-col gap-y-[7.38rem]">
-              <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] items-start gap-y-[7.38rem]">
-                <div
-                  className="col-start-4 col-end-9 row-start-1 row-end-2"
-                  style={{
-                    gridArea: "1/4/2/9",
-                  }}
-                >
-                  <a
-                    className="col-span-2 row-span-1 inline-block w-full max-w-full"
-                    href=""
-                  >
-                    <div className="flex w-full cursor-pointer overflow-hidden rounded-md">
-                      <img
-                        className="inline-block h-full w-full max-w-full object-contain align-middle"
-                        src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10dcd8842ec2b57b28cb6_63c9187126433a43129cc944_image-ueno-template-02.jpeg"
-                      />
-                    </div>
-                    <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1">
-                      <div>
-                        <div className="inline-block font-semibold uppercase">
-                          Square
-                        </div>
-                        <div className="m-1 inline-block">·</div>
-                        The new norm of life
-                      </div>
-                      <div className="text-neutral-400">
-                        Brand identity, Website
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div
-                  className="col-start-9 col-end-13 row-start-1 row-end-2 flex-grow pl-28"
-                  style={{
-                    gridArea: "1/9/2/13",
-                  }}
-                >
-                  <a
-                    className="col-span-2 row-span-1 inline-block w-full max-w-full"
-                    href=""
-                  >
-                    <div className="flex w-full cursor-pointer overflow-hidden rounded-md">
-                      <img
-                        className="inline-block h-full w-full max-w-full object-contain align-middle"
-                        src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10dfd80f1f22872630cce_63c91c81185e3416e7ba7960_image-ueno-template-06-p-2000.jpeg"
-                      />
-                    </div>
-                    <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1">
-                      <div>
-                        <div className="inline-block font-semibold uppercase">
-                          Castro Capital
-                        </div>
-                        <div className="m-1 inline-block">·</div>
-                        The new norm of life
-                      </div>
-                      <div className="text-neutral-400">
-                        Digital design system, Website, Print
-                      </div>
-                    </div>
-                  </a>
-                </div>
+                </a>
               </div>
-              <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] items-start gap-y-[7.38rem]">
-                <div className="col-span-9 row-span-1 w-full">
-                  <a
-                    className="col-span-2 row-span-1 inline-block w-full max-w-full"
-                    href=""
-                  >
-                    <div className="relative flex w-full cursor-pointer overflow-hidden rounded-md">
-                      <div className="relative w-full pt-[56.25%]">
-                        <img
-                          className="absolute bottom-0 left-0 top-0 inline-block h-full w-full max-w-full object-cover align-middle"
-                          src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10e2f8842ec5dcab29324_63c91907a7ce6182b053ba02_image-ueno-template-03.jpeg"
-                        />
-                      </div>
-                    </div>
-                    <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1">
-                      <div>
-                        <div className="inline-block font-semibold uppercase">
-                          Rucksack Magazine
-                        </div>
-                        <div className="m-1 inline-block">·</div>
-                        All about photography
-                      </div>
-                      <div className="text-neutral-400">
-                        Brand identity, Website, Print
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] items-start gap-y-[7.38rem]">
-                <div
-                  className="col-start-7 col-end-13 row-start-1 row-end-2 flex-grow pl-28"
-                  style={{
-                    gridArea: "1/7/2/13",
-                  }}
+            </div>
+            <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] items-start gap-y-[7.38rem]">
+              <div
+                className="col-start-7 col-end-13 row-start-1 row-end-2 flex-grow pl-28"
+                style={{
+                  gridArea: "1/7/2/13",
+                }}
+              >
+                <a
+                  className="col-span-2 row-span-1 inline-block w-full max-w-full"
+                  href=""
                 >
-                  <a
-                    className="col-span-2 row-span-1 inline-block w-full max-w-full"
-                    href=""
-                  >
-                    <div className="flex w-full cursor-pointer overflow-hidden rounded-md">
+                  <div className="flex w-full cursor-pointer overflow-hidden rounded-md">
+                    <img
+                      className="inline-block h-full w-full max-w-full object-contain align-middle"
+                      src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10e81559654d00360030b_63c91be70da88459ac7b5a3a_image-ueno-template-05.jpeg"
+                    />
+                  </div>
+                  <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1 text-black">
+                    <div>
+                      <div className="inline-block font-semibold uppercase">
+                        Romans
+                      </div>
+                      <div className="m-1 inline-block">·</div>
+                      All about photography
+                    </div>
+                    <div className="text-gray-600">
+                      Brand identity, Website, Packaging
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div
+                className="col-start-4 col-end-7 row-start-1 row-end-2"
+                style={{
+                  gridArea: "1/4/2/7",
+                }}
+              >
+                <a
+                  className="col-span-2 row-span-1 inline-block w-full max-w-full"
+                  href=""
+                >
+                  <div className="flex w-full cursor-pointer overflow-hidden rounded-md">
+                    <img
+                      className="inline-block h-full w-full max-w-full object-contain align-middle"
+                      src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d1162e150c60446a56cadd_63c91d6bd8d50020d6d274c0_image-ueno-template-07-p-2000.jpeg"
+                    />
+                  </div>
+                  <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1 text-black">
+                    <div>
+                      <div className="inline-block font-semibold uppercase">
+                        Hakuha
+                      </div>
+                      <div className="m-1 inline-block">·</div>
+                      All about photography
+                    </div>
+                    <div className="text-gray-600">
+                      Digital product, Packaging
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] items-start gap-y-[7.38rem]">
+              <div className="col-span-8 row-span-1">
+                <a
+                  className="col-span-2 row-span-1 inline-block w-full max-w-full"
+                  href=""
+                >
+                  <div className="relative flex w-full cursor-pointer overflow-hidden rounded-md">
+                    <div className="relative w-full pt-[56.25%]">
                       <img
-                        className="inline-block h-full w-full max-w-full object-contain align-middle"
-                        src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10e81559654d00360030b_63c91be70da88459ac7b5a3a_image-ueno-template-05.jpeg"
+                        className="absolute bottom-0 left-0 top-0 inline-block h-full w-full max-w-full object-cover align-middle"
+                        src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10ee4ad83658d2bc97c5a_63c91ec109d76d3e7e34327f_image-ueno-template-08-p-2000.jpeg"
                       />
                     </div>
-                    <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1">
-                      <div>
-                        <div className="inline-block font-semibold uppercase">
-                          Romans
-                        </div>
-                        <div className="m-1 inline-block">·</div>
-                        All about photography
+                  </div>
+                  <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1 text-black">
+                    <div>
+                      <div className="inline-block font-semibold uppercase">
+                        Café de especialidad
                       </div>
-                      <div className="text-neutral-400">
-                        Brand identity, Website, Packaging
-                      </div>
+                      <div className="m-1 inline-block">·</div>
+                      All about photography
                     </div>
-                  </a>
-                </div>
-                <div
-                  className="col-start-4 col-end-7 row-start-1 row-end-2"
-                  style={{
-                    gridArea: "1/4/2/7",
-                  }}
-                >
-                  <a
-                    className="col-span-2 row-span-1 inline-block w-full max-w-full"
-                    href=""
-                  >
-                    <div className="flex w-full cursor-pointer overflow-hidden rounded-md">
-                      <img
-                        className="inline-block h-full w-full max-w-full object-contain align-middle"
-                        src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d1162e150c60446a56cadd_63c91d6bd8d50020d6d274c0_image-ueno-template-07-p-2000.jpeg"
-                      />
-                    </div>
-                    <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1">
-                      <div>
-                        <div className="inline-block font-semibold uppercase">
-                          Hakuha
-                        </div>
-                        <div className="m-1 inline-block">·</div>
-                        All about photography
-                      </div>
-                      <div className="text-neutral-400">
-                        Digital product, Packaging
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] items-start gap-y-[7.38rem]">
-                <div className="col-span-8 row-span-1">
-                  <a
-                    className="col-span-2 row-span-1 inline-block w-full max-w-full"
-                    href=""
-                  >
-                    <div className="relative flex w-full cursor-pointer overflow-hidden rounded-md">
-                      <div className="relative w-full pt-[56.25%]">
-                        <img
-                          className="absolute bottom-0 left-0 top-0 inline-block h-full w-full max-w-full object-cover align-middle"
-                          src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10ee4ad83658d2bc97c5a_63c91ec109d76d3e7e34327f_image-ueno-template-08-p-2000.jpeg"
-                        />
-                      </div>
-                    </div>
-                    <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1">
-                      <div>
-                        <div className="inline-block font-semibold uppercase">
-                          Café de especialidad
-                        </div>
-                        <div className="m-1 inline-block">·</div>
-                        All about photography
-                      </div>
-                      <div className="text-neutral-400">
-                        Brand identity, Website
-                      </div>
-                    </div>
-                  </a>
-                </div>
+                    <div className="text-gray-600">Brand identity, Website</div>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }
