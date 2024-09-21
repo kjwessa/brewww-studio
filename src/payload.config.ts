@@ -29,6 +29,7 @@ import { Page, Post } from "src/payload-types";
 //* Import Globals
 import { Header } from "./payload/globals/Header/index";
 import { Footer } from "./payload/globals/Footer/index";
+import { Pillars } from "./payload/collections/Pillars/config";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -120,6 +121,7 @@ export default buildConfig({
     Services,
     FAQ,
     Brands,
+    Pillars,
     Testimonials,
     Location,
     Results,
