@@ -16,7 +16,7 @@ export const Results: CollectionConfig = {
     {
       name: "client",
       type: "relationship",
-      relationTo: "clients",
+      relationTo: "brands",
       required: true,
     },
     { name: "number", type: "text", label: "Number", required: true },

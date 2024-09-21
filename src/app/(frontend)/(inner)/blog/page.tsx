@@ -7,7 +7,7 @@ export default async function BlogPage() {
   const payload = await getPayloadHMR({ config: configPromise });
   const posts = await payload.find({
     collection: "posts",
-    limit: 6,
+    limit: 100,
     sort: "-publishedAt",
   });
 
@@ -56,7 +56,13 @@ export default async function BlogPage() {
                     <div className="mt-5 flex flex-col gap-[0.5rem]">
                       <div className="flex flex-wrap items-center justify-between gap-[0.15rem] text-xs uppercase text-zinc-500">
                         <div>
-                          {(post as any).category?.name || "Uncategorized"}
+                          {post.metadata?.categories
+                            ?.map((category) =>
+                              typeof category === "object"
+                                ? category.title
+                                : category,
+                            )
+                            .join(", ") || "Uncategorized"}
                         </div>
                         <div>
                           {post.metadata?.readTime

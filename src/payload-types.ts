@@ -19,7 +19,7 @@ export interface Config {
     play: Play;
     services: Service;
     faq: Faq;
-    clients: Client;
+    brands: Brand;
     testimonials: Testimonial;
     locations: Location;
     results: Result;
@@ -127,7 +127,7 @@ export interface Post {
   title: string;
   tagline?: string | null;
   description?: string | null;
-  imageMain?: (string | null) | Media;
+  imageMain: string | Media;
   content: {
     root: {
       type: string;
@@ -180,12 +180,14 @@ export interface Category {
 export interface Work {
   id: string;
   title: string;
+  tagline: string;
+  description?: string | null;
+  imageMain: string | Media;
   slug: string;
   slugLock?: boolean | null;
-  thumbnail: string | Media;
-  testimonial?: (string | null) | Testimonial;
-  metadata: {
-    client: string | Client;
+  brand: string | Brand;
+  metadata?: {
+    testimonial?: (string | null) | Testimonial;
     relatedWorks?: (string | Work)[] | null;
   };
   seo?: {
@@ -193,6 +195,21 @@ export interface Work {
     image?: (string | null) | Media;
     description?: string | null;
   };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "brands".
+ */
+export interface Brand {
+  id: string;
+  title: string;
+  logoLight?: (string | null) | Media;
+  logoDark?: (string | null) | Media;
+  city: string;
+  state: string;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -220,23 +237,8 @@ export interface Testimonial {
     };
     [k: string]: unknown;
   };
-  client: string | Client;
+  brand: string | Brand;
   author: string;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "clients".
- */
-export interface Client {
-  id: string;
-  title: string;
-  logoLight?: (string | null) | Media;
-  logoDark?: (string | null) | Media;
-  city: string;
-  state: string;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -332,7 +334,7 @@ export interface Location {
 export interface Result {
   id: string;
   title: string;
-  client: string | Client;
+  client: string | Brand;
   number: string;
   support: string;
   description?: string | null;
@@ -419,6 +421,17 @@ export interface Footer {
   copyrightNotice?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MediaBlock".
+ */
+export interface MediaBlock {
+  position?: ('default' | 'fullscreen') | null;
+  media: string | Media;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'mediaBlock';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

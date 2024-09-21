@@ -2,8 +2,8 @@ import type { CollectionConfig } from "payload";
 import { authenticated } from "@/payload/access/authenticated";
 import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
 
-export const Clients: CollectionConfig = {
-  slug: "clients",
+export const Brands: CollectionConfig = {
+  slug: "brands",
 
   //* Collection Fields
   fields: [
@@ -67,20 +67,20 @@ export const Clients: CollectionConfig = {
   },
   admin: {
     description:
-      "Our bread and butter. Add (or remove) clients from this list carefully.",
-    defaultColumns: ["title", "logoLight", "city", "state"],
+      "Our bread and butter. Add (or remove) brands from this list carefully.",
+    defaultColumns: ["title", "city", "state"],
     group: "Portfolio",
     listSearchableFields: ["title", "city", "state"],
     pagination: {
-      defaultLimit: 10,
-      limits: [10, 20, 50],
+      defaultLimit: 25,
+      limits: [25, 50, 100],
     },
     useAsTitle: "title",
   },
   defaultSort: "title",
   labels: {
-    singular: "Client",
-    plural: "Clients",
+    singular: "Brand",
+    plural: "Brands",
   },
   versions: {
     drafts: true,

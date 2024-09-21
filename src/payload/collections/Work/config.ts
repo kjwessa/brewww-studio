@@ -14,6 +14,7 @@ import {
 export const Work: CollectionConfig = {
   slug: "work",
 
+  //* Collection Fields
   fields: [
     {
       name: "title",
@@ -25,24 +26,60 @@ export const Work: CollectionConfig = {
         description: "The title of the project as it appears around the site.",
       },
     },
+    {
+      name: "tagline",
+      type: "text",
+      label: "Tagline",
+      required: true,
+      admin: {
+        description:
+          "The tagline of the project as it appears around the site.",
+      },
+    },
+    {
+      name: "description",
+      type: "textarea",
+      label: "Description",
+      required: false,
+      admin: {
+        description:
+          "The description of the project as it appears around the site.",
+      },
+    },
+    {
+      name: "imageMain",
+      type: "upload",
+      label: "Main Image",
+      required: true,
+      relationTo: "media",
+      admin: {
+        description: "This image appears on the site.",
+      },
+    },
     ...slugField(),
+    {
+      name: "brand",
+      type: "relationship",
+      relationTo: "brands",
+      hasMany: false,
+      required: true,
+      admin: {
+        position: "sidebar",
+        description: "Add the name of the brand here.",
+      },
+    },
+
     {
       type: "tabs",
       tabs: [
         {
           label: "Content",
+          fields: [],
+        },
+        {
+          name: "metadata",
+          label: "Meta",
           fields: [
-            {
-              name: "thumbnail",
-              type: "upload",
-              label: "Thumbnail",
-              required: true,
-              relationTo: "media",
-              admin: {
-                description:
-                  "This image appears on the WorkCard thumbnail images.",
-              },
-            },
             {
               name: "testimonial",
               type: "relationship",
@@ -51,22 +88,6 @@ export const Work: CollectionConfig = {
               required: false,
               admin: {
                 description: "If a testimonial exists, add it here.",
-              },
-            },
-          ],
-        },
-        {
-          name: "metadata",
-          label: "Meta",
-          fields: [
-            {
-              name: "client",
-              type: "relationship",
-              relationTo: "clients",
-              hasMany: false,
-              required: true,
-              admin: {
-                description: "Add the name of the client here.",
               },
             },
             {
@@ -126,9 +147,9 @@ export const Work: CollectionConfig = {
   admin: {
     useAsTitle: "title",
     description: "All we do is work, work, work.",
-    defaultColumns: ["title", "testimonial"],
+    defaultColumns: ["title", "tagline"],
     group: "Portfolio",
-    listSearchableFields: ["title"],
+    listSearchableFields: ["title", "tagline"],
     pagination: {
       defaultLimit: 25,
       limits: [10, 25, 50],

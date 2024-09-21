@@ -3,6 +3,7 @@ import { authenticated } from "@/payload/access/authenticated";
 import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
 import { slugField } from "@/fields/slug";
 import { revalidatePost } from "./hooks/revalidatePost";
+import { MediaBlock } from "@/app/blocks/MediaBlock/config";
 import {
   MetaDescriptionField,
   MetaImageField,
@@ -13,10 +14,7 @@ import {
 
 import {
   BlocksFeature,
-  FixedToolbarFeature,
   HeadingFeature,
-  HorizontalRuleFeature,
-  InlineToolbarFeature,
   lexicalEditor,
 } from "@payloadcms/richtext-lexical";
 
@@ -60,7 +58,7 @@ export const BlogPosts: CollectionConfig = {
       type: "upload",
       relationTo: "media",
       label: "Main Image",
-      required: false,
+      required: true,
       admin: {
         description:
           "The main image of the article that appears on the page and in the list of posts.",
@@ -77,14 +75,14 @@ export const BlogPosts: CollectionConfig = {
               type: "richText",
               label: "Content",
               editor: lexicalEditor({
-                features: [
-                  BlocksFeature(),
-                  FixedToolbarFeature(),
+                features: ({ defaultFeatures }) => [
+                  ...defaultFeatures,
                   HeadingFeature({
                     enabledHeadingSizes: ["h2", "h3", "h4", "h5", "h6"],
                   }),
-                  HorizontalRuleFeature(),
-                  InlineToolbarFeature(),
+                  BlocksFeature({
+                    blocks: [MediaBlock],
+                  }),
                 ],
               }),
               required: true,

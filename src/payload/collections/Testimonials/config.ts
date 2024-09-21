@@ -46,9 +46,9 @@ export const Testimonials: CollectionConfig = {
           label: "Meta",
           fields: [
             {
-              name: "client",
+              name: "brand",
               type: "relationship",
-              relationTo: "clients",
+              relationTo: "brands",
               required: true,
               hasMany: false,
               unique: true,
