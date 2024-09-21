@@ -34,6 +34,7 @@
     "@tailwindcss/typography": "^0.5.14",
     "babel-plugin-react-compiler": "0.0.0-experimental-de2cfda-20240912",
     "eslint-plugin-react-compiler": "0.0.0-experimental-75b9fd4-20240912",
+    "clsx": "^2.1.1",
     "graphql": "^16.9.0",
     "gsap": "^3.12.5",
     "next": "15.0.0-canary.156",
