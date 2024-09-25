@@ -9,6 +9,7 @@ import { seoPlugin } from "@payloadcms/plugin-seo";
 import { GenerateTitle, GenerateURL } from "@payloadcms/plugin-seo/types";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
 
 //* Import Collections
 import { Users } from "./payload/collections/Users/config";
@@ -167,7 +168,13 @@ export default buildConfig({
         image: { required: false },
       },
     }),
+    formBuilderPlugin({
+      fields: {
+        payment: false,
+      },
+    }),
   ],
+
   typescript: {
     outputFile: path.resolve(dirname, "payload-types.ts"),
   },
