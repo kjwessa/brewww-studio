@@ -4,6 +4,11 @@ import { Metadata } from "next";
 import Header from "@/app/components/Header/index";
 import Footer from "@/app/components/Footer/index";
 
+export const metadata: Metadata = {
+  title: "Inner Pages",
+  description: "Inner pages of Brewww Studio",
+};
+
 const DMSans = localFont({
   variable: "--font-dm-sans",
   display: "swap",
@@ -37,7 +42,7 @@ export default function InnerLayout({
     <html lang="en" className={`${DMSans.variable} ${BebasNeue.variable}`}>
       <body className="bg-gray-950 text-gray-50 antialiased">
         <Header />
-        <div className="">{children}</div>
+        <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>
