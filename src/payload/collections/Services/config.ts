@@ -25,7 +25,39 @@ export const Services: CollectionConfig = {
         description: "The name of the service as it appears around the site.",
       },
     },
+    {
+      name: "tagline",
+      type: "text",
+      label: "Tagline",
+      required: true,
+      admin: {
+        description:
+          "The tagline of the service as it appears around the site.",
+      },
+    },
+    {
+      name: "imageMain",
+      type: "upload",
+      label: "Main Image",
+      required: true,
+      relationTo: "media",
+      admin: {
+        description:
+          "The main image of the service as it appears around the site.",
+      },
+    },
     ...slugField(),
+    {
+      name: "description",
+      type: "textarea",
+      label: "Description",
+      required: true,
+      admin: {
+        description:
+          "The description of the service as it appears around the site.",
+      },
+    },
+
     {
       type: "tabs",
       tabs: [

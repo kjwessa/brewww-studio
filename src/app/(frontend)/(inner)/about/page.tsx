@@ -210,6 +210,119 @@ export default function About() {
           </div>
         </div>
       </section>
+      <section className="cursor-none border-t-2 border-solid border-t-neutral-100/[0.23] bg-black text-[1.38rem] font-light leading-7 text-zinc-100">
+        <div className="container mx-auto py-16 lg:py-24">
+          <div className="float-left mr-5 mt-1 text-sm lg:mr-8 lg:mt-3 lg:min-w-[7.50rem]">
+            BREWWW
+          </div>
+          <h2 className="text-[5.00rem] leading-none">
+            We're a team of strategists, creatives and technical specialists,
+            combining branding expertise, cutting-edge ux design and creative
+            excellence to build <b>sophisticated</b> brands and experiences.
+          </h2>
+        </div>
+      </section>
+      <section className="overflow-hidden bg-black py-12 text-[1.38rem] font-light leading-7 text-white lg:pb-20 lg:pl-0 lg:pr-0 lg:pt-20">
+        <div className="m-auto max-w-[72.50rem] px-5">
+          <h2 className="mb-8 text-[3.38rem] leading-none lg:mb-10 lg:max-w-[56.06rem]">
+            At the heart of our success is our team of experienced
+            professionals, each bringing their unique expertise and creativity
+            to the table. Our diverse team of creatives, strategists, and
+            developers turn ideas into digital realities
+          </h2>
+          <div className="columns-2 gap-x-[3.75rem] text-xl opacity-[0.9585] lg:max-w-[51.25rem]">
+            We're not just an agency; we're your partners in navigating the
+            ever-evolving digital landscape. With over a decade of experience,
+            we've honed our skills to become masters in the art of digital-first
+            branding and the creation of cutting-edge web and digital products.
+            Our commitment to excellence is the cornerstone of our success, and
+            our goal is to make your brand stand out and thrive in the digital
+            realm.Whether you're a startup, an established business, or a
+            visionary entrepreneur, Brewww is here to empower your digital
+            journey. Our dedication to purposeful innovation, creative
+            excellence, and technical prowess ensures that your experience with
+            us is nothing short of exceptional. Let us be the architects of your
+            digital success, turning your vision into a digital reality.
+          </div>
+        </div>
+      </section>
+      <section className="relative overflow-hidden bg-zinc-100 pb-10 pt-8 text-[1.38rem] font-light leading-7 lg:pb-24 lg:pt-16">
+        <div className="relative m-auto max-w-[72.50rem] px-5">
+          <div className="mb-16 overflow-hidden border-t-2 border-solid border-t-black/[0.3] pt-3.5 text-sm uppercase">
+            <div className="relative pl-4">
+              <svg
+                className="absolute left-0 top-0 h-3.5 w-3"
+                fill="rgb(0, 0, 0)"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M496.398.001C495.423 280.462 276.399 509.551 0 526.59v2.027c266.073 16.404 478.978 229.308 495.385 495.382h2.027C514.455 747.605 743.541 528.58 1024 527.604 733.062 526.591 497.409 290.936 496.398.001z"
+                  fill="rgb(0, 0, 0)"
+                />
+              </svg>
+              CLIENT REVIEWS
+            </div>
+          </div>
+          <div className="rounded-2xl bg-gray-200 px-8 pb-6 pt-8 text-neutral-900 opacity-[0.9437] lg:pb-12 lg:pl-16 lg:pr-16 lg:pt-12">
+            <div className="m-auto h-auto overflow-hidden">
+              <div className="flex h-full w-full items-start">
+                <div className="h-auto w-full">
+                  <blockquote className="text-[3.88rem] leading-none">
+                    "We were impressed with their creativity, technical
+                    capabilities, and great strategies - so a one stop shop. And
+                    essentially, nice people delivering great work."
+                  </blockquote>
+                  <div className="mt-6 text-xl lg:mt-8">
+                    Marketing Co-ordinator, Nickerson Seeds
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="mt-16 flex">
+              <button className="flex h-12 w-12 cursor-pointer items-start rounded-full bg-neutral-900 px-1.5 py-1">
+                <svg
+                  className="m-auto h-3.5 w-3.5"
+                  fill="rgb(255, 255, 255)"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m149.96 547.433 335.788 335.788-57.264 57.264L-.001 512.001 428.484 83.516l57.264 57.264-325.67 325.672h863.921v80.983h-874.04z"
+                    fill="rgb(255, 255, 255)"
+                  />
+                </svg>
+              </button>
+              <button className="flex h-12 w-12 cursor-pointer items-start rounded-full bg-neutral-900 px-1.5 py-1">
+                <svg
+                  className="m-auto h-3.5 w-3.5"
+                  fill="rgb(255, 255, 255)"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m149.96 547.433 335.788 335.788-57.264 57.264L-.001 512.001 428.484 83.516l57.264 57.264-325.67 325.672h863.921v80.983h-874.04z"
+                    fill="rgb(255, 255, 255)"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div className="mt-7 flex gap-6 text-2xl lg:mt-12">
+            <img
+              className="h-auto w-28 max-w-full lg:w-28"
+              src="https://showandtell.agency/stars.svg"
+            />
+            <span>
+              Rated 4.6 Stars on{" "}
+              <a className="underline" href="https://clutch.co/profile/">
+                Clutch ›
+              </a>
+            </span>
+          </div>
+        </div>
+      </section>
+
       <section className="flex h-screen w-full items-center justify-center bg-zinc-950 bg-[linear-gradient(rgba(8,_8,_8,_0.75),_rgba(8,_8,_8,_0.75))] text-[20.25rem] font-bold uppercase leading-none text-neutral-400">
         <h1 className="text-center text-white">
           <span className="block">All</span>
