@@ -29,6 +29,7 @@
       "@/lib/*": ["src/app/lib/*"],
       "@/access/*": ["src/payload/access"],
       "@/public/*": ["./public/*"],
+      "@/cssVariables": ["./cssvariables.js"],
       "@/styles/*": ["src/styles/*"],
       "@/types/*": ["src/app/types/*"],
       "@/utils/*": ["src/app/utilities/*"],

@@ -14,7 +14,7 @@ import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { Users } from "./payload/collections/Users/config";
 import { Media } from "./payload/collections/Media/config";
 import { Work } from "./payload/collections/Work/config";
-import { Clients } from "./payload/collections/Clients/config";
+import { Brands } from "./payload/collections/Brands/config";
 import { BlogPosts } from "./payload/collections/Posts/config";
 import { BlogCategories } from "./payload/collections/Categories/config";
 import { Services } from "./payload/collections/Services/config";
@@ -119,7 +119,7 @@ export default buildConfig({
     Playground,
     Services,
     FAQ,
-    Clients,
+    Brands,
     Testimonials,
     Location,
     Results,
