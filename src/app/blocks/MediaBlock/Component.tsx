@@ -18,7 +18,6 @@ type Props = Extract<Page["layout"][0], { blockType: "mediaBlock" }> & {
   staticImage?: StaticImageData;
   disableInnerContainer?: boolean;
 };
-
 export const MediaBlock: React.FC<Props> = (props) => {
   const {
     captionClassName,
@@ -30,9 +29,10 @@ export const MediaBlock: React.FC<Props> = (props) => {
     staticImage,
     disableInnerContainer,
   } = props;
-
-  let caption;
-  if (media && typeof media === "object") caption = media.caption;
+  // let caption: string | undefined;
+  // if (media && typeof media === "object" && "caption" in media) {
+  //   caption = media.caption;
+  // }
 
   return (
     <div
@@ -44,7 +44,7 @@ export const MediaBlock: React.FC<Props> = (props) => {
         className,
       )}
     >
-      {position === "fullscreen" && (
+      {position === "default" && (
         <div className="relative">
           <Media resource={media} src={staticImage} />
         </div>
@@ -56,19 +56,19 @@ export const MediaBlock: React.FC<Props> = (props) => {
           src={staticImage}
         />
       )}
-      {caption && (
+      {/* {caption && (
         <div
           className={cn(
             "mt-6",
             {
-              container: position === "fullscreen" && !disableInnerContainer,
+              container: position === "default" && !disableInnerContainer,
             },
             captionClassName,
           )}
         >
           <RichText content={caption} enableGutter={false} />
         </div>
-      )}
+      )} */}
     </div>
   );
 };

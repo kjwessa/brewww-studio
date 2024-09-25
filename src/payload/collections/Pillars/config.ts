@@ -105,7 +105,7 @@ export const Pillars: CollectionConfig = {
   admin: {
     description: "Pillars of Brewww",
     defaultColumns: ["title", "updatedAt"],
-    group: "Services",
+    group: "Service",
     listSearchableFields: ["title", "description"],
     pagination: {
       defaultLimit: 25,

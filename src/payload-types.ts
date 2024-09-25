@@ -20,6 +20,7 @@ export interface Config {
     services: Service;
     faq: Faq;
     brands: Brand;
+    pillars: Pillar;
     testimonials: Testimonial;
     locations: Location;
     results: Result;
@@ -277,8 +278,11 @@ export interface Play {
 export interface Service {
   id: string;
   title: string;
+  tagline: string;
+  imageMain: string | Media;
   slug: string;
   slugLock?: boolean | null;
+  description: string;
   metadata?: {};
   seo?: {
     title?: string | null;
@@ -313,6 +317,30 @@ export interface Faq {
   };
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pillars".
+ */
+export interface Pillar {
+  id: string;
+  title: string;
+  tagline: string;
+  slug: string;
+  slugLock?: boolean | null;
+  description: string;
+  content?: {};
+  metadata?: {
+    services?: (string | null) | Service;
+  };
+  seo?: {
+    image?: (string | null) | Media;
+    title?: string | null;
+    description?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
