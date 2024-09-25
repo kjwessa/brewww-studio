@@ -7,7 +7,7 @@ export default async function BlogPage() {
   const payload = await getPayloadHMR({ config: configPromise });
   const posts = await payload.find({
     collection: "posts",
-    limit: 100,
+    limit: 1000,
     sort: "-publishedAt",
   });
 

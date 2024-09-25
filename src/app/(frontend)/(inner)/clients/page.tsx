@@ -2,7 +2,7 @@ import { getPayloadHMR } from "@payloadcms/next/utilities";
 import configPromise from "@payload-config";
 
 // Define the Client type
-type Client = {
+type Brand = {
   id: string;
   name: string;
 };
@@ -21,13 +21,13 @@ const HeroSection = () => (
 );
 
 // Client Grid Component
-const ClientGrid = ({ clients }: { clients: Client[] }) => (
+const ClientGrid = ({ brands }: { brands: Brand[] }) => (
   <div className="mt-14 md:mt-20">
     <ul className="grid grid-cols-1 gap-8 md:grid-cols-2 min-[1250px]:grid-cols-3">
-      {clients.map((client, index) => (
-        <li key={client.id} className="list-item py-8">
+      {brands.map((brand, index) => (
+        <li key={brand.id} className="list-item py-8">
           <div>
-            <h2 className="text-3xl text-white">{client.name}</h2>
+            <h2 className="text-3xl text-white">{brand.name}</h2>
           </div>
         </li>
       ))}
@@ -37,8 +37,8 @@ const ClientGrid = ({ clients }: { clients: Client[] }) => (
 
 export default async function Page() {
   const payload = await getPayloadHMR({ config: configPromise });
-  const clientsFeatured = await payload.find({
-    collection: "clients",
+  const brands = await payload.find({
+    collection: "brands",
     limit: 100,
   });
 
@@ -46,7 +46,7 @@ export default async function Page() {
     <section className="w-full overflow-hidden bg-black pb-10 pt-32 text-lg text-white md:pb-16 md:pt-44 min-[1250px]:pb-20 min-[1250px]:pt-48 min-[1900px]:pb-20 min-[1900px]:pt-56">
       <div className="m-6 md:mx-10 min-[1250px]:mx-20 min-[1550px]:mx-auto min-[1550px]:w-full min-[1550px]:max-w-[87.50rem] min-[1900px]:max-w-screen-2xl min-[2048px]:mx-48 min-[2048px]:w-auto min-[2048px]:max-w-full min-[2560px]:max-w-[160.00rem] min-[2940px]:mx-auto">
         <HeroSection />
-        {/* <ClientGrid clients={clientsFeatured.docs as Client[]} /> */}
+        {/* <ClientGrid brands={brands.docs as Client[]} /> */}
       </div>
     </section>
   );

@@ -30,7 +30,7 @@ export const FAQ: CollectionConfig = {
   },
   admin: {
     description: "Frequently asked questions",
-    group: "Service",
+    group: "Company",
     useAsTitle: "title",
   },
   labels: {

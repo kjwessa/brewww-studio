@@ -6,7 +6,7 @@ export default async function PlayPage() {
   const payload = await getPayloadHMR({ config: configPromise });
   const projects = await payload.find({
     collection: "play",
-    limit: 16,
+    limit: 1000,
     sort: "-publishedAt",
   });
 
