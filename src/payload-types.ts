@@ -127,7 +127,7 @@ export interface Post {
   title: string;
   tagline?: string | null;
   description?: string | null;
-  imageMain: string | Media;
+  imageMain?: (string | null) | Media;
   content: {
     root: {
       type: string;
