@@ -261,6 +261,7 @@ export default function IndividualPage() {
                     <img
                       className="h-auto w-full max-w-full"
                       src="https://www.fhoke.com/wp-content/uploads/2022/03/heritage-driven-header-588x700.jpg"
+                      alt="Heritage Driven automotive project showcase"
                     />
                   </picture>
                 </a>
@@ -290,7 +291,7 @@ export default function IndividualPage() {
                 </div>
               </li>
 
-              <li className="relative list-item md:mt-10 md:mt-12 min-[769px]:ml-auto min-[769px]:w-[65.4737%]">
+              <li className="relative list-item md:mt-12 min-[769px]:ml-auto min-[769px]:w-[65.4737%]">
                 <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
                   Shops
                 </span>
@@ -300,6 +301,7 @@ export default function IndividualPage() {
                     <img
                       className="h-auto w-full max-w-full"
                       src="https://www.fhoke.com/wp-content/uploads/2021/12/combat-fuel-header-1244x700.jpg"
+                      alt="Combat Fuel supplement product showcase"
                     />
                   </picture>
                 </a>
@@ -339,6 +341,7 @@ export default function IndividualPage() {
                     <img
                       className="h-auto w-full max-w-full"
                       src="https://www.fhoke.com/wp-content/uploads/2020/11/neck-of-the-woods-films-header-1244x700.png"
+                      alt="Neck of The Woods Films header image"
                     />
                   </picture>
                 </a>
@@ -374,12 +377,12 @@ export default function IndividualPage() {
                 <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
                   Websites
                 </span>
-
                 <a className="w-full overflow-hidden" href="">
                   <picture className="h-auto max-w-full cursor-pointer">
                     <img
                       className="h-auto w-full max-w-full"
                       src="https://www.fhoke.com/wp-content/uploads/2020/03/MetalandGas-Banner-588x700.jpg"
+                      alt="Metal and Gas banner image"
                     />
                   </picture>
                 </a>
@@ -549,7 +552,7 @@ export default function IndividualPage() {
           <img
             className="h-auto w-full max-w-full"
             src="https://www.fhoke.com/wp-content/uploads/2022/08/Wordpress-Intro-Tall.jpg"
-            alt="WordPress Introduction"
+            alt="A tall image showcasing WordPress interface and features, demonstrating its versatility as a content management system"
           />
         </div>
 
