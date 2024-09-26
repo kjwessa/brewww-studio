@@ -459,18 +459,18 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative bg-neutral-900 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
+      <section className="relative bg-neutral-900 text-white min-[1600px]:py-20 min-[1920px]:py-28 min-[1921px]:py-28">
         <div className="m-auto w-[92%] min-[769px]:flex min-[1921px]:max-w-[118.75rem]">
           <div className="text-[3.13rem] uppercase leading-none min-[769px]:w-96">
             <p className="opacity-10">02</p>
-
-            <h2></h2>
+            <h2>Design</h2>
           </div>
 
           <div className="min-[769px]:ml-auto min-[769px]:w-[65.4737%]">
             <div className="text-4xl min-[1600px]:mb-10 min-[1920px]:mb-12 min-[1921px]:mb-12">
-              <h2 />
-
+              <h2 className="text-[6rem] font-black uppercase leading-none">
+                Concepts and visuals that achieve your commercial goals
+              </h2>
               <p className="text-4xl lg:mt-8 min-[1025px]:mt-12">
                 Our digital products and websites are designed to look great and
                 work across all devices and platforms. Add interactions and
@@ -482,45 +482,11 @@ export default function ServicesPage() {
 
             <ul className="list-none text-[1.38rem] leading-7">
               <li className="list-item border-b-2 border-solid border-b-white/[0.1]">
-                <a
-                  className="flex items-center gap-5 min-[769px]:pb-8 min-[769px]:pl-0 min-[769px]:pr-0 min-[769px]:pt-8"
-                  href=""
-                >
-                  <span className="relative cursor-pointer overflow-hidden rounded-full bg-zinc-800 min-[769px]:h-12 min-[769px]:w-12">
-                    <span className="absolute left-0 top-0 flex h-full w-full items-center justify-center">
-                      <svg
-                        className="h-auto w-2.5"
-                        fill="rgb(0, 0, 0)"
-                        viewBox="0 0 10 16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m10,12v-2c-1.54,0-2.94.59-4,1.54V0s-2,0-2,0v11.54C2.94,10.59,1.54,10,0,10v2c2.21,0,4,1.79,4,4h2c0-2.21,1.79-4,4-4Z"
-                          fill="rgb(255, 255, 255)"
-                        />
-                      </svg>
-                      {"                                        "}
-                    </span>
-
-                    <span className="absolute left-0 top-full flex h-full w-full items-center justify-center rounded-full bg-white">
-                      <svg
-                        className="h-auto w-2.5"
-                        fill="rgb(0, 0, 0)"
-                        viewBox="0 0 10 16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m10,12v-2c-1.54,0-2.94.59-4,1.54V0s-2,0-2,0v11.54C2.94,10.59,1.54,10,0,10v2c2.21,0,4,1.79,4,4h2c0-2.21,1.79-4,4-4Z"
-                          fill="rgb(29, 29, 27)"
-                        />
-                      </svg>
-                      {"                                        "}
-                    </span>
-                  </span>
-
-                  <h3 className="cursor-pointer text-[3.13rem] uppercase leading-none"></h3>
+                <a className="flex items-center gap-5 min-[769px]:py-8" href="">
+                  <h3 className="cursor-pointer text-[3.13rem] uppercase leading-none">
+                    Branding + Identity
+                  </h3>
                 </a>
-
                 <div className="border-t-2 border-solid border-white pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24 min-[1921px]:pb-24">
                   A brand isn't just about a logo. We take an identity and
                   create visuals that showcase your products and services using
@@ -529,51 +495,34 @@ export default function ServicesPage() {
                   everything from logos and stationery to icons and
                   illustrations. Once we've finished, your company will look so
                   fresh you'll fall in love with it all over again.
-                  <a
-                    className="relative inline-block overflow-hidden rounded-full bg-white text-center text-lg uppercase text-neutral-900 lg:mt-8 min-[1025px]:mt-9"
-                    href=""
-                  >
-                    <span className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5">
-                      More
-                      <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5" />
-                    </span>
-                  </a>
                 </div>
               </li>
-
               <li className="list-item border-b-2 border-solid border-b-white/[0.1]">
-                <a
-                  className="flex items-center gap-5 min-[769px]:pb-8 min-[769px]:pl-0 min-[769px]:pr-0 min-[769px]:pt-8"
-                  href=""
-                >
-                  <span className="relative cursor-pointer overflow-hidden rounded-full bg-zinc-800 min-[769px]:h-12 min-[769px]:w-12">
-                    <span className="absolute left-0 top-0 flex h-full w-full items-center justify-center">
-                      {"                                        "}
-                    </span>
-
-                    <span className="absolute left-0 top-full flex h-full w-full items-center justify-center rounded-full bg-white">
-                      {"                                        "}
-                    </span>
-                  </span>
-
-                  <h3 className="cursor-pointer text-[3.13rem] uppercase leading-none"></h3>
+                <a className="flex items-center gap-5 min-[769px]:py-8" href="">
+                  <h3 className="cursor-pointer text-[3.13rem] uppercase leading-none">
+                    Website Design
+                  </h3>
                 </a>
+                <div className="border-t-2 border-solid border-white pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24 min-[1921px]:pb-24">
+                  Obsessed with details, we create the assets your company needs
+                  to build a best-in-breed brand. A valuable marketing tool, we
+                  approach your website project with a focus on creativity,
+                  usability, and conversions.
+                </div>
               </li>
             </ul>
           </div>
         </div>
-      </section>
 
-      <section className="relative overflow-hidden bg-neutral-900 text-[1.38rem] leading-7 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
-        <div className="m-auto w-[92%] min-[1921px]:max-w-[118.75rem]">
+        <div className="m-auto w-[92%] pt-24 min-[1921px]:max-w-[118.75rem]">
           <div className="relative">
             <ul className="list-none flex-wrap min-[769px]:flex">
               <li className="relative list-item min-[769px]:w-[48.2105%]">
                 <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
-                  <a href="">Shops</a>
+                  <Link href="">Shops</Link>
                 </span>
 
-                <a className="w-full overflow-hidden" href="">
+                <Link className="w-full overflow-hidden" href="">
                   <picture className="h-auto max-w-full cursor-pointer">
                     <img
                       className="h-auto w-full max-w-full"
@@ -581,39 +530,38 @@ export default function ServicesPage() {
                       alt="Combat Fuel header"
                     />
                   </picture>
-                </a>
+                </Link>
 
                 <div className="flex justify-between min-[1025px]:mt-5">
                   <div className="flex-grow">
                     <h5>
-                      <a className="inline-block" href="">
+                      <Link className="inline-block" href="">
                         Combat Fuel
-                      </a>
+                      </Link>
                     </h5>
-
                     <p className="opacity-50">Giving supplements a shake-up.</p>
                   </div>
 
                   <div className="ml-5 text-lg uppercase">
-                    <a
+                    <Link
                       className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
                       href=""
                     >
-                      <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
+                      <span className="relative cursor-pointer lg:p-1.5 min-[1025px]:p-1.5">
                         View
-                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
+                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:p-1.5 min-[1025px]:p-1.5" />
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </li>
 
-              <li className="relative list-item md:mt-12 min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
+              <li className="relative list-item min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
                 <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
                   Shops
                 </span>
 
-                <a className="w-full overflow-hidden" href="">
+                <Link className="w-full overflow-hidden" href="">
                   <picture className="h-auto max-w-full cursor-pointer">
                     <img
                       className="h-auto w-full max-w-full"
@@ -621,29 +569,28 @@ export default function ServicesPage() {
                       alt="Xpert Workwear"
                     />
                   </picture>
-                </a>
+                </Link>
 
                 <div className="flex justify-between min-[1025px]:mt-5">
                   <div className="flex-grow">
                     <h5>
-                      <a className="inline-block" href="">
+                      <Link className="inline-block" href="">
                         Xpert Workwear
-                      </a>
+                      </Link>
                     </h5>
-
                     <p className="opacity-50">Built to last.</p>
                   </div>
 
                   <div className="ml-5 text-lg uppercase">
-                    <a
+                    <Link
                       className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
                       href=""
                     >
-                      <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
+                      <span className="relative cursor-pointer lg:p-1.5 min-[1025px]:p-1.5">
                         View
-                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
+                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:p-1.5 min-[1025px]:p-1.5" />
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </li>
