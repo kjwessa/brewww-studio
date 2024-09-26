@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:monitor": "node memory-monitor.js & pnpm dev",
     "build": "next build",
     "postbuild": "node generate-sitemap.js",
     "start": "next start",

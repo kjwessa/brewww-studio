@@ -723,20 +723,21 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative bg-neutral-900 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
+      <section className="relative bg-neutral-900 text-white min-[1600px]:py-20 min-[1920px]:py-28 min-[1921px]:py-28">
         <div className="m-auto w-[92%] min-[769px]:flex min-[1921px]:max-w-[118.75rem]">
           <div className="text-[3.13rem] uppercase leading-none min-[769px]:w-96">
             <p className="opacity-10">04</p>
-
             <h2>Grow</h2>
           </div>
 
           <div className="min-[769px]:ml-auto min-[769px]:w-[65.4737%]">
             <div className="text-4xl min-[1600px]:mb-10 min-[1920px]:mb-12 min-[1921px]:mb-12">
-              <h2 />
+              <h2 className="text-[6rem] font-black uppercase leading-none">
+                Supporting the growth of your business
+              </h2>
 
               <p className="text-4xl lg:mt-8 min-[1025px]:mt-12">
-                Supporting the growth of your business!, we can continue to help
+                Supporting the growth of your business, we can continue to help
                 breathe new life into other areas of your brand. We revitalise
                 identities and bring a focus to services and products as they
                 evolve.
@@ -745,43 +746,10 @@ export default function ServicesPage() {
 
             <ul className="list-none text-[1.38rem] leading-7">
               <li className="list-item border-b-2 border-solid border-b-white/[0.1]">
-                <a
-                  className="flex items-center gap-5 min-[769px]:pb-8 min-[769px]:pl-0 min-[769px]:pr-0 min-[769px]:pt-8"
-                  href=""
-                >
-                  <span className="relative cursor-pointer overflow-hidden rounded-full bg-zinc-800 min-[769px]:h-12 min-[769px]:w-12">
-                    <span className="absolute left-0 top-0 flex h-full w-full items-center justify-center">
-                      <svg
-                        className="h-auto w-2.5"
-                        fill="rgb(0, 0, 0)"
-                        viewBox="0 0 10 16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m10,12v-2c-1.54,0-2.94.59-4,1.54V0s-2,0-2,0v11.54C2.94,10.59,1.54,10,0,10v2c2.21,0,4,1.79,4,4h2c0-2.21,1.79-4,4-4Z"
-                          fill="rgb(255, 255, 255)"
-                        />
-                      </svg>
-                      {"                                        "}
-                    </span>
-
-                    <span className="absolute left-0 top-full flex h-full w-full items-center justify-center rounded-full bg-white">
-                      <svg
-                        className="h-auto w-2.5"
-                        fill="rgb(0, 0, 0)"
-                        viewBox="0 0 10 16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m10,12v-2c-1.54,0-2.94.59-4,1.54V0s-2,0-2,0v11.54C2.94,10.59,1.54,10,0,10v2c2.21,0,4,1.79,4,4h2c0-2.21,1.79-4,4-4Z"
-                          fill="rgb(29, 29, 27)"
-                        />
-                      </svg>
-                      {"                                        "}
-                    </span>
-                  </span>
-
-                  <h3 className="cursor-pointer text-[3.13rem] uppercase leading-none"></h3>
+                <a className="flex items-center gap-5 min-[769px]:py-8" href="">
+                  <h3 className="cursor-pointer text-[3.13rem] uppercase leading-none">
+                    Web Applications
+                  </h3>
                 </a>
 
                 <div className="border-t-2 border-solid border-white pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24 min-[1921px]:pb-24">
@@ -790,192 +758,132 @@ export default function ServicesPage() {
                   smoothly. We have experience creating proposal tools, project
                   management portals, and complex survey systems. Got an idea,
                   let us know.
-                  <a
-                    className="relative inline-block overflow-hidden rounded-full bg-white text-center text-lg uppercase text-neutral-900 lg:mt-8 min-[1025px]:mt-9"
-                    href=""
-                  >
-                    <span className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5">
-                      More
-                      <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5" />
-                    </span>
-                  </a>
                 </div>
               </li>
 
               <li className="list-item border-b-2 border-solid border-b-white/[0.1]">
-                <a
-                  className="flex items-center gap-5 min-[769px]:pb-8 min-[769px]:pl-0 min-[769px]:pr-0 min-[769px]:pt-8"
-                  href=""
-                >
-                  <span className="relative cursor-pointer overflow-hidden rounded-full bg-zinc-800 min-[769px]:h-12 min-[769px]:w-12">
-                    <span className="absolute left-0 top-0 flex h-full w-full items-center justify-center">
-                      <svg
-                        className="h-auto w-2.5"
-                        fill="rgb(0, 0, 0)"
-                        viewBox="0 0 10 16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m10,12v-2c-1.54,0-2.94.59-4,1.54V0s-2,0-2,0v11.54C2.94,10.59,1.54,10,0,10v2c2.21,0,4,1.79,4,4h2c0-2.21,1.79-4,4-4Z"
-                          fill="rgb(255, 255, 255)"
-                        />
-                      </svg>
-                      {"                                        "}
-                    </span>
-
-                    <span className="absolute left-0 top-full flex h-full w-full items-center justify-center rounded-full bg-white">
-                      <svg
-                        className="h-auto w-2.5"
-                        fill="rgb(0, 0, 0)"
-                        viewBox="0 0 10 16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m10,12v-2c-1.54,0-2.94.59-4,1.54V0s-2,0-2,0v11.54C2.94,10.59,1.54,10,0,10v2c2.21,0,4,1.79,4,4h2c0-2.21,1.79-4,4-4Z"
-                          fill="rgb(29, 29, 27)"
-                        />
-                      </svg>
-                      {"                                        "}
-                    </span>
-                  </span>
-
-                  <h3 className="cursor-pointer text-[3.13rem] uppercase leading-none"></h3>
+                <a className="flex items-center gap-5 min-[769px]:py-8" href="">
+                  <h3 className="cursor-pointer text-[3.13rem] uppercase leading-none">
+                    Digital Marketing
+                  </h3>
                 </a>
+                <div className="border-t-2 border-solid border-white pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24 min-[1921px]:pb-24">
+                  Our digital marketing strategies are designed to boost your
+                  online presence and drive results. From SEO and content
+                  marketing to social media campaigns, we help you reach your
+                  target audience effectively.
+                </div>
               </li>
 
               <li className="list-item border-b-2 border-solid border-b-white/[0.1]">
-                <a
-                  className="flex items-center gap-5 min-[769px]:pb-8 min-[769px]:pl-0 min-[769px]:pr-0 min-[769px]:pt-8"
-                  href=""
-                >
-                  <span className="relative cursor-pointer overflow-hidden rounded-full bg-zinc-800 min-[769px]:h-12 min-[769px]:w-12">
-                    <span className="absolute left-0 top-0 flex h-full w-full items-center justify-center">
-                      <svg
-                        className="h-auto w-2.5"
-                        fill="rgb(0, 0, 0)"
-                        viewBox="0 0 10 16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m10,12v-2c-1.54,0-2.94.59-4,1.54V0s-2,0-2,0v11.54C2.94,10.59,1.54,10,0,10v2c2.21,0,4,1.79,4,4h2c0-2.21,1.79-4,4-4Z"
-                          fill="rgb(255, 255, 255)"
-                        />
-                      </svg>
-                      {"                                        "}
-                    </span>
-
-                    <span className="absolute left-0 top-full flex h-full w-full items-center justify-center rounded-full bg-white">
-                      <svg
-                        className="h-auto w-2.5"
-                        fill="rgb(0, 0, 0)"
-                        viewBox="0 0 10 16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m10,12v-2c-1.54,0-2.94.59-4,1.54V0s-2,0-2,0v11.54C2.94,10.59,1.54,10,0,10v2c2.21,0,4,1.79,4,4h2c0-2.21,1.79-4,4-4Z"
-                          fill="rgb(29, 29, 27)"
-                        />
-                      </svg>
-                      {"                                        "}
-                    </span>
-                  </span>
-
-                  <h3 className="cursor-pointer text-[3.13rem] uppercase leading-none"></h3>
+                <a className="flex items-center gap-5 min-[769px]:py-8" href="">
+                  <h3 className="cursor-pointer text-[3.13rem] uppercase leading-none">
+                    Ongoing Support
+                  </h3>
                 </a>
+                <div className="border-t-2 border-solid border-white pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24 min-[1921px]:pb-24">
+                  We provide continuous support and maintenance for your digital
+                  assets, ensuring they remain up-to-date, secure, and optimized
+                  for performance.
+                </div>
               </li>
             </ul>
           </div>
         </div>
-      </section>
+        <div>
+          <section className="relative overflow-hidden bg-neutral-900 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
+            <div className="m-auto w-[92%] text-lg uppercase min-[1600px]:mb-10 min-[1920px]:mb-12 min-[1921px]:mb-12 min-[1921px]:max-w-[118.75rem]">
+              <p className="inline-block min-[671px]:pl-6">Related Projects</p>
+            </div>
 
-      <section className="relative overflow-hidden bg-neutral-900 text-[1.38rem] leading-7 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
-        <div className="m-auto w-[92%] min-[1921px]:max-w-[118.75rem]">
-          <div className="relative">
-            <ul className="list-none flex-wrap min-[769px]:flex">
-              <li className="relative list-item min-[769px]:w-[48.2105%]">
-                <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
-                  <a href="">Websites</a>
-                </span>
+            <div className="m-auto w-[92%] text-[1.38rem] leading-7 min-[1921px]:max-w-[118.75rem]">
+              <div className="relative">
+                <ul className="list-none flex-wrap min-[769px]:flex">
+                  <li className="relative list-item min-[769px]:w-[48.2105%]">
+                    <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
+                      Websites
+                    </span>
+                    <Link className="w-full overflow-hidden" href="">
+                      <picture className="h-auto max-w-full cursor-pointer">
+                        <img
+                          className="h-auto w-full max-w-full"
+                          src="https://www.fhoke.com/wp-content/uploads/2022/10/HiConsumption-Header-916x1100.jpg"
+                          alt="HiConsumption Header"
+                        />
+                      </picture>
+                    </Link>
 
-                <a className="w-full overflow-hidden" href="">
-                  <picture className="h-auto max-w-full cursor-pointer">
-                    <img
-                      className="h-auto w-full max-w-full"
-                      src="https://www.fhoke.com/wp-content/uploads/2022/10/HiConsumption-Header-916x1100.jpg"
-                      alt="HiConsumption Header"
-                    />
-                  </picture>
-                </a>
+                    <div className="flex justify-between min-[1025px]:mt-5">
+                      <div className="flex-grow">
+                        <h5>
+                          <Link className="inline-block" href="">
+                            HICONSUMPTION
+                          </Link>
+                        </h5>
 
-                <div className="flex justify-between min-[1025px]:mt-5">
-                  <div className="flex-grow">
-                    <h5>
-                      <a className="inline-block" href="">
-                        HICONSUMPTION
-                      </a>
-                    </h5>
+                        <p className="opacity-50">
+                          A modern day men's lifestyle mag.
+                        </p>
+                      </div>
 
-                    <p className="opacity-50">
-                      A modern day men's lifestyle mag.
-                    </p>
-                  </div>
+                      <div className="ml-5 text-lg uppercase">
+                        <Link
+                          className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
+                          href=""
+                        >
+                          <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
+                            View
+                            <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
+                          </span>
+                        </Link>
+                      </div>
+                    </div>
+                  </li>
 
-                  <div className="ml-5 text-lg uppercase">
-                    <a
-                      className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
-                      href=""
-                    >
-                      <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
-                        View
-                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </li>
+                  <li className="relative list-item min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
+                    <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
+                      Websites
+                    </span>
+                    <Link className="w-full overflow-hidden" href="">
+                      <picture className="h-auto max-w-full cursor-pointer">
+                        <img
+                          className="h-auto w-full max-w-full"
+                          src="https://www.fhoke.com/wp-content/uploads/2020/08/adige-header-916x1100.jpg"
+                          alt="Adige Design header"
+                        />
+                      </picture>
+                    </Link>
 
-              <li className="relative list-item md:mt-12 min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
-                <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
-                  <a href="">Websites</a>
-                </span>
+                    <div className="flex justify-between min-[1025px]:mt-5">
+                      <div className="flex-grow">
+                        <h5>
+                          <Link className="inline-block" href="">
+                            Adige Design
+                          </Link>
+                        </h5>
 
-                <a className="w-full overflow-hidden" href="">
-                  <picture className="h-auto max-w-full cursor-pointer">
-                    <img
-                      className="h-auto w-full max-w-full"
-                      src="https://www.fhoke.com/wp-content/uploads/2020/08/adige-header-916x1100.jpg"
-                      alt="Adige Design Header"
-                    />
-                  </picture>
-                </a>
+                        <p className="opacity-50">
+                          True masters of their craft.
+                        </p>
+                      </div>
 
-                <div className="flex justify-between min-[1025px]:mt-5">
-                  <div className="flex-grow">
-                    <h5>
-                      <a className="inline-block" href="">
-                        Adige Design
-                      </a>
-                    </h5>
-
-                    <p className="opacity-50">True masters of their craft.</p>
-                  </div>
-
-                  <div className="ml-5 text-lg uppercase">
-                    <a
-                      className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
-                      href=""
-                    >
-                      <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
-                        View
-                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
-                      </span>
-                    </a>
-                    {"        "}
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
+                      <div className="ml-5 text-lg uppercase">
+                        <Link
+                          className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
+                          href=""
+                        >
+                          <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
+                            View
+                            <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
+                          </span>
+                        </Link>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
         </div>
       </section>
 
