@@ -4,22 +4,23 @@ import { LinkMain } from "@/app/components/LinkMain";
 export default function ServicesPage() {
   return (
     <>
-      <div className="relative flex bg-white text-stone-950">
-        <h1 className="absolute bottom-0 left-0 right-[17.88rem] top-[23.75rem] z-[1] p-16 text-[5rem] leading-none text-white">
-          <div className="max-w-4xl">
-            <div>Creative storytelling for unbounded brands</div>
-          </div>
-        </h1>
-
-        <div className="relative flex h-[50.46rem] w-full flex-grow items-end object-cover">
+      <section className="flex bg-white text-stone-950">
+        <div className="relative flex h-[50.46rem] w-full">
           <Image
             src="/images/Aldridge-02665.1200-p-1080.jpeg"
             alt="text"
             fill
             style={{ objectFit: "cover" }}
           />
+          <div className="flex w-full flex-col justify-end">
+            <h1 className="relative z-10 p-16 text-[5rem] leading-none text-white">
+              <div className="max-w-4xl">
+                <div>Creative storytelling for unbounded brands</div>
+              </div>
+            </h1>
+          </div>
         </div>
-      </div>
+      </section>
       <section className="bg-white px-8 py-20 text-stone-950">
         <div className="max-w-8xl container mx-auto">
           <h2 className="mb-16 text-4xl font-bold uppercase">
@@ -103,43 +104,45 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-      <div className="bg-white text-stone-950">
+      <section className="bg-white text-stone-950">
         <div className="mx-auto w-full max-w-6xl px-8 py-24">
-          <div className="text-2xl font-medium">Impact & Results</div>
-          <div className="grid grid-cols-3 gap-8 pt-12">
+          <h2 className="mb-12 text-4xl font-bold uppercase">
+            IMPACT & RESULTS
+          </h2>
+          <div className="grid grid-cols-3 gap-8">
             <div className="">
-              <div className="flex items-start text-6xl">
+              <div className="mb-6 flex items-start text-6xl">
                 3<span className="ml-3 mt-6 text-xl">m</span>
               </div>
-              <div className="mb-12 text-lg">
+              <p className="mb-12 text-lg">
                 Brand strategy and site development of The Merry Beggars led to
                 3 million downloads of their original audio entertainment
                 podcast.
-              </div>
+              </p>
             </div>
             <div className="">
-              <div className="flex items-start text-6xl">
+              <div className="mb-6 flex items-start text-6xl">
                 10
                 <span className="ml-3 mt-6 text-xl">x</span>
               </div>
-              <div className="mb-12 text-lg">
+              <p className="mb-12 text-lg">
                 Brand strategy and development of Fem Catholic led to a grant
                 for their initiative, ten times their original site investment.
-              </div>
+              </p>
             </div>
             <div className="">
-              <div className="flex items-start text-6xl">
+              <div className="mb-6 flex items-start text-6xl">
                 760
                 <span className="ml-3 mt-6 text-xl">%</span>
               </div>
-              <div className="mb-12 text-lg">
+              <p className="mb-12 text-lg">
                 Increase in online donations within 90 days after Joseph House
                 site rebrand and website launch.
-              </div>
+              </p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <section className="bg-white px-16 py-32 text-center text-stone-950">
         <div className="mx-auto max-w-4xl">
           <div>
@@ -159,11 +162,11 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-      <div className="bg-white text-stone-950">
+      <section className="bg-white text-stone-950">
         <div className="grid min-h-[40rem] grid-cols-2">
           <div className="flex flex-col justify-center px-12 py-24">
             <h2 className="pb-4 text-[3.13rem] leading-none">Our Specialty</h2>
-            <p>
+            <p className="text-xl">
               At Brewww Studio, every project is a journey to explore new
               creative frontiers. Partnering closely with our clients, we aim to
               design captivating visuals that make an immediate impact and leave
@@ -190,7 +193,7 @@ export default function ServicesPage() {
           </div>
           <div className="flex flex-col justify-center px-12 py-24">
             <h2 className="pb-4 text-[3.13rem] leading-none">Your Growth</h2>
-            <p>
+            <p className="text-xl">
               We are always looking ahead. As your dedicated digital design
               studio, we collaborate with you to tackle real-world challenges in
               a dynamic environment. From logo creation to comprehensive digital
@@ -199,33 +202,35 @@ export default function ServicesPage() {
             </p>
           </div>
         </div>
-      </div>
-      <div>
-        <div className="flex max-w-6xl items-start justify-between bg-white px-8 py-12 text-stone-950">
-          <div className="w-[calc(42%_-_12px)] text-4xl font-medium">
-            <p>Design that makes a good impression and investment.</p>
-          </div>
-          <div className="mt-16 w-[calc(50%_-_12px)] text-xl">
-            At Brewww Studio, ROI isnt optional—its essential. We create brand
-            experiences that not only look good but drive real results. Our
-            superior design nurtures relationships and delivers value, proven
-            across industries like fitness, non-profits, media & entertainment,
-            and e-commerce.
-            <div className="mt-12">
-              <p className="mt-5 font-medium text-neutral-800 opacity-60">
-                5.0/5.0 Avg. Rating on{" "}
-                <a className="underline" href="">
-                  Facebook
-                </a>
-                {" and "}
-                <a className="underline" href="">
-                  Google
-                </a>
-              </p>
+      </section>
+      <section className="w-full bg-white py-24 text-stone-950">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col items-start justify-between md:flex-row">
+            <div className="mb-8 w-full text-4xl font-medium md:mb-0 md:w-[42%]">
+              <p>Design that makes a good impression and investment.</p>
+            </div>
+            <div className="w-full text-xl md:w-[50%]">
+              At Brewww Studio, ROI isn't optional—it's essential. We create
+              brand experiences that not only look good but drive real results.
+              Our superior design nurtures relationships and delivers value,
+              proven across industries like fitness, non-profits, media &
+              entertainment, and e-commerce.
+              <div className="mt-12">
+                <p className="mt-5 font-medium text-neutral-800 opacity-60">
+                  5.0/5.0 Avg. Rating on{" "}
+                  <a className="underline" href="">
+                    Facebook
+                  </a>
+                  {" and "}
+                  <a className="underline" href="">
+                    Google
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <div>
         <section className="relative grid grid-cols-[105.50rem] grid-rows-[1155px_104px] items-center justify-items-center bg-zinc-950 text-center uppercase text-neutral-400">
           <span className="text-[13.00rem] font-bold leading-none text-white">

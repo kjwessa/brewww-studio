@@ -2,7 +2,7 @@ import type { CollectionConfig } from "payload";
 import { authenticated } from "@/payload/access/authenticated";
 import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
 import { slugField } from "@/fields/slug";
-import { Cover } from "@/app/blocks/Cover/config";
+
 import {
   MetaDescriptionField,
   MetaImageField,
@@ -11,6 +11,8 @@ import {
   PreviewField,
 } from "@payloadcms/plugin-seo/fields";
 import { generatePreviewPath } from "@/app/utilities/generatePreviewPath";
+import { FormBlock } from "@/app/blocks/Form/config";
+import { Cover } from "@/app/blocks/Cover/config";
 
 export const Pages: CollectionConfig = {
   slug: "pages",
@@ -37,7 +39,7 @@ export const Pages: CollectionConfig = {
               type: "blocks",
               label: "Layout",
               required: true,
-              blocks: [Cover],
+              blocks: [Cover, FormBlock],
             },
           ],
         },
