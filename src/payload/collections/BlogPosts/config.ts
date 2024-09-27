@@ -4,6 +4,8 @@ import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublis
 import { slugField } from "@/fields/slug";
 import { revalidatePost } from "./hooks/revalidatePost";
 import { MediaBlock } from "@/app/blocks/MediaBlock/config";
+import { Banner } from "@/app/blocks/Banner/config";
+
 import {
   MetaDescriptionField,
   MetaImageField,
@@ -81,7 +83,7 @@ export const BlogPosts: CollectionConfig = {
                     enabledHeadingSizes: ["h2", "h3", "h4", "h5", "h6"],
                   }),
                   BlocksFeature({
-                    blocks: [MediaBlock],
+                    blocks: [MediaBlock, Banner],
                   }),
                 ],
               }),
