@@ -1,4 +1,18 @@
-export default function WorkPage() {
+import Image from "next/image";
+import Link from "next/link";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
+import configPromise from "@payload-config";
+
+export default async function WorkPage() {
+  const payload = await getPayloadHMR({ config: configPromise });
+  const projects = await payload.find({
+    collection: "work",
+    limit: 1000,
+    where: {
+      _status: { equals: "published" },
+    },
+  });
+  console.log(projects);
   return (
     <>
       <div>
@@ -8,8 +22,7 @@ export default function WorkPage() {
               <div className="m-auto w-[92%] min-[1600px]:pb-10 min-[1600px]:pt-20 min-[1920px]:pb-12 min-[1920px]:pt-28 min-[1921px]:max-w-[118.75rem] min-[1921px]:pb-12 min-[1921px]:pt-28">
                 <div>
                   <h1 className="text-[10.00rem] uppercase leading-none">
-                    <span className="inline-block overflow-hidden">Our</span>{" "}
-                    <span className="inline-block overflow-hidden">work</span>
+                    Our work
                   </h1>
 
                   <div className="relative min-[1600px]:mt-16 min-[1920px]:mt-24 min-[1921px]:mt-24">
@@ -76,7 +89,7 @@ export default function WorkPage() {
               <div className="relative mb-[-100vh]">
                 <div className="bg-red-400 min-[769px]:sticky min-[769px]:top-0 min-[769px]:overflow-x-hidden min-[769px]:overflow-y-hidden">
                   <div className="m-auto flex w-[92%] min-[769px]:h-screen min-[1921px]:max-w-[118.75rem]">
-                    <div className="md:pb-16 md:pb-24 md:pt-16 md:pt-24 min-[769px]:relative min-[769px]:w-[34.5263%] min-[769px]:pr-14 min-[1600px]:pb-16 min-[1600px]:pt-16 min-[1920px]:pb-24 min-[1920px]:pt-24 min-[1921px]:pb-24 min-[1921px]:pt-24">
+                    <div className="md:pb-24 md:pt-24 min-[769px]:relative min-[769px]:w-[34.5263%] min-[769px]:pr-14 min-[1600px]:pb-16 min-[1600px]:pt-16 min-[1920px]:pb-24 min-[1920px]:pt-24 min-[1921px]:pb-24 min-[1921px]:pt-24">
                       <h3 className="text-[5.00rem] uppercase leading-none">
                         <a className="inline-block" href="">
                           Classic Driven
@@ -120,7 +133,7 @@ export default function WorkPage() {
 
                 <div className="bg-stone-300 min-[769px]:sticky min-[769px]:top-0 min-[769px]:overflow-x-hidden min-[769px]:overflow-y-hidden">
                   <div className="m-auto flex w-[92%] min-[769px]:h-screen min-[1921px]:max-w-[118.75rem]">
-                    <div className="md:pb-16 md:pb-24 md:pt-16 md:pt-24 min-[769px]:relative min-[769px]:w-[34.5263%] min-[769px]:pr-14 min-[1600px]:pb-16 min-[1600px]:pt-16 min-[1920px]:pb-24 min-[1920px]:pt-24 min-[1921px]:pb-24 min-[1921px]:pt-24">
+                    <div className="md:pb-16 md:pt-16 min-[769px]:relative min-[769px]:w-[34.5263%] min-[769px]:pr-14 min-[1600px]:pb-16 min-[1600px]:pt-16 min-[1920px]:pb-24 min-[1920px]:pt-24 min-[1921px]:pb-24 min-[1921px]:pt-24">
                       <h3 className="text-[5.00rem] uppercase leading-none">
                         <a className="inline-block" href="">
                           Rome Tile
@@ -164,7 +177,7 @@ export default function WorkPage() {
 
                 <div className="bg-amber-300 min-[769px]:sticky min-[769px]:top-0 min-[769px]:overflow-x-hidden min-[769px]:overflow-y-hidden">
                   <div className="m-auto flex w-[92%] min-[769px]:h-screen min-[1921px]:max-w-[118.75rem]">
-                    <div className="md:pb-16 md:pb-24 md:pt-16 md:pt-24 min-[769px]:relative min-[769px]:w-[34.5263%] min-[769px]:pr-14 min-[1600px]:pb-16 min-[1600px]:pt-16 min-[1920px]:pb-24 min-[1920px]:pt-24 min-[1921px]:pb-24 min-[1921px]:pt-24">
+                    <div className="md:pb-24 md:pt-24 min-[769px]:relative min-[769px]:w-[34.5263%] min-[769px]:pr-14 min-[1600px]:pb-16 min-[1600px]:pt-16 min-[1920px]:pb-24 min-[1920px]:pt-24 min-[1921px]:pb-24 min-[1921px]:pt-24">
                       <h3 className="text-[5.00rem] uppercase leading-none">
                         <a className="inline-block" href="">
                           The Fabric Emporium
@@ -212,7 +225,7 @@ export default function WorkPage() {
               <div className="m-auto w-[92%] uppercase min-[769px]:flex min-[1600px]:mb-16 min-[1920px]:mb-24 min-[1921px]:mb-24 min-[1921px]:max-w-[118.75rem]">
                 <div className="text-lg">
                   <h2 className="inline-block min-[671px]:pl-6 min-[769px]:mt-5">
-                    Award-winning websites and brands
+                    Websites and brands
                   </h2>
                 </div>
 
@@ -227,270 +240,62 @@ export default function WorkPage() {
 
               <div className="m-auto w-[92%] text-[1.38rem] leading-7 min-[1921px]:max-w-[118.75rem]">
                 <div className="relative">
-                  <ul className="list-none flex-wrap min-[769px]:flex">
-                    <li className="relative list-item min-[769px]:w-[30.9474%]">
-                      <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase text-white min-[1025px]:p-8">
-                        <a href="">Shops</a>
-                        {"        "}
-                      </span>
+                  <ul className="grid list-none grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    {projects.docs.map((project, index) => {
+                      const isWide = index % 3 === 0;
 
-                      <a className="w-full overflow-hidden" href="">
-                        <picture className="h-auto max-w-full cursor-pointer">
-                          <source />
-                          {"            "}
-                          <img
-                            className="h-auto w-full max-w-full"
-                            src="https://www.fhoke.com/wp-content/uploads/2021/04/fourpure-header-588x700.jpg"
-                          />
-                          {"        "}
-                        </picture>
-                      </a>
-
-                      <div className="flex justify-between min-[1025px]:mt-5">
-                        <div className="flex-grow">
-                          <h5>
-                            <a className="inline-block" href="">
-                              Fivepure
-                            </a>
-                          </h5>
-
-                          <p className="opacity-50">
-                            Artisanal beer from Manchester.
-                          </p>
-                        </div>
-
-                        <div className="ml-5 text-lg uppercase">
-                          <a
-                            className="relative inline-block overflow-hidden rounded-full bg-gray-200 text-center"
+                      return (
+                        <li
+                          key={project.id}
+                          className={`relative list-item h-full ${isWide ? "md:col-span-2" : ""} mb-8 flex h-full flex-col`}
+                        >
+                          <span className="absolute left-0 top-0 z-[2] w-full p-4 text-lg uppercase text-white md:p-6 lg:p-8">
+                            <Link href="">Website</Link>
+                          </span>
+                          <Link
+                            className="w-full flex-grow overflow-hidden"
                             href=""
                           >
-                            <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
-                              View
-                              <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
-                            </span>
-                          </a>
-                          {"        "}
-                        </div>
-                      </div>
-                    </li>
-
-                    <li className="relative list-item md:mt-10 md:mt-12 min-[769px]:ml-auto min-[769px]:w-[65.4737%]">
-                      <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase text-white min-[1025px]:p-8">
-                        <a href="">Websites</a>
-                        {"        "}
-                      </span>
-
-                      <a className="w-full overflow-hidden" href="">
-                        <picture className="h-auto max-w-full cursor-pointer">
-                          <source />
-                          {"            "}
-                          <img
-                            className="h-auto w-full max-w-full"
-                            src="https://www.fhoke.com/wp-content/uploads/2020/11/neck-of-the-woods-films-header-1244x700.png"
-                          />
-                          {"        "}
-                        </picture>
-                      </a>
-
-                      <div className="flex justify-between min-[1025px]:mt-5">
-                        <div className="flex-grow">
-                          <h5>
-                            <a className="inline-block" href="">
-                              Heart of The Forest
-                            </a>
-                          </h5>
-
-                          <p className="opacity-50">
-                            A compelling narrative can transform everything.
-                          </p>
-                        </div>
-
-                        <div className="ml-5 text-lg uppercase">
-                          <a
-                            className="relative inline-block overflow-hidden rounded-full bg-gray-200 text-center"
-                            href=""
-                          >
-                            <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
-                              View
-                              <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
-                            </span>
-                          </a>
-                          {"        "}
-                        </div>
-                      </div>
-                    </li>
-
-                    <li className="relative list-item md:mt-10 md:mt-12 min-[769px]:mt-12 min-[769px]:mt-20 min-[769px]:mt-28 min-[769px]:w-[65.4737%]">
-                      <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase text-white min-[1025px]:p-8">
-                        <a href="">Websites</a>
-                        {"        "}
-                      </span>
-
-                      <a className="w-full overflow-hidden" href="">
-                        <picture className="h-auto max-w-full cursor-pointer">
-                          <source />
-                          {"            "}
-                          <img
-                            className="h-auto w-full max-w-full"
-                            src="https://www.fhoke.com/wp-content/uploads/2020/08/Classic-Ford-Broncos-2022-Banner-1244x700.jpg"
-                          />
-                          {"        "}
-                        </picture>
-                      </a>
-
-                      <div className="flex justify-between min-[1025px]:mt-5">
-                        <div className="flex-grow">
-                          <h5>
-                            <a className="inline-block" href="">
-                              Classic Ford Broncos
-                            </a>
-                          </h5>
-
-                          <p className="opacity-50">Built for adventure.</p>
-                        </div>
-
-                        <div className="ml-5 text-lg uppercase">
-                          <a
-                            className="relative inline-block overflow-hidden rounded-full bg-gray-200 text-center"
-                            href=""
-                          >
-                            <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
-                              View
-                              <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
-                            </span>
-                          </a>
-                          {"        "}
-                        </div>
-                      </div>
-                    </li>
-
-                    <li className="relative list-item md:mt-10 md:mt-12 min-[769px]:ml-auto min-[769px]:mt-12 min-[769px]:mt-20 min-[769px]:mt-28 min-[769px]:w-[30.9474%]">
-                      <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase text-white min-[1025px]:p-8">
-                        <a href="">Websites</a>
-                        {"        "}
-                      </span>
-
-                      <a className="w-full overflow-hidden" href="">
-                        <picture className="h-auto max-w-full cursor-pointer">
-                          <source />
-                          {"            "}
-                          <img
-                            className="h-auto w-full max-w-full"
-                            src="https://www.fhoke.com/wp-content/uploads/2018/09/NL4x4-Banner-588x700.jpg"
-                          />
-                          {"        "}
-                        </picture>
-                      </a>
-
-                      <div className="flex justify-between min-[1025px]:mt-5">
-                        <div className="flex-grow">
-                          <h5>
-                            <a className="inline-block" href="">
-                              New Legend 4×4
-                            </a>
-                          </h5>
-
-                          <p className="opacity-50">True legends never die.</p>
-                        </div>
-
-                        <div className="ml-5 text-lg uppercase">
-                          <a
-                            className="relative inline-block overflow-hidden rounded-full bg-gray-200 text-center"
-                            href=""
-                          >
-                            <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
-                              View
-                              <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
-                            </span>
-                          </a>
-                          {"        "}
-                        </div>
-                      </div>
-                    </li>
-
-                    <li className="relative list-item md:mt-10 md:mt-12 min-[769px]:mt-12 min-[769px]:mt-20 min-[769px]:mt-28 min-[769px]:w-[30.9474%]">
-                      <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase text-white min-[1025px]:p-8">
-                        <a href="">Websites</a>
-                        {"        "}
-                      </span>
-
-                      <a className="w-full overflow-hidden" href="">
-                        <picture className="h-auto max-w-full cursor-pointer">
-                          <source />
-                          {"            "}
-                          <img
-                            className="h-auto w-full max-w-full"
-                            src="https://www.fhoke.com/wp-content/uploads/2024/04/Klindworth-Header-588x700.webp"
-                          />
-                          {"        "}
-                        </picture>
-                      </a>
-
-                      <div className="flex justify-between min-[1025px]:mt-5">
-                        <div className="flex-grow">
-                          <h5>
-                            <a className="inline-block" href="">
-                              Klindworth Roofing
-                            </a>
-                          </h5>
-
-                          <p className="opacity-50">Crafted durability</p>
-                        </div>
-
-                        <div className="ml-5 text-lg uppercase">
-                          <a
-                            className="relative inline-block overflow-hidden rounded-full bg-gray-200 text-center"
-                            href=""
-                          >
-                            <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
-                              View
-                              <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
-                            </span>
-                          </a>
-                          {"        "}
-                        </div>
-                      </div>
-                    </li>
-
-                    <li className="relative list-item md:mt-10 md:mt-12 min-[769px]:ml-auto min-[769px]:mt-12 min-[769px]:mt-20 min-[769px]:mt-28 min-[769px]:w-[65.4737%]">
-                      <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase text-white min-[1025px]:p-8">
-                        <a href="">Websites</a>
-                      </span>
-
-                      <a className="w-full overflow-hidden" href="">
-                        <picture className="h-auto max-w-full cursor-pointer">
-                          <source />
-                          <img
-                            className="h-auto w-full max-w-full"
-                            src="https://www.fhoke.com/wp-content/uploads/2023/10/Garland-Powersports-1-1244x700.webp"
-                          />
-                        </picture>
-                      </a>
-
-                      <div className="flex justify-between min-[1025px]:mt-5">
-                        <div className="flex-grow">
-                          <h5>
-                            <a className="inline-block" href="#">
-                              Garland Powersports
-                            </a>
-                          </h5>
-
-                          <p className="opacity-50">Get track ready</p>
-                        </div>
-
-                        <div className="ml-5 text-lg uppercase">
-                          <a
-                            className="relative inline-block overflow-hidden rounded-full bg-gray-200 text-center"
-                            href="#"
-                          >
-                            <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
-                              View
-                              <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
-                            </span>
-                          </a>
-                        </div>
-                      </div>
-                    </li>
+                            <div className="relative pt-[75%]">
+                              <Image
+                                className="cursor-pointer object-cover"
+                                src={
+                                  typeof project.imageMain === "string"
+                                    ? project.imageMain
+                                    : (project.imageMain as { url: string })
+                                        ?.url || ""
+                                }
+                                alt={project.title}
+                                fill
+                              />
+                            </div>
+                          </Link>
+                          <div className="mt-4 flex flex-col justify-between min-[1025px]:mt-5">
+                            <div className="flex-grow">
+                              <h5 className="mb-2 text-xl font-semibold">
+                                <Link className="inline-block" href="">
+                                  {project.title}
+                                </Link>
+                              </h5>
+                              <p className="mb-4 opacity-50">
+                                {project.tagline}
+                              </p>
+                            </div>
+                            <div className="text-lg uppercase">
+                              <Link
+                                className="relative inline-block overflow-hidden rounded-full bg-gray-200 px-4 py-2 text-center"
+                                href=""
+                              >
+                                <span className="relative cursor-pointer">
+                                  View
+                                  <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white" />
+                                </span>
+                              </Link>
+                            </div>
+                          </div>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
