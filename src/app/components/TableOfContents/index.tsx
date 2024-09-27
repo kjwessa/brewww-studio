@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect, useRef } from "react";
 
 interface LexicalNode {
@@ -30,9 +29,8 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content }) => {
     const headings: TOCItem[] = [];
     nodes.forEach((node, index) => {
       if (node.type === "heading") {
-        const tag = node.tag || "1"; // Default to h1 if tag is undefined
+        const tag = node.tag || "1";
         const text = node.children?.[0]?.text || `Heading ${index + 1}`;
-
         headings.push({
           id: `heading-${headings.length}`,
           text: text,
@@ -40,38 +38,56 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content }) => {
         });
       }
     });
+    console.log("Extracted headings:", headings);
     return headings;
   };
 
   useEffect(() => {
+    console.log("Content received:", content);
     const headings = extractHeadings(content);
     setToc(headings);
 
-    // Set up intersection observer
-    observer.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: "0px 0px -80% 0px" },
-    );
+    const observerOptions = { rootMargin: "0px 0px -80% 0px" };
 
-    // Observe all headings
-    headings.forEach((heading: TOCItem) => {
-      const element = document.getElementById(heading.id);
-      if (element) observer.current?.observe(element);
-    });
+    observer.current = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveId(entry.target.id);
+          console.log("Active heading:", entry.target.id);
+        }
+      });
+    }, observerOptions);
 
-    return () => observer.current?.disconnect();
+    console.log("Observer created with options:", observerOptions);
+
+    // Delay the observation to ensure DOM elements are ready
+    setTimeout(() => {
+      headings.forEach((heading: TOCItem) => {
+        const element = document.getElementById(heading.id);
+        if (element) {
+          observer.current?.observe(element);
+          console.log("Observing element:", heading.id);
+        } else {
+          console.error("Element not found for heading:", heading.id);
+        }
+      });
+    }, 100);
+
+    return () => {
+      if (observer.current) {
+        observer.current.disconnect();
+        console.log("Observer disconnected");
+      }
+    };
   }, [content]);
 
   const handleClick = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+      console.log("Scrolled to element:", id);
+    } else {
+      console.error("Element not found for scrolling:", id);
     }
   };
 
@@ -82,8 +98,8 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content }) => {
         {toc.map((item) => (
           <li
             key={item.id}
-            className={`cursor-pointer hover:text-blue-500 ${
-              activeId === item.id ? "font-bold text-blue-500" : ""
+            className={`cursor-pointer hover:text-black ${
+              activeId === item.id ? "font-bold text-black" : ""
             }`}
             style={{ marginLeft: `${(item.level - 1) * 12}px` }}
             onClick={() => handleClick(item.id)}
