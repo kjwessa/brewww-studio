@@ -147,7 +147,7 @@ export const Work: CollectionConfig = {
   admin: {
     useAsTitle: "title",
     description: "All we do is work, work, work.",
-    defaultColumns: ["title", "tagline"],
+    defaultColumns: ["title", "tagline", "status"],
     group: "Portfolio",
     listSearchableFields: ["title", "tagline"],
     pagination: {

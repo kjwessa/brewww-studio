@@ -8,11 +8,12 @@ export default async function WorkPage() {
   const projects = await payload.find({
     collection: "work",
     limit: 1000,
+    sort: "title",
     where: {
       _status: { equals: "published" },
     },
   });
-  console.log(projects);
+
   return (
     <>
       <div>
@@ -242,7 +243,10 @@ export default async function WorkPage() {
                 <div className="relative">
                   <ul className="grid list-none grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                     {projects.docs.map((project, index) => {
-                      const isWide = index % 3 === 0;
+                      const rowIndex = Math.floor(index / 2);
+                      const isWide =
+                        (rowIndex % 2 === 0 && index % 2 === 0) ||
+                        (rowIndex % 2 === 1 && index % 2 === 1);
 
                       return (
                         <li
@@ -254,7 +258,7 @@ export default async function WorkPage() {
                           </span>
                           <Link
                             className="w-full flex-grow overflow-hidden"
-                            href=""
+                            href={`/work/${project.slug}`}
                           >
                             <div className="relative pt-[75%]">
                               <Image
@@ -284,7 +288,7 @@ export default async function WorkPage() {
                             <div className="text-lg uppercase">
                               <Link
                                 className="relative inline-block overflow-hidden rounded-full bg-gray-200 px-4 py-2 text-center"
-                                href=""
+                                href={`/work/${project.slug}`}
                               >
                                 <span className="relative cursor-pointer">
                                   View
