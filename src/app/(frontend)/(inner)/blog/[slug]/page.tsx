@@ -144,7 +144,7 @@ export default async function PostPage({
           </div>
         </div>
         <div className="flex flex-col justify-start">
-          <article className="mx-auto pb-24">
+          <article className="prose mx-auto pb-24">
             <RichText
               content={post.content || ""}
               className="prose-lg"

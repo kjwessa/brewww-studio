@@ -29,9 +29,10 @@ const RichText: React.FC<Props> = ({
     }
   };
 
+  // TODO: Add dark:prose-invert to the className if I want dark mode later
   return (
     <div
-      className={` ${enableGutter ? "container" : "max-w-none"} ${enableProse ? "prose mx-auto dark:prose-invert" : ""} ${className || ""} `.trim()}
+      className={` ${enableGutter ? "container" : "max-w-none"} ${enableProse ? "prose mx-auto" : ""} ${className || ""} `.trim()}
     >
       {renderContent()}
     </div>
