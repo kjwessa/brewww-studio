@@ -2,7 +2,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <section className="flex min-h-[90vh] items-center justify-center bg-brand-black text-white">
+      <section className="bg-brand-black flex min-h-[90vh] items-center justify-center text-white">
         <div className="container mx-auto px-4 py-8 md:px-6">
           <h1 className="mx-auto mb-6 max-w-5xl text-center text-[7.2vw] font-bold leading-[0.9] tracking-tighter">
             <span className="opacity-50">If </span>
@@ -27,6 +27,43 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="bg-brand-black flex min-h-[90vh] items-center justify-center text-white">
+        <div className="container mx-auto px-4 py-8 md:px-6">
+          <h1 className="mx-auto mb-6 max-w-5xl text-center text-[7.2vw] font-bold leading-[0.9] tracking-tighter">
+            While AI is busy hallucinating,
+            <span className="text-brand-gold">
+              {" "}
+              we're crafting kinetic brands
+            </span>
+            <span className="opacity-50">.</span>
+          </h1>
+          <p className="mx-auto mt-6 max-w-3xl text-center text-xl opacity-70 md:text-2xl">
+            We craft brand identities, websites that drive results, and
+            compelling storytelling that showcase your full potential. Local
+            feel, global reach.
+          </p>
+          <div className="mt-10 flex justify-center">
+            <div className="relative inline-block h-20 w-3 overflow-hidden md:h-28">
+              <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 transform bg-white/35" />
+              <div className="absolute left-1/2 top-0 h-1/2 w-px -translate-x-1/2 transform bg-white" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-neutral-900 text-white">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col items-center">
+            <div className="grid grid-cols-1 py-16 sm:py-24 md:py-32">
+              <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+                From fast-growing startups to experienced companies, we deliver
+                functional design, high-quality code and well-thought strategy
+                to increase your odds of success in the digital world.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-stone-950 py-16 text-zinc-50">
         <div className="container mx-auto px-4">
           <div className="grid auto-cols-fr grid-cols-[1fr_1fr_1fr] grid-rows-[1fr_1fr_1fr] gap-8">
