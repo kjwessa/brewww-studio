@@ -44,6 +44,7 @@
     "next": "15.0.0-canary.156",
     "payload": "beta",
     "payload-admin-bar": "^1.0.6",
+    "prism-react-renderer": "^2.3.1",
     "react": "19.0.0-rc-06d0b89e-20240801",
     "react-dom": "19.0.0-rc-06d0b89e-20240801",
     "react-hook-form": "7.45.4",
