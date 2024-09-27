@@ -3,9 +3,8 @@ import Image from "next/image";
 export default function IndividualPage() {
   return (
     <>
-      <div className="bg-white pt-24 text-black">
-        {/* Branding & System Design */}
-        <section className="flex w-full items-end px-16 pt-44 text-center">
+      <section className="bg-white py-24 text-black">
+        <div className="flex w-full items-end px-16 pt-44 text-center">
           <div className="flex w-full flex-wrap justify-center">
             <h1 className="flex flex-col justify-center text-[5.13rem] leading-none">
               <div className="table pr-1">
@@ -19,26 +18,21 @@ export default function IndividualPage() {
               <h2>01/03</h2>
             </div>
           </div>
-        </section>
+        </div>
 
-        <section>
-          <div className="relative flex h-0 w-full items-end pb-[66%]">
-            <Image
-              src="/images/branding-books.1920.jpg"
-              alt=""
-              fill
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-        </section>
+        <div className="relative flex h-0 w-full items-end pb-[66%]">
+          <Image
+            src="/images/branding-books.1920.jpg"
+            alt=""
+            fill
+            style={{ objectFit: "cover" }}
+          />
+        </div>
 
-        <section className="px-16 pt-20">
+        <div className="px-16 pt-20">
           <div className="m-auto w-full max-w-[120.00rem]">
-            <div className="flex" id="div-1">
-              <div
-                className="flex w-[55%] flex-col pr-[calc(min(6vw,_115px)_*_2)] text-3xl font-bold uppercase"
-                id="div-2"
-              >
+            <div className="flex">
+              <div className="flex w-[55%] flex-col pr-[calc(min(6vw,_115px)_*_2)] text-3xl font-bold uppercase">
                 <h2 className="overflow-hidden">
                   <div className="">
                     <h2>Your brand tells the story of your company values</h2>
@@ -46,7 +40,7 @@ export default function IndividualPage() {
                 </h2>
               </div>
 
-              <div className="flex w-[45%] flex-col" id="div-3">
+              <div className="flex w-[45%] flex-col">
                 <p className="whitespace-pre-line">
                   A bold, strategic brand identity is what lies behind a strong
                   first impression. There are two parts to a strong brand:
@@ -56,10 +50,11 @@ export default function IndividualPage() {
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Content creation & craft illustrations */}
-        <section className="flex w-full items-end px-16 pt-44 text-center">
+      <section className="bg-white py-24 text-black">
+        <div className="flex w-full items-end px-16 pt-44 text-center">
           <div className="flex w-full flex-wrap justify-center">
             <h1 className="flex flex-col justify-center text-[5.13rem] leading-none">
               <div className="table pr-1">
@@ -73,26 +68,21 @@ export default function IndividualPage() {
               <h2>03/03</h2>
             </div>
           </div>
-        </section>
+        </div>
 
-        <section>
-          <div className="relative flex h-0 w-full items-end pb-[66%]">
-            <Image
-              src="/images/macbook-opening-lid.1920.jpg"
-              alt=""
-              fill
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-        </section>
+        <div className="relative flex h-0 w-full items-end pb-[66%]">
+          <Image
+            src="/images/macbook-opening-lid.1920.jpg"
+            alt=""
+            fill
+            style={{ objectFit: "cover" }}
+          />
+        </div>
 
-        <section className="px-16 pt-20">
+        <div className="px-16 pt-20">
           <div className="m-auto w-full max-w-[120.00rem]">
-            <div className="flex" id="div-1">
-              <div
-                className="flex w-[55%] flex-col pr-[calc(min(6vw,_115px)_*_2)] text-3xl font-bold uppercase"
-                id="div-2"
-              >
+            <div className="flex">
+              <div className="flex w-[55%] flex-col pr-[calc(min(6vw,_115px)_*_2)] text-3xl font-bold uppercase">
                 <h2 className="overflow-hidden">
                   <div className="">
                     <h2>Unleashing the kinetic power of content.</h2>
@@ -100,39 +90,52 @@ export default function IndividualPage() {
                 </h2>
               </div>
 
-              <div className="flex w-[45%] flex-col" id="div-3">
-                <p className="whitespace-pre-line">
+              <div className="flex w-[45%] flex-col">
+                <p className="m-4">
                   At Brewww Studio, we don't just create content — we craft
                   experiences that move. As pioneers of unbounded branding, we
                   believe that powerful content is the rocket fuel that propels
-                  your brand across the cosmos of communication. Our approach is
-                  simple yet revolutionary: we align our creative process with
-                  your brand's unique story, ensuring that every piece of
-                  content we create resonates with your audience on a deeper
-                  level. From captivating brand photography to engaging blog
-                  articles, from eye-catching graphic design to innovative
-                  product concepts, we weave your brand's essence into every
-                  medium. Picture motion-filled illustrations that bring your
-                  ideas to life, or branded apparel that turns your customers
-                  into walking billboards. Imagine iconography that simplifies
+                  your brand across the cosmos of communication.
+                </p>
+                <p className="m-4">
+                  Our approach is simple yet revolutionary: we align our
+                  creative process with your brand's unique story, ensuring that
+                  every piece of content we create resonates with your audience
+                  on a deeper level.
+                </p>
+                <p className="m-4">
+                  From captivating brand photography to engaging blog articles,
+                  from eye-catching graphic design to innovative product
+                  concepts, we weave your brand's essence into every medium.
+                </p>
+                <p className="m-4">
+                  Picture motion-filled illustrations that bring your ideas to
+                  life, or branded apparel that turns your customers into
+                  walking billboards. Imagine iconography that simplifies
                   complex ideas into instantly recognizable symbols, or brand
                   collateral that maintains a consistent visual identity across
-                  all touchpoints. At Brewww, we understand that content
-                  creation and design are not just complementary—they're a
-                  cosmic duo in the realm of communication. By fusing
-                  imaginative designs with compelling narratives, we achieve the
-                  most profound form of connection with your audience. Ready to
-                  break free from the gravitational pull of ordinary content?
-                  Let's craft something extraordinary together and set your
-                  brand in motion across the universe.
+                  all touchpoints.
+                </p>
+                <p className="m-4">
+                  At Brewww, we understand that content creation and design are
+                  not just complementary—they're a cosmic duo in the realm of
+                  communication. By fusing imaginative designs with compelling
+                  narratives, we achieve the most profound form of connection
+                  with your audience.
+                </p>
+                <p className="m-4">
+                  Ready to break free from the gravitational pull of ordinary
+                  content? Let's craft something extraordinary together and set
+                  your brand in motion across the universe.
                 </p>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Custom-built websites */}
-        <section className="flex w-full items-end px-16 pt-44 text-center">
+      <section className="bg-white py-24 text-black">
+        <div className="flex w-full items-end px-16 pt-44 text-center">
           <div className="flex w-full flex-wrap justify-center">
             <h1 className="flex flex-col justify-center text-[5.13rem] leading-none">
               <div className="table pr-1">
@@ -146,26 +149,21 @@ export default function IndividualPage() {
               <h2>02/03</h2>
             </div>
           </div>
-        </section>
+        </div>
 
-        <section>
-          <div className="relative flex h-0 w-full items-end pb-[66%]">
-            <Image
-              src="/images/background-capabilities.1200.jpg"
-              alt=""
-              fill
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-        </section>
+        <div className="relative flex h-0 w-full items-end pb-[66%]">
+          <Image
+            src="/images/background-capabilities.1200.jpg"
+            alt=""
+            fill
+            style={{ objectFit: "cover" }}
+          />
+        </div>
 
-        <section className="px-16 pt-20">
+        <div className="px-16 pt-20">
           <div className="m-auto w-full max-w-[120.00rem]">
-            <div className="flex" id="div-1">
-              <div
-                className="flex w-[55%] flex-col pr-[calc(min(6vw,_115px)_*_2)] text-3xl font-bold uppercase"
-                id="div-2"
-              >
+            <div className="flex">
+              <div className="flex w-[55%] flex-col pr-[calc(min(6vw,_115px)_*_2)] text-3xl font-bold uppercase">
                 <h2 className="overflow-hidden">
                   <div className="">
                     <h2>
@@ -176,42 +174,54 @@ export default function IndividualPage() {
                 </h2>
               </div>
 
-              <div className="flex w-[45%] flex-col" id="div-3">
-                <p className="whitespace-pre-line">
+              <div className="flex w-[45%] flex-col">
+                <p>
                   At Brewww Studio, we don't just build websites - we create
                   digital universes that captivate, engage, and inspire. Our
                   approach goes beyond the traditional static experience,
                   weaving together innovative design, strategic thinking, and
                   cutting-edge technology to craft brand experiences that
-                  resonate on a deeper level. We believe your website should be
-                  more than just a digital brochure. It's an opportunity to tell
-                  your brand's unique story in a way that moves your audience.
-                  Through immersive interactions, kinetic typography, and
-                  thoughtful user journeys, we transform your digital presence
-                  into a narrative that unfolds with every scroll and click. Our
-                  process begins with meticulous planning and strategy. We dive
-                  deep into your brand's essence, mapping out user flows and
-                  information architecture that align with your goals. This
+                  resonate on a deeper level.
+                </p>
+                <p className="mt-4">
+                  We believe your website should be more than just a digital
+                  brochure. It's an opportunity to tell your brand's unique
+                  story in a way that moves your audience. Through immersive
+                  interactions, kinetic typography, and thoughtful user
+                  journeys, we transform your digital presence into a narrative
+                  that unfolds with every scroll and click.
+                </p>
+                <p className="mt-4">
+                  Our process begins with meticulous planning and strategy. We
+                  dive deep into your brand's essence, mapping out user flows
+                  and information architecture that align with your goals. This
                   foundation ensures that every design decision and line of code
                   serves a purpose, creating a seamless and intuitive experience
-                  for your visitors. Whether you're an e-commerce pioneer, a
-                  creative visionary showcasing your portfolio, or a startup
-                  ready to make your mark, we craft bespoke digital solutions
-                  that reflect your unique identity. Our collaborative approach
-                  means we work closely with you to refine and perfect every
-                  aspect of your online presence. While visual appeal is
-                  crucial, we understand that true digital excellence goes
-                  further. We fine-tune every element - from compelling content
-                  creation to search engine optimization - to ensure your
-                  website not only looks extraordinary but performs
-                  exceptionally. Our goal is to create digital experiences that
-                  convert visitors into devoted customers and brand advocates.
+                  for your visitors.
+                </p>
+                <p className="mt-4">
+                  Whether you're an e-commerce pioneer, a creative visionary
+                  showcasing your portfolio, or a startup ready to make your
+                  mark, we craft bespoke digital solutions that reflect your
+                  unique identity. Our collaborative approach means we work
+                  closely with you to refine and perfect every aspect of your
+                  online presence.
+                </p>
+                <p className="mt-4">
+                  While visual appeal is crucial, we understand that true
+                  digital excellence goes further. We fine-tune every element -
+                  from compelling content creation to search engine optimization
+                  - to ensure your website not only looks extraordinary but
+                  performs exceptionally. Our goal is to create digital
+                  experiences that convert visitors into devoted customers and
+                  brand advocates.
                 </p>
               </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
       <section className="w-full bg-neutral-900 text-white min-[1600px]:pb-16 min-[1600px]:pt-20 min-[1920px]:pb-24 min-[1920px]:pt-28 min-[1921px]:pb-24 min-[1921px]:pt-28">
         <div className="mx-auto w-full max-w-[118.75rem] px-[4%]">
           <h3 className="inline-block text-lg uppercase min-[671px]:pl-6">
@@ -238,208 +248,170 @@ export default function IndividualPage() {
             </a>
           </div>
         </div>
-      </section>
-      <div>
-        <section className="relative overflow-hidden bg-neutral-900 text-[1.38rem] leading-7 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
-          <div className="m-auto w-[92%] min-[1921px]:max-w-[118.75rem]">
-            <div className="relative">
-              <ul className="list-none flex-wrap min-[769px]:flex">
-                <li className="relative list-item min-[769px]:w-[30.9474%]">
-                  <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
-                    Websites
-                  </span>
+        <div className="m-auto w-[92%] min-[1921px]:max-w-[118.75rem]">
+          <div className="relative">
+            <ul className="list-none flex-wrap min-[769px]:flex">
+              <li className="relative list-item min-[769px]:w-[30.9474%]">
+                <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
+                  Websites
+                </span>
 
-                  <a
-                    className="w-full overflow-hidden"
-                    href="https://www.fhoke.com/projects/heritage-driven/"
-                  >
-                    <picture className="h-auto max-w-full cursor-pointer">
-                      <source srcSet="https://www.fhoke.com/wp-content/uploads/2022/03/heritage-driven-header-706x460.jpg 1x, https://www.fhoke.com/wp-content/uploads/2022/03/heritage-driven-header-1412x920.jpg 2x" />
-                      <img
-                        className="h-auto w-full max-w-full"
-                        src="https://www.fhoke.com/wp-content/uploads/2022/03/heritage-driven-header-588x700.jpg"
-                        srcSet="https://www.fhoke.com/wp-content/uploads/2022/03/heritage-driven-header-588x700.jpg 1x, https://www.fhoke.com/wp-content/uploads/2022/03/heritage-driven-header-1176x1400.jpg 2x"
-                      />
-                    </picture>
-                  </a>
+                <a className="w-full overflow-hidden" href="">
+                  <picture className="h-auto max-w-full cursor-pointer">
+                    <img
+                      className="h-auto w-full max-w-full"
+                      src="https://www.fhoke.com/wp-content/uploads/2022/03/heritage-driven-header-588x700.jpg"
+                    />
+                  </picture>
+                </a>
 
-                  <div className="flex justify-between min-[1025px]:mt-5">
-                    <div className="flex-grow">
-                      <h5>
-                        <a
-                          className="inline-block"
-                          href="https://www.fhoke.com/projects/heritage-driven/"
-                        >
-                          Heritage Driven
-                        </a>
-                      </h5>
-
-                      <p className="opacity-50">
-                        Redefining an automotive icon.
-                      </p>
-                    </div>
-
-                    <div className="ml-5 text-lg uppercase">
-                      <a
-                        className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
-                        href="https://www.fhoke.com/projects/heritage-driven/"
-                      >
-                        <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
-                          View
-                          <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
-                        </span>
+                <div className="flex justify-between min-[1025px]:mt-5">
+                  <div className="flex-grow">
+                    <h5>
+                      <a className="inline-block" href="">
+                        Heritage Driven
                       </a>
-                    </div>
+                    </h5>
+
+                    <p className="opacity-50">Redefining an automotive icon.</p>
                   </div>
-                </li>
 
-                <li className="relative list-item md:mt-10 md:mt-12 min-[769px]:ml-auto min-[769px]:w-[65.4737%]">
-                  <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
-                    Shops
-                  </span>
+                  <div className="ml-5 text-lg uppercase">
+                    <a
+                      className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
+                      href=""
+                    >
+                      <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
+                        View
+                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </li>
 
-                  <a
-                    className="w-full overflow-hidden"
-                    href="https://www.fhoke.com/projects/combat-fuel/"
-                  >
-                    <picture className="h-auto max-w-full cursor-pointer">
-                      <source srcSet="https://www.fhoke.com/wp-content/uploads/2021/12/combat-fuel-header-706x460.jpg 1x, https://www.fhoke.com/wp-content/uploads/2021/12/combat-fuel-header-1412x920.jpg 2x" />
-                      <img
-                        className="h-auto w-full max-w-full"
-                        src="https://www.fhoke.com/wp-content/uploads/2021/12/combat-fuel-header-1244x700.jpg"
-                      />
-                    </picture>
-                  </a>
+              <li className="relative list-item md:mt-10 md:mt-12 min-[769px]:ml-auto min-[769px]:w-[65.4737%]">
+                <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
+                  Shops
+                </span>
 
-                  <div className="flex justify-between min-[1025px]:mt-5">
-                    <div className="flex-grow">
-                      <h5>
-                        <a
-                          className="inline-block"
-                          href="https://www.fhoke.com/projects/combat-fuel/"
-                        >
-                          Combat Fuel
-                        </a>
-                      </h5>
+                <a className="w-full overflow-hidden" href="">
+                  <picture className="h-auto max-w-full cursor-pointer">
+                    <img
+                      className="h-auto w-full max-w-full"
+                      src="https://www.fhoke.com/wp-content/uploads/2021/12/combat-fuel-header-1244x700.jpg"
+                    />
+                  </picture>
+                </a>
 
-                      <p className="opacity-50">
-                        Giving supplements a shake-up.
-                      </p>
-                    </div>
-
-                    <div className="ml-5 text-lg uppercase">
-                      <a
-                        className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
-                        href="https://www.fhoke.com/projects/combat-fuel/"
-                      >
-                        <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
-                          View
-                          <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
-                        </span>
+                <div className="flex justify-between min-[1025px]:mt-5">
+                  <div className="flex-grow">
+                    <h5>
+                      <a className="inline-block" href="">
+                        Combat Fuel
                       </a>
-                    </div>
+                    </h5>
+
+                    <p className="opacity-50">Giving supplements a shake-up.</p>
                   </div>
-                </li>
 
-                <li className="relative list-item md:mt-10 md:mt-12 min-[769px]:mt-12 min-[769px]:mt-20 min-[769px]:mt-28 min-[769px]:w-[65.4737%]">
-                  <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
-                    Websites
-                  </span>
+                  <div className="ml-5 text-lg uppercase">
+                    <a
+                      className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
+                      href=""
+                    >
+                      <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
+                        View
+                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </li>
 
-                  <a
-                    className="w-full overflow-hidden"
-                    href="https://www.fhoke.com/projects/neck-of-the-woods-films/"
-                  >
-                    <picture className="h-auto max-w-full cursor-pointer">
-                      <source srcSet="https://www.fhoke.com/wp-content/uploads/2020/11/neck-of-the-woods-films-header-706x460.png 1x, https://www.fhoke.com/wp-content/uploads/2020/11/neck-of-the-woods-films-header-1412x920.png 2x" />
-                      <img
-                        className="h-auto w-full max-w-full"
-                        src="https://www.fhoke.com/wp-content/uploads/2020/11/neck-of-the-woods-films-header-1244x700.png"
-                      />
-                    </picture>
-                  </a>
+              <li className="relative list-item md:mt-10 md:mt-12 min-[769px]:mt-12 min-[769px]:mt-20 min-[769px]:mt-28 min-[769px]:w-[65.4737%]">
+                <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
+                  Websites
+                </span>
 
-                  <div className="flex justify-between min-[1025px]:mt-5">
-                    <div className="flex-grow">
-                      <h5>
-                        <a
-                          className="inline-block"
-                          href="https://www.fhoke.com/projects/neck-of-the-woods-films/"
-                        >
-                          Neck of The Woods
-                        </a>
-                      </h5>
+                <a className="w-full overflow-hidden" href="">
+                  <picture className="h-auto max-w-full cursor-pointer">
+                    <img
+                      className="h-auto w-full max-w-full"
+                      src="https://www.fhoke.com/wp-content/uploads/2020/11/neck-of-the-woods-films-header-1244x700.png"
+                    />
+                  </picture>
+                </a>
 
-                      <p className="opacity-50">
-                        A powerful story can change everything.
-                      </p>
-                    </div>
-
-                    <div className="ml-5 text-lg uppercase">
-                      <a
-                        className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
-                        href="https://www.fhoke.com/projects/neck-of-the-woods-films/"
-                      >
-                        <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
-                          View
-                          <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
-                        </span>
+                <div className="flex justify-between min-[1025px]:mt-5">
+                  <div className="flex-grow">
+                    <h5>
+                      <a className="inline-block" href="">
+                        Neck of The Woods
                       </a>
-                    </div>
+                    </h5>
+
+                    <p className="opacity-50">
+                      A powerful story can change everything.
+                    </p>
                   </div>
-                </li>
 
-                <li className="relative list-item md:mt-10 md:mt-12 min-[769px]:ml-auto min-[769px]:mt-12 min-[769px]:mt-20 min-[769px]:mt-28 min-[769px]:w-[30.9474%]">
-                  <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
-                    Websites
-                  </span>
+                  <div className="ml-5 text-lg uppercase">
+                    <a
+                      className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
+                      href=""
+                    >
+                      <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
+                        View
+                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </li>
 
-                  <a
-                    className="w-full overflow-hidden"
-                    href="https://www.fhoke.com/projects/metal-and-gas/"
-                  >
-                    <picture className="h-auto max-w-full cursor-pointer">
-                      <source srcSet="https://www.fhoke.com/wp-content/uploads/2020/03/MetalandGas-Banner-706x460.jpg 1x, https://www.fhoke.com/wp-content/uploads/2020/03/MetalandGas-Banner-1412x920.jpg 2x" />
-                      <img
-                        className="h-auto w-full max-w-full"
-                        src="https://www.fhoke.com/wp-content/uploads/2020/03/MetalandGas-Banner-588x700.jpg"
-                        srcSet="https://www.fhoke.com/wp-content/uploads/2020/03/MetalandGas-Banner-588x700.jpg 1x, https://www.fhoke.com/wp-content/uploads/2020/03/MetalandGas-Banner-1176x1400.jpg 2x"
-                      />
-                    </picture>
-                  </a>
+              <li className="relative list-item md:mt-10 md:mt-12 min-[769px]:ml-auto min-[769px]:mt-12 min-[769px]:mt-20 min-[769px]:mt-28 min-[769px]:w-[30.9474%]">
+                <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
+                  Websites
+                </span>
 
-                  <div className="flex justify-between min-[1025px]:mt-5">
-                    <div className="flex-grow">
-                      <h5>
-                        <a
-                          className="inline-block"
-                          href="https://www.fhoke.com/projects/metal-and-gas/"
-                        >
-                          Metal & Gas
-                        </a>
-                      </h5>
+                <a className="w-full overflow-hidden" href="">
+                  <picture className="h-auto max-w-full cursor-pointer">
+                    <img
+                      className="h-auto w-full max-w-full"
+                      src="https://www.fhoke.com/wp-content/uploads/2020/03/MetalandGas-Banner-588x700.jpg"
+                    />
+                  </picture>
+                </a>
 
-                      <p className="opacity-50">Drive what they don&apos;t.</p>
-                    </div>
-
-                    <div className="ml-5 text-lg uppercase">
-                      <a
-                        className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
-                        href="https://www.fhoke.com/projects/metal-and-gas/"
-                      >
-                        <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
-                          View
-                          <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
-                        </span>
+                <div className="flex justify-between min-[1025px]:mt-5">
+                  <div className="flex-grow">
+                    <h5>
+                      <a className="inline-block" href="">
+                        Metal & Gas
                       </a>
-                    </div>
+                    </h5>
+
+                    <p className="opacity-50">Drive what they don&apos;t.</p>
                   </div>
-                </li>
-              </ul>
-            </div>
+
+                  <div className="ml-5 text-lg uppercase">
+                    <a
+                      className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
+                      href=""
+                    >
+                      <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
+                        View
+                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
       <section className="bg-white py-24 text-black sm:py-32">
         <div className="container mx-auto w-[92%] max-w-[77.75rem]">
