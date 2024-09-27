@@ -650,6 +650,220 @@ export default function About() {
           </div>
         </article>
       </section>
+      <div>
+        <div className="h-full bg-stone-100 text-base opacity-[0.9999]">
+          <a
+            className="absolute bottom-[85.25rem] left-0 right-[93.00rem] top-0 z-[-1] text-black underline"
+            href=""
+          >
+            Accessibility Screen-Reader Guide, Feedback, and Issue Reporting
+          </a>
+        </div>
+          <div className="min-h-screen overflow-hidden">
+            <main className="m-auto w-screen max-w-[100vw] bg-white text-black">
+              <div className="pt-16">
+                <div className="border-b-2 border-solid border-black">
+                  <div className="m-auto w-[95vw] max-w-[95vw]">
+                    <div className="m-auto flex min-h-[calc(240px)] max-w-[56.25rem] flex-col flex-wrap content-center items-center justify-center py-20 text-center">
+                      <h1 className="mb-8 text-[5.00rem] leading-none">
+                        Honest Folks Doing Honest Work
+                      </h1>
+                      <h3 className="mb-8 text-[2.38rem] leading-none">
+                        Our strategy remains: work hard, create lasting
+                        relationships, and deliver the very best quality work.
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div className="border-b-2 border-solid border-black">
+                  <div className="flex basis-full justify-between bg-orange-300 px-12 py-24">
+                    <div className="basis-[47%]">
+                      <div>
+                        <div className="relative flex w-full items-center justify-center">
+                          <div
+                            className="relative flex h-full max-h-[31.25rem] min-h-[31.25rem] w-full max-w-[31.25rem]"
+                            style={{
+                              cursor:
+                                'url("https://grainandmortar.com/wp-content/themes/gm/_assets/img/cursor-arrow.svg") 0 0, default',
+                            }}
+                          >
+                            <div className="absolute bottom-0 left-0 top-0 z-[100] flex h-full w-full items-center justify-center text-center">
+                              <img
+                                className="h-auto w-full max-w-full rounded-sm"
+                                src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/photo_stack/grain_mortar_team_5.jpg"
+                              />
+                            </div>
+                            <div className="absolute bottom-0 left-0 top-0 z-[101] flex h-full w-full items-center justify-center text-center">
+                              <img
+                                className="h-auto w-full max-w-full rounded-sm"
+                                src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/grain-and-mortar_office.jpg"
+                              />
+                            </div>
+                            <div className="absolute bottom-0 left-0 top-0 z-[102] flex h-full w-full items-center justify-center text-center">
+                              <img
+                                className="h-auto w-full max-w-full rounded-sm"
+                                src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/photo_stack/grain_mortar_team_3.jpg"
+                              />
+                            </div>
+                            <div className="absolute bottom-0 left-0 top-0 z-[103] flex h-full w-full items-center justify-center text-center">
+                              <img
+                                className="h-auto w-full max-w-full rounded-sm"
+                                src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/photo_stack/grain_mortar_team_12.jpg"
+                              />
+                            </div>
+                            <div className="absolute bottom-0 left-0 top-0 z-[104] flex h-full w-full items-center justify-center text-center">
+                              <img
+                                className="h-auto w-full max-w-full rounded-sm"
+                                src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/photo_stack/grain_mortar_team_6.jpg"
+                              />
+                            </div>
+                            <div className="absolute bottom-0 left-0 top-0 z-[105] flex h-full w-full items-center justify-center text-center">
+                              <img
+                                className="h-auto w-full max-w-full rounded-sm"
+                                src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/grain-and-mortar_krug-park.jpg"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex basis-[47%] content-center items-center justify-center text-center">
+                      <div>
+                        <h3 className="mb-8 text-[2.38rem] leading-none">
+                          BFFs
+                        </h3>
+                        <p className="mb-8 text-xl">
+                          Brewww Studio is a partnership that began between
+                          Kevin and Christine Wessa in 2017 . Since then, we've
+                          been fortunate enough to work on hundreds of projects
+                          for clients in a wide variety of industries.
+                        </p>
+                        <span className="text-[11.25rem] leading-none">12</span>
+                        <p className="mb-8 text-xl">years in the making.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="border-b-2 border-solid border-black">
+                  <div className="flex basis-full justify-between px-12 py-24">
+                    <div className="flex basis-[47%] content-center items-center justify-center text-center">
+                      <div>
+                        <h3 className="mb-8 text-[2.38rem] leading-none">
+                          Let's not forget about people.
+                        </h3>
+                        <p className="mb-8 text-xl">
+                          We know how to design and build for the web, how to
+                          talk about lead-gen and build for conversions and so
+                          on. But we also understand something just as vital –
+                          we're not creating for robots, but people.
+                        </p>
+                        <p className="mb-8 text-xl">
+                          We bring a human-centered approach to our work by
+                          bringing through elements of delight and humanity.
+                        </p>
+                        <p className="mb-8 text-xl">
+                          Nothing makes us happier than when we can partner with
+                          our clients to bring more beauty into the world.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="basis-[47%]">
+                      <div>
+                        <div className="relative flex w-full items-center justify-center">
+                          <div
+                            className="relative flex h-full max-h-[31.25rem] min-h-[31.25rem] w-full max-w-[31.25rem]"
+                            style={{
+                              cursor:
+                                'url("https://grainandmortar.com/wp-content/themes/gm/_assets/img/cursor-arrow.svg") 0 0, default',
+                            }}
+                          >
+                            <div className="absolute bottom-0 left-0 top-0 z-[100] flex h-full w-full items-center justify-center text-center">
+                              <img
+                                className="h-auto w-full max-w-full rounded-sm"
+                                src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/photo_stack/grain_mortar_team_11.jpg"
+                              />
+                            </div>
+                            <div className="absolute bottom-0 left-0 top-0 z-[101] flex h-full w-full items-center justify-center text-center">
+                              <img
+                                className="h-auto w-full max-w-full rounded-sm"
+                                src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/photo_stack/grain_mortar_team_7.jpg"
+                              />
+                            </div>
+                            <div className="absolute bottom-0 left-0 top-0 z-[102] flex h-full w-full items-center justify-center text-center">
+                              <img
+                                className="h-auto w-full max-w-full rounded-sm"
+                                src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/photo_stack/grain_mortar_team_4.jpg"
+                              />
+                            </div>
+                            <div className="absolute bottom-0 left-0 top-0 z-[103] flex h-full w-full items-center justify-center text-center">
+                              <img
+                                className="h-auto w-full max-w-full rounded-sm"
+                                src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/photo_stack/grain_mortar_team_1.jpg"
+                              />
+                            </div>
+                            <div className="absolute bottom-0 left-0 top-0 z-[104] flex h-full w-full items-center justify-center text-center">
+                              <img
+                                className="h-auto w-full max-w-full rounded-sm"
+                                src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/photo_stack/grain_mortar_team_2.jpg"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="border-b-2 border-solid border-black bg-red-200">
+                <div>
+                  <div className="flex justify-center pt-24 text-[2.38rem] leading-none">
+                    <h3>Real people with real feelings.</h3>
+                  </div>
+                  <div className="flex flex-wrap justify-between px-12 py-24">
+                    <div className="flex basis-[48%] flex-col pb-20">
+                      <img
+                        className="h-auto w-[47.57rem] max-w-full pb-8"
+                        src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/2022-Kristin-23.jpg"
+                      />
+                      <h3 className="mb-3 text-[2.38rem] leading-none">
+                        Christine Wessa
+                      </h3>
+                      <h4 className="mb-3.5 font-semibold">
+                        Partner and Operations Director
+                      </h4>
+                      <p className="mt-1 text-[1.38rem] leading-7">
+                        Christine manages business development and studio
+                        operations. Her strong organizational skills come in
+                        handy internally and externally, allowing Brewww Studio
+                        to run efficiently and ensuring client projects are
+                        executed successfully.
+                      </p>
+                    </div>
+                    <div className="flex basis-[48%] flex-col pb-20">
+                      <img
+                        className="h-auto w-[47.57rem] max-w-full pb-8"
+                        src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/2022-Michael-10.jpg"
+                      />
+                      <h3 className="mb-3 text-[2.38rem] leading-none">
+                        Kevin Wessa
+                      </h3>
+                      <h4 className="mb-3.5 font-semibold">
+                        Partner and Creative Director
+                      </h4>
+                      <p className="mt-1 text-[1.38rem] leading-7">
+                        Kevin works with clients on design and illustration. He
+                        creates strategy for brands and executes it using his
+                        diverse skills in brand design, print layout,
+                        illustration, and digital design.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
