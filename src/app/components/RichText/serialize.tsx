@@ -1,4 +1,4 @@
-// import { BannerBlock } from "@/blocks/Banner/Component";
+import { BannerBlock } from "@/blocks/Banner/Component";
 // import { CallToActionBlock } from "@/blocks/CallToAction/Component";
 // import { CodeBlock, CodeBlockProps } from "@/blocks/Code/Component";
 import { MediaBlock } from "@/blocks/MediaBlock/Component";
@@ -8,7 +8,7 @@ import {
   DefaultNodeTypes,
   SerializedBlockNode,
 } from "@payloadcms/richtext-lexical";
-// import type { BannerBlock as BannerBlockProps } from "@/payload-types";
+import type { BannerBlock as BannerBlockProps } from "@/payload-types";
 
 import {
   IS_BOLD,
@@ -27,7 +27,7 @@ export type NodeTypes =
       // @ts-ignore // TODO: Fix this
       | Extract<Page["layout"][0], { blockType: "cta" }>
       | Extract<Page["layout"][0], { blockType: "mediaBlock" }>
-      // | BannerBlockProps
+      | BannerBlockProps
       // | CodeBlockProps
     >;
 
@@ -127,13 +127,13 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
                 />
               );
             case "banner":
-              // return (
-              //   <BannerBlock
-              //     className="col-start-2 mb-4"
-              //     key={index}
-              //     {...block}
-              //   />
-              // );
+              return (
+                <BannerBlock
+                  className="col-start-2 mb-4"
+                  key={index}
+                  {...block}
+                />
+              );
               return null;
             case "code":
               // return (
