@@ -39,12 +39,12 @@ export default function About() {
             </div>
             <div className="col-start-3 col-end-6 row-start-5 row-end-7 flex h-full w-full flex-col items-center justify-end self-end text-xl">
               <p className="z-10 mb-8">
-                Since day one, weve have focused on collaborative relationships,
+                Since day one, we have focused on collaborative relationships,
                 expansive creativity, and consistently delivering results.{" "}
                 <strong className="font-extrabold">
                   Creative That Just Works
                 </strong>{" "}
-                - thats what sets us apart from everyone else.
+                - that's what sets us apart from everyone else.
                 <br />
               </p>
             </div>
@@ -103,7 +103,7 @@ export default function About() {
             harmonious blend of strategic thinking and creative expression. Our
             process begins with a deep dive into your objectives, challenges,
             and target audience, allowing us to craft a tailored approach that
-            resonates with your brands essence. We meticulously analyze social
+            resonates with your brand's essence. We meticulously analyze social
             behaviors, industry trends, and data-driven insights to inform our
             creative concepts, ensuring they are not only visually captivating
             but also strategically sound.
@@ -111,9 +111,9 @@ export default function About() {
           <p className="mb-4 max-w-3xl text-lg">
             Our multidisciplinary team seamlessly integrates strategy, design,
             and technology, fostering a collaborative environment where ideas
-            flourish and innovative solutions take shape. We do not just create
+            flourish and innovative solutions take shape. We don't just create
             campaigns; we weave together a holistic narrative that connects with
-            your audience on multiple levels, amplifying your brands reach and
+            your audience on multiple levels, amplifying your brand's reach and
             impact.
           </p>
           <p className="mb-16 max-w-3xl text-lg">
@@ -238,7 +238,7 @@ export default function About() {
             branding and the creation of cutting-edge web and digital products.
             Our commitment to excellence is the cornerstone of our success, and
             our goal is to make your brand stand out and thrive in the digital
-            realm.Whether you're a startup, an established business, or a
+            realm. Whether you're a startup, an established business, or a
             visionary entrepreneur, Brewww is here to empower your digital
             journey. Our dedication to purposeful innovation, creative
             excellence, and technical prowess ensures that your experience with
@@ -505,7 +505,7 @@ export default function About() {
               </span>
               <div className="text-sm uppercase text-stone-500">
                 <span className="text-white">Kevin Wessa,</span> Founder and CEO
-                of Brewwww
+                of Brewww
               </div>
             </figure>
           </div>
@@ -658,7 +658,35 @@ export default function About() {
           >
             Accessibility Screen-Reader Guide, Feedback, and Issue Reporting
           </a>
-        </div>
+          <div className="fixed bottom-0 left-0 right-0 top-[78.00rem] z-[9999999] w-full">
+            <div className="border-2 border-solid border-black bg-black px-6 py-4">
+              <div>
+                <p className="mb-3 text-lg font-bold text-white">
+                  We value your privacy
+                </p>
+                <div className="flex items-center justify-between text-sm">
+                  <div className="text-white">
+                    <p style={{ wordBreak: "break-word" }}>
+                      We use cookies to enhance your browsing experience, serve
+                      personalized ads or content, and analyze our traffic. By
+                      clicking "Accept All", you consent to our use of cookies.
+                    </p>
+                  </div>
+                  <div className="ml-3.5 flex items-center justify-center font-medium">
+                    <button className="mr-2 h-11 cursor-pointer items-start rounded-sm border-2 border-solid border-stone-300 px-7 py-2 text-center text-stone-300">
+                      Customize
+                    </button>
+                    <button className="mr-2 h-11 cursor-pointer items-start rounded-sm border-2 border-solid border-stone-300 px-7 py-2 text-center text-stone-300">
+                      Reject All
+                    </button>
+                    <button className="h-11 cursor-pointer items-start rounded-sm border-2 border-solid border-orange-300 bg-orange-300 px-7 py-2 text-center text-white">
+                      Accept All
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="min-h-screen overflow-hidden">
             <main className="m-auto w-screen max-w-[100vw] bg-white text-black">
               <div className="pt-16">
@@ -733,10 +761,11 @@ export default function About() {
                           BFFs
                         </h3>
                         <p className="mb-8 text-xl">
-                          Brewww Studio is a partnership that began between
-                          Kevin and Christine Wessa in 2017 . Since then, we've
-                          been fortunate enough to work on hundreds of projects
-                          for clients in a wide variety of industries.
+                          z Grain & Mortar is a partnership that began between
+                          Eric Downs and Mike & Kristin DeKay in 2011. Since
+                          then, we've been fortunate enough to work on hundreds
+                          of projects for clients in a wide variety of
+                          industries.
                         </p>
                         <span className="text-[11.25rem] leading-none">12</span>
                         <p className="mb-8 text-xl">years in the making.</p>
@@ -834,7 +863,7 @@ export default function About() {
                       <p className="mt-1 text-[1.38rem] leading-7">
                         Christine manages business development and studio
                         operations. Her strong organizational skills come in
-                        handy internally and externally, allowing Brewww Studio
+                        handy internally and externally, allowing Grain & Mortar
                         to run efficiently and ensuring client projects are
                         executed successfully.
                       </p>
