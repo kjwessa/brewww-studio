@@ -50,7 +50,7 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.HTMLAttributes<HTMLButtonElement>,
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "type">,
     VariantProps<typeof buttonVariants> {
   appearance?:
     | "default"
@@ -129,10 +129,7 @@ const generateHref = ({
   return "";
 };
 
-export const Button = forwardRef<
-  HTMLButtonElement | HTMLAnchorElement | HTMLDivElement,
-  ButtonProps
->(
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       className,
@@ -158,7 +155,6 @@ export const Button = forwardRef<
     },
     ref,
   ) => {
-    const Comp = el === "link" ? Link : el;
     const hrefValue =
       href || generateHref({ type: type as LinkType, reference, url });
     const Icon = icon ? icons[icon] : null;
@@ -195,29 +191,47 @@ export const Button = forwardRef<
 
     if (el === "link") {
       return (
-        <Link href={hrefValue} passHref legacyBehavior>
-          <a
-            className={cn(
-              buttonVariants({
-                variant,
-                size,
-                fullWidth,
-                mobileFullWidth,
-                className,
-              }),
-            )}
-            {...(newTab
-              ? { target: "_blank", rel: "noopener noreferrer" }
-              : {})}
-          >
-            {content}
-          </a>
+        <Link
+          href={hrefValue}
+          className={cn(
+            buttonVariants({
+              variant,
+              size,
+              fullWidth,
+              mobileFullWidth,
+              className,
+            }),
+          )}
+          {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        >
+          {content}
         </Link>
       );
     }
 
+    if (el === "a") {
+      return (
+        <a
+          className={cn(
+            buttonVariants({
+              variant,
+              size,
+              fullWidth,
+              mobileFullWidth,
+              className,
+            }),
+          )}
+          href={hrefValue}
+          {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+        >
+          {content}
+        </a>
+      );
+    }
+
     return (
-      <Comp
+      <button
         className={cn(
           buttonVariants({
             variant,
@@ -227,18 +241,13 @@ export const Button = forwardRef<
             className,
           }),
         )}
-        ref={ref as any} // Type assertion to avoid ref type issues
-        {...(el === "a" ? { href: hrefValue } : {})}
-        type={
-          el === "button"
-            ? (type as "submit" | "reset" | "button") || htmlButtonType
-            : undefined
-        }
+        ref={ref}
+        type={(type as "submit" | "reset" | "button") || htmlButtonType}
         disabled={disabled}
         {...props}
       >
         {content}
-      </Comp>
+      </button>
     );
   },
 );
