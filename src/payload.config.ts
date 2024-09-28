@@ -28,8 +28,8 @@ import { Users } from "@/collections/Users/config";
 import { Work } from "@/collections/Work/config";
 
 //* Import Globals
-import { Header } from "./payload/globals/Header/index";
-import { Footer } from "./payload/globals/Footer/index";
+import { Header } from "./globals/Header/index";
+import { Footer } from "./globals/Footer/index";
 
 //* Import Types
 import { Page, Post } from "@/payload-types";
