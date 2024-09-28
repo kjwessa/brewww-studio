@@ -1,5 +1,5 @@
 import localFont from "next/font/local";
-import "@/styles/globals.css";
+import "@styles/globals.css";
 import { Metadata, Viewport } from "next";
 
 export const viewport: Viewport = {

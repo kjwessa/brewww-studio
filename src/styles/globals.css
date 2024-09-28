@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 html {
-  /* overflow-y: scroll;
-  scrollbar-width: thin;
-  scrollbar-color: theme("colors.brand.gold") transparent; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -16,41 +13,6 @@ html {
   -webkit-text-stroke-color: theme("colors.brand.gold");
   paint-order: stroke fill;
 }
-
-/* ::-webkit-scrollbar {
-  width: 0.75rem;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: theme("colors.brand.gold");
-  border-radius: 0.375rem;
-  border: 0.1875rem solid transparent;
-  background-clip: content-box;
-  min-height: 6.25px;
-  max-height: 50px;
-}
-
-
-
-::-webkit-scrollbar-thumb:horizontal {
-  width: 5rem;
-}
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: theme("colors.brand.gold") transparent;
-}
-
-@-moz-document url-prefix() {
-  html {
-    scrollbar-width: thin;
-    scrollbar-color: theme("colors.brand.gold") transparent;
-  }
-} */
 
 @keyframes marquee-reverse {
   0% {
