@@ -1,6 +1,6 @@
 import type { CollectionConfig } from "payload";
-import { authenticated } from "@/access/authenticated";
-import { authenticatedOrPublished } from "@/access/authenticatedOrPublished";
+import { isAdmin } from "@/access/isAdmin";
+import { publishedOnly } from "@/access/publishedOnly";
 import { slugField } from "@/fields/slug";
 import { revalidatePost } from "./hooks/revalidatePost";
 import { MediaBlock } from "@/app/blocks/MediaBlock/config";
@@ -23,6 +23,15 @@ import {
 
 export const BlogPosts: CollectionConfig = {
   slug: "posts",
+
+  //* Access Settings
+  access: {
+    create: isAdmin,
+    delete: isAdmin,
+    read: publishedOnly,
+    readVersions: isAdmin,
+    update: isAdmin,
+  },
 
   //* Collection Fields
   fields: [
@@ -180,12 +189,7 @@ export const BlogPosts: CollectionConfig = {
   ],
 
   //* Admin Settings
-  access: {
-    create: authenticated,
-    delete: authenticated,
-    read: authenticatedOrPublished,
-    update: authenticated,
-  },
+
   admin: {
     description:
       "Writing brings clarity. Writing is a way to make sense of the world.",

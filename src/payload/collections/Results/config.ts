@@ -1,9 +1,18 @@
 import type { CollectionConfig } from "payload";
-import { authenticated } from "@/access/authenticated";
-import { authenticatedOrPublished } from "@/access/authenticatedOrPublished";
+import { isAdmin } from "@/access/isAdmin";
+import { publishedOnly } from "@/access/publishedOnly";
 
 export const Results: CollectionConfig = {
   slug: "results",
+
+  //* Access Settings
+  access: {
+    create: isAdmin,
+    delete: isAdmin,
+    read: publishedOnly,
+    readVersions: isAdmin,
+    update: isAdmin,
+  },
 
   //* Collection Fields
   fields: [
@@ -30,12 +39,7 @@ export const Results: CollectionConfig = {
   ],
 
   //* Admin Settings
-  access: {
-    create: authenticated,
-    delete: authenticated,
-    read: authenticatedOrPublished,
-    update: authenticated,
-  },
+
   admin: {
     description: "The impact of our work",
     defaultColumns: ["title"],
