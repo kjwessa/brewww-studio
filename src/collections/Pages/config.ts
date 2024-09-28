@@ -10,7 +10,7 @@ import {
   OverviewField,
   PreviewField,
 } from "@payloadcms/plugin-seo/fields";
-import { generatePreviewPath } from "@/app/utilities/generatePreviewPath";
+import { generatePreviewPath } from "@/utilities/generatePreviewPath";
 import { FormBlock } from "@/app/blocks/Form/config";
 import { Cover } from "@/app/blocks/Cover/config";
 

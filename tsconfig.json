@@ -34,7 +34,7 @@
       "@/cssVariables": ["./cssvariables.js"],
       "@/styles/*": ["src/styles/*"],
       "@/types/*": ["src/app/types/*"],
-      "@/utilities/*": ["src/app/utilities/*"],
+      "@/utilities/*": ["src/utilities/*"],
       "@payload-config": ["./src/payload.config.ts"],
       "@payload-types": ["./src/payload-types.ts"]
     },

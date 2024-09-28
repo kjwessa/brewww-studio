@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import { Post } from "@/payload-types";
 import Image from "next/image";
 import Link from "next/link";
-import { formatDate } from "@/app/utilities/dateFormatter";
+import { formatDate } from "@/utilities/dateFormatter";
 import aboutImage from "/public/images/Aldridge-02665.1200-p-1080.jpeg";
 import aboutLogo from "/public/images/brand/brewww_mark.png";
 import TableOfContents from "@/components/TableOfContents/index";
