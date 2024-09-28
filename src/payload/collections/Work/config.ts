@@ -1,6 +1,6 @@
 import type { CollectionConfig } from "payload";
-import { authenticated } from "@/access/authenticated";
-import { authenticatedOrPublished } from "@/access/authenticatedOrPublished";
+import { isAdmin } from "@/access/isAdmin";
+import { publishedOnly } from "@/access/publishedOnly";
 import { slugField } from "@/fields/slug";
 
 import {
@@ -13,6 +13,15 @@ import {
 
 export const Work: CollectionConfig = {
   slug: "work",
+
+  //* Access Settings
+  access: {
+    create: isAdmin,
+    delete: isAdmin,
+    read: publishedOnly,
+    readVersions: isAdmin,
+    update: isAdmin,
+  },
 
   //* Collection Fields
   fields: [
@@ -138,12 +147,7 @@ export const Work: CollectionConfig = {
   ],
 
   //* Admin Settings
-  access: {
-    create: authenticated,
-    delete: authenticated,
-    read: authenticatedOrPublished,
-    update: authenticated,
-  },
+
   admin: {
     useAsTitle: "title",
     description: "All we do is work, work, work.",

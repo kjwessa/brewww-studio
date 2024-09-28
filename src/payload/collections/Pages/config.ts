@@ -1,7 +1,7 @@
 import type { CollectionConfig } from "payload";
-import { authenticated } from "@/access/authenticated";
-import { authenticatedOrPublished } from "@/access/authenticatedOrPublished";
+import { isAdmin } from "@/access/isAdmin";
 import { slugField } from "@/fields/slug";
+import { publishedOnly } from "@/access/publishedOnly";
 
 import {
   MetaDescriptionField,
@@ -16,6 +16,15 @@ import { Cover } from "@/app/blocks/Cover/config";
 
 export const Pages: CollectionConfig = {
   slug: "pages",
+
+  //* Access Settings
+  access: {
+    create: isAdmin,
+    delete: isAdmin,
+    read: publishedOnly,
+    readVersions: isAdmin,
+    update: isAdmin,
+  },
 
   //* Collection Fields
   fields: [
@@ -72,12 +81,7 @@ export const Pages: CollectionConfig = {
   ],
 
   //* Admin Settings
-  access: {
-    create: authenticated,
-    delete: authenticated,
-    read: authenticatedOrPublished,
-    update: authenticated,
-  },
+
   admin: {
     useAsTitle: "title",
     livePreview: {

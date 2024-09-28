@@ -1,4 +1,5 @@
 import type { CollectionConfig } from "payload";
+import { isAdmin } from "@/access/isAdmin";
 import {
   FixedToolbarFeature,
   InlineToolbarFeature,
@@ -7,6 +8,14 @@ import {
 
 export const Media: CollectionConfig = {
   slug: "media",
+
+  //* Access Settings
+  access: {
+    create: isAdmin,
+    delete: isAdmin,
+    read: () => true,
+    update: isAdmin,
+  },
 
   //* Collection Fields
   fields: [
@@ -53,8 +62,6 @@ export const Media: CollectionConfig = {
   admin: {
     listSearchableFields: ["title", "url", "alt"],
   },
-  access: {
-    read: () => true,
-  },
+
   upload: true,
 };

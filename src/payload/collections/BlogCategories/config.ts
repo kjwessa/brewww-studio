@@ -1,7 +1,6 @@
 import type { CollectionConfig } from "payload";
-import { authenticated } from "@/access/authenticated";
-import { authenticatedOrPublished } from "@/access/authenticatedOrPublished";
-import { UnderlineFeature, lexicalEditor } from "@payloadcms/richtext-lexical";
+import { isAdmin } from "@/access/isAdmin";
+import { publishedOnly } from "@/access/publishedOnly";
 import { slugField } from "@/fields/slug";
 import {
   MetaDescriptionField,
@@ -13,6 +12,15 @@ import {
 
 export const BlogCategories: CollectionConfig = {
   slug: "categories",
+
+  //* Access Settings
+  access: {
+    create: isAdmin,
+    delete: isAdmin,
+    read: publishedOnly,
+    readVersions: isAdmin,
+    update: isAdmin,
+  },
 
   //* Collection Fields
   fields: [
@@ -30,12 +38,6 @@ export const BlogCategories: CollectionConfig = {
   ],
 
   //* Admin Settings
-  access: {
-    create: authenticated,
-    delete: authenticated,
-    read: authenticatedOrPublished,
-    update: authenticated,
-  },
   admin: {
     description: "Categories for blog posts.",
     defaultColumns: ["title"],

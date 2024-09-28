@@ -1,6 +1,6 @@
 import type { CollectionConfig } from "payload";
-import { authenticated } from "@/access/authenticated";
-import { authenticatedOrPublished } from "@/access/authenticatedOrPublished";
+import { isAdmin } from "@/access/isAdmin";
+import { publishedOnly } from "@/access/publishedOnly";
 import { slugField } from "@/fields/slug";
 import {
   MetaDescriptionField,
@@ -12,6 +12,15 @@ import {
 
 export const Services: CollectionConfig = {
   slug: "services",
+
+  //* Access Settings
+  access: {
+    create: isAdmin,
+    delete: isAdmin,
+    read: publishedOnly,
+    readVersions: isAdmin,
+    update: isAdmin,
+  },
 
   //* Collection Fields
   fields: [
@@ -98,12 +107,7 @@ export const Services: CollectionConfig = {
   ],
 
   //* Admin Settings
-  access: {
-    create: authenticated,
-    delete: authenticated,
-    read: authenticatedOrPublished,
-    update: authenticated,
-  },
+
   admin: {
     description: "How we help people. Be specific.",
     defaultColumns: ["title"],
