@@ -3,10 +3,10 @@ import { isAdmin } from "@/access/isAdmin";
 import { publishedOnly } from "@/access/publishedOnly";
 import { slugField } from "@/fields/slug";
 import { revalidatePost } from "./hooks/revalidatePost";
-import { MediaBlock } from "@/app/blocks/MediaBlock/config";
-import { Code } from "@/app/blocks/Code/config";
-import { Banner } from "@/app/blocks/Banner/config";
-import { CallToAction } from "@/app/blocks/CallToAction/config";
+import { MediaBlock } from "@/blocks/MediaBlock/config";
+import { Code } from "@/blocks/Code/config";
+import { Banner } from "@/blocks/Banner/config";
+import { CallToAction } from "@/blocks/CallToAction/config";
 import {
   MetaDescriptionField,
   MetaImageField,
