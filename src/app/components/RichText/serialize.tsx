@@ -10,7 +10,7 @@ import {
   IS_CODE,
   IS_SUBSCRIPT,
   IS_SUPERSCRIPT,
-} from "./lexicalNodeFormat";
+} from "./nodeFormat";
 
 let headingCounter = 0;
 

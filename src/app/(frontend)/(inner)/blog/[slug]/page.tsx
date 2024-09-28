@@ -135,15 +135,13 @@ export default async function PostPage({
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-8 pt-8">
-        <div>
-          <div>
-            <TableOfContents
-              content={(post.content?.root?.children || []) as LexicalNode[]}
-            />
-          </div>
+      <div className="container mx-auto grid grid-cols-1 gap-8 pt-8 md:grid-cols-3">
+        <div className="md:col-span-1">
+          <TableOfContents
+            content={(post.content?.root?.children || []) as LexicalNode[]}
+          />
         </div>
-        <div className="flex flex-col justify-start">
+        <div className="md:col-span-2">
           <article className="prose mx-auto pb-24">
             <RichText
               content={post.content || ""}
@@ -152,46 +150,6 @@ export default async function PostPage({
               enableGutter={false}
             />
           </article>
-        </div>
-        <div className="flex flex-col content-center items-start">
-          <div className="relative max-w-xs overflow-hidden rounded-md text-lg text-gray-950">
-            <div className="flex flex-col">
-              <div className="relative h-0 w-full pb-[50%]">
-                <Image
-                  src={aboutImage}
-                  alt="brewww"
-                  fill
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <div className="relative -mt-4 rounded-b-md bg-neutral-100 px-5 pb-4 pt-12">
-                <div className="absolute left-8 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-neutral-100 p-2">
-                  <div className="relative">
-                    <Image
-                      src={aboutLogo}
-                      alt="Brewww Logo"
-                      width={32}
-                      height={32}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <p className="text-base font-semibold">About Brewww Studio</p>
-                  <p className="mt-2 text-sm">
-                    Brewww is a branding and web studio in Cleveland. We work
-                    with startups and emerging brands to craft meaningful
-                    digital transformations.
-                  </p>
-                  <Link
-                    href="/studio"
-                    className="mt-2 inline-block text-sm font-medium"
-                  >
-                    Learn More
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </article>

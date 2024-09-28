@@ -78,6 +78,9 @@ importers:
       gsap:
         specifier: ^3.12.5
         version: 3.12.5
+      lexical:
+        specifier: 0.17.0
+        version: 0.17.0
       lucide-react:
         specifier: ^0.380.0
         version: 0.380.0(react@19.0.0-rc-06d0b89e-20240801)

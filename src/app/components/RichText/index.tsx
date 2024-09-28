@@ -1,6 +1,6 @@
 import React from "react";
-import { serializeLexical } from "./serializeLexical";
-import { LexicalNode } from "./lexicalNodeFormat";
+import { serializeLexical } from "./serialize";
+import { LexicalNode } from "./nodeFormat";
 
 type Props = {
   className?: string;
