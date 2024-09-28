@@ -3,7 +3,7 @@ import { CallToActionBlock } from "@/blocks/CallToAction/Component";
 import { CodeBlock, CodeBlockProps } from "@/blocks/Code/Component";
 import { MediaBlock } from "@/blocks/MediaBlock/Component";
 import React, { Fragment, JSX } from "react";
-// import { CMSLink } from "@/components/Link";
+import { CMSLink } from "@/components/Link";
 import {
   DefaultNodeTypes,
   SerializedBlockNode,
@@ -204,17 +204,17 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
             case "link": {
               const fields = node.fields;
 
-              // return (
-              //   <CMSLink
-              //     key={index}
-              //     newTab={Boolean(fields?.newTab)}
-              //     reference={fields.doc as any}
-              //     type={fields.linkType === "internal" ? "reference" : "custom"}
-              //     url={fields.url}
-              //   >
-              //     {serializedChildren}
-              //   </CMSLink>
-              // );
+              return (
+                <CMSLink
+                  key={index}
+                  newTab={Boolean(fields?.newTab)}
+                  reference={fields.doc as any}
+                  type={fields.linkType === "internal" ? "reference" : "custom"}
+                  url={fields.url}
+                >
+                  {serializedChildren}
+                </CMSLink>
+              );
               return null;
             }
 
