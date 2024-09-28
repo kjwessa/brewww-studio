@@ -1,19 +1,15 @@
+import Image from "next/image";
 import AboutImageOne from "/public/images/brewww-one.jpeg";
 import AboutImageTwo from "/public/images/brewww-two.jpeg";
 import AboutImageThree from "/public/images/brewww-three.jpeg";
-import AboutImageFour from "/public/images/brewww-four.jpeg";
 import AboutImageFive from "/public/images/brewww-five.jpeg";
-import AboutImageSix from "/public/images/brewww-six.jpeg";
 import AboutImageSeven from "/public/images/brewww-seven.jpeg";
-import AboutImageEight from "/public/images/brewww-eight.jpeg";
-import AboutImageNine from "/public/images/brewww-nine.jpeg";
-import AboutImageTen from "/public/images/brewww-ten.jpeg";
 
 export default function WhyPage() {
   return (
     <>
-      <div className="grid w-full max-w-6xl grid-cols-4 grid-rows-[15.63rem] gap-x-10 bg-black px-6 pb-10 pt-16 text-[2.63rem] font-light leading-none text-white min-[1000px]:grid-cols-12 min-[1000px]:p-16">
-        <div className="col-span-4 min-[1000px]:col-span-10">
+      <section className="w-full bg-black px-6 py-16 text-[2.63rem] font-light leading-none text-white min-[1000px]:px-16">
+        <div className="mx-auto max-w-6xl">
           <h1>
             We imagine and craft brands that are more than symbols; they are
             catalysts for change.
@@ -22,109 +18,113 @@ export default function WhyPage() {
             meaningful causes, and take impactful action.
           </h1>
         </div>
-      </div>
-      <div className="grid w-full grid-cols-3 gap-x-20 bg-black px-6 py-10 font-light text-white">
-        <div className="mb-10 pb-10 min-[1000px]:mb-0 min-[1000px]:pb-0">
-          <h2 className="mb-6 text-[2.63rem] leading-none min-[1000px]:mb-8 min-[1000px]:max-w-[84%]">
-            Brand Strategy
-          </h2>
-          <p className="text-lg text-zinc-400">
-            Strategy underpins everything we brewww, and we consider every
-            touchpoint of your brand. From buttons to billboards, we aim for a
-            strategic narrative that helps tell your story in a way that
-            resonates. Our brands are empowered for now, and ready for what is
-            next.
-          </p>
-          <div className="mt-6 text-[10.63rem] leading-none min-[1000px]:mt-12">
-            01
+      </section>
+      <section className="w-full bg-black px-6 py-20 font-light text-white">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-x-20 md:grid-cols-3">
+          <div className="mb-10 pb-10 min-[1000px]:mb-0 min-[1000px]:pb-0">
+            <h2 className="mb-6 text-[2.63rem] leading-none min-[1000px]:mb-8 min-[1000px]:max-w-[84%]">
+              Brand Strategy
+            </h2>
+            <p className="text-lg text-zinc-400">
+              Strategy underpins everything we brew, and we consider every
+              touchpoint of your brand. From buttons to billboards, we aim for a
+              strategic narrative that helps tell your story in a way that
+              resonates. Our brands are empowered for now, and ready for what is
+              next.
+            </p>
+            <div className="mt-6 text-[10.63rem] leading-none min-[1000px]:mt-12">
+              01
+            </div>
+          </div>
+          <div className="mb-10 pb-10 min-[1000px]:mb-0 min-[1000px]:pb-0">
+            <h2 className="mb-6 text-[2.63rem] leading-none min-[1000px]:mb-8 min-[1000px]:max-w-[84%]">
+              Design Systems
+            </h2>
+            <p className="text-lg text-zinc-400">
+              Design goes beyond pixels and color palettes - it needs a home and
+              a structure. We build design systems that echo across print,
+              social, and web. We seek to empower marketing teams and owners to
+              utilize their branding to the fullest extent. We aim for the
+              atomic, solving the now, and adaptable for tomorrow. Made for your
+              audience to help recognize who you are.
+            </p>
+            <div className="mt-6 text-[10.63rem] leading-none min-[1000px]:mt-12">
+              02
+            </div>
+          </div>
+          <div>
+            <h2 className="mb-6 text-[2.63rem] leading-none min-[1000px]:mb-8 min-[1000px]:max-w-[84%]">
+              Digital Execution
+            </h2>
+            <p className="text-lg text-zinc-400">
+              Our web team builds SEO optimized CMS websites in either Webflow
+              or Next: giving your team a drop-dead simple to use system to
+              update content, drive growth, and create a unique experience for
+              your users.
+            </p>
+            <div className="mt-6 text-[10.63rem] leading-none min-[1000px]:mt-12">
+              03
+            </div>
           </div>
         </div>
-        <div className="mb-10 pb-10 min-[1000px]:mb-0 min-[1000px]:pb-0">
-          <h2 className="mb-6 text-[2.63rem] leading-none min-[1000px]:mb-8 min-[1000px]:max-w-[84%]">
-            Design Systems
-          </h2>
-          <p className="text-lg text-zinc-400">
-            Design goes beyond pixels and color palletes - it needs a home and a
-            structure. We build design systems that echo across print, social,
-            and web. We seek to empower marketing teams and owners to utilize
-            their branding to the fullest extent. We aim for the atomic, solving
-            the now, and adaptable for tomorrow. Made for your audience to help
-            recognize who you are.
-          </p>
-          <div className="mt-6 text-[10.63rem] leading-none min-[1000px]:mt-12">
-            02
-          </div>
+      </section>
+      <section className="w-full bg-black py-16 font-light text-white">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="mb-10 text-center text-3xl leading-none">Why Us</h2>
+          <ul className="grid gap-10 border-t-2 border-neutral-600 pt-10 sm:grid-cols-2 lg:grid-cols-3">
+            <li className="space-y-2">
+              <div className="text-lg">🙅‍♂️ No Ego, Just Talent</div>
+              <div className="text-sm text-neutral-400">
+                We foster a collaborative and ego-free environment, where the
+                best ideas thrive, and our team&apos;s collective talent shines.
+              </div>
+            </li>
+            <li className="space-y-2">
+              <div className="text-lg">🧠 Strategy First, Design Second</div>
+              <div className="text-sm text-neutral-400">
+                Our process begins with a deep understanding of your business
+                goals and target audience, ensuring our designs are strategic
+                and purposeful.
+              </div>
+            </li>
+            <li className="space-y-2">
+              <div className="text-lg">🚀 Client Empowerment</div>
+              <div className="text-sm text-neutral-400">
+                We equip you with the tools and knowledge to succeed
+                independently, while remaining available for support whenever
+                you need us.
+              </div>
+            </li>
+            <li className="space-y-2">
+              <div className="text-lg">
+                🤝 True Collaboration, Not Just Execution
+              </div>
+              <div className="text-sm text-neutral-400">
+                We see ourselves as an extension of your team, working alongside
+                you in a collaborative process to bring your vision to life.
+              </div>
+            </li>
+            <li className="space-y-2">
+              <div className="text-lg">🗣️ Honesty and Transparency</div>
+              <div className="text-sm text-neutral-400">
+                We value open communication and honesty above all else,
+                providing you with candid feedback and realistic expectations
+                throughout our partnership.
+              </div>
+            </li>
+            <li className="space-y-2">
+              <div className="text-lg">💪 Passion and Hard Work</div>
+              <div className="text-sm text-neutral-400">
+                Our team is driven by a passion for creating exceptional work
+                and a commitment to putting in the hard work necessary to
+                achieve outstanding results.
+              </div>
+            </li>
+          </ul>
         </div>
-        <div>
-          <h2 className="mb-6 text-[2.63rem] leading-none min-[1000px]:mb-8 min-[1000px]:max-w-[84%]">
-            Digital Execution
-          </h2>
-          <p className="text-lg text-zinc-400">
-            Our web team builds SEO optimised CMS websites in either Webflow or
-            Next: giving your team a drop-dead simple to use system to update
-            content, drive growth, and create a unique experience for your
-            users.
-          </p>
-          <div className="mt-6 text-[10.63rem] leading-none min-[1000px]:mt-12">
-            03
-          </div>
-        </div>
-      </div>
-      <div className="mx-auto w-full max-w-6xl bg-black px-6 py-16 font-light text-white">
-        <h2 className="mb-10 text-center text-3xl leading-none">Why Us</h2>
-        <ul className="grid gap-10 border-t-2 border-neutral-600 pt-10 sm:grid-cols-2 lg:grid-cols-3">
-          <li className="space-y-2">
-            <div className="text-lg">🙅‍♂️ No Ego, Just Talent</div>
-            <div className="text-sm text-neutral-400">
-              We foster a collaborative and ego-free environment, where the best
-              ideas thrive, and our teams collective talent shines.
-            </div>
-          </li>
-          <li className="space-y-2">
-            <div className="text-lg">🧠 Strategy First, Design Second</div>
-            <div className="text-sm text-neutral-400">
-              Our process begins with a deep understanding of your business
-              goals and target audience, ensuring our designs are strategic and
-              purposeful.
-            </div>
-          </li>
-          <li className="space-y-2">
-            <div className="text-lg">🚀 Client Empowerment</div>
-            <div className="text-sm text-neutral-400">
-              We equip you with the tools and knowledge to succeed
-              independently, while remaining available for support whenever you
-              need us.
-            </div>
-          </li>
-          <li className="space-y-2">
-            <div className="text-lg">
-              🤝 True Collaboration, Not Just Execution
-            </div>
-            <div className="text-sm text-neutral-400">
-              We see ourselves as an extension of your team, working alongside
-              you in a collaborative process to bring your vision to life.
-            </div>
-          </li>
-          <li className="space-y-2">
-            <div className="text-lg">🗣️ Honesty and Transparency</div>
-            <div className="text-sm text-neutral-400">
-              We value open communication and honesty above all else, providing
-              you with candid feedback and realistic expectations throughout our
-              partnership.
-            </div>
-          </li>
-          <li className="space-y-2">
-            <div className="text-lg">💪 Passion and Hard Work</div>
-            <div className="text-sm text-neutral-400">
-              Our team is driven by a passion for creating exceptional work and
-              a commitment to putting in the hard work necessary to achieve
-              outstanding results.
-            </div>
-          </li>
-        </ul>
-      </div>
-      <section className="relative grid grid-cols-[105.63rem] grid-rows-[1155px_104px] items-center justify-items-center bg-zinc-950 text-center uppercase text-neutral-400">
-        <span className="text-[20.75rem] font-bold leading-none text-white">
+      </section>
+      <section className="relative grid grid-cols-1 grid-rows-[1155px_104px] items-center justify-items-center bg-zinc-950 text-center uppercase text-neutral-400 lg:grid-cols-[105.63rem]">
+        <span className="text-[10rem] font-bold leading-none text-white lg:text-[20.75rem]">
           <span className="relative flex items-center justify-between">
             <span className="inline-block">
               <span className="text-outline inline-block">Why</span>
@@ -170,23 +170,20 @@ export default function WhyPage() {
           </span>
         </div>
       </section>
-      <section className="bg-zinc-950 px-20 text-[1.75rem] font-bold uppercase leading-8 text-neutral-400">
-        <div className="grid grid-cols-[509px_509px_509px] grid-rows-[30.00rem] text-white"></div>
-      </section>
 
-      <div>
+      <section className="bg-black text-white">
         <div className="pt-40 text-2xl font-light">
-          <div className="px-20">
+          <div className="px-4 md:px-20">
             <div className="m-auto w-full max-w-[112.50rem]">
-              <div className="w-full max-w-[52.00rem] text-[10.00rem] font-bold leading-none">
+              <div className="w-full max-w-[52.00rem] text-[5rem] font-bold leading-none md:text-[10.00rem]">
                 <h1 className="mx-0 my-3">
                   Consultants who craft.
                   <br />
                 </h1>
               </div>
-              <div className="mb-16 mt-32 grid auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto]">
-                <div className="col-start-2 col-end-3 row-start-1 row-end-2">
-                  <div className="text-5xl">
+              <div className="mb-16 mt-32 grid grid-cols-1 gap-8 md:grid-cols-2">
+                <div className="row-start-1 row-end-2 md:col-start-2 md:col-end-3">
+                  <div className="text-3xl md:text-5xl">
                     I&apos;d become jaded with consultancies. It&apos;s utterly
                     refreshing working with Brewww.&quot;
                   </div>
@@ -199,13 +196,15 @@ export default function WhyPage() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <section className="relative overflow-hidden bg-white pb-48 pt-24 font-medium text-black">
         <div className="relative m-auto w-full max-w-[120.00rem] flex-col px-8">
           <div className="relative m-auto flex max-h-[93.00rem] min-h-screen w-full max-w-[100.50rem] items-center justify-center py-96">
             <div className="absolute left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center">
-              <img
+              <Image
+                width={850}
+                height={850}
                 className="inline-block h-[53.13rem] w-[53.13rem] max-w-full align-middle"
                 src="https://cdn.prod.website-files.com/6495557c326b2d376ef99ea9/649aefd27a2a77b43d7ab2f5_Logo%20Circle.svg"
                 alt="Logo Circle"
@@ -213,33 +212,48 @@ export default function WhyPage() {
             </div>
             <div className="absolute bottom-0 left-0 right-0 top-0 z-[2]">
               <div className="absolute bottom-auto left-0 right-auto top-[10%] h-40 w-56 overflow-hidden min-[1920px]:w-96">
-                <img
+                <Image
+                  width={384}
+                  height={160}
                   className="absolute bottom-auto left-0 right-auto top-0 inline-block h-full w-full max-w-full object-cover align-middle"
                   src="https://cdn.prod.website-files.com/6495557c326b2d376ef99ea9/649aefce3986a75beb22168d_Image%2031.jpg"
+                  alt=""
                 />
               </div>
               <div className="absolute bottom-auto left-[49%] right-auto top-0 h-40 w-56 overflow-hidden min-[1920px]:left-[53%] min-[1920px]:w-96">
-                <img
+                <Image
+                  width={384}
+                  height={160}
                   className="absolute bottom-auto left-0 right-auto top-0 inline-block h-full w-full max-w-full object-cover align-middle"
                   src="https://cdn.prod.website-files.com/6495557c326b2d376ef99ea9/649aefce4e70f0260f25587d_Image%2021.jpg"
+                  alt=""
                 />
               </div>
               <div className="absolute bottom-auto left-auto right-0 top-[19%] h-40 w-56 overflow-hidden min-[1920px]:top-[38%] min-[1920px]:w-96">
-                <img
+                <Image
+                  width={384}
+                  height={160}
                   className="absolute bottom-auto left-0 right-auto top-0 inline-block h-full w-full max-w-full object-cover align-middle"
                   src="https://cdn.prod.website-files.com/6495557c326b2d376ef99ea9/649aefce3986a75beb2216bc_Image%2041.jpg"
+                  alt=""
                 />
               </div>
               <div className="absolute bottom-auto left-auto right-[17%] top-[81%] h-40 w-56 overflow-hidden min-[1920px]:right-[10%] min-[1920px]:top-[79%] min-[1920px]:w-96">
-                <img
+                <Image
+                  width={384}
+                  height={160}
                   className="absolute bottom-auto left-0 right-auto top-0 inline-block h-full w-full max-w-full object-cover align-middle"
                   src="https://cdn.prod.website-files.com/6495557c326b2d376ef99ea9/649aefcf82adecd34ec59e3a_Image%2051.jpg"
+                  alt=""
                 />
               </div>
               <div className="absolute bottom-auto left-[17%] right-auto top-[70%] h-40 w-56 overflow-hidden min-[1920px]:left-[7%] min-[1920px]:w-96">
-                <img
+                <Image
+                  width={384}
+                  height={160}
                   className="absolute bottom-auto left-0 right-auto top-0 inline-block h-full w-full max-w-full object-cover align-middle"
                   src="https://cdn.prod.website-files.com/6495557c326b2d376ef99ea9/649aefce3986a75beb221691_Image%2061.jpg"
+                  alt=""
                 />
               </div>
             </div>
@@ -252,10 +266,10 @@ export default function WhyPage() {
           </div>
         </div>
       </section>
-      <section className="bg-white">
+      <section className="bg-white py-24">
         <div className="container mx-auto px-4">
-          <div className="grid auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto] gap-4 text-2xl font-light text-black">
-            <div className="col-start-2 col-end-3 row-start-1 row-end-2 mx-0 mb-0 mt-8">
+          <div className="grid grid-cols-1 gap-8 text-2xl font-light text-black md:grid-cols-2">
+            <div className="row-start-1 row-end-2 mx-0 mb-0 mt-8 md:col-start-2 md:col-end-3">
               <div>
                 We don&apos;t &apos;land and expand&apos;. We won&apos;t waste
                 your time and money creating massive decks you don&apos;t need.
@@ -267,8 +281,8 @@ export default function WhyPage() {
                 <br />
               </div>
             </div>
-            <div className="col-span-1 row-span-1 mx-0 mb-0 mt-8 text-[5.50rem] font-bold leading-none">
-              <div className="ml-40 min-[992px]:ml-0">
+            <div className="col-span-1 row-span-1 mx-0 mb-0 mt-8 text-[3rem] font-bold leading-none md:text-[5.50rem]">
+              <div className="ml-0 md:ml-40 min-[992px]:ml-0">
                 <h3>
                   We&apos;re not <br />
                   like other{" "}
@@ -288,7 +302,7 @@ export default function WhyPage() {
       </section>
       <section className="bg-zinc-950 py-16 text-white">
         <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center text-6xl font-bold uppercase leading-none sm:text-8xl lg:text-[10.50rem]">
+          <h2 className="mb-12 text-center text-4xl font-bold uppercase leading-none sm:text-6xl lg:text-8xl xl:text-[10.50rem]">
             The Reputation
           </h2>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
@@ -343,9 +357,11 @@ export default function WhyPage() {
           </div>
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <figure className="relative">
-              <img
+              <Image
+                width={800}
+                height={600}
                 className="h-auto w-full object-cover"
-                src={AboutImageFive.src}
+                src={AboutImageFive}
                 alt="Kevin reflecting and reacting"
               />
               <figcaption className="mt-2 text-sm uppercase text-stone-500">
@@ -353,9 +369,11 @@ export default function WhyPage() {
               </figcaption>
             </figure>
             <figure className="relative">
-              <img
+              <Image
+                width={800}
+                height={600}
                 className="h-auto w-full object-cover"
-                src={AboutImageSeven.src}
+                src={AboutImageSeven}
                 alt="QA's Michal staring down some bugs"
               />
               <figcaption className="mt-2 text-sm uppercase text-stone-500">
@@ -384,10 +402,10 @@ export default function WhyPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 gap-x-20 gap-y-5 md:grid-cols-12">
             <div className="text-center text-white md:col-span-12">
-              <h2 className="m-0 text-[10.50rem] font-bold uppercase leading-none">
+              <h2 className="m-0 text-5xl font-bold uppercase leading-none sm:text-7xl md:text-[10.50rem]">
                 The Culture
               </h2>
-              <div className="mt-6 text-[1.75rem] leading-8 md:mt-9 min-[1440px]:mt-10 min-[1680px]:mt-12">
+              <div className="mt-6 text-xl leading-8 sm:text-2xl md:mt-9 md:text-[1.75rem] min-[1440px]:mt-10 min-[1680px]:mt-12">
                 <span className="inline-block min-w-[6.00rem] pr-10 text-sm uppercase text-stone-500 min-[480px]:min-w-[8.00rem] md:min-w-[9.00rem]">
                   Humble Brag
                 </span>
@@ -398,7 +416,7 @@ export default function WhyPage() {
             </div>
             <div className="md:col-span-12">
               <p className="mb-6 xl:mb-8">
-                Our greatest success is that our this remains true no matter our
+                Our greatest success is that this remains true no matter our
                 size (200+), goals (BIG) or success (not complaining).
                 You&apos;ll find a lot more about the team if you click around
                 below. Get to know us a little.
@@ -434,9 +452,11 @@ export default function WhyPage() {
             </div>
             <figure className="md:col-span-6">
               <span className="relative inline-block">
-                <img
+                <Image
+                  width={384}
+                  height={605}
                   className="h-[37.83rem] w-96 max-w-full object-cover"
-                  src={AboutImageTwo.src}
+                  src={AboutImageTwo}
                   alt=""
                 />
               </span>
@@ -446,9 +466,11 @@ export default function WhyPage() {
             </figure>
             <figure className="self-end justify-self-end md:col-span-6">
               <span className="relative inline-block">
-                <img
+                <Image
+                  width={723}
+                  height={939}
                   className="h-[58.68rem] w-[45.22rem] max-w-full object-cover"
-                  src={AboutImageThree.src}
+                  src={AboutImageThree}
                   alt=""
                 />
               </span>
