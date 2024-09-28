@@ -3,7 +3,7 @@ import React from "react";
 import type { Page } from "@/payload-types";
 
 import RichText from "@/components/RichText";
-import { CMSLink } from "@/app/components/Link";
+import { CMSLink } from "@/components/Link";
 
 type Props = Extract<Page["layout"][0], { blockType: "cta" }>;
 
