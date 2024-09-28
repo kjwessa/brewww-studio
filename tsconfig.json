@@ -27,9 +27,9 @@
       "@/components/*": ["src/app/components/*"],
       "@/data/*": ["src/app/data/*"],
       "@/images/*": ["./public/images/*"],
-      "@/fields/*": ["src/payload/fields/*"],
+      "@/fields/*": ["src/fields/*"],
+      "@/globals/*": ["src/globals/*"],
       "@/lib/*": ["src/app/lib/*"],
-
       "@/public/*": ["./public/*"],
       "@/cssVariables": ["./cssvariables.js"],
       "@/styles/*": ["src/styles/*"],
