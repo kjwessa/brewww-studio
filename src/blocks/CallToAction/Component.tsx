@@ -1,9 +1,9 @@
 import React from "react";
 
-import type { Page } from "@/payload-types";
+import type { Page } from "@types";
 
-import RichText from "@/components/RichText";
-import { CMSLink } from "@/components/Link";
+import RichText from "@components/RichText";
+import { CMSLink } from "@components/Link";
 
 type Props = Extract<Page["layout"][0], { blockType: "cta" }>;
 
@@ -25,9 +25,11 @@ export const CallToActionBlock: React.FC<
           )}
         </div>
         <div className="flex flex-col gap-8">
-          {(links || []).map(({ link }, i) => {
-            return <CMSLink key={i} size="lg" {...link} />;
-          })}
+          {/* {links &&
+            Array.isArray(links) &&
+            links.map((linkItem: { link: any }, i: number) => {
+              return <CMSLink key={i} size="lg" {...linkItem.link} />;
+            })} */}
         </div>
       </div>
     </div>

@@ -7,8 +7,8 @@ import type {
 
 import { useFormContext } from "react-hook-form";
 
-import { Checkbox as CheckboxUi } from "@/components/UI/Checkbox/index";
-import { Label } from "@/components/UI/Label/index";
+import { Checkbox as CheckboxUi } from "@components/UI/Checkbox/index";
+import { Label } from "@components/UI/Label/index";
 import React from "react";
 
 import { Error } from "../Error";
