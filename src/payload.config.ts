@@ -12,25 +12,27 @@ import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
 
 //* Import Collections
-import { Users } from "./payload/collections/Users/config";
-import { Media } from "./payload/collections/Media/config";
-import { Work } from "./payload/collections/Work/config";
-import { Brands } from "./payload/collections/Brands/config";
-import { BlogPosts } from "./payload/collections/BlogPosts/config";
-import { BlogCategories } from "./payload/collections/BlogCategories/config";
-import { Services } from "./payload/collections/Services/config";
-import { Testimonials } from "./payload/collections/Testimonials/config";
-import { Location } from "./payload/collections/Locations/config";
-import { Results } from "./payload/collections/Results/config";
-import { Pages } from "./payload/collections/Pages/config";
-import { Playground } from "./payload/collections/Play/config";
-import { FAQ } from "./payload/collections/FAQ/config";
-import { Page, Post } from "src/payload-types";
+import { BlogCategories } from "@/collections/BlogCategories/config";
+import { BlogPosts } from "@/collections/BlogPosts/config";
+import { Brands } from "@/collections/Brands/config";
+import { FAQ } from "@/collections/FAQ/config";
+import { Location } from "@/collections/Locations/config";
+import { Media } from "@/collections/Media/config";
+import { Pages } from "@/collections/Pages/config";
+import { Pillars } from "@/collections/Pillars/config";
+import { Playground } from "@/collections/Play/config";
+import { Results } from "@/collections/Results/config";
+import { Services } from "@/collections/Services/config";
+import { Testimonials } from "@/collections/Testimonials/config";
+import { Users } from "@/collections/Users/config";
+import { Work } from "@/collections/Work/config";
 
 //* Import Globals
 import { Header } from "./payload/globals/Header/index";
 import { Footer } from "./payload/globals/Footer/index";
-import { Pillars } from "./payload/collections/Pillars/config";
+
+//* Import Types
+import { Page, Post } from "@/payload-types";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);

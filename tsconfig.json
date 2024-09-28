@@ -23,6 +23,7 @@
       "@/access/*": ["src/access/*"],
       "@/app/*": ["src/app/*"],
       "@/blocks/*": ["src/app/blocks/*"],
+      "@/collections/*": ["src/collections/*"],
       "@/components/*": ["src/app/components/*"],
       "@/data/*": ["src/app/data/*"],
       "@/images/*": ["./public/images/*"],
