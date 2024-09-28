@@ -25,13 +25,16 @@ export default async function Footer() {
                   <li>
                     <Link
                       href="/about-brewww-studio"
-                      className="hover:underline"
+                      className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
                     >
                       Our Studio
                     </Link>
                   </li>
                   <li>
-                    <Link href="/insights" className="hover:underline">
+                    <Link
+                      href="/insights"
+                      className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                    >
                       Our Insights
                     </Link>
                   </li>
@@ -41,17 +44,26 @@ export default async function Footer() {
                 <h6 className="mb-6 text-xl">Let's Work</h6>
                 <ul className="space-y-3">
                   <li>
-                    <Link href="/work" className="hover:underline">
+                    <Link
+                      href="/work"
+                      className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                    >
                       Our Projects
                     </Link>
                   </li>
                   <li>
-                    <Link href="/capabilities" className="hover:underline">
+                    <Link
+                      href="/capabilities"
+                      className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                    >
                       Our Capabilities
                     </Link>
                   </li>
                   <li>
-                    <Link href="/hire-us" className="uppercase hover:underline">
+                    <Link
+                      href="/hire-us"
+                      className="relative inline-block min-w-max uppercase after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                    >
                       Hire Us
                     </Link>
                   </li>
@@ -62,19 +74,19 @@ export default async function Footer() {
                 <div className="space-y-3">
                   <a
                     href="mailto:hello@brewww.co"
-                    className="block hover:underline"
+                    className="relative block inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
                   >
                     hello@brewww.co
                   </a>
                   <a
                     href="https://www.facebook.com/brewwwstudio"
-                    className="block hover:underline"
+                    className="relative block inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
                   >
                     @brewwwstudio
                   </a>
                   <a
                     href="https://www.instagram.com/brewwwstudio/"
-                    className="block hover:underline"
+                    className="relative block inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
                   >
                     @brewwwstudio
                   </a>
@@ -95,6 +107,21 @@ export default async function Footer() {
               </div>
               <div className="mt-8 text-center text-white/60">
                 <p>© {getCurrentYear()} Brewww Studio. All Rights Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <footer>
+        <div className="w-full bg-black text-lg text-white">
+          <div className="m-auto">
+            <div className="grid grid-cols-6 gap-x-4">
+              <div className="col-span-2">
+                <img
+                  className="h-auto w-1/2 max-w-full"
+                  src={BrewwwMark.src}
+                  alt="Brewww Mark"
+                />
               </div>
             </div>
           </div>
