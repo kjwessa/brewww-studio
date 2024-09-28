@@ -1,6 +1,6 @@
 import type { CollectionConfig } from "payload";
-import { authenticated } from "@/payload/access/authenticated";
-import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
+import { authenticated } from "@/access/authenticated";
+import { authenticatedOrPublished } from "@/access/authenticatedOrPublished";
 
 export const Brands: CollectionConfig = {
   slug: "brands",
