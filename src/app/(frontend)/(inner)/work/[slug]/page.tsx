@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import { Work } from "@/payload-types";
 import Image from "next/image";
 import Link from "next/link";
-import { formatDate } from "@/app/utilities/dateFormatter";
+import { formatDate } from "@/utilities/dateFormatter";
 import AudioImageOne from "/public/images/audio-one.jpg";
 import AudioImageTwo from "/public/images/audio-two.jpg";
 import AudioImageThree from "/public/images/audio-three.jpg";

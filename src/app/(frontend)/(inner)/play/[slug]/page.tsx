@@ -6,7 +6,7 @@ import { Play } from "@/payload-types";
 import Image from "next/image";
 import Link from "next/link";
 import { MetaDot } from "@/app/components/MetaDot";
-import { formatDate } from "@/app/utilities/dateFormatter";
+import { formatDate } from "@/utilities/dateFormatter";
 
 //* Render the play page
 export default async function PlayPage({
