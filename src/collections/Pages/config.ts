@@ -2,7 +2,6 @@ import type { CollectionConfig } from "payload";
 import { isAdmin } from "@/access/isAdmin";
 import { slugField } from "@/fields/slug";
 import { publishedOnly } from "@/access/publishedOnly";
-
 import {
   MetaDescriptionField,
   MetaImageField,
@@ -11,8 +10,8 @@ import {
   PreviewField,
 } from "@payloadcms/plugin-seo/fields";
 import { generatePreviewPath } from "@/utilities/generatePreviewPath";
-import { FormBlock } from "@/app/blocks/Form/config";
-import { Cover } from "@/app/blocks/Cover/config";
+import { FormBlock } from "@/blocks/Form/config";
+import { Cover } from "@/blocks/Cover/config";
 
 export const Pages: CollectionConfig = {
   slug: "pages",
