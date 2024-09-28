@@ -19,7 +19,7 @@
       }
     ],
     "paths": {
-      "@/*": ["src/*"],
+      "@root/*": ["src/*"],
       "@/access/*": ["src/access/*"],
       "@/app/*": ["src/app/*"],
       "@/blocks/*": ["src/blocks/*"],
@@ -28,11 +28,12 @@
       "@/data/*": ["src/data/*"],
       "@/images/*": ["./public/images/*"],
       "@/fields/*": ["src/fields/*"],
+      "@/icons/*": ["src/icons/*"],
       "@/globals/*": ["src/globals/*"],
       "@/public/*": ["./public/*"],
       "@/cssVariables": ["./cssvariables.js"],
       "@/styles/*": ["src/styles/*"],
-      "@/types/*": ["src/app/types/*"],
+      "@/types/*": ["src/types/*"],
       "@/utilities/*": ["src/utilities/*"],
       "@payload-config": ["./src/payload.config.ts"],
       "@payload-types": ["./src/payload-types.ts"]
