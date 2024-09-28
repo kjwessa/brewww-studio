@@ -20,6 +20,7 @@
     ],
     "paths": {
       "@/*": ["src/*"],
+      "@/access/*": ["src/access/*"],
       "@/app/*": ["src/app/*"],
       "@/blocks/*": ["src/app/blocks/*"],
       "@/components/*": ["src/app/components/*"],
@@ -27,7 +28,7 @@
       "@/images/*": ["./public/images/*"],
       "@/fields/*": ["src/payload/fields/*"],
       "@/lib/*": ["src/app/lib/*"],
-      "@/access/*": ["src/payload/access"],
+
       "@/public/*": ["./public/*"],
       "@/cssVariables": ["./cssvariables.js"],
       "@/styles/*": ["src/styles/*"],

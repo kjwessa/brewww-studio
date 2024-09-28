@@ -571,7 +571,10 @@ export interface Result {
  */
 export interface User {
   id: string;
-  name?: string | null;
+  firstName: string;
+  lastName: string;
+  photo?: (string | null) | Media;
+  roles: ('admin' | 'public')[];
   updatedAt: string;
   createdAt: string;
   email: string;

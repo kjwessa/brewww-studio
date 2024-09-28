@@ -1,6 +1,6 @@
 import type { CollectionConfig } from "payload";
-import { authenticated } from "@/payload/access/authenticated";
-import { authenticatedOrPublished } from "@/payload/access/authenticatedOrPublished";
+import { authenticated } from "@/access/authenticated";
+import { authenticatedOrPublished } from "@/access/authenticatedOrPublished";
 import { slugField } from "@/fields/slug";
 import { revalidatePost } from "./hooks/revalidatePost";
 import { MediaBlock } from "@/app/blocks/MediaBlock/config";
