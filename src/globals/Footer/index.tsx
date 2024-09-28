@@ -1,7 +1,13 @@
 import type { GlobalConfig } from "payload";
-
+import { isAdmin } from "@/access/isAdmin";
 export const Footer: GlobalConfig = {
   slug: "footer",
+
+  //* Admin Settings
+  access: {
+    read: () => true,
+    update: isAdmin,
+  },
 
   //* Global Fields
   fields: [
@@ -23,9 +29,4 @@ export const Footer: GlobalConfig = {
       },
     },
   ],
-
-  //* Admin Settings
-  access: {
-    read: () => true,
-  },
 };

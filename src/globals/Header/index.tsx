@@ -1,7 +1,14 @@
 import type { GlobalConfig } from "payload";
+import { isAdmin } from "@/access/isAdmin";
 
 export const Header: GlobalConfig = {
   slug: "header",
+
+  //* Access Settings
+  access: {
+    read: () => true,
+    update: isAdmin,
+  },
 
   //* Global Fields
   fields: [
@@ -23,9 +30,4 @@ export const Header: GlobalConfig = {
       ],
     },
   ],
-
-  //* Admin Settings
-  access: {
-    read: () => true,
-  },
 };
