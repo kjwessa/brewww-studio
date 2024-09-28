@@ -2,7 +2,7 @@
 
 import React, { forwardRef } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/utilities/cn";
+import { cn } from "@utilities/cn";
 import Link from "next/link";
 import { LinkType, Reference } from "../CMSLink/index.js";
 import { Page as PayloadPage } from "@root/payload-types.js";
@@ -70,7 +70,7 @@ export interface ButtonProps
   label?: string;
   labelStyle?: "mono" | "regular";
   el?: "button" | "link" | "a" | "div";
-  type?: LinkType;
+  type?: LinkType | "submit" | "reset" | "button";
   reference?: Reference;
   fullWidth?: boolean;
   mobileFullWidth?: boolean;
@@ -159,7 +159,8 @@ export const Button = forwardRef<
     ref,
   ) => {
     const Comp = el === "link" ? Link : el;
-    const hrefValue = href || generateHref({ type, reference, url });
+    const hrefValue =
+      href || generateHref({ type: type as LinkType, reference, url });
     const Icon = icon ? icons[icon] : null;
 
     const content = (
@@ -228,7 +229,11 @@ export const Button = forwardRef<
         )}
         ref={ref as any} // Type assertion to avoid ref type issues
         {...(el === "a" ? { href: hrefValue } : {})}
-        type={el === "button" ? htmlButtonType : undefined}
+        type={
+          el === "button"
+            ? (type as "submit" | "reset" | "button") || htmlButtonType
+            : undefined
+        }
         disabled={disabled}
         {...props}
       >

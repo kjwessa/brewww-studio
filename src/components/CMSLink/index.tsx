@@ -1,15 +1,15 @@
 import React from "react";
 import Link from "next/link";
 
-import { Work, Post } from "@payload-types";
-import { Page as PayloadPage } from "@payload-types";
+import { Work, Post } from "@types";
+import { Page as PayloadPage } from "@types";
 
 interface Page extends PayloadPage {
   breadcrumbs?: { url: string }[];
 }
 
 // eslint-disable-next-line import/no-cycle
-import { Button, ButtonProps } from "@/components/Button/index";
+import { Button, ButtonProps } from "@components/Button/index";
 
 type PageReference = {
   value: string | Page;

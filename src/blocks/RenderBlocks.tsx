@@ -1,11 +1,13 @@
 // Import necessary types and components
-import type { Page } from "@/payload-types";
+import type { Page } from "@types";
 import React, { Fragment } from "react";
-import { CoverBlock } from "@/blocks/Cover/Component";
+import { CoverBlock } from "@blocks/Cover/Component";
+import { FormBlock } from "@blocks/Form/Component";
 
 // Define a mapping of block types to their corresponding components
 const blockComponents = {
   cover: CoverBlock,
+  formBlock: FormBlock,
 };
 
 // Define the RenderBlocks component

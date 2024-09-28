@@ -1,14 +1,14 @@
-import { BannerBlock } from "@/blocks/Banner/Component";
-import { CallToActionBlock } from "@/blocks/CallToAction/Component";
-import { CodeBlock, CodeBlockProps } from "@/blocks/Code/Component";
-import { MediaBlock } from "@/blocks/MediaBlock/Component";
+import { BannerBlock } from "@blocks/Banner/Component";
+import { CallToActionBlock } from "@blocks/CallToAction/Component";
+import { CodeBlock, CodeBlockProps } from "@blocks/Code/Component";
+import { MediaBlock } from "@blocks/MediaBlock/Component";
 import React, { Fragment, JSX } from "react";
-import { CMSLink } from "@/components/Link";
+import { CMSLink } from "@components/Link";
 import {
   DefaultNodeTypes,
   SerializedBlockNode,
 } from "@payloadcms/richtext-lexical";
-import type { BannerBlock as BannerBlockProps } from "@/payload-types";
+import type { BannerBlock as BannerBlockProps } from "@types";
 
 import {
   IS_BOLD,
@@ -19,7 +19,7 @@ import {
   IS_SUPERSCRIPT,
   IS_UNDERLINE,
 } from "./nodeFormat";
-import type { Page } from "@/payload-types";
+import type { Page } from "@types";
 
 export type NodeTypes =
   | DefaultNodeTypes

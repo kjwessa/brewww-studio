@@ -1,9 +1,9 @@
 import configPromise from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import React, { cache } from "react";
-import type { Page as PageType } from "@/payload-types";
+import type { Page as PageType } from "@types";
 import { notFound } from "next/navigation";
-import { RenderBlocks } from "@/app/blocks/RenderBlocks";
+import { RenderBlocks } from "@blocks/RenderBlocks";
 
 //* Function to generate static params for all pages except the index page
 export async function generateStaticParams() {

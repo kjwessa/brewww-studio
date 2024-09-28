@@ -1,7 +1,7 @@
 import type { CollectionConfig } from "payload";
 
-import { isAdmin } from "@/access/isAdmin";
-import { publishedOnly } from "@/access/publishedOnly";
+import { isAdmin } from "@access/isAdmin";
+import { publishedOnly } from "@access/publishedOnly";
 
 export const Brands: CollectionConfig = {
   slug: "brands",

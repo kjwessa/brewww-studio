@@ -1,5 +1,5 @@
 import type { GlobalConfig } from "payload";
-import { isAdmin } from "@/access/isAdmin";
+import { isAdmin } from "@access/isAdmin";
 export const Footer: GlobalConfig = {
   slug: "footer",
 

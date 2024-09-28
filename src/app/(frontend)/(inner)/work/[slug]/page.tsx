@@ -1,12 +1,12 @@
 import configPromise from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import React from "react";
-import RichText from "@/components/RichText/index";
+import RichText from "@components/RichText/index";
 import { notFound } from "next/navigation";
-import { Work } from "@/payload-types";
+import { Work } from "@types";
 import Image from "next/image";
 import Link from "next/link";
-import { formatDate } from "@/utilities/dateFormatter";
+import { formatDate } from "@utilities/dateFormatter";
 import AudioImageOne from "/public/images/audio-one.jpg";
 import AudioImageTwo from "/public/images/audio-two.jpg";
 import AudioImageThree from "/public/images/audio-three.jpg";
@@ -807,18 +807,6 @@ export default async function WorkPage({
                 <Link className="text-gray-950" href={""}>
                   Kevin Wessa
                 </Link>
-              </span>
-              <span>•</span>
-              <span>
-                {project.publishedAt
-                  ? formatDate(project.publishedAt)
-                  : "Date not available"}
-              </span>
-              <span>•</span>
-              <span>
-                {project.metadata.readTime
-                  ? `${project.metadata.readTime} min read`
-                  : "Add Read Time"}
               </span>
             </div>
           </div>

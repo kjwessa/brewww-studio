@@ -1,8 +1,8 @@
 import localFont from "next/font/local";
 import "@/styles/globals.css";
 import { Metadata } from "next";
-import Header from "@/components/Header/index";
-import Footer from "@/components/Footer/index";
+import Header from "@components/Header/index";
+import Footer from "@components/Footer/index";
 
 const DMSans = localFont({
   variable: "--font-dm-sans",

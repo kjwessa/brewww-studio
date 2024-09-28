@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { LinkMain } from "@/components/LinkMain";
+import { LinkMain } from "@components/LinkMain";
 import Link from "next/link";
 
 export default function ServicesPage() {
