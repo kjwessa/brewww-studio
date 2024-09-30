@@ -4,7 +4,6 @@ import config from "@payload-config";
 import Image from "next/image";
 import Link from "next/link";
 import BrewwwLogo from "/public/images/brewww-logotype-gold.png";
-import BrewwwMark from "/public/images/brewww-mark-gold.png";
 
 export default async function Footer() {
   const payload = await getPayloadHMR({ config });
@@ -12,7 +11,6 @@ export default async function Footer() {
   const getCurrentYear = (): number => {
     return new Date().getFullYear();
   };
-
   return (
     <>
       <footer className="border-b-6 border-[#f8ac43] bg-[#060D0E] text-white">
@@ -74,19 +72,19 @@ export default async function Footer() {
                 <div className="space-y-3">
                   <a
                     href="mailto:hello@brewww.co"
-                    className="relative block inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                    className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
                   >
                     hello@brewww.co
                   </a>
                   <a
                     href="https://www.facebook.com/brewwwstudio"
-                    className="relative block inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                    className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
                   >
                     @brewwwstudio
                   </a>
                   <a
                     href="https://www.instagram.com/brewwwstudio/"
-                    className="relative block inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                    className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
                   >
                     @brewwwstudio
                   </a>
@@ -99,9 +97,9 @@ export default async function Footer() {
           <div className="py-12 text-lg text-white">
             <div className="m-auto w-full px-12 min-[100px]:max-w-full min-[100px]:px-16 min-[1920px]:max-w-[120rem] min-[1920px]:px-10">
               <div className="m-auto w-full">
-                <img
+                <Image
                   className="m-auto h-auto w-full max-w-full"
-                  src={BrewwwLogo.src}
+                  src={BrewwwLogo}
                   alt="Brewww Logo"
                 />
               </div>

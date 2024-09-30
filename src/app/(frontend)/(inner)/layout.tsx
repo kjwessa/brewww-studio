@@ -42,7 +42,9 @@ export default function InnerLayout({
     <html lang="en" className={`${DMSans.variable} ${BebasNeue.variable}`}>
       <body className="bg-gray-950 text-gray-50 antialiased">
         <Header />
+
         <main className="min-h-screen">{children}</main>
+
         <Footer />
       </body>
     </html>

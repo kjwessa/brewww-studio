@@ -33,7 +33,7 @@ const config: Config = {
       colors: {
         brand: {
           gold: "#f8ac43",
-          "dark-bg": "#151515",
+          "dark-bg": "#0A0A0A",
           "dark-surface": "#1D1D1D",
           "dark-text": "#E0E0E0",
           "light-bg": "#F5F5F5",
