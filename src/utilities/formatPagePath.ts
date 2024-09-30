@@ -1,7 +1,4 @@
-export const formatPagePath = (
-  collection: string,
-  doc: any, // eslint-disable-line @typescript-eslint/no-explicit-any
-): string => {
+export const formatPagePath = (collection: string, doc: any): string => {
   const { slug, breadcrumbs } = doc;
 
   const nestedSlug = breadcrumbs?.slice(-1)?.[0]?.url;
