@@ -6,6 +6,8 @@ import { isAdminOrSelf, isAdminOrSelfFieldLevel } from "@access/isAdminOrSelf";
 export const Users: CollectionConfig = {
   slug: "users",
 
+  //TODO Remove the FULL NAME on the MONGO side
+
   //* Access Settings
   access: {
     create: isAdmin,
