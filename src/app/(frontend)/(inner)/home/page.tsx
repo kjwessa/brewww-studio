@@ -507,6 +507,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
       <section className="text-black">
         <div className="bg-[#D2B48C]">
           <div className="grid grid-cols-[371.75px_743.5px_371.75px] grid-rows-[auto] gap-10 py-28">
@@ -597,11 +598,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="rounded-3xl bg-white">
+      <section className="bg-white">
         <div className="grid grid-cols-3 gap-10 py-28">
           <div className="col-span-1" />
 
-          <div className="col-span-1 flex flex-col justify-center text-center text-5xl">
+          <div className="col-span-1 flex flex-col justify-center text-center text-5xl text-black">
             <p>
               We <em>build</em> brands.
             </p>
@@ -611,15 +612,14 @@ export default function Home() {
             <p>
               We <em>connect</em> brands
             </p>
-            <p className="underline">with people</p>
-            <p>.</p>
+            <p className="underline">with people.</p>
           </div>
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-black text-white">
         <div className="container mx-auto text-2xl">
-          <div className="flex flex-wrap py-12">
+          <div className="flex flex-wrap py-24">
             <div className="mb-6 w-full px-4 md:mb-0 md:w-1/2">
               <p className="mb-4">
                 What gets us out of bed in the morning? Being bold, challenging
@@ -648,7 +648,7 @@ export default function Home() {
         <div className="container mx-auto">
           <div className="flex py-28">
             <div className="w-1/3 pr-8">
-              <h2 className="text-[4.13rem] leading-none">
+              <h2 className="text-[4.13rem] leading-none text-black">
                 Brands we partner with:
               </h2>
             </div>
