@@ -722,6 +722,56 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="relative bg-neutral-800 text-white">
+        <div className="container mx-auto max-w-7xl px-4 py-12 md:py-20 lg:py-28">
+          <div className="grid grid-cols-12 gap-4">
+            <div className="z-10 col-start-1 col-end-9 row-start-1 row-end-3 flex flex-col justify-center">
+              <h3 className="mb-6 text-5xl font-thin leading-tight md:text-6xl lg:text-7xl">
+                Results are everything.
+                <br />
+                It's that <span className="font-bold">simple</span>.
+              </h3>
+              <div className="max-w-lg">
+                <p className="mb-4 text-base">
+                  From award-winning websites to complex web experiences, we've
+                  done it all. We've helped Games Studios use the web to hire,
+                  acquire players, and access new markets.
+                </p>
+                <p className="mb-2 uppercase">
+                  <a
+                    href=""
+                    className="transition-colors hover:text-brand-gold"
+                  >
+                    View Services
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div className="relative col-start-7 col-end-13 row-start-1 row-end-3 h-[50vh] overflow-hidden">
+              <video
+                className="absolute inset-0 h-full w-full object-cover"
+                id="video-1"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source
+                  src="https://1minus1-2021.s3.eu-west-2.amazonaws.com/hotwheelz_a7a9952e87.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <div className="absolute bottom-0 right-0 p-4 text-right">
+                <p className="mb-1 text-[10rem] font-bold leading-none">50%</p>
+                <p className="text-sm">
+                  Increase in prospective <br />
+                  employee engagement.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
