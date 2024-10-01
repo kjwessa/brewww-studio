@@ -7,13 +7,7 @@ import { MediaBlock } from "@blocks/MediaBlock/config";
 import { Code } from "@blocks/Code/config";
 import { Banner } from "@blocks/Banner/config";
 import { CallToAction } from "@blocks/CallToAction/config";
-import {
-  MetaDescriptionField,
-  MetaImageField,
-  MetaTitleField,
-  OverviewField,
-  PreviewField,
-} from "@payloadcms/plugin-seo/fields";
+import { seoTab } from "@fields/seoFields";
 
 import {
   BlocksFeature,
@@ -146,29 +140,7 @@ export const BlogPosts: CollectionConfig = {
             },
           ],
         },
-        {
-          name: "seo",
-          label: "SEO",
-          fields: [
-            PreviewField({
-              hasGenerateFn: true,
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-            }),
-            OverviewField({
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-              imagePath: "meta.image",
-            }),
-            MetaTitleField({
-              hasGenerateFn: true,
-            }),
-            MetaImageField({
-              relationTo: "media",
-            }),
-            MetaDescriptionField({}),
-          ],
-        },
+        seoTab,
       ],
     },
     ...slugField(),
