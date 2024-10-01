@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "@styles/globals.css";
 import { Metadata, Viewport } from "next";
+import { GridGuide } from "@components/GridGuide/index";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -59,6 +60,7 @@ export default function RootLayout({
     <html lang="en" className={`${DMSans.variable}`}>
       <body className="bg-gray-950 text-gray-50 antialiased">
         <main className="flex min-h-svh flex-col">{children}</main>
+        <GridGuide />
       </body>
     </html>
   );
