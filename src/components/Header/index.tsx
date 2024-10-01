@@ -178,13 +178,6 @@ export default function Header() {
         }`}
       >
         <div className="relative m-2 flex h-[calc(100vh-1rem)] w-[calc(100vw-1rem)] flex-col justify-between overflow-hidden rounded-md bg-brand-dark-surface p-6">
-          <Image
-            src="/static.gif"
-            alt="Static GIF"
-            fill
-            className="object-cover opacity-[0.01]"
-            unoptimized
-          />
           <div className="relative z-10 flex justify-end">
             <button
               onClick={toggleMenu}
