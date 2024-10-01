@@ -38,12 +38,10 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content }) => {
         });
       }
     });
-    console.log("Extracted headings:", headings);
     return headings;
   };
 
   useEffect(() => {
-    console.log("Content received:", content);
     const headings = extractHeadings(content);
     setToc(headings);
 
@@ -53,12 +51,9 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content }) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveId(entry.target.id);
-          console.log("Active heading:", entry.target.id);
         }
       });
     }, observerOptions);
-
-    console.log("Observer created with options:", observerOptions);
 
     // Delay the observation to ensure DOM elements are ready
     setTimeout(() => {
@@ -66,9 +61,6 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content }) => {
         const element = document.getElementById(heading.id);
         if (element) {
           observer.current?.observe(element);
-          console.log("Observing element:", heading.id);
-        } else {
-          console.error("Element not found for heading:", heading.id);
         }
       });
     }, 100);
@@ -76,7 +68,6 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content }) => {
     return () => {
       if (observer.current) {
         observer.current.disconnect();
-        console.log("Observer disconnected");
       }
     };
   }, [content]);
@@ -85,9 +76,6 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ content }) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      console.log("Scrolled to element:", id);
-    } else {
-      console.error("Element not found for scrolling:", id);
     }
   };
 

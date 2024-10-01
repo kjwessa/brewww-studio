@@ -3,7 +3,7 @@ import { isAdmin } from "@access/isAdmin";
 import { publishedOnly } from "@access/publishedOnly";
 import { slugField } from "@fields/slug";
 import { revalidatePost } from "./hooks/revalidatePost";
-import { MediaBlock } from "@blocks/MediaBlock/config";
+import { MediaBlock } from "@blocks/MediaBlock/index";
 import { Code } from "@blocks/Code/config";
 import { Banner } from "@blocks/Banner/config";
 import { CallToAction } from "@blocks/CallToAction/config";
