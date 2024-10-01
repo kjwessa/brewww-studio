@@ -1,16 +1,37 @@
 import React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@utilities/cn";
 
-type Props = {
+const gutterVariants = cva("", {
+  variants: {
+    leftGutter: {
+      true: "pl-12",
+      false: "",
+    },
+    rightGutter: {
+      true: "pr-12",
+      false: "",
+    },
+    disableMobile: {
+      true: "md:px-0",
+      false: "",
+    },
+  },
+  defaultVariants: {
+    leftGutter: true,
+    rightGutter: true,
+    disableMobile: false,
+  },
+});
+
+type GutterProps = VariantProps<typeof gutterVariants> & {
   children: React.ReactNode;
   className?: string;
   dataTheme?: string;
-  disableMobile?: boolean;
-  leftGutter?: boolean;
-  rightGutter?: boolean;
   ref?: React.MutableRefObject<any>;
 };
 
-export const Gutter: React.FC<Props> = ({
+export const Gutter: React.FC<GutterProps> = ({
   children,
   className,
   dataTheme,
@@ -21,9 +42,13 @@ export const Gutter: React.FC<Props> = ({
 }) => {
   return (
     <div
-      className={` ${className || ""} ${leftGutter ? "pl-[var(--gutter-h)]" : ""} ${rightGutter ? "pr-[var(--gutter-h)]" : ""} ${disableMobile ? "md:px-0" : ""} `.trim()}
+      className={cn(
+        gutterVariants({ leftGutter, rightGutter, disableMobile }),
+        className,
+      )}
       data-theme={dataTheme}
       ref={refFromProps || null}
+      style={{ "--gutter-h": "3rem" } as React.CSSProperties}
     >
       {children}
     </div>
