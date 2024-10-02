@@ -1,16 +1,14 @@
 import { BannerBlock } from "@blocks/Banner/Component";
 import { CallToActionBlock } from "@blocks/CallToAction/Component";
 import { CodeBlock, CodeBlockProps } from "@blocks/Code/Component";
-import { MediaBlock } from "@blocks/MediaBlock/Component";
+import RichTextUpload from "@components/RichText/Upload";
 import React, { Fragment, JSX } from "react";
-import { CMSLink } from "@components/Link";
+// import { CMSLink } from "@components/CMSLink/index";
 import {
   DefaultNodeTypes,
   SerializedBlockNode,
 } from "@payloadcms/richtext-lexical";
 import type { BannerBlock as BannerBlockProps } from "@types";
-import type { CallToActionBlock as CallToActionBlockProps } from "@types";
-import type { MediaBlock as MediaBlockProps } from "@types";
 
 import {
   IS_BOLD,
@@ -41,6 +39,7 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
     <Fragment>
       {nodes?.map((node, index): JSX.Element | null => {
         if (node == null) {
+          console.error("[RichText/serialize.tsx] Encountered null node");
           return null;
         }
 
@@ -84,6 +83,7 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
         // which does not return checked: false (only true - i.e. there is no prop for false)
         const serializedChildrenFn = (node: NodeTypes): JSX.Element | null => {
           if (node.children == null) {
+            console.warn("[RichText/serialize.tsx] Node has no children");
             return null;
           } else {
             if (node?.type === "list" && node?.listType === "check") {
@@ -108,6 +108,9 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
           const blockType = block?.blockType;
 
           if (!block || !blockType) {
+            console.error(
+              "[RichText/serialize.tsx] Invalid block or blockType",
+            );
             return null;
           }
 
@@ -129,6 +132,9 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
                 />
               );
             default:
+              console.warn(
+                `[RichText/serialize.tsx] Unknown block type: ${blockType}`,
+              );
               return null;
           }
         } else {
@@ -190,22 +196,16 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
               );
             }
             case "link": {
-              const fields = node.fields;
-
-              return (
-                <CMSLink
-                  key={index}
-                  newTab={Boolean(fields?.newTab)}
-                  reference={fields.doc as any}
-                  type={fields.linkType === "internal" ? "reference" : "custom"}
-                  url={fields.url}
-                >
-                  {serializedChildren}
-                </CMSLink>
-              );
+              // CMS links are hidden for now
+              return <span key={index}>{serializedChildren}</span>;
             }
-
+            case "upload": {
+              return <RichTextUpload key={index} node={node} />;
+            }
             default:
+              console.warn(
+                `[RichText/serialize.tsx] Unknown node type: ${node.type}`,
+              );
               return null;
           }
         }
