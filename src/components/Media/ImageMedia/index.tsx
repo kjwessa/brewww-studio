@@ -12,6 +12,10 @@ import cssVariables from "@cssVariables";
 
 const { breakpoints } = cssVariables;
 
+console.log(
+  "[src/components/Media/ImageMedia/index.tsx] Initializing ImageMedia component",
+);
+
 export const ImageMedia: React.FC<MediaProps> = (props) => {
   const {
     alt: altFromProps,
@@ -24,6 +28,11 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
     size: sizeFromProps,
     src: srcFromProps,
   } = props;
+
+  console.log(
+    "[src/components/Media/ImageMedia/index.tsx] ImageMedia props:",
+    props,
+  );
 
   const [isLoading, setIsLoading] = React.useState(true);
 
@@ -45,7 +54,13 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
     height = fullHeight!;
     alt = altFromResource;
 
-    src = `${process.env.NEXT_PUBLIC_SERVER_URL}${url}`;
+    src = url.startsWith("http")
+      ? url
+      : `${process.env.NEXT_PUBLIC_SERVER_URL}${url}`;
+    console.log(
+      "[src/components/Media/ImageMedia/index.tsx] Constructed src:",
+      src,
+    );
   }
 
   // NOTE: this is used by the browser to determine which image to download at different screen sizes
@@ -54,6 +69,11 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
     : Object.entries(breakpoints)
         .map(([, value]) => `(max-width: ${value}px) ${value}px`)
         .join(", ");
+
+  console.log(
+    "[src/components/Media/ImageMedia/index.tsx] Calculated sizes:",
+    sizes,
+  );
 
   return (
     <NextImage
@@ -64,9 +84,16 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
       onClick={onClick}
       onLoad={() => {
         setIsLoading(false);
+        console.log("[src/components/Media/ImageMedia/index.tsx] Image loaded");
         if (typeof onLoadFromProps === "function") {
           onLoadFromProps();
         }
+      }}
+      onError={(e) => {
+        console.error(
+          "[src/components/Media/ImageMedia/index.tsx] Error loading image:",
+          e,
+        );
       }}
       priority={priority}
       quality={90}
