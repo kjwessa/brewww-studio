@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ChevronIcon } from "@icons/ChevronIcon/index.js";
+import { ChevronIcon } from "@/icons/ChevronIcon/index.js";
 
 export const Pagination: React.FC<{
   page: number;

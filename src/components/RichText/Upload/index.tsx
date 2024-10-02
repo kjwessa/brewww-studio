@@ -1,7 +1,7 @@
 import React from "react";
-import { Media as MediaType } from "@types";
-import { CMSLink, CMSLinkType } from "@components/CMSLink/index";
-import { Media } from "@components/Media/index";
+import { Media as MediaType } from "@/payload-types";
+import { CMSLink, CMSLinkType } from "@/components/CMSLink/index";
+import { Media } from "@/components/Media/index";
 import { SerializedUploadNode } from "@payloadcms/richtext-lexical";
 
 export type RichTextUploadNodeType = {

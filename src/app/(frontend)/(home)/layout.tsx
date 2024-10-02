@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
-import "@styles/globals.css";
+import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
-import { GridGuide } from "@components/GridGuide/index";
+import { GridGuide } from "@/components/GridGuide/index";
 
 export const viewport: Viewport = {
   width: "device-width",

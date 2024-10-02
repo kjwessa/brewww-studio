@@ -2,11 +2,11 @@ import configPromise from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import React from "react";
 import { notFound } from "next/navigation";
-import { Play } from "@types";
+import { Play } from "@/payload-types";
 import Image from "next/image";
 import Link from "next/link";
-import { MetaDot } from "@components/MetaDot";
-import { formatDate } from "@utilities/dateFormatter";
+import { MetaDot } from "@/components/MetaDot";
+import { formatDate } from "@/utilities/dateFormatter";
 
 //* Render the play page
 export default async function PlayPage({

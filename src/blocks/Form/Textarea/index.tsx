@@ -5,8 +5,8 @@ import type {
   UseFormRegister,
 } from "react-hook-form";
 
-import { Label } from "@components/UI/Label/index";
-import { Textarea as TextAreaComponent } from "@components/UI/Textarea/index";
+import { Label } from "@/components/UI/Label/index";
+import { Textarea as TextAreaComponent } from "@/components/UI/Textarea/index";
 import React from "react";
 
 import { Error } from "../Error";
