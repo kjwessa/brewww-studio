@@ -2,7 +2,7 @@ import {
   DefaultNodeTypes,
   SerializedBlockNode,
 } from "@payloadcms/richtext-lexical";
-import RichTextUpload from "@components/RichText/Upload";
+import RichTextUpload from "@/components/RichText/Upload";
 import React, { Fragment, JSX } from "react";
 
 import {
@@ -14,8 +14,8 @@ import {
   IS_SUPERSCRIPT,
   IS_UNDERLINE,
 } from "./nodeFormat";
-import type { Page } from "@types";
-import { MediaTest, MediaTestProps } from "@blocks/Test/Component";
+import type { Page } from "@/payload-types";
+import { MediaTest, MediaTestProps } from "@/blocks/Test/Component";
 
 export type NodeTypes = DefaultNodeTypes | SerializedBlockNode<MediaTestProps>;
 

@@ -2,10 +2,10 @@
 
 import React, { forwardRef } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@utilities/cn";
+import { cn } from "@/utilities/cn";
 import Link from "next/link";
 import { LinkType, Reference } from "../CMSLink/index.js";
-import { Page as PayloadPage } from "@types";
+import { Page as PayloadPage } from "@/payload-types";
 
 // Import your icons here
 // import { ArrowIcon, SearchIcon, GitHubIcon, PlusIcon, LoaderIcon } from "@/icons";

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { twMerge } from "tailwind-merge";
+import { cn } from "@/utilities/cn";
 
 interface LinkMainProps {
   text: string;
@@ -16,7 +16,7 @@ export function LinkMain({
   const sizeClass =
     size === "large" ? "text-lg" : size === "medium" ? "text-base" : "text-sm";
 
-  const linkClass = twMerge("flex items-center font-medium", sizeClass);
+  const linkClass = cn("flex items-center font-medium", sizeClass);
 
   return (
     <>

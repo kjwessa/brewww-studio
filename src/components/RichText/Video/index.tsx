@@ -1,6 +1,6 @@
 import React from "react";
 import { cva } from "class-variance-authority";
-import { cn } from "@utilities/cn";
+import { cn } from "@/utilities/cn";
 
 import { VimeoPlayer } from "./Vimeo/index";
 import { YouTubePlayer } from "./YouTube/index";

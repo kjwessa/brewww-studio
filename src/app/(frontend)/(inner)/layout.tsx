@@ -1,9 +1,9 @@
 import localFont from "next/font/local";
-import "@styles/globals.css";
+import "@/styles/globals.css";
 import { Metadata } from "next";
-import Header from "@components/Header/index";
-import Footer from "@components/Footer/index";
-import { GridGuide } from "@components/GridGuide/index";
+import Header from "@/components/Header/index";
+import Footer from "@/components/Footer/index";
+import { GridGuide } from "@/components/GridGuide/index";
 
 export const metadata: Metadata = {
   title: "Inner Pages",

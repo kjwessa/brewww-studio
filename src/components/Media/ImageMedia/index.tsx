@@ -2,7 +2,7 @@
 
 import type { StaticImageData } from "next/image";
 
-import { cn } from "@utilities/cn";
+import { cn } from "@/utilities/cn";
 import NextImage from "next/image";
 import React from "react";
 
@@ -53,10 +53,12 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
     width = fullWidth!;
     height = fullHeight!;
     alt = altFromResource;
-
-    src = url.startsWith("http")
-      ? url
-      : `${process.env.NEXT_PUBLIC_SERVER_URL}${url}`;
+    src =
+      url && url.startsWith("http")
+        ? url
+        : url
+          ? `${process.env.NEXT_PUBLIC_SERVER_URL}${url}`
+          : "";
     console.log(
       "[src/components/Media/ImageMedia/index.tsx] Constructed src:",
       src,

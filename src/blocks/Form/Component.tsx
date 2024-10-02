@@ -5,8 +5,8 @@ import { FormFieldBlock } from "@payloadcms/plugin-form-builder/types";
 import { useRouter } from "next/navigation";
 import React, { useCallback, useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
-import RichText from "@components/RichText";
-import { Button } from "@components/Button";
+import RichText from "@/components/RichText/index";
+import { Button } from "@/components/Button/index";
 
 import { buildInitialFormState } from "./buildInitialFormState";
 import { fields } from "./fields";

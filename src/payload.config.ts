@@ -12,27 +12,27 @@ import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
 
 //* Import Collections
-import { BlogCategories } from "@collections/BlogCategories/config";
-import { BlogPosts } from "@collections/BlogPosts/config";
-import { Brands } from "@collections/Brands/config";
-import { FAQ } from "@collections/FAQ/config";
-import { Location } from "@collections/Locations/config";
-import { Media } from "@collections/Media/config";
-import { Pages } from "@collections/Pages/config";
-import { Pillars } from "@collections/Pillars/config";
-import { Playground } from "@collections/Play/config";
-import { Results } from "@collections/Results/config";
-import { Services } from "@collections/Services/config";
-import { Testimonials } from "@collections/Testimonials/config";
-import { Users } from "@collections/Users/config";
-import { Work } from "@collections/Work/config";
+import { BlogCategories } from "@/collections/BlogCategories/config";
+import { BlogPosts } from "@/collections/BlogPosts/config";
+import { Brands } from "@/collections/Brands/config";
+import { FAQ } from "@/collections/FAQ/config";
+import { Location } from "@/collections/Locations/config";
+import { Media } from "@/collections/Media/config";
+import { Pages } from "@/collections/Pages/config";
+import { Pillars } from "@/collections/Pillars/config";
+import { Playground } from "@/collections/Play/config";
+import { Results } from "@/collections/Results/config";
+import { Services } from "@/collections/Services/config";
+import { Testimonials } from "@/collections/Testimonials/config";
+import { Users } from "@/collections/Users/config";
+import { Work } from "@/collections/Work/config";
 
 //* Import Globals
 import { Header } from "./globals/Header/index";
 import { Footer } from "./globals/Footer/index";
 
 //* Import Types
-import { Page, Post } from "@types";
+import { Page, Post } from "@/payload-types";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
