@@ -1,106 +1,80 @@
-import { cn } from "@utilities/cn";
 import React from "react";
-
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@utilities/cn";
 import { serializeLexical } from "./serialize";
+import { LexicalNode } from "./nodeFormat";
 
-type Props = {
+const richTextVariants = cva("", {
+  variants: {
+    colorLinks: {
+      true: "[&_a]:text-blue-600 [&_a:hover]:text-blue-800 [&_a:visited]:text-purple-600",
+    },
+    enableGutter: {
+      true: "container",
+      false: "max-w-none",
+    },
+    enableProse: {
+      true: "prose mx-auto",
+      false: "",
+    },
+  },
+  defaultVariants: {
+    colorLinks: true,
+    enableGutter: true,
+    enableProse: true,
+  },
+});
+
+type RichTextProps = VariantProps<typeof richTextVariants> & {
   className?: string;
-  content: Record<string, any>;
-  enableGutter?: boolean;
-  enableProse?: boolean;
+  content: any;
 };
 
-const RichText: React.FC<Props> = ({
+export const RichText: React.FC<RichTextProps> = ({
   className,
   content,
-  enableGutter = true,
-  enableProse = true,
+  colorLinks,
+  enableGutter,
+  enableProse,
 }) => {
-  console.log("RichText component rendering with props:", {
-    className,
-    content,
-    enableGutter,
-    enableProse,
-  });
-
   if (!content) {
-    console.warn("RichText received empty content");
     return null;
   }
 
-  try {
-    return (
-      <div
-        className={cn(
-          {
-            container: enableGutter,
-            "max-w-none": !enableGutter,
-            "prose mx-auto": enableProse,
-          },
-          className,
-        )}
-      >
-        {content &&
-          !Array.isArray(content) &&
-          typeof content === "object" &&
-          "root" in content &&
-          serializeLexical({ nodes: content?.root?.children })}
-      </div>
-    );
-  } catch (error) {
-    console.error("Error rendering RichText component:", error);
-    return <div>Error rendering content</div>;
-  }
+  const renderContent = () => {
+    if (typeof content === "string") {
+      return decodeHTMLEntities(content);
+    } else if (
+      content &&
+      !Array.isArray(content) &&
+      typeof content === "object" &&
+      "root" in content
+    ) {
+      return serializeLexical({
+        nodes: content.root.children as LexicalNode[],
+      });
+    }
+    return null;
+  };
+
+  return (
+    <div
+      className={cn(
+        richTextVariants({ colorLinks, enableGutter, enableProse }),
+        "first:mt-0 last:mb-0",
+        className,
+      )}
+    >
+      {renderContent()}
+    </div>
+  );
 };
 
+// Helper function to decode HTML entities
+function decodeHTMLEntities(text: string): string {
+  const textArea = document.createElement("textarea");
+  textArea.innerHTML = text;
+  return textArea.value;
+}
+
 export default RichText;
-
-// import React from "react";
-// import { serializeLexical } from "./serialize";
-// import { LexicalNode } from "./nodeFormat";
-
-// type Props = {
-//   className?: string;
-//   content: Record<string, any> | string;
-//   enableGutter?: boolean;
-//   enableProse?: boolean;
-// };
-
-// const RichText: React.FC<Props> = ({
-//   className,
-//   content,
-//   enableGutter = true,
-//   enableProse = true,
-// }) => {
-//   const renderContent = () => {
-//     if (typeof content === "string") {
-//       // If content is a string, render it directly after decoding HTML entities
-//       return decodeHTMLEntities(content);
-//     } else if (content && content.root && content.root.children) {
-//       // If content is Lexical JSON, use serializeLexical
-//       return serializeLexical({
-//         nodes: content.root.children as LexicalNode[],
-//       });
-//     } else {
-//       return null;
-//     }
-//   };
-
-//   // TODO: Add dark:prose-invert to the className if I want dark mode later
-//   return (
-//     <div
-//       className={` ${enableGutter ? "container" : "max-w-none"} ${enableProse ? "prose mx-auto" : ""} ${className || ""} `.trim()}
-//     >
-//       {renderContent()}
-//     </div>
-//   );
-// };
-
-// // Helper function to decode HTML entities
-// function decodeHTMLEntities(text: string): string {
-//   const textArea = document.createElement("textarea");
-//   textArea.innerHTML = text;
-//   return textArea.value;
-// }
-
-// export default RichText;
