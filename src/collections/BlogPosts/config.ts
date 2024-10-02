@@ -3,10 +3,7 @@ import { isAdmin } from "@access/isAdmin";
 import { publishedOnly } from "@access/publishedOnly";
 import { slugField } from "@fields/slug";
 import { revalidatePost } from "./hooks/revalidatePost";
-import { MediaBlock } from "@blocks/MediaBlock/index";
-import { Code } from "@blocks/Code/config";
-import { Banner } from "@blocks/Banner/config";
-import { CallToAction } from "@blocks/CallToAction/config";
+import { MediaTest } from "@blocks/Test/config";
 import { seoTab } from "@fields/seoFields";
 
 import {
@@ -87,7 +84,7 @@ export const BlogPosts: CollectionConfig = {
                     enabledHeadingSizes: ["h2", "h3", "h4", "h5", "h6"],
                   }),
                   BlocksFeature({
-                    blocks: [MediaBlock, Banner, Code, CallToAction],
+                    blocks: [MediaTest],
                   }),
                 ],
               }),

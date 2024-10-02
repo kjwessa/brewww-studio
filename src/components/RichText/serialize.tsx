@@ -1,14 +1,9 @@
-import { BannerBlock } from "@blocks/Banner/Component";
-import { CallToActionBlock } from "@blocks/CallToAction/Component";
-import { CodeBlock, CodeBlockProps } from "@blocks/Code/Component";
-import RichTextUpload from "@components/RichText/Upload";
-import React, { Fragment, JSX } from "react";
-// import { CMSLink } from "@components/CMSLink/index";
 import {
   DefaultNodeTypes,
   SerializedBlockNode,
 } from "@payloadcms/richtext-lexical";
-import type { BannerBlock as BannerBlockProps } from "@types";
+import RichTextUpload from "@components/RichText/Upload";
+import React, { Fragment, JSX } from "react";
 
 import {
   IS_BOLD,
@@ -20,15 +15,9 @@ import {
   IS_UNDERLINE,
 } from "./nodeFormat";
 import type { Page } from "@types";
+import { MediaTest, MediaTestProps } from "@blocks/Test/Component";
 
-export type NodeTypes =
-  | DefaultNodeTypes
-  | SerializedBlockNode<
-      | Extract<Page["layout"][0], { blockType: "cta" }>
-      | Extract<Page["layout"][0], { blockType: "mediaBlock" }>
-      | BannerBlockProps
-      | CodeBlockProps
-    >;
+export type NodeTypes = DefaultNodeTypes | SerializedBlockNode<MediaTestProps>;
 
 type Props = {
   nodes: NodeTypes[];
@@ -39,7 +28,9 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
     <Fragment>
       {nodes?.map((node, index): JSX.Element | null => {
         if (node == null) {
-          console.error("[RichText/serialize.tsx] Encountered null node");
+          console.error(
+            "[src/components/RichText/serialize.tsx] Encountered null node",
+          );
           return null;
         }
 
@@ -83,7 +74,9 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
         // which does not return checked: false (only true - i.e. there is no prop for false)
         const serializedChildrenFn = (node: NodeTypes): JSX.Element | null => {
           if (node.children == null) {
-            console.warn("[RichText/serialize.tsx] Node has no children");
+            console.warn(
+              "[src/components/RichText/serialize.tsx] Node has no children",
+            );
             return null;
           } else {
             if (node?.type === "list" && node?.listType === "check") {
@@ -107,60 +100,47 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
 
           const blockType = block?.blockType;
 
+          console.log(
+            "[src/components/RichText/serialize.tsx] Block type:",
+            blockType,
+          );
+
           if (!block || !blockType) {
             console.error(
-              "[RichText/serialize.tsx] Invalid block or blockType",
+              "[src/components/RichText/serialize.tsx] Invalid block or blockType",
             );
             return null;
           }
+          console.log(
+            "[src/components/RichText/serialize.tsx] Block contents:",
+            block,
+          );
 
           switch (blockType) {
-            case "banner":
-              return (
-                <BannerBlock
-                  className="col-start-2 mb-4"
-                  key={index}
-                  {...(block as BannerBlockProps)}
-                />
-              );
-            case "code":
-              return (
-                <CodeBlock
-                  className="col-start-2"
-                  key={index}
-                  {...(block as CodeBlockProps)}
-                />
-              );
+            case "media-test":
+              return <MediaTest key={index} text={block.text} />;
             default:
               console.warn(
-                `[RichText/serialize.tsx] Unknown block type: ${blockType}`,
+                `[src/components/RichText/serialize.tsx] Unknown block type: ${blockType}`,
               );
               return null;
           }
         } else {
           switch (node.type) {
             case "linebreak": {
-              return <br className="col-start-2" key={index} />;
+              return <br key={index} />;
             }
             case "paragraph": {
-              return (
-                <p className="col-start-2" key={index}>
-                  {serializedChildren}
-                </p>
-              );
+              return <p key={index}>{serializedChildren}</p>;
             }
             case "heading": {
               const Tag = node?.tag as keyof JSX.IntrinsicElements;
-              return (
-                <Tag className="col-start-2" key={index}>
-                  {serializedChildren}
-                </Tag>
-              );
+              return <Tag key={index}>{serializedChildren}</Tag>;
             }
             case "list": {
               const Tag = node?.tag as keyof JSX.IntrinsicElements;
               return (
-                <Tag className="list col-start-2" key={index}>
+                <Tag className="list" key={index}>
                   {serializedChildren}
                 </Tag>
               );
@@ -189,11 +169,7 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
               }
             }
             case "quote": {
-              return (
-                <blockquote className="col-start-2" key={index}>
-                  {serializedChildren}
-                </blockquote>
-              );
+              return <blockquote key={index}>{serializedChildren}</blockquote>;
             }
             case "link": {
               // CMS links are hidden for now
@@ -204,7 +180,7 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
             }
             default:
               console.warn(
-                `[RichText/serialize.tsx] Unknown node type: ${node.type}`,
+                `[src/components/RichText/serialize.tsx] Unknown node type: ${node.type}`,
               );
               return null;
           }
