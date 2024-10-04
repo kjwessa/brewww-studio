@@ -1,4 +1,4 @@
-import configPromise from "@payload-config";
+import configPromise from "@/payload.config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import React from "react";
 import { notFound } from "next/navigation";
@@ -12,13 +12,14 @@ import { formatDate } from "@/utilities/dateFormatter";
 export default async function PlayPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  if (!params.slug) {
+  const resolvedParams = await params;
+  if (!resolvedParams.slug) {
     notFound();
   }
 
-  const play = await queryPlayBySlug({ slug: params.slug });
+  const play = await queryPlayBySlug({ slug: resolvedParams.slug });
   if (!play) {
     notFound();
   }
@@ -110,8 +111,8 @@ export async function generateStaticParams() {
       overrideAccess: false,
     });
     return (
-      plays.docs?.map(({ slug }) => ({
-        params: { slug },
+      plays.docs?.map((play) => ({
+        params: { slug: play.slug as string },
       })) || []
     );
   } catch (error) {

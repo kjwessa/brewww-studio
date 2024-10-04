@@ -1,6 +1,6 @@
 import React from "react";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
-import config from "@payload-config";
+import config from "@/payload.config";
 import Image from "next/image";
 import Link from "next/link";
 import BrewwwLogo from "/public/images/brewww-logotype-gold.png";

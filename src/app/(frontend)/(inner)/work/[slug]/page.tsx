@@ -1,4 +1,4 @@
-import configPromise from "@payload-config";
+import configPromise from "@/payload.config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import React from "react";
 import RichText from "@/components/RichText/index";
@@ -33,13 +33,14 @@ export async function generateStaticParams() {
 export default async function WorkPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  if (!params.slug) {
+  const resolvedParams = await params;
+  if (!resolvedParams.slug) {
     notFound();
   }
 
-  const project = await queryPostBySlug({ slug: params.slug });
+  const project = await queryPostBySlug({ slug: resolvedParams.slug });
   if (!project) {
     notFound();
   }

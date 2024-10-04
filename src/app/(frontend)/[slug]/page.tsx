@@ -1,4 +1,4 @@
-import configPromise from "@payload-config";
+import configPromise from "@/payload.config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import React, { cache } from "react";
 import type { Page as PageType } from "@/payload-types";
@@ -33,7 +33,8 @@ export async function generateStaticParams() {
 }
 
 // Default export for the Page component
-export default async function Page({ params: { slug = "home" } }) {
+export default async function Page({ params }: { params: { slug?: string } }) {
+  const { slug = "home" } = await params;
   console.log(`Rendering page for slug: ${slug}`);
   let page: PageType | null;
 

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
-import configPromise from "@payload-config";
+import configPromise from "@/payload.config";
 
 export default async function WorkPage() {
   const payload = await getPayloadHMR({ config: configPromise });

@@ -4,18 +4,16 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "clean": "rm -rf .next/ && rm -rf node_modules/ && pnpm install",
     "dev": "next dev",
     "dev:monitor": "node memory-monitor.js & pnpm dev",
-    "build": "next build",
+    "build": "NODE_OPTIONS=--no-deprecation next build",
     "postbuild": "node generate-sitemap.js",
     "start": "next start",
     "build:start": "next build && next start",
     "lint": "next lint",
     "generate:importmap": "payload generate:importmap",
-    "generate:types": "payload generate:types",
-    "build:verbose": "set NODE_ENV=production && set NEXT_TELEMETRY_DISABLED=1 && set NODE_OPTIONS=--trace-warnings && next build",
-    "clean": "rm -rf .next/ && rm -rf node_modules/ && pnpm install",
-    "unused": "next-unused --debug"
+    "generate:types": "payload generate:types"
   },
   "dependencies": {
     "@payloadcms/db-mongodb": "beta",
@@ -42,13 +40,13 @@
     "gsap": "^3.12.5",
     "lexical": "0.17.0",
     "lucide-react": "^0.380.0",
-    "next": "15.0.0-canary.160",
+    "next": "15.0.0-canary.173",
     "next-sitemap": "^4.0.6",
     "payload": "beta",
     "payload-admin-bar": "^1.0.6",
     "prism-react-renderer": "^2.3.1",
-    "react": "19.0.0-rc-5dcb0097-20240918",
-    "react-dom": "19.0.0-rc-5dcb0097-20240918",
+    "react": "19.0.0-rc-3edc000d-20240926",
+    "react-dom": "19.0.0-rc-3edc000d-20240926",
     "react-hook-form": "7.45.4",
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.5.2",
@@ -56,26 +54,15 @@
   },
   "devDependencies": {
     "@types/node": "^20.16.2",
-    "@types/react": "npm:types-react@19.0.0-rc-5dcb0097-20240918",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc-5dcb0097-20240918",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.4",
-    "next-unused": "^0.0.6",
     "postcss": "^8.4.41",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",
     "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "npm:types-react@19.0.0-rc.0",
-      "@types/react-dom": "npm:types-react-dom@19.0.0-rc.0"
-    }
-  },
-  "overrides": {
-    "@types/react": "npm:types-react@19.0.0-rc.0",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.0"
   },
   "next-unused": {
     "alias": {},
