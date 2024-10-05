@@ -1,4 +1,4 @@
-import configPromise from "@/payload.config";
+import configPromise from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import React from "react";
 import { notFound } from "next/navigation";

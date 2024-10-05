@@ -1,5 +1,5 @@
 import { getPayloadHMR } from "@payloadcms/next/utilities";
-import configPromise from "@/payload.config";
+import configPromise from "@payload-config";
 
 // Define the Client type
 type Brand = {
