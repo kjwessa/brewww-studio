@@ -690,145 +690,300 @@ export default function About() {
         </div>
       </section>
 
-      <main className="m-auto min-h-screen w-screen max-w-[100vw] overflow-hidden bg-white text-black">
-        <section className="pt-16">
-          <div className="border-b-2 border-solid border-black">
-            <div className="m-auto w-[95vw] max-w-[95vw]">
-              <div className="m-auto flex min-h-[calc(240px)] max-w-[56.25rem] flex-col flex-wrap content-center items-center justify-center py-20 text-center">
-                <h1 className="mb-8 text-[5.00rem] leading-none">
-                  Honest Folks Doing Honest Work
+      <section className="bg-white pt-16 text-black">
+        <div className="border-b-2 border-solid border-black">
+          <div className="m-auto w-[95vw] max-w-[95vw]">
+            <div className="m-auto flex min-h-[calc(240px)] max-w-[56.25rem] flex-col flex-wrap content-center items-center justify-center py-20 text-center">
+              <h1 className="mb-8 text-[5.00rem] leading-none">
+                Honest Folks Doing Honest Work
+              </h1>
+              <h3 className="mb-8 text-[2.38rem] leading-none">
+                Our strategy remains: work hard, create lasting relationships,
+                and deliver the very best quality work.
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b-2 border-solid border-black bg-white text-black">
+        <div className="flex basis-full justify-between bg-orange-300 px-12 py-24">
+          <div className="basis-[47%]">
+            <div>
+              <div className="relative flex w-full items-center justify-center">
+                <div
+                  className="relative flex h-full max-h-[31.25rem] min-h-[31.25rem] w-full max-w-[31.25rem]"
+                  style={{
+                    cursor:
+                      'url("https://grainandmortar.com/wp-content/themes/gm/_assets/img/cursor-arrow.svg") 0 0, default',
+                  }}
+                >
+                  {/* Image stack */}
+                  {/* ... (image stack code remains unchanged) */}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex basis-[47%] content-center items-center justify-center text-center">
+            <div>
+              <h3 className="mb-8 text-[2.38rem] leading-none">BFFs</h3>
+              <p className="mb-8 text-xl">
+                z Grain & Mortar is a partnership that began between Eric Downs
+                and Mike & Kristin DeKay in 2011. Since then, we've been
+                fortunate enough to work on hundreds of projects for clients in
+                a wide variety of industries.
+              </p>
+              <span className="text-[11.25rem] leading-none">12</span>
+              <p className="mb-8 text-xl">years in the making.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b-2 border-solid border-black bg-white text-black">
+        <div className="flex basis-full justify-between px-12 py-24">
+          <div className="flex basis-[47%] content-center items-center justify-center text-center">
+            <div>
+              <h3 className="mb-8 text-[2.38rem] leading-none">
+                Let's not forget about people.
+              </h3>
+              <p className="mb-8 text-xl">
+                We know how to design and build for the web, how to talk about
+                lead-gen and build for conversions and so on. But we also
+                understand something just as vital – we're not creating for
+                robots, but people.
+              </p>
+              <p className="mb-8 text-xl">
+                We bring a human-centered approach to our work by bringing
+                through elements of delight and humanity.
+              </p>
+              <p className="mb-8 text-xl">
+                Nothing makes us happier than when we can partner with our
+                clients to bring more beauty into the world.
+              </p>
+            </div>
+          </div>
+          <div className="basis-[47%]">
+            <div>
+              <div className="relative flex w-full items-center justify-center">
+                <div
+                  className="relative flex h-full max-h-[31.25rem] min-h-[31.25rem] w-full max-w-[31.25rem]"
+                  style={{
+                    cursor:
+                      'url("https://grainandmortar.com/wp-content/themes/gm/_assets/img/cursor-arrow.svg") 0 0, default',
+                  }}
+                >
+                  {/* Image stack */}
+                  {/* ... (image stack code remains unchanged) */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b-2 border-solid border-black bg-red-200 text-black">
+        <div>
+          <div className="flex justify-center pt-24 text-[2.38rem] leading-none">
+            <h3>Real people with real feelings.</h3>
+          </div>
+          <div className="flex flex-wrap justify-between px-12 py-24">
+            <div className="flex basis-[48%] flex-col pb-20">
+              <img
+                className="h-auto w-[47.57rem] max-w-full pb-8"
+                src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/2022-Kristin-23.jpg"
+              />
+              <h3 className="mb-3 text-[2.38rem] leading-none">
+                Christine Wessa
+              </h3>
+              <h4 className="mb-3.5 font-semibold">
+                Partner and Operations Director
+              </h4>
+              <p className="mt-1 text-[1.38rem] leading-7">
+                Christine manages business development and studio operations.
+                Her strong organizational skills come in handy internally and
+                externally, allowing Grain & Mortar to run efficiently and
+                ensuring client projects are executed successfully.
+              </p>
+            </div>
+            <div className="flex basis-[48%] flex-col pb-20">
+              <img
+                className="h-auto w-[47.57rem] max-w-full pb-8"
+                src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/2022-Michael-10.jpg"
+              />
+              <h3 className="mb-3 text-[2.38rem] leading-none">Kevin Wessa</h3>
+              <h4 className="mb-3.5 font-semibold">
+                Partner and Creative Director
+              </h4>
+              <p className="mt-1 text-[1.38rem] leading-7">
+                Kevin works with clients on design and illustration. He creates
+                strategy for brands and executes it using his diverse skills in
+                brand design, print layout, illustration, and digital design.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="relative flex h-min w-full flex-col content-center items-center justify-center gap-10 bg-white px-6 py-20 text-xs text-black">
+        <div className="relative h-auto w-full">
+          <div className="relative grid h-auto auto-rows-[minmax(0px,_1fr)] grid-cols-[146px_146px_146px_146px_146px_146px_146px_146px] grid-rows-[21.13rem] justify-start gap-8">
+            <div
+              className="relative flex h-min w-full content-center items-center justify-center gap-[0.63rem] self-start justify-self-start text-lg"
+              style={{ gridColumnEnd: "span 3" }}
+            >
+              <div className="relative flex h-min flex-grow content-center items-center justify-start gap-[0.38rem]">
+                <div className="flex h-auto w-auto flex-col justify-start font-medium">
+                  <p>●</p>
+                </div>
+                <div className="flex h-auto w-auto flex-col justify-start">
+                  <p>ST/01</p>
+                </div>
+              </div>
+              <div className="relative flex h-min flex-grow content-center items-center justify-start">
+                <div className="flex h-auto w-auto flex-col justify-start">
+                  <p>How it started</p>
+                </div>
+              </div>
+            </div>
+            <div
+              className="relative flex h-full w-full flex-col content-start items-start justify-center self-start justify-self-start text-[3.50rem] leading-none"
+              style={{ gridColumnEnd: "span 5" }}
+            >
+              <div
+                className="flex h-auto w-full flex-col justify-start"
+                style={{ wordBreak: "break-word" }}
+              >
+                <h2>
+                  Like our ancestors in days of old, we're building our own
+                  tribe of passionate visionaries unafraid of sharing their
+                  ideas and culture with the world.
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="relative grid h-min w-full auto-rows-min grid-cols-[repeat(8,_minmax(1px,_1fr))] grid-rows-[repeat(1,_min-content)] justify-center gap-8 min-[810px]:p-8">
+          <div
+            className="relative flex h-min w-full content-center items-center justify-start self-start justify-self-start min-[810px]:items-start min-[810px]:pb-0 min-[810px]:pl-0 min-[810px]:pr-8 min-[810px]:pt-0"
+            style={{ gridColumnEnd: "span 3", gridRowStart: "1" }}
+          >
+            <div
+              className="relative h-96 rounded-xl min-[810px]:h-72"
+              style={{ flexGrow: "0.7" }}
+            >
+              <div className="rounded-xl">
+                <img
+                  className="h-96 w-80 rounded-xl object-cover"
+                  src="https://framerusercontent.com/images/h4avZwD33gi1xDttcLVC1zjWvBA.jpg"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="relative col-start-auto flex h-auto w-full flex-col content-start items-start justify-start gap-10 self-start justify-self-start min-[810px]:col-start-auto"
+            style={{ gridColumnEnd: "span 5", gridRowStart: "1" }}
+          >
+            <div className="relative w-full rounded-xl">
+              <div className="rounded-xl">
+                <img
+                  className="h-96 w-full rounded-xl object-cover"
+                  src="https://framerusercontent.com/images/mg9Dkmv1bZMO6mM2tX4EUwkcR7A.jpg"
+                />
+              </div>
+            </div>
+            <div className="flex h-min w-full flex-col content-start items-start justify-center gap-6 text-lg">
+              <div
+                className="flex h-auto w-full flex-col justify-start"
+                style={{ wordBreak: "break-word" }}
+              >
+                <p>More than a studio, we're your long-term ally.</p>
+              </div>
+              <div
+                className="flex h-auto w-full flex-col justify-start"
+                style={{ wordBreak: "break-word" }}
+              >
+                <p>
+                  <span className="text-neutral-400">
+                    We specialize in human-centered design where technology
+                    serves humanity, not the other way around. This not only
+                    elevates your brand but also solves real-world problems.{" "}
+                  </span>
+                  <br />
+                  <br />
+                  <span className="text-neutral-400">
+                    We see ourselves as your long-term partner – working closely
+                    with you for true collaboration, from initial concept to
+                    final product. This way, we're invested in your success.
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white text-black">
+        <div className="container mx-auto">
+          <div className="flex h-min w-full flex-row content-start items-start justify-start gap-6 overflow-hidden py-20 text-xs text-gray-900 min-[810px]:flex-col">
+            <div
+              className="flex h-min w-0 content-center items-center justify-start overflow-hidden text-lg min-[810px]:w-full"
+              style={{
+                flexGrow: "2",
+              }}
+            >
+              <div className="flex h-auto w-auto flex-col justify-start">
+                <p className="leading-relaxed">01</p>
+              </div>
+            </div>
+            <div
+              className="flex h-min w-0 flex-col content-start items-start justify-start overflow-hidden text-[5.50rem] leading-normal min-[810px]:w-full"
+              style={{
+                flexGrow: "10",
+              }}
+            >
+              <div className="flex h-min w-full flex-wrap content-center items-center justify-start overflow-hidden">
+                <h1 className="leading-relaxed">
+                  We believe in the power of quality, direct and honest
+                  communication.
                 </h1>
-                <h3 className="mb-8 text-[2.38rem] leading-none">
-                  Our strategy remains: work hard, create lasting relationships,
-                  and deliver the very best quality work.
-                </h3>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="border-b-2 border-solid border-black">
-          <div className="flex basis-full justify-between bg-orange-300 px-12 py-24">
-            <div className="basis-[47%]">
-              <div>
-                <div className="relative flex w-full items-center justify-center">
-                  <div
-                    className="relative flex h-full max-h-[31.25rem] min-h-[31.25rem] w-full max-w-[31.25rem]"
-                    style={{
-                      cursor:
-                        'url("https://grainandmortar.com/wp-content/themes/gm/_assets/img/cursor-arrow.svg") 0 0, default',
-                    }}
-                  >
-                    {/* Image stack */}
-                    {/* ... (image stack code remains unchanged) */}
-                  </div>
-                </div>
+      <section className="bg-white text-black">
+        <div className="container mx-auto">
+          <div className="flex h-min w-full flex-row content-start items-start justify-start gap-6 overflow-hidden py-20 text-xs text-gray-900 min-[810px]:flex-col">
+            <div
+              className="flex h-min w-0 content-center items-center justify-start overflow-hidden text-lg min-[810px]:w-full"
+              style={{
+                flexGrow: "2",
+              }}
+            >
+              <div className="flex h-auto w-auto flex-col justify-start">
+                <p className="leading-relaxed">02</p>
               </div>
             </div>
-            <div className="flex basis-[47%] content-center items-center justify-center text-center">
-              <div>
-                <h3 className="mb-8 text-[2.38rem] leading-none">BFFs</h3>
-                <p className="mb-8 text-xl">
-                  z Grain & Mortar is a partnership that began between Eric
-                  Downs and Mike & Kristin DeKay in 2011. Since then, we've been
-                  fortunate enough to work on hundreds of projects for clients
-                  in a wide variety of industries.
-                </p>
-                <span className="text-[11.25rem] leading-none">12</span>
-                <p className="mb-8 text-xl">years in the making.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="border-b-2 border-solid border-black">
-          <div className="flex basis-full justify-between px-12 py-24">
-            <div className="flex basis-[47%] content-center items-center justify-center text-center">
-              <div>
-                <h3 className="mb-8 text-[2.38rem] leading-none">
-                  Let's not forget about people.
-                </h3>
-                <p className="mb-8 text-xl">
-                  We know how to design and build for the web, how to talk about
-                  lead-gen and build for conversions and so on. But we also
-                  understand something just as vital – we're not creating for
-                  robots, but people.
-                </p>
-                <p className="mb-8 text-xl">
-                  We bring a human-centered approach to our work by bringing
-                  through elements of delight and humanity.
-                </p>
-                <p className="mb-8 text-xl">
-                  Nothing makes us happier than when we can partner with our
-                  clients to bring more beauty into the world.
-                </p>
-              </div>
-            </div>
-            <div className="basis-[47%]">
-              <div>
-                <div className="relative flex w-full items-center justify-center">
-                  <div
-                    className="relative flex h-full max-h-[31.25rem] min-h-[31.25rem] w-full max-w-[31.25rem]"
-                    style={{
-                      cursor:
-                        'url("https://grainandmortar.com/wp-content/themes/gm/_assets/img/cursor-arrow.svg") 0 0, default',
-                    }}
-                  >
-                    {/* Image stack */}
-                    {/* ... (image stack code remains unchanged) */}
-                  </div>
-                </div>
+            <div
+              className="flex h-min w-0 flex-col content-start items-start justify-start overflow-hidden text-[5.50rem] leading-normal min-[810px]:w-full"
+              style={{
+                flexGrow: "10",
+              }}
+            >
+              <div className="flex h-min w-full flex-wrap content-center items-center justify-start overflow-hidden">
+                <h1 className="leading-relaxed">
+                  Cultivating an environment where
+                  <span className="rotate-15 inline-block transform rounded-full bg-black px-3 py-1 leading-relaxed text-white">
+                    empathy
+                  </span>
+                  and understanding thrive.
+                </h1>
               </div>
             </div>
           </div>
-        </section>
-
-        <section className="border-b-2 border-solid border-black bg-red-200">
-          <div>
-            <div className="flex justify-center pt-24 text-[2.38rem] leading-none">
-              <h3>Real people with real feelings.</h3>
-            </div>
-            <div className="flex flex-wrap justify-between px-12 py-24">
-              <div className="flex basis-[48%] flex-col pb-20">
-                <img
-                  className="h-auto w-[47.57rem] max-w-full pb-8"
-                  src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/2022-Kristin-23.jpg"
-                />
-                <h3 className="mb-3 text-[2.38rem] leading-none">
-                  Christine Wessa
-                </h3>
-                <h4 className="mb-3.5 font-semibold">
-                  Partner and Operations Director
-                </h4>
-                <p className="mt-1 text-[1.38rem] leading-7">
-                  Christine manages business development and studio operations.
-                  Her strong organizational skills come in handy internally and
-                  externally, allowing Grain & Mortar to run efficiently and
-                  ensuring client projects are executed successfully.
-                </p>
-              </div>
-              <div className="flex basis-[48%] flex-col pb-20">
-                <img
-                  className="h-auto w-[47.57rem] max-w-full pb-8"
-                  src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/2022-Michael-10.jpg"
-                />
-                <h3 className="mb-3 text-[2.38rem] leading-none">
-                  Kevin Wessa
-                </h3>
-                <h4 className="mb-3.5 font-semibold">
-                  Partner and Creative Director
-                </h4>
-                <p className="mt-1 text-[1.38rem] leading-7">
-                  Kevin works with clients on design and illustration. He
-                  creates strategy for brands and executes it using his diverse
-                  skills in brand design, print layout, illustration, and
-                  digital design.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+        </div>
+      </section>
 
       <section className="bg-white text-black">
         <div className="container mx-auto">
