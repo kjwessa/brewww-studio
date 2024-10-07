@@ -93,11 +93,11 @@ export default function About() {
         </div>
       </section>
 
-      <div className="bg-black text-white">
+      <section className="bg-black text-white">
         <div className="mx-auto mb-72 max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <h1 className="mb-8 max-w-3xl text-4xl font-bold">
+          <h2 className="mb-8 max-w-3xl text-4xl font-bold">
             Brewww: Where Creativity Meets Strategic Execution
-          </h1>
+          </h2>
           <p className="mb-4 max-w-3xl text-lg">
             At Brewww, we believe that exceptional work is born from a
             harmonious blend of strategic thinking and creative expression. Our
@@ -125,52 +125,51 @@ export default function About() {
             captivate and inspire.
           </p>
         </div>
-      </div>
-      <div>
-        <div className="relative cursor-none content-stretch items-start justify-start bg-neutral-900 px-24 py-36 font-light text-white">
-          <div className="relative grid auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto_auto_auto_auto_auto_auto] gap-4">
-            <div className="col-start-3 col-end-6 row-start-1 row-end-2 flex h-full w-full flex-col items-end justify-start font-bold uppercase">
-              <div className="pb-5">+ Our Values</div>
-            </div>
-            <div
-              className="z-10 col-span-3 col-start-4 row-start-4 flex h-full w-full flex-col items-center justify-center self-stretch text-[2.63rem] leading-none"
-              style={{
-                justifySelf: "stretch",
-              }}
-            >
-              <h2 className="mb-8 min-h-[0vw]">
-                We are committed to treating everyone right, leaving our ego at
-                the door, and truly partnering with our clients.
-              </h2>
-            </div>
-            <div className="relative col-span-5 col-start-1 row-start-2 row-end-6 h-[75vh] self-stretch overflow-hidden">
-              <Image
-                src="/5f0ce068d8b392674335dbfe_DSC04489.1920.jpg"
-                width={1000}
-                height={1000}
-                alt="Partner Image"
-                className="h-full w-full object-cover"
-              />
-            </div>
+      </section>
+
+      <section className="relative bg-neutral-900 px-24 py-36 font-light text-white">
+        <div className="relative grid auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto_auto_auto_auto_auto_auto] gap-4">
+          <div className="col-start-3 col-end-6 row-start-1 row-end-2 flex h-full w-full flex-col items-end justify-start font-bold uppercase">
+            <div className="pb-5">+ Our Values</div>
           </div>
-        </div>
-      </div>
-      <div>
-        <div className="h-full w-full bg-neutral-900 pl-0 pr-28 text-white">
-          <div className="flex h-screen w-full max-w-full overflow-visible">
+          <div
+            className="z-10 col-span-3 col-start-4 row-start-4 flex h-full w-full flex-col items-center justify-center self-stretch text-[2.63rem] leading-none"
+            style={{
+              justifySelf: "stretch",
+            }}
+          >
+            <h2 className="mb-8 min-h-[0vw]">
+              We are committed to treating everyone right, leaving our ego at
+              the door, and truly partnering with our clients.
+            </h2>
+          </div>
+          <div className="relative col-span-5 col-start-1 row-start-2 row-end-6 h-[75vh] self-stretch overflow-hidden">
             <Image
-              src="/5f53f60a0033860407ff3718_ThebyWessa2020-6960.jpg"
+              src="/5f0ce068d8b392674335dbfe_DSC04489.1920.jpg"
               width={1000}
               height={1000}
-              alt="Theby Wessa 2020"
+              alt="Partner Image"
               className="h-full w-full object-cover"
-              style={{
-                objectPosition: "50% 50%",
-              }}
             />
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className="h-full w-full bg-neutral-900 pl-0 pr-28 text-white">
+        <div className="flex h-screen w-full max-w-full overflow-visible">
+          <Image
+            src="/5f53f60a0033860407ff3718_ThebyWessa2020-6960.jpg"
+            width={1000}
+            height={1000}
+            alt="Theby Wessa 2020"
+            className="h-full w-full object-cover"
+            style={{
+              objectPosition: "50% 50%",
+            }}
+          />
+        </div>
+      </section>
+
       <section className="bg-neutral-900 px-6 py-12 font-light text-white md:px-24 md:py-48">
         <div className="mx-auto max-w-5xl">
           <div className="grid gap-8 md:grid-cols-2 md:gap-x-12 md:gap-y-24">
@@ -211,6 +210,7 @@ export default function About() {
           </div>
         </div>
       </section>
+
       <section className="cursor-none border-t-2 border-solid border-t-neutral-100/[0.23] bg-black text-[1.38rem] font-light leading-7 text-zinc-100">
         <div className="container mx-auto py-16 lg:py-24">
           <div className="float-left mr-5 mt-1 text-sm lg:mr-8 lg:mt-3 lg:min-w-[7.50rem]">
@@ -223,6 +223,7 @@ export default function About() {
           </h2>
         </div>
       </section>
+
       <section className="overflow-hidden bg-black py-12 text-[1.38rem] font-light leading-7 text-white lg:pb-20 lg:pl-0 lg:pr-0 lg:pt-20">
         <div className="m-auto max-w-[72.50rem] px-5">
           <h2 className="mb-8 text-[3.38rem] leading-none lg:mb-10 lg:max-w-[56.06rem]">
@@ -247,6 +248,7 @@ export default function About() {
           </div>
         </div>
       </section>
+
       <section className="relative overflow-hidden bg-zinc-100 pb-10 pt-8 text-[1.38rem] font-light leading-7 lg:pb-24 lg:pt-16">
         <div className="relative m-auto max-w-[72.50rem] px-5">
           <div className="mb-16 overflow-hidden border-t-2 border-solid border-t-black/[0.3] pt-3.5 text-sm uppercase">
@@ -336,41 +338,58 @@ export default function About() {
         <div className="relative m-auto w-full max-w-[120.00rem] flex-col px-8">
           <div className="relative m-auto flex max-h-[93.00rem] min-h-screen w-full max-w-[100.50rem] items-center justify-center py-96">
             <div className="absolute left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center">
-              <img
+              <Image
                 className="inline-block h-[53.13rem] w-[53.13rem] max-w-full align-middle"
                 src="https://cdn.prod.website-files.com/6495557c326b2d376ef99ea9/649aefd27a2a77b43d7ab2f5_Logo%20Circle.svg"
                 alt="Logo Circle"
+                width={850}
+                height={850}
               />
             </div>
             <div className="absolute bottom-0 left-0 right-0 top-0 z-[2]">
               <div className="absolute bottom-auto left-0 right-auto top-[10%] h-40 w-56 overflow-hidden min-[1920px]:w-96">
-                <img
+                <Image
                   className="absolute bottom-auto left-0 right-auto top-0 inline-block h-full w-full max-w-full object-cover align-middle"
                   src="https://cdn.prod.website-files.com/6495557c326b2d376ef99ea9/649aefce3986a75beb22168d_Image%2031.jpg"
+                  alt="Image 31"
+                  fill
+                  style={{ objectFit: "cover" }}
                 />
               </div>
               <div className="absolute bottom-auto left-[49%] right-auto top-0 h-40 w-56 overflow-hidden min-[1920px]:left-[53%] min-[1920px]:w-96">
-                <img
+                <Image
                   className="absolute bottom-auto left-0 right-auto top-0 inline-block h-full w-full max-w-full object-cover align-middle"
                   src="https://cdn.prod.website-files.com/6495557c326b2d376ef99ea9/649aefce4e70f0260f25587d_Image%2021.jpg"
+                  alt="Image 21"
+                  fill
+                  style={{ objectFit: "cover" }}
                 />
               </div>
               <div className="absolute bottom-auto left-auto right-0 top-[19%] h-40 w-56 overflow-hidden min-[1920px]:top-[38%] min-[1920px]:w-96">
-                <img
+                <Image
                   className="absolute bottom-auto left-0 right-auto top-0 inline-block h-full w-full max-w-full object-cover align-middle"
                   src="https://cdn.prod.website-files.com/6495557c326b2d376ef99ea9/649aefce3986a75beb2216bc_Image%2041.jpg"
+                  alt="Image 41"
+                  fill
+                  style={{ objectFit: "cover" }}
                 />
               </div>
               <div className="absolute bottom-auto left-auto right-[17%] top-[81%] h-40 w-56 overflow-hidden min-[1920px]:right-[10%] min-[1920px]:top-[79%] min-[1920px]:w-96">
-                <img
+                <Image
                   className="absolute bottom-auto left-0 right-auto top-0 inline-block h-full w-full max-w-full object-cover align-middle"
                   src="https://cdn.prod.website-files.com/6495557c326b2d376ef99ea9/649aefcf82adecd34ec59e3a_Image%2051.jpg"
+                  alt="Image 51"
+                  fill
+                  style={{ objectFit: "cover" }}
                 />
               </div>
               <div className="absolute bottom-auto left-[17%] right-auto top-[70%] h-40 w-56 overflow-hidden min-[1920px]:left-[7%] min-[1920px]:w-96">
-                <img
+                <Image
                   className="absolute bottom-auto left-0 right-auto top-0 inline-block h-full w-full max-w-full object-cover align-middle"
                   src="https://cdn.prod.website-files.com/6495557c326b2d376ef99ea9/649aefce3986a75beb221691_Image%2061.jpg"
+                  alt="Image 61"
+                  fill
+                  style={{ objectFit: "cover" }}
                 />
               </div>
             </div>
@@ -651,50 +670,11 @@ export default function About() {
         </article>
       </section>
 
-      <section className="bg-stone-100 text-base opacity-[0.9999]">
-        <a
-          className="absolute bottom-[85.25rem] left-0 right-[93.00rem] top-0 z-[-1] text-black underline"
-          href=""
-        >
-          Accessibility Screen-Reader Guide, Feedback, and Issue Reporting
-        </a>
-      </section>
-
-      <section className="fixed bottom-0 left-0 right-0 top-[78.00rem] z-[9999999] w-full">
-        <div className="border-2 border-solid border-black bg-black px-6 py-4">
-          <div>
-            <p className="mb-3 text-lg font-bold text-white">
-              We value your privacy
-            </p>
-            <div className="flex items-center justify-between text-sm">
-              <div className="text-white">
-                <p style={{ wordBreak: "break-word" }}>
-                  We use cookies to enhance your browsing experience, serve
-                  personalized ads or content, and analyze our traffic. By
-                  clicking "Accept All", you consent to our use of cookies.
-                </p>
-              </div>
-              <div className="ml-3.5 flex items-center justify-center font-medium">
-                <button className="mr-2 h-11 cursor-pointer items-start rounded-sm border-2 border-solid border-stone-300 px-7 py-2 text-center text-stone-300">
-                  Customize
-                </button>
-                <button className="mr-2 h-11 cursor-pointer items-start rounded-sm border-2 border-solid border-stone-300 px-7 py-2 text-center text-stone-300">
-                  Reject All
-                </button>
-                <button className="h-11 cursor-pointer items-start rounded-sm border-2 border-solid border-orange-300 bg-orange-300 px-7 py-2 text-center text-white">
-                  Accept All
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="bg-white pt-16 text-black">
         <div className="border-b-2 border-solid border-black">
           <div className="m-auto w-[95vw] max-w-[95vw]">
             <div className="m-auto flex min-h-[calc(240px)] max-w-[56.25rem] flex-col flex-wrap content-center items-center justify-center py-20 text-center">
-              <h1 className="mb-8 text-[5.00rem] leading-none">
+              <h1 className="text-display-large mb-8 leading-none">
                 Honest Folks Doing Honest Work
               </h1>
               <h3 className="mb-8 text-[2.38rem] leading-none">
