@@ -11,18 +11,20 @@ import AudioImageEight from "/public/images/audio-eight.jpg";
 export default function WorkIndividual() {
   return (
     <>
-      <section className="bg-zinc-950 py-40 text-center text-[11.00rem] font-bold uppercase leading-none text-neutral-400">
-        <h1 className="text-white">The Merry Beggars</h1>
-      </section>
-      <section className="mx-auto flex max-w-7xl items-center justify-between bg-zinc-950 px-4 py-2 text-sm text-white">
-        <div className="uppercase">
-          <span>Branding, Design, Development</span>
+      <section className="bg-brand-dark-bg py-40 text-center">
+        <h1 className="mb-16 text-[11.00rem] font-bold uppercase leading-none text-white">
+          The Merry Beggars
+        </h1>
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 text-sm text-white">
+          <div className="uppercase">
+            <span>Branding, Design, Development</span>
+          </div>
+          <div>
+            <span>/ 2022</span>
+          </div>
         </div>
-        <div>
-          <span>/ 2022</span>
-        </div>
       </section>
-      <section className="bg-zinc-950">
+      <section className="bg-brand-dark-bg">
         <div className="mx-auto max-w-7xl px-4 py-16">
           <div className="relative aspect-video w-full overflow-hidden rounded-lg">
             <Image
@@ -35,12 +37,12 @@ export default function WorkIndividual() {
           </div>
         </div>
       </section>
-      <section className="bg-zinc-950 py-16">
+      <section className="bg-brand-dark-bg py-16">
         <h1 className="text-center text-[7rem] font-bold uppercase leading-none text-white">
           Original Audio Entertainment for the Whole Family
         </h1>
       </section>
-      <section className="bg-zinc-950 text-neutral-400">
+      <section className="bg-brand-dark-bg text-neutral-400">
         <div className="container mx-auto px-4 py-16">
           <div className="grid grid-cols-[1fr_3fr] gap-5">
             <div className="col-start-1">
@@ -102,7 +104,7 @@ export default function WorkIndividual() {
           </div>
         </div>
       </section>
-      <section className="bg-zinc-950 text-neutral-400">
+      <section className="bg-brand-dark-bg text-neutral-400">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-end">
             <div className="mb-5 w-full max-w-[30.98rem]">
@@ -128,7 +130,7 @@ export default function WorkIndividual() {
           </div>
         </div>
       </section>
-      <section className="bg-zinc-950 py-32 text-neutral-400">
+      <section className="bg-brand-dark-bg py-32 text-neutral-400">
         <div className="container mx-auto px-4">
           <div className="flex flex-row">
             <div className="w-1/2 pr-8">
@@ -185,7 +187,7 @@ export default function WorkIndividual() {
           </div>
         </div>
       </section>
-      <section className="overflow-hidden bg-zinc-950">
+      <section className="overflow-hidden bg-brand-dark-bg">
         <div className="relative flex whitespace-nowrap">
           <div className="animate-marquee-reverse flex items-center">
             <span className="mx-4 text-[45.00rem] font-bold leading-none text-neutral-400">
@@ -208,7 +210,7 @@ export default function WorkIndividual() {
           </div>
         </div>
       </section>
-      <section className="bg-zinc-950">
+      <section className="bg-brand-dark-bg">
         <div className="container mx-auto px-4">
           <ul className="grid list-none grid-cols-[630.922px_374.844px_481.234px] grid-rows-[19.75rem] gap-5 text-neutral-400">
             <li className="list-item">
@@ -244,7 +246,7 @@ export default function WorkIndividual() {
           </ul>
         </div>
       </section>
-      <section className="bg-zinc-950 py-20 text-neutral-400">
+      <section className="bg-brand-dark-bg py-20 text-neutral-400">
         <div className="container mx-auto px-4">
           <div className="flex flex-row items-start gap-24">
             <div className="w-3/5 pt-48">
@@ -272,7 +274,7 @@ export default function WorkIndividual() {
           </div>
         </div>
       </section>
-      <section className="bg-zinc-950 py-20 text-neutral-400">
+      <section className="bg-brand-dark-bg py-20 text-neutral-400">
         <div className="container mx-auto px-4">
           <div className="flex items-start justify-between">
             <div className="flex items-center">
@@ -313,7 +315,7 @@ export default function WorkIndividual() {
           </div>
         </div>
       </section>
-      <section className="bg-zinc-950 pb-20 text-neutral-400">
+      <section className="bg-brand-dark-bg pb-20 text-neutral-400">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
             <div className="relative">
@@ -343,7 +345,7 @@ export default function WorkIndividual() {
           </div>
         </div>
       </section>
-      <section className="bg-zinc-950 pt-20 text-neutral-400">
+      <section className="bg-brand-dark-bg pt-20 text-neutral-400">
         <div
           className="container relative mx-auto px-0"
           style={{ aspectRatio: "3/2" }}
@@ -356,7 +358,7 @@ export default function WorkIndividual() {
           />
         </div>
       </section>
-      <section className="bg-zinc-950 py-32 text-neutral-400">
+      <section className="bg-brand-dark-bg py-32 text-neutral-400">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-12">
             <div className="col-start-6 col-end-11">
@@ -382,7 +384,7 @@ export default function WorkIndividual() {
           </div>
         </div>
       </section>
-      <section className="bg-zinc-950 text-neutral-400">
+      <section className="bg-brand-dark-bg text-neutral-400">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-7">
@@ -427,7 +429,7 @@ export default function WorkIndividual() {
           </div>
         </div>
       </section>
-      <section className="bg-zinc-950 pb-20 text-neutral-400">
+      <section className="bg-brand-dark-bg pb-20 text-neutral-400">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
             <div className="relative">
@@ -460,7 +462,7 @@ export default function WorkIndividual() {
           </div>
         </div>
       </section>
-      <section className="relative overflow-hidden bg-zinc-950 py-20 pl-12 text-neutral-400">
+      <section className="relative overflow-hidden bg-brand-dark-bg py-20 pl-12 text-neutral-400">
         <div className="animate-slider flex space-x-12">
           <div className="relative flex-shrink-0">
             <div className="relative h-[59.63rem] w-[59.63rem]">
@@ -570,7 +572,7 @@ export default function WorkIndividual() {
           </div>
         </div>
       </section>
-      <section className="bg-zinc-950 text-neutral-400">
+      <section className="bg-brand-dark-bg text-neutral-400">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-7">
@@ -616,7 +618,7 @@ export default function WorkIndividual() {
         </div>
       </section>
 
-      <section className="bg-zinc-950 pb-20 text-neutral-400">
+      <section className="bg-brand-dark-bg pb-20 text-neutral-400">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
             <div className="relative">
@@ -646,7 +648,7 @@ export default function WorkIndividual() {
           </div>
         </div>
       </section>
-      <section className="bg-zinc-950 py-20 text-neutral-400">
+      <section className="bg-brand-dark-bg py-20 text-neutral-400">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 gap-5">
             <div className="relative" style={{ aspectRatio: "1/1" }}>
@@ -668,7 +670,7 @@ export default function WorkIndividual() {
           </div>
         </div>
       </section>
-      <section className="bg-zinc-950 py-32 text-neutral-400">
+      <section className="bg-brand-dark-bg py-32 text-neutral-400">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-12">
             <div className="col-start-6 col-end-11">
@@ -695,7 +697,7 @@ export default function WorkIndividual() {
           </div>
         </div>
       </section>
-      <section className="bg-zinc-950 pt-20 text-neutral-400">
+      <section className="bg-brand-dark-bg pt-20 text-neutral-400">
         <div
           className="container relative mx-auto px-0"
           style={{ aspectRatio: "3/2" }}

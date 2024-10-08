@@ -602,6 +602,190 @@ export default function WhyPage() {
           </div>
         </div>
       </section>
+
+      <section className="flex min-h-[80vh] flex-col justify-between bg-black p-9 text-[2.75rem] leading-none text-white">
+        <div className="text-7xl">
+          <h1 className="max-w-4xl">
+            Our 'strategy-first' mentality is tailored for companies looking for
+            growth, change, or both. And we're ruthless when it comes to our
+            mantra 'Boring is for the Competitors'.
+          </h1>
+        </div>
+        <div className="flex items-end justify-between text-[1.38rem] leading-7">
+          <div>
+            <p className="text-xl">
+              <strong className="text-neutral-400">Latest insight: </strong>
+              <em className="cursor-pointer italic">
+                Elevating brands: Strategies for market leadership
+              </em>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative h-[75vh] overflow-hidden text-stone-950">
+        <div className="absolute inset-0">
+          <picture>
+            <source srcSet="https://www.datocms-assets.com/63464/1661346969-stuurmen-office-interior.jpg?auto=format&dpr=0.25&w=2200 550w,https://www.datocms-assets.com/63464/1661346969-stuurmen-office-interior.jpg?auto=format&dpr=0.5&w=2200 1100w,https://www.datocms-assets.com/63464/1661346969-stuurmen-office-interior.jpg?auto=format&dpr=0.75&w=2200 1650w,https://www.datocms-assets.com/63464/1661346969-stuurmen-office-interior.jpg?auto=format&w=2200 2200w" />
+            <img
+              className="h-full w-full object-cover"
+              src="https://www.datocms-assets.com/63464/1661346969-stuurmen-office-interior.jpg?auto=format&w=2200"
+              alt="Stuurmen office interior"
+            />
+          </picture>
+        </div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h2 className="text-8xl font-bold uppercase text-white">
+            Kill off the Average
+          </h2>
+        </div>
+      </section>
+
+      <section className="bg-white py-24 text-[1.38rem] leading-7 text-stone-950">
+        <div className="container mx-auto">
+          <div className="flex flex-wrap justify-between">
+            <div className="mb-16 w-full">
+              <h2 className="max-w-3xl text-7xl">
+                Our brands resonate even after they are no longer visible or
+                audible. You can still feel their presence because their message
+                settles smoothly into your brain. That's the power of premium.
+              </h2>
+            </div>
+            <div className="mt-8 w-full lg:w-1/2 lg:pr-16">
+              <div className="mb-12 text-[1.63rem] leading-8">
+                <p className="text-xl">
+                  Unleashing full potential goes beyond just design and
+                  development because success starts with the right strategy.
+                  Branding and business always go hand in hand. With this
+                  integrated approach, we transform companies into premium
+                  brands that people will fall in love with.
+                </p>
+              </div>
+              <div className="mt-16 text-xl">
+                <strong className="font-bold">Business</strong>
+                <p className="mt-4">
+                  At the core of branding lies business. That's where it all
+                  starts. We need to get to know your business as if it were our
+                  own. Through different techniques, we explore business
+                  objectives as well as business opportunities.
+                </p>
+              </div>
+              <div className="mt-16 text-xl">
+                <strong className="font-bold">Being</strong>
+                <p className="mt-4">
+                  Let's talk about the unique value that your brand has to
+                  offer, and why your clients should care. Premium brands know
+                  exactly what they stand for, and how they can use their core
+                  qualities to be a leader within their industry. We help you
+                  discover your brand's unique potential and positioning.
+                </p>
+              </div>
+              <div className="mt-16 text-xl">
+                <strong className="font-bold">Becoming</strong>
+                <p className="mt-4">
+                  Only when you know who you are can you become whatever you
+                  want. We help you translate 'business' and 'being' into a
+                  compelling brand that resonates with your target customers.
+                  The brand you always dreamt of.
+                </p>
+              </div>
+            </div>
+            <div className="relative mt-8 w-full lg:mt-0 lg:w-1/2 lg:pl-16">
+              <div className="aspect-w-16 aspect-h-9" style={{ height: "70%" }}>
+                <img
+                  className="h-full w-full object-cover"
+                  src="https://www.datocms-assets.com/63464/1661347408-stuurmen-office-interior.jpg?auto=format&h=1080&w=1920"
+                  alt="Stuurmen office interior"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-stone-950 py-24 text-stone-50">
+        <div className="container mx-auto px-6">
+          <h2 className="mb-16 text-5xl font-bold lg:text-7xl">
+            We supply a wide range of premium products and services. Always
+            tailor-made, always authentic.
+          </h2>
+          <div className="grid gap-12 md:grid-cols-2">
+            <div>
+              <h3 className="mb-4 text-3xl font-semibold">Brand strategy</h3>
+              <p className="mb-6 text-lg">
+                We help you create a strong brand foundation by exploring your
+                business goals, opportunities, market fit, and potential for
+                greatness. By helping you clarify your beliefs, strengths, and
+                desired perception among your target audience, we get a clear
+                understanding of your identity. Once you know who you are, you
+                can become whatever you want.
+              </p>
+              <ul className="text-neutral-400">
+                <li>Business strategy</li>
+                <li>Brand & Web strategy</li>
+                <li>Research & Insight</li>
+                <li>Brand & Product positioning</li>
+                <li>Naming</li>
+                <li>Concept development</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="mb-4 text-3xl font-semibold">Brand design</h3>
+              <p className="mb-6 text-lg">
+                We bring your brand to life by developing a solid base for
+                effective brand communication. This includes crafting the brand
+                narrative, tone of voice, logo, typography, colour palette and
+                more. Additionally, we will provide you with an online brand
+                book to help you utilise these assets like a pro. And to top it
+                off, we will create a plan for the next phase to maximise on
+                developing the brand experience.
+              </p>
+              <ul className="text-neutral-400">
+                <li>Creative direction</li>
+                <li>Brand narrative</li>
+                <li>Verbal & Visual identity</li>
+                <li>Systems & Guidelines</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="mb-4 text-3xl font-semibold">Brand experience</h3>
+              <p className="mb-6 text-lg">
+                We translate the brand strategy into eye-catching and
+                thought-provoking solutions that are more than just pretty to
+                look at. We aim to engage and inspire, from website and motion
+                to print and packaging. And with our plan in place from the
+                previous phase, we make sure your brand shines consistently and
+                in no-time, across all touchpoints.
+              </p>
+              <ul className="text-neutral-400">
+                <li>Web design & Development</li>
+                <li>Print & Packaging</li>
+                <li>Motion & Video</li>
+                <li>Environmental design</li>
+                <li>Copywriting & Photography</li>
+                <li>Illustration & 3D</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="mb-4 text-3xl font-semibold">Brand support</h3>
+              <p className="mb-6 text-lg">
+                Imagine your brand as a living, breathing thing, constantly
+                growing and evolving. Our brand support team is here to help you
+                maintain the relevance and consistency of your brand experience.
+                We will provide you with continuous assistance in areas like
+                content creation, design, development, social media, and SEO,
+                and tailor our services to your specific needs, so you can focus
+                on what you do best.
+              </p>
+              <ul className="text-neutral-400">
+                <li>Art direction</li>
+                <li>Planning & Consultancy</li>
+                <li>Asset development</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

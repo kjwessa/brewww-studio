@@ -232,7 +232,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-      <section className="flex min-h-[75vh] items-center bg-neutral-900 py-32 text-white">
+      <section className="flex min-h-[75vh] items-center bg-brand-dark-bg py-32 text-white">
         <div className="container mx-auto px-4">
           <h3 className="mb-8 text-lg">Digital agency services</h3>
 
@@ -367,7 +367,7 @@ export default function ServicesPage() {
         <div className="m-auto w-[92%] pt-24 min-[1921px]:max-w-[118.75rem]">
           <div className="relative">
             <div className="mb-4 flex items-center">
-              <span className="mr-2 inline-block h-2 w-2 rounded-full bg-black"></span>
+              <span className="mr-2 inline-block h-2 w-2 rounded-full bg-brand-dark-bg"></span>
               <span className="text-md font-medium uppercase">
                 Related Projects
               </span>
@@ -459,7 +459,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative bg-neutral-900 text-white min-[1600px]:py-20 min-[1920px]:py-28 min-[1921px]:py-28">
+      <section className="relative bg-brand-dark-bg text-white min-[1600px]:py-20 min-[1920px]:py-28 min-[1921px]:py-28">
         <div className="m-auto w-[92%] min-[769px]:flex min-[1921px]:max-w-[118.75rem]">
           <div className="text-[3.13rem] uppercase leading-none min-[769px]:w-96">
             <p className="opacity-10">02</p>
@@ -723,7 +723,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative bg-neutral-900 text-white min-[1600px]:py-20 min-[1920px]:py-28 min-[1921px]:py-28">
+      <section className="relative bg-brand-dark-bg text-white min-[1600px]:py-20 min-[1920px]:py-28 min-[1921px]:py-28">
         <div className="m-auto w-[92%] min-[769px]:flex min-[1921px]:max-w-[118.75rem]">
           <div className="text-[3.13rem] uppercase leading-none min-[769px]:w-96">
             <p className="opacity-10">04</p>
@@ -791,7 +791,7 @@ export default function ServicesPage() {
           </div>
         </div>
         <div>
-          <section className="relative overflow-hidden bg-neutral-900 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
+          <section className="relative overflow-hidden bg-brand-dark-bg text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
             <div className="m-auto w-[92%] text-lg uppercase min-[1600px]:mb-10 min-[1920px]:mb-12 min-[1921px]:mb-12 min-[1921px]:max-w-[118.75rem]">
               <p className="inline-block min-[671px]:pl-6">Related Projects</p>
             </div>
@@ -887,7 +887,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative grid grid-cols-[105.50rem] grid-rows-[1155px_104px] items-center justify-items-center bg-zinc-950 text-center uppercase text-neutral-400">
+      <section className="relative grid grid-cols-[105.50rem] grid-rows-[1155px_104px] items-center justify-items-center bg-brand-dark-bg text-center uppercase text-brand-dark-text">
         <span className="text-[13.00rem] font-bold leading-none text-white">
           <span>
             <span className="inline-block">

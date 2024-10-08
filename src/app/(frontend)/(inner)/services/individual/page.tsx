@@ -222,7 +222,7 @@ export default function IndividualPage() {
         </div>
       </section>
 
-      <section className="w-full bg-neutral-900 text-white min-[1600px]:pb-16 min-[1600px]:pt-20 min-[1920px]:pb-24 min-[1920px]:pt-28 min-[1921px]:pb-24 min-[1921px]:pt-28">
+      <section className="w-full bg-brand-dark-bg text-white min-[1600px]:pb-16 min-[1600px]:pt-20 min-[1920px]:pb-24 min-[1920px]:pt-28 min-[1921px]:pb-24 min-[1921px]:pt-28">
         <div className="mx-auto w-full max-w-[118.75rem] px-[4%]">
           <h3 className="inline-block text-lg uppercase min-[671px]:pl-6">
             Beautifully bespoke websites
@@ -431,7 +431,7 @@ export default function IndividualPage() {
         </div>
       </section>
 
-      <section className="bg-neutral-900 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
+      <section className="bg-brand-dark-bg text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
         <div className="m-auto w-[92%] min-[769px]:flex min-[1600px]:mb-16 min-[1920px]:mb-24 min-[1921px]:mb-24 min-[1921px]:max-w-[118.75rem]">
           <div className="min-[769px]:w-[65.4737%]">
             <h6 className="inline-block text-lg uppercase min-[671px]:pl-6">
@@ -547,7 +547,7 @@ export default function IndividualPage() {
         </div>
       </section>
 
-      <section className="bg-neutral-900 text-white min-[769px]:flex min-[769px]:items-center">
+      <section className="bg-brand-dark-bg text-white min-[769px]:flex min-[769px]:items-center">
         <div className="overflow-hidden min-[769px]:w-[48.2105%]">
           <img
             className="h-auto w-full max-w-full"
@@ -576,7 +576,7 @@ export default function IndividualPage() {
         </div>
       </section>
 
-      <section className="text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
+      <section className="bg-brand-dark-bg text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
         <div className="m-auto w-[92%] min-[1921px]:max-w-[118.75rem]">
           <div className="min-[769px]:flex min-[769px]:items-center">
             <div className="order-1 overflow-hidden min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
@@ -611,7 +611,7 @@ export default function IndividualPage() {
         </div>
       </section>
 
-      <section className="relative bg-neutral-900 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
+      <section className="relative bg-brand-dark-bg text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
         <div className="m-auto w-[92%] min-[1921px]:max-w-[118.75rem]">
           <div className="min-[769px]:flex min-[769px]:items-center">
             <div className="overflow-hidden min-[769px]:w-[48.2105%]">
@@ -698,11 +698,11 @@ export default function IndividualPage() {
         </div>
       </section>
 
-      <section className="relative bg-neutral-900 text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
+      <section className="relative bg-brand-dark-bg text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
         <div className="m-auto w-[92%] text-center uppercase min-[1600px]:mb-16 min-[1920px]:mb-24 min-[1921px]:mb-24 min-[1921px]:max-w-[77.75rem]">
           <div>
             <h2 className="inline-block text-lg min-[671px]:pl-6">
-              Looking for a London WordPress agency?
+              Looking for a Cleveland Next JS agency?
             </h2>
 
             <h2 className="text-[8rem] font-bold leading-none lg:mt-10 min-[1025px]:mt-16">
