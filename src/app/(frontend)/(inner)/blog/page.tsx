@@ -13,7 +13,7 @@ export default async function BlogPage() {
 
   return (
     <>
-      <section className="bg-neutral-900 text-white">
+      <section className="bg-brand-dark-bg text-white">
         <div className="container mx-auto px-6 py-24">
           <div className="mx-auto flex max-w-4xl flex-col items-center justify-center text-center">
             <div className="mb-4 font-bold uppercase">+ Insights</div>
@@ -26,7 +26,7 @@ export default async function BlogPage() {
           </div>
         </div>
       </section>
-      <section className="bg-neutral-900 py-24">
+      <section className="bg-brand-dark-bg py-24">
         <div className="container mx-auto">
           <h1 className="mb-12 text-4xl font-bold text-white">Insights</h1>
           <div className="relative grid auto-rows-auto grid-cols-3 gap-8 text-sm font-semibold text-zinc-100">

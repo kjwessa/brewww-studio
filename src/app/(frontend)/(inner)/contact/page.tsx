@@ -2,7 +2,7 @@ export default function Contact() {
   return (
     <>
       <section>
-        <div className="uppercase text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
+        <div className="bg-brand-dark-bg uppercase text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
           <div className="m-auto w-[92%] min-[1921px]:max-w-[118.75rem]">
             <div>
               <h2 className="inline-block min-[671px]:pl-6">
@@ -16,7 +16,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      <section className="relative max-w-[156.25rem] pb-20 text-neutral-100">
+      <section className="relative max-w-[156.25rem] bg-brand-dark-bg pb-20 text-brand-dark-text">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 gap-[3.25rem] lg:grid-cols-2">
             <div className="w-full text-[1.38rem] leading-7">
@@ -165,7 +165,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      <section className="relative w-full bg-black py-24 text-lg text-stone-400 md:py-32 xl:py-40">
+      <section className="relative w-full bg-brand-dark-bg py-24 text-lg text-brand-dark-text md:py-32 xl:py-40">
         <div className="container mx-auto px-4">
           <div className="relative xl:flex">
             <p className="mb-5 text-sm uppercase text-neutral-500 xl:mt-2 xl:w-28">

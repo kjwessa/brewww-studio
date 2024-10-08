@@ -5,7 +5,7 @@ export default function About() {
   return (
     <>
       <section>
-        <div className="relative content-stretch items-start justify-start bg-neutral-900 pb-80 pl-60 pr-24 pt-64 font-light text-white">
+        <div className="relative content-stretch items-start justify-start bg-brand-dark-bg pb-80 pl-60 pr-24 pt-64 font-light text-white">
           <div className="grid-rows-auto grid-cols-[repeat(6, 1fr)] relative grid auto-cols-fr gap-4">
             <div className="col-span-4 row-start-1 row-end-2 flex h-full w-full flex-col items-start justify-start self-start font-bold uppercase">
               <div className="pb-5">+ About Our Studio</div>
@@ -53,7 +53,7 @@ export default function About() {
       </section>
 
       <section className="about-intro">
-        <div className="relative bg-gray-800 pb-12 pr-24 pt-4 text-white">
+        <div className="bg-brand-gunmetal relative pb-12 pr-24 pt-4 text-white">
           <div className="relative -mt-36 mr-24 h-[75vh] overflow-hidden">
             <Image
               src="/5ed749f69d85623011204b14_marybielskiandkevinwessa-6.1920.jpg"
@@ -64,7 +64,7 @@ export default function About() {
             />
           </div>
         </div>
-        <div className="bg-gray-800 px-24 py-48 font-light text-white">
+        <div className="bg-brand-gunmetal px-24 py-48 font-light text-white">
           <div className="m-auto max-w-[62.50rem]">
             <div className="grid grid-cols-6">
               <div className="col-start-2 col-end-6 flex flex-col items-start justify-center">
@@ -93,7 +93,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-black text-white">
+      <section className="bg-brand-dark-bg text-white">
         <div className="mx-auto mb-72 max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <h2 className="mb-8 max-w-3xl text-4xl font-bold">
             Brewww: Where Creativity Meets Strategic Execution
@@ -127,7 +127,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="relative bg-neutral-900 px-24 py-36 font-light text-white">
+      <section className="relative bg-brand-dark-bg px-24 py-36 font-light text-white">
         <div className="relative grid auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto_auto_auto_auto_auto_auto] gap-4">
           <div className="col-start-3 col-end-6 row-start-1 row-end-2 flex h-full w-full flex-col items-end justify-start font-bold uppercase">
             <div className="pb-5">+ Our Values</div>
@@ -155,7 +155,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="h-full w-full bg-neutral-900 pl-0 pr-28 text-white">
+      <section className="h-full w-full bg-brand-dark-bg pl-0 pr-28 text-white">
         <div className="flex h-screen w-full max-w-full overflow-visible">
           <Image
             src="/5f53f60a0033860407ff3718_ThebyWessa2020-6960.jpg"
@@ -170,7 +170,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-neutral-900 px-6 py-12 font-light text-white md:px-24 md:py-48">
+      <section className="bg-brand-dark-bg px-6 py-12 font-light text-white md:px-24 md:py-48">
         <div className="mx-auto max-w-5xl">
           <div className="grid gap-8 md:grid-cols-2 md:gap-x-12 md:gap-y-24">
             <div className="flex flex-col items-center text-center">
@@ -211,7 +211,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="cursor-none border-t-2 border-solid border-t-neutral-100/[0.23] bg-black text-[1.38rem] font-light leading-7 text-zinc-100">
+      <section className="cursor-none border-t-2 border-solid border-t-neutral-100/[0.23] bg-brand-dark-bg text-[1.38rem] font-light leading-7 text-zinc-100">
         <div className="container mx-auto py-16 lg:py-24">
           <div className="float-left mr-5 mt-1 text-sm lg:mr-8 lg:mt-3 lg:min-w-[7.50rem]">
             BREWWW

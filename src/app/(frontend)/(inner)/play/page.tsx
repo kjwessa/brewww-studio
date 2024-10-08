@@ -12,7 +12,7 @@ export default async function PlayPage() {
 
   return (
     <>
-      <section className="bg-neutral-900">
+      <section className="bg-brand-dark-bg">
         <div className="container mx-auto px-4 py-24">
           <div className="max-w-[82.50rem] text-xl text-neutral-800 min-[480px]:max-w-[84.38rem] min-[720px]:max-w-[86.88rem] min-[720px]:pl-12 min-[720px]:pr-12 min-[1080px]:max-w-[89.38rem] min-[1080px]:pl-16 min-[1080px]:pr-16">
             <h1 className="mb-1 mt-28 text-[2.88rem] font-light leading-none text-white">
@@ -26,7 +26,7 @@ export default async function PlayPage() {
           </div>
         </div>
       </section>
-      <section className="py-16">
+      <section className="bg-brand-dark-bg py-16">
         <div className="container mx-auto">
           <div className="w-full px-20 text-lg text-white">
             <div>
