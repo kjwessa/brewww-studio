@@ -1271,6 +1271,108 @@ export default function About() {
           </div>
         </div>
       </section>
+      <section className="py-24 text-[1.38rem] leading-7 text-white">
+        <div className="container mx-auto">
+          <div className="flex">
+            <div className="w-1/3 pb-[30.88rem]">
+              <h2 className="text-[3.38rem] leading-none">Core values</h2>
+            </div>
+            <div className="relative flex w-2/3 flex-col">
+              <div className="relative mb-4 h-[57.11rem]">
+                <div className="absolute inset-0">
+                  <img
+                    className="h-full w-full object-cover"
+                    src="https://www.datocms-assets.com/63464/1661347918-stuurmen-visual-2.png?auto=format&h=965&w=760"
+                    alt="Think before you ink"
+                  />
+                </div>
+                <div className="relative flex h-full flex-col justify-end bg-black bg-opacity-50 p-16 text-stone-50">
+                  <h3 className="mb-6 text-4xl">Think before you ink</h3>
+                  <p className="text-[1.63rem] leading-8">
+                    Dive deep, consider all the relevant factors, and weigh the
+                    potential consequences of your actions before committing to
+                    a course of action. This will help you make smarter and more
+                    effective decisions, and increases the chances of reaching
+                    the desired outcome.
+                  </p>
+                </div>
+              </div>
+              <div className="relative mb-4 h-[57.11rem]">
+                <div className="absolute inset-0">
+                  <img
+                    className="h-full w-full object-cover"
+                    src="https://www.datocms-assets.com/63464/1661347908-stuurmen-visual-1.png?auto=format&h=965&w=760"
+                    alt="No guts, no glory"
+                  />
+                </div>
+                <div className="relative flex h-full flex-col justify-end bg-black bg-opacity-50 p-16 text-stone-50">
+                  <h3 className="mb-6 text-4xl">No guts, no glory</h3>
+                  <p className="text-[1.63rem] leading-8">
+                    Take charge and make things happen by being confident and
+                    bold. This can be intimidating, but it is also the key to
+                    achieving your goals and realising your full potential.
+                    Embrace your power and responsibility, and take the reins
+                    with courage and determination.
+                  </p>
+                </div>
+              </div>
+              <div className="relative mb-4 h-[57.11rem]">
+                <div className="absolute inset-0">
+                  <img
+                    className="h-full w-full object-cover"
+                    src="https://www.datocms-assets.com/63464/1661347903-stuurmen-visual-4.png?auto=format&h=965&w=760"
+                    alt="No bullshit bingo"
+                  />
+                </div>
+                <div className="relative flex h-full flex-col justify-end bg-black bg-opacity-50 p-16 text-stone-50">
+                  <h3 className="mb-6 text-4xl">No bullshit bingo</h3>
+                  <p className="text-[1.63rem] leading-8">
+                    Honesty is essential for building and maintaining trust.
+                    Don't waste time or energy on pretence, and cut to the chase
+                    instead. Speak your mind, and be sincere but direct, even if
+                    the message is uncomfortable.
+                  </p>
+                </div>
+              </div>
+              <div className="relative mb-4 h-[57.11rem]">
+                <div className="absolute inset-0">
+                  <img
+                    className="h-full w-full object-cover"
+                    src="https://www.datocms-assets.com/63464/1661347890-stuurmen-visual-3.png?auto=format&h=965&w=760"
+                    alt="A touch of wit"
+                  />
+                </div>
+                <div className="relative flex h-full flex-col justify-end bg-black bg-opacity-50 p-16 text-stone-50">
+                  <h3 className="mb-6 text-4xl">A touch of wit</h3>
+                  <p className="text-[1.63rem] leading-8">
+                    Come up with creative solutions to complex problems. Do you
+                    have a sense of humour? Don't waste it. Use it in a subtle
+                    and entertaining way to make things memorable and engaging.
+                  </p>
+                </div>
+              </div>
+              <div className="relative h-[57.11rem]">
+                <div className="absolute inset-0">
+                  <img
+                    className="h-full w-full object-cover"
+                    src="https://www.datocms-assets.com/63464/1661347872-stuurmen-visual-5.png?auto=format&h=965&w=760"
+                    alt="Lead by example"
+                  />
+                </div>
+                <div className="relative flex h-full flex-col justify-end bg-black bg-opacity-50 p-16 text-stone-50">
+                  <h3 className="mb-6 text-4xl">Lead by example</h3>
+                  <p className="text-[1.63rem] leading-8">
+                    Embody the behaviours and values that you expect from
+                    others. Have respect for others' time and be punctual.
+                    Practise clear communication and take responsibility for
+                    mistakes and work to rectify them.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
