@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import Header from "@/components/Header/index";
 import Footer from "@/components/Footer/index";
 import { GridGuide } from "@/components/GridGuide/index";
+import { Grain } from "@/components/Grain/index";
 
 export const metadata: Metadata = {
   title: "Inner Pages",
@@ -42,9 +43,11 @@ export default function InnerLayout({
   return (
     <html lang="en" className={`${DMSans.variable} ${BebasNeue.variable}`}>
       <body className="bg-gray-950 text-gray-50 antialiased">
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <Grain>
+          <Header />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </Grain>
         <GridGuide />
       </body>
     </html>
