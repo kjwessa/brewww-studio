@@ -142,10 +142,10 @@ export const BlogPosts: CollectionConfig = {
     },
     ...slugField(),
     {
-      name: "publishedAt",
+      name: "publishedOn",
       type: "date",
       required: true,
-      label: "Published At",
+      label: "Published On",
       admin: {
         description:
           "The date the article was published. This is used to sort the articles.",
@@ -162,7 +162,7 @@ export const BlogPosts: CollectionConfig = {
   admin: {
     description:
       "Writing brings clarity. Writing is a way to make sense of the world.",
-    defaultColumns: ["title", "imageMain", "publishedAt", "updatedAt"],
+    defaultColumns: ["title", "imageMain", "publishedOn", "updatedAt"],
     group: "Blog Posts",
     listSearchableFields: ["title"],
     pagination: {
@@ -172,7 +172,7 @@ export const BlogPosts: CollectionConfig = {
     useAsTitle: "title",
   },
 
-  defaultSort: "-publishedAt",
+  defaultSort: "-publishedOn",
   labels: {
     singular: "Post",
     plural: "Posts",

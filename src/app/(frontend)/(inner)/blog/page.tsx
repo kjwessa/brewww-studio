@@ -8,7 +8,7 @@ export default async function BlogPage() {
   const posts = await payload.find({
     collection: "posts",
     limit: 1000,
-    sort: "-publishedAt",
+    sort: "-publishedOn",
   });
 
   return (

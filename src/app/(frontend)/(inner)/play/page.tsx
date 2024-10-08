@@ -7,7 +7,7 @@ export default async function PlayPage() {
   const projects = await payload.find({
     collection: "play",
     limit: 1000,
-    sort: "-publishedAt",
+    sort: "-publishedOn",
   });
 
   return (
