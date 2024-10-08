@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <section className="flex min-h-[90vh] items-center justify-center bg-brand-dark-bg text-zinc-50">
         <div className="container mx-auto px-4 py-8 md:px-6">
-          <h1 className="mx-auto mb-6 max-w-5xl text-center text-[7.2vw] font-bold leading-[0.9] tracking-tighter">
+          <h1 className="text-display-large mx-auto mb-6 max-w-5xl text-center font-bold leading-[0.9] tracking-tighter">
             <span className="opacity-50">If </span>
             good enough
             <span className="opacity-50">
@@ -262,6 +262,134 @@ export default function Home() {
       </section>
 
       <ImageGrow />
+
+      <section className="relative bg-white pt-3 text-black">
+        <div className="relative z-10 m-auto w-full max-w-[100.00rem] px-24 pt-24">
+          <div className="flex flex-wrap px-24">
+            <div className="-ml-3.5 w-full max-w-[91.6667%] basis-7/12">
+              <p className="mb-6 uppercase">
+                Video Games industry case studies.
+              </p>
+              <h2 className="mb-28 text-[3.25rem] leading-none">
+                Creative marketing for the Video Games industry.
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-0 left-0 top-0 z-0 w-[20%] bg-[#F9F9F9]" />
+        <div className="m-auto w-full max-w-[100.00rem] px-24 text-black">
+          <div className="flex flex-wrap px-24">
+            <div className="relative w-full max-w-[50%] basis-1/2">
+              <div className="-ml-24 mb-36 w-[33.44rem] pb-3">
+                <Link className="relative mt-24" href="">
+                  <div className="-ml-44 -mt-24 mb-5 overflow-hidden pl-44 pt-24">
+                    <div className="relative h-[34.38rem] w-full bg-zinc-100">
+                      <div className="absolute left-[-3.44rem] top-0 z-10 h-96 w-[36.88rem]">
+                        <picture className="h-full w-full">
+                          <img
+                            className="h-96 w-full"
+                            src="https://1minus1-2021.s3.eu-west-2.amazonaws.com/small_intro1_033d26b5fd.png"
+                            alt="Turn 10 project showcase"
+                          />
+                        </picture>
+                      </div>
+                      <div className="absolute left-0 top-0 h-full w-full bg-white" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="mb-2 text-xl uppercase">
+                      <span className="text-sm">Turn 10</span>
+                    </h3>
+                    <h4 className="text-[2.13rem] leading-9">
+                      Highly creative, animated website with 3D animation
+                    </h4>
+                  </div>
+                </Link>
+              </div>
+              <div className="float-right mb-36 mr-24 w-[33.44rem] pb-3">
+                <Link className="relative" href="">
+                  <div className="-mt-24 mb-5 overflow-hidden pt-24">
+                    <div className="relative h-[34.38rem] w-full bg-[#F9F9F9]">
+                      <div className="absolute left-[8.13rem] top-[0.31rem] z-10 h-[40.31rem] w-96">
+                        <picture className="h-full w-full">
+                          <img
+                            className="h-[44.64rem] w-full"
+                            src="https://1minus1-2021.s3.eu-west-2.amazonaws.com/small_intro1_82708bebb9.png"
+                            alt="Fast Travel Games project showcase"
+                          />
+                        </picture>
+                      </div>
+                      <div className="absolute left-0 top-0 h-full w-full bg-white" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="mb-2 text-xl uppercase">
+                      <span className="text-sm">Fast Travel Games</span>
+                    </h3>
+                    <h4 className="text-[2.13rem] leading-9">
+                      Fun 3D & Three.js animated website with Headless CMS
+                    </h4>
+                  </div>
+                </Link>
+              </div>
+            </div>
+            <div className="relative w-full max-w-[50%] basis-1/2">
+              <div className="mb-36 mt-28 w-[33.44rem] pb-3">
+                <Link className="relative" href="">
+                  <div className="-mt-24 mb-5 overflow-hidden pt-24">
+                    <div className="relative h-[34.38rem] w-full bg-zinc-100">
+                      <div className="absolute left-[-4.38rem] top-[-1.88rem] z-10 h-[40.94rem] w-[42.50rem]">
+                        <picture className="h-full w-full">
+                          <img
+                            className="h-[37.53rem] w-full"
+                            src="https://1minus1-2021.s3.eu-west-2.amazonaws.com/small_intro1_611a814312.png"
+                            alt="Studiotypes project showcase"
+                          />
+                        </picture>
+                      </div>
+                      <div className="absolute left-0 top-0 h-full w-full bg-white" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="mb-2 text-xl uppercase">
+                      <span className="text-sm">Studiotypes</span>
+                    </h3>
+                    <h4 className="text-[2.13rem] leading-9">
+                      3D animation led website with complex Blender models
+                    </h4>
+                  </div>
+                </Link>
+              </div>
+              <div className="float-right -mr-24 mb-36 w-[33.44rem] pb-3">
+                <Link className="relative" href="">
+                  <div className="-ml-16 -mt-24 mb-5 overflow-hidden pl-16 pt-24">
+                    <div className="relative h-[34.38rem] w-full bg-zinc-300">
+                      <div className="absolute left-[-3.13rem] top-[-1.25rem] z-10 h-96 w-[37.50rem]">
+                        <picture className="h-full w-full">
+                          <img
+                            className="h-[43.50rem] w-full"
+                            src="https://1minus1-2021.s3.eu-west-2.amazonaws.com/small_wizards_fade_sq_4612e05faf.png"
+                            alt="Invoke Studios project showcase"
+                          />
+                        </picture>
+                      </div>
+                      <div className="absolute left-0 top-0 h-full w-full bg-white" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="mb-2 text-xl uppercase">
+                      <span className="text-sm">Invoke Studios</span>
+                    </h3>
+                    <h4 className="text-[2.13rem] leading-9">
+                      Branding & website for the Wizards of the Coast studio
+                    </h4>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-brand-dark-bg text-zinc-50">
         <div className="container mx-auto px-4 py-24">
@@ -772,133 +900,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative bg-white pt-3 text-black">
-        <div className="relative z-10 m-auto w-full max-w-[100.00rem] px-24 pt-24">
-          <div className="flex flex-wrap px-24">
-            <div className="-ml-3.5 w-full max-w-[91.6667%] basis-7/12">
-              <p className="mb-6 uppercase">
-                Video Games industry case studies.
-              </p>
-              <h2 className="mb-28 text-[3.25rem] leading-none">
-                Creative marketing for the Video Games industry.
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div className="absolute bottom-0 left-0 top-0 z-0 w-[20%] bg-[#F9F9F9]" />
-        <div className="m-auto w-full max-w-[100.00rem] px-24 text-black">
-          <div className="flex flex-wrap px-24">
-            <div className="relative w-full max-w-[50%] basis-1/2">
-              <div className="-ml-24 mb-36 w-[33.44rem] pb-3">
-                <Link className="relative mt-24" href="">
-                  <div className="-ml-44 -mt-24 mb-5 overflow-hidden pl-44 pt-24">
-                    <div className="relative h-[34.38rem] w-full bg-zinc-100">
-                      <div className="absolute left-[-3.44rem] top-0 z-10 h-96 w-[36.88rem]">
-                        <picture className="h-full w-full">
-                          <img
-                            className="h-96 w-full"
-                            src="https://1minus1-2021.s3.eu-west-2.amazonaws.com/small_intro1_033d26b5fd.png"
-                            alt="Turn 10 project showcase"
-                          />
-                        </picture>
-                      </div>
-                      <div className="absolute left-0 top-0 h-full w-full bg-white" />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="mb-2 text-xl uppercase">
-                      <span className="text-sm">Turn 10</span>
-                    </h3>
-                    <h4 className="text-[2.13rem] leading-9">
-                      Highly creative, animated website with 3D animation
-                    </h4>
-                  </div>
-                </Link>
-              </div>
-              <div className="float-right mb-36 mr-24 w-[33.44rem] pb-3">
-                <Link className="relative" href="">
-                  <div className="-mt-24 mb-5 overflow-hidden pt-24">
-                    <div className="relative h-[34.38rem] w-full bg-[#F9F9F9]">
-                      <div className="absolute left-[8.13rem] top-[0.31rem] z-10 h-[40.31rem] w-96">
-                        <picture className="h-full w-full">
-                          <img
-                            className="h-[44.64rem] w-full"
-                            src="https://1minus1-2021.s3.eu-west-2.amazonaws.com/small_intro1_82708bebb9.png"
-                            alt="Fast Travel Games project showcase"
-                          />
-                        </picture>
-                      </div>
-                      <div className="absolute left-0 top-0 h-full w-full bg-white" />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="mb-2 text-xl uppercase">
-                      <span className="text-sm">Fast Travel Games</span>
-                    </h3>
-                    <h4 className="text-[2.13rem] leading-9">
-                      Fun 3D & Three.js animated website with Headless CMS
-                    </h4>
-                  </div>
-                </Link>
-              </div>
-            </div>
-            <div className="relative w-full max-w-[50%] basis-1/2">
-              <div className="mb-36 mt-28 w-[33.44rem] pb-3">
-                <Link className="relative" href="">
-                  <div className="-mt-24 mb-5 overflow-hidden pt-24">
-                    <div className="relative h-[34.38rem] w-full bg-zinc-100">
-                      <div className="absolute left-[-4.38rem] top-[-1.88rem] z-10 h-[40.94rem] w-[42.50rem]">
-                        <picture className="h-full w-full">
-                          <img
-                            className="h-[37.53rem] w-full"
-                            src="https://1minus1-2021.s3.eu-west-2.amazonaws.com/small_intro1_611a814312.png"
-                            alt="Studiotypes project showcase"
-                          />
-                        </picture>
-                      </div>
-                      <div className="absolute left-0 top-0 h-full w-full bg-white" />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="mb-2 text-xl uppercase">
-                      <span className="text-sm">Studiotypes</span>
-                    </h3>
-                    <h4 className="text-[2.13rem] leading-9">
-                      3D animation led website with complex Blender models
-                    </h4>
-                  </div>
-                </Link>
-              </div>
-              <div className="float-right -mr-24 mb-36 w-[33.44rem] pb-3">
-                <Link className="relative" href="">
-                  <div className="-ml-16 -mt-24 mb-5 overflow-hidden pl-16 pt-24">
-                    <div className="relative h-[34.38rem] w-full bg-zinc-300">
-                      <div className="absolute left-[-3.13rem] top-[-1.25rem] z-10 h-96 w-[37.50rem]">
-                        <picture className="h-full w-full">
-                          <img
-                            className="h-[43.50rem] w-full"
-                            src="https://1minus1-2021.s3.eu-west-2.amazonaws.com/small_wizards_fade_sq_4612e05faf.png"
-                            alt="Invoke Studios project showcase"
-                          />
-                        </picture>
-                      </div>
-                      <div className="absolute left-0 top-0 h-full w-full bg-white" />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="mb-2 text-xl uppercase">
-                      <span className="text-sm">Invoke Studios</span>
-                    </h3>
-                    <h4 className="text-[2.13rem] leading-9">
-                      Branding & website for the Wizards of the Coast studio
-                    </h4>
-                  </div>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
       <section className="h-[37.50rem] w-screen bg-white p-6 text-black min-[576px]:h-[33.13rem] min-[992px]:h-screen min-[992px]:min-h-[34.38rem] min-[992px]:p-12 min-[1200px]:min-h-[40.63rem] min-[1200px]:p-20 min-[1600px]:min-h-[46.88rem] min-[1600px]:p-24">
         <div className="relative h-full w-full overflow-hidden bg-gray-800 text-white">
           <div className="flex h-full w-full items-center justify-center">
@@ -993,6 +995,28 @@ export default function Home() {
                 />
               </svg>
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="flex min-h-[88vh] flex-col justify-between bg-white text-[2.75rem] leading-none text-stone-950 lg:p-8">
+        <div className="absolute left-0 right-0 top-[-100%] z-[-1] h-screen w-full bg-[linear-gradient(198.91deg,_rgb(255,_255,_255)_64.12%,_rgb(250,_246,_249)_72.26%,_rgb(251,_234,_248)_81.42%,_rgb(252,_213,_245)_89.56%,_rgb(254,_185,_241)_98.72%,_rgb(255,_173,_239)_101.78%)]" />
+        <div className="text-7xl lg:w-[58.3333vw]">
+          <h1 className="w-full">
+            brewww is a branding agency with a history of building compelling
+            brands for high-quality products and services.
+          </h1>
+        </div>
+        <div className="overflow-hidden text-[1.38rem] leading-7">
+          <div className="flex w-full lg:items-end lg:justify-between">
+            <div className="lg:w-[33.3333vw]">
+              <p className="text-xl">
+                <strong className="text-neutral-400">Jobs</strong>:{" "}
+                <em className="cursor-pointer italic">
+                  brewww is looking for interns!
+                </em>
+              </p>
+            </div>
           </div>
         </div>
       </section>
