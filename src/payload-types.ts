@@ -324,7 +324,6 @@ export interface Post {
   title: string;
   tagline?: string | null;
   description?: string | null;
-  imageMain: string | Media;
   content: {
     root: {
       type: string;
@@ -353,6 +352,7 @@ export interface Post {
   slug: string;
   slugLock?: boolean | null;
   publishedOn: string;
+  imageMain: string | Media;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;

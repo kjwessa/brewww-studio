@@ -1,12 +1,21 @@
 import Image from "next/image";
 import { ImageGrow } from "./ImageGrow";
 import Link from "next/link";
-export default function Home() {
+import configPromise from "@payload-config";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
+
+export default async function Home() {
+  const payload = await getPayloadHMR({ config: configPromise });
+  const posts = await payload.find({
+    collection: "posts",
+    limit: 1000,
+    sort: "-publishedOn",
+  });
   return (
     <>
       <section className="flex min-h-[90vh] items-center justify-center bg-brand-dark-bg text-zinc-50">
         <div className="container mx-auto px-4 py-8 md:px-6">
-          <h1 className="text-display-large mx-auto mb-6 max-w-5xl text-center font-bold leading-[0.9] tracking-tighter">
+          <h1 className="mx-auto mb-6 max-w-5xl text-center text-display-large font-bold leading-[0.9] tracking-tighter">
             <span className="opacity-50">If </span>
             good enough
             <span className="opacity-50">
@@ -267,11 +276,9 @@ export default function Home() {
         <div className="relative z-10 m-auto w-full max-w-[100.00rem] px-24 pt-24">
           <div className="flex flex-wrap px-24">
             <div className="-ml-3.5 w-full max-w-[91.6667%] basis-7/12">
-              <p className="mb-6 uppercase">
-                Video Games industry case studies.
-              </p>
+              <p className="mb-6 uppercase">Our Blog</p>
               <h2 className="mb-28 text-[3.25rem] leading-none">
-                Creative marketing for the Video Games industry.
+                News and Insights for the modern business.
               </h2>
             </div>
           </div>

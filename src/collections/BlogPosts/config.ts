@@ -56,17 +56,7 @@ export const BlogPosts: CollectionConfig = {
           "The description of the article as it appears around the site.",
       },
     },
-    {
-      name: "imageMain",
-      type: "upload",
-      relationTo: "media",
-      label: "Main Image",
-      required: true,
-      admin: {
-        description:
-          "The main image of the article that appears on the page and in the list of posts.",
-      },
-    },
+
     {
       type: "tabs",
       tabs: [
@@ -147,12 +137,20 @@ export const BlogPosts: CollectionConfig = {
       required: true,
       label: "Published On",
       admin: {
-        description:
-          "The date the article was published. This is used to sort the articles.",
         position: "sidebar",
         date: {
           pickerAppearance: "dayAndTime",
         },
+      },
+    },
+    {
+      name: "imageMain",
+      type: "upload",
+      relationTo: "media",
+      label: "Main Image",
+      required: true,
+      admin: {
+        position: "sidebar",
       },
     },
   ],

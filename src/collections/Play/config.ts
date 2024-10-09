@@ -152,7 +152,7 @@ export const Playground: CollectionConfig = {
 
   admin: {
     description: "Interior Brewww projects",
-    defaultColumns: ["title", "tagline", "publishedOn", "updatedAt"],
+    defaultColumns: ["title", "tagline", "updatedAt"],
     group: "Portfolio",
     listSearchableFields: ["title", "tagline", "description"],
     pagination: {
