@@ -6,6 +6,7 @@ import config from "@payload-config";
 import Image from "next/image";
 import Link from "next/link";
 import BrewwwLogo from "/public/images/brewww-logotype-gold.png";
+import { Button } from "@/components/Button";
 
 export default function Header() {
   // TODO: bring back the Payload call when the design is completed
@@ -94,14 +95,7 @@ export default function Header() {
                 >
                   hello@brewww.studio
                 </Link>
-                <Link
-                  className="inline-block h-12 min-w-[9.88rem] rounded-sm bg-brand-gold px-5 font-bold text-black md:min-w-[10.63rem] min-[1680px]:h-16 min-[1680px]:min-w-[13.75rem]"
-                  href="/contact"
-                >
-                  <span className="flex h-full w-full cursor-pointer items-center justify-center">
-                    Let's talk
-                  </span>
-                </Link>
+                <Button href="/contact" label="Let's talk" />
               </div>
               <button
                 className="h-12 min-w-8 cursor-pointer"
