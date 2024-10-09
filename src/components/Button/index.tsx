@@ -7,32 +7,29 @@ import Link from "next/link";
 import { LinkType, Reference } from "../CMSLink/index.js";
 import { Page as PayloadPage } from "@/payload-types";
 
-// Import your icons here
-// import { ArrowIcon, SearchIcon, GitHubIcon, PlusIcon, LoaderIcon } from "@/icons";
-
 interface Page extends PayloadPage {
   breadcrumbs?: { url: string }[];
 }
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
-      variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+      intent: {
+        primary: "bg-brand-gold text-black hover:bg-brand-gold/90",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
+        default: "h-12 text-base px-5 min-w-[9.88rem] ",
+        sm: "h-9 rounded-md px-3 text-sm",
+        lg: "h-16 rounded-md px-8 text-xl",
         icon: "h-10 w-10",
       },
       fullWidth: {
@@ -43,7 +40,7 @@ const buttonVariants = cva(
       },
     },
     defaultVariants: {
-      variant: "default",
+      intent: "primary",
       size: "default",
     },
   },
@@ -52,24 +49,12 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "type">,
     VariantProps<typeof buttonVariants> {
-  appearance?:
-    | "default"
-    | "text"
-    | "primary"
-    | "secondary"
-    | "danger"
-    | "warning"
-    | "success"
-    | "null";
   href?: string;
   newTab?: boolean;
-  icon?: "arrow" | "search" | "github" | "plus" | "loading";
+  icon?: "arrow" | "search" | "plus" | "loading";
   iconPosition?: "left" | "right";
-  iconSize?: "large" | "medium" | "small";
-  iconRotation?: number;
   label?: string;
-  labelStyle?: "mono" | "regular";
-  el?: "button" | "link" | "a" | "div";
+  el?: "button" | "link" | "a";
   type?: LinkType | "submit" | "reset" | "button";
   reference?: Reference;
   fullWidth?: boolean;
@@ -78,14 +63,6 @@ export interface ButtonProps
   url?: string;
   disabled?: boolean;
 }
-
-const icons: Record<string, React.ComponentType<any>> = {
-  // arrow: ArrowIcon,
-  // search: SearchIcon,
-  // github: GitHubIcon,
-  // plus: PlusIcon,
-  // loading: LoaderIcon,
-};
 
 const generateHref = ({
   type,
@@ -133,16 +110,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       className,
-      variant,
+      intent,
       size,
       fullWidth,
       mobileFullWidth,
       icon,
       iconPosition = "right",
-      iconSize = "medium",
-      iconRotation,
       label,
-      labelStyle = "mono",
       el = "button",
       href,
       newTab,
@@ -157,36 +131,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const hrefValue =
       href || generateHref({ type: type as LinkType, reference, url });
-    const Icon = icon ? icons[icon] : null;
 
     const content = (
-      <>
-        {iconPosition === "left" && Icon && (
-          <Icon
-            className={cn("mr-2", `icon-${iconSize}`)}
-            style={
-              iconRotation
-                ? { transform: `rotate(${iconRotation}deg)` }
-                : undefined
-            }
-          />
-        )}
-        {label && (
-          <span className={cn(labelStyle === "mono" && "font-mono")}>
-            {label}
-          </span>
-        )}
-        {iconPosition === "right" && Icon && (
-          <Icon
-            className={cn("ml-2", `icon-${iconSize}`)}
-            style={
-              iconRotation
-                ? { transform: `rotate(${iconRotation}deg)` }
-                : undefined
-            }
-          />
-        )}
-      </>
+      <span className="flex h-full w-full cursor-pointer items-center justify-center">
+        {label}
+      </span>
     );
 
     if (el === "link") {
@@ -195,7 +144,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           href={hrefValue}
           className={cn(
             buttonVariants({
-              variant,
+              intent,
               size,
               fullWidth,
               mobileFullWidth,
@@ -214,7 +163,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         <a
           className={cn(
             buttonVariants({
-              variant,
+              intent,
               size,
               fullWidth,
               mobileFullWidth,
@@ -234,7 +183,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         className={cn(
           buttonVariants({
-            variant,
+            intent,
             size,
             fullWidth,
             mobileFullWidth,

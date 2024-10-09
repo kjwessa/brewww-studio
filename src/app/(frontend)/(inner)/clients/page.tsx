@@ -86,7 +86,7 @@ export default async function Page() {
   }));
 
   return (
-    <section className="w-full overflow-hidden bg-black pb-10 pt-32 text-lg text-white md:pb-16 md:pt-44 min-[1250px]:pb-20 min-[1250px]:pt-48 min-[1900px]:pb-20 min-[1900px]:pt-56">
+    <section className="w-full overflow-hidden bg-brand-dark-bg pb-10 pt-32 text-lg text-white md:pb-16 md:pt-44 min-[1250px]:pb-20 min-[1250px]:pt-48 min-[1900px]:pb-20 min-[1900px]:pt-56">
       <div className="m-6 md:mx-10 min-[1250px]:mx-20 min-[1550px]:mx-auto min-[1550px]:w-full min-[1550px]:max-w-[87.50rem] min-[1900px]:max-w-screen-2xl min-[2048px]:mx-48 min-[2048px]:w-auto min-[2048px]:max-w-full min-[2560px]:max-w-[160.00rem] min-[2940px]:mx-auto">
         <HeroSection />
         <ClientGridWithImages brands={brands} />
