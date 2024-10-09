@@ -18,5 +18,6 @@ module.exports = {
     "/why-brewww",
     "/clients",
     "/styles",
+    "/faq",
   ],
 };
