@@ -6,7 +6,6 @@ import React from "react";
 import type { Page, Post } from "@/payload-types";
 
 type CMSLinkType = {
-  appearance?: "inline" | ButtonProps["variant"];
   children?: React.ReactNode;
   className?: string;
   label?: string | null;
@@ -23,7 +22,6 @@ type CMSLinkType = {
 export const CMSLink: React.FC<CMSLinkType> = (props) => {
   const {
     type,
-    appearance = "inline",
     children,
     className,
     label,
@@ -44,13 +42,11 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
 
   if (!href) return null;
 
-  const size = appearance === "link" ? "clear" : sizeFromProps;
   const newTabProps = newTab
     ? { rel: "noopener noreferrer", target: "_blank" }
     : {};
 
-  /* Ensure we don't break any styles set by richText */
-  if (appearance === "inline") {
+  if (!sizeFromProps) {
     return (
       <Link className={cn(className)} href={href || url || ""} {...newTabProps}>
         {label && label}
@@ -60,7 +56,7 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
   }
 
   return (
-    <Button variant={appearance}>
+    <Button size={sizeFromProps}>
       <Link className={cn(className)} href={href || url || ""} {...newTabProps}>
         {label && label}
         {children && children}
