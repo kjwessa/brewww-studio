@@ -26,6 +26,7 @@ import { Services } from "@/collections/Services/config";
 import { Testimonials } from "@/collections/Testimonials/config";
 import { Users } from "@/collections/Users/config";
 import { Work } from "@/collections/Work/config";
+import { Technologies } from "@/collections/Technologies/config";
 
 //* Import Globals
 import { Header } from "./globals/Header/index";
@@ -126,6 +127,7 @@ export default buildConfig({
     Brands,
     Pillars,
     Testimonials,
+    Technologies,
     Location,
     Results,
     Users,

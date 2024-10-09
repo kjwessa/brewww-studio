@@ -22,6 +22,7 @@ export interface Config {
     brands: Brand;
     pillars: Pillar;
     testimonials: Testimonial;
+    technologies: Technology;
     locations: Location;
     results: Result;
     users: User;
@@ -540,6 +541,18 @@ export interface Pillar {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "technologies".
+ */
+export interface Technology {
+  id: string;
+  title: string;
+  image?: (string | null) | Media;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "locations".
  */
 export interface Location {
@@ -654,6 +667,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'testimonials';
         value: string | Testimonial;
+      } | null)
+    | ({
+        relationTo: 'technologies';
+        value: string | Technology;
       } | null)
     | ({
         relationTo: 'locations';
