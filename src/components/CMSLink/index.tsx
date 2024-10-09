@@ -179,7 +179,6 @@ export const CMSLink: React.FC<CMSLinkType> = ({
     ...buttonPropsFromProps,
     newTab: newTab ?? false,
     href,
-    appearance,
     label: label ?? "",
     onClick,
     onMouseEnter,
@@ -187,10 +186,6 @@ export const CMSLink: React.FC<CMSLinkType> = ({
     fullWidth,
     mobileFullWidth,
   };
-
-  if (appearance === "default") {
-    buttonProps.icon = "arrow";
-  }
 
   return <Button {...buttonProps} className={className} el="link" />;
 };
