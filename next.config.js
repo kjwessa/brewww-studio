@@ -21,6 +21,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "assets.website-files.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };
