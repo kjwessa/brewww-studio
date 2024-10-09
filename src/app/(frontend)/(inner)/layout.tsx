@@ -45,7 +45,7 @@ export default function InnerLayout({
       <body className="bg-gray-950 text-gray-50 antialiased">
         <Grain>
           <Header />
-          <main className="min-h-screen">{children}</main>
+          <main className="min-h-[80vh]">{children}</main>
           <Footer />
         </Grain>
         <GridGuide />
