@@ -53,8 +53,8 @@ export default async function PlayPage({
             </span>
             <MetaDot />
             <span>
-              {play.publishedAt
-                ? formatDate(play.publishedAt)
+              {play.publishedOn
+                ? formatDate(play.publishedOn)
                 : "Date not available"}
             </span>
           </div>

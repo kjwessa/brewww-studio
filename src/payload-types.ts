@@ -352,7 +352,7 @@ export interface Post {
   };
   slug: string;
   slugLock?: boolean | null;
-  publishedAt: string;
+  publishedOn: string;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -451,7 +451,7 @@ export interface Play {
   description?: string | null;
   slug: string;
   slugLock?: boolean | null;
-  publishedAt: string;
+  publishedOn: string;
   content: {
     imageMain: string | Media;
   };

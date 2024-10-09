@@ -100,8 +100,8 @@ export default async function PostPage({
             </span>
             <span>•</span>
             <span>
-              {post.publishedAt
-                ? formatDate(post.publishedAt)
+              {post.publishedOn
+                ? formatDate(post.publishedOn)
                 : "Date not available"}
             </span>
             <span>•</span>

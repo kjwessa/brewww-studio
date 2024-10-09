@@ -55,10 +55,10 @@ export const Playground: CollectionConfig = {
     // TODO: make sure the slug locks after being published
     ...slugField(),
     {
-      name: "publishedAt",
+      name: "publishedOn",
       type: "date",
       required: true,
-      label: "Published Date",
+      label: "Published On",
       admin: {
         description:
           "The date the Play Case Study was published. This is used to sort the Play Case Studies.",
@@ -152,7 +152,7 @@ export const Playground: CollectionConfig = {
 
   admin: {
     description: "Interior Brewww projects",
-    defaultColumns: ["title", "tagline", "publishedAt", "updatedAt"],
+    defaultColumns: ["title", "tagline", "publishedOn", "updatedAt"],
     group: "Portfolio",
     listSearchableFields: ["title", "tagline", "description"],
     pagination: {
@@ -170,11 +170,11 @@ export const Playground: CollectionConfig = {
     afterRead: [
       ({ doc }) => {
         if (
-          doc.publishedAt &&
-          typeof doc.publishedAt === "object" &&
-          "$date" in doc.publishedAt
+          doc.publishedOn &&
+          typeof doc.publishedOn === "object" &&
+          "$date" in doc.publishedOn
         ) {
-          doc.publishedAt = new Date(doc.publishedAt.$date);
+          doc.publishedOn = new Date(doc.publishedOn.$date);
         }
         return doc;
       },
