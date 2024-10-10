@@ -4,6 +4,9 @@ import Link from "next/link";
 import configPromise from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 
+import { HomeRotatingHero } from "./HomeRotatingHero/index";
+import { WorkGallery } from "./WorkGallery/index";
+
 export default async function Home() {
   const payload = await getPayloadHMR({ config: configPromise });
   const posts = await payload.find({
@@ -13,7 +16,7 @@ export default async function Home() {
   });
   return (
     <>
-      <section className="flex min-h-[90vh] items-center justify-center bg-brand-dark-bg text-zinc-50">
+      <section className="flex hidden min-h-[90vh] items-center justify-center bg-brand-dark-bg text-zinc-50">
         <div className="container mx-auto px-4 py-8 md:px-6">
           <h1 className="mx-auto mb-6 max-w-5xl text-center text-display-large font-bold leading-[0.9] tracking-tighter">
             <span className="opacity-50">If </span>
@@ -38,6 +41,8 @@ export default async function Home() {
           </div>
         </div>
       </section>
+      <HomeRotatingHero />
+      <WorkGallery />
 
       <section className="bg-brand-dark-bg text-zinc-50">
         <div className="container mx-auto px-4">
