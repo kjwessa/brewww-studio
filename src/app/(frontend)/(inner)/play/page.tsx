@@ -2,6 +2,7 @@ import { getPayloadHMR } from "@payloadcms/next/utilities";
 import configPromise from "@payload-config";
 import Link from "next/link";
 import Image from "next/image";
+import { PlayHero } from "./PlayHero";
 export default async function PlayPage() {
   const payload = await getPayloadHMR({ config: configPromise });
   const projects = await payload.find({
@@ -12,6 +13,7 @@ export default async function PlayPage() {
 
   return (
     <>
+      <PlayHero />
       <section className="bg-brand-dark-bg">
         <div className="container mx-auto px-4 py-24">
           <div className="max-w-[82.50rem] text-xl text-neutral-800 min-[480px]:max-w-[84.38rem] min-[720px]:max-w-[86.88rem] min-[720px]:pl-12 min-[720px]:pr-12 min-[1080px]:max-w-[89.38rem] min-[1080px]:pl-16 min-[1080px]:pr-16">
