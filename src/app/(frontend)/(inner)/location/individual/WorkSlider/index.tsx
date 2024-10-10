@@ -1,4 +1,4 @@
-import { WorkCard } from "../WorkCard";
+import { WorkCard } from "@/components/WorkCard";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import configPromise from "@payload-config";
 
