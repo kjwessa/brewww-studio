@@ -19,5 +19,7 @@ module.exports = {
     "/clients",
     "/styles",
     "/faq",
+    "/location",
+    "/location/*",
   ],
 };

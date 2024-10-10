@@ -75,6 +75,18 @@ export default function Header() {
               >
                 /IN
               </Link>
+              <Link
+                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                href="/location"
+              >
+                Location
+              </Link>
+              <Link
+                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                href="/location/individual"
+              >
+                /IN
+              </Link>
             </nav>
             <div className="flex justify-center">
               <Link href="/home">
