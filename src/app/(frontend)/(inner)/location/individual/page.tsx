@@ -687,6 +687,7 @@ export default async function Page() {
                   />
                 </svg>
               </div>
+              {/* TODO: set this to use client logos */}
               <div className="flex w-full flex-wrap px-2 sm:pl-6 sm:pr-6 lg:justify-end xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
                 <div className="flex w-auto flex-col items-start px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
                   <div className="flex flex-col items-start">
@@ -754,9 +755,7 @@ export default async function Page() {
                   <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
                     <div className="flex h-28 w-full items-center justify-center overflow-hidden rounded-3xl bg-neutral-950 lg:h-40 min-[2100px]:h-44">
                       <div className="flex h-full w-full items-center justify-center">
-                        <div className="h-12 w-full px-8 md:h-12 md:pl-14 md:pr-14 lg:pl-14 lg:pr-14 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16">
-                          {/* SVG removed */}
-                        </div>
+                        <div className="h-12 w-full px-8 md:h-12 md:pl-14 md:pr-14 lg:pl-14 lg:pr-14 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
                       </div>
                     </div>
                   </div>
@@ -1001,6 +1000,146 @@ export default async function Page() {
           </div>
         </div>
       </section>
+
+      <div className="w-full bg-brand-dark-bg py-24 pb-20 text-black">
+        {/* TODO: Set this to use technology cards and scroll right to left  */}
+        <div className="text-white">
+          <div className="flex w-full flex-wrap items-end justify-between px-2 text-5xl sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+            <div className="px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+              <div className="flex flex-col items-start">
+                <h2 className="max-w-3xl">
+                  We use the latest technologies available to create timeless
+                  designs.
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div className="mx-auto mt-10 w-full overflow-hidden">
+            <div className="flex h-full w-full">
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+              <div className="h-full w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+                <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10 md:pb-14 md:pt-14">
+                  <div className="h-10 w-full px-10 md:h-10 md:pl-12 md:pr-12 min-[2100px]:h-14 min-[2100px]:pl-16 min-[2100px]:pr-16"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <section className="w-full bg-brand-dark-bg py-32 text-black lg:py-40">
         <div className="container mx-auto px-6 lg:px-12">
