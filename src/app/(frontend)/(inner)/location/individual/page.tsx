@@ -3,6 +3,7 @@ import React from "react";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import configPromise from "@payload-config";
 import { FAQCard } from "../../faq/AccordionCard";
+import { WorkSlider } from "./WorkSlider";
 
 export default async function Page() {
   const payload = await getPayloadHMR({ config: configPromise });
@@ -1473,7 +1474,9 @@ export default async function Page() {
         </div>
       </section>
 
-      <div className="w-full bg-brand-dark-bg py-24 pb-20 text-black">
+      <WorkSlider />
+
+      <section className="w-full bg-brand-dark-bg py-24 pb-20 text-black">
         {/* TODO: Set this to use technology cards and scroll right to left  */}
         <div className="text-white">
           <div className="flex w-full flex-wrap items-end justify-between px-2 text-5xl sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
@@ -1611,7 +1614,7 @@ export default async function Page() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <section className="w-full bg-brand-dark-bg py-32 text-black lg:py-40">
         <div className="container mx-auto px-6 lg:px-12">
