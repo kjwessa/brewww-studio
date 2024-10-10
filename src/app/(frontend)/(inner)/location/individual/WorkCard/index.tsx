@@ -1,7 +1,18 @@
-export function WorkCard() {
+import Link from "next/link";
+import Image from "next/image";
+import type { Work as WorkType } from "@/payload-types";
+
+export type WorkCardProps = {
+  project: WorkType;
+};
+
+export function WorkCard({ project }: WorkCardProps) {
   return (
     <div className="relative w-full">
-      <a className="relative flex flex-col items-start" href="#">
+      <Link
+        href={`/location/${project.slug}`}
+        className="relative flex flex-col items-start"
+      >
         <div className="relative mb-6 w-full cursor-pointer overflow-hidden">
           <div className="absolute right-0 top-0 z-20 rounded-bl-3xl pb-3 pl-3 pt-1">
             <svg
@@ -50,12 +61,12 @@ export function WorkCard() {
             <div className="relative w-full overflow-hidden">
               <div className="w-full">
                 <div className="relative w-full overflow-hidden pb-[75%]">
-                  <video className="absolute left-0 top-0 h-full w-full max-w-full object-cover">
-                    <source
-                      src="https://servd-made-byshape.b-cdn.net/production/uploads/videos/gary-neville-thumbnail_2024-06-03-125526_bljp.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
+                  <Image
+                    src="/bg-approach.1200.jpg"
+                    alt="Throwing Sand"
+                    layout="fill"
+                    objectFit="cover"
+                  />
                 </div>
               </div>
             </div>
@@ -64,12 +75,12 @@ export function WorkCard() {
         <div className="mb-2 flex cursor-pointer items-center text-zinc-400">
           <div className="font-light">2023</div>
           <div className="ml-3 h-1.5 w-1.5 rounded-full bg-zinc-400" />
-          <div className="ml-3 font-light">Gary Neville</div>
+          <div className="ml-3 font-light">{project.title}</div>
         </div>
         <h2 className="cursor-pointer pr-10 text-4xl text-white">
-          Refreshing Gary Neville's digital presence
+          {project.tagline}
         </h2>
-      </a>
+      </Link>
     </div>
   );
 }

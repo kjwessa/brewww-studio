@@ -5,6 +5,7 @@ import React from "react";
 
 import type { Page, Post } from "@/payload-types";
 
+// Define the props for the CMSLink component
 type CMSLinkType = {
   children?: React.ReactNode;
   className?: string;
@@ -19,6 +20,7 @@ type CMSLinkType = {
   url?: string | null;
 };
 
+// CMSLink component for rendering links with various options
 export const CMSLink: React.FC<CMSLinkType> = (props) => {
   const {
     type,
@@ -31,6 +33,7 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
     url,
   } = props;
 
+  // Determine the href based on the link type and reference
   const href =
     type === "reference" &&
     typeof reference?.value === "object" &&
@@ -40,12 +43,15 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
         }`
       : url;
 
+  // If there's no href, don't render anything
   if (!href) return null;
 
+  // Set props for opening in a new tab if specified
   const newTabProps = newTab
     ? { rel: "noopener noreferrer", target: "_blank" }
     : {};
 
+  // Render a simple Link if no size is specified
   if (!sizeFromProps) {
     return (
       <Link className={cn(className)} href={href || url || ""} {...newTabProps}>
@@ -55,6 +61,7 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
     );
   }
 
+  // Render a Button with a Link inside if size is specified
   return (
     <Button size={sizeFromProps}>
       <Link className={cn(className)} href={href || url || ""} {...newTabProps}>
