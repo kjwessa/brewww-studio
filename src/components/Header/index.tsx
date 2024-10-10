@@ -95,6 +95,7 @@ export default function Header() {
                 >
                   hello@brewww.studio
                 </Link>
+                {/* //TODO make sure this button is correctly linked */}
                 <Button href="/contact" label="Let's talk" />
               </div>
               <button

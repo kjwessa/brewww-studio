@@ -13,7 +13,7 @@ export default async function Footer() {
   };
   return (
     <>
-      <footer className="border-b-6 border-brand-gold bg-brand-dark-bg text-white">
+      <footer className="hidden border-b-6 border-brand-gold bg-brand-dark-bg text-white">
         <div className="pt-28">
           <div className="container mx-auto max-w-4xl px-4">
             <div className="grid grid-cols-3 gap-8">
