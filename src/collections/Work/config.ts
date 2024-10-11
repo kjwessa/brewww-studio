@@ -143,6 +143,15 @@ export const Work: CollectionConfig = {
         position: "sidebar",
       },
     },
+    {
+      name: "featured",
+      type: "checkbox",
+      label: "Is this a featured project?",
+      required: false,
+      admin: {
+        position: "sidebar",
+      },
+    },
   ],
 
   //* Admin Settings
