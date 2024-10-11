@@ -264,10 +264,10 @@ export default async function WorkPage() {
                               <Image
                                 className="cursor-pointer object-cover"
                                 src={
-                                  typeof project.imageMain === "string"
-                                    ? project.imageMain
-                                    : (project.imageMain as { url: string })
-                                        ?.url || ""
+                                  typeof project.image === "string"
+                                    ? project.image
+                                    : (project.image as { url: string })?.url ||
+                                      ""
                                 }
                                 alt={project.title}
                                 fill

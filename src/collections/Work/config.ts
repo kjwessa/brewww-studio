@@ -55,28 +55,6 @@ export const Work: CollectionConfig = {
           "The description of the project as it appears around the site.",
       },
     },
-    {
-      name: "imageMain",
-      type: "upload",
-      label: "Main Image",
-      required: true,
-      relationTo: "media",
-      admin: {
-        description: "This image appears on the site.",
-      },
-    },
-    ...slugField(),
-    {
-      name: "brand",
-      type: "relationship",
-      relationTo: "brands",
-      hasMany: false,
-      required: true,
-      admin: {
-        position: "sidebar",
-        description: "Add the name of the brand here.",
-      },
-    },
 
     {
       type: "tabs",
@@ -143,6 +121,27 @@ export const Work: CollectionConfig = {
           ],
         },
       ],
+    },
+    ...slugField(),
+    {
+      name: "image",
+      type: "upload",
+      label: "Featured Image",
+      required: true,
+      relationTo: "media",
+      admin: {
+        position: "sidebar",
+      },
+    },
+    {
+      name: "brand",
+      type: "relationship",
+      relationTo: "brands",
+      hasMany: false,
+      required: true,
+      admin: {
+        position: "sidebar",
+      },
     },
   ],
 

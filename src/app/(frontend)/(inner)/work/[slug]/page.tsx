@@ -818,15 +818,13 @@ export default async function WorkPage({
             <div className="relative aspect-[3/2] w-full">
               <Image
                 src={
-                  typeof project.imageMain === "string"
-                    ? project.imageMain
-                    : project.imageMain?.url || ""
+                  typeof project.image === "string"
+                    ? project.image
+                    : project.image?.url || ""
                 }
                 fill
                 alt={
-                  typeof project.imageMain === "object"
-                    ? project.imageMain?.alt || ""
-                    : "Featured image for blog post"
+                  typeof project.image === "object" ? project.image?.alt : ""
                 }
                 className="rounded-md object-cover"
                 priority

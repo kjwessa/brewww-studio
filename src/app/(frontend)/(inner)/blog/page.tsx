@@ -40,14 +40,12 @@ export default async function BlogPage() {
                     <div className="group relative w-full overflow-hidden rounded bg-zinc-500/[0.2] pt-[80%]">
                       <Image
                         src={
-                          typeof post.imageMain === "string"
-                            ? post.imageMain
-                            : (post.imageMain as { url: string })?.url || ""
+                          typeof post.image === "string"
+                            ? post.image
+                            : (post.image as { url: string })?.url || ""
                         }
                         alt={
-                          typeof post.imageMain === "object"
-                            ? post.imageMain.alt
-                            : ""
+                          typeof post.image === "object" ? post.image.alt : ""
                         }
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"

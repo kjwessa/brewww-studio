@@ -52,50 +52,14 @@ export const Playground: CollectionConfig = {
         description: "Add the description for the playground here.",
       },
     },
-    // TODO: make sure the slug locks after being published
-    ...slugField(),
-    {
-      name: "publishedOn",
-      type: "date",
-      required: true,
-      label: "Published On",
-      admin: {
-        description:
-          "The date the Play Case Study was published. This is used to sort the Play Case Studies.",
-        position: "sidebar",
-        date: {
-          pickerAppearance: "dayAndTime",
-        },
-      },
-      hooks: {
-        beforeChange: [
-          ({ siblingData, value }) => {
-            if (siblingData._status === "published" && !value) {
-              return new Date();
-            }
-            return value;
-          },
-        ],
-      },
-    },
+
     {
       type: "tabs",
       tabs: [
         {
           name: "content",
           label: "Content",
-          fields: [
-            {
-              name: "imageMain",
-              type: "upload",
-              relationTo: "media",
-              label: "Main Image",
-              required: true,
-              admin: {
-                description: "Add the main image for the playground here.",
-              },
-            },
-          ],
+          fields: [],
         },
         {
           name: "metadata",
@@ -145,6 +109,40 @@ export const Playground: CollectionConfig = {
           ],
         },
       ],
+    },
+    // TODO: make sure the slug locks after being published
+    ...slugField(),
+    {
+      name: "publishedOn",
+      type: "date",
+      required: true,
+      label: "Published On",
+      admin: {
+        position: "sidebar",
+        date: {
+          pickerAppearance: "dayAndTime",
+        },
+      },
+      hooks: {
+        beforeChange: [
+          ({ siblingData, value }) => {
+            if (siblingData._status === "published" && !value) {
+              return new Date();
+            }
+            return value;
+          },
+        ],
+      },
+    },
+    {
+      name: "image",
+      type: "upload",
+      relationTo: "media",
+      label: "Featured Image",
+      required: true,
+      admin: {
+        position: "sidebar",
+      },
     },
   ],
 

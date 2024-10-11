@@ -42,9 +42,9 @@ export default async function PlayPage() {
             <div className="grid auto-rows-auto grid-cols-2 gap-8">
               {projects.docs.map((project) => {
                 const imageSrc =
-                  typeof project.content.imageMain === "string"
-                    ? project.content.imageMain
-                    : project.content.imageMain?.url ||
+                  typeof project.image === "string"
+                    ? project.image
+                    : project.image?.url ||
                       "https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10ccaad8365d669c95e70_63c91a92dc0c340932978b8f_image-ueno-template-04-p-3200.jpeg";
 
                 return (
@@ -58,9 +58,9 @@ export default async function PlayPage() {
                         <Image
                           className="absolute inset-0 h-full w-full"
                           src={
-                            typeof project.content.imageMain === "string"
-                              ? project.content.imageMain
-                              : project.content.imageMain?.url ||
+                            typeof project.image === "string"
+                              ? project.image
+                              : project.image?.url ||
                                 "https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10ccaad8365d669c95e70_63c91a92dc0c340932978b8f_image-ueno-template-04-p-3200.jpeg"
                           }
                           alt={"Project Thumbnail"}
