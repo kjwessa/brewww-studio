@@ -62,8 +62,8 @@ export function WorkCard({ project }: WorkCardProps) {
               <div className="w-full">
                 <div className="relative w-full overflow-hidden pb-[75%]">
                   <Image
-                    src="/bg-approach.1200.jpg"
-                    alt="Throwing Sand"
+                    src={project.imageMain.url}
+                    alt={project.imageMain.alt}
                     layout="fill"
                     objectFit="cover"
                   />
