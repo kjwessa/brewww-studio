@@ -47,6 +47,164 @@ export default async function WorkPage({
 
   return (
     <>
+      <section className="w-full bg-brand-dark-bg pt-40 text-black">
+        <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+          <div className="relative mb-5 flex w-full flex-wrap items-start justify-between lg:mb-10">
+            <div className="mb-2 hidden w-full px-2 text-white lg:mb-0 lg:flex lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+              <div className="mb-3 flex flex-wrap items-center lg:mb-20">
+                <div className="mb-2 mr-2 rounded-full bg-zinc-800 px-4 pb-1.5 pt-2 lg:mb-3 lg:mr-3">
+                  Website
+                </div>
+                <div className="mb-2 mr-2 rounded-full bg-zinc-800 px-4 pb-1.5 pt-2 lg:mb-3 lg:mr-3">
+                  SEO
+                </div>
+                <div className="mb-2 mr-2 hidden rounded-full bg-zinc-800 px-4 pb-1.5 pt-2 lg:mb-3 lg:mr-3 lg:inline-flex">
+                  Illustration
+                </div>
+                <div className="mb-2 mr-2 hidden rounded-full bg-zinc-800 px-4 pb-1.5 pt-2 lg:mb-3 lg:mr-3 lg:inline-flex">
+                  Support
+                </div>
+              </div>
+            </div>
+            <div className="w-full px-2 lg:w-[62.5%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+              <div className="relative rounded-bl-3xl lg:pb-5 lg:pl-10 lg:pr-10 lg:pt-0">
+                <svg
+                  className="absolute bottom-[0.50rem] left-0 z-30 mb-0 ml-0 h-10 w-10 text-neutral-950 lg:h-12 lg:w-12 xl:bottom-[1.50rem]"
+                  fill="rgb(14, 15, 17)"
+                  version="1.1"
+                  viewBox="0 0 100 100"
+                  x="0"
+                  xmlSpace="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                  y="0"
+                >
+                  <path
+                    d="M98.1 0h1.9v51.9h-1.9c0-27.6-22.4-50-50-50V0h50z"
+                    fill="rgb(14, 15, 17)"
+                  />
+                </svg>
+                <svg
+                  className="absolute bottom-0 right-0 z-30 -mr-0 mb-0 h-10 w-10 text-neutral-950 lg:h-12 lg:w-12"
+                  fill="rgb(14, 15, 17)"
+                  version="1.1"
+                  viewBox="0 0 100 100"
+                  x="0"
+                  xmlSpace="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                  y="0"
+                >
+                  <path
+                    d="M98.1 0h1.9v51.9h-1.9c0-27.6-22.4-50-50-50V0h50z"
+                    fill="rgb(14, 15, 17)"
+                  />
+                </svg>
+                <div className="mb-3 flex items-center text-zinc-400 xl:mb-5">
+                  <div className="font-light">2021</div>
+                  <div className="ml-3 h-1.5 w-1.5 rounded-full bg-zinc-400" />
+                  <div className="ml-3 font-light">{project.title}</div>
+                </div>
+                <h1 className="text-[4.25rem] leading-none text-white">
+                  {project.tagline}
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div className="relative w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+            <div className="relative w-full">
+              <div className="relative w-full overflow-hidden rounded-3xl bg-zinc-900 pb-[75%] lg:pb-[56.25%]">
+                <Image
+                  src={project.image.url}
+                  alt="Project header image"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  className="absolute left-0 top-0 h-full w-full max-w-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-dark-bg px-2 py-20 text-black sm:px-6 xl:px-12 min-[1450px]:px-20 min-[1800px]:px-40 min-[2100px]:px-60">
+        <div className="relative flex flex-wrap items-start justify-between">
+          <div className="relative flex w-full flex-wrap px-2 lg:mb-0 lg:w-[56.25%] lg:px-3 xl:px-4 min-[2100px]:w-2/4">
+            <div className="order-1 text-5xl text-white">
+              <div className="w-full lg:pr-16">
+                <h2 className="mb-3">Going away from the recruitment norm</h2>
+              </div>
+            </div>
+            <div className="order-2 mb-5 flex w-full lg:mb-0 lg:mt-5">
+              <div className="relative h-10 w-10 overflow-hidden rounded-lg lg:h-12 lg:w-12">
+                <div className="relative w-full overflow-hidden pt-12">
+                  <img
+                    className="absolute left-0 top-0 h-full w-full max-w-full object-cover"
+                    src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Ella-MadeByShape.jpg?w=400&h=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1704886333&s=ce9de567edaa6f19bb050b225410238e"
+                  />
+                </div>
+              </div>
+              <div className="relative ml-2 h-10 w-10 overflow-hidden rounded-lg lg:h-12 lg:w-12">
+                <div className="relative w-full overflow-hidden pt-12">
+                  <img
+                    className="absolute left-0 top-0 h-full w-full max-w-full object-cover"
+                    src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Jay-MadeByShape.jpg?w=400&h=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.4724&fp-y=0.5&dm=1704886269&s=479b46a6bc4929c3529500ff225a65e0"
+                  />
+                </div>
+              </div>
+              <div className="relative ml-2 h-10 w-10 overflow-hidden rounded-lg lg:h-12 lg:w-12">
+                <div className="relative w-full overflow-hidden pt-12">
+                  <img
+                    className="absolute left-0 top-0 h-full w-full max-w-full object-cover"
+                    src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/profile-images-2024/square/Natasia-MadeByShape.jpg?w=400&h=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1704887831&s=f35bf13bbc7bb682624324009583ed8e"
+                  />
+                </div>
+              </div>
+              <div className="relative ml-2 h-10 w-10 overflow-hidden rounded-lg lg:h-12 lg:w-12">
+                <div className="relative w-full overflow-hidden pt-12">
+                  <img
+                    className="absolute left-0 top-0 h-full w-full max-w-full object-cover"
+                    src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/profile-images-2024/portrait/Group-450.jpg?w=400&h=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1705050207&s=f9998c3bb45322a3ef7f6ef30aa94ec1"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="w-full px-2 lg:w-[43.75%] lg:px-3 xl:px-4">
+            <div className="w-full text-lg font-light text-zinc-400 xl:pr-10">
+              <p className="mb-6">
+                Brand Direction, 3D Illustration, Tone of Voice and Web Design &
+                Development for iET; a recruitment agency based in the heart of
+                Zurich, Switzerland. iETs services and clientele cover a broad
+                range from IT, to Finance to Legal, their offerings bring
+                quality and innovation to recruiting creating exciting new
+                opportunities to employers and job hunters globally – combining
+                people-based business solutions with creative imagination.
+                <br />
+              </p>
+            </div>
+            <div className="mt-6 flex w-full max-w-2xl flex-wrap justify-between pr-6 lg:mt-10 lg:pr-0 min-[2100px]:max-w-3xl">
+              <div className="mb-3 pr-8 lg:mb-0">
+                <div className="text-sm font-light text-neutral-400">
+                  Client
+                </div>
+                <div className="text-2xl text-white">{project.title}</div>
+              </div>
+              <div className="mb-3 pr-8 lg:mb-0">
+                <div className="text-sm font-light text-neutral-400">
+                  Industry
+                </div>
+                <div className="text-2xl text-white">Recruitment</div>
+              </div>
+              <div className="pr-8 lg:mb-0">
+                <div className="text-sm font-light text-neutral-400">
+                  Duration
+                </div>
+                <div className="text-2xl text-white">12 Weeks</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-zinc-950 py-40 text-center text-[11.00rem] font-bold uppercase leading-none text-neutral-400">
         <h1 className="text-white">The Merry Beggars</h1>
       </section>
