@@ -10,7 +10,7 @@ export function WorkCard({ project }: WorkCardProps) {
   return (
     <div className="relative w-full">
       <Link
-        href={`/location/${project.slug}`}
+        href={`/work/${project.slug}`}
         className="relative flex flex-col items-start"
       >
         <div className="relative mb-6 w-full cursor-pointer overflow-hidden">

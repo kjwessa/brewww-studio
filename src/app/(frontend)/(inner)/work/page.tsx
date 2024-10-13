@@ -66,8 +66,8 @@ export default async function WorkPage() {
                       />
                     </svg>
                     <h2 className="mb-5 indent-20 text-4xl text-white">
-                      Fantastic agency - MadeByShape built our new website and
-                      it was a pain free experience! Would highly recommend.
+                      Fantastic agency - Brewww built our new website and it was
+                      a pain free experience! Would highly recommend.
                     </h2>
                     <div className="flex items-end">
                       <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg bg-lime-300 text-2xl lg:h-12 lg:w-12">
