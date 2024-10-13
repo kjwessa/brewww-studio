@@ -209,6 +209,167 @@ export default async function WorkPage({
         </div>
       </section>
 
+      <section className="bg-brand-dark-bg px-2 py-16 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+        <div className="flex w-full flex-wrap">
+          <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+            <div className="relative flex w-full cursor-pointer flex-wrap">
+              <div className="absolute left-0 top-0 z-20 h-full w-full">
+                <div className="absolute left-0 top-0 flex h-full w-full items-end justify-start p-6">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-gold md:h-16 md:w-16">
+                    <svg
+                      className="h-3 w-3 md:h-4 md:w-4"
+                      fill="rgb(0, 0, 0)"
+                      height="16"
+                      viewBox="0 0 384 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M384 256L0 32v448l384-224z"
+                        fill="rgb(0, 0, 0)"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div className="relative w-full overflow-hidden rounded-3xl pb-[56.25%]">
+                <iframe
+                  className="absolute left-0 top-0 h-full w-full"
+                  src="https://player.vimeo.com/video/937680303?autoplay=1&loop=1&autopause=0&mute=1&controls=0&background=1"
+                />
+              </div>
+              <div className="absolute bottom-0 right-0 z-30 rounded-tl-3xl pl-4 pt-4">
+                <svg
+                  className="absolute bottom-0 left-[0.13rem] h-10 w-10 text-neutral-950 lg:h-12 lg:w-12"
+                  fill="rgb(14, 15, 17)"
+                  version="1.1"
+                  viewBox="0 0 100 100"
+                  x="0"
+                  xmlSpace="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                  y="0"
+                >
+                  <path
+                    d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z"
+                    fill="rgb(14, 15, 17)"
+                  />
+                </svg>
+                <svg
+                  className="absolute right-0 top-[0.13rem] h-10 w-10 text-neutral-950 lg:h-12 lg:w-12"
+                  fill="rgb(14, 15, 17)"
+                  version="1.1"
+                  viewBox="0 0 100 100"
+                  x="0"
+                  xmlSpace="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                  y="0"
+                >
+                  <path
+                    d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z"
+                    fill="rgb(14, 15, 17)"
+                  />
+                </svg>
+                <div className="relative inline-flex items-center">
+                  <div
+                    className="inline-flex"
+                    style={{
+                      outlineOffset: "2px",
+                      outlineStyle: "solid",
+                      outlineWidth: "2px",
+                    }}
+                  >
+                    <div className="inline-flex w-auto items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2 text-white">
+                      <div className="inline-flex">Play video</div>
+                    </div>
+                    <div className="-ml-1 flex h-9 w-9 items-center justify-center overflow-hidden rounded-full bg-brand-gold" />
+                  </div>
+                  <div className="absolute right-0 top-0 z-20 flex h-9 w-9 items-center justify-center text-white">
+                    <div className="relative overflow-hidden">
+                      <div>
+                        <svg
+                          className="h-3 w-3"
+                          fill="rgb(255, 255, 255)"
+                          viewBox="0 0 384 512"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M328 96h24v288h-48V177.9L81 401l-17 17-33.9-34 17-17 223-223H64V96h264z"
+                            fill="rgb(255, 255, 255)"
+                          />
+                        </svg>
+                      </div>
+                      <div className="absolute left-0 top-0">
+                        <svg
+                          className="h-3 w-3"
+                          fill="rgb(255, 255, 255)"
+                          viewBox="0 0 384 512"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M328 96h24v288h-48V177.9L81 401l-17 17-33.9-34 17-17 223-223H64V96h264z"
+                            fill="rgb(255, 255, 255)"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-dark-bg px-2 py-16 text-black sm:px-6 xl:px-12 min-[1450px]:px-20 min-[1800px]:px-40 min-[2100px]:px-60">
+        <div className="-mb-5 flex w-full flex-wrap md:mb-0">
+          <div className="mb-5 w-full px-2 md:mb-0 md:w-2/4 lg:px-3 xl:px-4">
+            <div className="h-full rounded-3xl bg-zinc-900 px-20 py-16 sm:p-32 md:p-14 lg:p-16 min-[1450px]:p-28">
+              <div className="relative w-full overflow-hidden pt-[49.75rem]">
+                <picture className="absolute left-0 top-0 h-full w-full">
+                  <img
+                    className="h-auto w-full max-w-full rounded-3xl"
+                    src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Iphone-iet.png?w=796&q=100&auto=format&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621853026&s=0fb80b51ef27935992574b7067726454"
+                  />
+                </picture>
+              </div>
+            </div>
+          </div>
+          <div className="mb-5 w-full px-2 md:mb-0 md:w-2/4 lg:px-3 xl:px-4">
+            <div className="h-full w-full overflow-hidden rounded-3xl bg-zinc-900">
+              <picture>
+                <img
+                  className="h-full w-full max-w-full object-cover"
+                  src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/poster-portrait.jpg?w=1080&q=95&auto=format&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621853570&s=d61bb7d92d11c96f184a9192eb0ccdd3"
+                />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="w-full bg-neutral-950 py-10 text-white lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
+        <div className="px-2 sm:px-6 xl:px-12 min-[1450px]:px-20 min-[1800px]:px-40 min-[2100px]:px-60">
+          <div className="flex w-full flex-wrap justify-between">
+            <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:px-3 xl:w-[43.75%] xl:px-4">
+              <h2 className="bg-neutral-950 text-5xl text-white">
+                <span className="mr-4 text-sm font-light">/ Creative</span>
+                Bespoke Illustration, Bespoke Website
+              </h2>
+            </div>
+            <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:px-3 xl:px-4">
+              <div className="w-full lg:pr-10">
+                <p className="mb-6">
+                  We developed a bespoke new website integrating a backend with
+                  a frontend fully manageable from the client's side, and
+                  pulling through live jobs from a custom API. Enhancing the
+                  user experience from a user point of view, we have brought all
+                  of iET's systems all in one place creating a fully functional
+                  and visually strong site.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-zinc-950 py-40 text-center text-[11.00rem] font-bold uppercase leading-none text-neutral-400">
         <h1 className="text-white">The Merry Beggars</h1>
       </section>
