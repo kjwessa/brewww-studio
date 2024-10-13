@@ -26,12 +26,10 @@ export default async function PlayPage({
 
   const fallbackDescription = "Add a cool description here.";
   const imageUrl =
-    typeof play.content.imageMain === "string"
-      ? play.content.imageMain
-      : play.content.imageMain?.url || "";
+    typeof play.image === "string" ? play.image : play.image?.url || "";
   const imageAlt =
-    typeof play.content.imageMain === "object"
-      ? play.content.imageMain?.alt
+    typeof play.image === "object"
+      ? play.image?.alt
       : "Featured image for play project";
 
   return (

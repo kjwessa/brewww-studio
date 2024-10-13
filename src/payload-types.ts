@@ -353,7 +353,7 @@ export interface Post {
   slug: string;
   slugLock?: boolean | null;
   publishedOn: string;
-  imageMain: string | Media;
+  image: string | Media;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -380,10 +380,6 @@ export interface Work {
   title: string;
   tagline: string;
   description?: string | null;
-  imageMain: string | Media;
-  slug: string;
-  slugLock?: boolean | null;
-  brand: string | Brand;
   metadata?: {
     testimonial?: (string | null) | Testimonial;
     relatedWorks?: (string | Work)[] | null;
@@ -393,21 +389,10 @@ export interface Work {
     image?: (string | null) | Media;
     description?: string | null;
   };
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "brands".
- */
-export interface Brand {
-  id: string;
-  title: string;
-  logoLight?: (string | null) | Media;
-  logoDark?: (string | null) | Media;
-  city: string;
-  state: string;
+  slug: string;
+  slugLock?: boolean | null;
+  image: string | Media;
+  brand: string | Brand;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -443,6 +428,21 @@ export interface Testimonial {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "brands".
+ */
+export interface Brand {
+  id: string;
+  title: string;
+  logoLight?: (string | null) | Media;
+  logoDark?: (string | null) | Media;
+  city: string;
+  state: string;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "play".
  */
 export interface Play {
@@ -450,12 +450,7 @@ export interface Play {
   title: string;
   tagline: string;
   description?: string | null;
-  slug: string;
-  slugLock?: boolean | null;
-  publishedOn: string;
-  content: {
-    imageMain: string | Media;
-  };
+  content?: {};
   metadata?: {
     relatedPlaygrounds?: (string | Play)[] | null;
   };
@@ -464,6 +459,10 @@ export interface Play {
     title?: string | null;
     description?: string | null;
   };
+  slug: string;
+  slugLock?: boolean | null;
+  publishedOn: string;
+  image: string | Media;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;

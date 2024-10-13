@@ -144,10 +144,10 @@ export const BlogPosts: CollectionConfig = {
       },
     },
     {
-      name: "imageMain",
+      name: "image",
       type: "upload",
       relationTo: "media",
-      label: "Main Image",
+      label: "Featured Image",
       required: true,
       admin: {
         position: "sidebar",
@@ -160,7 +160,7 @@ export const BlogPosts: CollectionConfig = {
   admin: {
     description:
       "Writing brings clarity. Writing is a way to make sense of the world.",
-    defaultColumns: ["title", "imageMain", "publishedOn", "updatedAt"],
+    defaultColumns: ["title", "publishedOn", "updatedAt"],
     group: "Blog Posts",
     listSearchableFields: ["title"],
     pagination: {

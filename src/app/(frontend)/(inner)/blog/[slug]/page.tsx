@@ -119,14 +119,14 @@ export default async function PostPage({
           <div className="relative aspect-[3/2] w-full">
             <Image
               src={
-                typeof post.imageMain === "string"
-                  ? post.imageMain
-                  : post.imageMain?.url || aboutImage.src
+                typeof post.image === "string"
+                  ? post.image
+                  : post.image?.url || aboutImage.src
               }
               fill
               alt={
-                typeof post.imageMain === "object"
-                  ? post.imageMain?.alt || ""
+                typeof post.image === "object"
+                  ? post.image?.alt || ""
                   : "Featured image for blog post"
               }
               className="rounded-md object-cover"
