@@ -393,6 +393,7 @@ export interface Work {
   slugLock?: boolean | null;
   image: string | Media;
   brand: string | Brand;
+  featured?: boolean | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;

@@ -12,6 +12,9 @@ export async function WorkGallery() {
       _status: {
         equals: "published",
       },
+      featured: {
+        equals: true,
+      },
     },
   });
 
@@ -41,10 +44,10 @@ export async function WorkGallery() {
                         outlineOffset: "2px",
                       }}
                     >
-                      <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-lime-300 px-5 py-2">
+                      <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
                         <div className="inline-flex">Contact us</div>
                       </div>
-                      <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-lime-300" />
+                      <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold" />
                     </a>
                     <div className="absolute right-0 top-0 z-20 flex h-9 w-9 items-center justify-center">
                       <div className="relative overflow-hidden">
