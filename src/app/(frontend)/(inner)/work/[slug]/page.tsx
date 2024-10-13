@@ -135,7 +135,7 @@ export default async function WorkPage({
           <div className="relative flex w-full flex-wrap px-2 lg:mb-0 lg:w-[56.25%] lg:px-3 xl:px-4 min-[2100px]:w-2/4">
             <div className="order-1 text-5xl text-white">
               <div className="w-full lg:pr-16">
-                <h2 className="mb-3">Going away from the recruitment norm</h2>
+                <h2 className="mb-3">Crafting a Unique Brew for Foley</h2>
               </div>
             </div>
             <div className="order-2 mb-5 flex w-full lg:mb-0 lg:mt-5">
@@ -176,14 +176,14 @@ export default async function WorkPage({
           <div className="w-full px-2 lg:w-[43.75%] lg:px-3 xl:px-4">
             <div className="w-full text-lg font-light text-zinc-400 xl:pr-10">
               <p className="mb-6">
-                Brand Direction, 3D Illustration, Tone of Voice and Web Design &
-                Development for iET; a recruitment agency based in the heart of
-                Zurich, Switzerland. iETs services and clientele cover a broad
-                range from IT, to Finance to Legal, their offerings bring
-                quality and innovation to recruiting creating exciting new
-                opportunities to employers and job hunters globally – combining
-                people-based business solutions with creative imagination.
-                <br />
+                Brand Strategy, Visual Identity, and Web Design & Development
+                for Blessed Kettle; Foley, Alabama's first microbrewery. Our
+                challenge was to create a brand that resonates with both local
+                multi-generation families and millennial tourists. We crafted a
+                unique identity that blends traditional brewing values with
+                modern appeal, positioning Blessed Kettle as a cornerstone of
+                the local community and a must-visit destination for craft beer
+                enthusiasts.
               </p>
             </div>
             <div className="mt-6 flex w-full max-w-2xl flex-wrap justify-between pr-6 lg:mt-10 lg:pr-0 min-[2100px]:max-w-3xl">
@@ -197,13 +197,13 @@ export default async function WorkPage({
                 <div className="text-sm font-light text-neutral-400">
                   Industry
                 </div>
-                <div className="text-2xl text-white">Recruitment</div>
+                <div className="text-2xl text-white">Craft Brewing</div>
               </div>
               <div className="pr-8 lg:mb-0">
                 <div className="text-sm font-light text-neutral-400">
                   Duration
                 </div>
-                <div className="text-2xl text-white">12 Weeks</div>
+                <div className="text-2xl text-white">16 Weeks</div>
               </div>
             </div>
           </div>
@@ -346,24 +346,27 @@ export default async function WorkPage({
           </div>
         </div>
       </section>
+
       <section className="w-full bg-brand-dark-bg py-10 text-white lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
         <div className="px-2 sm:px-6 xl:px-12 min-[1450px]:px-20 min-[1800px]:px-40 min-[2100px]:px-60">
           <div className="flex w-full flex-wrap justify-between">
             <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:px-3 xl:w-[43.75%] xl:px-4">
               <h2 className="text-5xl text-white">
                 <span className="mr-4 text-sm font-light">/ Creative</span>
-                Bespoke Illustration, Bespoke Website
+                Catholic Identity, Beach Vibes
               </h2>
             </div>
             <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:px-3 xl:px-4">
               <div className="w-full lg:pr-10">
                 <p className="mb-6">
-                  We developed a bespoke new website integrating a backend with
-                  a frontend fully manageable from the client's side, and
-                  pulling through live jobs from a custom API. Enhancing the
-                  user experience from a user point of view, we have brought all
-                  of iET's systems all in one place creating a fully functional
-                  and visually strong site.
+                  For Blessed Kettle Brewing, we crafted a unique brand identity
+                  that embraces their Catholic roots while remaining accessible
+                  to a broad audience. Our focus was on highlighting their
+                  exceptional craft beers through a custom mark and innovative
+                  styling. Faced with limited examples to draw from, we created
+                  a design that captures a relaxed beach atmosphere, perfectly
+                  balancing the brewery's faith-based foundation with a
+                  welcoming, coastal aesthetic.
                 </p>
               </div>
             </div>
@@ -393,22 +396,23 @@ export default async function WorkPage({
             <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:w-[43.75%] xl:pl-4 xl:pr-4">
               <div className="mb-3 inline-flex w-auto items-center xl:absolute xl:left-[1.00rem] xl:top-[0.75rem] xl:mb-0">
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />
-                <div className="ml-2 font-light text-white">Different</div>
+                <div className="ml-2 font-light text-white">Brand Identity</div>
               </div>
               <h2 className="indent-32 text-5xl text-white">
-                3D Character Illustrations
+                Faith, Community, and Craft
               </h2>
             </div>
             <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="w-full lg:pr-10">
                 <p className="mb-6">
-                  iET are passionate about the quality of their work, whilst
-                  also being fun and relaxed: a place where there is room not
-                  just for professionalism but also creativity, innovation, and
-                  humor. We created 3D Illustrations to represent the culture
-                  and Team at iET, with a genuine love for their work,
-                  guaranteeing transparency, certainty, quality, and
-                  professionalism.
+                  For Blessed Kettle Brewing, we crafted a brand identity that
+                  seamlessly blends their deep Catholic theology with an
+                  accessible, welcoming aesthetic. The challenge was to create a
+                  brand that resonates with the local Foley community while also
+                  appealing to beach-going tourists. Our design incorporates
+                  subtle religious symbolism with a laid-back, coastal vibe,
+                  resulting in a unique identity that reflects the brewery's
+                  values and attracts a diverse clientele.
                 </p>
               </div>
             </div>
@@ -565,51 +569,23 @@ export default async function WorkPage({
             <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:w-[43.75%] xl:pl-4 xl:pr-4">
               <div className="mb-3 inline-flex w-auto items-center xl:absolute xl:left-[1.00rem] xl:top-[0.75rem] xl:mb-0">
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />
-                <div className="ml-2 font-light text-white">Branding</div>
+                <div className="ml-2 font-light text-white">Craft</div>
               </div>
               <h2 className="indent-32 text-5xl text-white">
-                Brand Direction with purpose
+                Brand Direction with Purpose
               </h2>
             </div>
             <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="w-full lg:pr-10">
                 <p className="mb-6">
-                  To resonate with iET's target audience and bring it in line
-                  with their Teams nature, we wanted to bring to life the idea
-                  of being 'People People' and show the relaxed, fun side that
-                  iET brings to its clients. To do this, we transformed its look
-                  and feel, introducing a fun display serif, 3D illustration,
-                  and a new confident yet colloquial tone of voice to immerse
-                  the user in the experience of the site.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="w-full bg-neutral-950 py-10 text-black lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
-        <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
-          <div className="flex w-full flex-wrap justify-between">
-            <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:w-[43.75%] xl:pl-4 xl:pr-4">
-              <div className="mb-3 inline-flex w-auto items-center xl:absolute xl:left-[1.00rem] xl:top-[0.75rem] xl:mb-0">
-                <div className="h-1.5 w-1.5 rounded-full bg-white" />
-                <div className="ml-2 font-light text-white">Branding</div>
-              </div>
-              <h2 className="indent-32 text-5xl text-white">
-                Brand Direction with purpose
-              </h2>
-            </div>
-            <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-              <div className="w-full lg:pr-10">
-                <p className="mb-6">
-                  To resonate with iET's target audience and bring it in line
-                  with their Teams nature, we wanted to bring to life the idea
-                  of being 'People People' and show the relaxed, fun side that
-                  iET brings to its clients. To do this, we transformed its look
-                  and feel, introducing a fun display serif, 3D illustration,
-                  and a new confident yet colloquial tone of voice to immerse
-                  the user in the experience of the site.
+                  To capture the essence of Blessed Kettle Brewing, a Foley, AL
+                  microbrewery, we focused on their commitment to craft and
+                  community. We developed a brand voice that speaks to their
+                  local roots and artisanal approach. By introducing warm,
+                  inviting visuals and a conversational tone, we've created a
+                  digital presence that immerses visitors in the Blessed Kettle
+                  experience, showcasing their dedication to quality brews and
+                  local traditions.
                 </p>
               </div>
             </div>
@@ -766,6 +742,35 @@ export default async function WorkPage({
       </section>
 
       <BeforeAfter />
+
+      <section className="w-full bg-neutral-950 py-10 text-black lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
+        <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+          <div className="flex w-full flex-wrap justify-between">
+            <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:w-[43.75%] xl:pl-4 xl:pr-4">
+              <div className="mb-3 inline-flex w-auto items-center xl:absolute xl:left-[1.00rem] xl:top-[0.75rem] xl:mb-0">
+                <div className="h-1.5 w-1.5 rounded-full bg-white" />
+                <div className="ml-2 font-light text-white">Craft</div>
+              </div>
+              <h2 className="indent-32 text-5xl text-white">
+                Tradition, Quality, and Local Flavor
+              </h2>
+            </div>
+            <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+              <div className="w-full lg:pr-10">
+                <p className="mb-6">
+                  Blessed Kettle Brewing, a microbrewery in Foley, AL, needed
+                  assistance in developing a brand voice that resonates with
+                  their local audience. We crafted content that not only
+                  enhances their SEO but also clearly communicates their unique
+                  brewing process and commitment to quality. The result is a
+                  warm, inviting tone that sets them apart in the competitive
+                  craft beer market.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-zinc-950 py-40 text-center text-[11.00rem] font-bold uppercase leading-none text-neutral-400">
         <h1 className="text-white">The Merry Beggars</h1>
