@@ -15,6 +15,7 @@ import AudioImageFive from "/public/images/audio-five.jpg";
 import AudioImageSix from "/public/images/audio-six.jpg";
 import AudioImageSeven from "/public/images/audio-seven.jpg";
 import AudioImageEight from "/public/images/audio-eight.jpg";
+import { BeforeAfter } from "./BeforeAfter";
 
 export async function generateStaticParams() {
   const payload = await getPayloadHMR({ config: configPromise });
@@ -345,11 +346,11 @@ export default async function WorkPage({
           </div>
         </div>
       </section>
-      <section className="w-full bg-neutral-950 py-10 text-white lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
+      <section className="w-full bg-brand-dark-bg py-10 text-white lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
         <div className="px-2 sm:px-6 xl:px-12 min-[1450px]:px-20 min-[1800px]:px-40 min-[2100px]:px-60">
           <div className="flex w-full flex-wrap justify-between">
             <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:px-3 xl:w-[43.75%] xl:px-4">
-              <h2 className="bg-neutral-950 text-5xl text-white">
+              <h2 className="text-5xl text-white">
                 <span className="mr-4 text-sm font-light">/ Creative</span>
                 Bespoke Illustration, Bespoke Website
               </h2>
@@ -369,6 +370,402 @@ export default async function WorkPage({
           </div>
         </div>
       </section>
+
+      <section className="bg-neutral-950 px-2 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+        <div className="flex w-full flex-wrap px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="h-full w-full overflow-hidden rounded-3xl bg-zinc-900">
+            <div className="relative w-full overflow-hidden pt-[66.00rem]">
+              <picture className="absolute left-0 top-0 h-full w-full">
+                <img
+                  className="h-full w-full max-w-full object-cover"
+                  src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Billboard.jpg?w=1920&q=95&auto=format&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621853760&s=93dd3e38bf63aa5bbc8fc2177f457a2f"
+                  alt="iET Billboard"
+                />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full bg-neutral-950 py-10 text-black lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
+        <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+          <div className="flex w-full flex-wrap justify-between">
+            <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:w-[43.75%] xl:pl-4 xl:pr-4">
+              <div className="mb-3 inline-flex w-auto items-center xl:absolute xl:left-[1.00rem] xl:top-[0.75rem] xl:mb-0">
+                <div className="h-1.5 w-1.5 rounded-full bg-white" />
+                <div className="ml-2 font-light text-white">Different</div>
+              </div>
+              <h2 className="indent-32 text-5xl text-white">
+                3D Character Illustrations
+              </h2>
+            </div>
+            <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+              <div className="w-full lg:pr-10">
+                <p className="mb-6">
+                  iET are passionate about the quality of their work, whilst
+                  also being fun and relaxed: a place where there is room not
+                  just for professionalism but also creativity, innovation, and
+                  humor. We created 3D Illustrations to represent the culture
+                  and Team at iET, with a genuine love for their work,
+                  guaranteeing transparency, certainty, quality, and
+                  professionalism.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-neutral-950 px-2 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+        <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="relative w-full overflow-hidden rounded-3xl bg-zinc-900 py-10 lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
+            <div>
+              <div className="relative m-auto w-full overflow-hidden">
+                <div className="relative flex h-full w-full">
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                    <div className="w-full">
+                      <div className="relative w-full overflow-hidden pt-[44.75rem]">
+                        <picture className="absolute left-0 top-0 h-full w-full">
+                          <source type="image/webp" />
+                          <img
+                            className="h-auto w-full max-w-full"
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/11.2-copy.jpg?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621939072&s=6f6247c65cf05a054fc81b79250655c3"
+                          />
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                    <div className="w-full">
+                      <div className="relative w-full overflow-hidden pt-[44.75rem]">
+                        <picture className="absolute left-0 top-0 h-full w-full">
+                          <source type="image/webp" />
+                          <img
+                            className="h-auto w-full max-w-full"
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/11.1-copy.jpg?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621939070&s=fd3a9391a4e405fb7c12a53fa9258392"
+                          />
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                    <div className="w-full">
+                      <div className="relative w-full overflow-hidden pt-[44.75rem]">
+                        <picture className="absolute left-0 top-0 h-full w-full">
+                          <source type="image/webp" />
+                          <img
+                            className="h-auto w-full max-w-full"
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/11-copy.jpg?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621939068&s=625421548bb762f8c8eff067987afa30"
+                          />
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                    <div className="w-full">
+                      <div className="relative w-full overflow-hidden pt-[44.75rem]">
+                        <picture className="absolute left-0 top-0 h-full w-full">
+                          <source type="image/webp" />
+                          <img
+                            className="h-auto w-full max-w-full"
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/09.3-copy.jpg?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621939066&s=3146f2ef76ffbc18ba63d5022d37c5ec"
+                          />
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                    <div className="w-full">
+                      <div className="relative w-full overflow-hidden pt-[44.75rem]">
+                        <picture className="absolute left-0 top-0 h-full w-full">
+                          <source type="image/webp" />
+                          <img
+                            className="h-auto w-full max-w-full"
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/09.2-copy.jpg?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621939063&s=0c49ca88f6f333baf95f2b3e39adead6"
+                          />
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                    <div className="w-full">
+                      <div className="relative w-full overflow-hidden pt-[44.75rem]">
+                        <picture className="absolute left-0 top-0 h-full w-full">
+                          <source type="image/webp" />
+                          <img
+                            className="h-auto w-full max-w-full"
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/09.1-copy.jpg?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621939061&s=8068951daf2819f732fad8127f58d05f"
+                          />
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                    <div className="w-full">
+                      <div className="relative w-full overflow-hidden pt-[44.75rem]">
+                        <picture className="absolute left-0 top-0 h-full w-full">
+                          <source type="image/webp" />
+                          <img
+                            className="h-auto w-full max-w-full"
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/09-copy.jpg?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621939059&s=ce8281da9130414e34b25497975d04d7"
+                          />
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-10 flex w-full justify-center text-white">
+                <div className="flex items-center">
+                  <a
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-neutral-950"
+                    href="https://madebyshape.co.uk/#"
+                  >
+                    <svg
+                      className="h-3 w-3 cursor-pointer"
+                      fill="rgb(255, 255, 255)"
+                      height="16"
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M25.4 278.6L2.7 256l22.6-22.6 144-144L192 66.7l45.2 45.3-22.6 22.6-89.4 89.4H448v64H125.3l89.4 89.4 22.5 22.6-45.2 45.3-22.6-22.6-144-144z"
+                        fill="rgb(255, 255, 255)"
+                      />
+                    </svg>
+                  </a>
+
+                  <a
+                    className="ml-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-neutral-950"
+                    href="https://madebyshape.co.uk/#"
+                  >
+                    <svg
+                      className="h-3 w-3 cursor-pointer"
+                      fill="rgb(255, 255, 255)"
+                      height="16"
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M422.6 278.6l22.7-22.6-22.6-22.6-144-144L256 66.7 210.8 112l22.6 22.6 89.4 89.4H0v64h322.7l-89.4 89.4-22.5 22.6 45.2 45.3 22.6-22.6 144-144z"
+                        fill="rgb(255, 255, 255)"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full bg-neutral-950 py-10 text-black lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
+        <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+          <div className="flex w-full flex-wrap justify-between">
+            <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:w-[43.75%] xl:pl-4 xl:pr-4">
+              <div className="mb-3 inline-flex w-auto items-center xl:absolute xl:left-[1.00rem] xl:top-[0.75rem] xl:mb-0">
+                <div className="h-1.5 w-1.5 rounded-full bg-white" />
+                <div className="ml-2 font-light text-white">Branding</div>
+              </div>
+              <h2 className="indent-32 text-5xl text-white">
+                Brand Direction with purpose
+              </h2>
+            </div>
+            <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+              <div className="w-full lg:pr-10">
+                <p className="mb-6">
+                  To resonate with iET's target audience and bring it in line
+                  with their Teams nature, we wanted to bring to life the idea
+                  of being 'People People' and show the relaxed, fun side that
+                  iET brings to its clients. To do this, we transformed its look
+                  and feel, introducing a fun display serif, 3D illustration,
+                  and a new confident yet colloquial tone of voice to immerse
+                  the user in the experience of the site.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full bg-neutral-950 py-10 text-black lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
+        <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+          <div className="flex w-full flex-wrap justify-between">
+            <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:w-[43.75%] xl:pl-4 xl:pr-4">
+              <div className="mb-3 inline-flex w-auto items-center xl:absolute xl:left-[1.00rem] xl:top-[0.75rem] xl:mb-0">
+                <div className="h-1.5 w-1.5 rounded-full bg-white" />
+                <div className="ml-2 font-light text-white">Branding</div>
+              </div>
+              <h2 className="indent-32 text-5xl text-white">
+                Brand Direction with purpose
+              </h2>
+            </div>
+            <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+              <div className="w-full lg:pr-10">
+                <p className="mb-6">
+                  To resonate with iET's target audience and bring it in line
+                  with their Teams nature, we wanted to bring to life the idea
+                  of being 'People People' and show the relaxed, fun side that
+                  iET brings to its clients. To do this, we transformed its look
+                  and feel, introducing a fun display serif, 3D illustration,
+                  and a new confident yet colloquial tone of voice to immerse
+                  the user in the experience of the site.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-neutral-950 px-2 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+        <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="relative w-full overflow-hidden rounded-3xl bg-zinc-900 py-10 lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
+            <div>
+              <div className="relative m-auto w-full overflow-hidden">
+                <div className="relative flex h-full w-full">
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                    <div className="w-full">
+                      <div className="relative w-full overflow-hidden pt-[33.75rem]">
+                        <picture className="absolute left-0 top-0 h-full w-full">
+                          <source
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-6.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862260&s=02ff2f62f0eed704232325e9a82aa85e"
+                            type="image/webp"
+                          />
+                          <img
+                            className="h-auto w-full max-w-full"
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-6.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862260&s=02ff2f62f0eed704232325e9a82aa85e"
+                          />
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                    <div className="w-full">
+                      <div className="relative w-full overflow-hidden pt-[33.75rem]">
+                        <picture className="absolute left-0 top-0 h-full w-full">
+                          <source
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-4.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862255&s=71717867d1f9651c7f99b5db5e428d82"
+                            type="image/webp"
+                          />
+                          <img
+                            className="h-auto w-full max-w-full"
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-4.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862255&s=71717867d1f9651c7f99b5db5e428d82"
+                          />
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                    <div className="w-full">
+                      <div className="relative w-full overflow-hidden pt-[33.75rem]">
+                        <picture className="absolute left-0 top-0 h-full w-full">
+                          <source
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-5.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862257&s=b95fb9939e8919a53721a3536760bf0c"
+                            type="image/webp"
+                          />
+                          <img
+                            className="h-auto w-full max-w-full"
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-5.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862257&s=b95fb9939e8919a53721a3536760bf0c"
+                          />
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                    <div className="w-full">
+                      <div className="relative w-full overflow-hidden pt-[33.75rem]">
+                        <picture className="absolute left-0 top-0 h-full w-full">
+                          <source
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-3.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862253&s=b0b226990cad5209e2c7837caf593d69"
+                            type="image/webp"
+                          />
+                          <img
+                            className="h-auto w-full max-w-full"
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-3.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862253&s=b0b226990cad5209e2c7837caf593d69"
+                          />
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                    <div className="w-full">
+                      <div className="relative w-full overflow-hidden pt-[33.75rem]">
+                        <picture className="absolute left-0 top-0 h-full w-full">
+                          <source
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-2.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862251&s=f17aecdbb70e62e73735efc367d4d51a"
+                            type="image/webp"
+                          />
+                          <img
+                            className="h-auto w-full max-w-full"
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-2.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862251&s=f17aecdbb70e62e73735efc367d4d51a"
+                          />
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                    <div className="w-full">
+                      <div className="relative w-full overflow-hidden pt-[33.75rem]">
+                        <picture className="absolute left-0 top-0 h-full w-full">
+                          <source
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-1.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862248&s=fe0fa50d4b15db9b3450973601b51599"
+                            type="image/webp"
+                          />
+                          <img
+                            className="h-auto w-full max-w-full"
+                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-1.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862248&s=fe0fa50d4b15db9b3450973601b51599"
+                          />
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-10 flex w-full justify-center text-white">
+                <div className="flex items-center">
+                  <a
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-neutral-950"
+                    href="https://madebyshape.co.uk/#"
+                  >
+                    <svg
+                      className="h-3 w-3 cursor-pointer"
+                      fill="rgb(255, 255, 255)"
+                      height="16"
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M25.4 278.6L2.7 256l22.6-22.6 144-144L192 66.7l45.2 45.3-22.6 22.6-89.4 89.4H448v64H125.3l89.4 89.4 22.5 22.6-45.2 45.3-22.6-22.6-144-144z"
+                        fill="rgb(255, 255, 255)"
+                      />
+                    </svg>
+                  </a>
+
+                  <a
+                    className="ml-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-neutral-950"
+                    href="https://madebyshape.co.uk/#"
+                  >
+                    <svg
+                      className="h-3 w-3 cursor-pointer"
+                      fill="rgb(255, 255, 255)"
+                      height="16"
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M422.6 278.6l22.7-22.6-22.6-22.6-144-144L256 66.7 210.8 112l22.6 22.6 89.4 89.4H0v64h322.7l-89.4 89.4-22.5 22.6 45.2 45.3 22.6-22.6 144-144z"
+                        fill="rgb(255, 255, 255)"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <BeforeAfter />
 
       <section className="bg-zinc-950 py-40 text-center text-[11.00rem] font-bold uppercase leading-none text-neutral-400">
         <h1 className="text-white">The Merry Beggars</h1>
