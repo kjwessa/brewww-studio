@@ -113,7 +113,11 @@ export default async function WorkPage({
             <div className="relative w-full">
               <div className="relative w-full overflow-hidden rounded-3xl bg-zinc-900 pb-[75%] lg:pb-[56.25%]">
                 <Image
-                  src={project.image.url}
+                  src={
+                    typeof project.image === "string"
+                      ? project.image
+                      : project.image?.url || ""
+                  }
                   alt="Project header image"
                   fill
                   style={{ objectFit: "cover" }}
