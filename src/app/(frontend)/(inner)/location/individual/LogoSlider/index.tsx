@@ -4,8 +4,9 @@ import Image from "next/image";
 
 // TODO: add the animation to the logos
 
-interface LogoItem {
-  url: string;
+interface Brand {
+  id: string;
+  logoLight?: string;
 }
 
 const LogoItem = ({ logo }: { logo: string }) => {
@@ -152,15 +153,29 @@ export async function LogoSlider() {
               id="logo-grid"
             >
               <div className="flex h-full w-full" id="top-row">
-                {brands.docs.slice(0, 8).map((brand) => (
-                  <LogoItem key={brand.id} logo={brand.logoLight?.url || ""} />
+                {brands.docs.slice(0, 8).map((brand: Brand) => (
+                  <LogoItem
+                    key={brand.id}
+                    logo={
+                      typeof brand.logoLight === "string"
+                        ? brand.logoLight
+                        : brand.logoLight?.url || ""
+                    }
+                  />
                 ))}
               </div>
             </div>
             <div className="mx-auto mt-6 w-full overflow-hidden text-white lg:mt-8">
               <div className="flex h-full w-full" id="bottom-row">
-                {brands.docs.slice(9, 18).map((brand) => (
-                  <LogoItem key={brand.id} logo={brand.logoLight?.url || ""} />
+                {brands.docs.slice(9, 18).map((brand: Brand) => (
+                  <LogoItem
+                    key={brand.id}
+                    logo={
+                      typeof brand.logoLight === "string"
+                        ? brand.logoLight
+                        : brand.logoLight?.url || ""
+                    }
+                  />
                 ))}
               </div>
             </div>
