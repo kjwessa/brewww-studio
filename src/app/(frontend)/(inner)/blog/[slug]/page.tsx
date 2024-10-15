@@ -13,12 +13,15 @@ import TableOfContents from "@/components/TableOfContents/index";
 import { LexicalNode } from "@/components/RichText/nodeFormat";
 
 export async function generateStaticParams() {
+  console.log("Generating static params for blog posts");
   const payload = await getPayloadHMR({ config: configPromise });
+  console.log("Fetching blog posts from payload");
   const posts = await payload.find({
     collection: "posts",
     limit: 1000,
     overrideAccess: false,
   });
+  console.log(`Found ${posts.docs?.length || 0} blog posts`);
   return (
     posts.docs?.map(({ slug }) => ({
       params: { slug },
@@ -32,14 +35,21 @@ export default async function PostPage({
   params: Promise<{ slug: string }>;
 }) {
   const resolvedParams = await params;
+  console.log("Rendering PostPage");
+  console.log(`Params: ${JSON.stringify(resolvedParams)}`);
   if (!resolvedParams.slug) {
+    console.log("No slug found in params, redirecting to 404");
     notFound();
   }
 
+  console.log(`Querying blog post with slug: ${resolvedParams.slug}`);
   const post = await queryPostBySlug({ slug: resolvedParams.slug });
   if (!post) {
+    console.log("Blog post not found, redirecting to 404");
     notFound();
   }
+
+  console.log(`Blog post found: ${post.title}`);
 
   return (
     <article className="bg-white pt-24 text-black">
@@ -164,6 +174,7 @@ async function queryPostBySlug({
 }): Promise<Post | null> {
   const payload = await getPayloadHMR({ config: configPromise });
   try {
+    console.log("Executing payload.find query");
     const result = await payload.find({
       collection: "posts",
       limit: 1,
@@ -173,8 +184,10 @@ async function queryPostBySlug({
         },
       },
     });
+    console.log("Query result:", result);
     return result.docs[0] || null;
   } catch (error) {
+    console.error("Error querying blog post:", error);
     return null;
   }
 }

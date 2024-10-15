@@ -25,6 +25,7 @@ export interface Config {
     technologies: Technology;
     locations: Location;
     results: Result;
+    team: Team;
     users: User;
     forms: Form;
     'form-submissions': FormSubmission;
@@ -581,6 +582,19 @@ export interface Result {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "team".
+ */
+export interface Team {
+  id: string;
+  title: string;
+  slug: string;
+  slugLock?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface User {
@@ -679,6 +693,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'results';
         value: string | Result;
+      } | null)
+    | ({
+        relationTo: 'team';
+        value: string | Team;
       } | null)
     | ({
         relationTo: 'users';
