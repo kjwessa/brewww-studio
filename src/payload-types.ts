@@ -589,6 +589,8 @@ export interface Team {
   title: string;
   slug: string;
   slugLock?: boolean | null;
+  role: string;
+  image?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
