@@ -196,7 +196,12 @@ export default async function WorkPage() {
                           {testimonials.docs[0].author}
                         </div>
                         <div className="text-sm font-light text-zinc-400">
-                          {testimonials.docs[0].brand.title}
+                          {typeof testimonials.docs[0].brand === "object" &&
+                          testimonials.docs[0].brand?.title
+                            ? testimonials.docs[0].brand.title
+                            : typeof testimonials.docs[0].brand === "string"
+                              ? testimonials.docs[0].brand
+                              : null}
                         </div>
                       </div>
                     </div>
