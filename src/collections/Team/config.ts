@@ -24,6 +24,24 @@ export const Team: CollectionConfig = {
       label: "Full Name",
     },
     ...slugField(),
+    {
+      name: "role",
+      type: "text",
+      required: true,
+      label: "Role",
+      admin: {
+        position: "sidebar",
+      },
+    },
+    {
+      name: "image",
+      type: "upload",
+      relationTo: "media",
+      label: "Featured Image",
+      admin: {
+        position: "sidebar",
+      },
+    },
   ],
 
   //* Admin Settings
