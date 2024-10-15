@@ -1,13 +1,7 @@
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import configPromise from "@payload-config";
 import Image from "next/image";
-
-// TODO: add the animation to the logos
-
-interface Brand {
-  id: string;
-  logoLight?: string;
-}
+import { Brand, Media } from "@/payload-types";
 
 const LogoItem = ({ logo }: { logo: string }) => {
   return (
@@ -159,7 +153,7 @@ export async function LogoSlider() {
                     logo={
                       typeof brand.logoLight === "string"
                         ? brand.logoLight
-                        : brand.logoLight?.url || ""
+                        : (brand.logoLight as Media)?.url || ""
                     }
                   />
                 ))}
@@ -173,7 +167,7 @@ export async function LogoSlider() {
                     logo={
                       typeof brand.logoLight === "string"
                         ? brand.logoLight
-                        : brand.logoLight?.url || ""
+                        : (brand.logoLight as Media)?.url || ""
                     }
                   />
                 ))}
