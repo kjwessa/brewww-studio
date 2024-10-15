@@ -6,7 +6,7 @@ export async function WorkSlider() {
   const payload = await getPayloadHMR({ config: configPromise });
   const projects = await payload.find({
     collection: "work",
-    limit: 6,
+    limit: 3,
     sort: "-publishedOn",
     where: {
       _status: {
@@ -39,10 +39,10 @@ export async function WorkSlider() {
                   outlineOffset: "2px",
                 }}
               >
-                <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-lime-300 px-5 py-2">
+                <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
                   <div className="inline-flex">View our work</div>
                 </div>
-                <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-lime-300" />
+                <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold" />
               </a>
               <div className="absolute right-0 top-0 z-20 flex h-9 w-9 items-center justify-center">
                 <div className="relative overflow-hidden">

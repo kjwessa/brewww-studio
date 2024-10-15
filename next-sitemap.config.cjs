@@ -21,5 +21,6 @@ module.exports = {
     "/faq",
     "/location",
     "/location/*",
+    "/team/*",
   ],
 };
