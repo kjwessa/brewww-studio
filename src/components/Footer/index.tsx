@@ -148,13 +148,13 @@ export default async function Footer() {
               <div className="mb-3 font-light text-white">Get in touch</div>
 
               <Link
-                className="relative mb-1 inline-block inline-flex min-w-max items-center text-zinc-400 opacity-70 after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:opacity-100 hover:after:w-full"
+                className="relative mb-1 inline-flex min-w-max items-center text-zinc-400 opacity-70 after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:opacity-100 hover:after:w-full"
                 href="tel:01942894596"
               >
                 <div className="ml-4 cursor-pointer">800-BREW-YOU</div>
               </Link>
               <Link
-                className="relative inline-block inline-flex min-w-max items-center text-zinc-400 opacity-70 after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:opacity-100 hover:after:w-full"
+                className="relative inline-flex min-w-max items-center text-zinc-400 opacity-70 after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:opacity-100 hover:after:w-full"
                 href="mailto:hello@brewww.studio"
               >
                 <div className="ml-4 cursor-pointer">hello@brewww.studio</div>
@@ -176,15 +176,15 @@ export default async function Footer() {
             </div>
           </div>
         </div>
-        <div className="mb-10 hidden w-full justify-center text-[10.63rem] font-light leading-none text-white lg:mb-5 lg:flex">
+        <div className="mb-10 hidden w-full justify-center text-[11rem] font-light leading-none text-white lg:mb-5 lg:flex">
           <div className="text-center">
             unbounded{" "}
             <span className="-mr-3 -mt-11 inline-block align-middle">
               <Image
                 src={BrewwwMark}
                 alt="Brewww Mark"
-                width={125}
-                height={125}
+                width={135}
+                height={135}
                 className="inline-block"
               />
             </span>
@@ -192,7 +192,14 @@ export default async function Footer() {
           </div>
         </div>
         <div className="flex w-full flex-wrap items-center justify-between px-6 lg:pl-20 lg:pr-20 xl:pl-24 xl:pr-24">
-          <div className="inline-flex items-center pr-8">
+          <div className="inline-flex items-center">
+            <Image
+              src="/images/brewww-logotype-white.png"
+              alt="Brewww Logo"
+              width={75}
+              height={75}
+              className="-mt-2"
+            />
             <div className="inline-flex w-auto items-center text-sm text-zinc-400 lg:ml-5 lg:mr-0">
               © Brewww, LLC {getCurrentYear()}
               <div className="mx-2 flex items-center">/</div>
