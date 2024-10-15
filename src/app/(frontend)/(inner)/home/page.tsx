@@ -37,8 +37,6 @@ export default async function Home() {
     },
   });
 
-  console.log(projects);
-
   return (
     <>
       <section className="flex hidden min-h-[90vh] items-center justify-center bg-brand-dark-bg text-zinc-50">
@@ -238,125 +236,6 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="bg-brand-dark-bg text-zinc-50">
-        <div className="container mx-auto px-4 py-24">
-          <div className="mb-12">
-            <div className="mb-2 font-bold uppercase">
-              <span className="text-orange-400">/</span> Featured insights
-            </div>
-            <h2 className="text-2xl font-light leading-tight sm:text-3xl md:text-4xl lg:text-[3.63rem]">
-              Branding, tech, and business{" "}
-              <strong className="font-extrabold">insights.</strong>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-            <div className="flex flex-col">
-              <a
-                href="/insights/project-launch-ies-national-sustainable-lighting-by-design"
-                className="group"
-              >
-                <div className="relative mb-4 h-96 w-full overflow-hidden rounded-md">
-                  <Image
-                    alt="IES National Sustainable Lighting by Design"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    src="/ies-mark.jpg"
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
-                <div className="mb-2">
-                  <span className="relative inline-block font-bold">
-                    Branding
-                    <span className="absolute bottom-0 left-0 h-1 w-full scale-x-0 transform bg-orange-400 transition-all duration-300 group-hover:scale-x-100"></span>
-                  </span>
-                </div>
-                <h4 className="mb-2 text-2xl font-bold transition-colors duration-300 group-hover:text-orange-400">
-                  Project Launch: IES National - Sustainable Lighting by Design
-                </h4>
-              </a>
-            </div>
-
-            <div className="flex flex-col">
-              <a
-                href="/insights/the-importance-of-a-mobile-friendly-website-and-how-to-test-yours"
-                className="group"
-              >
-                <div className="relative mb-4 h-96 w-full overflow-hidden rounded-md">
-                  <Image
-                    alt="Mobile-friendly website importance"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    src="/5f629a4559811072bbfe7192_mobile-friendly-hero.1920.jpg"
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
-                <div className="mb-2">
-                  <span className="relative inline-block font-bold">
-                    Web
-                    <span className="absolute bottom-0 left-0 h-1 w-full scale-x-0 transform bg-orange-400 transition-all duration-300 group-hover:scale-x-100"></span>
-                  </span>
-                </div>
-                <h4 className="mb-2 text-2xl font-bold transition-colors duration-300 group-hover:text-orange-400">
-                  The Importance of a Mobile-Friendly Website (and How to Test
-                  Yours)
-                </h4>
-              </a>
-            </div>
-            <div className="flex flex-col">
-              <a
-                href="/insights/what-are-the-differences-between-branding-and-marketing"
-                className="group"
-              >
-                <div className="relative mb-4 h-96 w-full overflow-hidden rounded-md">
-                  <Image
-                    alt="Branding vs Marketing"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    src="/5f4ae76042e3d8ce344a2b23_mountain-and-couch.1920.jpg"
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
-                <div className="mb-2">
-                  <span className="relative inline-block font-bold">
-                    Branding
-                    <span className="absolute bottom-0 left-0 h-1 w-full scale-x-0 transform bg-orange-400 transition-all duration-300 group-hover:scale-x-100"></span>
-                  </span>
-                </div>
-                <h4 className="mb-2 text-2xl font-bold transition-colors duration-300 group-hover:text-orange-400">
-                  What Are the Differences Between Branding and Marketing?
-                </h4>
-              </a>
-            </div>
-            <div className="flex flex-col">
-              <a
-                href="/insights/savoring-the-sweetness-meet-the-leadership-of-brewww"
-                className="group"
-              >
-                <div className="relative mb-4 h-96 w-full overflow-hidden rounded-md">
-                  <Image
-                    alt="Brewww Leadership"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    src="/bride-and-groom-smiling.jpg"
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
-                <div className="mb-2">
-                  <span className="relative inline-block font-bold">
-                    Studio
-                    <span className="absolute bottom-0 left-0 h-1 w-full scale-x-0 transform bg-orange-400 transition-all duration-300 group-hover:scale-x-100"></span>
-                  </span>
-                </div>
-                <h4 className="mb-2 text-2xl font-bold transition-colors duration-300 group-hover:text-orange-400">
-                  Savoring the Sweetness: Meet the Leadership of Brewww
-                </h4>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="bg-white px-6 py-24 font-light text-neutral-900 sm:px-12 sm:py-36 md:px-24">
         <div className="mx-auto max-w-[62.50rem]">
           <div className="grid grid-cols-6 gap-4">
@@ -458,59 +337,6 @@ export default async function Home() {
                   </Link>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-sky-50 pt-5 min-[766px]:pt-8">
-        <div className="mx-auto flex max-w-3xl flex-col items-center justify-center px-8 py-12 text-center min-[766px]:pb-16 min-[766px]:pl-10 min-[766px]:pr-10 min-[766px]:pt-16 min-[1025px]:pb-20 min-[1025px]:pt-20">
-          <div className="text-[3.5rem] leading-tight text-black">
-            <p>
-              Got a creative <em className="italic">challenge</em> we
-            </p>
-            <p>
-              should <span className="underline">hear</span>?
-            </p>
-          </div>
-
-          <Link
-            href=""
-            className="mt-8 inline-block items-center justify-center overflow-hidden rounded-full bg-stone-900 py-3 pl-6 pr-12 text-xl text-white min-[766px]:mt-10 min-[766px]:pb-3.5 min-[766px]:pl-8 min-[766px]:pr-8 min-[766px]:pt-3.5 min-[1025px]:mt-16"
-          >
-            Let's Chat
-          </Link>
-        </div>
-      </section>
-
-      <section className="text-black">
-        <div className="bg-[#D2B48C]">
-          <div className="grid grid-cols-[371.75px_743.5px_371.75px] grid-rows-[auto] gap-10 py-28">
-            <div />
-
-            <div className="flex flex-col justify-center px-8 text-center">
-              <div className="mb-8 text-5xl">
-                <p>
-                  We <span className="inline-block">challenge</span> what
-                  creative <span className="italic">can do</span>, and{" "}
-                  <span className="underline">brands</span>{" "}
-                  <span className="italic">can be.</span>
-                </p>
-              </div>
-
-              <Link
-                className="mt-6 inline-block items-center justify-center rounded-full bg-stone-900 py-4 pl-8 pr-12 text-lg text-white"
-                href=""
-              >
-                Explore our work
-              </Link>
-            </div>
-
-            <div className="flex items-center justify-start">
-              <img
-                className="h-44 w-28"
-                src="https://www.robot-food.com/images/pen-jetpack.svg"
-              />
             </div>
           </div>
         </div>

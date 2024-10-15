@@ -3,15 +3,17 @@ import { Post, Media, Category } from "@/payload-types";
 import Image from "next/image";
 
 export function BlogGrid({ posts }: { posts: Post[] }) {
-  console.log(posts);
   return (
     <section className="relative bg-white pt-3 text-black">
       <div className="relative z-10 m-auto w-full max-w-[100.00rem] px-24 pt-24">
         <div className="flex flex-wrap px-24">
           <div className="-ml-3.5 w-full max-w-[91.6667%] basis-7/12">
-            <p className="mb-6 uppercase">Our Blog</p>
+            <p className="mb-6 uppercase">
+              <span className="mr-2 font-bold text-brand-gold">/</span>Featured
+              Insights
+            </p>
             <h2 className="mb-28 text-[3.25rem] leading-none">
-              News and Insights for the modern business.
+              Branding, tech, and business insights.
             </h2>
           </div>
         </div>
