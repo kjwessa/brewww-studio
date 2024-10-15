@@ -173,10 +173,10 @@ export default async function Page() {
                       outlineWidth: "2px",
                     }}
                   >
-                    <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-lime-300 px-5 py-2">
+                    <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
                       <div className="inline-flex">About Brewww</div>
                     </div>
-                    <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-lime-300" />
+                    <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold" />
                   </a>
                   <div className="absolute right-0 top-0 z-20 flex h-9 w-9 items-center justify-center">
                     <div className="relative overflow-hidden">
@@ -218,7 +218,7 @@ export default async function Page() {
               <div className="w-full">
                 <div className="mb-3 w-full">
                   <div className="flex">
-                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-lime-300 text-neutral-950 min-[2100px]:h-6 min-[2100px]:w-6">
+                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950 min-[2100px]:h-6 min-[2100px]:w-6">
                       <svg
                         className="h-3 w-3 min-[2100px]:h-3.5 min-[2100px]:w-3.5"
                         fill="rgb(14, 15, 17)"
@@ -237,7 +237,7 @@ export default async function Page() {
                 </div>
                 <div className="mb-3 w-full">
                   <div className="flex">
-                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-lime-300 text-neutral-950 min-[2100px]:h-6 min-[2100px]:w-6">
+                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950 min-[2100px]:h-6 min-[2100px]:w-6">
                       <svg
                         className="h-3 w-3 min-[2100px]:h-3.5 min-[2100px]:w-3.5"
                         fill="rgb(14, 15, 17)"
@@ -256,7 +256,7 @@ export default async function Page() {
                 </div>
                 <div className="mb-3 w-full">
                   <div className="flex">
-                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-lime-300 text-neutral-950 min-[2100px]:h-6 min-[2100px]:w-6">
+                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950 min-[2100px]:h-6 min-[2100px]:w-6">
                       <svg
                         className="h-3 w-3 min-[2100px]:h-3.5 min-[2100px]:w-3.5"
                         fill="rgb(14, 15, 17)"
@@ -275,7 +275,7 @@ export default async function Page() {
                 </div>
                 <div className="mb-3 w-full">
                   <div className="flex">
-                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-lime-300 text-neutral-950 min-[2100px]:h-6 min-[2100px]:w-6">
+                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950 min-[2100px]:h-6 min-[2100px]:w-6">
                       <svg
                         className="h-3 w-3 min-[2100px]:h-3.5 min-[2100px]:w-3.5"
                         fill="rgb(14, 15, 17)"
@@ -296,7 +296,7 @@ export default async function Page() {
                 </div>
                 <div className="mb-3 w-full">
                   <div className="flex">
-                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-lime-300 text-neutral-950 min-[2100px]:h-6 min-[2100px]:w-6">
+                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950 min-[2100px]:h-6 min-[2100px]:w-6">
                       <svg
                         className="h-3 w-3 min-[2100px]:h-3.5 min-[2100px]:w-3.5"
                         fill="rgb(14, 15, 17)"
@@ -315,7 +315,7 @@ export default async function Page() {
                 </div>
                 <div className="mb-3 w-full">
                   <div className="flex">
-                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-lime-300 text-neutral-950 min-[2100px]:h-6 min-[2100px]:w-6">
+                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950 min-[2100px]:h-6 min-[2100px]:w-6">
                       <svg
                         className="h-3 w-3 min-[2100px]:h-3.5 min-[2100px]:w-3.5"
                         fill="rgb(14, 15, 17)"
@@ -441,7 +441,7 @@ export default async function Page() {
               <div className="mt-8 flex w-full flex-wrap">
                 <div className="mb-3.5 w-full">
                   <div className="flex">
-                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-lime-300 min-[2100px]:h-6 min-[2100px]:w-6">
+                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold min-[2100px]:h-6 min-[2100px]:w-6">
                       <svg
                         className="h-3 w-3 min-[2100px]:h-3.5 min-[2100px]:w-3.5"
                         fill="rgb(1, 2, 2)"
@@ -462,7 +462,7 @@ export default async function Page() {
                 </div>
                 <div className="mb-3.5 w-full">
                   <div className="flex">
-                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-lime-300 min-[2100px]:h-6 min-[2100px]:w-6">
+                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold min-[2100px]:h-6 min-[2100px]:w-6">
                       <svg
                         className="h-3 w-3 min-[2100px]:h-3.5 min-[2100px]:w-3.5"
                         fill="rgb(1, 2, 2)"
@@ -492,12 +492,12 @@ export default async function Page() {
                     outlineWidth: "2px",
                   }}
                 >
-                  <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-lime-300 px-5 py-2">
+                  <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
                     <div className="inline-flex">
                       Schedule a call with our team
                     </div>
                   </div>
-                  <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-lime-300" />
+                  <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold" />
                 </a>
                 <div className="absolute right-0 top-0 z-20 flex h-9 w-9 items-center justify-center">
                   <div className="relative overflow-hidden">
@@ -612,10 +612,10 @@ export default async function Page() {
                     outlineWidth: "2px",
                   }}
                 >
-                  <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-lime-300 px-5 py-2">
+                  <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
                     <div className="inline-flex">Start a project today</div>
                   </div>
-                  <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-lime-300" />
+                  <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold" />
                 </a>
                 <div className="absolute right-0 top-0 z-20 flex h-9 w-9 items-center justify-center">
                   <div className="relative overflow-hidden">
@@ -680,10 +680,10 @@ export default async function Page() {
                     outlineOffset: "2px",
                   }}
                 >
-                  <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-lime-300 px-5 py-2">
+                  <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
                     <div className="inline-flex">Get in touch today</div>
                   </div>
-                  <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-lime-300" />
+                  <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold" />
                 </a>
                 <div className="absolute right-0 top-0 z-20 flex h-9 w-9 items-center justify-center">
                   <div className="relative overflow-hidden">
@@ -722,7 +722,7 @@ export default async function Page() {
             <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="mb-8 flex w-full flex-col items-start justify-start border-b-2 border-solid border-neutral-700 pb-8 lg:mb-12 lg:pb-12">
                 <div className="mb-3 flex w-full items-center">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-lime-300 min-[2100px]:h-12 min-[2100px]:w-12">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold min-[2100px]:h-12 min-[2100px]:w-12">
                     <svg
                       className="h-5 w-5 min-[2100px]:h-6 min-[2100px]:w-6"
                       fill="rgb(1, 2, 2)"
@@ -749,7 +749,7 @@ export default async function Page() {
             <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="mb-8 flex w-full flex-col items-start justify-start border-b-2 border-solid border-neutral-700 pb-8 lg:mb-12 lg:pb-12">
                 <div className="mb-3 flex w-full items-center">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-lime-300 min-[2100px]:h-12 min-[2100px]:w-12">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold min-[2100px]:h-12 min-[2100px]:w-12">
                     <svg
                       className="h-5 w-5 min-[2100px]:h-6 min-[2100px]:w-6"
                       fill="rgb(1, 2, 2)"
@@ -778,7 +778,7 @@ export default async function Page() {
             <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="mb-8 flex w-full flex-col items-start justify-start border-b-2 border-solid border-neutral-700 pb-8 lg:mb-12 lg:pb-12">
                 <div className="mb-3 flex w-full items-center">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-lime-300 min-[2100px]:h-12 min-[2100px]:w-12">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold min-[2100px]:h-12 min-[2100px]:w-12">
                     <svg
                       className="h-5 w-5 min-[2100px]:h-6 min-[2100px]:w-6"
                       fill="rgb(1, 2, 2)"
@@ -807,7 +807,7 @@ export default async function Page() {
             <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="mb-8 flex w-full flex-col items-start justify-start border-b-2 border-solid border-neutral-700 pb-8 lg:mb-12 lg:pb-12">
                 <div className="mb-3 flex w-full items-center">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-lime-300 min-[2100px]:h-12 min-[2100px]:w-12">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold min-[2100px]:h-12 min-[2100px]:w-12">
                     <svg
                       className="h-5 w-5 min-[2100px]:h-6 min-[2100px]:w-6"
                       fill="rgb(1, 2, 2)"
@@ -836,7 +836,7 @@ export default async function Page() {
             <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="mb-8 flex w-full flex-col items-start justify-start border-b-2 border-solid border-neutral-700 pb-8 lg:mb-12 lg:pb-12">
                 <div className="mb-3 flex w-full items-center">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-lime-300 min-[2100px]:h-12 min-[2100px]:w-12">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold min-[2100px]:h-12 min-[2100px]:w-12">
                     <svg
                       className="h-5 w-5 min-[2100px]:h-6 min-[2100px]:w-6"
                       fill="rgb(1, 2, 2)"
@@ -865,7 +865,7 @@ export default async function Page() {
             <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="mb-8 flex w-full flex-col items-start justify-start border-b-2 border-solid border-neutral-700 pb-8 lg:mb-12 lg:pb-12">
                 <div className="mb-3 flex w-full items-center">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-lime-300 min-[2100px]:h-12 min-[2100px]:w-12">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold min-[2100px]:h-12 min-[2100px]:w-12">
                     <svg
                       className="h-5 w-5 min-[2100px]:h-6 min-[2100px]:w-6"
                       fill="rgb(1, 2, 2)"
@@ -899,7 +899,7 @@ export default async function Page() {
             <div className="relative flex w-full cursor-pointer flex-wrap lg:min-h-[30.00rem]">
               <a className="absolute left-0 top-0 z-20 h-full w-full" href="#">
                 <div className="absolute left-0 top-0 flex h-full w-full items-end justify-start p-6 lg:p-10">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-lime-300 md:h-16 md:w-16">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-gold md:h-16 md:w-16">
                     <svg
                       className="h-3 w-3 md:h-4 md:w-4"
                       fill="rgb(0, 0, 0)"
@@ -1036,10 +1036,10 @@ export default async function Page() {
                           outlineOffset: "2px",
                         }}
                       >
-                        <div className="inline-flex w-auto items-center justify-center overflow-hidden rounded-full bg-lime-300 px-5 py-2">
+                        <div className="inline-flex w-auto items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
                           <div className="inline-flex">Play video</div>
                         </div>
-                        <div className="-ml-1 flex h-9 w-9 items-center justify-center overflow-hidden rounded-full bg-lime-300" />
+                        <div className="-ml-1 flex h-9 w-9 items-center justify-center overflow-hidden rounded-full bg-brand-gold" />
                       </a>
                       <div className="absolute right-0 top-0 z-20 flex h-9 w-9 items-center justify-center">
                         <div className="relative overflow-hidden">
@@ -1291,10 +1291,10 @@ export default async function Page() {
                         outlineOffset: "2px",
                       }}
                     >
-                      <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-lime-300 px-5 py-2">
+                      <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
                         <div className="inline-flex">View all FAQs</div>
                       </div>
-                      <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-lime-300" />
+                      <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold" />
                     </a>
                     <div className="absolute right-0 top-0 z-20 flex h-9 w-9 items-center justify-center">
                       <div className="relative overflow-hidden">
