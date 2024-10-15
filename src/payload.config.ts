@@ -27,6 +27,7 @@ import { Testimonials } from "@/collections/Testimonials/config";
 import { Users } from "@/collections/Users/config";
 import { Work } from "@/collections/Work/config";
 import { Technologies } from "@/collections/Technologies/config";
+import { Team } from "@/collections/Team/config";
 
 //* Import Globals
 import { Header } from "./globals/Header/index";
@@ -130,6 +131,7 @@ export default buildConfig({
     Technologies,
     Location,
     Results,
+    Team,
     Users,
   ],
   globals: [Header, Footer],
