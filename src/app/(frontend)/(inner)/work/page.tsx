@@ -12,34 +12,153 @@ export default async function WorkPage() {
       _status: { equals: "published" },
     },
   });
+  const testimonials = await payload.find({
+    collection: "testimonials",
+    limit: 1000,
+    sort: "-updatedAt",
+  });
 
   return (
     <div className="bg-brand-dark-bg text-black">
-      <section className="w-full pb-28 pt-20 lg:pb-32 lg:pt-36" id="filters">
-        <div className="px-2 sm:px-6 xl:px-12 min-[1450px]:px-20 min-[1800px]:px-40 min-[2100px]:px-60">
-          <div className="mb-7 w-full flex-wrap px-2 lg:mb-16 lg:px-3 xl:px-4">
-            <div className="w-full lg:w-[93.75%]">
-              <h1 className="mb-2 inline-flex w-auto items-center lg:absolute lg:left-[1.00rem] lg:top-[0.75rem] lg:mb-0">
-                <div className="h-1.5 w-1.5 rounded-full bg-white" />
-                <div className="ml-2 font-light text-white">Our Work</div>
-              </h1>
-              <ul className="flex list-none flex-wrap">
-                <li className="mr-4 list-item lg:mr-10">
-                  <a
-                    className="inline-flex items-end"
-                    href="https://madebyshape.co.uk/work/"
-                  >
-                    <div className="cursor-pointer indent-48 text-[3.25rem] lowercase leading-none text-white">
-                      Explore all
-                    </div>
-                    <div className="mb-1 ml-1 cursor-pointer text-sm text-neutral-400 lg:mb-2">
-                      38
-                    </div>
-                  </a>
-                </li>
-                {/* Add other list items here */}
-              </ul>
-            </div>
+      <section className="py-36">
+        <div className="container mx-auto px-4">
+          <div className="w-full lg:w-[93.75%]">
+            <h1 className="mb-2 inline-flex w-auto items-center lg:absolute lg:left-[1.00rem] lg:top-[0.75rem] lg:mb-0">
+              <div className="h-1.5 w-1.5 rounded-full bg-white" />
+              <div className="ml-2 font-light text-white">Our Work</div>
+            </h1>
+            <ul className="flex list-none flex-wrap">
+              <li className="mr-4 list-item lg:mr-10">
+                <a className="inline-flex items-end" href="">
+                  <div className="cursor-pointer indent-48 text-[3.25rem] lowercase leading-none text-white">
+                    Explore all
+                  </div>
+                  <div className="mb-1 ml-1 cursor-pointer text-sm text-neutral-400 lg:mb-2">
+                    38
+                  </div>
+                </a>
+              </li>
+              <li className="mr-4 list-item text-neutral-400 lg:mr-10">
+                <a className="inline-flex items-end" href="">
+                  <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
+                    Fashion
+                  </div>
+                  <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
+                    7
+                  </div>
+                </a>
+              </li>
+              <li className="mr-4 list-item text-neutral-400 lg:mr-10">
+                <a className="inline-flex items-end" href="">
+                  <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
+                    Fitness & Sport
+                  </div>
+                  <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
+                    2
+                  </div>
+                </a>
+              </li>
+              <li className="mr-4 list-item text-neutral-400 lg:mr-10">
+                <a className="inline-flex items-end" href="">
+                  <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
+                    Education
+                  </div>
+                  <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
+                    3
+                  </div>
+                </a>
+              </li>
+              <li className="mr-4 list-item text-neutral-400 lg:mr-10">
+                <a className="inline-flex items-end" href="">
+                  <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
+                    Health
+                  </div>
+                  <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
+                    5
+                  </div>
+                </a>
+              </li>
+              <li className="mr-4 list-item text-neutral-400 lg:mr-10">
+                <a className="inline-flex items-end" href="">
+                  <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
+                    Property
+                  </div>
+                  <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
+                    8
+                  </div>
+                </a>
+              </li>
+              <li className="mr-4 list-item text-neutral-400 lg:mr-10">
+                <a className="inline-flex items-end" href="">
+                  <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
+                    Corporate
+                  </div>
+                  <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
+                    6
+                  </div>
+                </a>
+              </li>
+              <li className="mr-4 list-item text-neutral-400 lg:mr-10">
+                <a className="inline-flex items-end" href="">
+                  <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
+                    Food & Drink
+                  </div>
+                  <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
+                    6
+                  </div>
+                </a>
+              </li>
+              <li className="mr-4 list-item text-neutral-400 lg:mr-10">
+                <a className="inline-flex items-end" href="">
+                  <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
+                    Agency
+                  </div>
+                  <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
+                    7
+                  </div>
+                </a>
+              </li>
+              <li className="mr-4 list-item text-neutral-400 lg:mr-10">
+                <a className="inline-flex items-end" href="">
+                  <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
+                    eCommerce
+                  </div>
+                  <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
+                    16
+                  </div>
+                </a>
+              </li>
+              <li className="mr-4 list-item text-neutral-400 lg:mr-10">
+                <a className="inline-flex items-end" href="">
+                  <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
+                    B2B
+                  </div>
+                  <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
+                    22
+                  </div>
+                </a>
+              </li>
+              <li className="mr-4 list-item text-neutral-400 lg:mr-10">
+                <a className="inline-flex items-end" href="">
+                  <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
+                    B2C
+                  </div>
+                  <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
+                    12
+                  </div>
+                </a>
+              </li>
+              <li className="mr-4 list-item text-neutral-400 lg:mr-10">
+                <a className="inline-flex items-end" href="">
+                  <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
+                    Archive
+                  </div>
+                  <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
+                    17
+                  </div>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -66,17 +185,18 @@ export default async function WorkPage() {
                       />
                     </svg>
                     <h2 className="mb-5 indent-20 text-4xl text-white">
-                      Fantastic agency - Brewww built our new website and it was
-                      a pain free experience! Would highly recommend.
+                      {testimonials.docs[0].callout}
                     </h2>
                     <div className="flex items-end">
                       <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg bg-lime-300 text-2xl lg:h-12 lg:w-12">
                         <div className="mt-0">O</div>
                       </div>
                       <div className="ml-2 mr-0 lg:ml-3 lg:mr-0">
-                        <div className="text-white">Olivia Dowie</div>
+                        <div className="text-white">
+                          {testimonials.docs[0].author}
+                        </div>
                         <div className="text-sm font-light text-zinc-400">
-                          Riley studio
+                          {testimonials.docs[0].brand.title}
                         </div>
                       </div>
                     </div>
