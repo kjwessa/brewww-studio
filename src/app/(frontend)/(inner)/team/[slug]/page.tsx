@@ -2,18 +2,15 @@ import Image from "next/image";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import configPromise from "@payload-config";
 import { notFound } from "next/navigation";
-import { Team } from "@/payload-types";
+import { Team, Media } from "@/payload-types";
 
 export async function generateStaticParams() {
-  console.log("Generating static params for team members");
   const payload = await getPayloadHMR({ config: configPromise });
-  console.log("Fetching team members from payload");
   const teams = await payload.find({
     collection: "team",
     limit: 1000,
     overrideAccess: false,
   });
-  console.log(`Found ${teams.docs?.length || 0} team members`);
   return (
     teams.docs?.map(({ slug }) => ({
       slug,
@@ -27,31 +24,26 @@ export default async function TeamPage({
   params: Promise<{ slug: string }>;
 }) {
   const resolvedParams = await params;
-  console.log("Rendering TeamPage");
-  console.log(`Params: ${JSON.stringify(resolvedParams)}`);
   if (!resolvedParams.slug) {
-    console.log("No slug found in params, redirecting to 404");
     notFound();
   }
 
-  console.log(`Querying team member with slug: ${resolvedParams.slug}`);
   const team = await queryPostBySlug({ slug: resolvedParams.slug });
   if (!team) {
-    console.log("Team member not found, redirecting to 404");
     notFound();
   }
-  console.log(`Team member found: ${team.title}`);
 
   return (
     <>
-      <div className="relative h-screen w-full overflow-hidden">
+      <div className="relative h-[90vh] w-full overflow-hidden">
         <div className="absolute inset-0 z-10">
           <Image
-            src={team.image?.url || ""}
-            alt={team.title}
+            src={(team.image as Media)?.url || ""}
+            alt={(team.image as Media)?.alt || ""}
             fill
             style={{ objectFit: "cover" }}
             quality={80}
+            priority
           />
         </div>
         <div className="absolute inset-0 z-20 bg-gradient-to-b from-transparent to-black opacity-70"></div>
@@ -103,10 +95,8 @@ async function queryPostBySlug({
 }: {
   slug: string;
 }): Promise<Team | null> {
-  console.log(`Querying team member with slug: ${slug}`);
   const payload = await getPayloadHMR({ config: configPromise });
   try {
-    console.log("Executing payload.find query");
     const result = await payload.find({
       collection: "team",
       limit: 1,
@@ -120,16 +110,12 @@ async function queryPostBySlug({
         ],
       },
     });
-    console.log("Query result:", result);
     if (result.docs[0]) {
-      console.log("Team member found");
       return result.docs[0];
     } else {
-      console.log("No team member found with the given slug");
       return null;
     }
   } catch (error) {
-    console.error("Error querying team member:", error);
     return null;
   }
 }
