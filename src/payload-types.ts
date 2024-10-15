@@ -355,6 +355,7 @@ export interface Post {
   slugLock?: boolean | null;
   publishedOn: string;
   image: string | Media;
+  featured?: boolean | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;

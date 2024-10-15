@@ -153,6 +153,15 @@ export const BlogPosts: CollectionConfig = {
         position: "sidebar",
       },
     },
+    {
+      name: "featured",
+      type: "checkbox",
+      label: "Featured",
+      defaultValue: false,
+      admin: {
+        position: "sidebar",
+      },
+    },
   ],
 
   //* Admin Settings
@@ -160,7 +169,7 @@ export const BlogPosts: CollectionConfig = {
   admin: {
     description:
       "Writing brings clarity. Writing is a way to make sense of the world.",
-    defaultColumns: ["title", "publishedOn", "updatedAt"],
+    defaultColumns: ["title", "publishedOn", "updatedAt", "featured"],
     group: "Blog Posts",
     listSearchableFields: ["title"],
     pagination: {
