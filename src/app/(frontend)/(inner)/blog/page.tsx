@@ -1,8 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import configPromise from "@payload-config";
 import { BlogCard } from "@/components/BlogCard/index";
+import { CategoryFilter } from "@/components/CategoryFilter/index";
 
 export default async function BlogPage() {
   const payload = await getPayloadHMR({ config: configPromise });
@@ -11,6 +10,25 @@ export default async function BlogPage() {
     limit: 1000,
     sort: "-publishedOn",
   });
+
+  const categories = await payload.find({
+    collection: "categories",
+    limit: 1000,
+    sort: "-publishedOn",
+  });
+
+  // Count posts for each category
+  const categoryCounts = categories.docs.reduce(
+    (acc, category) => {
+      acc[category.id] = posts.docs.filter((post) =>
+        post.metadata.categories.includes(category.id),
+      ).length;
+      return acc;
+    },
+    {} as Record<string, number>,
+  );
+
+  console.log("Category Counts:", categoryCounts);
 
   return (
     <>
@@ -27,10 +45,38 @@ export default async function BlogPage() {
           </div>
         </div>
       </section>
+
+      <section className="flex w-full flex-wrap bg-brand-dark-bg px-2 py-4 text-black lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+        <div className="w-full lg:w-[93.75%]">
+          <h1 className="mb-2 inline-flex w-auto items-center lg:absolute lg:left-[1.00rem] lg:top-[0.75rem] lg:mb-0">
+            <div className="h-1.5 w-1.5 rounded-full bg-white" />
+            <div className="ml-2 font-light text-white">The Blog</div>
+          </h1>
+          <ul className="flex list-none flex-wrap">
+            <li className="mr-4 list-item lg:mr-10">
+              <CategoryFilter
+                title="Explore All"
+                count={posts.totalDocs}
+                isActive={true}
+              />
+            </li>
+            {categories.docs.map((category) => (
+              <li key={category.id} className="mr-4 list-item lg:mr-10">
+                <CategoryFilter
+                  title={category.title}
+                  count={categoryCounts[category.id] || 0}
+                  slug={`/blog/category/${category.slug}`}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section className="bg-brand-dark-bg py-24">
         <div className="container mx-auto">
           <h1 className="mb-12 text-4xl font-bold text-white">Insights</h1>
-          <div className="relative grid auto-rows-auto grid-cols-3 gap-8 text-sm font-semibold text-zinc-100">
+          <div className="relative grid auto-rows-auto grid-cols-3 gap-x-8 gap-y-24 text-zinc-100">
             {posts.docs.map((post) => (
               <BlogCard key={post.id} post={post} />
             ))}
