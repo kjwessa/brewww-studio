@@ -1,18 +1,17 @@
-import Link from "next/link";
-import { Post, Media, Category } from "@/payload-types";
-import Image from "next/image";
+import { Post } from "@/payload-types";
+import { BlogCard } from "@/components/BlogCard/index";
 
-export function BlogGrid({ posts }: { posts: Post[] }) {
+export function BlogGridSection({ posts }: { posts: Post[] }) {
   return (
     <section className="relative bg-white pt-3 text-black">
       <div className="relative z-10 m-auto w-full max-w-[100.00rem] px-24 pt-24">
         <div className="flex flex-wrap px-24">
-          <div className="-ml-3.5 w-full max-w-[91.6667%] basis-7/12">
+          <div className="-ml-3.5 w-full max-w-[91.6667%] basis-7/12 text-label-large">
             <p className="mb-6 uppercase">
               <span className="mr-2 font-bold text-brand-gold">/</span>Featured
               Insights
             </p>
-            <h2 className="mb-28 text-[3.25rem] leading-none">
+            <h2 className="mb-28 text-headline-medium leading-none">
               Branding, tech, and business insights.
             </h2>
           </div>
@@ -42,31 +41,3 @@ export function BlogGrid({ posts }: { posts: Post[] }) {
     </section>
   );
 }
-const BlogCard = ({ post }: { post: Post }) => {
-  return (
-    <Link className="relative" href={`/blog/${post.slug}`}>
-      <div className="mb-5 overflow-hidden rounded-md">
-        <div className="relative h-[0] w-full pb-[66%]">
-          <Image
-            className="object-cover"
-            src={(post.image as Media)?.url || ""}
-            alt={post.title}
-            fill
-          />
-        </div>
-      </div>
-      <div className="mt-4">
-        <p className="mb-2 flex flex-row items-center text-xl uppercase">
-          <span className="text-sm">
-            {(post.metadata.categories[0] as Category)?.title ||
-              "Uncategorized"}
-          </span>
-          <span className="ml-2 text-sm">
-            / {post.metadata.readTime} min read
-          </span>
-        </p>
-        <h3 className="text-[2.13rem] leading-9">{post.title}</h3>
-      </div>
-    </Link>
-  );
-};

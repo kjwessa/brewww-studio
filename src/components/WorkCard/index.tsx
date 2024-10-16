@@ -15,37 +15,7 @@ export function WorkCard({ project }: WorkCardProps) {
       >
         <div className="relative mb-6 w-full cursor-pointer overflow-hidden">
           <div className="absolute right-0 top-0 z-20 rounded-bl-3xl pb-3 pl-3 pt-1">
-            <svg
-              className="absolute left-[0.13rem] top-0 h-10 w-10 text-neutral-950 lg:h-10 lg:w-10"
-              fill="rgb(14, 15, 17)"
-              version="1.1"
-              viewBox="0 0 100 100"
-              x="0"
-              xmlSpace="preserve"
-              xmlns="http://www.w3.org/2000/svg"
-              y="0"
-            >
-              <path
-                d="M98.1 0h1.9v51.9h-1.9c0-27.6-22.4-50-50-50V0h50z"
-                fill="rgb(14, 15, 17)"
-              />
-            </svg>
-            <svg
-              className="absolute bottom-[0.13rem] right-0 h-10 w-10 text-neutral-950 lg:h-10 lg:w-10"
-              fill="rgb(14, 15, 17)"
-              version="1.1"
-              viewBox="0 0 100 100"
-              x="0"
-              xmlSpace="preserve"
-              xmlns="http://www.w3.org/2000/svg"
-              y="0"
-            >
-              <path
-                d="M98.1 0h1.9v51.9h-1.9c0-27.6-22.4-50-50-50V0h50z"
-                fill="rgb(14, 15, 17)"
-              />
-            </svg>
-            <div className="-mb-2 -mr-2 flex flex-wrap items-center text-sm text-white lg:-mb-3">
+            <div className="-mb-2 -mr-2 flex flex-wrap items-center text-label-small text-white lg:-mb-3">
               <div className="mb-2 mr-2 rounded-full bg-zinc-800 px-4 pb-1.5 pt-2 lg:mb-3 lg:mr-3">
                 Branding
               </div>
@@ -81,11 +51,13 @@ export function WorkCard({ project }: WorkCardProps) {
           </div>
         </div>
         <div className="mb-2 flex cursor-pointer items-center text-zinc-400">
-          <div className="font-light">2023</div>
+          <div className="text-label-large font-light">2023</div>
           <div className="ml-3 h-1.5 w-1.5 rounded-full bg-zinc-400" />
-          <div className="ml-3 font-light">{project.title}</div>
+          <div className="ml-3 text-label-large font-light">
+            {project.title}
+          </div>
         </div>
-        <h2 className="cursor-pointer pr-10 text-4xl text-white">
+        <h2 className="max-w-lg cursor-pointer pr-10 text-title-medium leading-none text-white">
           {project.tagline}
         </h2>
       </Link>
