@@ -1,219 +1,175 @@
 export function ContactForm() {
   return (
     <>
-      <form>
-        <div className="absolute bottom-[48.00rem] left-[41.88rem] right-[63.75rem] top-[37.25rem]">
-          Leave this field blank
-          <input
-            className="inline-block h-10 w-48 cursor-text border-2 border-solid border-neutral-900 bg-white px-3 py-2"
-            defaultValue="e756f5"
-            type="text"
-          />
+      <form className="mx-auto max-w-3xl">
+        <div className="hidden">
+          <label htmlFor="honeypot">Leave this field blank</label>
+          <input id="honeypot" name="honeypot" type="text" className="hidden" />
         </div>
 
-        <div className="w-full">
-          <div className="flex flex-col md:flex-row md:items-center">
-            <div className="mb-4 w-full flex-grow md:w-auto md:pl-2 md:pr-2">
-              <div className="relative w-full">
-                <input
-                  id="name"
-                  className="h-14 w-full cursor-text rounded-xl border-2 border-solid border-neutral-700 bg-zinc-900 px-5 pb-3 pt-6 text-white placeholder-transparent"
-                  placeholder="Name"
-                  style={{
-                    outlineOffset: "2px",
-                  }}
-                  type="text"
-                />
-                <label
-                  htmlFor="name"
-                  className="pointer-events-none absolute top-1 ml-5 -translate-y-1/2 transform text-zinc-400 transition-all duration-200 ease-in-out"
-                >
-                  Name
-                </label>
-              </div>
+        <div className="space-y-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div className="relative">
+              <input
+                id="name"
+                name="name"
+                type="text"
+                className="peer h-14 w-full rounded-lg border-2 border-neutral-700 bg-zinc-900 px-5 pb-2 pt-6 text-white placeholder-transparent transition duration-200 focus:border-brand-gold focus:outline-none"
+                placeholder="Name"
+                required
+              />
+              <label
+                htmlFor="name"
+                className="absolute left-5 top-1 text-sm text-zinc-400 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-sm"
+              >
+                Name
+              </label>
             </div>
-            <div className="mb-4 w-full flex-grow md:w-auto md:pl-2 md:pr-2">
-              <div className="relative w-full">
-                <input
-                  id="email"
-                  className="h-14 w-full cursor-text rounded-xl border-2 border-solid border-neutral-700 bg-zinc-900 px-5 pb-3 pt-6 text-white placeholder-transparent"
-                  placeholder="Email Address"
-                  style={{
-                    outlineOffset: "2px",
-                  }}
-                  type="email"
-                />
-                <label
-                  htmlFor="email"
-                  className="pointer-events-none absolute top-1 ml-5 -translate-y-1/2 transform text-zinc-400 transition-all duration-200 ease-in-out"
-                >
-                  Email Address
-                </label>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row md:items-center">
-            <div className="mb-4 w-full flex-grow md:w-auto md:pl-2 md:pr-2">
-              <div className="relative w-full">
-                <input
-                  id="phone"
-                  className="h-14 w-full cursor-text rounded-xl border-2 border-solid border-neutral-700 bg-zinc-900 px-5 pb-3 pt-6 text-white placeholder-transparent"
-                  placeholder="Phone (Optional)"
-                  style={{
-                    outlineOffset: "2px",
-                  }}
-                  type="text"
-                />
-                <label
-                  htmlFor="phone"
-                  className="pointer-events-none absolute top-1 ml-5 -translate-y-1/2 transform text-zinc-400 transition-all duration-200 ease-in-out"
-                >
-                  Phone
-                  <span className="ml-1 text-neutral-700">(Optional)</span>
-                </label>
-              </div>
-            </div>
-            <div className="mb-4 w-full flex-grow md:w-auto md:pl-2 md:pr-2">
-              <div className="relative w-full">
-                <select
-                  id="referral"
-                  className="h-14 w-full items-center rounded-xl border-2 border-solid border-neutral-700 bg-zinc-900 px-5 pb-3 pt-6 text-white"
-                  defaultValue=""
-                  style={{
-                    outlineOffset: "2px",
-                  }}
-                >
-                  <option className="h-auto w-auto px-1 pb-1" value="" disabled>
-                    How did you hear about us?
-                  </option>
-                  <option className="h-auto w-auto px-1 pb-1" value="google">
-                    Google
-                  </option>
-                  <option
-                    className="h-auto w-auto px-1 pb-1"
-                    value="friendOrFamily"
-                  >
-                    Friend or family
-                  </option>
-                  <option className="h-auto w-auto px-1 pb-1" value="instagram">
-                    Instagram
-                  </option>
-                  <option className="h-auto w-auto px-1 pb-1" value="linkedin">
-                    Linkedin
-                  </option>
-                  <option
-                    className="h-auto w-auto px-1 pb-1"
-                    value="wordOfMouth"
-                  >
-                    Word of mouth
-                  </option>
-                  <option
-                    className="h-auto w-auto px-1 pb-1"
-                    value="newsletter"
-                  >
-                    Newsletter
-                  </option>
-                </select>
-                <label
-                  htmlFor="referral"
-                  className="pointer-events-none absolute top-1 ml-5 -translate-y-1/2 transform text-zinc-400 transition-all duration-200 ease-in-out"
-                >
-                  How did you hear about Brewww Studio?
-                </label>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row md:items-center">
-            <div className="mb-4 w-full md:w-full md:pl-2 md:pr-2">
-              <div className="relative w-full">
-                <textarea
-                  id="project"
-                  className="h-32 w-full cursor-text resize-y rounded-xl border-2 border-solid border-neutral-700 bg-zinc-900 px-5 pb-3 pt-6 text-white placeholder-transparent"
-                  placeholder="Tell us about your project"
-                  style={{
-                    outlineOffset: "2px",
-                  }}
-                />
-                <label
-                  htmlFor="project"
-                  className="pointer-events-none absolute top-1 ml-5 -translate-y-1/2 transform text-zinc-400 transition-all duration-200 ease-in-out"
-                >
-                  Tell us about your project
-                </label>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row md:items-center">
-            <div className="mb-4 w-full md:w-full md:pl-2 md:pr-2">
-              <label className="inline-flex w-full cursor-pointer items-center">
-                <input
-                  id="subscribe"
-                  className="inline-block h-4 w-4 rounded border-2 border-solid border-neutral-400 align-middle text-neutral-700"
-                  defaultValue="1"
-                  type="checkbox"
-                />
-
-                <span className="ml-2 pt-1 text-zinc-400">
-                  Subscribe to our newsletter for all the latest Brewww Studio
-                  goss!
-                </span>
+            <div className="relative">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                className="peer h-14 w-full rounded-lg border-2 border-neutral-700 bg-zinc-900 px-5 pb-2 pt-6 text-white placeholder-transparent transition duration-200 focus:border-brand-gold focus:outline-none"
+                placeholder="Email Address"
+                required
+              />
+              <label
+                htmlFor="email"
+                className="absolute left-5 top-1 text-sm text-zinc-400 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-sm"
+              >
+                Email Address
               </label>
             </div>
           </div>
-          <div className="flex flex-col text-sm text-zinc-400 md:flex-row md:items-center">
-            <div className="mb-4 w-full md:w-full md:pl-2 md:pr-2">
-              <div>
-                By submitting this form I accept the Privacy Policy of this
-                site.
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div className="relative">
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                className="peer h-14 w-full rounded-lg border-2 border-neutral-700 bg-zinc-900 px-5 pb-2 pt-6 text-white placeholder-transparent transition duration-200 focus:border-brand-gold focus:outline-none"
+                placeholder="Phone (Optional)"
+              />
+              <label
+                htmlFor="phone"
+                className="absolute left-5 top-1 text-sm text-zinc-400 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-sm"
+              >
+                Phone <span className="text-neutral-500">(Optional)</span>
+              </label>
+            </div>
+            <div className="relative">
+              <select
+                id="referral"
+                name="referral"
+                className="peer h-14 w-full appearance-none rounded-lg border-2 border-neutral-700 bg-zinc-900 px-5 pb-2 pt-6 text-white transition duration-200 focus:border-brand-gold focus:outline-none"
+                defaultValue=""
+                required
+              >
+                <option value="" disabled hidden>
+                  Select One
+                </option>
+                <option value="google">Google</option>
+                <option value="friendOrFamily">Friend or family</option>
+                <option value="instagram">Instagram</option>
+                <option value="facebook">Facebook</option>
+                <option value="linkedin">LinkedIn</option>
+                <option value="wordOfMouth">Word of mouth</option>
+                <option value="newsletter">Newsletter</option>
+              </select>
+              <label
+                htmlFor="referral"
+                className="absolute left-5 top-1 text-sm text-zinc-400 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-sm"
+              >
+                How did you hear about Brewww Studio?
+              </label>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-zinc-400">
+                <svg
+                  className="h-4 w-4 fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                </svg>
               </div>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row md:items-center">
-            <div className="mb-4 w-full md:w-full md:pl-2 md:pr-2">
-              <div className="relative inline-flex items-center">
-                <button
-                  className="inline-flex h-9 w-44 cursor-pointer items-start text-center"
-                  style={{
-                    outlineOffset: "2px",
-                  }}
-                >
-                  <div className="inline-flex w-auto items-center justify-center overflow-hidden rounded-full bg-zinc-800 px-5 py-2 text-white">
-                    <div className="inline-flex">Send Message</div>
-                  </div>
-                  <div className="-ml-1 flex h-9 w-9 items-center justify-center overflow-hidden rounded-full bg-zinc-800" />
-                </button>
-                <div className="absolute right-0 top-0 z-20 flex h-9 w-9 items-center justify-center text-white">
-                  <div className="relative overflow-hidden">
-                    <div>
-                      <svg
-                        className="h-3 w-3"
-                        fill="rgb(255, 255, 255)"
-                        viewBox="0 0 384 512"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M328 96h24v288h-48V177.9L81 401l-17 17-33.9-34 17-17 223-223H64V96h264z"
-                          fill="rgb(255, 255, 255)"
-                        />
-                      </svg>
-                    </div>
-                    <div className="absolute left-0 top-0">
-                      <svg
-                        className="h-3 w-3"
-                        fill="rgb(255, 255, 255)"
-                        viewBox="0 0 384 512"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M328 96h24v288h-48V177.9L81 401l-17 17-33.9-34 17-17 223-223H64V96h264z"
-                          fill="rgb(255, 255, 255)"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+          <div className="relative">
+            <textarea
+              id="project"
+              name="project"
+              className="peer h-32 w-full resize-y rounded-lg border-2 border-neutral-700 bg-zinc-900 px-5 pb-2 pt-6 text-white placeholder-transparent transition duration-200 focus:border-brand-gold focus:outline-none"
+              placeholder="Tell us about your project"
+              required
+            ></textarea>
+            <label
+              htmlFor="project"
+              className="absolute left-5 top-1 text-sm text-zinc-400 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-sm"
+            >
+              Tell us about your project
+            </label>
+          </div>
+
+          <div className="flex items-center">
+            <div className="relative inline-flex items-center">
+              <input
+                id="subscribe"
+                name="subscribe"
+                type="checkbox"
+                className="peer sr-only"
+              />
+              <div className="h-6 w-6 rounded border-2 border-neutral-700 bg-zinc-900 transition-colors peer-checked:border-brand-gold peer-checked:bg-brand-gold"></div>
+              <svg
+                className="pointer-events-none absolute left-1 top-1 h-4 w-4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
             </div>
+            <label
+              htmlFor="subscribe"
+              className="ml-2 cursor-pointer text-zinc-400"
+            >
+              Subscribe to our newsletter for all the latest Brewww Studio goss!
+            </label>
+          </div>
+
+          <p className="text-sm text-zinc-400">
+            By submitting this form I accept the Privacy Policy of this site.
+          </p>
+
+          <div>
+            <button
+              type="submit"
+              className="hover:bg-brand-gold-dark group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand-gold px-8 py-3 text-white transition duration-300 ease-out"
+            >
+              <span className="absolute right-0 translate-x-full transition-transform duration-300 ease-out group-hover:-translate-x-4">
+                <svg
+                  className="h-5 w-5 rotate-45"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span className="absolute left-0 -translate-x-full transition-transform duration-300 ease-out group-hover:translate-x-4">
+                Send Message
+              </span>
+              <span className="invisible">Send Message</span>
+            </button>
           </div>
         </div>
       </form>
