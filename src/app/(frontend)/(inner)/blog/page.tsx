@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import configPromise from "@payload-config";
+import { BlogCard } from "@/components/BlogCard/index";
 
 export default async function BlogPage() {
   const payload = await getPayloadHMR({ config: configPromise });
@@ -31,60 +32,12 @@ export default async function BlogPage() {
           <h1 className="mb-12 text-4xl font-bold text-white">Insights</h1>
           <div className="relative grid auto-rows-auto grid-cols-3 gap-8 text-sm font-semibold text-zinc-100">
             {posts.docs.map((post) => (
-              <div key={post.id} className="flex flex-col">
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="flex h-full flex-col justify-between"
-                >
-                  <div className="cursor-pointer">
-                    <div className="group relative w-full overflow-hidden rounded bg-zinc-500/[0.2] pt-[80%]">
-                      <Image
-                        src={
-                          typeof post.image === "string"
-                            ? post.image
-                            : (post.image as { url: string })?.url || ""
-                        }
-                        alt={
-                          typeof post.image === "object" ? post.image.alt : ""
-                        }
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                    <div className="mt-5 flex flex-col gap-[0.5rem]">
-                      <div className="flex flex-wrap items-center justify-between gap-[0.15rem] text-xs uppercase text-zinc-500">
-                        <div>
-                          {post.metadata?.categories
-                            ?.map((category) =>
-                              typeof category === "object"
-                                ? category.title
-                                : category,
-                            )
-                            .join(", ") || "Uncategorized"}
-                        </div>
-                        <div>
-                          {post.metadata?.readTime
-                            ? `${post.metadata.readTime} min read`
-                            : "Add Read Time"}
-                        </div>
-                      </div>
-                      <h3 className="text-2xl mix-blend-difference">
-                        {post.title}
-                      </h3>
-                      <div className="text-base text-zinc-500">
-                        {post.tagline}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-auto cursor-pointer">
-                    <div className="my-4 h-0 w-full bg-zinc-500 opacity-25" />
-                  </div>
-                </Link>
-              </div>
+              <BlogCard key={post.id} post={post} />
             ))}
           </div>
         </div>
       </section>
+
       <section className="bg-neutral-900 py-36 text-white">
         <div className="container mx-auto px-6">
           <div className="text-center">

@@ -1,4 +1,6 @@
-import { Post, Media, Category } from "@/payload-types";
+import { Post } from "@/payload-types";
+import { Media } from "@/payload-types";
+import { Category } from "@/payload-types";
 import Link from "next/link";
 import Image from "next/image";
 
