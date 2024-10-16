@@ -2,6 +2,7 @@ import { getPayloadHMR } from "@payloadcms/next/utilities";
 import configPromise from "@payload-config";
 import { BlogCard } from "@/components/BlogCard/index";
 import { CategoryFilter } from "@/components/CategoryFilter/index";
+import { Category, Post } from "@/payload-types";
 
 export default async function BlogPage() {
   const payload = await getPayloadHMR({ config: configPromise });
@@ -21,14 +22,22 @@ export default async function BlogPage() {
   const categoryCounts = categories.docs.reduce(
     (acc, category) => {
       acc[category.id] = posts.docs.filter((post) =>
-        post.metadata.categories.includes(category.id),
+        post.metadata?.categories?.some((cat) => {
+          if (typeof cat === "string") {
+            return cat === category.id;
+          }
+          return (cat as Category).id === category.id;
+        }),
       ).length;
       return acc;
     },
     {} as Record<string, number>,
   );
 
+  console.log("Posts:", posts.docs.length);
+  console.log("Categories:", categories.docs.length);
   console.log("Category Counts:", categoryCounts);
+  console.log("Sample post metadata:", posts.docs[0]?.metadata);
 
   return (
     <>
