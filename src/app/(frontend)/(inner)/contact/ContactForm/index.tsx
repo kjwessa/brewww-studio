@@ -1,3 +1,5 @@
+import { CoolButton } from "@/components/CoolButton";
+
 export function ContactForm() {
   return (
     <>
@@ -147,29 +149,7 @@ export function ContactForm() {
           </p>
 
           <div>
-            <button
-              type="submit"
-              className="hover:bg-brand-gold-dark group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand-gold px-8 py-3 text-white transition duration-300 ease-out"
-            >
-              <span className="absolute right-0 translate-x-full transition-transform duration-300 ease-out group-hover:-translate-x-4">
-                <svg
-                  className="h-5 w-5 rotate-45"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </span>
-              <span className="absolute left-0 -translate-x-full transition-transform duration-300 ease-out group-hover:translate-x-4">
-                Send Message
-              </span>
-              <span className="invisible">Send Message</span>
-            </button>
+            <CoolButton text="Send Message" showIcon={false} />
           </div>
         </div>
       </form>

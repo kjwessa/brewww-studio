@@ -10,8 +10,9 @@ export function ContactHeroSection() {
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />
                 <div className="ml-2 font-light text-white">Contact</div>
               </h1>
-              <h2 className="indent-48 text-[9.50rem] leading-none text-white">
+              <h2 className="indent-48 text-display-large leading-none text-white">
                 Exhale. Help <br /> is here.
+                <span className="inline-block w-4"></span>
                 <a
                   className="relative inline-flex h-9 w-9 rounded-full bg-brand-gold indent-48 text-black md:h-16 md:w-16 lg:top-[0.75rem] lg:h-24 lg:w-24"
                   href=""
