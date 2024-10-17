@@ -477,11 +477,26 @@ export interface Play {
 export interface Service {
   id: string;
   title: string;
-  tagline: string;
-  imageMain: string | Media;
+  tagline?: string | null;
   slug: string;
   slugLock?: boolean | null;
-  description: string;
+  image?: (string | null) | Media;
+  description?: string | null;
+  overview?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   metadata?: {};
   seo?: {
     title?: string | null;
