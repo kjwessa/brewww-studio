@@ -38,13 +38,18 @@ export default async function Home() {
     },
   });
 
+  const services = await payload.find({
+    collection: "services",
+    limit: 1000,
+  });
+
   return (
     <>
       <HomeHeroSection />
       <WorkGridSection projects={projects.docs} />
       <ImageGrow />
       <BlogGridSection posts={posts.docs} />
-      <ServicesSection />
+      <ServicesSection services={services.docs} />
 
       <section className="bg-brand-dark-bg text-zinc-50">
         <div className="container mx-auto px-4">

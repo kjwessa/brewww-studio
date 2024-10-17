@@ -1,4 +1,7 @@
-export function ServicesSection() {
+import { ServiceCard } from "@/components/ServiceCard/index";
+import { Service } from "@/payload-types";
+
+export function ServicesSection({ services }: { services: Service[] }) {
   return (
     <section className="w-full rounded-3xl bg-zinc-900 py-20 text-black lg:pb-24 lg:pt-24 min-[1450px]:pb-32 min-[1450px]:pt-32 min-[2100px]:pb-40 min-[2100px]:pt-40">
       <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
@@ -115,61 +118,9 @@ export function ServicesSection() {
             </div>
           </div>
           <div className="order-2 w-full px-2 lg:w-[68.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-            <div className="w-full border-b-2 border-solid border-neutral-700">
-              <a
-                className="flex w-full items-center py-4 lg:pb-6 lg:pt-6"
-                href=""
-              >
-                <div className="inline-flex h-16 w-20 cursor-pointer items-center justify-center overflow-hidden rounded-2xl bg-neutral-950 md:h-28 md:w-36 lg:w-0 min-[1800px]:h-40" />
-                <div className="inline-flex cursor-pointer text-[7.50rem] leading-none text-white">
-                  <div>Brand Identity</div>
-                </div>
-              </a>
-            </div>
-            <div className="w-full border-b-2 border-solid border-neutral-700">
-              <a
-                className="flex w-full items-center py-4 lg:pb-6 lg:pt-6"
-                href=""
-              >
-                <div className="inline-flex h-16 w-20 cursor-pointer items-center justify-center overflow-hidden rounded-2xl bg-neutral-950 md:h-28 md:w-36 lg:w-0 min-[1800px]:h-40" />
-                <div className="inline-flex cursor-pointer text-[7.50rem] leading-none text-white">
-                  <div>Websites</div>
-                </div>
-              </a>
-            </div>
-            <div className="w-full border-b-2 border-solid border-neutral-700">
-              <a
-                className="flex w-full items-center py-4 lg:pb-6 lg:pt-6"
-                href=""
-              >
-                <div className="inline-flex h-16 w-20 cursor-pointer items-center justify-center overflow-hidden rounded-2xl bg-neutral-950 md:h-28 md:w-36 lg:w-0 min-[1800px]:h-40" />
-                <div className="inline-flex cursor-pointer text-[7.50rem] leading-none text-white">
-                  <div>SEO</div>
-                </div>
-              </a>
-            </div>
-            <div className="w-full border-b-2 border-solid border-neutral-700">
-              <a
-                className="flex w-full items-center py-4 lg:pb-6 lg:pt-6"
-                href=""
-              >
-                <div className="inline-flex h-16 w-20 cursor-pointer items-center justify-center overflow-hidden rounded-2xl bg-neutral-950 md:h-28 md:w-36 lg:w-0 min-[1800px]:h-40" />
-                <div className="inline-flex cursor-pointer text-[7.50rem] leading-none text-white">
-                  <div>Craft CMS</div>
-                </div>
-              </a>
-            </div>
-            <div className="w-full border-b-2 border-solid border-neutral-700">
-              <a
-                className="flex w-full items-center py-4 lg:pb-6 lg:pt-6"
-                href=""
-              >
-                <div className="inline-flex h-16 w-20 cursor-pointer items-center justify-center overflow-hidden rounded-2xl bg-neutral-950 md:h-28 md:w-36 lg:w-0 min-[1800px]:h-40" />
-                <div className="inline-flex cursor-pointer text-[7.50rem] leading-none text-white">
-                  <div>Shopify</div>
-                </div>
-              </a>
-            </div>
+            {services.map((service) => (
+              <ServiceCard key={service.id} service={service} />
+            ))}
           </div>
         </div>
       </div>
