@@ -31,6 +31,7 @@
       "@/globals/*": ["src/globals/*"],
       "@/icons/*": ["src/icons/*"],
       "@/images/*": ["./public/images/*"],
+      "@/lib/*": ["src/lib/*"],
       "@payload-config": ["./src/payload.config.ts"],
       "@/public/*": ["./public/*"],
       "@root/*": ["src/*"],
