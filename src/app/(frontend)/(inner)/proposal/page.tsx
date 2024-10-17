@@ -29,6 +29,7 @@ export default function ProposalPage() {
           </a>
         </div>
       </section>
+
       <section className="bg-white py-40 font-light text-zinc-900">
         <div className="grid auto-cols-fr grid-flow-col grid-cols-[349.562px_349.578px_349.578px_349.578px] grid-rows-[6.00rem] items-start justify-items-start gap-10">
           <div className="col-span-1 row-span-1 border-t-4 border-solid border-t-zinc-900/[0.15] pt-10">
@@ -79,6 +80,108 @@ export default function ProposalPage() {
                   Account Manager
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-zinc-900 py-40 font-light text-zinc-900">
+        <div className="container mx-auto px-4">
+          <div className="grid auto-cols-fr grid-cols-[1256px_0px] grid-rows-[3.50rem] pb-10">
+            <div className="col-span-1 row-span-1 flex items-start justify-start">
+              <div className="rounded-full bg-red-500" />
+              <h2 className="text-5xl text-white">Our Proposal</h2>
+            </div>
+          </div>
+          <div className="text-4xl text-white/[0.7]">
+            <p>
+              The "Power the Journey" campaign will position Toyota as the
+              ultimate choice for eco-conscious adventurers, highlighting their
+              electric and hybrid SUVs' off-road capabilities. We'll develop a
+              cohesive brand strategy and digital and social media assets that
+              blend Toyota's legacy with its future.{" "}
+            </p>
+            <p>
+              This will also include designing a campaign microsite and a
+              landing page that captures Toyota's commitment to sustainability
+              and adventure. Our goal is to ensure that Toyota's brand identity
+              and website resonate with audiences who seek both environmental
+              responsibility and unparalleled performance in every journey they
+              take.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative bg-white py-40 font-light text-zinc-900">
+        <div className="container mx-auto px-4">
+          <div className="grid auto-cols-fr grid-cols-[1494.3px_0px] grid-rows-[3.50rem] pb-10">
+            <div className="col-span-1 row-span-1 flex items-start justify-start">
+              <div className="rounded-full bg-red-500" />
+              <h2 className="text-5xl">Timeline & Estimated Effort by Phase</h2>
+            </div>
+          </div>
+          <div className="sticky z-10 grid auto-cols-fr grid-flow-col grid-cols-[242.859px_161.906px_161.906px_161.906px_485.719px] grid-rows-[1.50rem] items-stretch gap-16 bg-neutral-100 px-6 py-5 text-xl">
+            <h3>Phase</h3>
+            <h3>Hours</h3>
+            <h3>Timeline</h3>
+            <h3>Cost</h3>
+            <h3>Deliverables</h3>
+          </div>
+          <div>
+            <div className="grid auto-cols-fr grid-flow-col grid-cols-[242.859px_161.906px_161.906px_161.906px_485.719px] grid-rows-[14.38rem] items-stretch gap-16 border-t-2 border-solid border-t-zinc-900/[0.15] px-6 pb-8 pt-12 text-lg">
+              <div>Brand Strategy</div>
+              <div>70 hrs*</div>
+              <div>4 weeks</div>
+              <div>$14,000</div>
+              <ul className="list-disc pl-6">
+                <li className="list-item">Strategy session</li>
+                <li className="list-item">Creative brief development</li>
+                <li className="list-item">
+                  Audience segmentation (adventure and eco-conscious)
+                </li>
+                <li className="list-item">Campaign messaging</li>
+                <li className="list-item">
+                  Visual concepts (urban & off-road settings)
+                </li>
+                <li className="list-item">Campaign guidelines</li>
+              </ul>
+            </div>
+            <div className="grid auto-cols-fr grid-flow-col grid-cols-[242.859px_161.906px_161.906px_161.906px_485.719px] grid-rows-[11.50rem] items-stretch gap-16 border-t-2 border-solid border-t-zinc-900/[0.15] px-6 pb-8 pt-12 text-lg">
+              <div>Social Media Assets</div>
+              <div>50 hrs*</div>
+              <div>3 weeks</div>
+              <div>$10,000</div>
+              <ul className="list-disc pl-6">
+                <li className="list-item">Social media assets</li>
+                <li className="list-item">Digital ad design</li>
+                <li className="list-item">
+                  Video production (urban and off-road adventures)
+                </li>
+                <li className="list-item">
+                  Content creation (blog posts, infographics, off-roading
+                  guides)
+                </li>
+              </ul>
+            </div>
+            <div className="grid auto-cols-fr grid-flow-col grid-cols-[242.859px_161.906px_161.906px_161.906px_485.719px] grid-rows-[16.63rem] items-stretch gap-16 border-t-2 border-solid border-t-zinc-900/[0.15] px-6 pb-8 pt-12 text-lg">
+              <div>Website Landing Page</div>
+              <div>80 hrs*</div>
+              <div>5weeks</div>
+              <div>$16,000</div>
+              <ul className="list-disc pl-6">
+                <li className="list-item">Landing page wireframes</li>
+                <li className="list-item">UX/UI design</li>
+                <li className="list-item">
+                  Content creation (focused on campaign messaging)
+                </li>
+                <li className="list-item">Responsive development</li>
+                <li className="list-item">SEO optimization</li>
+                <li className="list-item">Analytics setup</li>
+                <li className="list-item">Launch support</li>
+              </ul>
+            </div>
+            <div className="relative">
+              <div className="absolute left-0 right-0 top-0 bg-zinc-900" />
             </div>
           </div>
         </div>
