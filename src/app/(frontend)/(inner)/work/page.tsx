@@ -3,6 +3,7 @@ import configPromise from "@payload-config";
 import { WorkCard } from "@/components/WorkCard";
 import Link from "next/link";
 import Image from "next/image";
+import { ImageGrow } from "./[slug]/HeroImageGrow";
 
 export default async function WorkPage() {
   const payload = await getPayloadHMR({ config: configPromise });
