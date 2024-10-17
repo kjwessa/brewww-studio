@@ -60,7 +60,20 @@ export const Work: CollectionConfig = {
       tabs: [
         {
           label: "Content",
-          fields: [],
+          fields: [
+            {
+              name: "storyTitle",
+              type: "text",
+              label: "Story Title",
+              required: false,
+            },
+            {
+              name: "storyContent",
+              type: "richText",
+              label: "Story Content",
+              required: false,
+            },
+          ],
         },
         {
           name: "metadata",

@@ -100,57 +100,19 @@ export default async function WorkPage({
         <div className="relative flex flex-wrap items-start justify-between">
           <div className="relative flex w-full flex-wrap px-2 lg:mb-0 lg:w-[56.25%] lg:px-3 xl:px-4 min-[2100px]:w-2/4">
             <div className="order-1 text-5xl text-white">
-              <div className="w-full lg:pr-16">
-                <h2 className="mb-3">Crafting a Unique Brew for Foley</h2>
-              </div>
-            </div>
-            <div className="order-2 mb-5 flex w-full lg:mb-0 lg:mt-5">
-              <div className="relative h-10 w-10 overflow-hidden rounded-lg lg:h-12 lg:w-12">
-                <div className="relative w-full overflow-hidden pt-12">
-                  <img
-                    className="absolute left-0 top-0 h-full w-full max-w-full object-cover"
-                    src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Ella-MadeByShape.jpg?w=400&h=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1704886333&s=ce9de567edaa6f19bb050b225410238e"
-                  />
-                </div>
-              </div>
-              <div className="relative ml-2 h-10 w-10 overflow-hidden rounded-lg lg:h-12 lg:w-12">
-                <div className="relative w-full overflow-hidden pt-12">
-                  <img
-                    className="absolute left-0 top-0 h-full w-full max-w-full object-cover"
-                    src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Jay-MadeByShape.jpg?w=400&h=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.4724&fp-y=0.5&dm=1704886269&s=479b46a6bc4929c3529500ff225a65e0"
-                  />
-                </div>
-              </div>
-              <div className="relative ml-2 h-10 w-10 overflow-hidden rounded-lg lg:h-12 lg:w-12">
-                <div className="relative w-full overflow-hidden pt-12">
-                  <img
-                    className="absolute left-0 top-0 h-full w-full max-w-full object-cover"
-                    src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/profile-images-2024/square/Natasia-MadeByShape.jpg?w=400&h=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1704887831&s=f35bf13bbc7bb682624324009583ed8e"
-                  />
-                </div>
-              </div>
-              <div className="relative ml-2 h-10 w-10 overflow-hidden rounded-lg lg:h-12 lg:w-12">
-                <div className="relative w-full overflow-hidden pt-12">
-                  <img
-                    className="absolute left-0 top-0 h-full w-full max-w-full object-cover"
-                    src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/profile-images-2024/portrait/Group-450.jpg?w=400&h=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1705050207&s=f9998c3bb45322a3ef7f6ef30aa94ec1"
-                  />
-                </div>
-              </div>
+              <h2 className="text-5xl text-white">
+                <span className="mr-4 text-sm font-light">/ The Story</span>
+                {project.storyTitle || "Add Story Title"}
+              </h2>
             </div>
           </div>
           <div className="w-full px-2 lg:w-[43.75%] lg:px-3 xl:px-4">
             <div className="w-full text-lg font-light text-zinc-400 xl:pr-10">
-              <p className="mb-6">
-                Brand Strategy, Visual Identity, and Web Design & Development
-                for Blessed Kettle; Foley, Alabama's first microbrewery. Our
-                challenge was to create a brand that resonates with both local
-                multi-generation families and millennial tourists. We crafted a
-                unique identity that blends traditional brewing values with
-                modern appeal, positioning Blessed Kettle as a cornerstone of
-                the local community and a must-visit destination for craft beer
-                enthusiasts.
-              </p>
+              {project.storyContent ? (
+                <RichText content={project.storyContent} enableProse={true} />
+              ) : (
+                <p className="mb-6">Add storyContent</p>
+              )}
             </div>
             <div className="mt-6 flex w-full max-w-2xl flex-wrap justify-between pr-6 lg:mt-10 lg:pr-0 min-[2100px]:max-w-3xl">
               <div className="mb-3 pr-8 lg:mb-0">
@@ -738,30 +700,6 @@ export default async function WorkPage({
         </div>
       </section>
 
-      <section className="bg-zinc-950 py-40 text-center text-[11.00rem] font-bold uppercase leading-none text-neutral-400">
-        <h1 className="text-white">The Merry Beggars</h1>
-      </section>
-      <section className="mx-auto flex max-w-7xl items-center justify-between bg-zinc-950 px-4 py-2 text-sm text-white">
-        <div className="uppercase">
-          <span>Branding, Design, Development</span>
-        </div>
-        <div>
-          <span>/ 2022</span>
-        </div>
-      </section>
-      <section className="bg-zinc-950">
-        <div className="mx-auto max-w-7xl px-4 py-16">
-          <div className="relative aspect-video w-full overflow-hidden rounded-lg">
-            <Image
-              src={AudioImageSix}
-              alt="The Merry Beggars audio entertainment platform showcase"
-              fill
-              style={{ objectFit: "cover" }}
-              className="cursor-pointer"
-            />
-          </div>
-        </div>
-      </section>
       <section className="bg-zinc-950 py-16">
         <h1 className="text-center text-[7rem] font-bold uppercase leading-none text-white">
           Original Audio Entertainment for the Whole Family
