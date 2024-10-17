@@ -34,8 +34,8 @@ export default async function Footer() {
     return new Date().getFullYear();
   };
   return (
-    <footer className="w-full rounded-2xl border-2 border-brand-gold bg-brand-dark-bg p-4 text-black lg:-mt-6 lg:p-6 xl:-mt-10 xl:p-10">
-      <div className="relative w-full overflow-hidden rounded-bl-3xl rounded-br-3xl bg-zinc-900 pb-16 pt-3 lg:pb-10 lg:pt-16">
+    <footer className="w-full border-b-4 border-brand-gold bg-brand-dark-bg p-10 text-black">
+      <div className="relative w-full overflow-hidden rounded-lg bg-zinc-900 pb-16 pt-3 lg:pb-10 lg:pt-16">
         <div className="absolute left-0 top-0 z-30 bg-neutral-950 pb-5 pr-5">
           <div className="absolute left-0 top-0 z-20 w-full">
             <div className="w-full bg-zinc-900 pb-[100%]" />
