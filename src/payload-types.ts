@@ -594,10 +594,10 @@ export interface Technology {
 export interface Journey {
   id: string;
   title: string;
-  tagline: string;
+  tagline?: string | null;
   slug: string;
   slugLock?: boolean | null;
-  description: string;
+  description?: string | null;
   content?: {};
   metadata?: {
     services?: (string | null) | Service;

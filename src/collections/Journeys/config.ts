@@ -37,7 +37,7 @@ export const Journeys: CollectionConfig = {
       name: "tagline",
       type: "text",
       label: "Tagline",
-      required: true,
+      required: false,
       admin: {
         description: "Add the tagline for the journey here.",
       },
@@ -47,7 +47,7 @@ export const Journeys: CollectionConfig = {
       name: "description",
       type: "textarea",
       label: "Description",
-      required: true,
+      required: false,
       admin: {
         description: "Add the description of the journey here.",
       },
