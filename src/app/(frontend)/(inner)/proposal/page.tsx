@@ -29,7 +29,6 @@ export default function ProposalPage() {
           </a>
         </div>
       </section>
-
       <section className="bg-white py-40 font-light text-zinc-900">
         <div className="grid auto-cols-fr grid-flow-col grid-cols-[349.562px_349.578px_349.578px_349.578px] grid-rows-[6.00rem] items-start justify-items-start gap-10">
           <div className="col-span-1 row-span-1 border-t-4 border-solid border-t-zinc-900/[0.15] pt-10">
@@ -111,7 +110,6 @@ export default function ProposalPage() {
           </div>
         </div>
       </section>
-
       <section className="relative bg-white py-40 font-light text-zinc-900">
         <div className="container mx-auto px-4">
           <div className="grid auto-cols-fr grid-cols-[1494.3px_0px] grid-rows-[3.50rem] pb-10">
@@ -185,6 +183,43 @@ export default function ProposalPage() {
             </div>
           </div>
         </div>
+      </section>
+      <section className="bg-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="rounded-lg bg-black p-8 text-white">
+            <div className="text-center">
+              <p className="text-3xl">
+                12 Weeks <span className="text-brand-gold">•</span> 200 Hours
+              </p>
+              <p className="mt-2 text-display-small">$40,000*</p>
+            </div>
+            <hr className="my-8 border-t border-white/20" />
+            <p className="mx-auto max-w-2xl text-center text-lg">
+              *The design and development costs are approximate and will be
+              finalized based on the specific features agreed upon during the
+              design phase.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="grid grid-cols-2 gap-2 bg-white px-2 py-2 text-zinc-900">
+        <div className="grid grid-rows-2 gap-2">
+          <img
+            className="h-full w-full object-cover"
+            src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7e11af569f38d969e0_Image.avif"
+            srcSet="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7e11af569f38d969e0_Image-p-500.avif 500w, https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7e11af569f38d969e0_Image-p-800.avif 800w, https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7e11af569f38d969e0_Image.avif 1440w"
+          />
+          <img
+            className="h-full w-full object-cover"
+            src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7ec41fc05c0158a6cb_Image-1.avif"
+            srcSet="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7ec41fc05c0158a6cb_Image-1-p-500.avif 500w, https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7ec41fc05c0158a6cb_Image-1-p-800.avif 800w, https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7ec41fc05c0158a6cb_Image-1.avif 1440w"
+          />
+        </div>
+        <img
+          className="h-full w-full object-cover"
+          src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7f038a61dbecde6b30_Image-2.avif"
+          srcSet="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7f038a61dbecde6b30_Image-2-p-500.avif 500w, https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7f038a61dbecde6b30_Image-2-p-800.avif 800w, https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7f038a61dbecde6b30_Image-2.avif 1440w"
+        />
       </section>
     </>
   );
