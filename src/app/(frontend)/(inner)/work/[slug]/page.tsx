@@ -16,7 +16,7 @@ import AudioImageSix from "/public/images/audio-six.jpg";
 import AudioImageSeven from "/public/images/audio-seven.jpg";
 import AudioImageEight from "/public/images/audio-eight.jpg";
 import { BeforeAfter } from "./BeforeAfter";
-
+import { Service } from "@/payload-types";
 export async function generateStaticParams() {
   const payload = await getPayloadHMR({ config: configPromise });
   const projects = await payload.find({
@@ -52,59 +52,29 @@ export default async function WorkPage({
         <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
           <div className="relative mb-5 flex w-full flex-wrap items-start justify-between lg:mb-10">
             <div className="mb-2 hidden w-full px-2 text-white lg:mb-0 lg:flex lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-              <div className="mb-3 flex flex-wrap items-center lg:mb-20">
-                <div className="mb-2 mr-2 rounded-full bg-zinc-800 px-4 pb-1.5 pt-2 lg:mb-3 lg:mr-3">
-                  Website
+              {project.services && project.services.length > 0 && (
+                <div className="mb-3 flex flex-wrap items-center lg:mb-20">
+                  {project.services.map((service, index) => (
+                    <div
+                      key={index}
+                      className="mb-2 mr-2 rounded-full bg-zinc-800 px-4 pb-1.5 pt-2 lg:mb-3 lg:mr-3 lg:inline-flex"
+                    >
+                      {typeof service === "string" ? service : service.title}
+                    </div>
+                  ))}
                 </div>
-                <div className="mb-2 mr-2 rounded-full bg-zinc-800 px-4 pb-1.5 pt-2 lg:mb-3 lg:mr-3">
-                  SEO
-                </div>
-                <div className="mb-2 mr-2 hidden rounded-full bg-zinc-800 px-4 pb-1.5 pt-2 lg:mb-3 lg:mr-3 lg:inline-flex">
-                  Illustration
-                </div>
-                <div className="mb-2 mr-2 hidden rounded-full bg-zinc-800 px-4 pb-1.5 pt-2 lg:mb-3 lg:mr-3 lg:inline-flex">
-                  Support
-                </div>
-              </div>
+              )}
             </div>
             <div className="w-full px-2 lg:w-[62.5%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="relative rounded-bl-3xl lg:pb-5 lg:pl-10 lg:pr-10 lg:pt-0">
-                <svg
-                  className="absolute bottom-[0.50rem] left-0 z-30 mb-0 ml-0 h-10 w-10 text-neutral-950 lg:h-12 lg:w-12 xl:bottom-[1.50rem]"
-                  fill="rgb(14, 15, 17)"
-                  version="1.1"
-                  viewBox="0 0 100 100"
-                  x="0"
-                  xmlSpace="preserve"
-                  xmlns="http://www.w3.org/2000/svg"
-                  y="0"
-                >
-                  <path
-                    d="M98.1 0h1.9v51.9h-1.9c0-27.6-22.4-50-50-50V0h50z"
-                    fill="rgb(14, 15, 17)"
-                  />
-                </svg>
-                <svg
-                  className="absolute bottom-0 right-0 z-30 -mr-0 mb-0 h-10 w-10 text-neutral-950 lg:h-12 lg:w-12"
-                  fill="rgb(14, 15, 17)"
-                  version="1.1"
-                  viewBox="0 0 100 100"
-                  x="0"
-                  xmlSpace="preserve"
-                  xmlns="http://www.w3.org/2000/svg"
-                  y="0"
-                >
-                  <path
-                    d="M98.1 0h1.9v51.9h-1.9c0-27.6-22.4-50-50-50V0h50z"
-                    fill="rgb(14, 15, 17)"
-                  />
-                </svg>
                 <div className="mb-3 flex items-center text-zinc-400 xl:mb-5">
-                  <div className="font-light">2021</div>
+                  <div className="font-light">
+                    {project.projectYear || "Add Year"}
+                  </div>
                   <div className="ml-3 h-1.5 w-1.5 rounded-full bg-zinc-400" />
                   <div className="ml-3 font-light">{project.title}</div>
                 </div>
-                <h1 className="text-[4.25rem] leading-none text-white">
+                <h1 className="text-headline-medium leading-none text-white">
                   {project.tagline}
                 </h1>
               </div>
@@ -1469,109 +1439,6 @@ export default async function WorkPage({
           />
         </div>
       </section>
-      <article className="bg-white pt-24 text-black">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <ul className="hidden list-none flex-wrap gap-4 md:flex">
-              <li>
-                <Link href="/posts" className="hover:underline">
-                  All Posts
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/posts/category/branding"
-                  className="hover:underline"
-                >
-                  Branding
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/posts/category/web-design"
-                  className="hover:underline"
-                >
-                  Web Design
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/posts/category/content"
-                  className="hover:underline"
-                >
-                  Content
-                </Link>
-              </li>
-              <li>
-                <Link href="/posts/category/guides" className="hover:underline">
-                  Guides
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/posts/category/updates"
-                  className="hover:underline"
-                >
-                  Updates
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <section className="container mx-auto px-4 pb-12 pt-12">
-          <div className="max-w-5xl">
-            <h1 className="mb-4 text-5xl font-medium leading-tight md:text-6xl">
-              {project.title}
-            </h1>
-            <p className="mb-8 max-w-3xl text-xl text-gray-700">
-              {project.description || "Add a cool description here."}
-            </p>
-            <div className="flex items-center gap-1 text-sm text-gray-500">
-              <span>
-                By{" "}
-                <Link className="text-gray-950" href={""}>
-                  Kevin Wessa
-                </Link>
-              </span>
-            </div>
-          </div>
-        </section>
-
-        <div className="w-full">
-          <div className="px-2">
-            <div className="relative aspect-[3/2] w-full">
-              <Image
-                src={
-                  typeof project.image === "string"
-                    ? project.image
-                    : project.image?.url || ""
-                }
-                fill
-                alt={
-                  typeof project.image === "object" ? project.image?.alt : ""
-                }
-                className="rounded-md object-cover"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-3 gap-8 pt-8">
-          <div></div>
-          <div className="flex flex-col justify-start">
-            <article className="mx-auto pb-24">
-              {/* <RichText
-              content={project.content || ""}
-              className="prose-lg"
-              enableProse={true}
-              enableGutter={false}
-            /> */}
-            </article>
-          </div>
-        </div>
-      </article>
     </>
   );
 }
