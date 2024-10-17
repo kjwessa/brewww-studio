@@ -1,7 +1,8 @@
-import { ServiceCard } from "@/components/ServiceCard/index";
+import ServiceCard from "@/components/ServiceCard/index";
 import { Service } from "@/payload-types";
 
 export function ServicesSection({ services }: { services: Service[] }) {
+  console.log("Rendering ServicesSection component");
   return (
     <section className="w-full rounded-3xl bg-zinc-900 py-20 text-black lg:pb-24 lg:pt-24 min-[1450px]:pb-32 min-[1450px]:pt-32 min-[2100px]:pb-40 min-[2100px]:pt-40">
       <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
@@ -117,6 +118,7 @@ export function ServicesSection({ services }: { services: Service[] }) {
               </a>
             </div>
           </div>
+
           <div className="order-2 w-full px-2 lg:w-[68.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
             {services.map((service) => (
               <ServiceCard key={service.id} service={service} />
