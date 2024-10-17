@@ -15,17 +15,14 @@ export default function ServicesPage() {
                   Services
                 </div>
               </div>
-              <h1 className="indent-32 text-display-small leading-none text-white">
-                We're a digital <br className="indent-32" />
-                marketing agency
-                <br className="indent-32" />
-                with expertise
+              <h1 className="max-w-5xl indent-32 text-display-small leading-none text-white">
+                Talent, tools, and deliverables to spark action for your brand.
               </h1>
             </div>
           </div>
-          <div className="flex w-full flex-wrap text-[2.50rem] leading-none text-white md:justify-end">
+          <div className="flex w-full flex-wrap pt-20 text-[2.50rem] leading-none text-white md:justify-end">
             <div className="px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-              <div className="w-full max-w-xl pr-10 lg:max-w-2xl lg:pl-10 lg:pr-0">
+              <div className="w-full max-w-xl pr-10 font-light lg:max-w-2xl lg:pl-10 lg:pr-0">
                 <h2 className="mb-3">
                   We bring our passion for good design to brave brands and
                   deliver something you can shout about.
@@ -36,7 +33,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-brand-dark-bg px-2 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+      <section className="bg-brand-dark-bg px-2 pb-20 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+        <div className="mb-10 border-t border-gray-700 lg:mb-16"></div>
         <div className="mb-5 flex w-full flex-wrap text-display-large leading-none text-white lg:mb-20">
           <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
             <div className="w-full">
@@ -99,6 +97,165 @@ export default function ServicesPage() {
               <div className="inline-flex cursor-pointer items-center">
                 <div className="font-light">05</div>
                 <div className="ml-6 text-xl">Graphic Design</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-dark-bg px-2 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+        <div className="mb-5 flex w-full flex-wrap text-display-large leading-none text-white lg:mb-20">
+          <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+            <div className="w-full">
+              <h2>Develop</h2>
+            </div>
+          </div>
+        </div>
+        <div className="flex w-full flex-wrap justify-between text-white">
+          <div className="mb-5 w-full px-2 text-[2.50rem] leading-none lg:mb-0 lg:w-[43.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+            <h2 className="pr-10 lg:pr-0">
+              Web development to the highest standards, and matching the latest
+              industry requirements.
+            </h2>
+          </div>
+          <div className="mb-5 w-full px-2 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4 min-[2100px]:w-[43.75%]">
+            <a
+              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+              href=""
+            >
+              <div className="inline-flex cursor-pointer items-center">
+                <div className="font-light">01</div>
+                <div className="ml-6 text-xl">Web Development</div>
+              </div>
+            </a>
+
+            <a
+              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+              href=""
+            >
+              <div className="inline-flex cursor-pointer items-center">
+                <div className="font-light">02</div>
+                <div className="ml-6 text-xl">Craft CMS</div>
+              </div>
+            </a>
+
+            <a
+              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+              href=""
+            >
+              <div className="inline-flex cursor-pointer items-center">
+                <div className="font-light">03</div>
+                <div className="ml-6 text-xl">Shopify</div>
+              </div>
+            </a>
+
+            <a
+              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+              href=""
+            >
+              <div className="inline-flex cursor-pointer items-center">
+                <div className="font-light">04</div>
+                <div className="ml-6 text-xl">Craft Commerce</div>
+              </div>
+            </a>
+
+            <a
+              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+              href=""
+            >
+              <div className="inline-flex cursor-pointer items-center">
+                <div className="font-light">05</div>
+                <div className="ml-6 text-xl">eCommerce</div>
+              </div>
+            </a>
+
+            <a
+              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+              href=""
+            >
+              <div className="inline-flex cursor-pointer items-center">
+                <div className="font-light">06</div>
+                <div className="ml-6 text-xl">Technical SEO</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-dark-bg px-2 pb-20 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+        <div className="mb-10 border-t border-gray-700 lg:mb-16"></div>
+        <div className="mb-5 flex w-full flex-wrap text-[21.13rem] leading-none text-white lg:mb-20">
+          <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+            <div className="w-full">
+              <h2>Support</h2>
+            </div>
+          </div>
+        </div>
+        <div className="flex w-full flex-wrap justify-between text-white">
+          <div className="mb-5 w-full px-2 text-[2.50rem] leading-none lg:mb-0 lg:w-[43.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+            <h2 className="pr-10 lg:pr-0">
+              Lean on our in-house team to support with your design, development
+              and seo needs.
+            </h2>
+          </div>
+          <div className="mb-5 w-full px-2 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4 min-[2100px]:w-[43.75%]">
+            <a
+              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+              href="https://madebyshape.co.uk/search-engine-optimisation/"
+            >
+              <div className="inline-flex cursor-pointer items-center">
+                <div className="font-light">01</div>
+                <div className="ml-6 text-xl">SEO</div>
+              </div>
+            </a>
+
+            <a
+              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+              href="https://madebyshape.co.uk/web-hosting/"
+            >
+              <div className="inline-flex cursor-pointer items-center">
+                <div className="font-light">02</div>
+                <div className="ml-6 text-xl">Web Hosting</div>
+              </div>
+            </a>
+
+            <a
+              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+              href="https://madebyshape.co.uk/shape-support/"
+            >
+              <div className="inline-flex cursor-pointer items-center">
+                <div className="font-light">03</div>
+                <div className="ml-6 text-xl">Shape Support</div>
+              </div>
+            </a>
+
+            <a
+              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+              href="https://madebyshape.co.uk/ppc/"
+            >
+              <div className="inline-flex cursor-pointer items-center">
+                <div className="font-light">04</div>
+                <div className="ml-6 text-xl">PPC</div>
+              </div>
+            </a>
+
+            <a
+              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+              href="https://madebyshape.co.uk/content-writing/"
+            >
+              <div className="inline-flex cursor-pointer items-center">
+                <div className="font-light">05</div>
+                <div className="ml-6 text-xl">Content Writing</div>
+              </div>
+            </a>
+
+            <a
+              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+              href="https://madebyshape.co.uk/craft-cms/"
+            >
+              <div className="inline-flex cursor-pointer items-center">
+                <div className="font-light">06</div>
+                <div className="ml-6 text-xl">Craft CMS</div>
               </div>
             </a>
           </div>
