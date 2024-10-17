@@ -36,6 +36,75 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <section className="bg-brand-dark-bg px-2 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+        <div className="mb-5 flex w-full flex-wrap text-display-large leading-none text-white lg:mb-20">
+          <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+            <div className="w-full">
+              <h2>Design</h2>
+            </div>
+          </div>
+        </div>
+        <div className="flex w-full flex-wrap justify-between text-white">
+          <div className="mb-5 w-full px-2 text-[2.50rem] leading-none lg:mb-0 lg:w-[43.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+            <h2 className="pr-10 lg:pr-0">
+              Brand designers and web designers in-house crafting visuals to
+              match your brand values.
+            </h2>
+          </div>
+          <div className="mb-5 w-full px-2 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4 min-[2100px]:w-[43.75%]">
+            <a
+              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+              href=""
+            >
+              <div className="inline-flex cursor-pointer items-center">
+                <div className="font-light">01</div>
+                <div className="ml-6 text-xl">Brand Identity</div>
+              </div>
+            </a>
+
+            <a
+              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+              href=""
+            >
+              <div className="inline-flex cursor-pointer items-center">
+                <div className="font-light">02</div>
+                <div className="ml-6 text-xl">Web Design</div>
+              </div>
+            </a>
+
+            <a
+              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+              href=""
+            >
+              <div className="inline-flex cursor-pointer items-center">
+                <div className="font-light">03</div>
+                <div className="ml-6 text-xl">eCommerce</div>
+              </div>
+            </a>
+
+            <a
+              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+              href=""
+            >
+              <div className="inline-flex cursor-pointer items-center">
+                <div className="font-light">04</div>
+                <div className="ml-6 text-xl">Shopify</div>
+              </div>
+            </a>
+
+            <a
+              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+              href=""
+            >
+              <div className="inline-flex cursor-pointer items-center">
+                <div className="font-light">05</div>
+                <div className="ml-6 text-xl">Graphic Design</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section className="flex bg-white text-stone-950">
         <div className="relative flex h-[50.46rem] w-full">
           <Image
