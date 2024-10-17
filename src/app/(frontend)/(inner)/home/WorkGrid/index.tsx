@@ -1,33 +1,17 @@
-import { getPayloadHMR } from "@payloadcms/next/utilities";
-import configPromise from "@payload-config";
 import { WorkCard } from "@/components/WorkCard";
+import { Work } from "@/payload-types";
 
-export async function WorkGallery() {
-  const payload = await getPayloadHMR({ config: configPromise });
-  const projects = await payload.find({
-    collection: "work",
-    limit: 4,
-    sort: "-publishedOn",
-    where: {
-      _status: {
-        equals: "published",
-      },
-      featured: {
-        equals: true,
-      },
-    },
-  });
-
+export async function WorkGrid({ projects }: { projects: Work[] }) {
   return (
     <section className="bg-brand-dark-bg py-16 text-black md:py-24 lg:py-32">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap">
           <div className="w-full px-2 md:mt-20 md:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
             <div className="mb-16 w-full lg:mb-28">
-              {projects.docs[0] && <WorkCard project={projects.docs[0]} />}
+              {projects[0] && <WorkCard project={projects[0]} />}
             </div>
             <div className="mb-16 w-full lg:mb-28">
-              {projects.docs[1] && <WorkCard project={projects.docs[1]} />}
+              {projects[1] && <WorkCard project={projects[1]} />}
             </div>
             <div className="hidden w-full lg:flex">
               <div className="mb-10 flex w-full justify-center text-center">
@@ -113,10 +97,10 @@ export async function WorkGallery() {
               </div>
             </div>
             <div className="mb-16 w-full lg:mb-28">
-              {projects.docs[2] && <WorkCard project={projects.docs[2]} />}
+              {projects[2] && <WorkCard project={projects[2]} />}
             </div>
             <div className="mb-16 w-full lg:mb-28">
-              {projects.docs[3] && <WorkCard project={projects.docs[3]} />}
+              {projects[3] && <WorkCard project={projects[3]} />}
             </div>
           </div>
         </div>
