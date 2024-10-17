@@ -326,6 +326,37 @@ export default function ProposalPage() {
           </div>
         </div>
       </section>
+      <section className="bg-white py-20 font-light text-zinc-900">
+        <div className="container mx-auto">
+          <div className="flex items-center">
+            <div className="mr-4 h-3 w-3 rounded-full bg-red-500"></div>
+            <h2 className="text-5xl">Case Studies</h2>
+          </div>
+        </div>
+      </section>
+      <section className="bg-white py-20">
+        <div className="container mx-auto">
+          <div className="flex overflow-hidden rounded-lg shadow-lg">
+            <div className="w-1/2 bg-black p-8 text-white">
+              <h3 className="mb-4 text-3xl font-bold">
+                Vintage Broncos Website Redesign
+              </h3>
+              <div className="space-y-2 text-sm">
+                <p>Client: Denver Broncos</p>
+                <p>Duration: 3 months</p>
+                <p>Services: UX/UI Design, Web Development</p>
+              </div>
+            </div>
+            <div className="w-1/2">
+              <img
+                src="/path-to-your-image.jpg"
+                alt="Vintage Broncos Website Redesign"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
