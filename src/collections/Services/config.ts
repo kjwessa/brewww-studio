@@ -38,29 +38,29 @@ export const Services: CollectionConfig = {
       name: "tagline",
       type: "text",
       label: "Tagline",
-      required: true,
+      required: false,
       admin: {
         description:
           "The tagline of the service as it appears around the site.",
       },
     },
+
+    ...slugField(),
     {
-      name: "imageMain",
+      name: "image",
       type: "upload",
-      label: "Main Image",
-      required: true,
+      label: "Featured Image",
+      required: false,
       relationTo: "media",
       admin: {
-        description:
-          "The main image of the service as it appears around the site.",
+        position: "sidebar",
       },
     },
-    ...slugField(),
     {
       name: "description",
       type: "textarea",
       label: "Description",
-      required: true,
+      required: false,
       admin: {
         description:
           "The description of the service as it appears around the site.",
@@ -72,7 +72,14 @@ export const Services: CollectionConfig = {
       tabs: [
         {
           label: "Content",
-          fields: [],
+          fields: [
+            {
+              name: "overview",
+              type: "richText",
+              label: "Overview Test",
+              required: false,
+            },
+          ],
         },
         {
           name: "metadata",

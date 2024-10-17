@@ -6,6 +6,7 @@ import { ImageGrow } from "./ImageGrow/index";
 import { HomeHeroSection } from "./HomeHeroSection/index";
 import { WorkGridSection } from "./WorkGridSection/index";
 import { BlogGridSection } from "./BlogGridSection/index";
+import { ServicesSection } from "./ServicesSection/index";
 
 export default async function Home() {
   const payload = await getPayloadHMR({ config: configPromise });
@@ -43,6 +44,7 @@ export default async function Home() {
       <WorkGridSection projects={projects.docs} />
       <ImageGrow />
       <BlogGridSection posts={posts.docs} />
+      <ServicesSection />
 
       <section className="bg-brand-dark-bg text-zinc-50">
         <div className="container mx-auto px-4">
