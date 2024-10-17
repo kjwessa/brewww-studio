@@ -60,7 +60,7 @@ export const Team: CollectionConfig = {
   defaultSort: "-title",
   labels: {
     singular: "Team Member",
-    plural: "Team Members",
+    plural: "Team",
   },
   versions: {
     drafts: true,

@@ -574,33 +574,6 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="h-[37.50rem] w-screen bg-white p-6 text-black min-[576px]:h-[33.13rem] min-[992px]:h-screen min-[992px]:min-h-[34.38rem] min-[992px]:p-12 min-[1200px]:min-h-[40.63rem] min-[1200px]:p-20 min-[1600px]:min-h-[46.88rem] min-[1600px]:p-24">
-        <div className="relative h-full w-full overflow-hidden bg-gray-800 text-white">
-          <div className="flex h-full w-full items-center justify-center">
-            <div className="relative flex h-full w-full items-center justify-center overflow-hidden">
-              <video className="h-auto w-[55.31rem] max-w-[17.50rem] object-contain min-[576px]:max-w-[21.25rem] md:max-w-[31.06rem] min-[992px]:max-w-[37.63rem] min-[1200px]:max-w-[44.38rem] min-[1600px]:max-w-[55.31rem]">
-                <source
-                  src="https://1minus1-2021.s3.eu-west-2.amazonaws.com/playground_games_d668388ab5.webm"
-                  type="video/webm"
-                />
-                <source
-                  src="https://1minus1-2021.s3.eu-west-2.amazonaws.com/playground_games_ed3cb8c0ea.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </div>
-            <aside className="absolute bottom-[1.88rem] left-[1.88rem] z-[3] w-80 max-w-[14.38rem] md:bottom-[2.50rem] md:left-[2.50rem] md:w-[33%] md:max-w-[15.63rem] min-[992px]:bottom-[3.13rem] min-[992px]:left-[3.13rem] min-[992px]:w-96 min-[1600px]:bottom-[6.25rem] min-[1600px]:left-[6.25rem]">
-              <h4 className="mb-1.5 text-4xl">Playground Games</h4>
-              <p className="text-neutral-500">
-                Scalable content managed website for the Microsoft games studio.
-                <a className="text-black" href="https://1minus1.com/projects">
-                  View projects
-                </a>
-              </p>
-            </aside>
-          </div>
-        </div>
-      </section>
       <section className="relative bg-stone-50 py-36 text-[0.63rem] uppercase">
         <h1 className="m-auto grid w-full max-w-[96.90rem] grid-cols-[repeat(36,_minmax(0px,_1fr))] grid-rows-[220px_195px_195px] text-[16rem] leading-none text-black">
           <div
