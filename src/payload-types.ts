@@ -396,6 +396,8 @@ export interface Work {
   image: string | Media;
   brand: string | Brand;
   featured?: boolean | null;
+  services?: (string | Service)[] | null;
+  projectYear?: number | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -446,32 +448,6 @@ export interface Brand {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "play".
- */
-export interface Play {
-  id: string;
-  title: string;
-  tagline: string;
-  description?: string | null;
-  content?: {};
-  metadata?: {
-    relatedPlaygrounds?: (string | Play)[] | null;
-  };
-  seo?: {
-    image?: (string | null) | Media;
-    title?: string | null;
-    description?: string | null;
-  };
-  slug: string;
-  slugLock?: boolean | null;
-  publishedOn: string;
-  image: string | Media;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "services".
  */
 export interface Service {
@@ -503,6 +479,32 @@ export interface Service {
     image?: (string | null) | Media;
     description?: string | null;
   };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "play".
+ */
+export interface Play {
+  id: string;
+  title: string;
+  tagline: string;
+  description?: string | null;
+  content?: {};
+  metadata?: {
+    relatedPlaygrounds?: (string | Play)[] | null;
+  };
+  seo?: {
+    image?: (string | null) | Media;
+    title?: string | null;
+    description?: string | null;
+  };
+  slug: string;
+  slugLock?: boolean | null;
+  publishedOn: string;
+  image: string | Media;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
