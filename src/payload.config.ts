@@ -28,7 +28,7 @@ import { Users } from "@/collections/Users/config";
 import { Work } from "@/collections/Work/config";
 import { Technologies } from "@/collections/Technologies/config";
 import { Team } from "@/collections/Team/config";
-
+import { Journeys } from "@/collections/Journeys/config";
 //* Import Globals
 import { Header } from "./globals/Header/index";
 import { Footer } from "./globals/Footer/index";
@@ -129,6 +129,7 @@ export default buildConfig({
     Pillars,
     Testimonials,
     Technologies,
+    Journeys,
     Location,
     Results,
     Team,
