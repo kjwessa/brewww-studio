@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-export function HomeRotatingHero() {
+export function HomeHeroSection() {
   const sunRef = useRef<HTMLDivElement>(null);
   const firstElementRef = useRef<HTMLHeadingElement>(null);
   const secondElementRef = useRef<HTMLParagraphElement>(null);
@@ -47,7 +47,7 @@ export function HomeRotatingHero() {
       <div className="container mx-auto px-4 py-8 md:px-6">
         <h1
           ref={firstElementRef}
-          className="mx-auto mb-6 max-w-5xl text-center text-display-large font-bold leading-[0.9] tracking-tighter"
+          className="mx-auto mb-6 max-w-5xl text-center text-display-medium font-bold leading-[0.9] tracking-tighter"
           id="animate-first"
         >
           <span className="opacity-30">From pencils to pixels</span>
@@ -55,7 +55,7 @@ export function HomeRotatingHero() {
         </h1>
         <p
           ref={secondElementRef}
-          className="mx-auto mt-6 max-w-3xl text-center text-xl opacity-70 md:text-2xl"
+          className="text-body-medium mx-auto mt-6 max-w-3xl text-center opacity-70 md:text-2xl"
           id="animate-second"
         >
           We craft brand identities, websites that drive results, and compelling

@@ -1,7 +1,7 @@
 import { WorkCard } from "@/components/WorkCard";
 import { Work } from "@/payload-types";
 
-export async function WorkGrid({ projects }: { projects: Work[] }) {
+export async function WorkGridSection({ projects }: { projects: Work[] }) {
   return (
     <section className="bg-brand-dark-bg py-16 text-black md:py-24 lg:py-32">
       <div className="container mx-auto px-4">
@@ -16,7 +16,7 @@ export async function WorkGrid({ projects }: { projects: Work[] }) {
             <div className="hidden w-full lg:flex">
               <div className="mb-10 flex w-full justify-center text-center">
                 <div className="flex flex-col items-center justify-center">
-                  <h2 className="mb-5 text-5xl text-white">
+                  <h2 className="mb-5 text-headline-small leading-none text-white">
                     Like what <br />
                     you see?
                   </h2>
@@ -91,7 +91,7 @@ export async function WorkGrid({ projects }: { projects: Work[] }) {
                   <div className="h-1.5 w-1.5 rounded-full bg-white" />
                   <div className="ml-2 font-light text-white">Our Work</div>
                 </div>
-                <h2 className="mb-0 mt-3 max-w-sm text-7xl text-white lg:mb-0 lg:mt-5 xl:max-w-md min-[2100px]:max-w-lg">
+                <h2 className="mb-0 mt-3 max-w-sm text-headline-large leading-none text-white lg:mb-0 lg:mt-5 xl:max-w-md min-[2100px]:max-w-lg">
                   Take a look at our projects
                 </h2>
               </div>

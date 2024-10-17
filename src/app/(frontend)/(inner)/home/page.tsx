@@ -3,9 +3,9 @@ import Link from "next/link";
 import configPromise from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { ImageGrow } from "./ImageGrow/index";
-import { HomeRotatingHero } from "./HomeRotatingHero/index";
-import { WorkGrid } from "./WorkGrid/index";
-import { BlogGrid } from "./BlogGrid/index";
+import { HomeHeroSection } from "./HomeHeroSection/index";
+import { WorkGridSection } from "./WorkGridSection/index";
+import { BlogGridSection } from "./BlogGridSection/index";
 
 export default async function Home() {
   const payload = await getPayloadHMR({ config: configPromise });
@@ -39,39 +39,16 @@ export default async function Home() {
 
   return (
     <>
-      <section className="flex hidden min-h-[90vh] items-center justify-center bg-brand-dark-bg text-zinc-50">
-        <div className="container mx-auto px-4 py-8 md:px-6">
-          <h1 className="mx-auto mb-6 max-w-5xl text-center text-display-large font-bold leading-[0.9] tracking-tighter">
-            <span className="opacity-50">If </span>
-            good enough
-            <span className="opacity-50">
-              {" "}
-              isn't working out, why not aim for{" "}
-            </span>
-            <span className="text-brand-gold">great</span>
-            <span className="opacity-50">?</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-center text-xl opacity-70 md:text-2xl">
-            We craft brand identities, websites that drive results, and
-            compelling storytelling that showcase your full potential. Local
-            feel, global reach.
-          </p>
-          <div className="mt-10 flex justify-center">
-            <div className="relative inline-block h-20 w-3 overflow-hidden md:h-28">
-              <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 transform bg-white/35" />
-              <div className="absolute left-1/2 top-0 h-1/2 w-px -translate-x-1/2 transform bg-white" />
-            </div>
-          </div>
-        </div>
-      </section>
-      <HomeRotatingHero />
-      <WorkGrid projects={projects.docs} />
+      <HomeHeroSection />
+      <WorkGridSection projects={projects.docs} />
+      <ImageGrow />
+      <BlogGridSection posts={posts.docs} />
 
       <section className="bg-brand-dark-bg text-zinc-50">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center">
             <div className="grid grid-cols-12 py-16 sm:py-24 md:py-32">
-              <div className="col-span-9 col-start-1 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+              <div className="col-span-9 col-start-1 text-headline-large leading-none">
                 From fast-growing startups to experienced companies, we deliver
                 functional design, high-quality code and well-thought strategy
                 to increase your odds of success in the digital world.
@@ -172,10 +149,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
-      <ImageGrow />
-
-      <BlogGrid posts={posts.docs} />
 
       <section className="bg-brand-dark-bg text-zinc-50">
         <div className="relative content-stretch items-start justify-start px-24 py-48 font-light">
