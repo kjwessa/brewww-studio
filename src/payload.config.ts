@@ -35,6 +35,7 @@ import { Footer } from "./globals/Footer/index";
 
 //* Import Types
 import { Page, Post } from "@/payload-types";
+import { Industries } from "./collections/Industries/config";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -134,6 +135,7 @@ export default buildConfig({
     Results,
     Team,
     Users,
+    Industries,
   ],
   globals: [Header, Footer],
   editor: lexicalEditor({}),
