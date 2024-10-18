@@ -16,17 +16,38 @@ const richTextVariants = cva("", {
       true: "prose mx-auto",
       false: "",
     },
+    theme: {
+      light: "text-black",
+      dark: "text-white",
+    },
   },
   defaultVariants: {
     colorLinks: true,
     enableGutter: true,
     enableProse: true,
+    theme: "dark",
   },
 });
+
+const defaultStyles = {
+  paragraph: "text-body-medium mb-4",
+  h1: "text-headline-large mb-4 mb-6",
+  h2: "text-headline-medium mb-4 mb-6",
+  h3: "text-headline-small mb-4 mb-6",
+  h4: "text-title-large mb-4 mb-6",
+  h5: "text-title-medium mb-4 mb-6",
+  h6: "text-title-small mb-4 mb-6",
+  list: "list-disc list-inside mb-4",
+  listItem: "mb-2",
+  quote: "border-l-4  pl-4 mb-4",
+  link: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
+};
 
 type RichTextProps = VariantProps<typeof richTextVariants> & {
   className?: string;
   content: any;
+  theme?: "light" | "dark";
+  customClasses?: Partial<typeof defaultStyles>;
 };
 
 export const RichText: React.FC<RichTextProps> = ({
@@ -35,16 +56,10 @@ export const RichText: React.FC<RichTextProps> = ({
   colorLinks,
   enableGutter,
   enableProse,
+  theme,
+  customClasses = {},
 }) => {
-  console.log("[RichText/index.tsx] Rendering RichText component", {
-    className,
-    content,
-  });
-
   if (!content) {
-    console.warn(
-      "[RichText/index.tsx] No content provided to RichText component",
-    );
     return null;
   }
 
@@ -53,27 +68,27 @@ export const RichText: React.FC<RichTextProps> = ({
     typeof content !== "object" ||
     !("root" in content)
   ) {
-    console.error("[RichText/index.tsx] Invalid content structure", content);
     return null;
   }
+
+  const mergedClasses = { ...defaultStyles, ...customClasses };
 
   try {
     return (
       <div
         className={cn(
-          richTextVariants({ colorLinks, enableGutter, enableProse }),
+          richTextVariants({ colorLinks, enableGutter, enableProse, theme }),
           "first:mt-0 last:mb-0 [&_span]:whitespace-pre-wrap",
           className,
         )}
       >
-        {serializeLexical({ nodes: content?.root?.children })}
+        {serializeLexical({
+          nodes: content?.root?.children,
+          customClasses: mergedClasses,
+        })}
       </div>
     );
   } catch (error) {
-    console.error(
-      "[RichText/index.tsx] Error rendering RichText component",
-      error,
-    );
     return null;
   }
 };
