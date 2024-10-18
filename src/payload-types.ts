@@ -28,6 +28,7 @@ export interface Config {
     results: Result;
     team: Team;
     users: User;
+    industries: Industry;
     forms: Form;
     'form-submissions': FormSubmission;
     'payload-locked-documents': PayloadLockedDocument;
@@ -677,6 +678,30 @@ export interface User {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "industries".
+ */
+export interface Industry {
+  id: string;
+  title: string;
+  tagline?: string | null;
+  slug: string;
+  slugLock?: boolean | null;
+  description?: string | null;
+  content?: {};
+  metadata?: {
+    services?: (string | null) | Service;
+  };
+  seo?: {
+    image?: (string | null) | Media;
+    title?: string | null;
+    description?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "form-submissions".
  */
 export interface FormSubmission {
@@ -766,6 +791,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'users';
         value: string | User;
+      } | null)
+    | ({
+        relationTo: 'industries';
+        value: string | Industry;
       } | null)
     | ({
         relationTo: 'forms';
