@@ -21,9 +21,10 @@ export type NodeTypes = DefaultNodeTypes | SerializedBlockNode<MediaTestProps>;
 
 type Props = {
   nodes: NodeTypes[];
+  customClasses?: Record<string, string>;
 };
 
-export function serializeLexical({ nodes }: Props): JSX.Element {
+export function serializeLexical({ nodes, customClasses }: Props): JSX.Element {
   return (
     <Fragment>
       {nodes?.map((node, index): JSX.Element | null => {
@@ -131,11 +132,19 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
               return <br key={index} />;
             }
             case "paragraph": {
-              return <p key={index}>{serializedChildren}</p>;
+              return (
+                <p key={index} className={customClasses?.paragraph}>
+                  {serializedChildren}
+                </p>
+              );
             }
             case "heading": {
-              const Tag = node?.tag as keyof JSX.IntrinsicElements;
-              return <Tag key={index}>{serializedChildren}</Tag>;
+              const HeadingTag = node?.tag as keyof JSX.IntrinsicElements;
+              return (
+                <HeadingTag key={index} className={customClasses?.heading}>
+                  {serializedChildren}
+                </HeadingTag>
+              );
             }
             case "list": {
               const Tag = node?.tag as keyof JSX.IntrinsicElements;
