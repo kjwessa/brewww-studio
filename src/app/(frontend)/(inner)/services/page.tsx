@@ -16,7 +16,8 @@ export default function ServicesPage() {
                 </div>
               </div>
               <h1 className="max-w-5xl indent-32 text-display-small leading-none text-white">
-                Talent, tools, and deliverables to spark action for your brand.
+                The talent, tools, and deliverables to spark action for your
+                brand.
               </h1>
             </div>
           </div>
