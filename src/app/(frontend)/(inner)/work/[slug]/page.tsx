@@ -50,9 +50,9 @@ export default async function WorkPage({
 
   return (
     <>
-      <section className="w-full bg-brand-dark-bg pt-40 text-black">
+      <section className="w-full bg-brand-dark-bg pb-20 pt-40 text-black">
         <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
-          <div className="relative mb-5 flex w-full flex-wrap items-start justify-between lg:mb-10">
+          <div className="relative flex w-full flex-wrap items-start justify-between">
             <div className="mb-2 hidden w-full px-2 text-white lg:mb-0 lg:flex lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               {project.services && project.services.length > 0 && (
                 <div className="mb-3 flex flex-wrap items-center lg:mb-20">
@@ -82,32 +82,18 @@ export default async function WorkPage({
               </div>
             </div>
           </div>
-          <div className="relative w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-            <div className="relative w-full">
-              <div className="relative w-full overflow-hidden rounded-3xl bg-zinc-900 pb-[75%] lg:pb-[56.25%]">
-                <Image
-                  src={
-                    typeof project.image === "string"
-                      ? project.image
-                      : project.image?.url || ""
-                  }
-                  alt="Project header image"
-                  fill
-                  style={{ objectFit: "cover" }}
-                  className="absolute left-0 top-0 h-full w-full max-w-full"
-                />
-              </div>
-            </div>
-          </div>
-          <ImageGrow
-            imageSrc={
-              typeof project.image === "string"
-                ? project.image
-                : project.image?.url || ""
-            }
-            altText="Project header image"
-          />
         </div>
+      </section>
+      <section className="bg-brand-dark-bg">
+        {" "}
+        <ImageGrow
+          imageSrc={
+            typeof project.image === "string"
+              ? project.image
+              : project.image?.url || ""
+          }
+          altText="Project header image"
+        />
       </section>
 
       <section className="bg-brand-dark-bg px-2 py-20 text-black sm:px-6 xl:px-12 min-[1450px]:px-20 min-[1800px]:px-40 min-[2100px]:px-60">
