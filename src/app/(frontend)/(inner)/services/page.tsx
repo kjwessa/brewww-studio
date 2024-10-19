@@ -5,6 +5,37 @@ import Link from "next/link";
 export default function ServicesPage() {
   return (
     <>
+      <section className="w-full bg-brand-dark-bg pb-10 pt-20 text-black lg:pb-16 lg:pt-32 xl:pt-40">
+        <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+          <div className="mb-3 flex flex-wrap justify-between md:mb-5 lg:mb-0">
+            <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+              <div className="mb-3 inline-flex w-auto items-center">
+                <div className="h-1.5 w-1.5 rounded-full bg-white" />
+                <div className="ml-2 text-lg font-light text-white">
+                  Services
+                </div>
+              </div>
+              <h1 className="indent-32 text-display-small leading-none text-white">
+                We're a digital <br className="indent-32" />
+                marketing agency
+                <br className="indent-32" />
+                with expertise
+              </h1>
+            </div>
+          </div>
+          <div className="flex w-full flex-wrap text-[2.50rem] leading-none text-white md:justify-end">
+            <div className="px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+              <div className="w-full max-w-xl pr-10 lg:max-w-2xl lg:pl-10 lg:pr-0">
+                <h2 className="mb-3">
+                  We bring our passion for good design to brave brands and
+                  deliver something you can shout about.
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="flex bg-white text-stone-950">
         <div className="relative flex h-[50.46rem] w-full">
           <Image
