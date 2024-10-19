@@ -71,7 +71,7 @@ export const BlogPosts: CollectionConfig = {
                 features: ({ defaultFeatures }) => [
                   ...defaultFeatures,
                   HeadingFeature({
-                    enabledHeadingSizes: ["h2", "h3", "h4", "h5", "h6"],
+                    enabledHeadingSizes: ["h2", "h3", "h4"],
                   }),
                   BlocksFeature({
                     blocks: [MediaTest],

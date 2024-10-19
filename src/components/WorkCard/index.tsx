@@ -14,7 +14,7 @@ export function WorkCard({ project }: WorkCardProps) {
         className="relative flex flex-col items-start"
       >
         <div className="relative mb-6 w-full cursor-pointer overflow-hidden">
-          <div className="absolute right-0 top-0 z-20 rounded-bl-3xl pb-3 pl-3 pt-1">
+          <div className="absolute right-0 top-0 z-20 pb-3 pl-3 pt-1">
             <div className="-mb-2 -mr-2 flex flex-wrap items-center text-label-small text-white lg:-mb-3">
               <div className="mb-2 mr-2 rounded-full bg-zinc-800 px-4 pb-1.5 pt-2 lg:mb-3 lg:mr-3">
                 Branding
@@ -27,7 +27,7 @@ export function WorkCard({ project }: WorkCardProps) {
               </div>
             </div>
           </div>
-          <div className="relative w-full overflow-hidden rounded-3xl bg-zinc-800 text-black">
+          <div className="relative w-full overflow-hidden rounded-lg bg-zinc-800 text-black">
             <div className="relative w-full overflow-hidden">
               <div className="w-full">
                 <div className="relative w-full overflow-hidden pb-[75%]">

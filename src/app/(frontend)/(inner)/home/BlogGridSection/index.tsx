@@ -25,12 +25,12 @@ export function BlogGridSection({ posts }: { posts: Post[] }) {
               <BlogCard post={posts[0]} />
             </div>
             <div className="float-right mb-36 mr-24 w-[33.44rem] pb-3">
-              <BlogCard post={posts[1]} />
+              <BlogCard post={posts[2]} />
             </div>
           </div>
           <div className="relative w-full max-w-[50%] basis-1/2">
             <div className="mb-36 mt-28 w-[33.44rem] pb-3">
-              <BlogCard post={posts[2]} />
+              <BlogCard post={posts[1]} />
             </div>
             <div className="float-right -mr-24 mb-36 w-[33.44rem] pb-3">
               <BlogCard post={posts[3]} />
