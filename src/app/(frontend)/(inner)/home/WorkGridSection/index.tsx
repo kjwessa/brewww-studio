@@ -91,8 +91,8 @@ export async function WorkGridSection({ projects }: { projects: Work[] }) {
                   <div className="h-1.5 w-1.5 rounded-full bg-white" />
                   <div className="ml-2 font-light text-white">Our Work</div>
                 </div>
-                <h2 className="mb-0 mt-3 max-w-sm text-headline-large leading-none text-white lg:mb-0 lg:mt-5 xl:max-w-md min-[2100px]:max-w-lg">
-                  Take a look at our projects
+                <h2 className="mb-0 mt-3 max-w-md text-headline-large leading-none text-white lg:mb-0 lg:mt-5 xl:max-w-md min-[2100px]:max-w-lg">
+                  A few projects to explore
                 </h2>
               </div>
             </div>
