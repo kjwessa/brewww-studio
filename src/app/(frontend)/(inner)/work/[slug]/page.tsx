@@ -17,6 +17,8 @@ import AudioImageSeven from "/public/images/audio-seven.jpg";
 import AudioImageEight from "/public/images/audio-eight.jpg";
 import { BeforeAfter } from "./BeforeAfter";
 import { Service } from "@/payload-types";
+import { ImageGrow } from "./HeroImageGrow";
+
 export async function generateStaticParams() {
   const payload = await getPayloadHMR({ config: configPromise });
   const projects = await payload.find({
@@ -97,6 +99,14 @@ export default async function WorkPage({
               </div>
             </div>
           </div>
+          <ImageGrow
+            imageSrc={
+              typeof project.image === "string"
+                ? project.image
+                : project.image?.url || ""
+            }
+            altText="Project header image"
+          />
         </div>
       </section>
 
