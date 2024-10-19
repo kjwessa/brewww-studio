@@ -34,35 +34,12 @@ export default async function BlogPage() {
     {} as Record<string, number>,
   );
 
-  console.log("Posts:", posts.docs.length);
-  console.log("Categories:", categories.docs.length);
-  console.log("Category Counts:", categoryCounts);
-  console.log("Sample post metadata:", posts.docs[0]?.metadata);
-
   return (
     <>
-      <section className="bg-brand-dark-bg text-white">
-        <div className="container mx-auto px-6 py-24">
-          <div className="mx-auto flex max-w-4xl flex-col items-center justify-center text-center">
-            <div className="mb-4 font-bold uppercase">+ Insights</div>
-            <h1 className="mb-6 text-6xl font-bold leading-tight sm:text-7xl lg:text-8xl">
-              Their insights are simply...brilliant.
-            </h1>
-            <div className="uppercase text-neutral-400">
-              - Our Moms (probably)
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="flex w-full flex-wrap bg-brand-dark-bg px-2 py-4 text-black lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-        <div className="w-full lg:w-[93.75%]">
-          <h1 className="mb-2 inline-flex w-auto items-center lg:absolute lg:left-[1.00rem] lg:top-[0.75rem] lg:mb-0">
-            <div className="h-1.5 w-1.5 rounded-full bg-white" />
-            <div className="ml-2 font-light text-white">The Blog</div>
-          </h1>
-          <ul className="flex list-none flex-wrap">
-            <li className="mr-4 list-item lg:mr-10">
+        <div className="container mx-auto w-full">
+          <ul className="flex list-none flex-row flex-wrap justify-start">
+            <li className="mb-2 mr-4">
               <CategoryFilter
                 title="Explore All"
                 count={posts.totalDocs}
@@ -70,7 +47,7 @@ export default async function BlogPage() {
               />
             </li>
             {categories.docs.map((category) => (
-              <li key={category.id} className="mr-4 list-item lg:mr-10">
+              <li key={category.id} className="mb-2 mr-4">
                 <CategoryFilter
                   title={category.title}
                   count={categoryCounts[category.id] || 0}
@@ -84,7 +61,6 @@ export default async function BlogPage() {
 
       <section className="bg-brand-dark-bg py-24">
         <div className="container mx-auto">
-          <h1 className="mb-12 text-4xl font-bold text-white">Insights</h1>
           <div className="relative grid auto-rows-auto grid-cols-3 gap-x-8 gap-y-24 text-zinc-100">
             {posts.docs.map((post) => (
               <BlogCard key={post.id} post={post} />
@@ -109,18 +85,6 @@ export default async function BlogPage() {
     </>
   );
 }
-
-// type Post = {
-//   id: string;
-//   slug: string;
-//   name: string;
-//   category?: string | { name: string };
-//   publishedDate: string;
-//   readTime?: string;
-//   url?: string;
-//   imageUrl?: string;
-//   featuredImage?: { url: string };
-// };
 
 // type Guide = {
 //   id: string;

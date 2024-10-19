@@ -19,7 +19,7 @@ export const CategoryFilter = ({
       href={slug || "#"}
     >
       <div
-        className={`cursor-pointer text-headline-small lowercase leading-none ${title.toLowerCase() === "explore all" ? "indent-48" : ""}`}
+        className={`cursor-pointer text-title-medium lowercase leading-none ${title.toLowerCase() === "explore all" ? "indent-48" : ""}`}
       >
         {title}
       </div>
