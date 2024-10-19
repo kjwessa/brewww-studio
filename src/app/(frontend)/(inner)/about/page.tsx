@@ -253,72 +253,6 @@ export default function About() {
 
       <AboutWhySection />
 
-      <section className="relative w-full bg-black py-24 text-lg text-stone-400 md:py-32 xl:py-40">
-        <div className="container mx-auto px-4">
-          <div className="relative xl:flex xl:justify-between">
-            <p className="z-10 mb-5 text-sm uppercase text-neutral-500 xl:mt-2 xl:w-28">
-              What we believe in
-            </p>
-            <div className="z-10 xl:flex xl:flex-col">
-              <div className="xl:flex xl:flex-row xl:space-x-8">
-                <h2 className="z-10 text-[3.50rem] uppercase leading-none text-stone-200 xl:mb-6">
-                  Less talk, more rock.
-                </h2>
-                <div className="z-10 mt-6 xl:mt-0 xl:max-w-[45.00rem]">
-                  Brewww Studio is a multidisciplinary creative studio crafting
-                  branded experiences through design, motion, content and
-                  storytelling. A small team with senior talent and a global
-                  network of experts enables us to deliver results more rapidly
-                  and with greater efficiency.
-                </div>
-              </div>
-              <div className="mt-10 flex justify-between lg:mt-12">
-                <div className="relative w-[calc(50%_-_10px)] lg:w-[calc(50%_-_3.57143vw)]">
-                  <div className="relative w-full overflow-hidden bg-gray-950 pb-[107%]">
-                    <div className="absolute left-0 top-0 h-full w-full">
-                      <div className="absolute left-0 top-0 h-full w-full overflow-hidden">
-                        <picture className="absolute left-0 top-0 h-full w-full">
-                          <img
-                            className="absolute left-0 top-0 h-full w-full object-cover"
-                            src="https://cdn.sanity.io/images/mccelfnn/production/0eb6fab5cd729c1bf1f87e3572a8c07ae93ac307-1160x1247.jpg?q=90&w=1160"
-                          />
-                        </picture>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="absolute bottom-0 left-0 z-10 -ml-3 lg:-ml-5 xl:-ml-6">
-                    <h2 className="-mt-3.5 text-[3.50rem] uppercase leading-none text-stone-200">
-                      Kevin Wessa
-                    </h2>
-                    <p className="mt-1 text-base">Founding Partner</p>
-                  </div>
-                </div>
-                <div className="relative w-[calc(50%_-_10px)] lg:w-[calc(50%_-_3.57143vw)]">
-                  <div className="relative w-full overflow-hidden bg-gray-950 pb-[107%]">
-                    <div className="absolute left-0 top-0 h-full w-full">
-                      <div className="absolute left-0 top-0 h-full w-full overflow-hidden">
-                        <picture className="absolute left-0 top-0 h-full w-full">
-                          <img
-                            className="absolute left-0 top-0 h-full w-full object-cover"
-                            src="https://cdn.sanity.io/images/mccelfnn/production/ae09b9f39bc91381cfcfcd9fffc5cdd098b9d818-1160x1247.jpg?q=90&w=1160"
-                          />
-                        </picture>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="absolute bottom-0 left-0 z-10 -ml-3 lg:-ml-5 xl:-ml-6">
-                    <h2 className="-mt-3.5 text-[3.50rem] uppercase leading-none text-stone-200">
-                      Christine Wessa
-                    </h2>
-                    <p className="mt-1 text-base">Founding Partner</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="bg-zinc-950 text-white">
         <article className="grid grid-cols-[103.906px_103.906px_103.906px_103.906px_103.906px_103.906px_103.906px_103.922px_103.906px_103.906px_103.906px_103.906px] grid-rows-[192px_auto_auto_auto_auto_76px] gap-x-10 gap-y-6">
           <div
@@ -531,40 +465,6 @@ export default function About() {
                 Our strategy remains: work hard, create lasting relationships,
                 and deliver the very best quality work.
               </h3>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b-2 border-solid border-black bg-white text-black">
-        <div className="flex basis-full justify-between bg-orange-300 px-12 py-24">
-          <div className="basis-[47%]">
-            <div>
-              <div className="relative flex w-full items-center justify-center">
-                <div
-                  className="relative flex h-full max-h-[31.25rem] min-h-[31.25rem] w-full max-w-[31.25rem]"
-                  style={{
-                    cursor:
-                      'url("https://grainandmortar.com/wp-content/themes/gm/_assets/img/cursor-arrow.svg") 0 0, default',
-                  }}
-                >
-                  {/* Image stack */}
-                  {/* ... (image stack code remains unchanged) */}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex basis-[47%] content-center items-center justify-center text-center">
-            <div>
-              <h3 className="mb-8 text-[2.38rem] leading-none">BFFs</h3>
-              <p className="mb-8 text-xl">
-                z Grain & Mortar is a partnership that began between Eric Downs
-                and Mike & Kristin DeKay in 2011. Since then, we've been
-                fortunate enough to work on hundreds of projects for clients in
-                a wide variety of industries.
-              </p>
-              <span className="text-[11.25rem] leading-none">12</span>
-              <p className="mb-8 text-xl">years in the making.</p>
             </div>
           </div>
         </div>
