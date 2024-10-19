@@ -1,97 +1,13 @@
 import AboutImageEight from "/public/images/brewww-eight.jpeg";
+import { AboutHeroSection } from "./AboutHeroSection";
 import Image from "next/image";
+import { AboutOffsetImageSection } from "./AboutOffsetImageSection";
 
 export default function About() {
   return (
     <>
-      <section>
-        <div className="relative content-stretch items-start justify-start bg-brand-dark-bg pb-80 pl-60 pr-24 pt-64 font-light text-white">
-          <div className="grid-rows-auto grid-cols-[repeat(6, 1fr)] relative grid auto-cols-fr gap-4">
-            <div className="col-span-4 row-start-1 row-end-2 flex h-full w-full flex-col items-start justify-start self-start font-bold uppercase">
-              <div className="pb-5">+ About Our Studio</div>
-            </div>
-            <div className="col-start-1 col-end-6 row-start-2 flex h-full w-full flex-col items-center justify-center self-stretch text-[3.13rem] leading-none">
-              <h1 className="mx-0 my-3 min-h-[0vw]">
-                We are Brewww Studio. We craft creative for the kind-hearted,
-                the hustlers, and the visionaries.
-              </h1>
-            </div>
-            <div className="relative col-start-2 col-end-6 row-start-4 row-end-6 h-[50vh] self-stretch overflow-hidden">
-              <Image
-                src="/5ecf34cf4752d3558ae5764d_IMG_0301.1200.jpg"
-                width={1000}
-                height={1000}
-                alt="Studio Image"
-                className="h-[120%] w-full object-cover"
-                style={{
-                  objectPosition: "50% 50%",
-                }}
-              />
-            </div>
-            <div className="relative col-start-1 col-end-2 row-start-4 row-end-5 flex h-full max-h-[9.38rem] min-h-[6.25rem] w-full items-end justify-start">
-              <a
-                className="relative inline-block h-full w-3 max-w-full self-end overflow-hidden"
-                href=""
-              >
-                <div className="absolute left-[0.38rem] top-0 z-[1] h-full w-0 bg-white/[0.35]" />
-                <div className="absolute left-[0.38rem] top-0 h-full w-0 bg-white" />
-              </a>
-            </div>
-            <div className="col-start-3 col-end-6 row-start-5 row-end-7 flex h-full w-full flex-col items-center justify-end self-end text-xl">
-              <p className="z-10 mb-8">
-                Since day one, we have focused on collaborative relationships,
-                expansive creativity, and consistently delivering results.{" "}
-                <strong className="font-extrabold">
-                  Creative That Just Works
-                </strong>{" "}
-                - that's what sets us apart from everyone else.
-                <br />
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="about-intro">
-        <div className="bg-brand-gunmetal relative pb-12 pr-24 pt-4 text-white">
-          <div className="relative -mt-36 mr-24 h-[75vh] overflow-hidden">
-            <Image
-              src="/5ed749f69d85623011204b14_marybielskiandkevinwessa-6.1920.jpg"
-              width={1000}
-              height={1000}
-              alt="Intro Image"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
-        <div className="bg-brand-gunmetal px-24 py-48 font-light text-white">
-          <div className="m-auto max-w-[62.50rem]">
-            <div className="grid grid-cols-6">
-              <div className="col-start-2 col-end-6 flex flex-col items-start justify-center">
-                <h2 className="pb-5 font-bold uppercase">
-                  + Crafted with purpose
-                </h2>
-                <p className="mb-8 text-xl">
-                  Envisioned in 2012, formalized in 2017, we are newly founded
-                  and really grounded here in Pensacola, FL. Our team is small,
-                  agile, and really selective about the clients we take on.{" "}
-                  <strong className="font-extrabold">
-                    Our name alludes to an artisanal approach that avoids the
-                    instant and focuses on the lasting.
-                  </strong>
-                </p>
-                <a
-                  className="relative mb-1 inline-block max-w-full font-bold"
-                  href="/services"
-                >
-                  <span className="uppercase">View Capabilities</span>
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 w-1/5 bg-white" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <AboutHeroSection />
+      <AboutOffsetImageSection />
 
       <section className="bg-brand-dark-bg text-white">
         <div className="mx-auto mb-72 max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -674,7 +590,7 @@ export default function About() {
         <div className="border-b-2 border-solid border-black">
           <div className="m-auto w-[95vw] max-w-[95vw]">
             <div className="m-auto flex min-h-[calc(240px)] max-w-[56.25rem] flex-col flex-wrap content-center items-center justify-center py-20 text-center">
-              <h1 className="text-display-large mb-8 leading-none">
+              <h1 className="mb-8 text-display-large leading-none">
                 Honest Folks Doing Honest Work
               </h1>
               <h3 className="mb-8 text-[2.38rem] leading-none">

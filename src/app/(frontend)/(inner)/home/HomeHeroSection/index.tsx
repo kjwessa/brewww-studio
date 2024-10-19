@@ -61,14 +61,7 @@ export function HomeHeroSection() {
           Brewww is the talent, tools, and deliverables to move you from today's
           reality to tomorrow's potential.
         </p>
-        <p
-          ref={secondElementRef}
-          className="mx-auto mt-6 max-w-3xl text-center text-body-medium opacity-70 md:text-2xl"
-          id="animate-second"
-        >
-          Brewww is the talent, tools, and deliverables to move you from today's
-          reality to tomorrow's potential.
-        </p>
+
         <p
           ref={secondElementRef}
           className="mx-auto mt-6 max-w-3xl text-center text-body-medium opacity-70 md:text-2xl"
