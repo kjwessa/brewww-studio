@@ -55,7 +55,6 @@ export const Work: CollectionConfig = {
           "The description of the project as it appears around the site.",
       },
     },
-
     {
       type: "tabs",
       tabs: [
@@ -147,6 +146,26 @@ export const Work: CollectionConfig = {
       name: "featured",
       type: "checkbox",
       label: "Is this a featured project?",
+      required: false,
+      admin: {
+        position: "sidebar",
+      },
+    },
+    {
+      name: "services",
+      type: "relationship",
+      label: "Services",
+      relationTo: "services",
+      hasMany: true,
+      required: false,
+      admin: {
+        position: "sidebar",
+      },
+    },
+    {
+      name: "projectYear",
+      type: "number",
+      label: "Project Year",
       required: false,
       admin: {
         position: "sidebar",
