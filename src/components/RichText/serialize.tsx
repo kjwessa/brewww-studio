@@ -139,9 +139,12 @@ export function serializeLexical({ nodes, customClasses }: Props): JSX.Element {
               );
             }
             case "heading": {
-              const HeadingTag = node?.tag as keyof JSX.IntrinsicElements;
+              const HeadingTag = `${node.tag}` as keyof JSX.IntrinsicElements;
               return (
-                <HeadingTag key={index} className={customClasses?.heading}>
+                <HeadingTag
+                  key={index}
+                  className={customClasses?.[`${node.tag}`]}
+                >
                   {serializedChildren}
                 </HeadingTag>
               );
@@ -149,7 +152,7 @@ export function serializeLexical({ nodes, customClasses }: Props): JSX.Element {
             case "list": {
               const Tag = node?.tag as keyof JSX.IntrinsicElements;
               return (
-                <Tag className="list" key={index}>
+                <Tag className={customClasses?.list} key={index}>
                   {serializedChildren}
                 </Tag>
               );
@@ -171,18 +174,30 @@ export function serializeLexical({ nodes, customClasses }: Props): JSX.Element {
                 );
               } else {
                 return (
-                  <li key={index} value={node?.value}>
+                  <li
+                    key={index}
+                    value={node?.value}
+                    className={customClasses?.listItem}
+                  >
                     {serializedChildren}
                   </li>
                 );
               }
             }
             case "quote": {
-              return <blockquote key={index}>{serializedChildren}</blockquote>;
+              return (
+                <blockquote key={index} className={customClasses?.quote}>
+                  {serializedChildren}
+                </blockquote>
+              );
             }
             case "link": {
               // CMS links are hidden for now
-              return <span key={index}>{serializedChildren}</span>;
+              return (
+                <span key={index} className={customClasses?.link}>
+                  {serializedChildren}
+                </span>
+              );
             }
             case "upload": {
               return <RichTextUpload key={index} node={node} />;

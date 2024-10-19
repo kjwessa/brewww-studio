@@ -37,8 +37,8 @@ const defaultStyles = {
   h4: "text-title-large mb-4 mb-6",
   h5: "text-title-medium mb-4 mb-6",
   h6: "text-title-small mb-4 mb-6",
-  list: "list-disc list-inside mb-4",
-  listItem: "mb-2",
+  list: "list-disc list-inside mb-4 text-body-medium",
+  listItem: "mb-2 ",
   quote: "border-l-4  pl-4 mb-4",
   link: "text-blue-600 hover:text-blue-800 visited:text-purple-600",
 };
