@@ -2,7 +2,7 @@ import { Service } from "@/payload-types";
 import Image from "next/image";
 import Link from "next/link";
 
-export function ServicesCard({ service }: { service: Service }) {
+export function ServiceCard({ service }: { service: Service }) {
   return (
     <>
       {" "}
