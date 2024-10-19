@@ -23,6 +23,7 @@ export interface Config {
     pillars: Pillar;
     testimonials: Testimonial;
     technologies: Technology;
+    journeys: Journey;
     locations: Location;
     results: Result;
     team: Team;
@@ -382,6 +383,22 @@ export interface Work {
   title: string;
   tagline: string;
   description?: string | null;
+  storyTitle?: string | null;
+  storyContent?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   metadata?: {
     testimonial?: (string | null) | Testimonial;
     relatedWorks?: (string | Work)[] | null;
@@ -572,6 +589,30 @@ export interface Technology {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "journeys".
+ */
+export interface Journey {
+  id: string;
+  title: string;
+  tagline: string;
+  slug: string;
+  slugLock?: boolean | null;
+  description: string;
+  content?: {};
+  metadata?: {
+    services?: (string | null) | Service;
+  };
+  seo?: {
+    image?: (string | null) | Media;
+    title?: string | null;
+    description?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "locations".
  */
 export interface Location {
@@ -705,6 +746,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'technologies';
         value: string | Technology;
+      } | null)
+    | ({
+        relationTo: 'journeys';
+        value: string | Journey;
       } | null)
     | ({
         relationTo: 'locations';
