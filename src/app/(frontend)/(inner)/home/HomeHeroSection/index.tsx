@@ -43,7 +43,7 @@ export function HomeHeroSection() {
   }, []);
 
   return (
-    <section className="relative flex min-h-[95vh] items-center justify-center overflow-hidden bg-brand-dark-bg text-zinc-50">
+    <section className="relative flex min-h-[100vh] items-center justify-center overflow-hidden bg-brand-dark-bg text-zinc-50">
       <div className="container mx-auto px-4 py-8 md:px-6">
         <h1
           ref={firstElementRef}
@@ -61,16 +61,6 @@ export function HomeHeroSection() {
           Brewww is the talent, tools, and deliverables to move you from today's
           reality to tomorrow's potential.
         </p>
-
-        <p
-          ref={secondElementRef}
-          className="mx-auto mt-6 max-w-3xl text-center text-body-medium opacity-70 md:text-2xl"
-          id="animate-second"
-        >
-          Brewww is a branding agency with a history of building compelling
-          brands for high-quality products and services.
-        </p>
-
         <div className="mt-10 flex justify-center">
           <div className="relative inline-block h-20 w-3 overflow-hidden md:h-28">
             <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 transform bg-white/35" />

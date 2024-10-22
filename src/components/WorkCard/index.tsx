@@ -42,8 +42,8 @@ export function WorkCard({ project }: WorkCardProps) {
                         ? project.image?.alt
                         : ""
                     }
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    style={{ objectFit: "cover" }}
                   />
                 </div>
               </div>
