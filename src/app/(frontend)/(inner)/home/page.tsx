@@ -346,37 +346,6 @@ export default async function Home() {
             </div>
           </div>
         </div>
-
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div className="col-span-2 row-span-1">
-            <img
-              className="h-auto w-full object-cover"
-              src="https://www.robot-food.com/images/About/about-1-2023.jpg"
-              alt="About 1"
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto w-full object-cover"
-              src="https://www.robot-food.com/images/About/about-2-2023-editted.jpg"
-              alt="About 2"
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto w-full object-cover"
-              src="https://www.robot-food.com/images/About/about-3-2023.jpg"
-              alt="About 3"
-            />
-          </div>
-          <div className="col-span-2 row-span-1">
-            <img
-              className="h-auto w-full object-cover"
-              src="https://www.robot-food.com/images/About/about-4-2023.jpg"
-              alt="About 4"
-            />
-          </div>
-        </div>
       </section>
 
       <section className="bg-white">
@@ -425,84 +394,6 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="bg-gray-100">
-        <div className="container mx-auto">
-          <div className="flex py-28">
-            <div className="w-1/3 pr-8">
-              <h2 className="text-[4.13rem] leading-none text-black">
-                Brands we partner with:
-              </h2>
-            </div>
-            <div className="w-2/3">
-              <div className="grid grid-cols-3 gap-8">
-                <div className="flex items-center justify-center">
-                  <img
-                    className="h-32 w-44"
-                    src="https://www.robot-food.com/images/Client-Logos/_thumbnailFeatured/c-logos-01.svg"
-                    alt="Brand logo"
-                  />
-                </div>
-                <div className="flex items-center justify-center">
-                  <img
-                    className="h-32 w-44"
-                    src="https://www.robot-food.com/images/Client-Logos/_thumbnailFeatured/c-logos-02.svg"
-                    alt="Brand logo"
-                  />
-                </div>
-                <div className="flex items-center justify-center">
-                  <img
-                    className="h-32 w-44"
-                    src="https://www.robot-food.com/images/Client-Logos/_thumbnailFeatured/c-logos-10.svg"
-                    alt="Brand logo"
-                  />
-                </div>
-                <div className="flex items-center justify-center">
-                  <img
-                    className="h-32 w-44"
-                    src="https://www.robot-food.com/images/Client-Logos/_thumbnailFeatured/c-logos-12.svg"
-                    alt="Brand logo"
-                  />
-                </div>
-                <div className="flex items-center justify-center">
-                  <img
-                    className="h-32 w-44"
-                    src="https://www.robot-food.com/images/Client-Logos/_thumbnailFeatured/c-logos-07.svg"
-                    alt="Brand logo"
-                  />
-                </div>
-                <div className="flex items-center justify-center">
-                  <img
-                    className="h-32 w-44"
-                    src="https://www.robot-food.com/images/Client-Logos/_thumbnailFeatured/c-logos-14.svg"
-                    alt="Brand logo"
-                  />
-                </div>
-                <div className="flex items-center justify-center">
-                  <img
-                    className="h-32 w-44"
-                    src="https://www.robot-food.com/images/Client-Logos/_thumbnailFeatured/Client_Logos_197x144_v5-2023-302.svg"
-                    alt="Brand logo"
-                  />
-                </div>
-                <div className="flex items-center justify-center">
-                  <img
-                    className="h-32 w-44"
-                    src="https://www.robot-food.com/images/Client-Logos/_thumbnailFeatured/c-logos-21.svg"
-                    alt="Brand logo"
-                  />
-                </div>
-                <div className="flex items-center justify-center">
-                  <img
-                    className="h-32 w-44"
-                    src="https://www.robot-food.com/images/Client-Logos/_thumbnailFeatured/c-logos-20.svg"
-                    alt="Brand logo"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <section className="relative bg-neutral-800 text-white">
         <div className="container mx-auto max-w-7xl px-4 py-12 md:py-20 lg:py-28">
           <div className="grid grid-cols-12 gap-4">
