@@ -34,6 +34,12 @@ export default function Header() {
               </Link>
               <Link
                 className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                href="/team/kevin-wessa"
+              >
+                /In
+              </Link>
+              <Link
+                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
                 href="/why-brewww"
               >
                 Why
@@ -62,7 +68,6 @@ export default function Header() {
               >
                 /IN
               </Link>
-
               <Link
                 className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
                 href="/services"

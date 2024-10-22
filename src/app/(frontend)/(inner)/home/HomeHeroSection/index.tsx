@@ -67,15 +67,10 @@ export function HomeHeroSection() {
           className="mx-auto mt-6 max-w-3xl text-center text-body-medium opacity-70 md:text-2xl"
           id="animate-second"
         >
-          <p
-            ref={secondElementRef}
-            className="mx-auto mt-6 max-w-3xl text-center text-body-medium opacity-70 md:text-2xl"
-            id="animate-second"
-          >
-            Brewww is a branding agency with a history of building compelling
-            brands for high-quality products and services.
-          </p>
+          Brewww is a branding agency with a history of building compelling
+          brands for high-quality products and services.
         </p>
+
         <div className="mt-10 flex justify-center">
           <div className="relative inline-block h-20 w-3 overflow-hidden md:h-28">
             <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 transform bg-white/35" />

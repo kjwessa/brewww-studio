@@ -6,15 +6,7 @@ import { notFound } from "next/navigation";
 import { Work } from "@/payload-types";
 import Image from "next/image";
 import Link from "next/link";
-import { formatDate } from "@/utilities/dateFormatter";
-import AudioImageOne from "/public/images/audio-one.jpg";
-import AudioImageTwo from "/public/images/audio-two.jpg";
-import AudioImageThree from "/public/images/audio-three.jpg";
-import AudioImageFour from "/public/images/audio-four.jpg";
-import AudioImageFive from "/public/images/audio-five.jpg";
-import AudioImageSix from "/public/images/audio-six.jpg";
-import AudioImageSeven from "/public/images/audio-seven.jpg";
-import AudioImageEight from "/public/images/audio-eight.jpg";
+
 import { BeforeAfter } from "./BeforeAfter";
 import { Service } from "@/payload-types";
 import { ImageGrow } from "./HeroImageGrow";
@@ -85,7 +77,6 @@ export default async function WorkPage({
         </div>
       </section>
       <section className="bg-brand-dark-bg">
-        {" "}
         <ImageGrow
           imageSrc={
             typeof project.image === "string"
@@ -253,25 +244,23 @@ export default async function WorkPage({
           <div className="mb-5 w-full px-2 md:mb-0 md:w-2/4 lg:px-3 xl:px-4">
             <div className="h-full rounded-3xl bg-zinc-900 px-20 py-16 sm:p-32 md:p-14 lg:p-16 min-[1450px]:p-28">
               <div className="relative w-full overflow-hidden pt-[49.75rem]">
-                <picture className="absolute left-0 top-0 h-full w-full">
-                  <img
-                    className="h-auto w-full max-w-full rounded-3xl"
-                    src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Iphone-iet.png?w=796&q=100&auto=format&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621853026&s=0fb80b51ef27935992574b7067726454"
-                    alt="iET iPhone"
-                  />
-                </picture>
+                <Image
+                  className="h-auto w-full max-w-full rounded-3xl"
+                  src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Iphone-iet.png?w=796&q=100&auto=format&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621853026&s=0fb80b51ef27935992574b7067726454"
+                  fill
+                  alt="iET iPhone"
+                />
               </div>
             </div>
           </div>
           <div className="mb-5 w-full px-2 md:mb-0 md:w-2/4 lg:px-3 xl:px-4">
-            <div className="h-full w-full overflow-hidden rounded-3xl bg-zinc-900">
-              <picture>
-                <img
-                  className="h-full w-full max-w-full object-cover"
-                  src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/poster-portrait.jpg?w=1080&q=95&auto=format&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621853570&s=d61bb7d92d11c96f184a9192eb0ccdd3"
-                  alt="iET Poster"
-                />
-              </picture>
+            <div className="relative h-full w-full overflow-hidden rounded-3xl bg-zinc-900">
+              <Image
+                className="h-full w-full max-w-full object-cover"
+                src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/poster-portrait.jpg?w=1080&q=95&auto=format&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621853570&s=d61bb7d92d11c96f184a9192eb0ccdd3"
+                fill
+                alt="iET Poster"
+              />
             </div>
           </div>
         </div>
@@ -309,9 +298,10 @@ export default async function WorkPage({
           <div className="h-full w-full overflow-hidden rounded-3xl bg-zinc-900">
             <div className="relative w-full overflow-hidden pt-[66.00rem]">
               <picture className="absolute left-0 top-0 h-full w-full">
-                <img
+                <Image
                   className="h-full w-full max-w-full object-cover"
                   src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Billboard.jpg?w=1920&q=95&auto=format&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621853760&s=93dd3e38bf63aa5bbc8fc2177f457a2f"
+                  fill
                   alt="iET Billboard"
                 />
               </picture>
@@ -361,10 +351,11 @@ export default async function WorkPage({
                       <div className="relative w-full overflow-hidden pt-[44.75rem]">
                         <picture className="absolute left-0 top-0 h-full w-full">
                           <source type="image/webp" />
-                          <img
+                          <Image
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/11.2-copy.jpg?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621939072&s=6f6247c65cf05a054fc81b79250655c3"
                             alt="iET Billboard"
+                            fill
                           />
                         </picture>
                       </div>
@@ -788,7 +779,7 @@ export default async function WorkPage({
             <div className="mb-5 w-full max-w-[30.98rem]">
               <div className="relative h-72">
                 <Image
-                  src={AudioImageOne}
+                  src="/images/audio-one.jpg"
                   alt="Audio production studio equipment"
                   fill
                   style={{ objectFit: "cover" }}
@@ -798,7 +789,7 @@ export default async function WorkPage({
             <div className="w-full max-w-[47.09rem] self-start">
               <div className="relative h-[47.09rem]">
                 <Image
-                  src={AudioImageTwo}
+                  src="/images/audio-two.jpg"
                   alt="Voice actor recording in studio"
                   fill
                   style={{ objectFit: "cover" }}
@@ -814,7 +805,7 @@ export default async function WorkPage({
             <div className="w-1/2 pr-8">
               <div className="relative h-full">
                 <Image
-                  src={AudioImageThree}
+                  src="/images/audio-three.jpg"
                   alt="Audio production studio setup"
                   fill
                   style={{ objectFit: "cover" }}
@@ -931,7 +922,7 @@ export default async function WorkPage({
               <div className="relative">
                 <Image
                   className="h-auto w-full max-w-full object-cover"
-                  src={AudioImageFive}
+                  src="/images/audio-five.jpg"
                   alt="Audio Image Five"
                   width={820}
                   height={1088}
@@ -942,7 +933,7 @@ export default async function WorkPage({
               <div>
                 <Image
                   className="h-auto w-4/5 max-w-full object-contain"
-                  src={AudioImageFour}
+                  src="/images/audio-four.jpg"
                   alt="Audio Image Four"
                   width={800}
                   height={600}
@@ -1029,7 +1020,7 @@ export default async function WorkPage({
           style={{ aspectRatio: "3/2" }}
         >
           <Image
-            src={AudioImageSeven}
+            src="/images/audio-seven.jpg"
             alt="Audio platform showcase"
             fill
             style={{ objectFit: "cover" }}
@@ -1068,7 +1059,7 @@ export default async function WorkPage({
             <div className="col-span-7">
               <div className="relative">
                 <Image
-                  src={AudioImageSix}
+                  src="/images/audio-six.jpg"
                   alt="Audio Image Six"
                   width={623}
                   height={623}
@@ -1079,7 +1070,7 @@ export default async function WorkPage({
             <div className="col-span-5">
               <div className="relative">
                 <Image
-                  src={AudioImageEight}
+                  src="/images/audio-eight.jpg"
                   alt="Audio Image Eight"
                   width={384}
                   height={488}
@@ -1145,7 +1136,7 @@ export default async function WorkPage({
           <div className="relative flex-shrink-0">
             <div className="relative h-[59.63rem] w-[59.63rem]">
               <Image
-                src={AudioImageSeven}
+                src="/images/audio-seven.jpeg"
                 alt="Audio production studio"
                 fill
                 style={{ objectFit: "cover" }}
@@ -1155,7 +1146,7 @@ export default async function WorkPage({
           <div className="relative flex-shrink-0">
             <div className="relative h-[59.63rem] w-[48.90rem]">
               <Image
-                src={AudioImageEight}
+                src="/images/audio-eight.jpeg"
                 alt="Voice actor recording"
                 fill
                 style={{ objectFit: "cover" }}
@@ -1165,7 +1156,7 @@ export default async function WorkPage({
           <div className="relative flex-shrink-0">
             <div className="relative h-[59.63rem] w-[48.90rem]">
               <Image
-                src={AudioImageFour}
+                src="/images/audio-four.jpeg"
                 alt="Sound mixing console"
                 fill
                 style={{ objectFit: "cover" }}
@@ -1175,7 +1166,7 @@ export default async function WorkPage({
           <div className="relative flex-shrink-0">
             <div className="relative h-[59.63rem] w-[59.63rem]">
               <Image
-                src={AudioImageTwo}
+                src="/images/audio-two.jpeg"
                 alt="Podcast recording session"
                 fill
                 style={{ objectFit: "cover" }}
@@ -1185,7 +1176,7 @@ export default async function WorkPage({
           <div className="relative flex-shrink-0">
             <div className="relative h-[59.63rem] w-[59.63rem]">
               <Image
-                src={AudioImageFive}
+                src="/images/audio-five.jpg"
                 alt="Audio editing workstation"
                 fill
                 style={{ objectFit: "cover" }}
@@ -1195,7 +1186,7 @@ export default async function WorkPage({
           <div className="relative flex-shrink-0">
             <div className="relative h-[59.63rem] w-[48.90rem]">
               <Image
-                src={AudioImageOne}
+                src="/images/audio-one.jpg"
                 alt="Microphone in recording booth"
                 fill
                 style={{ objectFit: "cover" }}
@@ -1205,7 +1196,7 @@ export default async function WorkPage({
           <div className="relative flex-shrink-0">
             <div className="relative h-[59.63rem] w-[59.63rem]">
               <Image
-                src={AudioImageFive}
+                src="/images/audio-five.jpg"
                 alt="Audio production team meeting"
                 fill
                 style={{ objectFit: "cover" }}
@@ -1256,7 +1247,7 @@ export default async function WorkPage({
             <div className="col-span-7">
               <div className="relative">
                 <Image
-                  src={AudioImageSix}
+                  src="/images/audio-six.jpg"
                   alt="Audio Image Six"
                   width={623}
                   height={623}
@@ -1267,7 +1258,7 @@ export default async function WorkPage({
             <div className="col-span-5">
               <div className="relative">
                 <Image
-                  src={AudioImageEight}
+                  src="/images/audio-eight.jpg"
                   alt="Audio Image Eight"
                   width={384}
                   height={488}
@@ -1331,7 +1322,7 @@ export default async function WorkPage({
           <div className="grid grid-cols-2 gap-5">
             <div className="relative" style={{ aspectRatio: "1/1" }}>
               <Image
-                src={AudioImageSix}
+                src="/images/audio-six.jpg"
                 alt="Audio Image Six"
                 fill
                 style={{ objectFit: "cover" }}
@@ -1339,7 +1330,7 @@ export default async function WorkPage({
             </div>
             <div className="relative" style={{ aspectRatio: "1/1" }}>
               <Image
-                src={AudioImageSix}
+                src="/images/audio-six.jpg"
                 alt="Audio Image Six"
                 fill
                 style={{ objectFit: "cover" }}
@@ -1381,7 +1372,7 @@ export default async function WorkPage({
           style={{ aspectRatio: "3/2" }}
         >
           <Image
-            src={AudioImageSeven}
+            src={"/images/audio-seven.jpg"}
             alt="Audio platform showcase"
             fill
             style={{ objectFit: "cover" }}

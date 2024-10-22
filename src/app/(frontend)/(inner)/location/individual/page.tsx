@@ -409,6 +409,7 @@ export default async function Page() {
                   className="absolute left-0 top-0 h-full w-full max-w-full object-cover"
                   src="/bg-contact.1200.jpg"
                   alt="Contact"
+                  fill
                 />
               </div>
             </div>
@@ -577,6 +578,7 @@ export default async function Page() {
                   className="absolute left-0 top-0 h-full w-full max-w-full object-cover"
                   src="/bg-services.1200.jpg"
                   alt="Services"
+                  fill
                 />
               </div>
             </div>
@@ -925,6 +927,7 @@ export default async function Page() {
                     className="absolute left-0 top-0 h-full w-full max-w-full object-cover"
                     src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Stoneletters-testimonial-large-image.png?w=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1706092604&s=c41f8629c457388ea6f5ef69c6dd83d8"
                     alt="Stoneletters"
+                    fill
                   />
                 </picture>
               </div>
@@ -986,6 +989,7 @@ export default async function Page() {
                             className="absolute left-0 top-0 h-full w-full max-w-full object-cover"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Hannah-Wessel-Profile-image.jpg?w=200&h=200&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1706092693&s=faf1949d42c584e5ae150f7d5f9986ef"
                             alt="Hannah Wessel"
+                            fill
                           />
                         </picture>
                       </div>
