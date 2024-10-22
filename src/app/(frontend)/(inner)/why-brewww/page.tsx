@@ -4,6 +4,7 @@ import AboutImageTwo from "/public/images/brewww-two.jpeg";
 import AboutImageThree from "/public/images/brewww-three.jpeg";
 import AboutImageFive from "/public/images/brewww-five.jpeg";
 import AboutImageSeven from "/public/images/brewww-seven.jpeg";
+import Link from "next/link";
 
 export default function WhyPage() {
   return (
@@ -312,9 +313,9 @@ export default function WhyPage() {
                   Five Stars
                 </span>
                 Since 2017, we&apos;ve delivered results to{" "}
-                <a className="inline-block underline" href="/work">
+                <Link className="inline-block underline" href="/work">
                   dozens of partners
-                </a>{" "}
+                </Link>{" "}
                 and millions of users. While those numbers matter, the greatest
                 value is found in feedback.
               </div>
@@ -330,12 +331,12 @@ export default function WhyPage() {
                 <li className="flex items-start">
                   <span className="mr-2 text-rose-600">—</span>
                   We&apos;re a{" "}
-                  <a
+                  <Link
                     className="ml-1 inline-block text-rose-600 underline"
                     href=""
                   >
                     Clutch Global Leader ↗
-                  </a>{" "}
+                  </Link>{" "}
                   found in the Top 1% of B2B Companies
                 </li>
                 <li className="flex items-start">
@@ -347,12 +348,12 @@ export default function WhyPage() {
                   Our clients have raised over $12 billion in funding
                 </li>
               </ul>
-              <a
+              <Link
                 className="inline-block bg-rose-600 px-5 py-3 text-sm font-bold uppercase text-white transition-colors duration-300 hover:bg-rose-700"
                 href="/our-work"
               >
                 Our work
-              </a>
+              </Link>
             </div>
           </div>
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -511,14 +512,14 @@ export default function WhyPage() {
                 </span>
                 Like you, we want to build products that make us proud.{" "}
                 It&apos;s how we attract top talent and support the people{" "}
-                <a className="inline-block underline" href="/team">
+                <Link className="inline-block underline" href="/team">
                   already with us.{" "}
                   <span className="cursor-pointer text-sm uppercase text-stone-500">
                     <span className="inline-block align-top">
                       (meet the team)
                     </span>
                   </span>
-                </a>{" "}
+                </Link>{" "}
               </div>
             </div>
             <div className="col-span-1 lg:col-span-6">
@@ -532,41 +533,41 @@ export default function WhyPage() {
               <ul className="mb-8 ml-5 list-none space-y-4">
                 <li className="flex items-start">
                   <span className="mr-2 text-rose-600">—</span>
-                  <a
+                  <Link
                     className="inline-block text-rose-600 underline"
                     href="/mindset"
                   >
                     The Brewww Culture
-                  </a>{" "}
+                  </Link>{" "}
                   is rooted in our actions and decisions
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-rose-600">—</span>
                   We don&apos;t do BS and refuse to tell you{" "}
-                  <a
+                  <Link
                     className="inline-block text-rose-600 underline"
                     href="/transparency"
                   >
                     anything but the truth
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-rose-600">—</span>
-                  <a
+                  <Link
                     className="inline-block text-rose-600 underline"
                     href="/transparency"
                   >
                     Our dedication to transparency
-                  </a>{" "}
+                  </Link>{" "}
                   extends beyond Brewww clients
                 </li>
               </ul>
-              <a
+              <Link
                 className="mb-20 inline-flex h-12 min-w-[9.88rem] items-center justify-between bg-rose-600 px-5 py-3 text-sm font-bold uppercase text-white transition-colors duration-300 hover:bg-rose-700 md:mb-0 md:min-w-[10.63rem] min-[1680px]:h-16 min-[1680px]:min-w-[13.75rem]"
                 href="/services"
               >
                 Services
-              </a>
+              </Link>
             </div>
             <div className="col-span-1 lg:col-span-6">
               <figure className="mb-8">
