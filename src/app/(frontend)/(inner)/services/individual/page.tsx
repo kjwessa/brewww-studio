@@ -331,7 +331,7 @@ export default function IndividualPage() {
                 </div>
               </li>
 
-              <li className="relative list-item md:mt-10 md:mt-12 min-[769px]:mt-12 min-[769px]:mt-20 min-[769px]:mt-28 min-[769px]:w-[65.4737%]">
+              <li className="relative list-item md:mt-12 min-[769px]:mt-28 min-[769px]:w-[65.4737%]">
                 <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
                   Websites
                 </span>
@@ -373,13 +373,13 @@ export default function IndividualPage() {
                 </div>
               </li>
 
-              <li className="relative list-item md:mt-10 md:mt-12 min-[769px]:ml-auto min-[769px]:mt-12 min-[769px]:mt-20 min-[769px]:mt-28 min-[769px]:w-[30.9474%]">
+              <li className="relative list-item md:mt-12 min-[769px]:ml-auto min-[769px]:mt-28 min-[769px]:w-[30.9474%]">
                 <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
                   Websites
                 </span>
                 <a className="w-full overflow-hidden" href="">
                   <picture className="h-auto max-w-full cursor-pointer">
-                    <img
+                    <Image
                       className="h-auto w-full max-w-full"
                       src="https://www.fhoke.com/wp-content/uploads/2020/03/MetalandGas-Banner-588x700.jpg"
                       alt="Metal and Gas banner image"
@@ -549,7 +549,7 @@ export default function IndividualPage() {
 
       <section className="bg-brand-dark-bg text-white min-[769px]:flex min-[769px]:items-center">
         <div className="overflow-hidden min-[769px]:w-[48.2105%]">
-          <img
+          <Image
             className="h-auto w-full max-w-full"
             src="https://www.fhoke.com/wp-content/uploads/2022/08/Wordpress-Intro-Tall.jpg"
             alt="A tall image showcasing WordPress interface and features, demonstrating its versatility as a content management system"
@@ -580,7 +580,7 @@ export default function IndividualPage() {
         <div className="m-auto w-[92%] min-[1921px]:max-w-[118.75rem]">
           <div className="min-[769px]:flex min-[769px]:items-center">
             <div className="order-1 overflow-hidden min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
-              <img
+              <Image
                 className="h-auto w-full max-w-full"
                 src="https://www.fhoke.com/wp-content/uploads/2022/08/Wordpress-Slate-Tall.jpg"
                 alt="WordPress Slate"
@@ -615,9 +615,10 @@ export default function IndividualPage() {
         <div className="m-auto w-[92%] min-[1921px]:max-w-[118.75rem]">
           <div className="min-[769px]:flex min-[769px]:items-center">
             <div className="overflow-hidden min-[769px]:w-[48.2105%]">
-              <img
+              <Image
                 className="h-auto w-full max-w-full"
                 src="https://www.fhoke.com/wp-content/uploads/2022/08/Wordpress-Recap-Tall.jpg"
+                alt="WordPress Recap"
               />
             </div>
 
