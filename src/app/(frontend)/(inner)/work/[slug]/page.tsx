@@ -257,6 +257,7 @@ export default async function WorkPage({
                   <img
                     className="h-auto w-full max-w-full rounded-3xl"
                     src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Iphone-iet.png?w=796&q=100&auto=format&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621853026&s=0fb80b51ef27935992574b7067726454"
+                    alt="iET iPhone"
                   />
                 </picture>
               </div>
@@ -268,6 +269,7 @@ export default async function WorkPage({
                 <img
                   className="h-full w-full max-w-full object-cover"
                   src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/poster-portrait.jpg?w=1080&q=95&auto=format&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621853570&s=d61bb7d92d11c96f184a9192eb0ccdd3"
+                  alt="iET Poster"
                 />
               </picture>
             </div>
@@ -362,6 +364,7 @@ export default async function WorkPage({
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/11.2-copy.jpg?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621939072&s=6f6247c65cf05a054fc81b79250655c3"
+                            alt="iET Billboard"
                           />
                         </picture>
                       </div>
@@ -375,6 +378,7 @@ export default async function WorkPage({
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/11.1-copy.jpg?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621939070&s=fd3a9391a4e405fb7c12a53fa9258392"
+                            alt="iET Billboard"
                           />
                         </picture>
                       </div>
@@ -388,6 +392,7 @@ export default async function WorkPage({
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/11-copy.jpg?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621939068&s=625421548bb762f8c8eff067987afa30"
+                            alt="iET Billboard"
                           />
                         </picture>
                       </div>
@@ -401,6 +406,7 @@ export default async function WorkPage({
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/09.3-copy.jpg?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621939066&s=3146f2ef76ffbc18ba63d5022d37c5ec"
+                            alt="iET Billboard"
                           />
                         </picture>
                       </div>
@@ -414,6 +420,7 @@ export default async function WorkPage({
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/09.2-copy.jpg?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621939063&s=0c49ca88f6f333baf95f2b3e39adead6"
+                            alt="iET Billboard"
                           />
                         </picture>
                       </div>
@@ -427,6 +434,7 @@ export default async function WorkPage({
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/09.1-copy.jpg?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621939061&s=8068951daf2819f732fad8127f58d05f"
+                            alt="iET Billboard"
                           />
                         </picture>
                       </div>
@@ -440,6 +448,7 @@ export default async function WorkPage({
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/09-copy.jpg?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621939059&s=ce8281da9130414e34b25497975d04d7"
+                            alt="iET Billboard"
                           />
                         </picture>
                       </div>
@@ -451,7 +460,7 @@ export default async function WorkPage({
                 <div className="flex items-center">
                   <a
                     className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-neutral-950"
-                    href="https://madebyshape.co.uk/#"
+                    href=""
                   >
                     <svg
                       className="h-3 w-3 cursor-pointer"
@@ -469,7 +478,7 @@ export default async function WorkPage({
 
                   <a
                     className="ml-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-neutral-950"
-                    href="https://madebyshape.co.uk/#"
+                    href=""
                   >
                     <svg
                       className="h-3 w-3 cursor-pointer"
@@ -538,6 +547,7 @@ export default async function WorkPage({
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-6.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862260&s=02ff2f62f0eed704232325e9a82aa85e"
+                            alt="iET iPhone"
                           />
                         </picture>
                       </div>
@@ -554,6 +564,7 @@ export default async function WorkPage({
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-4.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862255&s=71717867d1f9651c7f99b5db5e428d82"
+                            alt="iET Poster"
                           />
                         </picture>
                       </div>
@@ -570,6 +581,7 @@ export default async function WorkPage({
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-5.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862257&s=b95fb9939e8919a53721a3536760bf0c"
+                            alt="iET Billboard"
                           />
                         </picture>
                       </div>
@@ -586,6 +598,7 @@ export default async function WorkPage({
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-3.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862253&s=b0b226990cad5209e2c7837caf593d69"
+                            alt="iET Billboard"
                           />
                         </picture>
                       </div>
@@ -602,6 +615,7 @@ export default async function WorkPage({
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-2.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862251&s=f17aecdbb70e62e73735efc367d4d51a"
+                            alt="iET Billboard"
                           />
                         </picture>
                       </div>
@@ -618,6 +632,7 @@ export default async function WorkPage({
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-1.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862248&s=fe0fa50d4b15db9b3450973601b51599"
+                            alt="iET Billboard"
                           />
                         </picture>
                       </div>
@@ -629,7 +644,7 @@ export default async function WorkPage({
                 <div className="flex items-center">
                   <a
                     className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-neutral-950"
-                    href="https://madebyshape.co.uk/#"
+                    href=""
                   >
                     <svg
                       className="h-3 w-3 cursor-pointer"
@@ -647,7 +662,7 @@ export default async function WorkPage({
 
                   <a
                     className="ml-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-neutral-950"
-                    href="https://madebyshape.co.uk/#"
+                    href=""
                   >
                     <svg
                       className="h-3 w-3 cursor-pointer"

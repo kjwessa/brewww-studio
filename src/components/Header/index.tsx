@@ -5,7 +5,7 @@ import { getPayloadHMR } from "@payloadcms/next/utilities";
 import config from "@payload-config";
 import Image from "next/image";
 import Link from "next/link";
-import BrewwwLogo from "/public/images/brewww-logotype-gold.png";
+
 import { Button } from "@/components/Button";
 
 export default function Header() {
@@ -92,7 +92,7 @@ export default function Header() {
               <Link href="/home">
                 <Image
                   className="w-36 max-w-full cursor-pointer"
-                  src={BrewwwLogo}
+                  src="/brewww-logotype-gold.png"
                   alt="Brewww Logo"
                   width={144}
                   height={40}
