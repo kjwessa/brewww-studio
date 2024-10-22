@@ -572,7 +572,9 @@ export default function WhyPage() {
             <div className="col-span-1 lg:col-span-6">
               <figure className="mb-8">
                 <span className="relative inline-block">
-                  <img
+                  <Image
+                    width={384}
+                    height={605}
                     className="h-auto w-full max-w-full"
                     src={AboutImageOne.src}
                     alt="Brewww office space"
@@ -693,7 +695,7 @@ export default function WhyPage() {
             </div>
             <div className="relative mt-8 w-full lg:mt-0 lg:w-1/2 lg:pl-16">
               <div className="aspect-w-16 aspect-h-9" style={{ height: "70%" }}>
-                <img
+                <Image
                   className="h-full w-full object-cover"
                   src="https://www.datocms-assets.com/63464/1661347408-stuurmen-office-interior.jpg?auto=format&h=1080&w=1920"
                   alt="Stuurmen office interior"

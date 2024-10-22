@@ -20,20 +20,16 @@ export const RenderBlocks: React.FC<{
   const hasBlocks = blocks && Array.isArray(blocks) && blocks.length > 0;
 
   if (hasBlocks) {
-    console.log("Rendering blocks:", blocks);
     return (
       <Fragment>
         {blocks.map((block, index) => {
           const { blockType } = block;
-
-          console.log(`Rendering block ${index}:`, block);
 
           // Check if the block type exists in our component mapping
           if (blockType && blockType in blockComponents) {
             const Block = blockComponents[blockType];
 
             if (Block) {
-              console.log(`Rendering ${blockType} component`);
               return (
                 // Render the block with some vertical margin
                 <div className="my-32" key={index}>
@@ -41,11 +37,7 @@ export const RenderBlocks: React.FC<{
                   <Block {...block} />
                 </div>
               );
-            } else {
-              console.error(`Block component for ${blockType} is undefined`);
             }
-          } else {
-            console.warn(`Unknown block type: ${blockType}`);
           }
           // If the block type is not recognized, render nothing
           return null;
@@ -54,7 +46,6 @@ export const RenderBlocks: React.FC<{
     );
   }
 
-  console.log("No blocks to render");
   // If there are no blocks, render nothing
   return null;
 };

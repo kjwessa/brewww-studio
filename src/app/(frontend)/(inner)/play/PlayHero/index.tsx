@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-
+import Image from "next/image";
 interface ImageCardProps {
   src: string;
   alt: string;
@@ -10,7 +10,7 @@ interface ImageCardProps {
 const ImageCard: React.FC<ImageCardProps> = ({ src, alt, style }) => {
   return (
     <div className="absolute origin-center" style={style}>
-      <img
+      <Image
         src={src}
         alt={alt}
         className="h-full w-full rounded-3xl object-cover"

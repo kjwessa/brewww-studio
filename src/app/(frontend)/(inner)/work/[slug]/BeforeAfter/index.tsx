@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
+import Image from "next/image";
 
 interface BeforeAfterProps {
   beforeImage?: string;
@@ -58,20 +59,22 @@ export function BeforeAfter({
             className="relative h-[52.63rem] overflow-hidden rounded-3xl"
           >
             <div className="absolute inset-0">
-              <img
+              <Image
                 src={afterImage}
                 alt="After"
-                className="h-full w-full object-cover"
+                layout="fill"
+                objectFit="cover"
               />
             </div>
             <div
               className="absolute inset-0"
               style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
             >
-              <img
+              <Image
                 src={beforeImage}
                 alt="Before"
-                className="h-full w-full object-cover"
+                layout="fill"
+                objectFit="cover"
               />
             </div>
             <div
