@@ -379,7 +379,7 @@ export default function IndividualPage() {
                 </span>
                 <a className="w-full overflow-hidden" href="">
                   <picture className="h-auto max-w-full cursor-pointer">
-                    <Image
+                    <img
                       className="h-auto w-full max-w-full"
                       src="https://www.fhoke.com/wp-content/uploads/2020/03/MetalandGas-Banner-588x700.jpg"
                       alt="Metal and Gas banner image"
@@ -549,7 +549,7 @@ export default function IndividualPage() {
 
       <section className="bg-brand-dark-bg text-white min-[769px]:flex min-[769px]:items-center">
         <div className="overflow-hidden min-[769px]:w-[48.2105%]">
-          <Image
+          <img
             className="h-auto w-full max-w-full"
             src="https://www.fhoke.com/wp-content/uploads/2022/08/Wordpress-Intro-Tall.jpg"
             alt="A tall image showcasing WordPress interface and features, demonstrating its versatility as a content management system"
@@ -580,7 +580,7 @@ export default function IndividualPage() {
         <div className="m-auto w-[92%] min-[1921px]:max-w-[118.75rem]">
           <div className="min-[769px]:flex min-[769px]:items-center">
             <div className="order-1 overflow-hidden min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
-              <Image
+              <img
                 className="h-auto w-full max-w-full"
                 src="https://www.fhoke.com/wp-content/uploads/2022/08/Wordpress-Slate-Tall.jpg"
                 alt="WordPress Slate"
@@ -615,7 +615,7 @@ export default function IndividualPage() {
         <div className="m-auto w-[92%] min-[1921px]:max-w-[118.75rem]">
           <div className="min-[769px]:flex min-[769px]:items-center">
             <div className="overflow-hidden min-[769px]:w-[48.2105%]">
-              <Image
+              <img
                 className="h-auto w-full max-w-full"
                 src="https://www.fhoke.com/wp-content/uploads/2022/08/Wordpress-Recap-Tall.jpg"
                 alt="WordPress Recap"
