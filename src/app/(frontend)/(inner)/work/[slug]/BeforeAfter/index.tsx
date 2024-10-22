@@ -59,23 +59,27 @@ export function BeforeAfter({
             className="relative h-[52.63rem] overflow-hidden rounded-3xl"
           >
             <div className="absolute inset-0">
-              <Image
-                src={afterImage}
-                alt="After"
-                layout="fill"
-                objectFit="cover"
-              />
+              <div className="relative h-full w-full">
+                <Image
+                  src={afterImage}
+                  alt="After"
+                  fill
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
             </div>
             <div
               className="absolute inset-0"
               style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
             >
-              <Image
-                src={beforeImage}
-                alt="Before"
-                layout="fill"
-                objectFit="cover"
-              />
+              <div className="relative h-full w-full">
+                <Image
+                  src={beforeImage}
+                  alt="Before"
+                  fill
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
             </div>
             <div
               className="absolute bottom-0 top-0 w-1 cursor-ew-resize bg-white"
