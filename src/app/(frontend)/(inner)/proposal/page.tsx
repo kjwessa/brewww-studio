@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function ProposalPage() {
   return (
     <>
@@ -18,13 +19,15 @@ export default function ProposalPage() {
             className="relative flex flex-col text-red-500 underline"
             href="https://plymouth-proposal-template.webflow.io/#Proposal"
           >
-            <img
+            <Image
               className="h-44 w-32 cursor-pointer object-cover opacity-[0.999808]"
-              src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66ccef58dd1d93696b6b3864_anchor-arrow-black-15.svg"
+              src="/images/anchor-arrow-black-15.svg"
+              alt="Anchor Arrow Black 15"
             />
-            <img
+            <Image
               className="absolute bottom-0 left-0 top-0 h-44 w-32 cursor-pointer object-cover opacity-[0.0402121]"
-              src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66ccefcb4b88351f4f2d549a_anchor-arrow-ember-red.svg"
+              src="/images/anchor-arrow-ember-red.svg"
+              alt="Anchor Arrow Ember Red"
             />
           </a>
         </div>
@@ -33,9 +36,10 @@ export default function ProposalPage() {
         <div className="grid auto-cols-fr grid-flow-col grid-cols-[349.562px_349.578px_349.578px_349.578px] grid-rows-[6.00rem] items-start justify-items-start gap-10">
           <div className="col-span-1 row-span-1 border-t-4 border-solid border-t-zinc-900/[0.15] pt-10">
             <div className="flex items-start justify-start gap-4">
-              <img
+              <Image
                 className="h-6 w-5 object-cover"
-                src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c103d3c8d628dba866cdfd_map-icon-ember-red.svg"
+                src="/images/map-icon-ember-red.svg"
+                alt="Map Icon Ember Red"
               />
               <a className="text-2xl" href="https://webflow.com/templates">
                 1212 South Congress Drive, Austin, TX 77130
@@ -44,9 +48,10 @@ export default function ProposalPage() {
           </div>
           <div className="col-span-1 row-span-1 border-t-4 border-solid border-t-zinc-900/[0.15] pt-10">
             <div className="flex items-start justify-start gap-4">
-              <img
+              <Image
                 className="h-6 w-6 object-cover"
-                src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c1051061e17f3f3a87bd18_globe-icon-ember-red.svg"
+                src="/images/globe-icon-ember-red.svg"
+                alt="Globe Icon Ember Red"
               />
               <a className="text-2xl" href="https://webflow.com/templates">
                 plymouth.com
@@ -55,9 +60,10 @@ export default function ProposalPage() {
           </div>
           <div className="col-span-1 row-span-1 border-t-4 border-solid border-t-zinc-900/[0.15] pt-10">
             <div className="flex items-start justify-start gap-4">
-              <img
+              <Image
                 className="h-6 w-3.5 object-cover"
-                src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c10510890eab1cb3aeb59a_phone-icon-ember-red.svg"
+                src="/images/phone-icon-ember-red.svg"
+                alt="Phone Icon Ember Red"
               />
               <a
                 className="text-2xl"
@@ -69,9 +75,10 @@ export default function ProposalPage() {
           </div>
           <div className="col-span-1 row-span-1 border-t-4 border-solid border-t-zinc-900/[0.15] pt-10">
             <div className="flex items-start justify-start gap-4">
-              <img
+              <Image
                 className="h-12 w-12 object-cover"
-                src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66ccfc5d607973ddecd2506f_member-contact-headshot-ar-1-1.avif"
+                src="/images/member-contact-headshot-ar-1-1.avif"
+                alt="Member Contact Headshot Ar 1 1"
               />
               <div>
                 <div className="text-2xl">Amber Yun</div>
@@ -204,21 +211,21 @@ export default function ProposalPage() {
       </section>
       <section className="grid grid-cols-2 gap-2 bg-white px-2 py-2 text-zinc-900">
         <div className="grid grid-rows-2 gap-2">
-          <img
+          <Image
             className="h-full w-full object-cover"
             src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7e11af569f38d969e0_Image.avif"
-            srcSet="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7e11af569f38d969e0_Image-p-500.avif 500w, https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7e11af569f38d969e0_Image-p-800.avif 800w, https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7e11af569f38d969e0_Image.avif 1440w"
+            alt="Image"
           />
-          <img
+          <Image
             className="h-full w-full object-cover"
             src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7ec41fc05c0158a6cb_Image-1.avif"
-            srcSet="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7ec41fc05c0158a6cb_Image-1-p-500.avif 500w, https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7ec41fc05c0158a6cb_Image-1-p-800.avif 800w, https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7ec41fc05c0158a6cb_Image-1.avif 1440w"
+            alt="Image 1"
           />
         </div>
-        <img
+        <Image
           className="h-full w-full object-cover"
           src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7f038a61dbecde6b30_Image-2.avif"
-          srcSet="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7f038a61dbecde6b30_Image-2-p-500.avif 500w, https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7f038a61dbecde6b30_Image-2-p-800.avif 800w, https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7f038a61dbecde6b30_Image-2.avif 1440w"
+          alt="Image 2"
         />
       </section>
       <section className="relative bg-white py-20 font-light text-zinc-900">
@@ -239,16 +246,14 @@ export default function ProposalPage() {
               </p>
             </div>
             <div className="relative grid grid-cols-2 gap-8">
-              <img
+              <Image
                 className="h-96 w-full object-cover"
                 src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c0fd4751b1d035e8c66f5b_homepage-about-image-2-ar-4-5.avif"
-                srcSet="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c0fd4751b1d035e8c66f5b_homepage-about-image-2-ar-4-5.avif 500w, https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c0fd4751b1d035e8c66f5b_homepage-about-image-2-ar-4-5.avif 1200w"
                 alt="About Plymouth image 1"
               />
-              <img
+              <Image
                 className="mt-16 h-80 w-full object-cover"
                 src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c0fd4751b1d035e8c66f59_homepage-about-image-3-ar-4-5.avif"
-                srcSet="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c0fd4751b1d035e8c66f59_homepage-about-image-3-ar-4-5.avif 500w, https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c0fd4751b1d035e8c66f59_homepage-about-image-3-ar-4-5.avif 1200w"
                 alt="About Plymouth image 2"
               />
               <div className="absolute left-1/2 top-1/2 -z-10 flex h-80 w-80 -translate-x-1/2 -translate-y-1/2 transform items-center justify-center rounded-full border-2 border-zinc-900">
@@ -281,7 +286,7 @@ export default function ProposalPage() {
                     Strategy
                   </h3>
                   <div className="flex items-center justify-center rounded-full border border-zinc-900/[0.15] p-2">
-                    <img
+                    <Image
                       className="h-1.5 w-3 object-cover"
                       src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c0fd4751b1d035e8c66eb3_arrow-down-ember.svg"
                       alt="Arrow down"
@@ -297,7 +302,7 @@ export default function ProposalPage() {
                     Development
                   </h3>
                   <div className="flex items-center justify-center rounded-full border border-zinc-900/[0.15] p-2">
-                    <img
+                    <Image
                       className="h-1.5 w-3 object-cover"
                       src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c0fd4751b1d035e8c66eb3_arrow-down-ember.svg"
                       alt="Arrow down"
@@ -313,7 +318,7 @@ export default function ProposalPage() {
                     Optimization
                   </h3>
                   <div className="flex items-center justify-center rounded-full border border-zinc-900/[0.15] p-2">
-                    <img
+                    <Image
                       className="h-1.5 w-3 object-cover"
                       src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c0fd4751b1d035e8c66eb3_arrow-down-ember.svg"
                       alt="Arrow down"
@@ -348,8 +353,8 @@ export default function ProposalPage() {
               </div>
             </div>
             <div className="w-1/2">
-              <img
-                src="/path-to-your-image.jpg"
+              <Image
+                src="/images/vintage-broncos-website-redesign.avif"
                 alt="Vintage Broncos Website Redesign"
                 className="h-full w-full object-cover"
               />
