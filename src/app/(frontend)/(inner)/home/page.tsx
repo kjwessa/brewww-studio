@@ -174,7 +174,7 @@ export default async function Home() {
                   engaging products with real results.
                 </div>
                 <div className="overflow-hidden font-bold">
-                  <a
+                  <Link
                     className="relative mb-1 inline-block max-w-full"
                     href="/capabilities"
                   >
@@ -182,7 +182,7 @@ export default async function Home() {
                       View Capabilities
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 h-0.5 w-1/5 bg-white" />
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-start-4 col-end-11 row-start-1 grid h-[37.50rem] w-full auto-cols-fr grid-cols-[.25fr_1fr_1fr_1fr_1fr_1fr_1fr_.25fr] grid-rows-[auto_auto_auto_auto_auto_auto_auto_auto] overflow-hidden">
