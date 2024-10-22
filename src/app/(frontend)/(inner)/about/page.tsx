@@ -229,9 +229,10 @@ export default function About() {
             </div>
           </div>
           <div className="mt-7 flex gap-6 text-2xl lg:mt-12">
-            <img
+            <Image
               className="h-auto w-28 max-w-full lg:w-28"
               src="https://showandtell.agency/stars.svg"
+              alt="Stars"
             />
             <span>
               Rated 4.6 Stars on{" "}
@@ -296,11 +297,12 @@ export default function About() {
           >
             <figure>
               <span className="relative inline-block h-36 w-60 overflow-hidden">
-                <img
+                <Image
                   className="h-full w-full object-cover"
                   src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27440%27%20height=%27248%27/%3e"
+                  alt="Placeholder"
                 />
-                <img
+                <Image
                   className="absolute inset-0 h-full w-full object-cover"
                   src={AboutImageEight.src}
                   alt="Kevin Wessa"
@@ -519,9 +521,10 @@ export default function About() {
           </div>
           <div className="flex flex-wrap justify-between px-12 py-24">
             <div className="flex basis-[48%] flex-col pb-20">
-              <img
+              <Image
                 className="h-auto w-[47.57rem] max-w-full pb-8"
                 src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/2022-Kristin-23.jpg"
+                alt="Kristin"
               />
               <h3 className="mb-3 text-[2.38rem] leading-none">
                 Christine Wessa
@@ -537,9 +540,10 @@ export default function About() {
               </p>
             </div>
             <div className="flex basis-[48%] flex-col pb-20">
-              <img
+              <Image
                 className="h-auto w-[47.57rem] max-w-full pb-8"
                 src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/2022-Michael-10.jpg"
+                alt="Michael"
               />
               <h3 className="mb-3 text-[2.38rem] leading-none">Kevin Wessa</h3>
               <h4 className="mb-3.5 font-semibold">
@@ -602,9 +606,10 @@ export default function About() {
               style={{ flexGrow: "0.7" }}
             >
               <div className="rounded-xl">
-                <img
+                <Image
                   className="h-96 w-80 rounded-xl object-cover"
                   src="https://framerusercontent.com/images/h4avZwD33gi1xDttcLVC1zjWvBA.jpg"
+                  alt="Placeholder"
                 />
               </div>
             </div>
@@ -615,9 +620,10 @@ export default function About() {
           >
             <div className="relative w-full rounded-xl">
               <div className="rounded-xl">
-                <img
+                <Image
                   className="h-96 w-full rounded-xl object-cover"
                   src="https://framerusercontent.com/images/mg9Dkmv1bZMO6mM2tX4EUwkcR7A.jpg"
+                  alt="Placeholder"
                 />
               </div>
             </div>
@@ -1099,7 +1105,7 @@ export default function About() {
             </div>
             <div className="relative mt-8 w-full lg:mt-0 lg:w-1/2 lg:pl-16">
               <div className="aspect-w-16 aspect-h-9" style={{ height: "70%" }}>
-                <img
+                <Image
                   className="h-full w-full object-cover"
                   src="https://www.datocms-assets.com/63464/1661347408-stuurmen-office-interior.jpg?auto=format&h=1080&w=1920"
                   alt="Stuurmen office interior"
@@ -1119,7 +1125,7 @@ export default function About() {
             <div className="relative flex w-2/3 flex-col">
               <div className="relative mb-4 h-[57.11rem]">
                 <div className="absolute inset-0">
-                  <img
+                  <Image
                     className="h-full w-full object-cover"
                     src="https://www.datocms-assets.com/63464/1661347918-stuurmen-visual-2.png?auto=format&h=965&w=760"
                     alt="Think before you ink"
@@ -1138,7 +1144,7 @@ export default function About() {
               </div>
               <div className="relative mb-4 h-[57.11rem]">
                 <div className="absolute inset-0">
-                  <img
+                  <Image
                     className="h-full w-full object-cover"
                     src="https://www.datocms-assets.com/63464/1661347908-stuurmen-visual-1.png?auto=format&h=965&w=760"
                     alt="No guts, no glory"
@@ -1157,7 +1163,7 @@ export default function About() {
               </div>
               <div className="relative mb-4 h-[57.11rem]">
                 <div className="absolute inset-0">
-                  <img
+                  <Image
                     className="h-full w-full object-cover"
                     src="https://www.datocms-assets.com/63464/1661347903-stuurmen-visual-4.png?auto=format&h=965&w=760"
                     alt="No bullshit bingo"
@@ -1175,7 +1181,7 @@ export default function About() {
               </div>
               <div className="relative mb-4 h-[57.11rem]">
                 <div className="absolute inset-0">
-                  <img
+                  <Image
                     className="h-full w-full object-cover"
                     src="https://www.datocms-assets.com/63464/1661347890-stuurmen-visual-3.png?auto=format&h=965&w=760"
                     alt="A touch of wit"
@@ -1192,7 +1198,7 @@ export default function About() {
               </div>
               <div className="relative h-[57.11rem]">
                 <div className="absolute inset-0">
-                  <img
+                  <Image
                     className="h-full w-full object-cover"
                     src="https://www.datocms-assets.com/63464/1661347872-stuurmen-visual-5.png?auto=format&h=965&w=760"
                     alt="Lead by example"
