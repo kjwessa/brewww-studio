@@ -181,7 +181,7 @@ export default async function Footer() {
             unbounded{" "}
             <span className="-mr-3 -mt-11 inline-block align-middle">
               <Image
-                src={BrewwwMark}
+                src="/images/brewww-mark.png"
                 alt="Brewww Mark"
                 width={135}
                 height={135}

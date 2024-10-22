@@ -42,134 +42,134 @@ export default async function WorkPage() {
               </h1>
               <ul className="flex list-none flex-wrap">
                 <li className="mr-4 list-item lg:mr-10">
-                  <a className="inline-flex items-end" href="">
+                  <Link className="inline-flex items-end" href="">
                     <div className="cursor-pointer indent-48 text-[3.25rem] lowercase leading-none text-white">
                       Explore all
                     </div>
                     <div className="mb-1 ml-1 cursor-pointer text-sm text-neutral-400 lg:mb-2">
                       38
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="mr-4 list-item text-neutral-400 lg:mr-10">
-                  <a className="inline-flex items-end" href="">
+                  <Link className="inline-flex items-end" href="">
                     <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
                       Fashion
                     </div>
                     <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
                       7
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="mr-4 list-item text-neutral-400 lg:mr-10">
-                  <a className="inline-flex items-end" href="">
+                  <Link className="inline-flex items-end" href="">
                     <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
                       Fitness & Sport
                     </div>
                     <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
                       2
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="mr-4 list-item text-neutral-400 lg:mr-10">
-                  <a className="inline-flex items-end" href="">
+                  <Link className="inline-flex items-end" href="">
                     <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
                       Education
                     </div>
                     <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
                       3
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="mr-4 list-item text-neutral-400 lg:mr-10">
-                  <a className="inline-flex items-end" href="">
+                  <Link className="inline-flex items-end" href="">
                     <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
                       Health
                     </div>
                     <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
                       5
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="mr-4 list-item text-neutral-400 lg:mr-10">
-                  <a className="inline-flex items-end" href="">
+                  <Link className="inline-flex items-end" href="">
                     <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
                       Property
                     </div>
                     <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
                       8
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="mr-4 list-item text-neutral-400 lg:mr-10">
-                  <a className="inline-flex items-end" href="">
+                  <Link className="inline-flex items-end" href="">
                     <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
                       Corporate
                     </div>
                     <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
                       6
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="mr-4 list-item text-neutral-400 lg:mr-10">
-                  <a className="inline-flex items-end" href="">
+                  <Link className="inline-flex items-end" href="">
                     <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
                       Food & Drink
                     </div>
                     <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
                       6
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="mr-4 list-item text-neutral-400 lg:mr-10">
-                  <a className="inline-flex items-end" href="">
+                  <Link className="inline-flex items-end" href="">
                     <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
                       Agency
                     </div>
                     <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
                       7
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="mr-4 list-item text-neutral-400 lg:mr-10">
-                  <a className="inline-flex items-end" href="">
+                  <Link className="inline-flex items-end" href="">
                     <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
                       eCommerce
                     </div>
                     <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
                       16
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="mr-4 list-item text-neutral-400 lg:mr-10">
-                  <a className="inline-flex items-end" href="">
+                  <Link className="inline-flex items-end" href="">
                     <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
                       B2B
                     </div>
                     <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
                       22
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="mr-4 list-item text-neutral-400 lg:mr-10">
-                  <a className="inline-flex items-end" href="">
+                  <Link className="inline-flex items-end" href="">
                     <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
                       B2C
                     </div>
                     <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
                       12
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="mr-4 list-item text-neutral-400 lg:mr-10">
-                  <a className="inline-flex items-end" href="">
+                  <Link className="inline-flex items-end" href="">
                     <div className="cursor-pointer text-[3.25rem] lowercase leading-none">
                       Archive
                     </div>
                     <div className="mb-1 ml-1 cursor-pointer text-sm lg:mb-2">
                       17
                     </div>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -232,7 +232,7 @@ export default async function WorkPage() {
                     <div className="relative inline-flex items-center">
                       <a
                         className="inline-flex blur"
-                        href="https://madebyshape.co.uk/contact/"
+                        href=""
                         style={{
                           outlineOffset: "2px",
                           outlineStyle: "solid",
@@ -389,9 +389,11 @@ export default async function WorkPage() {
                         className="min-[769px]:relative min-[769px]:flex min-[769px]:h-full"
                         href=""
                       >
-                        <img
+                        <Image
                           className="h-auto max-w-full cursor-pointer object-cover min-[769px]:absolute min-[769px]:left-0 min-[769px]:top-0 min-[769px]:h-full min-[769px]:w-[calc(23.6334%_+_50vw)] min-[769px]:max-w-none"
-                          src="https://www.fhoke.com/wp-content/uploads/2022/03/heritage-driven-header-1900x1100.jpg"
+                          src="https://bucket.brewww.studio/brewww/media/temp-azle.avif"
+                          alt="Heritage Driven"
+                          fill
                         />
                         {"                        "}
                       </a>
@@ -433,9 +435,11 @@ export default async function WorkPage() {
                         className="min-[769px]:relative min-[769px]:flex min-[769px]:h-full"
                         href=""
                       >
-                        <img
+                        <Image
                           className="h-auto max-w-full cursor-pointer object-cover min-[769px]:absolute min-[769px]:left-0 min-[769px]:top-0 min-[769px]:h-full min-[769px]:w-[calc(23.6334%_+_50vw)] min-[769px]:max-w-none"
-                          src="https://www.fhoke.com/wp-content/uploads/2024/01/ParisTile-Header-1900x1100.webp"
+                          src="https://bucket.brewww.studio/brewww/media/temp-azle.avif"
+                          alt="Paris Tile"
+                          fill
                         />
                         {"                        "}
                       </a>
@@ -477,9 +481,11 @@ export default async function WorkPage() {
                         className="min-[769px]:relative min-[769px]:flex min-[769px]:h-full"
                         href=""
                       >
-                        <img
+                        <Image
                           className="h-auto max-w-full cursor-pointer object-cover min-[769px]:absolute min-[769px]:left-0 min-[769px]:top-0 min-[769px]:h-full min-[769px]:w-[calc(23.6334%_+_50vw)] min-[769px]:max-w-none"
-                          src="https://www.fhoke.com/wp-content/uploads/2022/08/The-Millshop-Online-Header-1-1900x1100.jpg"
+                          src="https://bucket.brewww.studio/brewww/media/temp-azle.avif"
+                          alt="The Millshop Online"
+                          fill
                         />
                         {"                        "}
                       </a>
