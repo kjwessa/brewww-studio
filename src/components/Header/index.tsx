@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-brand-dark-bg text-sm text-neutral-400">
+      <header className="fixed top-0 z-50 w-full bg-brand-dark-bg text-sm text-neutral-400">
         <div className="mx-auto max-w-[120rem] px-12">
           <div className="grid grid-cols-3 items-center py-4">
             <nav className="flex items-center space-x-4 font-semibold uppercase text-white">
