@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function AboutOffsetImageSection() {
   return (
@@ -30,13 +31,13 @@ export function AboutOffsetImageSection() {
                   instant and focuses on the lasting.
                 </strong>
               </p>
-              <a
+              <Link
                 className="relative mb-1 inline-block max-w-full font-bold"
                 href="/services"
               >
                 <span className="uppercase">View Capabilities</span>
                 <span className="absolute bottom-0 left-0 right-0 h-0.5 w-1/5 bg-white" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
