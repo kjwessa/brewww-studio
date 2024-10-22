@@ -104,9 +104,10 @@ export default async function PlayPage() {
                   href=""
                 >
                   <div className="flex w-full cursor-pointer overflow-hidden rounded-md">
-                    <img
+                    <Image
                       className="inline-block h-full w-full max-w-full object-contain align-middle"
                       src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10dcd8842ec2b57b28cb6_63c9187126433a43129cc944_image-ueno-template-02.jpeg"
+                      alt="Square"
                     />
                   </div>
                   <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1 text-black">
@@ -132,9 +133,10 @@ export default async function PlayPage() {
                   href=""
                 >
                   <div className="flex w-full cursor-pointer overflow-hidden rounded-md">
-                    <img
+                    <Image
                       className="inline-block h-full w-full max-w-full object-contain align-middle"
                       src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10dfd80f1f22872630cce_63c91c81185e3416e7ba7960_image-ueno-template-06-p-2000.jpeg"
+                      alt="Castro Capital"
                     />
                   </div>
                   <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1 text-black">
@@ -160,9 +162,10 @@ export default async function PlayPage() {
                 >
                   <div className="relative flex w-full cursor-pointer overflow-hidden rounded-md">
                     <div className="relative w-full pt-[56.25%]">
-                      <img
+                      <Image
                         className="absolute bottom-0 left-0 top-0 inline-block h-full w-full max-w-full object-cover align-middle"
                         src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10e2f8842ec5dcab29324_63c91907a7ce6182b053ba02_image-ueno-template-03.jpeg"
+                        alt="Rucksack Magazine"
                       />
                     </div>
                   </div>
@@ -193,9 +196,10 @@ export default async function PlayPage() {
                   href=""
                 >
                   <div className="flex w-full cursor-pointer overflow-hidden rounded-md">
-                    <img
+                    <Image
                       className="inline-block h-full w-full max-w-full object-contain align-middle"
                       src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10e81559654d00360030b_63c91be70da88459ac7b5a3a_image-ueno-template-05.jpeg"
+                      alt="Romans"
                     />
                   </div>
                   <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1 text-black">
@@ -223,9 +227,10 @@ export default async function PlayPage() {
                   href=""
                 >
                   <div className="flex w-full cursor-pointer overflow-hidden rounded-md">
-                    <img
+                    <Image
                       className="inline-block h-full w-full max-w-full object-contain align-middle"
                       src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d1162e150c60446a56cadd_63c91d6bd8d50020d6d274c0_image-ueno-template-07-p-2000.jpeg"
+                      alt="Hakuha"
                     />
                   </div>
                   <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1 text-black">
@@ -251,9 +256,10 @@ export default async function PlayPage() {
                 >
                   <div className="relative flex w-full cursor-pointer overflow-hidden rounded-md">
                     <div className="relative w-full pt-[56.25%]">
-                      <img
+                      <Image
                         className="absolute bottom-0 left-0 top-0 inline-block h-full w-full max-w-full object-cover align-middle"
                         src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10ee4ad83658d2bc97c5a_63c91ec109d76d3e7e34327f_image-ueno-template-08-p-2000.jpeg"
+                        alt="Café de especialidad"
                       />
                     </div>
                   </div>

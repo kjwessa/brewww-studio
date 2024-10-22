@@ -76,6 +76,7 @@ export async function WorkGridSection({ projects }: { projects: Work[] }) {
                         <img
                           className="mt-3 h-auto w-full max-w-full"
                           src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/google-reviews-badge.png?w=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1702301485&s=a559fc5608bf902cd329da89be5a9b01"
+                          alt="Google Reviews Badge"
                         />
                       </picture>
                     </div>

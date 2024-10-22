@@ -106,6 +106,7 @@ export function ServicesSection({ services }: { services: Service[] }) {
                     <img
                       className="absolute left-0 top-0 z-0 h-full w-full max-w-full object-cover"
                       src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/India-2022/Individuals-Black-Wall/Shape-April-2022-HR-186.jpg?w=200&h=200&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1651143173&s=be043bcd94bb13283574b35d1df6ee93"
+                      alt="Shape"
                     />
                   </picture>
                 </div>
