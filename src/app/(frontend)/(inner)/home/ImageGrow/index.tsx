@@ -26,10 +26,13 @@ export const ImageGrow: React.FC = () => {
   }, []);
   return (
     <section
-      className="relative h-[80vh] w-full overflow-hidden bg-brand-dark-bg px-2 py-2 text-white"
+      className="relative h-[80vh] w-full overflow-hidden rounded-md bg-brand-dark-bg px-2 py-2 text-white"
       id="growthImageContainer"
     >
-      <div className="h-full w-full" id="growthImageWrap">
+      <div
+        className="h-full w-full overflow-hidden rounded-xl bg-brand-dark-bg"
+        id="growthImageWrap"
+      >
         <div className="h-full w-full overflow-hidden" id="growthImageMask">
           <Image
             src="/5f109d8acc3b4cf5ce8f9ebe_DSC04349-Edit.1920.jpg"
