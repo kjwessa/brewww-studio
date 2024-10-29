@@ -21,6 +21,7 @@ export function HomeHeroSection() {
   const starsRef = useRef<(HTMLDivElement | null)[]>([]);
   const [stars, setStars] = useState<React.ReactNode[]>([]);
   const heroMessageRef = useRef<HTMLHeadingElement>(null);
+  const blurRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const generateStars = () => {
@@ -78,6 +79,30 @@ export function HomeHeroSection() {
       //   stagger: 0.02,
       // });
     }
+
+    // Animate blur elements
+    blurRefs.current.forEach((blur, index) => {
+      if (blur) {
+        gsap.to(blur, {
+          rotation: gsap.utils.random(-30, 30),
+          scale: gsap.utils.random(0.8, 1.2),
+          duration: gsap.utils.random(10, 20),
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          delay: index * 0.5,
+        });
+
+        gsap.to(blur, {
+          opacity: gsap.utils.random(0.6, 1),
+          duration: gsap.utils.random(3, 7),
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          delay: index * 0.3,
+        });
+      }
+    });
   }, []);
 
   return (
@@ -108,20 +133,31 @@ export function HomeHeroSection() {
       </div>
 
       <div
-        className="rotate-15 absolute bottom-0 left-0 -mb-[100px] -ml-[100px] h-[25vh] w-[75vw] bg-[#ff6231] blur-[200px]"
+        ref={(el) => {
+          if (el) blurRefs.current[0] = el;
+        }}
+        className="absolute bottom-0 left-0 -mb-[100px] -ml-[100px] h-[45vh] w-[80vw] origin-center bg-[#ff6231] blur-[150px]"
         id="hero-blur-red"
       />
       <div
-        className="left-30 -rotate-15 absolute bottom-0 -mb-[100px] -ml-[100px] h-[25vh] w-[75vw] bg-[#ffb931] blur-[200px]"
+        ref={(el) => {
+          if (el) blurRefs.current[1] = el;
+        }}
+        className="absolute bottom-0 left-[20%] -mb-[0px] -ml-[0px] h-[40vh] w-[85vw] origin-center bg-[#ffb931] blur-[180px]"
         id="hero-blur-gold"
       />
-
       <div
-        className="right-30 -rotate-15 absolute bottom-0 -mb-[100px] -mr-[100px] h-[25vh] w-[75vw] bg-[#14c7ff] blur-[200px]"
+        ref={(el) => {
+          if (el) blurRefs.current[2] = el;
+        }}
+        className="absolute bottom-0 right-[20%] -mb-[0px] -mr-[0px] h-[40vh] w-[90vw] origin-center bg-[#14c7ff] blur-[200px]"
         id="hero-blur-sky"
       />
       <div
-        className="-rotate-15 absolute bottom-0 right-0 -mb-[100px] -mr-[100px] h-[25vh] w-[75vw] bg-[#1061ff] blur-[200px]"
+        ref={(el) => {
+          if (el) blurRefs.current[3] = el;
+        }}
+        className="absolute bottom-0 right-0 -mb-[100px] -mr-[100px] h-[45vh] w-[95vw] origin-center bg-[#1061ff] blur-[220px]"
         id="hero-blur-blue"
       />
 
