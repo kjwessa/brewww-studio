@@ -86,15 +86,21 @@ export const Pages: CollectionConfig = {
     livePreview: {
       url: ({ data }) => {
         const path = generatePreviewPath({
-          path: `/${typeof data?.slug === "string" ? data.slug : ""}`,
+          slug: typeof data?.slug === "string" ? data.slug : "",
+          collection: "pages",
         });
+
         return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`;
       },
     },
-    preview: (doc) =>
-      generatePreviewPath({
-        path: `/${typeof doc?.slug === "string" ? doc.slug : ""}`,
-      }),
+    preview: (data) => {
+      const path = generatePreviewPath({
+        slug: typeof data?.slug === "string" ? data.slug : "",
+        collection: "pages",
+      });
+
+      return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`;
+    },
   },
   versions: {
     drafts: {
