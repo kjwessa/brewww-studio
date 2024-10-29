@@ -5,6 +5,7 @@ import { slugField } from "@/fields/slug";
 import { revalidatePost } from "./hooks/revalidatePost";
 import { MediaTest } from "@/blocks/Test/config";
 import { seoTab } from "@/fields/seoFields";
+import { generatePreviewPath } from "@/utils/generatePreviewPath";
 
 import {
   BlocksFeature,
@@ -188,6 +189,25 @@ export const BlogPosts: CollectionConfig = {
     defaultColumns: ["title", "status", "publishedOn", "updatedAt", "featured"],
     group: "Blog Posts",
     listSearchableFields: ["title"],
+    livePreview: {
+      url: ({ data }) => {
+        const path = generatePreviewPath({
+          slug: typeof data?.slug === "string" ? data.slug : "",
+          collection: "posts",
+        });
+
+        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`;
+      },
+    },
+    preview: (data) => {
+      const path = generatePreviewPath({
+        slug: typeof data?.slug === "string" ? data.slug : "",
+        collection: "posts",
+      });
+
+      return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`;
+    },
+
     pagination: {
       defaultLimit: 100,
       limits: [25, 50, 100],

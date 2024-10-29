@@ -24,8 +24,14 @@ type Props = {
  * @returns A preview URL with encoded parameters
  */
 export const generatePreviewPath = ({ collection, slug }: Props) => {
+  console.log("[generatePreviewPath.ts] Generating preview path for:", {
+    collection,
+    slug,
+  });
+
   // Combine the collection prefix with the slug to create the full path
   const path = `${collectionPrefixMap[collection]}/${slug}`;
+  console.log("[generatePreviewPath.ts] Generated path:", path);
 
   // Create an object with all the parameters needed for the preview
   const params = {
@@ -33,6 +39,7 @@ export const generatePreviewPath = ({ collection, slug }: Props) => {
     collection,
     path,
   };
+  console.log("[generatePreviewPath.ts] Preview parameters:", params);
 
   // Create a URLSearchParams instance to properly encode the parameters
   const encodedParams = new URLSearchParams();
@@ -40,8 +47,11 @@ export const generatePreviewPath = ({ collection, slug }: Props) => {
   // Add each parameter to the URLSearchParams instance
   Object.entries(params).forEach(([key, value]) => {
     encodedParams.append(key, value);
+    console.log("[generatePreviewPath.ts] Added parameter:", key, "=", value);
   });
 
   // Return the complete preview URL with encoded parameters
-  return `/next/preview?${encodedParams.toString()}`;
+  const previewUrl = `/next/preview?${encodedParams.toString()}`;
+  console.log("[generatePreviewPath.ts] Final preview URL:", previewUrl);
+  return previewUrl;
 };
