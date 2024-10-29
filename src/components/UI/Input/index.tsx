@@ -1,4 +1,4 @@
-import { cn } from "@root/utils/cn";
+import { cn } from "@root/utilities/cn";
 import * as React from "react";
 
 export interface InputProps

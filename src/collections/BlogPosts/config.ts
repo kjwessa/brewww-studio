@@ -5,7 +5,7 @@ import { slugField } from "@/fields/slug";
 import { revalidatePost } from "./hooks/revalidatePost";
 import { MediaTest } from "@/blocks/Test/config";
 import { seoTab } from "@/fields/seoFields";
-import { generatePreviewPath } from "@/utils/generatePreviewPath";
+import { generatePreviewPath } from "@root/utilities/generatePreviewPath";
 
 import {
   BlocksFeature,

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { cn } from "@root/utils/cn.js";
+import { cn } from "@root/utilities/cn.js";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { IconProps } from "../types.js";

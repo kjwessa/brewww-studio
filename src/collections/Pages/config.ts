@@ -3,7 +3,7 @@ import { isAdmin } from "@/access/isAdmin";
 import { slugField } from "@/fields/slug";
 import { publishedOnly } from "@/access/publishedOnly";
 import { seoTab } from "@/fields/seoFields";
-import { generatePreviewPath } from "@/utils/generatePreviewPath";
+import { generatePreviewPath } from "@root/utilities/generatePreviewPath";
 import { FormBlock } from "@/blocks/Form/config";
 import { Cover } from "@/blocks/Cover/config";
 
