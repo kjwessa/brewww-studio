@@ -74,11 +74,7 @@ export const Pages: CollectionConfig = {
     },
   },
   versions: {
-    drafts: {
-      autosave: {
-        interval: 100,
-      },
-    },
-    maxPerDoc: 50,
+    drafts: { autosave: { interval: 100 } },
+    maxPerDoc: 25,
   },
 };

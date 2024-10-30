@@ -43,7 +43,7 @@ export const Location: CollectionConfig = {
     plural: "Locations",
   },
   versions: {
-    drafts: true,
+    drafts: { autosave: { interval: 100 } },
     maxPerDoc: 25,
   },
 };

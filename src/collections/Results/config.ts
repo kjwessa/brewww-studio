@@ -57,7 +57,7 @@ export const Results: CollectionConfig = {
     plural: "Results",
   },
   versions: {
-    drafts: true,
+    drafts: { autosave: { interval: 100 } },
     maxPerDoc: 25,
   },
 };

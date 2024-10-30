@@ -55,7 +55,7 @@ export const BlogCategories: CollectionConfig = {
     plural: "Categories",
   },
   versions: {
-    drafts: true,
+    drafts: { autosave: { interval: 100 } },
     maxPerDoc: 25,
   },
 };
