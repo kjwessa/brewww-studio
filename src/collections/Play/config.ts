@@ -62,30 +62,6 @@ export const Playground: CollectionConfig = {
           fields: [],
         },
         {
-          name: "metadata",
-          label: "Meta",
-          fields: [
-            {
-              name: "relatedPlaygrounds",
-              type: "relationship",
-              label: "Related Playgrounds",
-              admin: {
-                position: "sidebar",
-                description: "Add the related playgrounds here.",
-              },
-              filterOptions: ({ id }) => {
-                return {
-                  id: {
-                    not_in: [id],
-                  },
-                };
-              },
-              hasMany: true,
-              relationTo: "play",
-            },
-          ],
-        },
-        {
           name: "seo",
           label: "SEO",
           fields: [
@@ -143,6 +119,24 @@ export const Playground: CollectionConfig = {
       admin: {
         position: "sidebar",
       },
+    },
+    {
+      name: "relatedPlaygrounds",
+      type: "relationship",
+      label: "Related Playgrounds",
+      admin: {
+        position: "sidebar",
+        description: "Add the related playgrounds here.",
+      },
+      filterOptions: ({ id }) => {
+        return {
+          id: {
+            not_in: [id],
+          },
+        };
+      },
+      hasMany: true,
+      relationTo: "play",
     },
   ],
 
