@@ -108,16 +108,18 @@ export interface Media {
 export interface Page {
   id: string;
   title: string;
-  layout: (
-    | {
-        title?: string | null;
-        subtitle?: string | null;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'cover';
-      }
-    | FormBlock
-  )[];
+  layout?:
+    | (
+        | {
+            title?: string | null;
+            subtitle?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cover';
+          }
+        | FormBlock
+      )[]
+    | null;
   seo?: {
     title?: string | null;
     image?: (string | null) | Media;

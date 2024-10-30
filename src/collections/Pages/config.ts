@@ -40,7 +40,7 @@ export const Pages: CollectionConfig = {
               name: "layout",
               type: "blocks",
               label: "Layout",
-              required: true,
+              required: false,
               blocks: [Cover, FormBlock],
             },
           ],
