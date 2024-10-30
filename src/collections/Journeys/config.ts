@@ -42,7 +42,18 @@ export const Journeys: CollectionConfig = {
         description: "Add the tagline for the journey here.",
       },
     },
+
     ...slugField(),
+    {
+      name: "services",
+      type: "relationship",
+      relationTo: "services",
+      label: "Services",
+      required: false,
+      admin: {
+        position: "sidebar",
+      },
+    },
     {
       name: "description",
       type: "textarea",
@@ -60,22 +71,7 @@ export const Journeys: CollectionConfig = {
           label: "Content",
           fields: [],
         },
-        {
-          name: "metadata",
-          label: "Meta",
-          fields: [
-            {
-              name: "services",
-              type: "relationship",
-              relationTo: "services",
-              label: "Services",
-              required: false,
-              admin: {
-                description: "Add the services for the journey here.",
-              },
-            },
-          ],
-        },
+
         {
           name: "seo",
           label: "SEO",

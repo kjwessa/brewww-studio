@@ -42,6 +42,16 @@ export const Pillars: CollectionConfig = {
         description: "Add the tagline for the pillar here.",
       },
     },
+    {
+      name: "services",
+      type: "relationship",
+      relationTo: "services",
+      label: "Services",
+      required: false,
+      admin: {
+        position: "sidebar",
+      },
+    },
     ...slugField(),
     {
       name: "description",
@@ -63,18 +73,7 @@ export const Pillars: CollectionConfig = {
         {
           name: "metadata",
           label: "Meta",
-          fields: [
-            {
-              name: "services",
-              type: "relationship",
-              relationTo: "services",
-              label: "Services",
-              required: false,
-              admin: {
-                description: "Add the services for the pillar here.",
-              },
-            },
-          ],
+          fields: [],
         },
         {
           name: "seo",

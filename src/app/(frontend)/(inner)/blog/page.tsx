@@ -22,7 +22,7 @@ export default async function BlogPage() {
   const categoryCounts = categories.docs.reduce(
     (acc, category) => {
       acc[category.id] = posts.docs.filter((post) =>
-        post.metadata?.categories?.some((cat) => {
+        post.categories?.some((cat) => {
           if (typeof cat === "string") {
             return cat === category.id;
           }

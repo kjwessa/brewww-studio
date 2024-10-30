@@ -113,9 +113,7 @@ export default async function PostPage({
             </span>
             <span>•</span>
             <span>
-              {post.metadata.readTime
-                ? `${post.metadata.readTime} min read`
-                : "Add Read Time"}
+              {post.readTime ? `${post.readTime} min read` : "Add Read Time"}
             </span>
           </div>
         </div>
