@@ -75,40 +75,7 @@ export const Work: CollectionConfig = {
             },
           ],
         },
-        {
-          name: "metadata",
-          label: "Meta",
-          fields: [
-            {
-              name: "testimonial",
-              type: "relationship",
-              relationTo: "testimonials",
-              hasMany: false,
-              required: false,
-              admin: {
-                description: "If a testimonial exists, add it here.",
-              },
-            },
-            {
-              name: "relatedWorks",
-              type: "relationship",
-              label: "Related Case Studies",
-              admin: {
-                position: "sidebar",
-              },
-              filterOptions: ({ id }) => {
-                return {
-                  id: {
-                    not_in: [id],
-                  },
-                };
-              },
-              hasMany: true,
-              required: false,
-              relationTo: "work",
-            },
-          ],
-        },
+
         {
           name: "seo",
           label: "SEO",
@@ -183,6 +150,34 @@ export const Work: CollectionConfig = {
       admin: {
         position: "sidebar",
       },
+    },
+    {
+      name: "testimonial",
+      type: "relationship",
+      relationTo: "testimonials",
+      hasMany: false,
+      required: false,
+      admin: {
+        position: "sidebar",
+      },
+    },
+    {
+      name: "relatedWorks",
+      type: "relationship",
+      label: "Related Case Studies",
+      admin: {
+        position: "sidebar",
+      },
+      filterOptions: ({ id }) => {
+        return {
+          id: {
+            not_in: [id],
+          },
+        };
+      },
+      hasMany: true,
+      required: false,
+      relationTo: "work",
     },
   ],
 
