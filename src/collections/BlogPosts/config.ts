@@ -1,11 +1,18 @@
+// Payload Imports
 import type { CollectionConfig } from "payload";
+
+// Access Control
 import { isAdmin } from "@/access/isAdmin";
 import { publishedOnly } from "@/access/publishedOnly";
-import { slugField } from "@/fields/slug";
-import { revalidatePost } from "./hooks/revalidatePost";
 
+// Fields
 import { seoTab } from "@/fields/seoFields";
-import { generatePreviewPath } from "@root/utilities/generatePreviewPath";
+import { slugField } from "@/fields/slug";
+
+// Utilities & Hooks
+import { generatePreviewPath } from "@/utilities/generatePreviewPath";
+import { populatePublishedOn } from "@/hooks/populatePublishedOn";
+import { revalidatePost } from "./hooks/revalidatePost";
 
 import {
   BlocksFeature,
@@ -216,6 +223,7 @@ export const BlogPosts: CollectionConfig = {
     maxPerDoc: 25,
   },
   hooks: {
+    beforeChange: [populatePublishedOn],
     afterChange: [revalidatePost],
   },
 };

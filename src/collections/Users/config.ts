@@ -1,5 +1,7 @@
+// Payload Imports
 import type { CollectionConfig } from "payload";
 
+// Access Control
 import { isAdmin, isAdminFieldLevel } from "@/access/isAdmin";
 import { isAdminOrSelf, isAdminOrSelfFieldLevel } from "@/access/isAdminOrSelf";
 
