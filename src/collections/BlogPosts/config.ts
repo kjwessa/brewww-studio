@@ -83,51 +83,6 @@ export const BlogPosts: CollectionConfig = {
             },
           ],
         },
-        {
-          name: "metadata",
-          label: "Meta",
-          fields: [
-            {
-              name: "relatedPosts",
-              type: "relationship",
-              admin: {
-                position: "sidebar",
-              },
-              filterOptions: ({ id }) => {
-                return {
-                  id: {
-                    not_in: [id],
-                  },
-                };
-              },
-              hasMany: true,
-              relationTo: "posts",
-            },
-            {
-              name: "categories",
-              type: "relationship",
-              admin: {
-                position: "sidebar",
-                description:
-                  "Add the post categories here. This is used to group the articles.",
-              },
-              hasMany: true,
-              relationTo: "categories",
-              required: true,
-            },
-            {
-              name: "readTime",
-              type: "number",
-              required: true,
-              label: "Read Time",
-              admin: {
-                description:
-                  "The estimated time it takes to read the article in minutes. Every 200 words is approximately one minute.",
-                position: "sidebar",
-              },
-            },
-          ],
-        },
         seoTab,
       ],
     },
@@ -178,6 +133,43 @@ export const BlogPosts: CollectionConfig = {
       admin: {
         position: "sidebar",
       },
+    },
+    {
+      name: "readTime",
+      type: "number",
+      required: true,
+      label: "Read Time",
+      admin: {
+        position: "sidebar",
+      },
+    },
+    {
+      name: "categories",
+      type: "relationship",
+      admin: {
+        position: "sidebar",
+        description:
+          "Add the post categories here. This is used to group the articles.",
+      },
+      hasMany: true,
+      relationTo: "categories",
+      required: true,
+    },
+    {
+      name: "relatedPosts",
+      type: "relationship",
+      admin: {
+        position: "sidebar",
+      },
+      filterOptions: ({ id }) => {
+        return {
+          id: {
+            not_in: [id],
+          },
+        };
+      },
+      hasMany: true,
+      relationTo: "posts",
     },
   ],
 

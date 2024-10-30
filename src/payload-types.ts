@@ -335,11 +335,6 @@ export interface Post {
     };
     [k: string]: unknown;
   };
-  metadata: {
-    relatedPosts?: (string | Post)[] | null;
-    categories: (string | Category)[];
-    readTime: number;
-  };
   seo?: {
     title?: string | null;
     image?: (string | null) | Media;
@@ -351,6 +346,9 @@ export interface Post {
   image: string | Media;
   status?: ('not started' | 'needs rewrite' | 'needs polish' | 'needs photos' | 'ready') | null;
   featured?: boolean | null;
+  readTime: number;
+  categories: (string | Category)[];
+  relatedPosts?: (string | Post)[] | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
