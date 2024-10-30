@@ -1,13 +1,22 @@
+// Next Imports
+import { Metadata } from "next";
+import React, { cache } from "react";
+import { draftMode } from "next/headers";
+
+// Payload Imports
 import configPromise from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
-import React, { cache } from "react";
 import type { Page as PageType } from "@/payload-types";
-import { notFound } from "next/navigation";
+
+// Block Imports
 import { RenderBlocks } from "@/blocks/RenderBlocks";
+
+// Utilities
+import { generateMeta } from "@/utilities/generateMeta";
+import { PayloadRedirects } from "@/components/PayloadRedirects";
 
 export async function generateStaticParams() {
   const payload = await getPayloadHMR({ config: configPromise });
-
   const pages = await payload.find({
     collection: "pages",
     draft: false,
@@ -32,47 +41,53 @@ type Args = {
 
 export default async function Page({ params: paramsPromise }: Args) {
   const { slug = "home" } = await paramsPromise;
+  const url = "/" + slug;
+
   let page: PageType | null;
 
-  try {
-    page = await queryPageBySlug({ slug });
+  page = await queryPageBySlug({
+    slug,
+  });
 
-    if (!page) {
-      return notFound();
-    }
-
-    return (
-      <article className="bg-blue-500">
-        {/* <RenderBlocks blocks={page.layout} /> */}
-      </article>
-    );
-  } catch (error) {
-    return notFound();
+  if (!page) {
+    return <PayloadRedirects url={url} />;
   }
+
+  const { layout } = page;
+  return (
+    <article className="bg-blue-500">
+      <PayloadRedirects disableNotFound url={url} />
+      {/* <RenderBlocks blocks={layout} /> */}
+    </article>
+  );
+}
+
+export async function generateMetadata({
+  params: paramsPromise,
+}): Promise<Metadata> {
+  const { slug = "home" } = await paramsPromise;
+  const page = await queryPageBySlug({
+    slug,
+  });
+
+  return generateMeta({ doc: page });
 }
 
 const queryPageBySlug = cache(async ({ slug }: { slug: string }) => {
+  const { isEnabled: draft } = await draftMode();
+
   const parsedSlug = decodeURIComponent(slug);
+  const payload = await getPayloadHMR({ config: configPromise });
 
-  try {
-    const payload = await getPayloadHMR({ config: configPromise });
-
-    const result = await payload.find({
-      collection: "pages",
-      limit: 1,
-      where: {
-        slug: {
-          equals: parsedSlug,
-        },
+  const result = await payload.find({
+    collection: "pages",
+    limit: 1,
+    where: {
+      slug: {
+        equals: parsedSlug,
       },
-    });
+    },
+  });
 
-    if (result.docs?.[0]) {
-      return result.docs[0];
-    } else {
-      return null;
-    }
-  } catch (error) {
-    throw error;
-  }
+  return result.docs?.[0] || null;
 });

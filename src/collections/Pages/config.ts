@@ -1,10 +1,19 @@
+// Payload Imports
 import type { CollectionConfig } from "payload";
+
+// Access Imports
 import { isAdmin } from "@/access/isAdmin";
-import { slugField } from "@/fields/slug";
 import { publishedOnly } from "@/access/publishedOnly";
+
+// Field Imports
+import { slugField } from "@/fields/slug";
 import { seoTab } from "@/fields/seoFields";
-import { generatePreviewPath } from "@root/utilities/generatePreviewPath";
+
+// Block Imports
 import { FormBlock } from "@/blocks/Form/config";
+
+// Utilities Imports
+import { generatePreviewPath } from "@root/utilities/generatePreviewPath";
 
 export const Pages: CollectionConfig = {
   slug: "pages",
