@@ -6,10 +6,15 @@ import {
   PreviewField,
 } from "@payloadcms/plugin-seo/fields";
 
-export const seoTab = {
-  name: "seo",
-  label: "SEO",
+export const metaTab = {
+  name: "meta",
+  label: "Meta",
   fields: [
+    PreviewField({
+      hasGenerateFn: true,
+      titlePath: "meta.title",
+      descriptionPath: "meta.description",
+    }),
     OverviewField({
       titlePath: "meta.title",
       descriptionPath: "meta.description",
@@ -22,10 +27,5 @@ export const seoTab = {
       relationTo: "media",
     }),
     MetaDescriptionField({}),
-    PreviewField({
-      hasGenerateFn: true,
-      titlePath: "meta.title",
-      descriptionPath: "meta.description",
-    }),
   ],
 };

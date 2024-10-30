@@ -7,15 +7,8 @@ import { publishedOnly } from "@/access/publishedOnly";
 
 // Fields
 import { slugField } from "@/fields/slug";
-
-// SEO Fields
-import {
-  MetaDescriptionField,
-  MetaImageField,
-  MetaTitleField,
-  OverviewField,
-  PreviewField,
-} from "@payloadcms/plugin-seo/fields";
+import { metaTab } from "@/fields/meta";
+import { generatePreviewPath } from "@root/utilities/generatePreviewPath";
 
 export const Playground: CollectionConfig = {
   slug: "play",
@@ -62,36 +55,7 @@ export const Playground: CollectionConfig = {
 
     {
       type: "tabs",
-      tabs: [
-        {
-          name: "content",
-          label: "Content",
-          fields: [],
-        },
-        {
-          name: "seo",
-          label: "SEO",
-          fields: [
-            OverviewField({
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-              imagePath: "meta.image",
-            }),
-            MetaImageField({
-              relationTo: "media",
-            }),
-            MetaTitleField({
-              hasGenerateFn: true,
-            }),
-            MetaDescriptionField({}),
-            PreviewField({
-              hasGenerateFn: true,
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-            }),
-          ],
-        },
-      ],
+      tabs: [metaTab],
     },
     // TODO: make sure the slug locks after being published
     ...slugField(),
@@ -154,6 +118,24 @@ export const Playground: CollectionConfig = {
     defaultColumns: ["title", "tagline", "updatedAt"],
     group: "Portfolio",
     listSearchableFields: ["title", "tagline", "description"],
+    livePreview: {
+      url: ({ data }) => {
+        const path = generatePreviewPath({
+          slug: typeof data?.slug === "string" ? data.slug : "",
+          collection: "play",
+        });
+
+        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`;
+      },
+    },
+    preview: (data) => {
+      const path = generatePreviewPath({
+        slug: typeof data?.slug === "string" ? data.slug : "",
+        collection: "play",
+      });
+
+      return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`;
+    },
     pagination: {
       defaultLimit: 25,
       limits: [25, 50, 100],
@@ -165,6 +147,7 @@ export const Playground: CollectionConfig = {
     singular: "Playground",
     plural: "Playground",
   },
+
   hooks: {
     afterRead: [
       ({ doc }) => {

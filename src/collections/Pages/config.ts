@@ -7,7 +7,7 @@ import { publishedOnly } from "@/access/publishedOnly";
 
 // Field Imports
 import { slugField } from "@/fields/slug";
-import { seoTab } from "@/fields/seoFields";
+import { metaTab } from "@/fields/meta";
 
 // Block Imports
 import { FormBlock } from "@/blocks/Form/config";
@@ -53,7 +53,7 @@ export const Pages: CollectionConfig = {
             },
           ],
         },
-        seoTab,
+        metaTab,
       ],
     },
     ...slugField(),

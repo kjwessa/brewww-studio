@@ -7,6 +7,7 @@ import { publishedOnly } from "@/access/publishedOnly";
 
 // Fields
 import { slugField } from "@/fields/slug";
+import { metaTab } from "@/fields/meta";
 
 export const BlogCategories: CollectionConfig = {
   slug: "categories",
@@ -33,6 +34,10 @@ export const BlogCategories: CollectionConfig = {
       required: true,
     },
     ...slugField(),
+    {
+      type: "tabs",
+      tabs: [metaTab],
+    },
   ],
 
   //* Admin Settings

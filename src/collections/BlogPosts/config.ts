@@ -6,7 +6,7 @@ import { isAdmin } from "@/access/isAdmin";
 import { publishedOnly } from "@/access/publishedOnly";
 
 // Fields
-import { seoTab } from "@/fields/seoFields";
+import { metaTab } from "@/fields/meta";
 import { slugField } from "@/fields/slug";
 
 // Utilities & Hooks
@@ -90,7 +90,7 @@ export const BlogPosts: CollectionConfig = {
             },
           ],
         },
-        seoTab,
+        metaTab,
       ],
     },
     {
@@ -205,7 +205,6 @@ export const BlogPosts: CollectionConfig = {
 
       return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`;
     },
-
     pagination: {
       defaultLimit: 100,
       limits: [25, 50, 100],
