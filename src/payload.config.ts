@@ -10,6 +10,7 @@ import { GenerateTitle, GenerateURL } from "@payloadcms/plugin-seo/types";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
+import { redirectsPlugin } from "@payloadcms/plugin-redirects";
 
 //* Import Collections
 import { BlogCategories } from "@/collections/BlogCategories/config";
@@ -29,6 +30,10 @@ import { Work } from "@/collections/Work/config";
 import { Technologies } from "@/collections/Technologies/config";
 import { Team } from "@/collections/Team/config";
 import { Journeys } from "@/collections/Journeys/config";
+
+//* Import Hooks
+import { revalidateRedirects } from "@/hooks/revalidateRedirects";
+
 //* Import Globals
 import { Header } from "./globals/Header/index";
 import { Footer } from "./globals/Footer/index";
@@ -150,6 +155,29 @@ export default buildConfig({
   }),
   sharp,
   plugins: [
+    redirectsPlugin({
+      collections: ["pages", "posts"],
+      overrides: {
+        // @ts-expect-error
+        fields: ({ defaultFields }) => {
+          return defaultFields.map((field) => {
+            if ("name" in field && field.name === "from") {
+              return {
+                ...field,
+                admin: {
+                  description:
+                    "You will need to rebuild the website when changing this field.",
+                },
+              };
+            }
+            return field;
+          });
+        },
+        hooks: {
+          afterChange: [revalidateRedirects],
+        },
+      },
+    }),
     s3Storage({
       collections: {
         media: {
