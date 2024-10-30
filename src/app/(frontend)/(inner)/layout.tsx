@@ -48,8 +48,8 @@ export default async function InnerLayout({
       suppressHydrationWarning
     >
       <body className="bg-gray-950 text-gray-50 antialiased">
+        <AdminBar adminBarProps={{ preview: isEnabled }} />
         <Grain>
-          <AdminBar adminBarProps={{ preview: isEnabled }} />
           <LivePreviewListener />
           <Header />
           <main className="min-h-[80vh]">{children}</main>
