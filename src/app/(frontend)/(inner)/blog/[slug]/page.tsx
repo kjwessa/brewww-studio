@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import { Post } from "@/payload-types";
 import Image from "next/image";
 import Link from "next/link";
-import { formatDate } from "@/utilities/dateFormatter";
+import { formatDate } from "@root/utils/dateFormatter";
 
 import TableOfContents from "@/components/TableOfContents/index";
 import { LexicalNode } from "@/components/RichText/nodeFormat";

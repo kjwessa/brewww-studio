@@ -1,6 +1,6 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/utilities/cn";
+import { cn } from "@root/utils/cn";
 
 const gutterVariants = cva("", {
   variants: {
