@@ -1,17 +1,23 @@
-import type { Metadata } from "next";
-
-import configPromise from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+// Next Imports
 import React from "react";
-import RichText from "@/components/RichText/index";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Post } from "@/payload-types";
 import Image from "next/image";
 import Link from "next/link";
-import { formatDate } from "@root/utilities/dateFormatter";
 
+// Payload Imports
+import { PayloadRedirects } from "@/components/PayloadRedirects";
+import configPromise from "@payload-config";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { Post } from "@/payload-types";
+
+// Components
+import RichText from "@/components/RichText/index";
 import TableOfContents from "@/components/TableOfContents/index";
 import { LexicalNode } from "@/components/RichText/nodeFormat";
+
+// Utilities
+import { formatDate } from "@root/utilities/dateFormatter";
 
 export async function generateStaticParams() {
   const payload = await getPayloadHMR({ config: configPromise });
