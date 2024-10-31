@@ -48,8 +48,8 @@ export const AdminBar: React.FC<{
           className="py-2 text-white"
           classNames={{
             controls: "font-medium text-white",
-            logo: "text-white",
-            user: "text-white",
+            logo: "text-black",
+            user: "text-black",
           }}
           cmsURL={process.env.NEXT_PUBLIC_SERVER_URL}
           collection={collection}

@@ -191,17 +191,21 @@ export const BlogPosts: CollectionConfig = {
     listSearchableFields: ["title"],
     livePreview: {
       url: ({ data }) => {
-        return generatePreviewPath({
-          collection: "posts",
+        const path = generatePreviewPath({
           slug: typeof data?.slug === "string" ? data.slug : "",
+          collection: "posts",
         });
+
+        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`;
       },
     },
     preview: (data) => {
-      return generatePreviewPath({
-        collection: "posts",
+      const path = generatePreviewPath({
         slug: typeof data?.slug === "string" ? data.slug : "",
+        collection: "posts",
       });
+
+      return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`;
     },
 
     pagination: {
