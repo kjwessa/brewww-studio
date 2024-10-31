@@ -33,6 +33,7 @@
       "@/forms/*": ["src/forms/*"],
       "@/fields/*": ["src/fields/*"],
       "@/globals/*": ["src/globals/*"],
+      "@/hooks/*": ["src/hooks/*"],
       "@/icons/*": ["src/icons/*"],
       "@/images/*": ["./public/images/*"],
       "@/lib/*": ["src/lib/*"],
