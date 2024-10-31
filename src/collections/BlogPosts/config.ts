@@ -154,6 +154,22 @@ export const BlogPosts: CollectionConfig = {
       },
     },
     {
+      name: "status",
+      type: "select",
+      options: [
+        "not started",
+        "needs rewrite",
+        "needs polish",
+        "needs photos",
+        "ready",
+      ],
+      defaultValue: "not started",
+      label: "Status",
+      admin: {
+        position: "sidebar",
+      },
+    },
+    {
       name: "featured",
       type: "checkbox",
       label: "Featured",
@@ -169,7 +185,7 @@ export const BlogPosts: CollectionConfig = {
   admin: {
     description:
       "Writing brings clarity. Writing is a way to make sense of the world.",
-    defaultColumns: ["title", "publishedOn", "updatedAt", "featured"],
+    defaultColumns: ["title", "status", "publishedOn", "updatedAt", "featured"],
     group: "Blog Posts",
     listSearchableFields: ["title"],
     pagination: {
