@@ -34,11 +34,18 @@ export const FAQ: CollectionConfig = {
 
   admin: {
     description: "Frequently asked questions",
+    defaultColumns: ["title"],
     group: "Company",
+    listSearchableFields: ["title"],
+
     useAsTitle: "title",
   },
   labels: {
     singular: "FAQ",
     plural: "FAQ",
+  },
+  versions: {
+    drafts: { autosave: { interval: 100 } },
+    maxPerDoc: 25,
   },
 };

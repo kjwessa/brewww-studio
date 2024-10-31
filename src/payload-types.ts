@@ -108,18 +108,7 @@ export interface Media {
 export interface Page {
   id: string;
   title: string;
-  layout?:
-    | (
-        | {
-            title?: string | null;
-            subtitle?: string | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'cover';
-          }
-        | FormBlock
-      )[]
-    | null;
+  layout?: FormBlock[] | null;
   seo?: {
     title?: string | null;
     image?: (string | null) | Media;
@@ -554,6 +543,7 @@ export interface Faq {
   };
   updatedAt: string;
   createdAt: string;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

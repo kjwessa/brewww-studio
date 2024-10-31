@@ -132,7 +132,7 @@ export const Services: CollectionConfig = {
     plural: "Services",
   },
   versions: {
-    drafts: true,
+    drafts: { autosave: { interval: 100 } },
     maxPerDoc: 25,
   },
 };

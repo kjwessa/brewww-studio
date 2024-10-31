@@ -63,7 +63,7 @@ export const Team: CollectionConfig = {
     plural: "Team",
   },
   versions: {
-    drafts: true,
+    drafts: { autosave: { interval: 100 } },
     maxPerDoc: 25,
   },
 };

@@ -88,7 +88,7 @@ export const Brands: CollectionConfig = {
     plural: "Brands",
   },
   versions: {
-    drafts: true,
+    drafts: { autosave: { interval: 100 } },
     maxPerDoc: 25,
   },
 };
