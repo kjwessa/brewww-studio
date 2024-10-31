@@ -3,7 +3,7 @@ import { isAdmin } from "@/access/isAdmin";
 import { publishedOnly } from "@/access/publishedOnly";
 import { slugField } from "@/fields/slug";
 import { revalidatePost } from "./hooks/revalidatePost";
-import { MediaTest } from "@/blocks/Test/config";
+
 import { seoTab } from "@/fields/seoFields";
 import { generatePreviewPath } from "@root/utilities/generatePreviewPath";
 
@@ -75,7 +75,7 @@ export const BlogPosts: CollectionConfig = {
                     enabledHeadingSizes: ["h2", "h3", "h4"],
                   }),
                   BlocksFeature({
-                    blocks: [MediaTest],
+                    blocks: [],
                   }),
                 ],
               }),
@@ -217,7 +217,7 @@ export const BlogPosts: CollectionConfig = {
     plural: "Posts",
   },
   versions: {
-    drafts: true,
+    drafts: { autosave: { interval: 100 } },
     maxPerDoc: 25,
   },
   hooks: {

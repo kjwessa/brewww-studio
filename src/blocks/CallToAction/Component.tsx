@@ -5,7 +5,7 @@ import type { Page } from "@/payload-types";
 import RichText from "@/components/RichText";
 import { CMSLink } from "@/components/Link";
 
-type Props = Extract<Page["layout"][0], { blockType: "cta" }>;
+type Props = Extract<Page["layout"], { blockType: "cta" }>;
 
 export const CallToActionBlock: React.FC<
   Props & {

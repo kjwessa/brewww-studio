@@ -1,6 +1,7 @@
 import {
   DefaultNodeTypes,
   SerializedBlockNode,
+  SerializedUploadNode,
 } from "@payloadcms/richtext-lexical";
 import RichTextUpload from "@/components/RichText/Upload";
 import React, { Fragment, JSX } from "react";
@@ -15,9 +16,8 @@ import {
   IS_UNDERLINE,
 } from "./nodeFormat";
 import type { Page } from "@/payload-types";
-import { MediaTest, MediaTestProps } from "@/blocks/Test/Component";
 
-export type NodeTypes = DefaultNodeTypes | SerializedBlockNode<MediaTestProps>;
+export type NodeTypes = DefaultNodeTypes;
 
 type Props = {
   nodes: NodeTypes[];
@@ -95,8 +95,7 @@ export function serializeLexical({ nodes, customClasses }: Props): JSX.Element {
 
         const serializedChildren =
           "children" in node ? serializedChildrenFn(node) : "";
-
-        if (node.type === "block") {
+        if ("fields" in node) {
           const block = node.fields;
 
           const blockType = block?.blockType;
@@ -119,7 +118,7 @@ export function serializeLexical({ nodes, customClasses }: Props): JSX.Element {
 
           switch (blockType) {
             case "media-test":
-              return <MediaTest key={index} text={block.text} />;
+              return <div>Media Test</div>;
             default:
               console.warn(
                 `[src/components/RichText/serialize.tsx] Unknown block type: ${blockType}`,
@@ -191,7 +190,7 @@ export function serializeLexical({ nodes, customClasses }: Props): JSX.Element {
                 </blockquote>
               );
             }
-            case "link": {
+            case "link" as string: {
               // CMS links are hidden for now
               return (
                 <span key={index} className={customClasses?.link}>
@@ -199,13 +198,15 @@ export function serializeLexical({ nodes, customClasses }: Props): JSX.Element {
                 </span>
               );
             }
-            case "upload": {
-              return <RichTextUpload key={index} node={node} />;
+            case "upload" as string: {
+              return (
+                <RichTextUpload
+                  key={index}
+                  node={node as unknown as SerializedUploadNode}
+                />
+              );
             }
             default:
-              console.warn(
-                `[src/components/RichText/serialize.tsx] Unknown node type: ${node.type}`,
-              );
               return null;
           }
         }

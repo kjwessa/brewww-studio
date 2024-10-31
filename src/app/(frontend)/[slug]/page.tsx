@@ -43,7 +43,7 @@ export default async function Page({ params: paramsPromise }: Args) {
 
     return (
       <article className="bg-blue-500">
-        <RenderBlocks blocks={page.layout} />
+        {/* <RenderBlocks blocks={page.layout} /> */}
       </article>
     );
   } catch (error) {

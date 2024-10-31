@@ -5,7 +5,6 @@ import { publishedOnly } from "@/access/publishedOnly";
 import { seoTab } from "@/fields/seoFields";
 import { generatePreviewPath } from "@root/utilities/generatePreviewPath";
 import { FormBlock } from "@/blocks/Form/config";
-import { Cover } from "@/blocks/Cover/config";
 
 export const Pages: CollectionConfig = {
   slug: "pages",
@@ -41,7 +40,7 @@ export const Pages: CollectionConfig = {
               type: "blocks",
               label: "Layout",
               required: false,
-              blocks: [Cover, FormBlock],
+              blocks: [FormBlock],
             },
           ],
         },

@@ -1,7 +1,6 @@
 "use client";
 
 import type { PayloadAdminBarProps } from "payload-admin-bar";
-
 import { cn } from "@/utilities/cn";
 import { useSelectedLayoutSegments } from "next/navigation";
 import { PayloadAdminBar } from "payload-admin-bar";
