@@ -4,6 +4,7 @@ export const formatSlug = (val: string): string =>
   val
     .replace(/ /g, "-")
     .replace(/[^\w-]+/g, "")
+    .replace(/-+/g, "-") // Replace multiple dashes with single dash
     .toLowerCase();
 
 export const formatSlugHook =
