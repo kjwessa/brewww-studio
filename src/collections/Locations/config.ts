@@ -1,6 +1,11 @@
+// Payload Imports
 import type { CollectionConfig } from "payload";
+
+// Access Control
 import { isAdmin } from "@/access/isAdmin";
 import { publishedOnly } from "@/access/publishedOnly";
+
+// Fields
 import { slugField } from "@/fields/slug";
 
 export const Location: CollectionConfig = {
