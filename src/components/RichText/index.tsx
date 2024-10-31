@@ -1,7 +1,7 @@
 import React from "react";
 import { serializeLexical } from "./serialize";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@root/utils/cn";
+import { cn } from "@root/utilities/cn";
 
 const richTextVariants = cva("", {
   variants: {

@@ -2,7 +2,7 @@
 
 import type { StaticImageData } from "next/image";
 
-import { cn } from "@root/utils/cn";
+import { cn } from "@root/utilities/cn";
 import NextImage from "next/image";
 import React from "react";
 

@@ -37,7 +37,7 @@
       "@root/*": ["src/*"],
       "@/styles/*": ["src/styles/*"],
       "@/payload-types": ["./src/payload-types.ts"],
-      "@/utils/*": ["src/utils/*"]
+      "@/utilities/*": ["src/utilities/*"]
     },
     "target": "ES2017"
   },

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@root/utils/cn";
+import { cn } from "@root/utilities/cn";
 
 export type PaddingProps = {
   top?: "large" | "small" | "hero";

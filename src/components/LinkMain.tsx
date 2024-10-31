@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { cn } from "@root/utils/cn";
+import { cn } from "@root/utilities/cn";
 
 interface LinkMainProps {
   text: string;
