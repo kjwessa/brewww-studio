@@ -20,10 +20,9 @@ export const BlogCard = ({ post }: { post: Post }) => {
       <div className="mt-4">
         <p className="mb-2 flex flex-row items-center text-label-medium uppercase">
           <span>
-            {(post.metadata.categories[0] as Category)?.title ||
-              "Uncategorized"}
+            {(post.categories[0] as Category)?.title || "Uncategorized"}
           </span>
-          <span className="ml-2">/ {post.metadata.readTime} min read</span>
+          <span className="ml-2">/ {post.readTime} min read</span>
         </p>
         <h3 className="text-title-medium leading-none">{post.title}</h3>
       </div>

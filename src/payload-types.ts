@@ -548,13 +548,12 @@ export interface Pillar {
   id: string;
   title: string;
   tagline: string;
+  services?: (string | null) | Service;
   slug: string;
   slugLock?: boolean | null;
   description: string;
   content?: {};
-  metadata?: {
-    services?: (string | null) | Service;
-  };
+  metadata?: {};
   seo?: {
     image?: (string | null) | Media;
     title?: string | null;
@@ -586,11 +585,9 @@ export interface Journey {
   tagline?: string | null;
   slug: string;
   slugLock?: boolean | null;
+  services?: (string | null) | Service;
   description?: string | null;
   content?: {};
-  metadata?: {
-    services?: (string | null) | Service;
-  };
   seo?: {
     image?: (string | null) | Media;
     title?: string | null;
