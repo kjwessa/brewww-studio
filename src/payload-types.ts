@@ -500,9 +500,6 @@ export interface Play {
   tagline: string;
   description?: string | null;
   content?: {};
-  metadata?: {
-    relatedPlaygrounds?: (string | Play)[] | null;
-  };
   seo?: {
     image?: (string | null) | Media;
     title?: string | null;
@@ -512,6 +509,7 @@ export interface Play {
   slugLock?: boolean | null;
   publishedOn: string;
   image: string | Media;
+  relatedPlaygrounds?: (string | Play)[] | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
