@@ -7,15 +7,8 @@ import { publishedOnly } from "@/access/publishedOnly";
 
 // Fields
 import { slugField } from "@/fields/slug";
-
-// SEO Fields
-import {
-  MetaDescriptionField,
-  MetaImageField,
-  MetaTitleField,
-  OverviewField,
-  PreviewField,
-} from "@payloadcms/plugin-seo/fields";
+import { metaTab } from "@/fields/meta";
+import { generatePreviewPath } from "@root/utilities/generatePreviewPath";
 
 export const Services: CollectionConfig = {
   slug: "services",
@@ -93,29 +86,7 @@ export const Services: CollectionConfig = {
           label: "Meta",
           fields: [],
         },
-        {
-          name: "seo",
-          label: "SEO",
-          fields: [
-            PreviewField({
-              hasGenerateFn: true,
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-            }),
-            OverviewField({
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-              imagePath: "meta.image",
-            }),
-            MetaTitleField({
-              hasGenerateFn: true,
-            }),
-            MetaImageField({
-              relationTo: "media",
-            }),
-            MetaDescriptionField({}),
-          ],
-        },
+        metaTab,
       ],
     },
   ],
@@ -127,6 +98,24 @@ export const Services: CollectionConfig = {
     defaultColumns: ["title"],
     group: "Service",
     listSearchableFields: ["title"],
+    livePreview: {
+      url: ({ data }) => {
+        const path = generatePreviewPath({
+          slug: typeof data?.slug === "string" ? data.slug : "",
+          collection: "services",
+        });
+
+        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`;
+      },
+    },
+    preview: (data) => {
+      const path = generatePreviewPath({
+        slug: typeof data?.slug === "string" ? data.slug : "",
+        collection: "services",
+      });
+
+      return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`;
+    },
     pagination: {
       defaultLimit: 25,
       limits: [10, 25, 50],

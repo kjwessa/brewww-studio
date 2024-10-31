@@ -110,7 +110,7 @@ export interface Page {
   id: string;
   title: string;
   layout?: FormBlock[] | null;
-  seo?: {
+  meta?: {
     title?: string | null;
     image?: (string | null) | Media;
     description?: string | null;
@@ -335,7 +335,7 @@ export interface Post {
     };
     [k: string]: unknown;
   };
-  seo?: {
+  meta?: {
     title?: string | null;
     image?: (string | null) | Media;
     description?: string | null;
@@ -362,6 +362,11 @@ export interface Category {
   title: string;
   slug: string;
   slugLock?: boolean | null;
+  meta?: {
+    title?: string | null;
+    image?: (string | null) | Media;
+    description?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -391,7 +396,7 @@ export interface Work {
     };
     [k: string]: unknown;
   } | null;
-  seo?: {
+  meta?: {
     title?: string | null;
     image?: (string | null) | Media;
     description?: string | null;
@@ -452,7 +457,7 @@ export interface Service {
     [k: string]: unknown;
   } | null;
   metadata?: {};
-  seo?: {
+  meta?: {
     title?: string | null;
     image?: (string | null) | Media;
     description?: string | null;
@@ -499,10 +504,9 @@ export interface Play {
   title: string;
   tagline: string;
   description?: string | null;
-  content?: {};
-  seo?: {
-    image?: (string | null) | Media;
+  meta?: {
     title?: string | null;
+    image?: (string | null) | Media;
     description?: string | null;
   };
   slug: string;

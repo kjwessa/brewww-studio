@@ -5,10 +5,8 @@ import React from "react";
 
 export const LivePreviewListener: React.FC = () => {
   const router = useRouter();
-  console.log("[LivePreviewListener] Component mounted");
 
   const handleRefresh = () => {
-    console.log("[LivePreviewListener] Refreshing route");
     router.refresh();
   };
 

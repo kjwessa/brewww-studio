@@ -10,19 +10,19 @@ export const generateMeta = async (args: {
   const { doc } = args || {};
 
   const ogImage =
-    typeof doc?.seo?.image === "object" &&
-    doc.seo.image !== null &&
-    "url" in doc.seo.image &&
-    `${process.env.NEXT_PUBLIC_SERVER_URL}${doc.seo.image.url}`;
+    typeof doc?.meta?.image === "object" &&
+    doc.meta.image !== null &&
+    "url" in doc.meta.image &&
+    `${process.env.NEXT_PUBLIC_SERVER_URL}${doc.meta.image.url}`;
 
-  const title = doc?.seo?.title
-    ? doc?.seo?.title + " | Brewww Studio"
+  const title = doc?.meta?.title
+    ? doc?.meta?.title + " | Brewww Studio"
     : "Brewww Studio";
 
   return {
-    description: doc?.seo?.description || "",
+    description: doc?.meta?.description || "",
     openGraph: mergeOpenGraph({
-      description: doc?.seo?.description || "",
+      description: doc?.meta?.description || "",
       images: ogImage
         ? [
             {
@@ -36,5 +36,3 @@ export const generateMeta = async (args: {
     title,
   };
 };
-
-//TODO consider renaming meta and seo for clarity and consistency across the project
