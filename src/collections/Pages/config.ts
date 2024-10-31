@@ -2,14 +2,8 @@ import type { CollectionConfig } from "payload";
 import { isAdmin } from "@/access/isAdmin";
 import { slugField } from "@/fields/slug";
 import { publishedOnly } from "@/access/publishedOnly";
-import {
-  MetaDescriptionField,
-  MetaImageField,
-  MetaTitleField,
-  OverviewField,
-  PreviewField,
-} from "@payloadcms/plugin-seo/fields";
-import { generatePreviewPath } from "@root/utils/generatePreviewPath";
+import { seoTab } from "@/fields/seoFields";
+import { generatePreviewPath } from "@/utils/generatePreviewPath";
 import { FormBlock } from "@/blocks/Form/config";
 import { Cover } from "@/blocks/Cover/config";
 
@@ -51,29 +45,7 @@ export const Pages: CollectionConfig = {
             },
           ],
         },
-        {
-          name: "meta",
-          label: "SEO",
-          fields: [
-            OverviewField({
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-              imagePath: "meta.image",
-            }),
-            MetaTitleField({
-              hasGenerateFn: true,
-            }),
-            MetaImageField({
-              relationTo: "media",
-            }),
-            MetaDescriptionField({}),
-            PreviewField({
-              hasGenerateFn: true,
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-            }),
-          ],
-        },
+        seoTab,
       ],
     },
     ...slugField(),

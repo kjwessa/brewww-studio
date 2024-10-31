@@ -45,9 +45,14 @@ const generateTitle: GenerateTitle<Page | Post> = ({ doc }: { doc: any }) => {
 };
 
 const generateURL: GenerateURL<Page | Post> = ({ doc }: { doc: any }) => {
-  return doc?.slug
-    ? `${process.env.NEXT_PUBLIC_SERVER_URL!}/${doc.slug}`
-    : process.env.NEXT_PUBLIC_SERVER_URL!;
+  if (!doc?.slug) return process.env.NEXT_PUBLIC_SERVER_URL!;
+
+  // Add the /blog prefix for posts
+  if (doc.collection === "posts") {
+    return `${process.env.NEXT_PUBLIC_SERVER_URL!}/blog/${doc.slug}`;
+  }
+
+  return `${process.env.NEXT_PUBLIC_SERVER_URL!}/${doc.slug}`;
 };
 
 //* Ensure required environment variables are defined

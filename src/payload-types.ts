@@ -118,7 +118,7 @@ export interface Page {
       }
     | FormBlock
   )[];
-  meta?: {
+  seo?: {
     title?: string | null;
     image?: (string | null) | Media;
     description?: string | null;
