@@ -117,8 +117,8 @@ export function HomeHeroSection() {
           className="mx-auto mb-6 max-w-5xl text-center text-display-medium font-bold leading-[0.9] tracking-tighter"
           id="hero-message"
         >
-          <span className="opacity-30">From pencils to pixels</span>
-          <span> we craft unbounded brands.</span>
+          <span className="opacity-30"></span>
+          <span>we craft brands beyond tomorrow.</span>
         </h1>
         <p className="mx-auto mt-6 max-w-3xl text-center text-body-medium opacity-70 md:text-2xl">
           Brewww is the talent, tools, and deliverables to move you from today's
