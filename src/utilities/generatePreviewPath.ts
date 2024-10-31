@@ -1,6 +1,7 @@
 import { CollectionSlug } from "payload";
 
 const collectionPrefixMap: Partial<Record<CollectionSlug, string>> = {
+  work: "/work",
   posts: "/blog",
   pages: "",
 };
@@ -11,13 +12,12 @@ type Props = {
 };
 
 export const generatePreviewPath = ({ collection, slug }: Props) => {
-  const prefix = collectionPrefixMap[collection] || "";
-  const actualPath = prefix ? `${prefix}/${slug}` : `/${slug}`;
+  const path = `${collectionPrefixMap[collection]}/${slug}`;
 
   const params = {
     slug,
     collection,
-    path: actualPath,
+    path,
   };
 
   const encodedParams = new URLSearchParams();
