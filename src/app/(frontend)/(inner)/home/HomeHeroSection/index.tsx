@@ -19,13 +19,13 @@ const StarSVG = ({ isPulsing }: { isPulsing: boolean }) => (
 
 export function HomeHeroSection() {
   const starsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const [stars, setStars] = useState<React.ReactNode[]>([]);
+  const [stars, setStars] = useState<React.ReactElement[]>([]);
   const heroMessageRef = useRef<HTMLHeadingElement>(null);
   const blurRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const generateStars = () => {
-      const newStars = [];
+      const newStars: React.ReactElement[] = [];
       for (let i = 0; i < 200; i++) {
         const top = `${Math.random() * 100}%`;
         const left = `${Math.random() * 100}%`;
