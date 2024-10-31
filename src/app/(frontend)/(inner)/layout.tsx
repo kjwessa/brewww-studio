@@ -7,11 +7,8 @@ import { LivePreviewListener } from "@/components/LivePreviewListener";
 import { GridGuide } from "@/components/GridGuide/index";
 import { Grain } from "@/components/Grain/index";
 import { AdminBar } from "@/components/AdminBar";
-
-export const metadata: Metadata = {
-  title: "Inner Pages",
-  description: "Inner pages of Brewww Studio",
-};
+import { mergeOpenGraph } from "@/utilities/mergeOpenGraph";
+import { draftMode } from "next/headers";
 
 const DMSans = localFont({
   variable: "--font-dm-sans",
@@ -39,9 +36,11 @@ const BebasNeue = localFont({
 
 export default async function InnerLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+  const { isEnabled } = await draftMode();
+
   return (
     <html
       lang="en"
@@ -61,3 +60,14 @@ export default async function InnerLayout({
     </html>
   );
 }
+
+export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SERVER_URL || "https://brewww.studio",
+  ),
+  openGraph: mergeOpenGraph(),
+  twitter: {
+    card: "summary_large_image",
+    creator: "@brewwwstudio",
+  },
+};
