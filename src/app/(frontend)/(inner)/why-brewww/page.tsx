@@ -1,9 +1,4 @@
 import Image from "next/image";
-import AboutImageOne from "/public/images/brewww-one.jpeg";
-import AboutImageTwo from "/public/images/brewww-two.jpeg";
-import AboutImageThree from "/public/images/brewww-three.jpeg";
-import AboutImageFive from "/public/images/brewww-five.jpeg";
-import AboutImageSeven from "/public/images/brewww-seven.jpeg";
 import Link from "next/link";
 
 export default function WhyPage() {
@@ -362,7 +357,7 @@ export default function WhyPage() {
                 width={800}
                 height={600}
                 className="h-auto w-full object-cover"
-                src={AboutImageFive}
+                src="/images/brewww-five.jpeg"
                 alt="Kevin reflecting and reacting"
               />
               <figcaption className="mt-2 text-sm uppercase text-stone-500">
@@ -374,7 +369,7 @@ export default function WhyPage() {
                 width={800}
                 height={600}
                 className="h-auto w-full object-cover"
-                src={AboutImageSeven}
+                src="/images/brewww-seven.jpeg"
                 alt="QA's Michal staring down some bugs"
               />
               <figcaption className="mt-2 text-sm uppercase text-stone-500">
@@ -457,7 +452,7 @@ export default function WhyPage() {
                   width={384}
                   height={605}
                   className="h-[37.83rem] w-96 max-w-full object-cover"
-                  src={AboutImageTwo}
+                  src="/images/brewww-two.jpeg"
                   alt=""
                 />
               </span>
@@ -471,7 +466,7 @@ export default function WhyPage() {
                   width={723}
                   height={939}
                   className="h-[58.68rem] w-[45.22rem] max-w-full object-cover"
-                  src={AboutImageThree}
+                  src="/images/brewww-three.jpeg"
                   alt=""
                 />
               </span>
@@ -573,10 +568,9 @@ export default function WhyPage() {
               <figure className="mb-8">
                 <span className="relative inline-block">
                   <Image
-                    width={384}
-                    height={605}
+                    fill
                     className="h-auto w-full max-w-full"
-                    src={AboutImageOne.src}
+                    src="/images/brewww-one.jpeg"
                     alt="Brewww office space"
                   />
                 </span>
@@ -696,6 +690,7 @@ export default function WhyPage() {
             <div className="relative mt-8 w-full lg:mt-0 lg:w-1/2 lg:pl-16">
               <div className="aspect-w-16 aspect-h-9" style={{ height: "70%" }}>
                 <Image
+                  fill
                   className="h-full w-full object-cover"
                   src="https://www.datocms-assets.com/63464/1661347408-stuurmen-office-interior.jpg?auto=format&h=1080&w=1920"
                   alt="Stuurmen office interior"

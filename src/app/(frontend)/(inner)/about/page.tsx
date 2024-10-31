@@ -1,4 +1,3 @@
-import AboutImageEight from "/public/images/brewww-eight.jpeg";
 import { AboutHeroSection } from "./AboutHeroSection";
 import Image from "next/image";
 import { AboutOffsetImageSection } from "./AboutOffsetImageSection";
@@ -55,7 +54,7 @@ export default function About() {
               justifySelf: "stretch",
             }}
           >
-            <h2 className="mb-8 min-h-[0vw]">
+            <h2 className="min-/images/brewww-eight.jpeg-[0vw] mb-8">
               We are committed to treating everyone right, leaving our ego at
               the door, and truly partnering with our clients.
             </h2>
@@ -232,6 +231,8 @@ export default function About() {
             <Image
               className="h-auto w-28 max-w-full lg:w-28"
               src="https://showandtell.agency/stars.svg"
+              width={100}
+              height={100}
               alt="Stars"
             />
             <span>
@@ -298,14 +299,11 @@ export default function About() {
             <figure>
               <span className="relative inline-block h-36 w-60 overflow-hidden">
                 <Image
-                  className="h-full w-full object-cover"
-                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27440%27%20height=%27248%27/%3e"
-                  alt="Placeholder"
-                />
-                <Image
                   className="absolute inset-0 h-full w-full object-cover"
-                  src={AboutImageEight.src}
+                  src="/images/brewww-eight.jpeg"
                   alt="Kevin Wessa"
+                  width={440}
+                  height={248}
                 />
               </span>
               <div className="text-sm uppercase text-stone-500">
@@ -524,6 +522,8 @@ export default function About() {
               <Image
                 className="h-auto w-[47.57rem] max-w-full pb-8"
                 src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/2022-Kristin-23.jpg"
+                width={47.57}
+                height={248}
                 alt="Kristin"
               />
               <h3 className="mb-3 text-[2.38rem] leading-none">
@@ -543,6 +543,8 @@ export default function About() {
               <Image
                 className="h-auto w-[47.57rem] max-w-full pb-8"
                 src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/2022-Michael-10.jpg"
+                width={47.57}
+                height={248}
                 alt="Michael"
               />
               <h3 className="mb-3 text-[2.38rem] leading-none">Kevin Wessa</h3>
@@ -609,6 +611,7 @@ export default function About() {
                 <Image
                   className="h-96 w-80 rounded-xl object-cover"
                   src="https://framerusercontent.com/images/h4avZwD33gi1xDttcLVC1zjWvBA.jpg"
+                  fill
                   alt="Placeholder"
                 />
               </div>
@@ -623,6 +626,7 @@ export default function About() {
                 <Image
                   className="h-96 w-full rounded-xl object-cover"
                   src="https://framerusercontent.com/images/mg9Dkmv1bZMO6mM2tX4EUwkcR7A.jpg"
+                  fill
                   alt="Placeholder"
                 />
               </div>
@@ -1109,6 +1113,7 @@ export default function About() {
                   className="h-full w-full object-cover"
                   src="https://www.datocms-assets.com/63464/1661347408-stuurmen-office-interior.jpg?auto=format&h=1080&w=1920"
                   alt="Stuurmen office interior"
+                  fill
                 />
               </div>
             </div>
@@ -1129,6 +1134,7 @@ export default function About() {
                     className="h-full w-full object-cover"
                     src="https://www.datocms-assets.com/63464/1661347918-stuurmen-visual-2.png?auto=format&h=965&w=760"
                     alt="Think before you ink"
+                    fill
                   />
                 </div>
                 <div className="relative flex h-full flex-col justify-end bg-black bg-opacity-50 p-16 text-stone-50">
@@ -1148,6 +1154,7 @@ export default function About() {
                     className="h-full w-full object-cover"
                     src="https://www.datocms-assets.com/63464/1661347908-stuurmen-visual-1.png?auto=format&h=965&w=760"
                     alt="No guts, no glory"
+                    fill
                   />
                 </div>
                 <div className="relative flex h-full flex-col justify-end bg-black bg-opacity-50 p-16 text-stone-50">
@@ -1167,6 +1174,7 @@ export default function About() {
                     className="h-full w-full object-cover"
                     src="https://www.datocms-assets.com/63464/1661347903-stuurmen-visual-4.png?auto=format&h=965&w=760"
                     alt="No bullshit bingo"
+                    fill
                   />
                 </div>
                 <div className="relative flex h-full flex-col justify-end bg-black bg-opacity-50 p-16 text-stone-50">
@@ -1185,6 +1193,7 @@ export default function About() {
                     className="h-full w-full object-cover"
                     src="https://www.datocms-assets.com/63464/1661347890-stuurmen-visual-3.png?auto=format&h=965&w=760"
                     alt="A touch of wit"
+                    fill
                   />
                 </div>
                 <div className="relative flex h-full flex-col justify-end bg-black bg-opacity-50 p-16 text-stone-50">
@@ -1202,6 +1211,7 @@ export default function About() {
                     className="h-full w-full object-cover"
                     src="https://www.datocms-assets.com/63464/1661347872-stuurmen-visual-5.png?auto=format&h=965&w=760"
                     alt="Lead by example"
+                    fill
                   />
                 </div>
                 <div className="relative flex h-full flex-col justify-end bg-black bg-opacity-50 p-16 text-stone-50">
