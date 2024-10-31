@@ -86,6 +86,15 @@ export const BlogPosts: CollectionConfig = {
         seoTab,
       ],
     },
+    {
+      name: "featured",
+      type: "checkbox",
+      label: "Featured",
+      defaultValue: false,
+      admin: {
+        position: "sidebar",
+      },
+    },
     ...slugField(),
     {
       name: "publishedOn",
@@ -125,15 +134,7 @@ export const BlogPosts: CollectionConfig = {
         position: "sidebar",
       },
     },
-    {
-      name: "featured",
-      type: "checkbox",
-      label: "Featured",
-      defaultValue: false,
-      admin: {
-        position: "sidebar",
-      },
-    },
+
     {
       name: "readTime",
       type: "number",
@@ -148,8 +149,6 @@ export const BlogPosts: CollectionConfig = {
       type: "relationship",
       admin: {
         position: "sidebar",
-        description:
-          "Add the post categories here. This is used to group the articles.",
       },
       hasMany: true,
       relationTo: "categories",

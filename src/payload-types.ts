@@ -340,12 +340,12 @@ export interface Post {
     image?: (string | null) | Media;
     description?: string | null;
   };
+  featured?: boolean | null;
   slug: string;
   slugLock?: boolean | null;
   publishedOn: string;
   image: string | Media;
   status?: ('not started' | 'needs rewrite' | 'needs polish' | 'needs photos' | 'ready') | null;
-  featured?: boolean | null;
   readTime: number;
   categories: (string | Category)[];
   relatedPosts?: (string | Post)[] | null;
@@ -391,10 +391,6 @@ export interface Work {
     };
     [k: string]: unknown;
   } | null;
-  metadata?: {
-    testimonial?: (string | null) | Testimonial;
-    relatedWorks?: (string | Work)[] | null;
-  };
   seo?: {
     title?: string | null;
     image?: (string | null) | Media;
@@ -407,35 +403,8 @@ export interface Work {
   featured?: boolean | null;
   services?: (string | Service)[] | null;
   projectYear?: number | null;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "testimonials".
- */
-export interface Testimonial {
-  id: string;
-  title: string;
-  callout: string;
-  testimonial: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
-  brand: string | Brand;
-  author: string;
+  testimonial?: (string | null) | Testimonial;
+  relatedWorks?: (string | Work)[] | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -488,6 +457,35 @@ export interface Service {
     image?: (string | null) | Media;
     description?: string | null;
   };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials".
+ */
+export interface Testimonial {
+  id: string;
+  title: string;
+  callout: string;
+  testimonial: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  brand: string | Brand;
+  author: string;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
