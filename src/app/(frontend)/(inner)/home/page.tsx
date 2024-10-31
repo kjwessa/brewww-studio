@@ -46,12 +46,7 @@ export default async function Home() {
   return (
     <>
       <HomeHeroSection />
-      <WorkGridSection projects={projects.docs} />
-      <ImageGrow />
-      <BlogGridSection posts={posts.docs} />
-      <ServicesSection services={services.docs} />
-
-      <section className="bg-brand-dark-bg text-zinc-50">
+      <section className="bg-brand-dark-bg py-24 text-zinc-50">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center">
             <div className="grid grid-cols-12 py-16 sm:py-24 md:py-32">
@@ -65,6 +60,10 @@ export default async function Home() {
         </div>
       </section>
 
+      <WorkGridSection projects={projects.docs} />
+      <ImageGrow />
+      <ServicesSection services={services.docs} />
+      <BlogGridSection posts={posts.docs} />
       <section className="bg-brand-dark-bg py-16 text-zinc-50">
         <div className="container mx-auto px-4">
           <div className="grid auto-cols-fr grid-cols-[1fr_1fr_1fr] grid-rows-[1fr_1fr_1fr] gap-8">
@@ -156,7 +155,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
       <section className="bg-brand-dark-bg text-zinc-50">
         <div className="relative content-stretch items-start justify-start px-24 py-48 font-light">
           <div className="relative m-auto flex w-full max-w-[62.50rem] flex-grow auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto_auto] flex-col items-stretch justify-center self-start">
@@ -215,7 +213,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
       <section className="bg-white px-6 py-24 font-light text-neutral-900 sm:px-12 sm:py-36 md:px-24">
         <div className="mx-auto max-w-[62.50rem]">
           <div className="grid grid-cols-6 gap-4">
@@ -321,7 +318,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
       <section className="bg-white text-black">
         <div className="container mx-auto px-4 py-24">
           <div className="mb-16 flex flex-wrap">
@@ -347,7 +343,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
       <section className="bg-white">
         <div className="grid grid-cols-3 gap-10 py-28">
           <div className="col-span-1" />
@@ -366,7 +361,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
       <section className="bg-black text-white">
         <div className="container mx-auto text-2xl">
           <div className="flex flex-wrap py-24">

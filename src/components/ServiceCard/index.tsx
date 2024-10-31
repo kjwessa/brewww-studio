@@ -4,13 +4,12 @@ import React, { useEffect, useRef } from "react";
 import { Service, Media } from "@/payload-types";
 import Image from "next/image";
 import Link from "next/link";
-import { getGSAP } from "@/lib/gsap";
+import gsap from "gsap";
 
 export default function ServiceCard({ service }: { service: Service }) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const gsap = getGSAP();
     if (!cardRef.current) return;
 
     const card = cardRef.current;
