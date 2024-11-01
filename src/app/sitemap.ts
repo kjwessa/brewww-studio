@@ -1,107 +1,66 @@
-// React Imports
 import type { MetadataRoute } from "next";
-import { unstable_cache } from "next/cache";
 
-// Payload Imports
-import payload from "payload";
-import { getConfig } from "@/utilities/config";
-
-async function fetchContent() {
-  try {
-    // Try to make a simple query to check if Payload is initialized
-    await payload.find({
-      collection: "posts",
-      limit: 1,
-    });
-  } catch (error) {
-    // If error occurs, initialize Payload
-    await payload.init({
-      secret: process.env.PAYLOAD_SECRET,
-      mongoURL: process.env.MONGODB_URI,
-    });
-  }
-
-  const [posts, services] = await Promise.all([
-    payload.find({
-      collection: "posts",
-      where: {
-        status: {
-          equals: "published",
-        },
-      },
-      limit: 1000,
-    }),
-    payload.find({
-      collection: "services",
-      where: {
-        status: {
-          equals: "published",
-        },
-      },
-      limit: 1000,
-    }),
-  ]);
-
-  return { posts, services };
+if (!process.env.SITE_URL) {
+  throw new Error("SITE_URL environment variable is not defined");
 }
 
+// Site-specific configuration
+const config = {
+  serverUrl: process.env.SITE_URL,
+  // Add static routes with their configurations
+  staticRoutes: [
+    { path: "/", priority: 1 },
+    { path: "/about", priority: 0.8 },
+  ],
+  // Dynamic content configuration
+  collections: {
+    pages: {
+      endpoint: "pages",
+      prefix: "/",
+      priority: 0.8,
+    },
+    // posts: {
+    //   endpoint: "posts",
+    //   prefix: "/journal/",
+    //   priority: 1,
+    // },
+  },
+} as const;
+
+// Revalidate daily (24 hours)
+export const revalidate = 86400;
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const config = getConfig();
-  const { siteUrl, isDevelopment } = config;
+  // Fetch all dynamic content in parallel
+  const dynamicContent = await Promise.all(
+    Object.entries(config.collections).map(async ([_, collection]) => {
+      const { docs } = await fetch(
+        `${config.serverUrl}/api/${collection.endpoint}?where[_status][equals]=published&limit=0`,
+        {
+          next: { revalidate: 86400 },
+        },
+      ).then((res) => res.json());
+      return { docs, ...collection };
+    }),
+  );
 
-  // Don't generate sitemap in development
-  if (isDevelopment) {
-    return [];
-  }
+  return [
+    // Static routes
+    ...config.staticRoutes.map((route) => ({
+      url: `${config.serverUrl}${route.path}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: route.priority,
+    })),
 
-  const content = await unstable_cache(
-    async () => fetchContent(),
-    ["sitemap-content"],
-    {
-      revalidate: 3600,
-      tags: ["sitemap"],
-    },
-  )();
-
-  const sitemap: MetadataRoute.Sitemap = [
-    {
-      url: siteUrl,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 1,
-    },
-    {
-      url: `${siteUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/services`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+    // Dynamic content
+    ...dynamicContent.flatMap(({ docs, prefix, priority }) =>
+      docs.map((doc) => ({
+        changeFrequency: "monthly" as const,
+        lastModified: doc.updatedAt,
+        priority,
+        url: `${config.serverUrl}${prefix}${doc.slug}`,
+      })),
+    ),
   ];
-
-  // Add dynamic content
-  content.posts.docs.forEach((post) => {
-    sitemap.push({
-      url: `${siteUrl}/blog/${post.slug}`,
-      lastModified: new Date(post.updatedAt),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    });
-  });
-
-  content.services.docs.forEach((service) => {
-    sitemap.push({
-      url: `${siteUrl}/service/${service.slug}`,
-      lastModified: new Date(service.updatedAt),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    });
-  });
-
-  return sitemap;
 }
