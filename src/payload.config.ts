@@ -11,6 +11,7 @@ import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
 import { redirectsPlugin } from "@payloadcms/plugin-redirects";
+import { sentryPlugin } from "@payloadcms/plugin-sentry";
 
 //* Import Collections
 import { BlogCategories } from "@/collections/BlogCategories/config";
@@ -155,6 +156,11 @@ export default buildConfig({
   }),
   sharp,
   plugins: [
+    sentryPlugin({
+      sentry: {
+        dsn: process.env.SENTRY_DSN,
+      },
+    }),
     redirectsPlugin({
       collections: ["pages", "posts"],
       overrides: {
