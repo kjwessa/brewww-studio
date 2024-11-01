@@ -1,5 +1,10 @@
-// app/robots.ts
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
+
+if (!process.env.SITE_URL) {
+  throw new Error("SITE_URL environment variable is not defined");
+}
+
+const serverUrl = process.env.SITE_URL;
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -8,14 +13,12 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: "/",
         disallow: [
-          "/api/",
-          "/admin/",
-          "/preview/",
-          "/*?preview=true",
-          "/api-docs/",
-          "/*.json$",
-          "/*/_next/*",
-          "/cdn-cgi/",
+          "/api",
+          "/admin",
+          "/private",
+          "/_next",
+          "/studio",
+          "/cdn-cgi",
         ],
       },
       {
@@ -23,15 +26,35 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/"],
       },
       {
-        userAgent: "CCBot",
+        userAgent: "Claude-Web",
         disallow: ["/"],
       },
       {
         userAgent: "Google-Extended",
         disallow: ["/"],
       },
+      {
+        userAgent: "CCBot",
+        disallow: ["/"],
+      },
+      {
+        userAgent: "anthropic-ai",
+        disallow: ["/"],
+      },
+      {
+        userAgent: "Omgilibot",
+        disallow: ["/"],
+      },
+      {
+        userAgent: "Omgili",
+        disallow: ["/"],
+      },
+      {
+        userAgent: "FacebookBot",
+        disallow: ["/"],
+      },
     ],
-    sitemap: "https://brewww.studio/sitemap.xml",
-    host: "https://brewww.studio",
+    sitemap: `${serverUrl}/sitemap.xml`,
+    host: serverUrl,
   };
 }
