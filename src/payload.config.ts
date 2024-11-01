@@ -156,11 +156,6 @@ export default buildConfig({
   }),
   sharp,
   plugins: [
-    sentryPlugin({
-      sentry: {
-        dsn: process.env.SENTRY_DSN,
-      },
-    }),
     redirectsPlugin({
       collections: ["pages", "posts"],
       overrides: {

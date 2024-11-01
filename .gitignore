@@ -42,3 +42,5 @@ next-env.d.ts
 
 # memory usage log
 memory-usage.log
+# Sentry Config File
+.env.sentry-build-plugin

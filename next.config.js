@@ -1,4 +1,5 @@
 import { withPayload } from "@payloadcms/next/withPayload";
+import { withSentryConfig } from "@sentry/nextjs";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -55,4 +56,21 @@ const nextConfig = {
   },
 };
 
-export default withPayload(nextConfig);
+const sentryConfig = {
+  org: "brewww-studio",
+  project: "brewww-payload",
+  silent: !process.env.CI,
+  widenClientFileUpload: true,
+  reactComponentAnnotation: {
+    enabled: true,
+  },
+  tunnelRoute: "/monitoring",
+  hideSourceMaps: true,
+  disableLogger: true,
+  automaticVercelMonitors: true,
+};
+
+// Apply both Payload and Sentry configurations
+const config = withSentryConfig(withPayload(nextConfig), sentryConfig);
+
+export default config;
