@@ -1,9 +1,5 @@
 import type { MetadataRoute } from "next";
 
-if (!process.env.SITE_URL) {
-  throw new Error("SITE_URL environment variable is not defined");
-}
-
 const serverUrl = process.env.SITE_URL;
 
 export default function robots(): MetadataRoute.Robots {

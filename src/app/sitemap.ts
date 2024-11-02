@@ -1,9 +1,5 @@
 import type { MetadataRoute } from "next";
 
-if (!process.env.SITE_URL) {
-  throw new Error("SITE_URL environment variable is not defined");
-}
-
 // Site-specific configuration
 const config = {
   serverUrl: process.env.SITE_URL,
