@@ -512,54 +512,6 @@ export default function About() {
         </div>
       </section>
 
-      <section className="border-b-2 border-solid border-black bg-red-200 text-black">
-        <div>
-          <div className="flex justify-center pt-24 text-[2.38rem] leading-none">
-            <h3>Real people with real feelings.</h3>
-          </div>
-          <div className="flex flex-wrap justify-between px-12 py-24">
-            <div className="flex basis-[48%] flex-col pb-20">
-              <Image
-                className="h-auto w-[47.57rem] max-w-full pb-8"
-                src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/2022-Kristin-23.jpg"
-                width={47.57}
-                height={248}
-                alt="Kristin"
-              />
-              <h3 className="mb-3 text-[2.38rem] leading-none">
-                Christine Wessa
-              </h3>
-              <h4 className="mb-3.5 font-semibold">
-                Partner and Operations Director
-              </h4>
-              <p className="mt-1 text-[1.38rem] leading-7">
-                Christine manages business development and studio operations.
-                Her strong organizational skills come in handy internally and
-                externally, allowing Grain & Mortar to run efficiently and
-                ensuring client projects are executed successfully.
-              </p>
-            </div>
-            <div className="flex basis-[48%] flex-col pb-20">
-              <Image
-                className="h-auto w-[47.57rem] max-w-full pb-8"
-                src="https://grainandmortar.com/wp-content/themes/gm/_assets/additions/2022-Michael-10.jpg"
-                width={47.57}
-                height={248}
-                alt="Michael"
-              />
-              <h3 className="mb-3 text-[2.38rem] leading-none">Kevin Wessa</h3>
-              <h4 className="mb-3.5 font-semibold">
-                Partner and Creative Director
-              </h4>
-              <p className="mt-1 text-[1.38rem] leading-7">
-                Kevin works with clients on design and illustration. He creates
-                strategy for brands and executes it using his diverse skills in
-                brand design, print layout, illustration, and digital design.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
       <section className="relative flex h-min w-full flex-col content-center items-center justify-center gap-10 bg-white px-6 py-20 text-xs text-black">
         <div className="relative h-auto w-full">
           <div className="relative grid h-auto auto-rows-[minmax(0px,_1fr)] grid-cols-[146px_146px_146px_146px_146px_146px_146px_146px] grid-rows-[21.13rem] justify-start gap-8">

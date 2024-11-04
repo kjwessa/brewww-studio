@@ -25,75 +25,7 @@ export default function Header() {
       <header className="top-0 z-50 w-full bg-brand-dark-bg text-sm text-neutral-400">
         <div className="mx-auto max-w-[120rem] px-12">
           <div className="grid grid-cols-3 items-center py-4">
-            <nav className="flex items-center space-x-4 font-semibold uppercase text-white">
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/about"
-              >
-                About
-              </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/team/kevin-wessa"
-              >
-                /In
-              </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/why-brewww"
-              >
-                Why
-              </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/blog"
-              >
-                Blog
-              </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/play"
-              >
-                Play
-              </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/work"
-              >
-                Work
-              </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/work/ies-national"
-              >
-                /IN
-              </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/services"
-              >
-                Services
-              </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/services/individual"
-              >
-                /IN
-              </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/location"
-              >
-                Location
-              </Link>
-              <Link
-                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/location/individual"
-              >
-                /IN
-              </Link>
-            </nav>
-            <div className="flex justify-center">
+            <div className="flex">
               <Link href="/home">
                 <Image
                   className="w-36 max-w-full cursor-pointer"
@@ -104,6 +36,40 @@ export default function Header() {
                 />
               </Link>
             </div>
+            <nav className="flex items-center space-x-4 font-semibold uppercase text-white">
+              <Link
+                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                href="/about"
+              >
+                About
+              </Link>
+              <Link
+                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                href="/why-brewww"
+              >
+                Why Us
+              </Link>
+              <Link
+                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                href="/blog"
+              >
+                Blog
+              </Link>
+              <Link
+                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                href="/work"
+              >
+                Work
+              </Link>
+
+              <Link
+                className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                href="/services"
+              >
+                Services
+              </Link>
+            </nav>
+
             <div className="flex items-center justify-end space-x-4 text-white">
               <div className="flex items-center space-x-4 uppercase">
                 <Link
