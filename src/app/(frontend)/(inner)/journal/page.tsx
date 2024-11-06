@@ -51,7 +51,7 @@ export default async function BlogPage() {
                 <CategoryFilter
                   title={category.title}
                   count={categoryCounts[category.id] || 0}
-                  slug={`/blog/category/${category.slug}`}
+                  slug={`/journal/category/${category.slug}`}
                 />
               </li>
             ))}
@@ -65,20 +65,6 @@ export default async function BlogPage() {
             {posts.docs.map((post) => (
               <BlogCard key={post.id} post={post} />
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-neutral-900 py-36 text-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center">
-            <div className="pb-5 font-bold uppercase">+ Its time to wonder</div>
-            <h2 className="mb-8 text-[2.63rem] leading-none">
-              Brewww is a creative studio that finds the places where{" "}
-              <strong className="font-extrabold">needs</strong>,{" "}
-              <strong className="font-extrabold">stories</strong>, and{" "}
-              <strong className="font-extrabold">technology</strong> overlap.
-            </h2>
           </div>
         </div>
       </section>

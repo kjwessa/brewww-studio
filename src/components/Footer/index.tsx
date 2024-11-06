@@ -176,19 +176,18 @@ export default async function Footer() {
             </div>
           </div>
         </div>
-        <div className="mb-10 hidden w-full justify-center text-[11rem] font-light leading-none text-white lg:mb-5 lg:flex">
+        <div className="mb-10 hidden w-full justify-center text-[8.5rem] font-light leading-none text-white lg:mb-5 lg:flex">
           <div className="text-center">
-            unbounded{" "}
             <span className="-mr-3 -mt-11 inline-block align-middle">
               <Image
                 src="/images/brewww-mark-white.png"
                 alt="Brewww Mark"
-                width={135}
-                height={135}
+                width={115}
+                height={115}
                 className="inline-block"
               />
             </span>
-            rands
+            rands beyond tomorrow
           </div>
         </div>
         <div className="flex w-full flex-wrap items-center justify-between px-6 lg:pl-20 lg:pr-20 xl:pl-24 xl:pr-24">
