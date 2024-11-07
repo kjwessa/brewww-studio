@@ -12,33 +12,27 @@ export default function About() {
       <section className="bg-brand-dark-bg text-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <h2 className="mb-8 max-w-3xl text-4xl font-bold">
-            Brewww: Where Creativity Meets Strategic Execution
+            Beyond the Expected
           </h2>
           <p className="mb-4 max-w-3xl text-lg">
-            At Brewww, we believe that exceptional work is born from a
-            harmonious blend of strategic thinking and creative expression. Our
-            process begins with a deep dive into your objectives, challenges,
-            and target audience, allowing us to craft a tailored approach that
-            resonates with your brand's essence. We meticulously analyze social
-            behaviors, industry trends, and data-driven insights to inform our
-            creative concepts, ensuring they are not only visually captivating
-            but also strategically sound.
+            The most powerful brands aren't built on guesswork—they're crafted
+            through clarity. We unite strategic thinking with creative vision to
+            build brands that don't just capture attention, but convert it into
+            lasting value.
           </p>
           <p className="mb-4 max-w-3xl text-lg">
-            Our multidisciplinary team seamlessly integrates strategy, design,
-            and technology, fostering a collaborative environment where ideas
-            flourish and innovative solutions take shape. We don't just create
-            campaigns; we weave together a holistic narrative that connects with
-            your audience on multiple levels, amplifying your brand's reach and
-            impact.
+            Here's the thing about building brands that last: you can't just
+            guess. Every choice we make is anchored in real business goals and
+            human behavior. But data alone doesn't move people. That's where
+            creative courage comes in—turning solid strategy into something that
+            sparks imagination and drives action.
           </p>
           <p className="mb-16 max-w-3xl text-lg">
-            Throughout the creative process, we embrace an iterative mindset,
-            constantly refining and problem-solving to deliver
-            thought-provoking, dynamic, and relevant work that leaves a lasting
-            impression. Our commitment to excellence drives us to push
-            boundaries, challenge conventions, and craft experiences that
-            captivate and inspire.
+            We don't do cookie-cutter solutions or paint-by-numbers design. Your
+            brand deserves better than that. Instead, we craft unique paths
+            forward, shaped by your reality but reaching for your potential.
+            Because when strategy and creativity align, that's when brands stop
+            following trends and start setting them.
           </p>
         </div>
       </section>
@@ -127,15 +121,15 @@ export default function About() {
         </div>
       </section>
 
-      <section className="cursor-none border-t-2 border-solid border-t-neutral-100/[0.23] bg-brand-dark-bg text-[1.38rem] font-light leading-7 text-zinc-100">
+      <section className="border-t-2 border-solid border-t-neutral-100/[0.23] bg-brand-dark-bg text-[1.38rem] font-light leading-7 text-zinc-100">
         <div className="container mx-auto py-16 lg:py-24">
           <div className="float-left mr-5 mt-1 text-sm lg:mr-8 lg:mt-3 lg:min-w-[7.50rem]">
             BREWWW
           </div>
           <h2 className="text-[5.00rem] leading-none">
-            We're a team of strategists, creatives and technical specialists,
-            combining branding expertise, cutting-edge ux design and creative
-            excellence to build <b>sophisticated</b> brands and experiences.
+            We're a small team that solves big problems. By blending sharp
+            strategy with fearless creativity, we build brands that don't just
+            look different—they act different.
           </h2>
         </div>
       </section>
@@ -267,9 +261,10 @@ export default function About() {
               <span className="inline-block pr-9 text-sm uppercase text-stone-500">
                 Hello!
               </span>
-              Brewww is a branding and web design team. We've crafted custom
-              solutions for leaders and dreamers like The Merry Beggars, IES
-              National, Pietra Fitness,
+              We're Brewww, a studio that builds brands and digital experiences
+              worth remembering. Since 2017, we've partnered with clients like
+              The Merry Beggars, IES National, and Pietra Fitness to turn
+              ambitious ideas into reality
               <a className="inline-block underline" href="">
                 and more.
                 <span className="cursor-pointer text-sm uppercase text-stone-500">
@@ -285,9 +280,10 @@ export default function About() {
             }}
           >
             <p>
-              Here since 2017, we believe in taking on challenges. In turn, we
-              challenge ourselves and our partners, molding every idea into
-              something exceptional.
+              We keep things straightforward here. Take on exciting challenges.
+              Push creative boundaries. Build things that last. Every strategy
+              we develop, every pixel we place, and every line of code we write
+              is crafted with tomorrow in mind.
             </p>
           </div>
           <div
@@ -319,10 +315,12 @@ export default function About() {
             }}
           >
             <p>
-              Our vision is not a convoluted puzzle. It's simple and honest:{" "}
-              <span className="text-rose-600">We want to do top work.</span>{" "}
-              Every strategy, every px in every design, every line of code, is
-              something Brewww proudly{" "}
+              Our best work happens when we truly collaborate with our clients.
+              No egos, no unnecessary complexity—just clear thinking and
+              purposeful design that moves businesses forward.{" "}
+              <span className="text-brand-gold">We want to do top work.</span>{" "}
+              Got something big you want to build? Or maybe you need help
+              shaping that vision? Either way, we're all in. (let's talk)
               <a className="inline-block underline" href="">
                 stands behind.
                 <span className="cursor-pointer text-sm uppercase text-stone-500">
@@ -346,8 +344,9 @@ export default function About() {
                   </span>
                 </span>
               </a>{" "}
-              And this is possible only thanks to our deep partnerships with our
-              clients.
+              That's been our approach since day one. While we've grown stronger
+              and sharper, our drive to craft something exceptional hasn't
+              changed.
             </p>
           </div>
           <div
@@ -381,9 +380,8 @@ export default function About() {
                   </span>
                 </span>
               </a>{" "}
-              that stay busy, and we like it that way. Transform a crazy idea
-              into a product impossible to ignore? We're in. Provide guidance
-              and structure while we're at it? That's what we do.
+              Got something big you want to build? Or maybe you need help
+              shaping that vision? Either way, we're all in.
             </p>
           </div>
           <div
@@ -393,9 +391,9 @@ export default function About() {
             }}
           >
             <p>
-              Fearlessly going all in is what Brewww was built on. Our feet may
-              be firmly on the ground today, but our restless resolve isn't
-              going anywhere.
+              That's been our approach since day one. While we've grown stronger
+              and sharper, our drive to craft something exceptional hasn't
+              changed.
             </p>
           </div>
           <div
@@ -459,11 +457,13 @@ export default function About() {
           <div className="m-auto w-[95vw] max-w-[95vw]">
             <div className="m-auto flex min-h-[calc(240px)] max-w-[56.25rem] flex-col flex-wrap content-center items-center justify-center py-20 text-center">
               <h1 className="mb-8 text-display-large leading-none">
-                Honest Folks Doing Honest Work
+                Future-Forward, Human-First
               </h1>
               <h3 className="mb-8 text-[2.38rem] leading-none">
-                Our strategy remains: work hard, create lasting relationships,
-                and deliver the very best quality work.
+                We're a team of strategists and creators who see beyond the
+                obvious to craft brands that endure. Our secret? We never forget
+                that behind every pixel and strategy lives a human story waiting
+                to be told.
               </h3>
             </div>
           </div>

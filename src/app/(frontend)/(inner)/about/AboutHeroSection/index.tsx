@@ -10,8 +10,9 @@ export function AboutHeroSection() {
           </div>
           <div className="col-start-1 col-end-6 row-start-2 flex h-full w-full flex-col items-center justify-center self-stretch text-headline-medium leading-none">
             <h1 className="my-3min-h-[0vw] mx-0">
-              We are Brewww Studio. We craft creative for the kind-hearted, the
-              hustlers, and the visionaries.
+              In a world obsessed with the next big thing, we're focused on
+              crafting the next right thing. Our studio exists to transform bold
+              visions into enduring brand realities.
             </h1>
           </div>
           <div className="relative col-start-2 col-end-6 row-start-4 row-end-6 h-[50vh] self-stretch">
