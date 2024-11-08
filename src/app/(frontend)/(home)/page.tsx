@@ -49,6 +49,7 @@ export default function HomePage() {
               </div>
             </div>
           </section>
+
           <section>
             <div className="relative z-[3] flex h-[100svh] flex-col justify-between px-4 pb-4 pt-16">
               <h1 className="mx-0 my-3 text-[10.63rem] font-medium leading-none text-white">
@@ -91,27 +92,53 @@ export default function HomePage() {
               <div className="absolute bottom-0 left-0 top-0 z-[2] bg-black/[0.5]" />
             </div>
           </section>
-          <div className="px-4 py-4 pb-48">
+          <section className="flex flex-col gap-24 bg-white py-24 text-sm text-black">
+            <div className="container mx-auto grid grid-cols-12 gap-4">
+              <h2 className="col-span-1">Meet Brewww Studio</h2>
+              <p className="col-span-12 indent-[calc(25%_-_4px)] text-5xl font-medium">
+                In a world obsessed with the next big thing, we're focused on
+                crafting the next right thing. Our studio exists to transform
+                bold visions into enduring brand realities.
+              </p>
+            </div>
+            <div className="container mx-auto grid grid-cols-12 gap-4">
+              <p className="col-span-5 col-start-7 text-base font-normal">
+                But it's not just about creating visually appealing designs. We
+                believe in the power of strategic marketing to help businesses
+                reach their goals. Our team of marketing experts will
+                collaborate with you to develop tailored strategies that
+                effectively communicate your unique value proposition, engage
+                your audience, and drive conversions
+                <br />
+                <br />
+                We take pride in delivering exceptional results that go beyond
+                aesthetics, helping you achieve sustainable growth and business
+                success
+              </p>
+            </div>
+          </section>
+
+          <section className="bg-white px-4 py-4 pb-48 text-black">
             <div className="mb-16">
               <div className="flex flex-col gap-8">
                 <div className="border-b-2 border-solid border-b-black/[0.1] pb-3">
                   <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start gap-4">
-                    <h2 className="col-start-1 row-start-1 row-end-2 text-[12.75rem] font-medium leading-none text-white">
+                    <h2 className="col-start-1 row-start-1 row-end-2 text-[12.75rem] font-medium leading-none text-black">
                       Work
                     </h2>
-                    <div className="col-start-7 col-end-9 row-start-1 row-end-2 self-end text-white">
+                    <div className="col-start-7 col-end-9 row-start-1 row-end-2 self-end text-black">
                       <div>(2014-2024)</div>
                     </div>
                     <a
                       className="col-start-11 col-end-13 row-start-1 row-end-2 inline-block max-w-full self-end justify-self-end overflow-hidden text-blue-700"
                       href=""
                     >
-                      <div className="cursor-pointer text-white">View All</div>
-                      <div className="h-0 w-full cursor-pointer bg-white" />
+                      <div className="cursor-pointer text-black">View All</div>
+                      <div className="h-0 w-full cursor-pointer bg-black" />
                     </a>
                   </div>
                 </div>
-                <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start text-5xl font-medium text-white">
+                <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start text-5xl font-medium text-black">
                   <div className="col-end-12 row-start-1 row-end-2">
                     We help brands grow and tell their stories to the world
                   </div>
@@ -124,7 +151,7 @@ export default function HomePage() {
               <div />
               <div />
             </div>
-          </div>
+          </section>
           <div className="px-4 py-4 pb-48 text-[12.75rem] font-medium leading-none text-white">
             <div className="flex flex-col items-stretch justify-start">
               <h2>Service</h2>
