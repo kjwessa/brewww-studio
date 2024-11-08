@@ -1,3 +1,5 @@
+import { PortfolioCard } from "./PortfolioCard";
+
 export default function HomePage() {
   return (
     <>
@@ -146,12 +148,37 @@ export default function HomePage() {
               </div>
             </div>
             <div className="grid auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto] gap-x-4 gap-y-16">
-              <div />
-              <div />
-              <div />
-              <div />
+              <PortfolioCard
+                href="https://luminous-template.webflow.io/work/jimmy-wood-portfolio"
+                imageUrl="https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379.webp"
+                imageSrcSet="https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-500.webp 500w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-800.webp 800w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-1080.webp 1080w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-1600.webp 1600w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-2000.webp 2000w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-2600.webp 2600w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-3200.webp 3200w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379.webp 3728w"
+                title="Jimmy Wood Portfolio"
+                category="Visual Identity"
+              />
+              <PortfolioCard
+                href="https://luminous-template.webflow.io/work/jimmy-wood-portfolio"
+                imageUrl="https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379.webp"
+                imageSrcSet="https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-500.webp 500w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-800.webp 800w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-1080.webp 1080w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-1600.webp 1600w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-2000.webp 2000w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-2600.webp 2600w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-3200.webp 3200w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379.webp 3728w"
+                title="Jimmy Wood Portfolio"
+                category="Visual Identity"
+              />
+              <PortfolioCard
+                href="https://luminous-template.webflow.io/work/jimmy-wood-portfolio"
+                imageUrl="https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379.webp"
+                imageSrcSet="https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-500.webp 500w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-800.webp 800w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-1080.webp 1080w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-1600.webp 1600w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-2000.webp 2000w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-2600.webp 2600w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-3200.webp 3200w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379.webp 3728w"
+                title="Jimmy Wood Portfolio"
+                category="Visual Identity"
+              />
+              <PortfolioCard
+                href="https://luminous-template.webflow.io/work/jimmy-wood-portfolio"
+                imageUrl="https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379.webp"
+                imageSrcSet="https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-500.webp 500w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-800.webp 800w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-1080.webp 1080w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-1600.webp 1600w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-2000.webp 2000w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-2600.webp 2600w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379-p-3200.webp 3200w, https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379.webp 3728w"
+                title="Jimmy Wood Portfolio"
+                category="Visual Identity"
+              />
             </div>
           </section>
+
           <div className="px-4 py-4 pb-48 text-[12.75rem] font-medium leading-none text-white">
             <div className="flex flex-col items-stretch justify-start">
               <h2>Service</h2>
@@ -335,29 +362,6 @@ export default function HomePage() {
                     <div className="h-0 w-full cursor-pointer bg-white" />
                   </a>
                   <div className="col-start-4 col-end-8 row-start-1 row-end-2 flex gap-8 text-blue-700">
-                    <a
-                      className="inline-block max-w-full overflow-hidden"
-                      href=""
-                    >
-                      <div className="cursor-pointer text-white">Licenses</div>
-                      <div className="h-0 w-full cursor-pointer bg-white" />
-                    </a>
-                    <a
-                      className="inline-block max-w-full overflow-hidden"
-                      href=""
-                    >
-                      <div className="cursor-pointer text-white">Changelog</div>
-                      <div className="h-0 w-full cursor-pointer bg-white" />
-                    </a>
-                    <a
-                      className="inline-block max-w-full overflow-hidden"
-                      href=""
-                    >
-                      <div className="cursor-pointer text-white">
-                        Style Guide
-                      </div>
-                      <div className="h-0 w-full cursor-pointer bg-white" />
-                    </a>
                     <a
                       className="inline-block max-w-full overflow-hidden"
                       href=""
