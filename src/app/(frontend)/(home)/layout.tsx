@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     default: "Brewww Studio",
     template: "%s | Brewww Studio",
   },
-  description: "Brewww Studio - We craft unbounded brands",
+  description: "We craft brands beyond tomorrow - Brewww Studio",
   openGraph: {
     type: "website",
     locale: "en_US",
