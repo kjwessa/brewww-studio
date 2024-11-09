@@ -106,17 +106,9 @@ export default async function ServicePage({
               </Link>
             </span>
             <span>•</span>
-            <span>
-              {service.publishedOn
-                ? formatDate(service.publishedOn)
-                : "Date not available"}
-            </span>
+            <span></span>
             <span>•</span>
-            <span>
-              {service.readTime
-                ? `${service.readTime} min read`
-                : "Add Read Time"}
-            </span>
+            <span></span>
           </div>
         </div>
       </section>
@@ -144,11 +136,7 @@ export default async function ServicePage({
       </div>
 
       <div className="container mx-auto grid grid-cols-1 gap-8 pt-8 md:grid-cols-3">
-        <div className="md:col-span-1">
-          <TableOfContents
-            content={(service.content?.root?.children || []) as LexicalNode[]}
-          />
-        </div>
+        <div className="md:col-span-1"></div>
         <div className="md:col-span-2">
           <article className="prose mx-auto pb-24">
             <RichText
