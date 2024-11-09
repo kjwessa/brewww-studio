@@ -444,6 +444,7 @@ export interface Work {
   services?: (string | Service)[] | null;
   projectYear?: number | null;
   testimonial?: (string | null) | Testimonial;
+  projectLink?: string | null;
   relatedWorks?: (string | Work)[] | null;
   updatedAt: string;
   createdAt: string;
@@ -1031,6 +1032,7 @@ export interface WorkSelect<T extends boolean = true> {
   services?: T;
   projectYear?: T;
   testimonial?: T;
+  projectLink?: T;
   relatedWorks?: T;
   updatedAt?: T;
   createdAt?: T;
