@@ -1,12 +1,16 @@
 import type { Config } from "tailwindcss";
+import fluid, { extract } from "fluid-tailwind";
 
 const config: Config = {
-  content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-  ],
+  content: {
+    files: [
+      "./pages/**/*.{ts,tsx}",
+      "./components/**/*.{ts,tsx}",
+      "./app/**/*.{ts,tsx}",
+      "./src/**/*.{ts,tsx}",
+    ],
+    extract,
+  },
   theme: {
     // container: {
     //   center: true,
@@ -151,7 +155,7 @@ const config: Config = {
       }),
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), fluid],
 };
 
 export default config;
