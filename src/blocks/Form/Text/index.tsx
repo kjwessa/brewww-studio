@@ -5,8 +5,8 @@ import type {
   UseFormRegister,
 } from "react-hook-form";
 
-import { Input } from "@/components/UI/Input/index";
-import { Label } from "@/components/UI/Label/index";
+import { Input } from "@/components/ui/Input/index";
+import { Label } from "@/components/ui/Label/index";
 import React from "react";
 
 import { Error } from "../Error";
