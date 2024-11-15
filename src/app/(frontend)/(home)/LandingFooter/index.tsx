@@ -19,25 +19,25 @@ export function LandingFooter() {
               />
             </div>
             <div className="col-end-7 row-start-1 row-end-2 flex flex-col items-start justify-start text-blue-700">
-              <a className="inline-block max-w-full overflow-hidden" href="">
+              <a className="inline-block max-w-full " href="">
                 <div className="cursor-pointer text-5xl font-medium text-black">
                   Work
                 </div>
                 <div className="h-0 w-full cursor-pointer bg-black" />
               </a>
-              <a className="inline-block max-w-full overflow-hidden" href="">
+              <a className="inline-block max-w-full " href="">
                 <div className="cursor-pointer text-5xl font-medium text-black">
                   About
                 </div>
                 <div className="h-0 w-full cursor-pointer bg-black" />
               </a>
-              <a className="inline-block max-w-full overflow-hidden" href="">
+              <a className="inline-block max-w-full " href="">
                 <div className="cursor-pointer text-5xl font-medium text-black">
                   News
                 </div>
                 <div className="h-0 w-full cursor-pointer bg-black" />
               </a>
-              <a className="inline-block max-w-full overflow-hidden" href="">
+              <a className="inline-block max-w-full " href="">
                 <div className="cursor-pointer text-5xl font-medium text-black">
                   Contact
                 </div>
@@ -54,14 +54,36 @@ export function LandingFooter() {
               <div className="text-blue-700">
                 <Link
                   className="flex max-w-full items-center justify-between px-0 py-2 transition-all duration-300 hover:bg-black hover:px-4"
-                  href=""
+                  href="https://www.facebook.com/brewwwstudio"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <div className="cursor-pointer text-black blur-[0px] transition-colors duration-300 hover:text-white">
                     Facebook
                   </div>
-                  <img
+                  <Image
                     className="inline-block h-4 w-4 max-w-full cursor-pointer align-middle blur-[0px] transition-[filter] duration-300 group-hover:brightness-0 group-hover:invert"
                     src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d73da8c64d61796ed2fcd3_Link%20Arrow%20Black.svg"
+                    alt="Arrow"
+                    width={4}
+                    height={4}
+                  />
+                </Link>
+                <Link
+                  className="flex max-w-full items-center justify-between px-0 py-2 transition-all duration-300 hover:bg-black hover:px-4"
+                  href="https://www.instagram.com/brewwwstudio/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="cursor-pointer text-black blur-[0px] transition-colors duration-300 hover:text-white">
+                    Instagram
+                  </div>
+                  <Image
+                    className="inline-block h-4 w-4 max-w-full cursor-pointer align-middle blur-[0px] transition-[filter] duration-300 group-hover:brightness-0 group-hover:invert"
+                    src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d73da8c64d61796ed2fcd3_Link%20Arrow%20Black.svg"
+                    alt="Arrow"
+                    width={4}
+                    height={4}
                   />
                 </Link>
               </div>
