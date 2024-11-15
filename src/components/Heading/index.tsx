@@ -2,7 +2,7 @@ import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";
 
-// Type scale following Material Design (with fluid sizes)
+// Type scale following Material Design. Update settings in the Tailwind config.
 const headingVariants = cva(
   // Base styles
   "font-default tracking-tight",
@@ -49,7 +49,6 @@ const headingVariants = cva(
       align: "left",
       weight: "bold",
     },
-    // Compound variants for specific combinations
     compoundVariants: [
       {
         size: ["display-large", "display-medium", "display-small"],
@@ -60,56 +59,21 @@ const headingVariants = cva(
   },
 );
 
-// Types for heading content
-type HeadingContent = {
-  text: string;
-  bold?: boolean;
-  italic?: boolean;
-  className?: string;
-};
-
 interface HeadingProps extends VariantProps<typeof headingVariants> {
   level?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-  content: string | HeadingContent[];
-  uppercase?: boolean;
+  children?: React.ReactNode;
   className?: string;
 }
 
 export const Heading: React.FC<HeadingProps> = ({
   level = "h2",
   size = "headline-large",
-  content,
   align,
   weight,
-
+  children,
   className,
 }) => {
   const Component = level;
-
-  // Helper function to render rich text content
-  const renderContent = () => {
-    if (typeof content === "string") {
-      return content;
-    }
-
-    return content.map((item, index) => {
-      if (item.bold || item.italic) {
-        return (
-          <span
-            key={index}
-            className={twMerge(
-              item.bold && "font-bold",
-              item.italic && "italic",
-              item.className,
-            )}
-          >
-            {item.text}
-          </span>
-        );
-      }
-      return item.text;
-    });
-  };
 
   return (
     <Component
@@ -120,11 +84,10 @@ export const Heading: React.FC<HeadingProps> = ({
           align,
           weight,
         }),
-        "mx-auto",
         className,
       )}
     >
-      {renderContent()}
+      {children}
     </Component>
   );
 };
