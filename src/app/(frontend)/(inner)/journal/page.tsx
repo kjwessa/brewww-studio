@@ -59,7 +59,7 @@ export default async function BlogPage() {
         </div>
       </section>
 
-      <section className="bg-brand-dark-bg py-24">
+      <section className="bg-brand-dark-bg py-24 text-white">
         <div className="container mx-auto">
           <div className="relative grid auto-rows-auto grid-cols-3 gap-x-8 gap-y-24 text-zinc-100">
             {posts.docs.map((post) => (
