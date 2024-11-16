@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+
 export default function ProposalPage() {
   return (
     <>
@@ -15,21 +17,25 @@ export default function ProposalPage() {
               <h1>X Toyota</h1>
             </div>
           </div>
-          <a
+          <Link
             className="relative flex flex-col text-red-500 underline"
-            href="https://plymouth-proposal-template.webflow.io/#Proposal"
+            href="#Proposal"
           >
             <Image
-              className="h-44 w-32 cursor-pointer object-cover opacity-[0.999808]"
+              className="cursor-pointer object-cover opacity-[0.999808]"
               src="/images/anchor-arrow-black-15.svg"
               alt="Anchor Arrow Black 15"
+              height={176}
+              width={128}
             />
             <Image
-              className="absolute bottom-0 left-0 top-0 h-44 w-32 cursor-pointer object-cover opacity-[0.0402121]"
+              className="absolute bottom-0 left-0 top-0 cursor-pointer object-cover opacity-[0.0402121]"
               src="/images/anchor-arrow-ember-red.svg"
               alt="Anchor Arrow Ember Red"
+              height={176}
+              width={128}
             />
-          </a>
+          </Link>
         </div>
       </section>
       <section className="bg-white py-40 font-light text-zinc-900">
@@ -37,48 +43,53 @@ export default function ProposalPage() {
           <div className="col-span-1 row-span-1 border-t-4 border-solid border-t-zinc-900/[0.15] pt-10">
             <div className="flex items-start justify-start gap-4">
               <Image
-                className="h-6 w-5 object-cover"
+                className="object-cover"
                 src="/images/map-icon-ember-red.svg"
                 alt="Map Icon Ember Red"
+                height={24}
+                width={20}
               />
-              <a className="text-2xl" href="https://webflow.com/templates">
+              <Link className="text-2xl" href="#">
                 1212 South Congress Drive, Austin, TX 77130
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-span-1 row-span-1 border-t-4 border-solid border-t-zinc-900/[0.15] pt-10">
             <div className="flex items-start justify-start gap-4">
               <Image
-                className="h-6 w-6 object-cover"
+                className="object-cover"
                 src="/images/globe-icon-ember-red.svg"
                 alt="Globe Icon Ember Red"
+                width={24}
+                height={24}
               />
-              <a className="text-2xl" href="https://webflow.com/templates">
+              <Link className="text-2xl" href="#">
                 plymouth.com
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-span-1 row-span-1 border-t-4 border-solid border-t-zinc-900/[0.15] pt-10">
             <div className="flex items-start justify-start gap-4">
               <Image
-                className="h-6 w-3.5 object-cover"
+                className="object-cover"
                 src="/images/phone-icon-ember-red.svg"
                 alt="Phone Icon Ember Red"
+                width={14}
+                height={24}
               />
-              <a
-                className="text-2xl"
-                href="https://plymouth-proposal-template.webflow.io/tel:512-754-7272"
-              >
+              <Link className="text-2xl" href="#">
                 512-754-7272
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-span-1 row-span-1 border-t-4 border-solid border-t-zinc-900/[0.15] pt-10">
             <div className="flex items-start justify-start gap-4">
               <Image
-                className="h-12 w-12 object-cover"
+                className="object-cover"
                 src="/images/member-contact-headshot-ar-1-1.avif"
                 alt="Member Contact Headshot Ar 1 1"
+                width={48}
+                height={48}
               />
               <div>
                 <div className="text-2xl">Amber Yun</div>
@@ -215,17 +226,23 @@ export default function ProposalPage() {
             className="h-full w-full object-cover"
             src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7e11af569f38d969e0_Image.avif"
             alt="Image"
+            width={800}
+            height={600}
           />
           <Image
             className="h-full w-full object-cover"
             src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7ec41fc05c0158a6cb_Image-1.avif"
             alt="Image 1"
+            width={800}
+            height={600}
           />
         </div>
         <Image
           className="h-full w-full object-cover"
           src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c7ff7f038a61dbecde6b30_Image-2.avif"
           alt="Image 2"
+          width={800}
+          height={1200}
         />
       </section>
       <section className="relative bg-white py-20 font-light text-zinc-900">
@@ -250,11 +267,15 @@ export default function ProposalPage() {
                 className="h-96 w-full object-cover"
                 src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c0fd4751b1d035e8c66f5b_homepage-about-image-2-ar-4-5.avif"
                 alt="About Plymouth image 1"
+                width={600}
+                height={750}
               />
               <Image
                 className="mt-16 h-80 w-full object-cover"
                 src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c0fd4751b1d035e8c66f59_homepage-about-image-3-ar-4-5.avif"
                 alt="About Plymouth image 2"
+                width={600}
+                height={750}
               />
               <div className="absolute left-1/2 top-1/2 -z-10 flex h-80 w-80 -translate-x-1/2 -translate-y-1/2 transform items-center justify-center rounded-full border-2 border-zinc-900">
                 <p className="text-center text-xl font-bold text-zinc-900">
@@ -290,6 +311,8 @@ export default function ProposalPage() {
                       className="h-1.5 w-3 object-cover"
                       src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c0fd4751b1d035e8c66eb3_arrow-down-ember.svg"
                       alt="Arrow down"
+                      width={12}
+                      height={6}
                     />
                   </div>
                 </div>
@@ -306,6 +329,8 @@ export default function ProposalPage() {
                       className="h-1.5 w-3 object-cover"
                       src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c0fd4751b1d035e8c66eb3_arrow-down-ember.svg"
                       alt="Arrow down"
+                      width={12}
+                      height={6}
                     />
                   </div>
                 </div>
@@ -322,6 +347,8 @@ export default function ProposalPage() {
                       className="h-1.5 w-3 object-cover"
                       src="https://cdn.prod.website-files.com/66c0fd4751b1d035e8c66e54/66c0fd4751b1d035e8c66eb3_arrow-down-ember.svg"
                       alt="Arrow down"
+                      width={12}
+                      height={6}
                     />
                   </div>
                 </div>
@@ -357,6 +384,8 @@ export default function ProposalPage() {
                 src="/images/vintage-broncos-website-redesign.avif"
                 alt="Vintage Broncos Website Redesign"
                 className="h-full w-full object-cover"
+                width={800}
+                height={600}
               />
             </div>
           </div>
