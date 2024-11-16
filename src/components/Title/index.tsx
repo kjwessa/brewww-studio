@@ -1,6 +1,6 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { twMerge } from "tailwind-merge";
+import { cn } from "@/utilities/cn";
 
 // Type scale following Material Design. Update settings in the Tailwind config.
 const headingVariants = cva(
@@ -55,25 +55,25 @@ const headingVariants = cva(
 );
 
 interface TitleProps extends VariantProps<typeof headingVariants> {
-  level?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  el?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   children?: React.ReactNode;
   className?: string;
 }
 
 export const Title: React.FC<TitleProps> = ({
-  level = "h2",
+  el = "h2",
   size = "headline-large",
   weight,
   children,
   className,
 }) => {
-  const Component = level;
+  const Component = el;
 
   return (
     <Component
-      className={twMerge(
+      className={cn(
         headingVariants({
-          level,
+          level: el,
           size,
           weight,
         }),

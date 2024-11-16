@@ -30,7 +30,7 @@ export const BlogCard = ({ post }: { post: Post }) => {
           </span>
           <span className="ml-2">/ {post.readTime} min read</span>
         </Text>
-        <Title level="h3" size="title-medium" className="leading-none">
+        <Title el="h3" size="title-medium" className="leading-none">
           {post.title}
         </Title>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { twMerge } from "tailwind-merge";
+import { cn } from "@/utilities/cn";
 
 // Text component following Material Design type scale from Tailwind config
 const textVariants = cva(
@@ -60,7 +60,7 @@ export function Text({
 
   return (
     <Component
-      className={twMerge(
+      className={cn(
         textVariants({ 
           level, 
           size, 
