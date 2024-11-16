@@ -1,10 +1,11 @@
+import { Work } from "@/payload-types";
 import Link from "next/link";
 import Image from "next/image";
-import type { Work as WorkType } from "@/payload-types";
 import { Title } from "../Title";
+import { Text } from "../Text";
 
 export type WorkCardProps = {
-  project: WorkType;
+  project: Work;
 };
 
 export function WorkCard({ project }: WorkCardProps) {
@@ -52,13 +53,22 @@ export function WorkCard({ project }: WorkCardProps) {
           </div>
         </div>
         <div className="mb-2 flex cursor-pointer items-center text-zinc-400">
-          <div className="text-label-large font-light">2023</div>
-          <div className="ml-3 h-1.5 w-1.5 rounded-full bg-zinc-400" />
-          <div className="ml-3 text-label-large font-light">
-            {project.title}
-          </div>
+          <Text 
+            level="p" 
+            size="label-large" 
+            className="flex items-center font-light"
+          >
+            <span>2023</span>
+            <span className="mx-3">/</span>
+            <span>{project.title}</span>
+          </Text>
         </div>
-        <Title level="h2" size="title-medium" className="max-w-lg leading-none">
+
+        <Title
+          level="h3"
+          size="title-medium"
+          className="max-w-2xl leading-none"
+        >
           {project.tagline}
         </Title>
       </Link>

@@ -4,6 +4,7 @@ import { Category } from "@/payload-types";
 import Link from "next/link";
 import Image from "next/image";
 import { Title } from "../Title";
+import { Text } from "../Text";
 
 export const BlogCard = ({ post }: { post: Post }) => {
   return (
@@ -19,12 +20,16 @@ export const BlogCard = ({ post }: { post: Post }) => {
         </div>
       </div>
       <div className="mt-4">
-        <p className="mb-2 flex flex-row items-center text-label-medium uppercase">
+        <Text 
+          level="p" 
+          size="label-medium" 
+          className="mb-2 flex flex-row items-center uppercase"
+        >
           <span>
             {(post.categories[0] as Category)?.title || "Uncategorized"}
           </span>
           <span className="ml-2">/ {post.readTime} min read</span>
-        </p>
+        </Text>
         <Title level="h3" size="title-medium" className="leading-none">
           {post.title}
         </Title>
