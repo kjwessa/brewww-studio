@@ -20,7 +20,7 @@ interface ImpactCardProps {
     | "label-medium"
     | "label-small";
 }
-
+//TODO: Figure out why the cards are not properly passing the size prop
 export const ImpactCard = ({
   value,
   title,
