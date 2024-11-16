@@ -5,7 +5,7 @@ import { twMerge } from "tailwind-merge";
 // Type scale following Material Design. Update settings in the Tailwind config.
 const headingVariants = cva(
   // Base styles
-  "font-default tracking-tight",
+  "font-default tracking-tight leading-none",
   {
     variants: {
       level: {
@@ -33,11 +33,7 @@ const headingVariants = cva(
         "title-medium": "text-title-medium",
         "title-small": "text-title-small",
       },
-      align: {
-        left: "text-left",
-        center: "text-center",
-        right: "text-right",
-      },
+
       weight: {
         regular: "font-normal",
         medium: "font-medium",
@@ -46,8 +42,7 @@ const headingVariants = cva(
       },
     },
     defaultVariants: {
-      align: "left",
-      weight: "bold",
+      weight: "regular",
     },
     compoundVariants: [
       {
@@ -59,16 +54,15 @@ const headingVariants = cva(
   },
 );
 
-interface HeadingProps extends VariantProps<typeof headingVariants> {
+interface TitleProps extends VariantProps<typeof headingVariants> {
   level?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   children?: React.ReactNode;
   className?: string;
 }
 
-export const Heading: React.FC<HeadingProps> = ({
+export const Title: React.FC<TitleProps> = ({
   level = "h2",
   size = "headline-large",
-  align,
   weight,
   children,
   className,
@@ -81,7 +75,6 @@ export const Heading: React.FC<HeadingProps> = ({
         headingVariants({
           level,
           size,
-          align,
           weight,
         }),
         className,

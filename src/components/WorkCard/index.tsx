@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Work as WorkType } from "@/payload-types";
+import { Title } from "../Title";
 
 export type WorkCardProps = {
   project: WorkType;
@@ -8,7 +9,7 @@ export type WorkCardProps = {
 
 export function WorkCard({ project }: WorkCardProps) {
   return (
-    <div className="relative w-full">
+    <div className="relative w-full text-white">
       <Link
         href={`/work/${project.slug}`}
         className="relative flex flex-col items-start"
@@ -57,9 +58,9 @@ export function WorkCard({ project }: WorkCardProps) {
             {project.title}
           </div>
         </div>
-        <h2 className="max-w-lg cursor-pointer pr-10 text-title-medium leading-none text-white">
+        <Title level="h2" size="title-medium" className="max-w-lg leading-none">
           {project.tagline}
-        </h2>
+        </Title>
       </Link>
     </div>
   );

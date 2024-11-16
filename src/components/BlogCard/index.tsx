@@ -3,6 +3,7 @@ import { Media } from "@/payload-types";
 import { Category } from "@/payload-types";
 import Link from "next/link";
 import Image from "next/image";
+import { Title } from "../Title";
 
 export const BlogCard = ({ post }: { post: Post }) => {
   return (
@@ -24,7 +25,9 @@ export const BlogCard = ({ post }: { post: Post }) => {
           </span>
           <span className="ml-2">/ {post.readTime} min read</span>
         </p>
-        <h3 className="text-title-medium leading-none">{post.title}</h3>
+        <Title level="h3" size="title-medium" className="leading-none">
+          {post.title}
+        </Title>
       </div>
     </Link>
   );
