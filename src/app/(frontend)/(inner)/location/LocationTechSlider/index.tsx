@@ -63,7 +63,7 @@ export function LocationTechSlider({ technologies: initialTechnologies = [] }: L
     fetchTechnologies();
   }, [initialTechnologies]);
 
-  // Use placeholder logos while loading or if no technologies are available
+ 
   const logos = technologies.length > 0
     ? technologies
         .filter(tech => tech.logoLight)
@@ -79,7 +79,7 @@ export function LocationTechSlider({ technologies: initialTechnologies = [] }: L
         logo: "/images/logo-placeholder.png"
       }));
 
-  // Duplicate the logos array for seamless looping
+  
   const duplicatedLogos = [...logos, ...logos];
 
   return (
