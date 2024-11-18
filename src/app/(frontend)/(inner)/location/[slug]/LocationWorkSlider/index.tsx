@@ -1,6 +1,7 @@
 import { WorkCard } from "@/components/WorkCard";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import configPromise from "@payload-config";
+import { Title } from "@/components/Title";
 
 export async function LocationWorkSlider() {
   const payload = await getPayloadHMR({ config: configPromise });
@@ -14,7 +15,7 @@ export async function LocationWorkSlider() {
       },
     },
   });
-
+  //TODO figure out why the title isn't getting the right sizes
   return (
     <>
       <section className="flex w-full flex-wrap bg-brand-dark-bg py-24 text-black">
@@ -25,9 +26,14 @@ export async function LocationWorkSlider() {
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />
                 <div className="ml-2 font-light text-white">Our Work</div>
               </div>
-              <h2 className="mb-0 mt-3 max-w-md text-5xl text-white lg:mb-0 lg:mt-5 min-[2100px]:max-w-lg">
+              <Title
+                el="h2"
+                size="headline-medium"
+                weight="medium"
+                className="mb-0 mt-3 text-white lg:mb-0 lg:mt-5"
+              >
                 Our favorite Web design Projects
-              </h2>
+              </Title>
             </div>
           </div>
           <div className="mt-3 w-full px-2 lg:mt-0 lg:w-auto lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">

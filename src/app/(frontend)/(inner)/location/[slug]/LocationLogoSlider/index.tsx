@@ -2,33 +2,14 @@
 import Image from "next/image";
 
 // Payload Imports
-import { getPayloadHMR } from "@payloadcms/next/utilities";
-import configPromise from "@payload-config";
 import { Brand, Media } from "@/payload-types";
-// Add LogoCard import
 import { LogoCard } from "@/components/LogoCard";
 
-export async function LocationLogoSlider() {
-  const payload = await getPayloadHMR({ config: configPromise });
-  const brands = await payload.find({
-    collection: "brands",
-    limit: 100,
-    where: {
-      and: [
-        {
-          _status: {
-            equals: "published",
-          },
-        },
-        {
-          logoLight: {
-            exists: true,
-          },
-        },
-      ],
-    },
-  });
+interface LocationLogoSliderProps {
+  brands: Brand[];
+}
 
+export function LocationLogoSlider({ brands }: LocationLogoSliderProps) {
   return (
     <section className="w-full bg-brand-dark-bg px-2 pb-20 text-black lg:pb-24 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4 min-[1450px]:pb-32 min-[2100px]:pb-40">
       <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
@@ -134,7 +115,7 @@ export async function LocationLogoSlider() {
               id="logo-grid"
             >
               <div className="flex h-full w-full" id="top-row">
-                {brands.docs.slice(0, 8).map((brand: Brand) => (
+                {brands.slice(0, 8).map((brand: Brand) => (
                   <LogoCard
                     key={brand.id}
                     variant="default"
@@ -149,7 +130,7 @@ export async function LocationLogoSlider() {
             </div>
             <div className="mx-auto mt-6 w-full overflow-hidden text-white lg:mt-8">
               <div className="flex h-full w-full" id="bottom-row">
-                {brands.docs.slice(9, 18).map((brand: Brand) => (
+                {brands.slice(9, 18).map((brand: Brand) => (
                   <LogoCard
                     key={brand.id}
                     variant="default"

@@ -3,8 +3,9 @@
 import React, { useState } from "react";
 import { Faq } from "@/payload-types";
 import { RichText } from "@/components/RichText";
+import { Title } from "@/components/Title";
 
-export function FAQCard({ props }: { props: Faq }): React.ReactElement {
+export function AccordionCard({ props }: { props: Faq }): React.ReactElement {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -13,7 +14,9 @@ export function FAQCard({ props }: { props: Faq }): React.ReactElement {
         className="flex h-20 w-full cursor-pointer items-center justify-between p-6"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <h3 className="pr-10 text-xl">{props.title}</h3>
+        <Title el="h3" size="title-small" weight="medium" className="pr-10">
+          {props.title}
+        </Title>
         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-800">
           <svg
             className={`h-3 w-3 transition-transform ${isOpen ? "rotate-180" : ""}`}
