@@ -5,24 +5,8 @@ import Image from "next/image";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import configPromise from "@payload-config";
 import { Brand, Media } from "@/payload-types";
-
-const LogoItem = ({ logo }: { logo: string }) => {
-  return (
-    <div className="h-full w-full px-4">
-      <div className="flex h-28 w-full items-center justify-center overflow-hidden rounded-3xl bg-neutral-950 lg:h-40 min-[2100px]:h-44">
-        <div className="relative h-full w-full">
-          <Image
-            src={logo}
-            alt="Logo"
-            fill
-            style={{ objectFit: "contain" }}
-            className="px-4"
-          />
-        </div>
-      </div>
-    </div>
-  );
-};
+// Add LogoCard import
+import { LogoCard } from "@/components/LogoCard";
 
 export async function LocationLogoSlider() {
   const payload = await getPayloadHMR({ config: configPromise });
@@ -151,8 +135,9 @@ export async function LocationLogoSlider() {
             >
               <div className="flex h-full w-full" id="top-row">
                 {brands.docs.slice(0, 8).map((brand: Brand) => (
-                  <LogoItem
+                  <LogoCard
                     key={brand.id}
+                    variant="default"
                     logo={
                       typeof brand.logoLight === "string"
                         ? brand.logoLight
@@ -165,8 +150,9 @@ export async function LocationLogoSlider() {
             <div className="mx-auto mt-6 w-full overflow-hidden text-white lg:mt-8">
               <div className="flex h-full w-full" id="bottom-row">
                 {brands.docs.slice(9, 18).map((brand: Brand) => (
-                  <LogoItem
+                  <LogoCard
                     key={brand.id}
+                    variant="default"
                     logo={
                       typeof brand.logoLight === "string"
                         ? brand.logoLight
