@@ -1,5 +1,11 @@
+"use client";
+
 // Next Imports
 import Image from "next/image";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 // Payload Imports
 import { Brand, Media } from "@/payload-types";
@@ -10,6 +16,36 @@ interface LocationLogoSliderProps {
 }
 
 export function LocationLogoSlider({ brands }: LocationLogoSliderProps) {
+  const topRowLogos = React.useMemo(() => {
+    const processedLogos = brands
+      .slice(0, 8)
+      .map((brand) => ({
+        id: brand.id,
+        logo:
+          typeof brand.logoLight === "string"
+            ? brand.logoLight
+            : (brand.logoLight as Media)?.url || "",
+      }))
+      .filter((brand) => brand.logo);
+
+    return [...processedLogos, ...processedLogos]; // Duplicate for continuous loop
+  }, [brands]);
+
+  const bottomRowLogos = React.useMemo(() => {
+    const processedLogos = brands
+      .slice(9, 18)
+      .map((brand) => ({
+        id: brand.id,
+        logo:
+          typeof brand.logoLight === "string"
+            ? brand.logoLight
+            : (brand.logoLight as Media)?.url || "",
+      }))
+      .filter((brand) => brand.logo);
+
+    return [...processedLogos, ...processedLogos]; // Duplicate for continuous loop
+  }, [brands]);
+
   return (
     <section className="w-full bg-brand-dark-bg px-2 pb-20 text-black lg:pb-24 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4 min-[1450px]:pb-32 min-[2100px]:pb-40">
       <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
@@ -111,37 +147,52 @@ export function LocationLogoSlider({ brands }: LocationLogoSliderProps) {
               </div>
             </div>
             <div
-              className="mx-auto mt-10 w-full overflow-hidden text-white lg:mt-16"
+              className="mx-auto mt-10 w-full text-white lg:mt-16"
               id="logo-grid"
             >
-              <div className="flex h-full w-full" id="top-row">
-                {brands.slice(0, 8).map((brand: Brand) => (
-                  <LogoCard
-                    key={brand.id}
-                    variant="default"
-                    logo={
-                      typeof brand.logoLight === "string"
-                        ? brand.logoLight
-                        : (brand.logoLight as Media)?.url || ""
-                    }
-                  />
+              <Swiper
+                modules={[Autoplay]}
+                spaceBetween={0}
+                slidesPerView="auto"
+                loop={true}
+                speed={15000}
+                allowTouchMove={false}
+                autoplay={{
+                  delay: 0,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: false,
+                }}
+                className="!w-full"
+              >
+                {topRowLogos.map(({ id, logo }, index) => (
+                  <SwiperSlide key={`${id}-${index}`} className="!w-auto">
+                    <LogoCard logo={logo} variant="default" />
+                  </SwiperSlide>
                 ))}
-              </div>
+              </Swiper>
             </div>
-            <div className="mx-auto mt-6 w-full overflow-hidden text-white lg:mt-8">
-              <div className="flex h-full w-full" id="bottom-row">
-                {brands.slice(9, 18).map((brand: Brand) => (
-                  <LogoCard
-                    key={brand.id}
-                    variant="default"
-                    logo={
-                      typeof brand.logoLight === "string"
-                        ? brand.logoLight
-                        : (brand.logoLight as Media)?.url || ""
-                    }
-                  />
+            <div className="mx-auto mt-6 w-full text-white lg:mt-8">
+              <Swiper
+                modules={[Autoplay]}
+                spaceBetween={0}
+                slidesPerView="auto"
+                loop={true}
+                speed={15000}
+                allowTouchMove={false}
+                autoplay={{
+                  delay: 0,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: false,
+                  reverseDirection: true,
+                }}
+                className="!w-full"
+              >
+                {bottomRowLogos.map(({ id, logo }, index) => (
+                  <SwiperSlide key={`${id}-${index}`} className="!w-auto">
+                    <LogoCard logo={logo} variant="default" />
+                  </SwiperSlide>
                 ))}
-              </div>
+              </Swiper>
             </div>
           </div>
         </div>

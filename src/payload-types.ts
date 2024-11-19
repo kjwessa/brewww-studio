@@ -647,6 +647,21 @@ export interface Location {
   location?: string | null;
   heroTitle: string;
   heroImage: string | Media;
+  heroDescription: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
   slug: string;
   slugLock?: boolean | null;
   updatedAt: string;
@@ -1203,6 +1218,7 @@ export interface LocationsSelect<T extends boolean = true> {
   location?: T;
   heroTitle?: T;
   heroImage?: T;
+  heroDescription?: T;
   slug?: T;
   slugLock?: T;
   updatedAt?: T;

@@ -13,7 +13,6 @@ import { Location } from "@/payload-types";
 import type { Media } from "@/payload-types";
 
 // Components
-import { AccordionCard } from "@/components/AccordionCard";
 import { LocationWorkSlider } from "./LocationWorkSlider";
 import { LocationLogoSlider } from "./LocationLogoSlider";
 import { LocationTechSlider } from "./LocationTechSlider";
@@ -55,7 +54,6 @@ async function getPageData({ slug }: { slug: string }) {
     limit: 1000,
   });
 
-  // Fetch technologies
   const technologiesResponse = await fetch(
     `${process.env.NEXT_PUBLIC_SERVER_URL}/api/technologies`,
     {
@@ -82,7 +80,6 @@ export default async function LocationPage({
 
   const payload = await getPayloadHMR({ config: configPromise });
 
-  // Add brands fetch
   const brands = await payload.find({
     collection: "brands",
     limit: 100,
@@ -104,8 +101,13 @@ export default async function LocationPage({
 
   return (
     <>
-      <LocationHeroText title={location.heroTitle} />
+      <LocationHeroText
+        title={location.heroTitle}
+        description={location.heroDescription}
+      />
+
       <LocationHeroImage image={location.heroImage as Media} />
+
       <section className="w-full bg-brand-dark-bg py-20 text-black lg:pb-24 lg:pt-24 min-[1450px]:pb-32 min-[1450px]:pt-32 min-[2100px]:pb-40 min-[2100px]:pt-40">
         <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
           <div className="flex w-full flex-wrap justify-between">
@@ -290,36 +292,6 @@ export default async function LocationPage({
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="w-full bg-brand-dark-bg py-10">
-        <div className="grid grid-cols-2 gap-4 px-2 sm:grid-cols-3 sm:pl-6 sm:pr-6 lg:grid-cols-5 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
-          <div className="flex items-center justify-center">
-            <div className="flex h-24 w-24 items-center justify-center bg-white">
-              <span className="text-black">Logo 1</span>
-            </div>
-          </div>
-          <div className="flex items-center justify-center">
-            <div className="flex h-24 w-24 items-center justify-center bg-white">
-              <span className="text-black">Logo 2</span>
-            </div>
-          </div>
-          <div className="flex items-center justify-center">
-            <div className="flex h-24 w-24 items-center justify-center bg-white">
-              <span className="text-black">Logo 3</span>
-            </div>
-          </div>
-          <div className="flex items-center justify-center">
-            <div className="flex h-24 w-24 items-center justify-center bg-white">
-              <span className="text-black">Logo 4</span>
-            </div>
-          </div>
-          <div className="flex items-center justify-center">
-            <div className="flex h-24 w-24 items-center justify-center bg-white">
-              <span className="text-black">Logo 5</span>
             </div>
           </div>
         </div>

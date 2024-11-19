@@ -96,32 +96,50 @@ export function serializeLexical({ nodes, customClasses }: Props): JSX.Element {
         const serializedChildren =
           "children" in node ? serializedChildrenFn(node) : "";
         if ("fields" in node) {
-          const block = node.fields;
-
-          const blockType = block?.blockType;
-
-          console.log(
-            "[src/components/RichText/serialize.tsx] Block type:",
-            blockType,
-          );
-
-          if (!block || !blockType) {
-            console.error(
-              "[src/components/RichText/serialize.tsx] Invalid block or blockType",
-            );
+          // Skip block handling if fields is empty or undefined
+          if (!node.fields) {
             return null;
           }
-          console.log(
-            "[src/components/RichText/serialize.tsx] Block contents:",
-            block,
-          );
 
+          const block = node.fields;
+          const blockType = block?.blockType;
+
+          // Debug logging
+          console.log("Processing block:", {
+            fields: node.fields,
+            blockType,
+            fullNode: node,
+          });
+
+          // Handle blocks without explicit blockType
+          if (!blockType) {
+            // If there's upload data, treat it as a media block
+            if ("upload" in node) {
+              return (
+                <RichTextUpload
+                  key={index}
+                  node={node as unknown as SerializedUploadNode}
+                />
+              );
+            }
+            return null;
+          }
+
+          // Handle known block types
           switch (blockType) {
+            case "upload":
+              return (
+                <RichTextUpload
+                  key={index}
+                  node={node as unknown as SerializedUploadNode}
+                />
+              );
             case "media-test":
-              return <div>Media Test</div>;
+              return <div key={index}>Media Test</div>;
             default:
               console.warn(
-                `[src/components/RichText/serialize.tsx] Unknown block type: ${blockType}`,
+                `[RichText/serialize] Unknown block type: ${blockType}`,
+                node
               );
               return null;
           }
