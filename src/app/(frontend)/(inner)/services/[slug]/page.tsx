@@ -17,7 +17,7 @@ import TableOfContents from "@/components/TableOfContents/index";
 import { LexicalNode } from "@/components/RichText/nodeFormat";
 
 // Utilities
-import { formatDate } from "@root/utilities/dateFormatter";
+import { formatDate } from "@/utilities/formatDateTime";
 
 export async function generateStaticParams() {
   const payload = await getPayloadHMR({ config: configPromise });
@@ -106,7 +106,7 @@ export default async function ServicePage({
               </Link>
             </span>
             <span>•</span>
-            <span></span>
+            <span>{formatDate({ date: service.createdAt })}</span>
             <span>•</span>
             <span></span>
           </div>
