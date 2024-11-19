@@ -1,11 +1,11 @@
 // @ts-nocheck
 //This copy-and-pasted from lexical here: https://github.com/facebook/lexical/blob/c2ceee223f46543d12c574e62155e619f9a18a5d/packages/lexical/src/LexicalConstants.ts
 
-import type { ElementFormatType, TextFormatType } from "lexical";
+import type { ElementFormatType, TextFormatType } from '@payloadcms/richtext-lexical'
 import type {
   TextDetailType,
   TextModeType,
-} from "lexical/nodes/LexicalTextNode";
+} from '@payloadcms/richtext-lexical/dist/field/features/format/LexicalTextNode'
 
 /**
  * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -129,7 +129,6 @@ export const TEXT_TYPE_TO_MODE: Record<number, TextModeType> = {
   [IS_SEGMENTED]: "segmented",
   [IS_TOKEN]: "token",
 };
-
 // Type definitions for Lexical nodes
 export type TextNode = {
   type: "text";
@@ -146,7 +145,12 @@ export type ElementNode = {
     | "quote"
     | "list"
     | "listitem"
-    | "link";
+    | "link"
+    | "upload"
+    | "relationship"
+    | "table"
+    | "tableRow"
+    | "tableCell";
   children: LexicalNode[];
   direction?: "ltr" | "rtl";
   format?: number;
@@ -155,6 +159,25 @@ export type ElementNode = {
   tag?: string; // Used for heading levels (h1, h2, etc.)
   listType?: "bullet" | "number";
   url?: string; // Used for links
+  relationTo?: string;
+  value?: unknown;
 };
 
 export type LexicalNode = TextNode | ElementNode;
+
+export interface TextNodeFormat {
+  bold?: boolean;
+  italic?: boolean;
+  underline?: boolean;
+  strikethrough?: boolean;
+  code?: boolean;
+  subscript?: boolean;
+  superscript?: boolean;
+  highlight?: boolean;
+}
+
+export const FORMAT_TYPES = {
+  BOLD: IS_BOLD,
+  ITALIC: IS_ITALIC,
+  // ... etc
+} as const;

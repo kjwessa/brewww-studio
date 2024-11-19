@@ -3,7 +3,7 @@ import {
   SerializedBlockNode,
   SerializedUploadNode,
 } from "@payloadcms/richtext-lexical";
-import RichTextUpload from "@/components/RichText/Upload";
+
 import React, { Fragment, JSX } from "react";
 
 import {
@@ -139,7 +139,7 @@ export function serializeLexical({ nodes, customClasses }: Props): JSX.Element {
             default:
               console.warn(
                 `[RichText/serialize] Unknown block type: ${blockType}`,
-                node
+                node,
               );
               return null;
           }
