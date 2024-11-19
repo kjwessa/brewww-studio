@@ -1,28 +1,38 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next'
 
-import type { Page, Post } from "@/payload-types";
+import type { Page, Post } from '@/payload-types'
 
-import { mergeOpenGraph } from "./mergeOpenGraph";
+import { mergeOpenGraph } from './mergeOpenGraph'
 
-export const generateMeta = async (args: {
-  doc: Page | Post;
-}): Promise<Metadata> => {
-  const { doc } = args || {};
+/**
+ * Generates metadata for Next.js pages based on Payload CMS document data
+ * @param args Object containing the Payload document (Page or Post)
+ * @returns Next.js Metadata object
+ */
+export const generateMeta = async (args: { doc: Page | Post }): Promise<Metadata> => {
+  const { doc } = args || {}
 
+  // Construct the full image URL if meta.image exists and has a URL
+  // Prepends the SERVER_URL to make the image URL absolute
   const ogImage =
-    typeof doc?.meta?.image === "object" &&
+    typeof doc?.meta?.image === 'object' &&
     doc.meta.image !== null &&
-    "url" in doc.meta.image &&
-    `${process.env.NEXT_PUBLIC_SERVER_URL}${doc.meta.image.url}`;
+    'url' in doc.meta.image &&
+    `${process.env.NEXT_PUBLIC_SERVER_URL}${doc.meta.image.url}`
 
-  const title = doc?.meta?.title
-    ? doc?.meta?.title + " | Brewww Studio"
-    : "Brewww Studio";
+  // Generate the page title
+  // If meta.title exists, append the site name, otherwise use default
+  const title = doc?.meta?.title ? doc?.meta?.title + ' | Brewww Studio' : 'Brewww Studio'
 
+  // Return Next.js metadata object
   return {
-    description: doc?.meta?.description || "",
+    // Set meta description from document
+    description: doc?.meta?.description,
+
+    // Generate OpenGraph metadata
     openGraph: mergeOpenGraph({
-      description: doc?.meta?.description || "",
+      description: doc?.meta?.description || '',
+      // Include OpenGraph image if available
       images: ogImage
         ? [
             {
@@ -31,8 +41,9 @@ export const generateMeta = async (args: {
           ]
         : undefined,
       title,
-      url: Array.isArray(doc?.slug) ? doc?.slug.join("/") : "/",
+      // Generate URL from slug array or fallback to root
+      url: Array.isArray(doc?.slug) ? doc?.slug.join('/') : '/',
     }),
     title,
-  };
-};
+  }
+}
