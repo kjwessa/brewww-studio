@@ -1,10 +1,13 @@
+import { BannerBlock } from "@/blocks/Banner/Component";
+import { CallToActionBlock } from "@/blocks/CallToAction/Component";
+import { CodeBlock, CodeBlockProps } from "@/blocks/Code/Component";
+import { MediaBlock } from "@/blocks/MediaBlock/Component";
+import React, { Fragment, JSX } from "react";
+import { CMSLink } from "@/components/Link";
 import {
   DefaultNodeTypes,
   SerializedBlockNode,
-  SerializedUploadNode,
 } from "@payloadcms/richtext-lexical";
-
-import React, { Fragment, JSX } from "react";
 
 import {
   IS_BOLD,
@@ -15,23 +18,24 @@ import {
   IS_SUPERSCRIPT,
   IS_UNDERLINE,
 } from "./nodeFormat";
-import type { Page } from "@/payload-types";
+import type {
+  CallToActionBlock as CTABlockProps,
+  MediaBlock as MediaBlockProps,
+} from "@/payload-types";
 
-export type NodeTypes = DefaultNodeTypes;
+export type NodeTypes =
+  | DefaultNodeTypes
+  | SerializedBlockNode<CTABlockProps | MediaBlockProps | CodeBlockProps>;
 
 type Props = {
   nodes: NodeTypes[];
-  customClasses?: Record<string, string>;
 };
 
-export function serializeLexical({ nodes, customClasses }: Props): JSX.Element {
+export function serializeLexical({ nodes }: Props): JSX.Element {
   return (
     <Fragment>
       {nodes?.map((node, index): JSX.Element | null => {
         if (node == null) {
-          console.error(
-            "[src/components/RichText/serialize.tsx] Encountered null node",
-          );
           return null;
         }
 
@@ -75,9 +79,6 @@ export function serializeLexical({ nodes, customClasses }: Props): JSX.Element {
         // which does not return checked: false (only true - i.e. there is no prop for false)
         const serializedChildrenFn = (node: NodeTypes): JSX.Element | null => {
           if (node.children == null) {
-            console.warn(
-              "[src/components/RichText/serialize.tsx] Node has no children",
-            );
             return null;
           } else {
             if (node?.type === "list" && node?.listType === "check") {
@@ -95,81 +96,68 @@ export function serializeLexical({ nodes, customClasses }: Props): JSX.Element {
 
         const serializedChildren =
           "children" in node ? serializedChildrenFn(node) : "";
-        if ("fields" in node) {
-          // Skip block handling if fields is empty or undefined
-          if (!node.fields) {
-            return null;
-          }
 
+        if (node.type === "block") {
           const block = node.fields;
+
           const blockType = block?.blockType;
 
-          // Debug logging
-          console.log("Processing block:", {
-            fields: node.fields,
-            blockType,
-            fullNode: node,
-          });
-
-          // Handle blocks without explicit blockType
-          if (!blockType) {
-            // If there's upload data, treat it as a media block
-            if ("upload" in node) {
-              return (
-                <RichTextUpload
-                  key={index}
-                  node={node as unknown as SerializedUploadNode}
-                />
-              );
-            }
+          if (!block || !blockType) {
             return null;
           }
 
-          // Handle known block types
           switch (blockType) {
-            case "upload":
+            case "mediaBlock":
               return (
-                <RichTextUpload
+                <MediaBlock
+                  className="col-span-3 col-start-1"
+                  imgClassName="m-0"
                   key={index}
-                  node={node as unknown as SerializedUploadNode}
+                  {...block}
+                  captionClassName="mx-auto max-w-[48rem]"
+                  enableGutter={false}
+                  disableInnerContainer={true}
                 />
               );
-            case "media-test":
-              return <div key={index}>Media Test</div>;
-            default:
-              console.warn(
-                `[RichText/serialize] Unknown block type: ${blockType}`,
-                node,
+            case "banner":
+              return (
+                <BannerBlock
+                  className="col-start-2 mb-4"
+                  key={index}
+                  {...block}
+                />
               );
+            case "code":
+              return (
+                <CodeBlock className="col-start-2" key={index} {...block} />
+              );
+            default:
               return null;
           }
         } else {
           switch (node.type) {
             case "linebreak": {
-              return <br key={index} />;
+              return <br className="col-start-2" key={index} />;
             }
             case "paragraph": {
               return (
-                <p key={index} className={customClasses?.paragraph}>
+                <p className="col-start-2" key={index}>
                   {serializedChildren}
                 </p>
               );
             }
             case "heading": {
-              const HeadingTag = `${node.tag}` as keyof JSX.IntrinsicElements;
+              const Tag = node?.tag;
               return (
-                <HeadingTag
-                  key={index}
-                  className={customClasses?.[`${node.tag}`]}
-                >
+                <Tag className="col-start-2" key={index}>
                   {serializedChildren}
-                </HeadingTag>
+                </Tag>
               );
             }
             case "list": {
-              const Tag = node?.tag as keyof JSX.IntrinsicElements;
+              const Tag = node?.tag;
               return (
-                <Tag className={customClasses?.list} key={index}>
+                <Tag className="list col-start-2" key={index}>
                   {serializedChildren}
                 </Tag>
               );
@@ -191,11 +179,7 @@ export function serializeLexical({ nodes, customClasses }: Props): JSX.Element {
                 );
               } else {
                 return (
-                  <li
-                    key={index}
-                    value={node?.value}
-                    className={customClasses?.listItem}
-                  >
+                  <li key={index} value={node?.value}>
                     {serializedChildren}
                   </li>
                 );
@@ -203,27 +187,27 @@ export function serializeLexical({ nodes, customClasses }: Props): JSX.Element {
             }
             case "quote": {
               return (
-                <blockquote key={index} className={customClasses?.quote}>
+                <blockquote className="col-start-2" key={index}>
                   {serializedChildren}
                 </blockquote>
               );
             }
-            case "link" as string: {
-              // CMS links are hidden for now
+            case "link": {
+              const fields = node.fields;
+
               return (
-                <span key={index} className={customClasses?.link}>
-                  {serializedChildren}
-                </span>
-              );
-            }
-            case "upload" as string: {
-              return (
-                <RichTextUpload
+                <CMSLink
                   key={index}
-                  node={node as unknown as SerializedUploadNode}
-                />
+                  newTab={Boolean(fields?.newTab)}
+                  reference={fields.doc as any}
+                  type={fields.linkType === "internal" ? "reference" : "custom"}
+                  url={fields.url}
+                >
+                  {serializedChildren}
+                </CMSLink>
               );
             }
+
             default:
               return null;
           }
