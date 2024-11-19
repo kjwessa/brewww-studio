@@ -50,7 +50,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "next-sitemap.config.mjs"
+    "redirects.js",
+    "next.config.js"
   ],
   "exclude": ["node_modules"]
 }
