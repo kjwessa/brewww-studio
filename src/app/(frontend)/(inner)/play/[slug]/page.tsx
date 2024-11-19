@@ -6,7 +6,7 @@ import { Play } from "@/payload-types";
 import Image from "next/image";
 import Link from "next/link";
 import { MetaDot } from "@/components/MetaDot";
-import { formatDate } from "@root/utilities/dateFormatter";
+import { formatDate } from "@/utilities/formatDateTime";
 
 //* Render the play page
 export default async function PlayPage({
@@ -52,7 +52,7 @@ export default async function PlayPage({
             <MetaDot />
             <span>
               {play.publishedOn
-                ? formatDate(play.publishedOn)
+                ? formatDate({ date: play.publishedOn, format: "shortDateStamp" })
                 : "Date not available"}
             </span>
           </div>

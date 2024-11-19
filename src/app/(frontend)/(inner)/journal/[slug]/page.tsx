@@ -17,7 +17,7 @@ import TableOfContents from "@/components/TableOfContents/index";
 import { LexicalNode } from "@/components/RichText/nodeFormat";
 
 // Utilities
-import { formatDate } from "@root/utilities/dateFormatter";
+import { formatDate } from "@/utilities/formatDateTime";
 
 export async function generateStaticParams() {
   const payload = await getPayloadHMR({ config: configPromise });
@@ -108,7 +108,7 @@ export default async function PostPage({
             <span>•</span>
             <span>
               {post.publishedOn
-                ? formatDate(post.publishedOn)
+                ? formatDate({ date: post.publishedOn, format: "shortDateStamp" })
                 : "Date not available"}
             </span>
             <span>•</span>
