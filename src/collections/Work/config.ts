@@ -138,6 +138,15 @@ export const Work: CollectionConfig = {
       },
     },
     {
+      name: "projectLink",
+      type: "text",
+      label: "Project Link",
+      required: false,
+      admin: {
+        position: "sidebar",
+      },
+    },
+    {
       name: "relatedWorks",
       type: "relationship",
       label: "Related Case Studies",
