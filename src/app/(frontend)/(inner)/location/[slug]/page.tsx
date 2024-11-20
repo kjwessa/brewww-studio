@@ -20,6 +20,12 @@ import { LocationHeroText } from "./LocationHeroText";
 import { LocationHeroImage } from "./LocationHeroImage";
 import { LocationFAQ } from "./LocationFAQ";
 
+// Add type definition for page props
+type LocationPageProps = {
+  params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
 export async function generateStaticParams() {
   const payload = await getPayloadHMR({ config: configPromise });
   const locations = await payload.find({
@@ -71,11 +77,15 @@ async function getPageData({ slug }: { slug: string }) {
 
 export default async function LocationPage({
   params,
-}: {
-  params: { slug: string };
-}) {
+  searchParams,
+}: LocationPageProps) {
+  const resolvedParams = await params;
+  if (!resolvedParams.slug) {
+    notFound();
+  }
+
   const { technologies, location, faqs } = await getPageData({
-    slug: params.slug,
+    slug: resolvedParams.slug,
   });
 
   const payload = await getPayloadHMR({ config: configPromise });
