@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 // Site-specific configuration
 const config = {
-  serverUrl: process.env.SITE_URL,
+  serverUrl: process.env.SITE_URL || 'https://brewww.studio',
   // Add static routes with their configurations
   staticRoutes: [
-    { path: "/", priority: 1 },
+    { path: "/", priority: 1.0 },
     { path: "/about", priority: 0.8 },
   ],
   // Dynamic content configuration
@@ -15,62 +15,51 @@ const config = {
       prefix: "/",
       priority: 0.8,
     },
-    // posts: {
-    //   endpoint: "posts",
-    //   prefix: "/journal/",
-    //   priority: 1,
-    // },
   },
 } as const;
 
-// Revalidate daily (every hour)
-export const revalidate = 3600;
+// Revalidate every 12 hours
+export const revalidate = 43200;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Log when sitemap is generating
-  console.log("Generating sitemap at:", new Date().toISOString());
-
-  // Fetch all dynamic content in parallel
   const dynamicContent = await Promise.all(
     Object.entries(config.collections).map(async ([_, collection]) => {
-      const { docs } = await fetch(
-        `${config.serverUrl}/api/${collection.endpoint}?where[_status][equals]=published&limit=0`,
-        {
-          cache: "no-store",
-          next: {
-            tags: ["sitemap"],
+      try {
+        const { docs } = await fetch(
+          `${config.serverUrl}/api/${collection.endpoint}?where[_status][equals]=published&limit=0`,
+          {
+            cache: "no-store",
+            next: {
+              tags: ["sitemap"],
+            },
           },
-        },
-      ).then((res) => res.json());
-      return { docs, ...collection };
+        ).then((res) => res.json());
+        return { docs, ...collection };
+      } catch (error) {
+        return { docs: [], ...collection };
+      }
     }),
   );
 
-  const sitemapData = [
+  const sitemapData: MetadataRoute.Sitemap = [
     // Static routes
     ...config.staticRoutes.map((route) => ({
       url: `${config.serverUrl}${route.path}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "weekly" as const,
       priority: route.priority,
     })),
 
     // Dynamic content
     ...dynamicContent.flatMap(({ docs, prefix, priority }) =>
       docs.map((doc) => ({
-        changeFrequency: "monthly" as const,
-        lastModified: doc.updatedAt,
-        priority,
         url: `${config.serverUrl}${prefix}${doc.slug}`,
+        lastModified: new Date(doc.updatedAt).toISOString(),
+        changeFrequency: "weekly" as const,
+        priority,
       })),
     ),
   ];
-
-  // Log the generated sitemap data
-  console.log(
-    "Sitemap entries:",
-    sitemapData.map((entry) => entry.url),
-  );
 
   return sitemapData;
 }
