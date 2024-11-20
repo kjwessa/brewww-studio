@@ -52,7 +52,17 @@ export const Location: CollectionConfig = {
           "The hero title of the location as it appears around the site.",
       },
     },
-    { name: "heroImage", type: "upload", relationTo: "media", required: false },
+    {
+      name: "heroImage",
+      type: "upload",
+      label: "Hero Image",
+      relationTo: "media",
+      required: true,
+      admin: {
+        description:
+          "The hero image displayed at the top of the location page.",
+      },
+    },
     ...slugField(),
   ],
 

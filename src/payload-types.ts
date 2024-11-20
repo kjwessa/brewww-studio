@@ -646,7 +646,7 @@ export interface Location {
   title: string;
   location?: string | null;
   heroTitle: string;
-  heroImage?: (string | null) | Media;
+  heroImage: string | Media;
   slug: string;
   slugLock?: boolean | null;
   updatedAt: string;

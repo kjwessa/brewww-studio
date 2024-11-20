@@ -10,6 +10,7 @@ import { PayloadRedirects } from "@/components/PayloadRedirects";
 import configPromise from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Location } from "@/payload-types";
+import type { Media } from "@/payload-types";
 
 // Components
 import { FAQCard } from "../../faq/AccordionCard";
@@ -17,6 +18,7 @@ import { LocationWorkSlider } from "./LocationWorkSlider";
 import { LocationLogoSlider } from "./LocationLogoSlider";
 import { LocationTechSlider } from "./LocationTechSlider";
 import { LocationHeroText } from "./LocationHeroText";
+import { LocationHeroImage } from "./LocationHeroImage";
 
 export async function generateStaticParams() {
   const payload = await getPayloadHMR({ config: configPromise });
@@ -33,21 +35,16 @@ export async function generateStaticParams() {
 }
 
 export default async function LocationPage({
-  params,
+  params: { slug },
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }) {
-  const resolvedParams = await params;
-  if (!resolvedParams.slug) {
-    notFound();
-  }
-
   const payload = await getPayloadHMR({ config: configPromise });
   const location = await payload.find({
     collection: "locations",
     where: {
       slug: {
-        equals: resolvedParams.slug,
+        equals: slug,
       },
     },
   });
@@ -64,6 +61,7 @@ export default async function LocationPage({
   return (
     <>
       <LocationHeroText title={location.docs[0].heroTitle} />
+      <LocationHeroImage image={location.docs[0].heroImage as Media} />
 
       <section className="bg-brand-dark-bg px-2 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
         <div className="relative flex w-full flex-wrap px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
