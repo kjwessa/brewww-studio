@@ -193,7 +193,7 @@ export default async function Footer() {
         <div className="flex w-full flex-wrap items-center justify-between px-6 lg:pl-20 lg:pr-20 xl:pl-24 xl:pr-24">
           <div className="inline-flex items-center">
             <Image
-              src="/images/brewww-logotype-white.png"
+              src="/images/brand/brewww-logotype-white.png"
               alt="Brewww Logo"
               width={75}
               height={75}
