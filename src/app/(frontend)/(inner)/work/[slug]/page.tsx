@@ -1,7 +1,7 @@
 import configPromise from "@payload-config";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import React from "react";
-import { RichText } from "@/components/RichText";
+import RichText from "@/components/RichText/index";
 import { notFound } from "next/navigation";
 import { Work } from "@/payload-types";
 import Image from "next/image";

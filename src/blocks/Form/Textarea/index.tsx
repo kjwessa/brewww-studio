@@ -1,26 +1,22 @@
-import type { TextField } from "@payloadcms/plugin-form-builder/types";
-import type {
-  FieldErrorsImpl,
-  FieldValues,
-  UseFormRegister,
-} from "react-hook-form";
+import type { TextField } from '@payloadcms/plugin-form-builder/types'
+import type { FieldErrorsImpl, FieldValues, UseFormRegister } from 'react-hook-form'
 
-import { Label } from "@/components/ui/Label/index";
-import { Textarea as TextAreaComponent } from "@/components/ui/Textarea/index";
-import React from "react";
+import { Label } from '@/components/ui/Label'
+import { Textarea as TextAreaComponent } from '@/components/ui/Textarea'
+import React from 'react'
 
-import { Error } from "../Error";
-import { Width } from "../Width";
+import { Error } from '../Error'
+import { Width } from '../Width'
 
 export const Textarea: React.FC<
   TextField & {
     errors: Partial<
       FieldErrorsImpl<{
-        [x: string]: any;
+        [x: string]: any
       }>
-    >;
-    register: UseFormRegister<FieldValues>;
-    rows?: number;
+    >
+    register: UseFormRegister<FieldValues>
+    rows?: number
   }
 > = ({
   name,
@@ -45,5 +41,5 @@ export const Textarea: React.FC<
 
       {requiredFromProps && errors[name] && <Error />}
     </Width>
-  );
-};
+  )
+}

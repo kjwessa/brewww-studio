@@ -1,51 +1,47 @@
 // Next Imports
-import React from "react";
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
+import React from 'react'
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import Image from 'next/image'
+import Link from 'next/link'
 
 // Payload Imports
-import { PayloadRedirects } from "@/components/PayloadRedirects";
-import configPromise from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
-import { Post } from "@/payload-types";
+import { PayloadRedirects } from '@/components/PayloadRedirects'
+import configPromise from '@payload-config'
+import { getPayloadHMR } from '@payloadcms/next/utilities'
+import { Post } from '@/payload-types'
 
 // Components
-import { RichText } from "@/components/RichText";
-import TableOfContents from "@/components/TableOfContents/index";
-import { LexicalNode } from "@/components/RichText/nodeFormat";
+import RichText from '@/components/RichText/index'
+import TableOfContents from '@/components/TableOfContents/index'
+import { LexicalNode } from '@/components/RichText/nodeFormat'
 
 // Utilities
-import { formatDate } from "@/utilities/formatDateTime";
+import { formatDate } from '@/utilities/formatDateTime'
 
 export async function generateStaticParams() {
-  const payload = await getPayloadHMR({ config: configPromise });
+  const payload = await getPayloadHMR({ config: configPromise })
   const posts = await payload.find({
-    collection: "posts",
+    collection: 'posts',
     limit: 1000,
     overrideAccess: false,
-  });
+  })
   return (
     posts.docs?.map(({ slug }) => ({
       params: { slug },
     })) || []
-  );
+  )
 }
 
-export default async function PostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const resolvedParams = await params;
+export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params
   if (!resolvedParams.slug) {
-    notFound();
+    notFound()
   }
 
-  const post = await queryPostBySlug({ slug: resolvedParams.slug });
+  const post = await queryPostBySlug({ slug: resolvedParams.slug })
   if (!post) {
-    notFound();
+    notFound()
   }
 
   return (
@@ -64,10 +60,7 @@ export default async function PostPage({
               </Link>
             </li>
             <li>
-              <Link
-                href="/posts/category/web-design"
-                className="hover:underline"
-              >
+              <Link href="/posts/category/web-design" className="hover:underline">
                 Web Design
               </Link>
             </li>
@@ -92,29 +85,25 @@ export default async function PostPage({
 
       <section className="container mx-auto px-4 pb-12 pt-12">
         <div className="max-w-5xl">
-          <h1 className="mb-4 text-5xl font-medium leading-tight md:text-6xl">
-            {post.title}
-          </h1>
+          <h1 className="mb-4 text-5xl font-medium leading-tight md:text-6xl">{post.title}</h1>
           <p className="mb-8 max-w-3xl text-xl text-gray-700">
-            {post.description || "Add a cool description here."}
+            {post.description || 'Add a cool description here.'}
           </p>
           <div className="flex items-center gap-1 text-sm text-gray-500">
             <span>
-              By{" "}
-              <Link className="text-gray-950" href={""}>
+              By{' '}
+              <Link className="text-gray-950" href={''}>
                 Kevin Wessa
               </Link>
             </span>
             <span>•</span>
             <span>
               {post.publishedOn
-                ? formatDate({ date: post.publishedOn, format: "shortDateStamp" })
-                : "Date not available"}
+                ? formatDate({ date: post.publishedOn, format: 'shortDateStamp' })
+                : 'Date not available'}
             </span>
             <span>•</span>
-            <span>
-              {post.readTime ? `${post.readTime} min read` : "Add Read Time"}
-            </span>
+            <span>{post.readTime ? `${post.readTime} min read` : 'Add Read Time'}</span>
           </div>
         </div>
       </section>
@@ -123,16 +112,12 @@ export default async function PostPage({
         <div className="px-2">
           <div className="relative aspect-[3/2] w-full">
             <Image
-              src={
-                typeof post.image === "string"
-                  ? post.image
-                  : post.image?.url || ""
-              }
+              src={typeof post.image === 'string' ? post.image : post.image?.url || ''}
               fill
               alt={
-                typeof post.image === "object"
-                  ? post.image?.alt || ""
-                  : "Featured image for blog post"
+                typeof post.image === 'object'
+                  ? post.image?.alt || ''
+                  : 'Featured image for blog post'
               }
               className="rounded-md object-cover"
               priority
@@ -143,49 +128,37 @@ export default async function PostPage({
 
       <div className="container mx-auto grid grid-cols-1 gap-8 pt-8 md:grid-cols-3">
         <div className="md:col-span-1">
-          <TableOfContents
-            content={(post.content?.root?.children || []) as LexicalNode[]}
-          />
+          <TableOfContents content={(post.content?.root?.children || []) as LexicalNode[]} />
         </div>
         <div className="md:col-span-2">
           <article className="prose mx-auto pb-24">
             <RichText
-              content={post.content || ""}
+              content={post.content || ''}
               enableProse={true}
               enableGutter={false}
-              preset="blogPost"
-              customClasses={{
-                // Optional overrides for specific blog styling
-                paragraph: 'text-body-medium text-gray-800',
-                h2: 'text-headline-medium font-bold text-gray-900',
-                link: 'underline hover:text-brand-gold text-gray-900'
-              }}
+              theme="light"
             />
           </article>
         </div>
       </div>
     </article>
-  );
+  )
 }
 
-async function queryPostBySlug({
-  slug,
-}: {
-  slug: string;
-}): Promise<Post | null> {
-  const payload = await getPayloadHMR({ config: configPromise });
+async function queryPostBySlug({ slug }: { slug: string }): Promise<Post | null> {
+  const payload = await getPayloadHMR({ config: configPromise })
   try {
     const result = await payload.find({
-      collection: "posts",
+      collection: 'posts',
       limit: 1,
       where: {
         slug: {
           equals: slug,
         },
       },
-    });
-    return result.docs[0] || null;
+    })
+    return result.docs[0] || null
   } catch (error) {
-    return null;
+    return null
   }
 }
