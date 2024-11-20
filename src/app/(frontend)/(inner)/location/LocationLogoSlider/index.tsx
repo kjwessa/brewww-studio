@@ -1,6 +1,9 @@
+// Next Imports
+import Image from "next/image";
+
+// Payload Imports
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import configPromise from "@payload-config";
-import Image from "next/image";
 import { Brand, Media } from "@/payload-types";
 
 const LogoItem = ({ logo }: { logo: string }) => {
@@ -21,7 +24,7 @@ const LogoItem = ({ logo }: { logo: string }) => {
   );
 };
 
-export async function LogoSlider() {
+export async function LocationLogoSlider() {
   const payload = await getPayloadHMR({ config: configPromise });
   const brands = await payload.find({
     collection: "brands",

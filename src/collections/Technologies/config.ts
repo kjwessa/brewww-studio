@@ -30,7 +30,7 @@ export const Technologies: CollectionConfig = {
       },
     },
     {
-      name: "image",
+      name: "logoLight",
       type: "upload",
       label: "Logo",
       required: false,
@@ -42,7 +42,7 @@ export const Technologies: CollectionConfig = {
 
   admin: {
     description: "The tools of the trade.",
-    defaultColumns: ["title", "image"],
+    defaultColumns: ["title"],
     group: "Portfolio",
     listSearchableFields: ["title"],
     pagination: {

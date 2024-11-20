@@ -610,7 +610,7 @@ export interface Pillar {
 export interface Technology {
   id: string;
   title: string;
-  image?: (string | null) | Media;
+  logoLight?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -1161,7 +1161,7 @@ export interface TestimonialsSelect<T extends boolean = true> {
  */
 export interface TechnologiesSelect<T extends boolean = true> {
   title?: T;
-  image?: T;
+  logoLight?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
