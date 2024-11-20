@@ -2,6 +2,8 @@ import Image from "next/image";
 import { LinkMain } from "@/components/LinkMain";
 import Link from "next/link";
 import { Title } from "@/components/Title";
+import { Text } from "@/components/Text";
+import { ServiceCategoryCard } from "@/components/ServiceCategoryCard";
 
 export default function ServicesPage() {
   return (
@@ -27,10 +29,10 @@ export default function ServicesPage() {
           <div className="flex w-full flex-wrap pt-20 text-[2.50rem] leading-none text-white md:justify-end">
             <div className="px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="w-full max-w-xl pr-10 font-light lg:max-w-2xl lg:pl-10 lg:pr-0">
-                <h2 className="mb-3">
+                <Text el="p" size="body-large" className="mb-3">
                   We bring our passion for good design to brave brands and
                   deliver something you can shout about.
-                </h2>
+                </Text>
               </div>
             </div>
           </div>
@@ -42,67 +44,45 @@ export default function ServicesPage() {
         <div className="mb-5 flex w-full flex-wrap text-display-large leading-none text-white lg:mb-20">
           <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
             <div className="w-full">
-              <h2>Design</h2>
+              <Title el="h2" size="display-large">
+                Design
+              </Title>
             </div>
           </div>
         </div>
         <div className="flex w-full flex-wrap justify-between text-white">
           <div className="mb-5 w-full px-2 text-[2.50rem] leading-none lg:mb-0 lg:w-[43.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-            <h2 className="pr-10 lg:pr-0">
+            <Text size="body-large" className="pr-10 lg:pr-0">
               Brand designers and web designers in-house crafting visuals to
               match your brand values.
-            </h2>
+            </Text>
           </div>
           <div className="mb-5 w-full px-2 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4 min-[2100px]:w-[43.75%]">
-            <a
-              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
-              href=""
-            >
-              <div className="inline-flex cursor-pointer items-center">
-                <div className="font-light">01</div>
-                <div className="ml-6 text-xl">Brand Identity</div>
-              </div>
-            </a>
-
-            <a
-              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
-              href=""
-            >
-              <div className="inline-flex cursor-pointer items-center">
-                <div className="font-light">02</div>
-                <div className="ml-6 text-xl">Web Design</div>
-              </div>
-            </a>
-
-            <a
-              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
-              href=""
-            >
-              <div className="inline-flex cursor-pointer items-center">
-                <div className="font-light">03</div>
-                <div className="ml-6 text-xl">eCommerce</div>
-              </div>
-            </a>
-
-            <a
-              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
-              href=""
-            >
-              <div className="inline-flex cursor-pointer items-center">
-                <div className="font-light">04</div>
-                <div className="ml-6 text-xl">Shopify</div>
-              </div>
-            </a>
-
-            <a
-              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
-              href=""
-            >
-              <div className="inline-flex cursor-pointer items-center">
-                <div className="font-light">05</div>
-                <div className="ml-6 text-xl">Graphic Design</div>
-              </div>
-            </a>
+            <ServiceCategoryCard
+              number="01"
+              title="Brand Identity"
+              href="/services/brand-identity"
+            />
+            <ServiceCategoryCard
+              number="02"
+              title="Web Design"
+              href="/services/web-design"
+            />
+            <ServiceCategoryCard
+              number="03"
+              title="eCommerce"
+              href="/services/ecommerce"
+            />
+            <ServiceCategoryCard
+              number="04"
+              title="Shopify"
+              href="/services/shopify"
+            />
+            <ServiceCategoryCard
+              number="05"
+              title="Graphic Design"
+              href="/services/graphic-design"
+            />
           </div>
         </div>
       </section>
@@ -111,77 +91,50 @@ export default function ServicesPage() {
         <div className="mb-5 flex w-full flex-wrap text-display-large leading-none text-white lg:mb-20">
           <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
             <div className="w-full">
-              <h2>Develop</h2>
+              <Title el="h2" size="display-large">
+                Develop
+              </Title>
             </div>
           </div>
         </div>
         <div className="flex w-full flex-wrap justify-between text-white">
           <div className="mb-5 w-full px-2 text-[2.50rem] leading-none lg:mb-0 lg:w-[43.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-            <h2 className="pr-10 lg:pr-0">
+            <Text size="body-large" className="pr-10 lg:pr-0">
               Web development to the highest standards, and matching the latest
               industry requirements.
-            </h2>
+            </Text>
           </div>
           <div className="mb-5 w-full px-2 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4 min-[2100px]:w-[43.75%]">
-            <a
-              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
-              href=""
-            >
-              <div className="inline-flex cursor-pointer items-center">
-                <div className="font-light">01</div>
-                <div className="ml-6 text-xl">Web Development</div>
-              </div>
-            </a>
-
-            <a
-              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
-              href=""
-            >
-              <div className="inline-flex cursor-pointer items-center">
-                <div className="font-light">02</div>
-                <div className="ml-6 text-xl">Craft CMS</div>
-              </div>
-            </a>
-
-            <a
-              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
-              href=""
-            >
-              <div className="inline-flex cursor-pointer items-center">
-                <div className="font-light">03</div>
-                <div className="ml-6 text-xl">Shopify</div>
-              </div>
-            </a>
-
-            <a
-              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
-              href=""
-            >
-              <div className="inline-flex cursor-pointer items-center">
-                <div className="font-light">04</div>
-                <div className="ml-6 text-xl">Craft Commerce</div>
-              </div>
-            </a>
-
-            <a
-              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
-              href=""
-            >
-              <div className="inline-flex cursor-pointer items-center">
-                <div className="font-light">05</div>
-                <div className="ml-6 text-xl">eCommerce</div>
-              </div>
-            </a>
-
-            <a
-              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
-              href=""
-            >
-              <div className="inline-flex cursor-pointer items-center">
-                <div className="font-light">06</div>
-                <div className="ml-6 text-xl">Technical SEO</div>
-              </div>
-            </a>
+            <ServiceCategoryCard
+              number="01"
+              title="Web Development"
+              href="/services/web-development"
+            />
+            <ServiceCategoryCard
+              number="02"
+              title="Craft CMS"
+              href="/services/craft-cms"
+            />
+            <ServiceCategoryCard
+              number="03"
+              title="Shopify"
+              href="/services/shopify"
+            />
+            <ServiceCategoryCard
+              number="04"
+              title="Craft Commerce"
+              href="/services/craft-commerce"
+            />
+            <ServiceCategoryCard
+              number="05"
+              title="eCommerce"
+              href="/services/ecommerce"
+            />
+            <ServiceCategoryCard
+              number="06"
+              title="Technical SEO"
+              href="/services/technical-seo"
+            />
           </div>
         </div>
       </section>
@@ -191,77 +144,50 @@ export default function ServicesPage() {
         <div className="mb-5 flex w-full flex-wrap text-[21.13rem] leading-none text-white lg:mb-20">
           <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
             <div className="w-full">
-              <h2>Support</h2>
+              <Title el="h2" size="display-large">
+                Support
+              </Title>
             </div>
           </div>
         </div>
         <div className="flex w-full flex-wrap justify-between text-white">
           <div className="mb-5 w-full px-2 text-[2.50rem] leading-none lg:mb-0 lg:w-[43.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-            <h2 className="pr-10 lg:pr-0">
+            <Text size="body-large" className="pr-10 lg:pr-0">
               Lean on our in-house team to support with your design, development
               and seo needs.
-            </h2>
+            </Text>
           </div>
           <div className="mb-5 w-full px-2 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4 min-[2100px]:w-[43.75%]">
-            <a
-              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+            <ServiceCategoryCard
+              number="01"
+              title="SEO"
               href="https://madebyshape.co.uk/search-engine-optimisation/"
-            >
-              <div className="inline-flex cursor-pointer items-center">
-                <div className="font-light">01</div>
-                <div className="ml-6 text-xl">SEO</div>
-              </div>
-            </a>
-
-            <a
-              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+            />
+            <ServiceCategoryCard
+              number="02"
+              title="Web Hosting"
               href="https://madebyshape.co.uk/web-hosting/"
-            >
-              <div className="inline-flex cursor-pointer items-center">
-                <div className="font-light">02</div>
-                <div className="ml-6 text-xl">Web Hosting</div>
-              </div>
-            </a>
-
-            <a
-              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+            />
+            <ServiceCategoryCard
+              number="03"
+              title="Shape Support"
               href="https://madebyshape.co.uk/shape-support/"
-            >
-              <div className="inline-flex cursor-pointer items-center">
-                <div className="font-light">03</div>
-                <div className="ml-6 text-xl">Shape Support</div>
-              </div>
-            </a>
-
-            <a
-              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+            />
+            <ServiceCategoryCard
+              number="04"
+              title="PPC"
               href="https://madebyshape.co.uk/ppc/"
-            >
-              <div className="inline-flex cursor-pointer items-center">
-                <div className="font-light">04</div>
-                <div className="ml-6 text-xl">PPC</div>
-              </div>
-            </a>
-
-            <a
-              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+            />
+            <ServiceCategoryCard
+              number="05"
+              title="Content Writing"
               href="https://madebyshape.co.uk/content-writing/"
-            >
-              <div className="inline-flex cursor-pointer items-center">
-                <div className="font-light">05</div>
-                <div className="ml-6 text-xl">Content Writing</div>
-              </div>
-            </a>
-
-            <a
-              className="flex w-full items-center justify-between border-b-2 border-solid border-neutral-700 py-4"
+            />
+            <ServiceCategoryCard
+              number="06"
+              title="Craft CMS"
               href="https://madebyshape.co.uk/craft-cms/"
-            >
-              <div className="inline-flex cursor-pointer items-center">
-                <div className="font-light">06</div>
-                <div className="ml-6 text-xl">Craft CMS</div>
-              </div>
-            </a>
+            />
           </div>
         </div>
       </section>
@@ -285,11 +211,11 @@ export default function ServicesPage() {
       </section>
       <section className="bg-white px-8 py-20 text-stone-950">
         <div className="max-w-8xl container mx-auto">
-          <h2 className="mb-16 text-4xl font-bold uppercase">
+          <Text size="body-large" className="mb-16">
             <span className="mr-4 pb-4 text-base">Our Speciality</span>A
             Cleveland branding studio with a passion for thumb stopping visuals,
             compelling storytelling, and web that works for you.
-          </h2>
+          </Text>
         </div>
         <div className="max-w-8xl container mx-auto grid grid-cols-3 gap-8">
           <div>
@@ -804,7 +730,6 @@ export default function ServicesPage() {
                     >
                       <span className="relative cursor-pointer lg:p-1.5 min-[1025px]:p-1.5">
                         View
-                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:p-1.5 min-[1025px]:p-1.5" />
                       </span>
                     </Link>
                   </div>
@@ -843,7 +768,6 @@ export default function ServicesPage() {
                     >
                       <span className="relative cursor-pointer lg:p-1.5 min-[1025px]:p-1.5">
                         View
-                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:p-1.5 min-[1025px]:p-1.5" />
                       </span>
                     </Link>
                   </div>
@@ -853,8 +777,9 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
       <section className="relative bg-white text-[1.38rem] leading-7 text-neutral-900 min-[1600px]:py-20 min-[1920px]:py-28 min-[1921px]:py-28">
-        <div className="m-auto w-[92%] min-[1921px]:max-w-[118.75rem]">
+        <div className="m-auto w-[92%] min-[769px]:flex min-[1921px]:max-w-[118.75rem]">
           <div className="min-[769px]:flex">
             <div className="text-[3.13rem] uppercase leading-none min-[769px]:w-96">
               <p className="opacity-10">03</p>
@@ -959,8 +884,10 @@ export default function ServicesPage() {
                         New Legend 4×4
                       </a>
                     </h5>
+
                     <p className="opacity-50">True legends never die.</p>
                   </div>
+
                   <div className="ml-5 text-lg uppercase">
                     <a
                       className="relative inline-block overflow-hidden rounded-full bg-gray-200 text-center"
