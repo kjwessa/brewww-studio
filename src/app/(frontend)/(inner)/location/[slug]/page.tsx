@@ -13,9 +13,10 @@ import { Location } from "@/payload-types";
 
 // Components
 import { FAQCard } from "../../faq/AccordionCard";
-import { LocationWorkSlider } from "../LocationWorkSlider";
-import { LocationLogoSlider } from "../LocationLogoSlider";
-import { LocationTechSlider } from "../LocationTechSlider";
+import { LocationWorkSlider } from "./LocationWorkSlider";
+import { LocationLogoSlider } from "./LocationLogoSlider";
+import { LocationTechSlider } from "./LocationTechSlider";
+import { LocationHeroText } from "./LocationHeroText";
 
 export async function generateStaticParams() {
   const payload = await getPayloadHMR({ config: configPromise });
@@ -41,12 +42,20 @@ export default async function LocationPage({
     notFound();
   }
 
-  const location = await queryLocationBySlug({ slug: resolvedParams.slug });
-  if (!location) {
+  const payload = await getPayloadHMR({ config: configPromise });
+  const location = await payload.find({
+    collection: "locations",
+    where: {
+      slug: {
+        equals: resolvedParams.slug,
+      },
+    },
+  });
+
+  if (!location?.docs?.[0]) {
     notFound();
   }
 
-  const payload = await getPayloadHMR({ config: configPromise });
   const faqs = await payload.find({
     collection: "faq",
     limit: 1000,
@@ -54,48 +63,7 @@ export default async function LocationPage({
 
   return (
     <>
-      <section className="w-full bg-brand-dark-bg pb-10 pt-20 text-black lg:pb-16 lg:pt-32 xl:pt-40">
-        <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
-          <div className="flex w-full flex-wrap justify-between">
-            <div className="w-full px-2 lg:w-[56.25%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-              <div className="flex flex-col items-start">
-                <div className="inline-flex items-center">
-                  <div className="h-1.5 w-1.5 rounded-full bg-white" />
-                  <div className="ml-2 font-light text-white">Web Design</div>
-                </div>
-                <h1 className="mb-0 mt-3 text-[4.25rem] leading-none text-white lg:mb-0 lg:mt-5 lg:pr-20">
-                  A Web Design Studio in Penscaola, FL.
-                </h1>
-              </div>
-            </div>
-            <div className="mt-5 w-full px-2 text-lg font-light text-zinc-400 lg:mt-10 lg:w-[43.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-              <div className="w-full">
-                <p className="mb-6">
-                  Here at Brewww Studio, we offer honest advice, industry
-                  experience, and a great portfolio of work.
-                  <br />
-                  <br />
-                  UI/UX, wireframes, research and development — we understand
-                  all areas of web design. We can take a start-up business with
-                  nothing to a fully functioning brand online and offline. We
-                  can revamp an existing website or take a successful brand to
-                  the next level. Our talented and creative in-house{" "}
-                  <a
-                    className="rounded-md bg-zinc-800 px-1 py-1 text-white underline"
-                    href=""
-                  >
-                    web design team in Pensacola
-                  </a>{" "}
-                  will work alongside you in collaboration to create a site that
-                  reflects your brand, talks to your audience with meaning and
-                  personality, and has great functionality across the latest
-                  devices.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <LocationHeroText title={location.docs[0].heroTitle} />
 
       <section className="bg-brand-dark-bg px-2 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
         <div className="relative flex w-full flex-wrap px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">

@@ -32,13 +32,34 @@ export const Location: CollectionConfig = {
         description: "The title of the location as it appears around the site.",
       },
     },
+    {
+      name: "location",
+      type: "text",
+      label: "Location",
+      required: false,
+      admin: {
+        description:
+          "The location of the location as it appears around the site.",
+      },
+    },
+    {
+      name: "heroTitle",
+      type: "text",
+      label: "Hero Title",
+      required: true,
+      admin: {
+        description:
+          "The hero title of the location as it appears around the site.",
+      },
+    },
+    { name: "heroImage", type: "upload", relationTo: "media", required: false },
     ...slugField(),
   ],
 
   //* Admin Settings
 
   admin: {
-    description: "Landing pages for services",
+    description: "Landing pages for locations",
     group: "Service",
     useAsTitle: "title",
   },

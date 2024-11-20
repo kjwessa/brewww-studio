@@ -644,6 +644,9 @@ export interface Journey {
 export interface Location {
   id: string;
   title: string;
+  location?: string | null;
+  heroTitle: string;
+  heroImage?: (string | null) | Media;
   slug: string;
   slugLock?: boolean | null;
   updatedAt: string;
@@ -1197,6 +1200,9 @@ export interface JourneysSelect<T extends boolean = true> {
  */
 export interface LocationsSelect<T extends boolean = true> {
   title?: T;
+  location?: T;
+  heroTitle?: T;
+  heroImage?: T;
   slug?: T;
   slugLock?: T;
   updatedAt?: T;
