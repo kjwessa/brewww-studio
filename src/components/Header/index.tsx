@@ -51,9 +51,9 @@ export default function Header() {
               </Link>
               <Link
                 className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                href="/blog"
+                href="/journal"
               >
-                Blog
+                Journal
               </Link>
               <Link
                 className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
