@@ -1,6 +1,6 @@
 'use client'
 
-import { RichText } from '@/components/RichText'
+import { RichText } from '@/components/RichText/index'
 
 interface LocationHeroTextProps {
   title?: string

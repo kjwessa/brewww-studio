@@ -1,86 +1,88 @@
-"use client";
-import React, { useCallback, useEffect, MouseEvent } from "react";
+'use client'
+import React, { useCallback, useEffect } from 'react'
+import { TextFieldClientProps } from 'payload'
 
-import {
-  useField,
-  useFieldProps,
-  Button,
-  TextInput,
-  FieldLabel,
-  useFormFields,
-} from "@payloadcms/ui";
+import { useField, Button, TextInput, FieldLabel, useFormFields, useForm } from '@payloadcms/ui'
 
-import { formatSlug } from "./formatSlug";
-import "./index.scss";
-import { TextFieldClientProps } from "payload";
+import { formatSlug } from '@/utilities/formatSlug'
+import './index.scss'
 
 type SlugComponentProps = {
-  fieldToUse: string;
-  checkboxFieldPath: string;
-} & TextFieldClientProps;
+  fieldToUse: string
+  checkboxFieldPath: string
+} & TextFieldClientProps
 
 export const SlugComponent: React.FC<SlugComponentProps> = ({
   field,
   fieldToUse,
   checkboxFieldPath: checkboxFieldPathFromProps,
+  path,
+  readOnly: readOnlyFromProps,
 }) => {
-  const { label } = field;
-  const { path, readOnly: readOnlyFromProps } = useFieldProps();
+  const { label } = field
 
-  const checkboxFieldPath = path.includes(".")
+  const checkboxFieldPath = path?.includes('.')
     ? `${path}.${checkboxFieldPathFromProps}`
-    : checkboxFieldPathFromProps;
+    : checkboxFieldPathFromProps
 
-  const { value, setValue } = useField<string>({ path });
+  const { value, setValue } = useField<string>({ path: path || field.name })
 
-  const { value: checkboxValue, setValue: setCheckboxValue } =
-    useField<boolean>({
-      path: checkboxFieldPath,
-    });
+  const { dispatchFields } = useForm()
 
-  const fieldToUseValue = useFormFields(([fields, dispatch]) => {
-    return fields[fieldToUse].value as string;
-  });
+  // The value of the checkbox
+  // We're using separate useFormFields to minimise re-renders
+  const checkboxValue = useFormFields(([fields]) => {
+    return fields[checkboxFieldPath]?.value as string
+  })
+
+  // The value of the field we're listening to for the slug
+  const targetFieldValue = useFormFields(([fields]) => {
+    return fields[fieldToUse]?.value as string
+  })
 
   useEffect(() => {
     if (checkboxValue) {
-      if (fieldToUseValue) {
-        const formattedSlug = formatSlug(fieldToUseValue);
+      if (targetFieldValue) {
+        const formattedSlug = formatSlug(targetFieldValue)
 
-        if (value !== formattedSlug) setValue(formattedSlug);
+        if (value !== formattedSlug) setValue(formattedSlug)
       } else {
-        if (value !== "") setValue("");
+        if (value !== '') setValue('')
       }
     }
-  }, [fieldToUseValue, checkboxValue, setValue, value]);
+  }, [targetFieldValue, checkboxValue, setValue, value])
 
   const handleLock = useCallback(
-    (e: MouseEvent<Element>) => {
-      e.preventDefault();
-      setCheckboxValue(!checkboxValue);
-    },
-    [checkboxValue, setCheckboxValue],
-  );
+    (e) => {
+      e.preventDefault()
 
-  const readOnly = readOnlyFromProps || checkboxValue;
+      dispatchFields({
+        type: 'UPDATE',
+        path: checkboxFieldPath,
+        value: !checkboxValue,
+      })
+    },
+    [checkboxValue, checkboxFieldPath, dispatchFields],
+  )
+
+  const readOnly = readOnlyFromProps || checkboxValue
 
   return (
     <div className="field-type slug-field-component">
       <div className="label-wrapper">
-        <FieldLabel field={field} htmlFor={`field-${path}`} label={label} />
+        <FieldLabel htmlFor={`field-${path}`} label={label} />
 
         <Button className="lock-button" buttonStyle="none" onClick={handleLock}>
-          {checkboxValue ? "Unlock" : "Lock"}
+          {checkboxValue ? 'Unlock' : 'Lock'}
         </Button>
       </div>
 
       <TextInput
-        label={""}
         value={value}
         onChange={setValue}
-        path={path}
-        readOnly={readOnly}
+        path={path || field.name}
+        readOnly={Boolean(readOnly)}
       />
     </div>
-  );
-};
+  )
+}
