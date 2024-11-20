@@ -17,7 +17,7 @@ export default function ServicesPage() {
               </div>
               <div className="max-w-6xl">
                 {" "}
-                <Title level="h1" size="display-small">
+                <Title el="h1" size="display-small">
                   The talent, tools, and deliverables to spark action for your
                   brand.
                 </Title>
@@ -627,12 +627,6 @@ export default function ServicesPage() {
         </div>
         <div className="m-auto w-[92%] pt-24 min-[1921px]:max-w-[118.75rem]">
           <div className="relative">
-            <div className="mb-4 flex items-center">
-              <span className="mr-2 inline-block h-2 w-2 rounded-full bg-brand-dark-bg"></span>
-              <span className="text-md font-medium uppercase">
-                Related Projects
-              </span>
-            </div>
             <ul className="list-none flex-wrap min-[769px]:flex">
               <li className="relative list-item min-[769px]:w-[48.2105%]">
                 <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase text-white min-[1025px]:p-8">
@@ -709,7 +703,7 @@ export default function ServicesPage() {
                     >
                       <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
                         View
-                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1925px]:pt-1.5" />
+                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
                       </span>
                     </Link>
                   </div>

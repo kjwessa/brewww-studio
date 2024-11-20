@@ -7,6 +7,8 @@ import { HomeHeroSection } from "./HomeHeroSection/index";
 import { WorkGridSection } from "./WorkGridSection/index";
 import { BlogGridSection } from "./BlogGridSection/index";
 import { ServicesSection } from "./ServicesSection/index";
+import { HomeAboutSection } from "./HomeAboutSection";
+import { HomeImpactSection } from "./HomeImpactSection";
 
 export default async function Home() {
   const payload = await getPayloadHMR({ config: configPromise });
@@ -46,115 +48,12 @@ export default async function Home() {
   return (
     <>
       <HomeHeroSection />
-      <section className="bg-brand-dark-bg py-24 text-zinc-50">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col items-center">
-            <div className="grid grid-cols-12 py-16 sm:py-24 md:py-32">
-              <div className="col-span-9 col-start-1 text-headline-large leading-none">
-                From fast-growing startups to experienced companies, we deliver
-                functional design, high-quality code and well-thought strategy
-                to increase your odds of success in the digital world.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <HomeAboutSection />
       <WorkGridSection projects={projects.docs} />
       <ImageGrow />
       <ServicesSection services={services.docs} />
       <BlogGridSection posts={posts.docs} />
-      <section className="bg-brand-dark-bg py-16 text-zinc-50">
-        <div className="container mx-auto px-4">
-          <div className="grid auto-cols-fr grid-cols-[1fr_1fr_1fr] grid-rows-[1fr_1fr_1fr] gap-8">
-            <div
-              className="col-start-3 col-end-4 row-start-2 row-end-3 flex min-h-[20vw] flex-col justify-between gap-[6.50rem] overflow-hidden rounded-lg bg-brand-dark-surface p-6"
-              style={{ gridArea: "2 / 3 / 3 / 4" }}
-            >
-              <div className="text-right text-[5.88rem] font-medium leading-none">
-                <div>+26</div>
-              </div>
-              <div className="flex flex-col gap-[1.13rem]">
-                <div className="text-5xl font-medium">Awards</div>
-                <div className="text-base opacity-80">
-                  <div>
-                    Celebrating our commitment to excellence, innovation, and
-                    the transformative power of outstanding design.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-start-1 col-end-2 row-start-1 row-end-2 flex min-h-[20vw] flex-col justify-between gap-[6.50rem] overflow-hidden rounded-lg bg-brand-dark-surface p-6"
-              style={{ gridArea: "1 / 1 / 2 / 2" }}
-            >
-              <div className="text-right text-[5.88rem] font-medium leading-none">
-                <div>2024</div>
-              </div>
-              <div className="flex flex-col gap-[1.13rem]">
-                <div className="text-5xl font-medium">Years of experience</div>
-                <div className="text-base opacity-80">
-                  <div>
-                    We elevated our design agency to new heights, embracing
-                    cutting-edge trends and innovative practices
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-start-3 col-end-4 row-start-1 row-end-2 flex min-h-[20vw] flex-col justify-between gap-[6.50rem] overflow-hidden rounded-lg bg-brand-dark-surface p-6"
-              style={{ gridArea: "1 / 3 / 2 / 4" }}
-            >
-              <div className="text-right text-[5.88rem] font-medium leading-none">
-                <div>137%</div>
-              </div>
-              <div className="flex flex-col gap-[1.13rem]">
-                <div className="text-5xl font-medium">Growth</div>
-                <div className="text-base opacity-80">
-                  <div>
-                    The trust our clients place in our ability to deliver
-                    exceptional design solutions.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-start-2 col-end-3 row-start-2 row-end-3 flex min-h-[20vw] flex-col justify-between gap-[6.50rem] overflow-hidden rounded-lg bg-brand-dark-surface p-6"
-              style={{ gridArea: "2 / 2 / 3 / 3" }}
-            >
-              <div className="text-right text-[5.88rem] font-medium leading-none">
-                <div>+30</div>
-              </div>
-              <div className="flex flex-col gap-[1.13rem]">
-                <div className="text-5xl font-medium">Clients</div>
-                <div className="text-base opacity-80">
-                  <div>
-                    Bringing unique challenges that have enriched our creative
-                    journey and expanded our industry impact.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-start-2 col-end-3 row-start-3 row-end-4 flex min-h-[20vw] flex-col justify-between gap-[6.50rem] overflow-hidden rounded-lg bg-brand-dark-surface p-6"
-              style={{ gridArea: "3 / 2 / 4 / 3" }}
-            >
-              <div className="text-right text-[5.88rem] font-medium leading-none">
-                <div>+56</div>
-              </div>
-              <div className="flex flex-col gap-[1.13rem]">
-                <div className="text-5xl font-medium">Cases</div>
-                <div className="text-base opacity-80">
-                  <div>
-                    Our diverse project experience showcases our ability to
-                    tailor bespoke solutions that drive success
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeImpactSection />
       <section className="bg-brand-dark-bg text-zinc-50">
         <div className="relative content-stretch items-start justify-start px-24 py-48 font-light">
           <div className="relative m-auto flex w-full max-w-[62.50rem] flex-grow auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto_auto] flex-col items-stretch justify-center self-start">

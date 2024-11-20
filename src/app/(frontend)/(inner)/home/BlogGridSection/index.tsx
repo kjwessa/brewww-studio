@@ -1,5 +1,7 @@
 import { Post } from "@/payload-types";
 import { BlogCard } from "@/components/BlogCard/index";
+import { Title } from "@/components/Title";
+import { Text } from "@/components/Text";
 
 export function BlogGridSection({ posts }: { posts: Post[] }) {
   return (
@@ -7,13 +9,17 @@ export function BlogGridSection({ posts }: { posts: Post[] }) {
       <div className="relative z-10 m-auto w-full max-w-[100.00rem] px-24 pt-24">
         <div className="flex flex-wrap px-24">
           <div className="-ml-3.5 w-full max-w-[91.6667%] basis-7/12 text-label-large">
-            <p className="mb-6 uppercase">
+            <Text level="p" size="label-large" className="mb-6 uppercase">
               <span className="mr-2 font-bold text-brand-gold">/</span>Featured
               Insights
-            </p>
-            <h2 className="mb-28 text-headline-medium leading-none">
+            </Text>
+            <Title
+              el="h2"
+              size="headline-medium"
+              className="mb-28 leading-none"
+            >
               Branding, tech, and business insights.
-            </h2>
+            </Title>
           </div>
         </div>
       </div>

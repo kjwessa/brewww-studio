@@ -65,7 +65,7 @@ export function WorkCard({ project }: WorkCardProps) {
         </div>
 
         <Title
-          level="h3"
+          el="h3"
           size="title-medium"
           className="max-w-2xl leading-none"
         >
