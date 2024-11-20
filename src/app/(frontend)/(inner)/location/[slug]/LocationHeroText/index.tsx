@@ -1,10 +1,20 @@
 "use client";
 
+import { RichText } from "@/components/RichText";
+
 interface LocationHeroTextProps {
   title?: string;
+  description?: {
+    root: {
+      children: any[];
+    };
+  };
 }
 
-export function LocationHeroText({ title = "A Web Design Studio in Penscaola, FL." }: LocationHeroTextProps) {
+export function LocationHeroText({
+  title = "A Web Design Studio in Penscaola, FL.",
+  description,
+}: LocationHeroTextProps) {
   return (
     <section className="w-full bg-brand-dark-bg pb-10 pt-20 text-black lg:pb-16 lg:pt-32 xl:pt-40">
       <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
@@ -22,27 +32,7 @@ export function LocationHeroText({ title = "A Web Design Studio in Penscaola, FL
           </div>
           <div className="mt-5 w-full px-2 text-lg font-light text-zinc-400 lg:mt-10 lg:w-[43.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
             <div className="w-full">
-              <p className="mb-6">
-                Here at Brewww Studio, we offer honest advice, industry
-                experience, and a great portfolio of work.
-                <br />
-                <br />
-                UI/UX, wireframes, research and development — we understand
-                all areas of web design. We can take a start-up business with
-                nothing to a fully functioning brand online and offline. We
-                can revamp an existing website or take a successful brand to
-                the next level. Our talented and creative in-house{" "}
-                <a
-                  className="rounded-md bg-zinc-800 px-1 py-1 text-white underline"
-                  href=""
-                >
-                  web design team in Pensacola
-                </a>{" "}
-                will work alongside you in collaboration to create a site that
-                reflects your brand, talks to your audience with meaning and
-                personality, and has great functionality across the latest
-                devices.
-              </p>
+              {description && <RichText content={description} />}
             </div>
           </div>
         </div>
