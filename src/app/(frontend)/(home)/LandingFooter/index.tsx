@@ -1,9 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function LandingFooter() {
+export function LandingFooter() {
   return (
-    <div className="border-t-2 border-solid border-t-black/[0.1] bg-white">
+    <section
+      className="border-t-2 border-solid border-t-black/[0.1] bg-white"
+      id="contact"
+    >
       <div className="px-4 pb-0 pt-4">
         <div className="flex flex-col gap-48">
           <div className="grid w-full auto-cols-fr grid-cols-12 grid-rows-[auto] content-start gap-x-4 gap-y-12">
@@ -49,54 +52,18 @@ export default function LandingFooter() {
             >
               <div className="text-black">Social</div>
               <div className="text-blue-700">
-                <a
-                  className="flex max-w-full items-center justify-between py-2"
+                <Link
+                  className="flex max-w-full items-center justify-between px-0 py-2 transition-all duration-300 hover:bg-black hover:px-4"
                   href=""
                 >
-                  <div className="cursor-pointer text-black blur-[0px]">
-                    Instagram
-                  </div>
-                  <img
-                    className="inline-block h-4 w-4 max-w-full cursor-pointer align-middle blur-[0px]"
-                    src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d73da8c64d61796ed2fcd3_Link%20Arrow%20Black.svg"
-                  />
-                </a>
-                <a
-                  className="flex max-w-full items-center justify-between py-2"
-                  href=""
-                >
-                  <div className="cursor-pointer text-black blur-[0px]">
+                  <div className="cursor-pointer text-black blur-[0px] transition-colors duration-300 hover:text-white">
                     Facebook
                   </div>
                   <img
-                    className="inline-block h-4 w-4 max-w-full cursor-pointer align-middle blur-[0px]"
+                    className="inline-block h-4 w-4 max-w-full cursor-pointer align-middle blur-[0px] transition-[filter] duration-300 group-hover:brightness-0 group-hover:invert"
                     src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d73da8c64d61796ed2fcd3_Link%20Arrow%20Black.svg"
                   />
-                </a>
-                <a
-                  className="flex max-w-full items-center justify-between py-2"
-                  href=""
-                >
-                  <div className="cursor-pointer text-black blur-[0px]">
-                    Tiktok
-                  </div>
-                  <img
-                    className="inline-block h-4 w-4 max-w-full cursor-pointer align-middle blur-[0px]"
-                    src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d73da8c64d61796ed2fcd3_Link%20Arrow%20Black.svg"
-                  />
-                </a>
-                <a
-                  className="flex max-w-full items-center justify-between py-2"
-                  href=""
-                >
-                  <div className="cursor-pointer text-black blur-[0px]">
-                    Youtube
-                  </div>
-                  <img
-                    className="inline-block h-4 w-4 max-w-full cursor-pointer align-middle blur-[0px]"
-                    src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d73da8c64d61796ed2fcd3_Link%20Arrow%20Black.svg"
-                  />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -139,6 +106,6 @@ export default function LandingFooter() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
