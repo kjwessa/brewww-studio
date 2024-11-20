@@ -1,6 +1,5 @@
-
 import Image from "next/image";
-import { Heading } from "@/components/Heading";
+import { Title } from "@/components/Title";
 
 export function AboutHeroSection() {
   return (
@@ -11,7 +10,7 @@ export function AboutHeroSection() {
             <div className="pb-5">+ About Our Studio</div>
           </div>
           <div className="col-start-1 col-end-6 row-start-2 flex h-full w-full flex-col items-center justify-center self-stretch text-headline-medium leading-none">
-            <h1 className="my-3 min-h-[0vw] mx-0">
+            <h1 className="mx-0 my-3 min-h-[0vw]">
               In a world obsessed with the next big thing, we're focused on
               crafting the next right thing. Our studio exists to transform bold
               visions into enduring brand realities.
