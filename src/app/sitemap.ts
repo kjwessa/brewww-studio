@@ -36,9 +36,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       const { docs } = await fetch(
         `${config.serverUrl}/api/${collection.endpoint}?where[_status][equals]=published&limit=0`,
         {
-          cache: "no-store", // Force fresh data
+          cache: "no-store",
           next: {
-            tags: ["sitemap"], // Add a tag for manual revalidation
+            tags: ["sitemap"],
           },
         },
       ).then((res) => res.json());
