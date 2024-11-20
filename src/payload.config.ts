@@ -4,19 +4,21 @@ import { fileURLToPath } from "url";
 import sharp from "sharp";
 
 //* Import Plugins
-import { s3Storage } from "@payloadcms/storage-s3";
+import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
+import { redirectsPlugin } from "@payloadcms/plugin-redirects";
 import { seoPlugin } from "@payloadcms/plugin-seo";
 import { GenerateTitle, GenerateURL } from "@payloadcms/plugin-seo/types";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
-import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
-import { redirectsPlugin } from "@payloadcms/plugin-redirects";
+import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
+import { s3Storage } from "@payloadcms/storage-s3";
 
 //* Import Collections
 import { BlogCategories } from "@/collections/BlogCategories/config";
 import { BlogPosts } from "@/collections/BlogPosts/config";
 import { Brands } from "@/collections/Brands/config";
 import { FAQ } from "@/collections/FAQ/config";
+import { Journeys } from "@/collections/Journeys/config";
 import { Location } from "@/collections/Locations/config";
 import { Media } from "@/collections/Media/config";
 import { Pages } from "@/collections/Pages/config";
@@ -24,12 +26,11 @@ import { Pillars } from "@/collections/Pillars/config";
 import { Playground } from "@/collections/Play/config";
 import { Results } from "@/collections/Results/config";
 import { Services } from "@/collections/Services/config";
+import { Team } from "@/collections/Team/config";
+import { Technologies } from "@/collections/Technologies/config";
 import { Testimonials } from "@/collections/Testimonials/config";
 import { Users } from "@/collections/Users/config";
 import { Work } from "@/collections/Work/config";
-import { Technologies } from "@/collections/Technologies/config";
-import { Team } from "@/collections/Team/config";
-import { Journeys } from "@/collections/Journeys/config";
 
 //* Import Hooks
 import { revalidateRedirects } from "@/hooks/revalidateRedirects";
@@ -204,11 +205,6 @@ export default buildConfig({
       generateTitle,
       generateURL,
       uploadsCollection: "media",
-      fieldOverrides: {
-        title: { required: false },
-        description: { required: false },
-        image: { required: false },
-      },
     }),
     formBuilderPlugin({
       fields: {
