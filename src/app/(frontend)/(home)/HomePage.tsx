@@ -1,5 +1,4 @@
 import { PortfolioCard } from "./PortfolioCard";
-import { ServiceAccordion } from "./ServiceAccordion";
 
 export default function HomePage() {
   return (
@@ -183,19 +182,127 @@ export default function HomePage() {
                   Service
                 </h2>
                 <section className="flex-col">
-                  <ServiceAccordion
-                    id="01"
-                    serviceName="Visual Identity"
-                    description="Our Visual Identity service is designed to help creative agencies establish a strong and unique brand identity. We work closely with our clients to understand vision and values, and then create a visual identity reflects their personality and resonates with their target"
-                    tools={[
-                      "Illustrative Style",
-                      "Mascot",
-                      "Key Visual",
-                      "Retail or digital strategy",
-                    ]}
-                    image1="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66e6535dc1fd2d48a94cf9b0_S1.webp"
-                    image2="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66e6535db2aa17f270c06316_S2.webp"
-                  />
+                  <div className="border-t-2 border-solid border-t-black/[0.1]">
+                    <div className="py-6">
+                      <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start gap-4">
+                        <div className="text-5xl font-medium text-black">
+                          01
+                        </div>
+                        <div className="col-start-4 col-end-11 row-start-1 row-end-2 text-5xl font-medium text-black">
+                          Visual Identity
+                        </div>
+                        <img
+                          className="col-start-11 col-end-13 row-start-1 row-end-2 inline-block h-8 w-8 max-w-full self-center justify-self-end align-middle"
+                          src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d1955516c02b288d9f66e0_Plus%20Icon.svg"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="pt-8">
+                        <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start gap-x-4 gap-y-12">
+                          <div className="col-start-4 row-start-1 row-end-2 grid auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto] gap-4">
+                            <img
+                              className="inline-block h-40 w-full max-w-full align-middle"
+                              src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66e6535dc1fd2d48a94cf9b0_S1.webp"
+                            />
+                            <img
+                              className="inline-block h-40 w-full max-w-full align-middle"
+                              src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66e6535db2aa17f270c06316_S2.webp"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="col-start-4 col-end-8 row-start-2 row-end-3 pb-32 pt-16"
+                        style={{
+                          gridArea: "2 / 4 / 3 / 8",
+                        }}
+                      >
+                        <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start gap-x-4 gap-y-12">
+                          <div className="col-start-4 col-end-8 row-start-1 row-end-2 flex flex-col gap-2">
+                            <div className="text-black">What we do</div>
+                            <div className="h-0 w-full bg-black/[0.1]" />
+                            <div className="text-black">
+                              Our Visual Identity service is designed to help
+                              creative agencies establish a strong and unique
+                              brand identity. We work closely with our clients
+                              to understand vision and values, and then create a
+                              visual identity reflects their personality and
+                              resonates with their target <br />
+                              <br />
+                              With our expertise, creative agencies can
+                              confidently showcase their creativity and
+                              professionalism to stand out in a competitive
+                              market
+                            </div>
+                          </div>
+                          <div
+                            className="col-start-10 col-end-13 row-start-1 row-end-2 flex flex-col gap-2"
+                            style={{
+                              gridArea: "1 / 10 / 2 / 13",
+                            }}
+                          >
+                            <div className="text-black">Tools</div>
+                            <div>
+                              <div className="flex items-center justify-between py-2">
+                                <div className="text-black">
+                                  Illustrative Style
+                                </div>
+                                <div className="h-1.5 w-1.5 rounded-2xl bg-black" />
+                              </div>
+                              <div className="flex items-center justify-between py-2">
+                                <div className="text-black">Mascot</div>
+                                <div className="h-1.5 w-1.5 rounded-2xl bg-black" />
+                              </div>
+                              <div className="flex items-center justify-between py-2">
+                                <div className="text-black">Key Visual</div>
+                                <div className="h-1.5 w-1.5 rounded-2xl bg-black" />
+                              </div>
+                              <div className="flex items-center justify-between py-2">
+                                <div className="text-black">
+                                  Retail or digital strategy
+                                </div>
+                                <div className="h-1.5 w-1.5 rounded-2xl bg-black" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="border-t-2 border-solid border-t-black/[0.1]">
+                    <div className="py-6">
+                      <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start gap-4">
+                        <div className="text-5xl font-medium text-black">
+                          02
+                        </div>
+                        <div className="col-start-4 col-end-11 row-start-1 row-end-2 text-5xl font-medium text-black">
+                          Strategy
+                        </div>
+                        <img
+                          className="col-start-11 col-end-13 row-start-1 row-end-2 inline-block h-8 w-8 max-w-full self-center justify-self-end align-middle"
+                          src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d1955516c02b288d9f66e0_Plus%20Icon.svg"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="border-t-2 border-solid border-t-black/[0.1]">
+                    <div className="py-6">
+                      <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start gap-4">
+                        <div className="text-5xl font-medium text-black">
+                          03
+                        </div>
+                        <div className="col-start-4 col-end-11 row-start-1 row-end-2 text-5xl font-medium text-black">
+                          Communication
+                        </div>
+                        <img
+                          className="col-start-11 col-end-13 row-start-1 row-end-2 inline-block h-8 w-8 max-w-full self-center justify-self-end align-middle"
+                          src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d1955516c02b288d9f66e0_Plus%20Icon.svg"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </section>
               </div>
             </div>
@@ -205,6 +312,7 @@ export default function HomePage() {
             <img
               className="inline-block h-[59.33rem] w-full max-w-full align-middle"
               src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d7195fe42755fefbae5362_Section%20Image%201.webp"
+              srcSet="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d7195fe42755fefbae5362_Section%20Image%201-p-500.webp 500w, https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d7195fe42755fefbae5362_Section%20Image%201-p-800.webp 800w, https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d7195fe42755fefbae5362_Section%20Image%201-p-1080.webp 1080w, https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d7195fe42755fefbae5362_Section%20Image%201-p-1600.webp 1600w, https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d7195fe42755fefbae5362_Section%20Image%201.webp 1920w"
             />
           </div>
           <div className="px-4 py-4 pb-48">
