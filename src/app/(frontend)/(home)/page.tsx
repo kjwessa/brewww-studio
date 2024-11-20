@@ -180,13 +180,39 @@ export default function HomePage() {
             <div className="bg-white px-4 py-4 pb-48 text-sm text-zinc-800">
               <div className="flex flex-col items-stretch justify-start gap-4">
                 <h2 className="text-[12.75rem] font-medium leading-none text-black">
-                  Service
+                  Services
                 </h2>
                 <section className="flex-col">
                   <ServiceAccordion
                     id="01"
-                    serviceName="Visual Identity"
+                    serviceName="Branding"
                     description="Our Visual Identity service is designed to help creative agencies establish a strong and unique brand identity. We work closely with our clients to understand vision and values, and then create a visual identity reflects their personality and resonates with their target"
+                    tools={[
+                      "Illustrative Style",
+                      "Mascot",
+                      "Key Visual",
+                      "Retail or digital strategy",
+                    ]}
+                    image1="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66e6535dc1fd2d48a94cf9b0_S1.webp"
+                    image2="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66e6535db2aa17f270c06316_S2.webp"
+                  />
+                  <ServiceAccordion
+                    id="02"
+                    serviceName="Web"
+                    description="The strategy service of our creative studio is designed to help businesses develop and innovative strategies to achieve their goals. Our team of experts collaborates closely with clients to understand their unique needs and challenges conducting thorough market research and analysis to identify opportunities and potential obstacles"
+                    tools={[
+                      "Illustrative Style",
+                      "Mascot",
+                      "Key Visual",
+                      "Retail or digital strategy",
+                    ]}
+                    image1="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66e6535dc1fd2d48a94cf9b0_S1.webp"
+                    image2="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66e6535db2aa17f270c06316_S2.webp"
+                  />
+                  <ServiceAccordion
+                    id="03"
+                    serviceName="Content"
+                    description="We partner with founders who have a strong brand foundation and are ready to take the next steps to grow their ventures at speed. Working with the relevant performance marketing specialists, our acceleration framework is designed to scale businesses with new consumers without compromising in brand promises and positioning. We understand that effective communication is the key to success in today's fast-paced and competitive market. That's why our team of experts is here to provide you with comprehensive strategies and solutions that will elevate your brand's messaging and engage your customers in meaningful ways"
                     tools={[
                       "Illustrative Style",
                       "Mascot",
@@ -207,36 +233,11 @@ export default function HomePage() {
               src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d7195fe42755fefbae5362_Section%20Image%201.webp"
             />
           </div>
-          <div className="px-4 py-4 pb-48">
-            <div className="mb-16">
-              <div className="flex flex-col gap-8">
-                <div className="border-b-2 border-solid border-b-black/[0.1] pb-3">
-                  <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start gap-4">
-                    <h2 className="col-start-1 row-start-1 row-end-2 text-[12.75rem] font-medium leading-none text-white">
-                      News
-                    </h2>
-                    <a
-                      className="col-start-11 col-end-13 row-start-1 row-end-2 inline-block max-w-full self-end justify-self-end overflow-hidden text-blue-700"
-                      href=""
-                    >
-                      <div className="cursor-pointer text-white">View All</div>
-                      <div className="h-0 w-full cursor-pointer bg-white" />
-                    </a>
-                  </div>
-                </div>
-                <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start text-5xl font-medium text-white">
-                  <div className="col-end-12 row-start-1 row-end-2">
-                    Achieve narrative design excellence by infusing your story
-                    with captivating visuals
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="border-t-2 border-solid border-t-black/[0.1]">
+
+          <div className="border-t-2 border-solid border-t-black/[0.1] bg-white">
             <div className="px-4 pb-0 pt-4">
               <div className="flex flex-col gap-48">
-                <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start gap-x-4 gap-y-12">
+                <div className="grid w-full auto-cols-fr grid-cols-12 grid-rows-[auto] content-start gap-x-4 gap-y-12">
                   <a
                     className="col-start-1 row-start-1 row-end-2 inline-block max-w-full text-blue-700 underline"
                     href=""
@@ -251,37 +252,37 @@ export default function HomePage() {
                       className="inline-block max-w-full overflow-hidden"
                       href=""
                     >
-                      <div className="cursor-pointer text-5xl font-medium text-white">
+                      <div className="cursor-pointer text-5xl font-medium text-black">
                         Work
                       </div>
-                      <div className="h-0 w-full cursor-pointer bg-white" />
+                      <div className="h-0 w-full cursor-pointer bg-black" />
                     </a>
                     <a
                       className="inline-block max-w-full overflow-hidden"
                       href=""
                     >
-                      <div className="cursor-pointer text-5xl font-medium text-white">
+                      <div className="cursor-pointer text-5xl font-medium text-black">
                         About
                       </div>
-                      <div className="h-0 w-full cursor-pointer bg-white" />
+                      <div className="h-0 w-full cursor-pointer bg-black" />
                     </a>
                     <a
                       className="inline-block max-w-full overflow-hidden"
                       href=""
                     >
-                      <div className="cursor-pointer text-5xl font-medium text-white">
+                      <div className="cursor-pointer text-5xl font-medium text-black">
                         News
                       </div>
-                      <div className="h-0 w-full cursor-pointer bg-white" />
+                      <div className="h-0 w-full cursor-pointer bg-black" />
                     </a>
                     <a
                       className="inline-block max-w-full overflow-hidden"
                       href=""
                     >
-                      <div className="cursor-pointer text-5xl font-medium text-white">
+                      <div className="cursor-pointer text-5xl font-medium text-black">
                         Contact
                       </div>
-                      <div className="h-0 w-full cursor-pointer bg-white" />
+                      <div className="h-0 w-full cursor-pointer bg-black" />
                     </a>
                   </div>
                   <div
@@ -290,13 +291,13 @@ export default function HomePage() {
                       gridArea: "1 / 10 / 2 / 13",
                     }}
                   >
-                    <div className="text-white">Social</div>
+                    <div className="text-black">Social</div>
                     <div className="text-blue-700">
                       <a
                         className="flex max-w-full items-center justify-between py-2"
                         href=""
                       >
-                        <div className="cursor-pointer text-white blur-[0px]">
+                        <div className="cursor-pointer text-black blur-[0px]">
                           Instagram
                         </div>
                         <img
@@ -308,7 +309,7 @@ export default function HomePage() {
                         className="flex max-w-full items-center justify-between py-2"
                         href=""
                       >
-                        <div className="cursor-pointer text-white blur-[0px]">
+                        <div className="cursor-pointer text-black blur-[0px]">
                           Facebook
                         </div>
                         <img
@@ -320,7 +321,7 @@ export default function HomePage() {
                         className="flex max-w-full items-center justify-between py-2"
                         href=""
                       >
-                        <div className="cursor-pointer text-white blur-[0px]">
+                        <div className="cursor-pointer text-black blur-[0px]">
                           Tiktok
                         </div>
                         <img
@@ -332,7 +333,7 @@ export default function HomePage() {
                         className="flex max-w-full items-center justify-between py-2"
                         href=""
                       >
-                        <div className="cursor-pointer text-white blur-[0px]">
+                        <div className="cursor-pointer text-black blur-[0px]">
                           Youtube
                         </div>
                         <img
@@ -343,44 +344,44 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-                <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start">
-                  <div className="col-end-13 row-start-1 row-end-2 flex flex-col gap-2 justify-self-start">
-                    <div className="text-white">
+                <div className="grid w-full auto-cols-fr grid-cols-12 grid-rows-[auto] content-start">
+                  <div className="col-span-8 col-start-3 row-start-1 row-end-2 flex flex-col gap-2 justify-self-start">
+                    <div className="text-black">
                       Interested in working with us?
                     </div>
                     <a
                       className="inline-block max-w-full overflow-hidden text-blue-700"
                       href=""
                     >
-                      <div className="cursor-pointer text-[12.75rem] font-medium leading-none text-white">
+                      <div className="cursor-pointer text-[12.75rem] font-medium leading-none text-black">
                         Let's Chat
                       </div>
-                      <div className="h-1 w-full cursor-pointer bg-white" />
+                      <div className="h-1 w-full cursor-pointer bg-black" />
                     </a>
                   </div>
                 </div>
               </div>
               <div className="mt-4 py-4">
-                <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start gap-4">
+                <div className="grid w-full auto-cols-fr grid-cols-12 grid-rows-[auto] content-start gap-4">
                   <a
                     className="col-start-1 row-start-1 row-end-2 inline-block max-w-full justify-self-start overflow-hidden text-blue-700"
                     href=""
                   >
-                    <div className="cursor-pointer text-white">
+                    <div className="cursor-pointer text-black">
                       More Template
                     </div>
-                    <div className="h-0 w-full cursor-pointer bg-white" />
+                    <div className="h-0 w-full cursor-pointer bg-black" />
                   </a>
                   <div className="col-start-4 col-end-8 row-start-1 row-end-2 flex gap-8 text-blue-700">
                     <a
                       className="inline-block max-w-full overflow-hidden"
                       href=""
                     >
-                      <div className="cursor-pointer text-white">Webflow</div>
-                      <div className="h-0 w-full cursor-pointer bg-white" />
+                      <div className="cursor-pointer text-black">Webflow</div>
+                      <div className="h-0 w-full cursor-pointer bg-black" />
                     </a>
                   </div>
-                  <div className="col-end-13 row-start-1 row-end-2 justify-self-end text-white">
+                  <div className="col-end-13 row-start-1 row-end-2 justify-self-end text-black">
                     ©2024
                   </div>
                 </div>
