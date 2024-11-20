@@ -32,7 +32,15 @@ export function LocationHeroText({
           </div>
           <div className="mt-5 w-full px-2 text-lg font-light text-zinc-400 lg:mt-10 lg:w-[43.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
             <div className="w-full">
-              {description && <RichText content={description} />}
+              {description && (
+                <RichText 
+                  content={description} 
+                  enableProse={false}
+                  customClasses={{
+                    paragraph: 'text-body-medium text-zinc-400'
+                  }}
+                />
+              )}
             </div>
           </div>
         </div>

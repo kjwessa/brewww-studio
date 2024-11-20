@@ -1,22 +1,22 @@
 // Payload Imports
-import type { CollectionConfig } from "payload";
+import type { CollectionConfig } from 'payload'
 
 // Access Imports
-import { isAdmin } from "@/access/isAdmin";
-import { publishedOnly } from "@/access/publishedOnly";
+import { isAdmin } from '@/access/isAdmin'
+import { publishedOnly } from '@/access/publishedOnly'
 
 // Field Imports
-import { slugField } from "@/fields/slug";
-import { metaTab } from "@/fields/meta";
+import { slugField } from '@/fields/slug'
+import { metaTab } from '@/fields/meta'
 
 // Block Imports
-import { FormBlock } from "@/blocks/Form/config";
+import { MediaBlock } from '@/blocks/MediaBlock/config'
 
 // Utilities Imports
-import { generatePreviewPath } from "@root/utilities/generatePreviewPath";
+import { generatePreviewPath } from '@root/utilities/generatePreviewPath'
 
 export const Pages: CollectionConfig = {
-  slug: "pages",
+  slug: 'pages',
 
   //* Access Settings
   access: {
@@ -30,26 +30,26 @@ export const Pages: CollectionConfig = {
   //* Collection Fields
   fields: [
     {
-      name: "title",
-      label: "Title",
-      type: "text",
+      name: 'title',
+      label: 'Title',
+      type: 'text',
       required: true,
       admin: {
-        description: "The title of the page.",
+        description: 'The title of the page.',
       },
     },
     {
-      type: "tabs",
+      type: 'tabs',
       tabs: [
         {
-          label: "Content",
+          label: 'Content',
           fields: [
             {
-              name: "layout",
-              type: "blocks",
-              label: "Layout",
+              name: 'layout',
+              type: 'blocks',
+              label: 'Layout',
               required: false,
-              blocks: [FormBlock],
+              blocks: [MediaBlock],
             },
           ],
         },
@@ -62,28 +62,28 @@ export const Pages: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    useAsTitle: "title",
+    useAsTitle: 'title',
     livePreview: {
       url: ({ data }) => {
         const path = generatePreviewPath({
-          slug: typeof data?.slug === "string" ? data.slug : "",
-          collection: "pages",
-        });
+          slug: typeof data?.slug === 'string' ? data.slug : '',
+          collection: 'pages',
+        })
 
-        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`;
+        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
       },
     },
     preview: (data) => {
       const path = generatePreviewPath({
-        slug: typeof data?.slug === "string" ? data.slug : "",
-        collection: "pages",
-      });
+        slug: typeof data?.slug === 'string' ? data.slug : '',
+        collection: 'pages',
+      })
 
-      return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`;
+      return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
     },
   },
   versions: {
     drafts: { autosave: { interval: 100 } },
     maxPerDoc: 25,
   },
-};
+}

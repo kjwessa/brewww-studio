@@ -12,7 +12,7 @@ import { getPayloadHMR } from "@payloadcms/next/utilities";
 import { Post, Service } from "@/payload-types";
 
 // Components
-import RichText from "@/components/RichText/index";
+import { RichText } from "@/components/RichText";
 import TableOfContents from "@/components/TableOfContents/index";
 import { LexicalNode } from "@/components/RichText/nodeFormat";
 
@@ -139,12 +139,25 @@ export default async function ServicePage({
         <div className="md:col-span-1"></div>
         <div className="md:col-span-2">
           <article className="prose mx-auto pb-24">
-            <RichText
-              content={service.description || ""}
-              enableProse={true}
-              enableGutter={false}
-              theme="light"
-            />
+            {service.description && 
+             typeof service.description === 'object' && 
+             'root' in service.description ? (
+              <RichText
+                content={service.description}
+                enableProse={true}
+                enableGutter={false}
+                preset="blogPost"
+                customClasses={{
+                  paragraph: 'text-body-medium text-gray-800',
+                  h2: 'text-headline-medium font-bold text-gray-900',
+                  link: 'underline hover:text-brand-gold text-gray-900'
+                }}
+              />
+            ) : (
+              <p className="text-body-medium text-gray-800">
+                {typeof service.description === 'string' ? service.description : ''}
+              </p>
+            )}
           </article>
         </div>
       </div>
