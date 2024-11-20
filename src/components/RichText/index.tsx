@@ -32,7 +32,7 @@ type RichTextProps = VariantProps<typeof richTextVariants> & {
   preset?: keyof typeof typographyPresets
 }
 
-const RichText: React.FC<RichTextProps> = ({
+export const RichText: React.FC<RichTextProps> = ({
   className,
   content,
   enableGutter,
@@ -64,4 +64,3 @@ const RichText: React.FC<RichTextProps> = ({
     </div>
   )
 }
-export default RichText

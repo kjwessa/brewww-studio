@@ -1,43 +1,39 @@
-import configPromise from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
-import React from "react";
-import RichText from "@/components/RichText/index";
-import { notFound } from "next/navigation";
-import { Work } from "@/payload-types";
-import Image from "next/image";
-import Link from "next/link";
+import configPromise from '@payload-config'
+import { getPayloadHMR } from '@payloadcms/next/utilities'
+import React from 'react'
+import { RichText } from '@/components/RichText/index'
+import { notFound } from 'next/navigation'
+import { Work } from '@/payload-types'
+import Image from 'next/image'
+import Link from 'next/link'
 
-import { BeforeAfter } from "./BeforeAfter";
-import { Service } from "@/payload-types";
-import { ImageGrow } from "./HeroImageGrow";
+import { BeforeAfter } from './BeforeAfter'
+import { Service } from '@/payload-types'
+import { ImageGrow } from './HeroImageGrow'
 
 export async function generateStaticParams() {
-  const payload = await getPayloadHMR({ config: configPromise });
+  const payload = await getPayloadHMR({ config: configPromise })
   const projects = await payload.find({
-    collection: "work",
+    collection: 'work',
     limit: 1000,
     overrideAccess: false,
-  });
+  })
   return (
     projects.docs?.map(({ slug }) => ({
       params: { slug },
     })) || []
-  );
+  )
 }
 
-export default async function WorkPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const resolvedParams = await params;
+export default async function WorkPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params
   if (!resolvedParams.slug) {
-    notFound();
+    notFound()
   }
 
-  const project = await queryPostBySlug({ slug: resolvedParams.slug });
+  const project = await queryPostBySlug({ slug: resolvedParams.slug })
   if (!project) {
-    notFound();
+    notFound()
   }
 
   return (
@@ -53,7 +49,7 @@ export default async function WorkPage({
                       key={index}
                       className="mb-2 mr-2 rounded-full bg-zinc-800 px-4 pb-1.5 pt-2 lg:mb-3 lg:mr-3 lg:inline-flex"
                     >
-                      {typeof service === "string" ? service : service.title}
+                      {typeof service === 'string' ? service : service.title}
                     </div>
                   ))}
                 </div>
@@ -62,15 +58,11 @@ export default async function WorkPage({
             <div className="w-full px-2 lg:w-[62.5%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="relative rounded-bl-3xl lg:pb-5 lg:pl-10 lg:pr-10 lg:pt-0">
                 <div className="mb-3 flex items-center text-zinc-400 xl:mb-5">
-                  <div className="font-light">
-                    {project.projectYear || "Add Year"}
-                  </div>
+                  <div className="font-light">{project.projectYear || 'Add Year'}</div>
                   <div className="ml-3 h-1.5 w-1.5 rounded-full bg-zinc-400" />
                   <div className="ml-3 font-light">{project.title}</div>
                 </div>
-                <h1 className="text-headline-medium leading-none text-white">
-                  {project.tagline}
-                </h1>
+                <h1 className="text-headline-medium leading-none text-white">{project.tagline}</h1>
               </div>
             </div>
           </div>
@@ -78,11 +70,7 @@ export default async function WorkPage({
       </section>
       <section className="bg-brand-dark-bg">
         <ImageGrow
-          imageSrc={
-            typeof project.image === "string"
-              ? project.image
-              : project.image?.url || ""
-          }
+          imageSrc={typeof project.image === 'string' ? project.image : project.image?.url || ''}
           altText="Project header image"
         />
       </section>
@@ -93,7 +81,7 @@ export default async function WorkPage({
             <div className="order-1 text-5xl text-white">
               <h2 className="text-5xl text-white">
                 <span className="mr-4 text-sm font-light">/ The Story</span>
-                {project.storyTitle || "Add Story Title"}
+                {project.storyTitle || 'Add Story Title'}
               </h2>
             </div>
           </div>
@@ -107,21 +95,15 @@ export default async function WorkPage({
             </div>
             <div className="mt-6 flex w-full max-w-2xl flex-wrap justify-between pr-6 lg:mt-10 lg:pr-0 min-[2100px]:max-w-3xl">
               <div className="mb-3 pr-8 lg:mb-0">
-                <div className="text-sm font-light text-neutral-400">
-                  Client
-                </div>
+                <div className="text-sm font-light text-neutral-400">Client</div>
                 <div className="text-2xl text-white">{project.title}</div>
               </div>
               <div className="mb-3 pr-8 lg:mb-0">
-                <div className="text-sm font-light text-neutral-400">
-                  Industry
-                </div>
+                <div className="text-sm font-light text-neutral-400">Industry</div>
                 <div className="text-2xl text-white">Craft Brewing</div>
               </div>
               <div className="pr-8 lg:mb-0">
-                <div className="text-sm font-light text-neutral-400">
-                  Duration
-                </div>
+                <div className="text-sm font-light text-neutral-400">Duration</div>
                 <div className="text-2xl text-white">16 Weeks</div>
               </div>
             </div>
@@ -143,10 +125,7 @@ export default async function WorkPage({
                       viewBox="0 0 384 512"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M384 256L0 32v448l384-224z"
-                        fill="rgb(0, 0, 0)"
-                      />
+                      <path d="M384 256L0 32v448l384-224z" fill="rgb(0, 0, 0)" />
                     </svg>
                   </div>
                 </div>
@@ -168,10 +147,7 @@ export default async function WorkPage({
                   xmlns="http://www.w3.org/2000/svg"
                   y="0"
                 >
-                  <path
-                    d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z"
-                    fill="rgb(14, 15, 17)"
-                  />
+                  <path d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z" fill="rgb(14, 15, 17)" />
                 </svg>
                 <svg
                   className="absolute right-0 top-[0.13rem] h-10 w-10 text-neutral-950 lg:h-12 lg:w-12"
@@ -183,18 +159,15 @@ export default async function WorkPage({
                   xmlns="http://www.w3.org/2000/svg"
                   y="0"
                 >
-                  <path
-                    d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z"
-                    fill="rgb(14, 15, 17)"
-                  />
+                  <path d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z" fill="rgb(14, 15, 17)" />
                 </svg>
                 <div className="relative inline-flex items-center">
                   <div
                     className="inline-flex"
                     style={{
-                      outlineOffset: "2px",
-                      outlineStyle: "solid",
-                      outlineWidth: "2px",
+                      outlineOffset: '2px',
+                      outlineStyle: 'solid',
+                      outlineWidth: '2px',
                     }}
                   >
                     <div className="inline-flex w-auto items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2 text-white">
@@ -278,14 +251,12 @@ export default async function WorkPage({
             <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:px-3 xl:px-4">
               <div className="w-full lg:pr-10">
                 <p className="mb-6">
-                  For Blessed Kettle Brewing, we crafted a unique brand identity
-                  that embraces their Catholic roots while remaining accessible
-                  to a broad audience. Our focus was on highlighting their
-                  exceptional craft beers through a custom mark and innovative
-                  styling. Faced with limited examples to draw from, we created
-                  a design that captures a relaxed beach atmosphere, perfectly
-                  balancing the brewery's faith-based foundation with a
-                  welcoming, coastal aesthetic.
+                  For Blessed Kettle Brewing, we crafted a unique brand identity that embraces their
+                  Catholic roots while remaining accessible to a broad audience. Our focus was on
+                  highlighting their exceptional craft beers through a custom mark and innovative
+                  styling. Faced with limited examples to draw from, we created a design that
+                  captures a relaxed beach atmosphere, perfectly balancing the brewery's faith-based
+                  foundation with a welcoming, coastal aesthetic.
                 </p>
               </div>
             </div>
@@ -318,21 +289,17 @@ export default async function WorkPage({
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />
                 <div className="ml-2 font-light text-white">Brand Identity</div>
               </div>
-              <h2 className="indent-32 text-5xl text-white">
-                Faith, Community, and Craft
-              </h2>
+              <h2 className="indent-32 text-5xl text-white">Faith, Community, and Craft</h2>
             </div>
             <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="w-full lg:pr-10">
                 <p className="mb-6">
-                  For Blessed Kettle Brewing, we crafted a brand identity that
-                  seamlessly blends their deep Catholic theology with an
-                  accessible, welcoming aesthetic. The challenge was to create a
-                  brand that resonates with the local Foley community while also
-                  appealing to beach-going tourists. Our design incorporates
-                  subtle religious symbolism with a laid-back, coastal vibe,
-                  resulting in a unique identity that reflects the brewery's
-                  values and attracts a diverse clientele.
+                  For Blessed Kettle Brewing, we crafted a brand identity that seamlessly blends
+                  their deep Catholic theology with an accessible, welcoming aesthetic. The
+                  challenge was to create a brand that resonates with the local Foley community
+                  while also appealing to beach-going tourists. Our design incorporates subtle
+                  religious symbolism with a laid-back, coastal vibe, resulting in a unique identity
+                  that reflects the brewery's values and attracts a diverse clientele.
                 </p>
               </div>
             </div>
@@ -499,21 +466,17 @@ export default async function WorkPage({
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />
                 <div className="ml-2 font-light text-white">Craft</div>
               </div>
-              <h2 className="indent-32 text-5xl text-white">
-                Brand Direction with Purpose
-              </h2>
+              <h2 className="indent-32 text-5xl text-white">Brand Direction with Purpose</h2>
             </div>
             <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="w-full lg:pr-10">
                 <p className="mb-6">
-                  To capture the essence of Blessed Kettle Brewing, a Foley, AL
-                  microbrewery, we focused on their commitment to craft and
-                  community. We developed a brand voice that speaks to their
-                  local roots and artisanal approach. By introducing warm,
-                  inviting visuals and a conversational tone, we've created a
-                  digital presence that immerses visitors in the Blessed Kettle
-                  experience, showcasing their dedication to quality brews and
-                  local traditions.
+                  To capture the essence of Blessed Kettle Brewing, a Foley, AL microbrewery, we
+                  focused on their commitment to craft and community. We developed a brand voice
+                  that speaks to their local roots and artisanal approach. By introducing warm,
+                  inviting visuals and a conversational tone, we've created a digital presence that
+                  immerses visitors in the Blessed Kettle experience, showcasing their dedication to
+                  quality brews and local traditions.
                 </p>
               </div>
             </div>
@@ -692,13 +655,11 @@ export default async function WorkPage({
             <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="w-full lg:pr-10">
                 <p className="mb-6">
-                  Blessed Kettle Brewing, a microbrewery in Foley, AL, needed
-                  assistance in developing a brand voice that resonates with
-                  their local audience. We crafted content that not only
-                  enhances their SEO but also clearly communicates their unique
-                  brewing process and commitment to quality. The result is a
-                  warm, inviting tone that sets them apart in the competitive
-                  craft beer market.
+                  Blessed Kettle Brewing, a microbrewery in Foley, AL, needed assistance in
+                  developing a brand voice that resonates with their local audience. We crafted
+                  content that not only enhances their SEO but also clearly communicates their
+                  unique brewing process and commitment to quality. The result is a warm, inviting
+                  tone that sets them apart in the competitive craft beer market.
                 </p>
               </div>
             </div>
@@ -753,21 +714,19 @@ export default async function WorkPage({
                 <sub>#AUDIOENTERTAINER</sub>
               </span>
               <div className="text-[1.75rem] leading-[2.5rem] text-white">
-                Ready to elevate its digital presence, The Merry Beggars turned
-                to Brewww for help with consolidating their full range of audio
-                entertainment into a single platform. Today, it's the go-to
-                destination for original stories and top-shelf audio
-                productions, captivating millions of listeners worldwide and
-                earning multiple industry accolades.
+                Ready to elevate its digital presence, The Merry Beggars turned to Brewww for help
+                with consolidating their full range of audio entertainment into a single platform.
+                Today, it's the go-to destination for original stories and top-shelf audio
+                productions, captivating millions of listeners worldwide and earning multiple
+                industry accolades.
               </div>
               <div className="mt-8 leading-8">
-                After a thorough partner selection process, Brewww was chosen to
-                help The Merry Beggars become a leader in the audio
-                entertainment industry. We developed a comprehensive digital
-                platform that replaced several fragmented services, becoming the
-                sole practical access point to The Merry Beggars' world of
-                storytelling. We've since tackled multiple projects together,
-                with our partnership continuing to flourish.
+                After a thorough partner selection process, Brewww was chosen to help The Merry
+                Beggars become a leader in the audio entertainment industry. We developed a
+                comprehensive digital platform that replaced several fragmented services, becoming
+                the sole practical access point to The Merry Beggars' world of storytelling. We've
+                since tackled multiple projects together, with our partnership continuing to
+                flourish.
               </div>
             </div>
           </div>
@@ -782,7 +741,7 @@ export default async function WorkPage({
                   src="/images/audio-one.jpg"
                   alt="Audio production studio equipment"
                   fill
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
             </div>
@@ -792,7 +751,7 @@ export default async function WorkPage({
                   src="/images/audio-two.jpg"
                   alt="Voice actor recording in studio"
                   fill
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
             </div>
@@ -808,7 +767,7 @@ export default async function WorkPage({
                   src="/images/audio-three.jpg"
                   alt="Audio production studio setup"
                   fill
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
             </div>
@@ -820,27 +779,24 @@ export default async function WorkPage({
                 <span className="mr-4 text-sm uppercase text-stone-500">
                   <sub>#AUDIOENTERTAINER</sub>
                 </span>
-                Brewww supported The Merry Beggars with a fully self-empowered
-                team across design, web development, backend development and QA.
-                We continue working closely with The Merry Beggars' product
-                management to this day.
+                Brewww supported The Merry Beggars with a fully self-empowered team across design,
+                web development, backend development and QA. We continue working closely with The
+                Merry Beggars' product management to this day.
               </div>
               <div className="mt-16">
                 <p className="mb-8">
                   <span>
                     — Web and backend development for The Merry Beggars platform
                     <br />
-                    — Design and development of features used by all The Merry
-                    Beggars digital products
+                    — Design and development of features used by all The Merry Beggars digital
+                    products
                     <br />
                     — Cross-departmental collaboration
                     <br />— Ongoing support and post-launch optimization
                   </span>
                 </p>
 
-                <h4 className="mt-12 text-xs font-bold uppercase text-stone-500">
-                  Links
-                </h4>
+                <h4 className="mt-12 text-xs font-bold uppercase text-stone-500">Links</h4>
 
                 <p className="mt-4">
                   <a className="text-red-700 underline" href="#">
@@ -866,10 +822,7 @@ export default async function WorkPage({
               &nbsp;&nbsp;&nbsp;&nbsp;HIGHLIGHTS
             </span>
           </div>
-          <div
-            className="animate-marquee-reverse flex items-center"
-            aria-hidden="true"
-          >
+          <div className="animate-marquee-reverse flex items-center" aria-hidden="true">
             <span className="mx-4 text-[45.00rem] font-bold leading-none text-neutral-400">
               HIGHLIGHTS
             </span>
@@ -884,9 +837,7 @@ export default async function WorkPage({
           <ul className="grid list-none grid-cols-[630.922px_374.844px_481.234px] grid-rows-[19.75rem] gap-5 text-neutral-400">
             <li className="list-item">
               <div>
-                <h3 className="text-[11.75rem] font-bold leading-none text-white">
-                  150K+
-                </h3>
+                <h3 className="text-[11.75rem] font-bold leading-none text-white">150K+</h3>
                 <span className="text-[1.38rem] leading-7 text-zinc-500">
                   Active app users in a few months post-release
                 </span>
@@ -894,19 +845,13 @@ export default async function WorkPage({
             </li>
             <li className="list-item">
               <div>
-                <h3 className="text-[11.75rem] font-bold leading-none text-white">
-                  47
-                </h3>
-                <span className="text-[1.38rem] leading-7 text-zinc-500">
-                  Countries using app
-                </span>
+                <h3 className="text-[11.75rem] font-bold leading-none text-white">47</h3>
+                <span className="text-[1.38rem] leading-7 text-zinc-500">Countries using app</span>
               </div>
             </li>
             <li className="list-item">
               <div>
-                <h3 className="text-[11.75rem] font-bold leading-none text-white">
-                  2x
-                </h3>
+                <h3 className="text-[11.75rem] font-bold leading-none text-white">2x</h3>
                 <span className="text-[1.38rem] leading-7 text-zinc-500">
                   Winner of eMobility Excellence
                 </span>
@@ -1000,30 +945,24 @@ export default async function WorkPage({
                 Creating the ultimate entertainment experience
               </h3>
               <p className="mt-4">
-                To make The Merry Beggars platform the ultimate audio
-                entertainment destination, we first focused on user experience
-                and content curation — to understand how to better engage and
-                delight our listeners. We developed a range of features across
-                the platform, including personalized recommendations, seamless
-                playlist creation, podcast subscriptions, interactive
-                storytelling experiences, community forums for fans, and
-                exclusive behind-the-scenes content from our original
-                productions.
+                To make The Merry Beggars platform the ultimate audio entertainment destination, we
+                first focused on user experience and content curation — to understand how to better
+                engage and delight our listeners. We developed a range of features across the
+                platform, including personalized recommendations, seamless playlist creation,
+                podcast subscriptions, interactive storytelling experiences, community forums for
+                fans, and exclusive behind-the-scenes content from our original productions.
               </p>
             </div>
           </div>
         </div>
       </section>
       <section className="bg-zinc-950 pt-20 text-neutral-400">
-        <div
-          className="container relative mx-auto px-0"
-          style={{ aspectRatio: "3/2" }}
-        >
+        <div className="container relative mx-auto px-0" style={{ aspectRatio: '3/2' }}>
           <Image
             src="/images/audio-seven.jpg"
             alt="Audio platform showcase"
             fill
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: 'cover' }}
           />
         </div>
       </section>
@@ -1032,22 +971,17 @@ export default async function WorkPage({
           <div className="grid grid-cols-12">
             <div className="col-start-6 col-end-11">
               <h3 className="mb-8 text-[1.75rem] font-semibold leading-8 text-white">
-                <b className="font-bold">
-                  Specialized teams for each production
-                </b>
+                <b className="font-bold">Specialized teams for each production</b>
               </h3>
               <p>
-                Throughout our creative process, The Merry Beggars assigns
-                specialized teams to each audio production, ensuring
-                high-quality content and efficient storytelling. Our approach
-                allows for faster development of new shows while maintaining our
-                commitment to excellence. At any given time, we may have
-                multiple teams working on various projects, from podcasts to
-                audio dramas. Our writers, voice actors, sound designers, and
-                producers collaborate seamlessly, often co-leading their
-                respective productions from concept to final release. This
-                structure enables us to consistently deliver engaging and
-                innovative audio entertainment to our listeners.
+                Throughout our creative process, The Merry Beggars assigns specialized teams to each
+                audio production, ensuring high-quality content and efficient storytelling. Our
+                approach allows for faster development of new shows while maintaining our commitment
+                to excellence. At any given time, we may have multiple teams working on various
+                projects, from podcasts to audio dramas. Our writers, voice actors, sound designers,
+                and producers collaborate seamlessly, often co-leading their respective productions
+                from concept to final release. This structure enables us to consistently deliver
+                engaging and innovative audio entertainment to our listeners.
               </p>
             </div>
           </div>
@@ -1079,18 +1013,15 @@ export default async function WorkPage({
               </div>
               <figure className="mt-8">
                 <blockquote className="mt-4 italic">
-                  I've worked in software development for 8 years, and I'd never
-                  experienced a provider that always delivers such high quality
-                  on time. Usually, if you have a large provider that brings all
-                  types of people to the table, you can have someone who isn't
-                  that good. However, we have nothing to complain about Brewww.
+                  I've worked in software development for 8 years, and I'd never experienced a
+                  provider that always delivers such high quality on time. Usually, if you have a
+                  large provider that brings all types of people to the table, you can have someone
+                  who isn't that good. However, we have nothing to complain about Brewww.
                 </blockquote>
                 <div className="mt-4 text-xs uppercase">
                   <div>
                     <span className="font-bold text-white">Peter Atkinson</span>
-                    <span className="ml-2 text-stone-500">
-                      President, The Merry Beggars
-                    </span>
+                    <span className="ml-2 text-stone-500">President, The Merry Beggars</span>
                   </div>
                 </div>
               </figure>
@@ -1114,18 +1045,15 @@ export default async function WorkPage({
                 Removing all decision fatigue
               </h3>
               <p className="mt-4">
-                To elevate The Merry Beggars platform, we drew inspiration from
-                industry leaders like Disney and Headspace, focusing on
-                streamlining the user experience and eliminating decision
-                fatigue. Our strategy centered on creating an intuitive
-                interface that guides users effortlessly to their desired
-                content. We implemented smart categorization, personalized
-                recommendations, and a simplified navigation system, making it
-                easier than ever for listeners to discover, enjoy, and share
-                episodes. By reducing cognitive load and enhancing content
-                accessibility, we transformed the platform into a seamless audio
-                entertainment destination that keeps users engaged and coming
-                back for more.
+                To elevate The Merry Beggars platform, we drew inspiration from industry leaders
+                like Disney and Headspace, focusing on streamlining the user experience and
+                eliminating decision fatigue. Our strategy centered on creating an intuitive
+                interface that guides users effortlessly to their desired content. We implemented
+                smart categorization, personalized recommendations, and a simplified navigation
+                system, making it easier than ever for listeners to discover, enjoy, and share
+                episodes. By reducing cognitive load and enhancing content accessibility, we
+                transformed the platform into a seamless audio entertainment destination that keeps
+                users engaged and coming back for more.
               </p>
             </div>
           </div>
@@ -1139,7 +1067,7 @@ export default async function WorkPage({
                 src="/images/audio-seven.jpeg"
                 alt="Audio production studio"
                 fill
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: 'cover' }}
               />
             </div>
           </div>
@@ -1149,7 +1077,7 @@ export default async function WorkPage({
                 src="/images/audio-eight.jpeg"
                 alt="Voice actor recording"
                 fill
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: 'cover' }}
               />
             </div>
           </div>
@@ -1159,7 +1087,7 @@ export default async function WorkPage({
                 src="/images/audio-four.jpeg"
                 alt="Sound mixing console"
                 fill
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: 'cover' }}
               />
             </div>
           </div>
@@ -1169,7 +1097,7 @@ export default async function WorkPage({
                 src="/images/audio-two.jpeg"
                 alt="Podcast recording session"
                 fill
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: 'cover' }}
               />
             </div>
           </div>
@@ -1179,7 +1107,7 @@ export default async function WorkPage({
                 src="/images/audio-five.jpg"
                 alt="Audio editing workstation"
                 fill
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: 'cover' }}
               />
             </div>
           </div>
@@ -1189,7 +1117,7 @@ export default async function WorkPage({
                 src="/images/audio-one.jpg"
                 alt="Microphone in recording booth"
                 fill
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: 'cover' }}
               />
             </div>
           </div>
@@ -1199,7 +1127,7 @@ export default async function WorkPage({
                 src="/images/audio-five.jpg"
                 alt="Audio production team meeting"
                 fill
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: 'cover' }}
               />
             </div>
           </div>
@@ -1222,20 +1150,17 @@ export default async function WorkPage({
                 <b className="font-bold">Cross-team collaboration</b>
               </h3>
               <p>
-                Our cross-team collaboration is a key strength that allows us to
-                deliver high-quality audio productions efficiently. We have a
-                dedicated team of writers, voice actors, sound designers, and
-                producers who work together seamlessly to bring each production
-                to life. This collaborative approach ensures that our shows are
-                not only engaging but also consistent in quality and style.
-                allows for faster development of new shows while maintaining our
-                commitment to excellence. At any given time, we may have
-                multiple teams working on various projects, from podcasts to
-                audio dramas. Our writers, voice actors, sound designers, and
-                producers collaborate seamlessly, often co-leading their
-                respective productions from concept to final release. This
-                structure enables us to consistently deliver engaging and
-                innovative audio entertainment to our listeners.
+                Our cross-team collaboration is a key strength that allows us to deliver
+                high-quality audio productions efficiently. We have a dedicated team of writers,
+                voice actors, sound designers, and producers who work together seamlessly to bring
+                each production to life. This collaborative approach ensures that our shows are not
+                only engaging but also consistent in quality and style. allows for faster
+                development of new shows while maintaining our commitment to excellence. At any
+                given time, we may have multiple teams working on various projects, from podcasts to
+                audio dramas. Our writers, voice actors, sound designers, and producers collaborate
+                seamlessly, often co-leading their respective productions from concept to final
+                release. This structure enables us to consistently deliver engaging and innovative
+                audio entertainment to our listeners.
               </p>
             </div>
           </div>
@@ -1267,18 +1192,15 @@ export default async function WorkPage({
               </div>
               <figure className="mt-8">
                 <blockquote className="mt-4 italic">
-                  I've worked in software development for 8 years, and I'd never
-                  experienced a provider that always delivers such high quality
-                  on time. Usually, if you have a large provider that brings all
-                  types of people to the table, you can have someone who isn't
-                  that good. However, we have nothing to complain about Brewww.
+                  I've worked in software development for 8 years, and I'd never experienced a
+                  provider that always delivers such high quality on time. Usually, if you have a
+                  large provider that brings all types of people to the table, you can have someone
+                  who isn't that good. However, we have nothing to complain about Brewww.
                 </blockquote>
                 <div className="mt-4 text-xs uppercase">
                   <div>
                     <span className="font-bold text-white">Peter Atkinson</span>
-                    <span className="ml-2 text-stone-500">
-                      President, The Merry Beggars
-                    </span>
+                    <span className="ml-2 text-stone-500">President, The Merry Beggars</span>
                   </div>
                 </div>
               </figure>
@@ -1303,15 +1225,12 @@ export default async function WorkPage({
                 Creating the ultimate entertainment experience
               </h3>
               <p className="mt-4">
-                To make The Merry Beggars platform the ultimate audio
-                entertainment destination, we first focused on user experience
-                and content curation — to understand how to better engage and
-                delight our listeners. We developed a range of features across
-                the platform, including personalized recommendations, seamless
-                playlist creation, podcast subscriptions, interactive
-                storytelling experiences, community forums for fans, and
-                exclusive behind-the-scenes content from our original
-                productions.
+                To make The Merry Beggars platform the ultimate audio entertainment destination, we
+                first focused on user experience and content curation — to understand how to better
+                engage and delight our listeners. We developed a range of features across the
+                platform, including personalized recommendations, seamless playlist creation,
+                podcast subscriptions, interactive storytelling experiences, community forums for
+                fans, and exclusive behind-the-scenes content from our original productions.
               </p>
             </div>
           </div>
@@ -1320,20 +1239,20 @@ export default async function WorkPage({
       <section className="bg-zinc-950 py-20 text-neutral-400">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 gap-5">
-            <div className="relative" style={{ aspectRatio: "1/1" }}>
+            <div className="relative" style={{ aspectRatio: '1/1' }}>
               <Image
                 src="/images/audio-six.jpg"
                 alt="Audio Image Six"
                 fill
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: 'cover' }}
               />
             </div>
-            <div className="relative" style={{ aspectRatio: "1/1" }}>
+            <div className="relative" style={{ aspectRatio: '1/1' }}>
               <Image
                 src="/images/audio-six.jpg"
                 alt="Audio Image Six"
                 fill
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: 'cover' }}
               />
             </div>
           </div>
@@ -1347,60 +1266,50 @@ export default async function WorkPage({
                 <b className="font-bold">Cross-team collaboration</b>
               </h3>
               <p>
-                Our cross-team collaboration is a key strength that allows us to
-                deliver high-quality audio productions efficiently. We have a
-                dedicated team of writers, voice actors, sound designers, and
-                producers who work together seamlessly to bring each production
-                to life. This collaborative approach ensures that our shows are
-                not only engaging but also consistent in quality and style.
-                allows for faster development of new shows while maintaining our
-                commitment to excellence. At any given time, we may have
-                multiple teams working on various projects, from podcasts to
-                audio dramas. Our writers, voice actors, sound designers, and
-                producers collaborate seamlessly, often co-leading their
-                respective productions from concept to final release. This
-                structure enables us to consistently deliver engaging and
-                innovative audio entertainment to our listeners.
+                Our cross-team collaboration is a key strength that allows us to deliver
+                high-quality audio productions efficiently. We have a dedicated team of writers,
+                voice actors, sound designers, and producers who work together seamlessly to bring
+                each production to life. This collaborative approach ensures that our shows are not
+                only engaging but also consistent in quality and style. allows for faster
+                development of new shows while maintaining our commitment to excellence. At any
+                given time, we may have multiple teams working on various projects, from podcasts to
+                audio dramas. Our writers, voice actors, sound designers, and producers collaborate
+                seamlessly, often co-leading their respective productions from concept to final
+                release. This structure enables us to consistently deliver engaging and innovative
+                audio entertainment to our listeners.
               </p>
             </div>
           </div>
         </div>
       </section>
       <section className="bg-zinc-950 pt-20 text-neutral-400">
-        <div
-          className="container relative mx-auto px-0"
-          style={{ aspectRatio: "3/2" }}
-        >
+        <div className="container relative mx-auto px-0" style={{ aspectRatio: '3/2' }}>
           <Image
-            src={"/images/audio-seven.jpg"}
+            src={'/images/audio-seven.jpg'}
             alt="Audio platform showcase"
             fill
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: 'cover' }}
           />
         </div>
       </section>
     </>
-  );
+  )
 }
 
-async function queryPostBySlug({
-  slug,
-}: {
-  slug: string;
-}): Promise<Work | null> {
-  const payload = await getPayloadHMR({ config: configPromise });
+async function queryPostBySlug({ slug }: { slug: string }): Promise<Work | null> {
+  const payload = await getPayloadHMR({ config: configPromise })
   try {
     const result = await payload.find({
-      collection: "work",
+      collection: 'work',
       limit: 1,
       where: {
         slug: {
           equals: slug,
         },
       },
-    });
-    return result.docs[0] || null;
+    })
+    return result.docs[0] || null
   } catch (error) {
-    return null;
+    return null
   }
 }

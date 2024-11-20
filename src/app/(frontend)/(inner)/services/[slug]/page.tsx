@@ -12,7 +12,7 @@ import { getPayloadHMR } from '@payloadcms/next/utilities'
 import { Post, Service } from '@/payload-types'
 
 // Components
-import RichText from '@/components/RichText/index'
+import { RichText } from '@/components/RichText/index'
 import TableOfContents from '@/components/TableOfContents/index'
 import { LexicalNode } from '@/components/RichText/nodeFormat'
 
@@ -126,12 +126,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <div className="md:col-span-1"></div>
         <div className="md:col-span-2">
           <article className="prose mx-auto pb-24">
-            <RichText
-              content={service.description || ''}
-              enableProse={true}
-              enableGutter={false}
-              theme="light"
-            />
+            {service.overview ? (
+              <RichText content={service.overview} enableProse={true} enableGutter={false} />
+            ) : (
+              <p className="text-body-medium">{service.description}</p>
+            )}
           </article>
         </div>
       </div>
