@@ -1,12 +1,50 @@
-import Image from "next/image";
+// Next Imports
 import React from "react";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+
+// Payload Imports
+import { PayloadRedirects } from "@/components/PayloadRedirects";
 import configPromise from "@payload-config";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { Location } from "@/payload-types";
+
+// Components
 import { FAQCard } from "../../faq/AccordionCard";
 import { WorkSlider } from "../WorkSlider";
 import { LogoSlider } from "../LogoSlider";
 
-export default async function Page() {
+export async function generateStaticParams() {
+  const payload = await getPayloadHMR({ config: configPromise });
+  const locations = await payload.find({
+    collection: "locations",
+    limit: 1000,
+    overrideAccess: false,
+  });
+  return (
+    locations.docs?.map(({ slug }) => ({
+      params: { slug },
+    })) || []
+  );
+}
+
+export default async function LocationPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const resolvedParams = await params;
+  if (!resolvedParams.slug) {
+    notFound();
+  }
+
+  const location = await queryLocationBySlug({ slug: resolvedParams.slug });
+  if (!location) {
+    notFound();
+  }
+
   const payload = await getPayloadHMR({ config: configPromise });
   const faqs = await payload.find({
     collection: "faq",
@@ -1455,4 +1493,25 @@ export default async function Page() {
       </section>
     </>
   );
+}
+async function queryLocationBySlug({
+  slug,
+}: {
+  slug: string;
+}): Promise<Location | null> {
+  const payload = await getPayloadHMR({ config: configPromise });
+  try {
+    const result = await payload.find({
+      collection: "locations",
+      limit: 1,
+      where: {
+        slug: {
+          equals: slug,
+        },
+      },
+    });
+    return result.docs[0] || null;
+  } catch (error) {
+    return null;
+  }
 }
