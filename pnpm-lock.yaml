@@ -13,40 +13,40 @@ importers:
   .:
     dependencies:
       '@payloadcms/db-mongodb':
-        specifier: latest
+        specifier: 3.0.1
         version: 3.0.1(@aws-sdk/credential-providers@3.693.0(@aws-sdk/client-sso-oidc@3.693.0(@aws-sdk/client-sts@3.693.0)))(payload@3.0.1(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3))
       '@payloadcms/email-nodemailer':
-        specifier: latest
+        specifier: 3.0.1
         version: 3.0.1(payload@3.0.1(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3))
       '@payloadcms/live-preview-react':
-        specifier: latest
+        specifier: 3.0.1
         version: 3.0.1(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)
       '@payloadcms/next':
-        specifier: latest
+        specifier: 3.0.1
         version: 3.0.1(graphql@16.9.0)(monaco-editor@0.52.0)(next@15.0.3(@babel/core@7.26.0)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@19.0.0-beta-0dec889-20241115)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(sass@1.77.4))(payload@3.0.1(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3))(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(types-react@19.0.0-rc.1)(typescript@5.6.3)
       '@payloadcms/plugin-cloud':
-        specifier: latest
-        version: 3.0.2(@aws-sdk/client-sso-oidc@3.693.0(@aws-sdk/client-sts@3.693.0))(payload@3.0.1(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3))
+        specifier: 3.0.1
+        version: 3.0.1(@aws-sdk/client-sso-oidc@3.693.0(@aws-sdk/client-sts@3.693.0))(payload@3.0.1(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3))
       '@payloadcms/plugin-form-builder':
-        specifier: latest
+        specifier: 3.0.1
         version: 3.0.1(monaco-editor@0.52.0)(next@15.0.3(@babel/core@7.26.0)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@19.0.0-beta-0dec889-20241115)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(sass@1.77.4))(payload@3.0.1(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3))(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(types-react@19.0.0-rc.1)(typescript@5.6.3)
       '@payloadcms/plugin-nested-docs':
-        specifier: latest
+        specifier: 3.0.1
         version: 3.0.1(payload@3.0.1(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3))
       '@payloadcms/plugin-redirects':
-        specifier: latest
+        specifier: 3.0.1
         version: 3.0.1(payload@3.0.1(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3))
       '@payloadcms/plugin-seo':
-        specifier: latest
+        specifier: 3.0.1
         version: 3.0.1(monaco-editor@0.52.0)(next@15.0.3(@babel/core@7.26.0)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@19.0.0-beta-0dec889-20241115)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(sass@1.77.4))(payload@3.0.1(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3))(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(types-react@19.0.0-rc.1)(typescript@5.6.3)
       '@payloadcms/richtext-lexical':
-        specifier: latest
+        specifier: 3.0.1
         version: 3.0.1(i7lzcxj3hwwpa4e7gk535ggg4i)
       '@payloadcms/storage-s3':
-        specifier: latest
+        specifier: 3.0.1
         version: 3.0.1(payload@3.0.1(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3))
       '@payloadcms/ui':
-        specifier: latest
+        specifier: 3.0.1
         version: 3.0.1(monaco-editor@0.52.0)(next@15.0.3(@babel/core@7.26.0)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@19.0.0-beta-0dec889-20241115)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(sass@1.77.4))(payload@3.0.1(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3))(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(types-react@19.0.0-rc.1)(typescript@5.6.3)
       '@radix-ui/react-checkbox':
         specifier: ^1.1.2
@@ -97,7 +97,7 @@ importers:
         specifier: ^15.0.3
         version: 15.0.3(@babel/core@7.26.0)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@19.0.0-beta-0dec889-20241115)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(sass@1.77.4)
       payload:
-        specifier: latest
+        specifier: 3.0.1
         version: 3.0.1(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3)
       payload-admin-bar:
         specifier: ^1.0.6
@@ -1394,8 +1394,8 @@ packages:
       '@vercel/blob':
         optional: true
 
-  '@payloadcms/plugin-cloud@3.0.2':
-    resolution: {integrity: sha512-qMbXEDiafaw8s49U1SZ3jLd5sOsrZ3aoKOfSLf1fXV22Ndlojev/Sd7LVqnxbSOsoIRwY+pmmM8q/aXlIwvGCg==}
+  '@payloadcms/plugin-cloud@3.0.1':
+    resolution: {integrity: sha512-o0+3C0KDo29nPv7uKMHzdo0hfxdIksKDOg+/U4jH2vh2zkcH7HCbW4M10m2q/FcusHyhr4CtIizuCS5Ck6HDKw==}
     peerDependencies:
       payload: ^1.8.2 || ^2.0.0
 
@@ -4227,8 +4227,8 @@ packages:
     resolution: {integrity: sha512-qtoKfGFhvIFW5kLfrkw2R6Nm6Ur4LNUMykyqu6n9BRKJuyQrqEGwdXXUAbwWEKt33dlWUGXb7rzmJP/p4+O+CA==}
     engines: {node: '>=6.0.0'}
 
-  nodemailer@6.9.9:
-    resolution: {integrity: sha512-dexTll8zqQoVJEZPwQAKzxxtFn0qTnjdQTchoU6Re9BUUGBJiOy3YMn/0ShTW6J5M0dfQ1NeDeRTTl4oIWgQMA==}
+  nodemailer@6.9.8:
+    resolution: {integrity: sha512-cfrYUk16e67Ks051i4CntM9kshRYei1/o/Gi8K1d+R34OIs21xdFnW7Pt7EucmVKA0LKtqUGNcjMZ7ehjl49mQ==}
     engines: {node: '>=6.0.0'}
 
   noms@0.0.0:
@@ -7264,14 +7264,14 @@ snapshots:
       '@aws-sdk/client-s3': 3.693.0
       '@aws-sdk/lib-storage': 3.693.0(@aws-sdk/client-s3@3.693.0)
 
-  '@payloadcms/plugin-cloud@3.0.2(@aws-sdk/client-sso-oidc@3.693.0(@aws-sdk/client-sts@3.693.0))(payload@3.0.1(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3))':
+  '@payloadcms/plugin-cloud@3.0.1(@aws-sdk/client-sso-oidc@3.693.0(@aws-sdk/client-sts@3.693.0))(payload@3.0.1(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3))':
     dependencies:
       '@aws-sdk/client-cognito-identity': 3.693.0
       '@aws-sdk/client-s3': 3.693.0
       '@aws-sdk/credential-providers': 3.693.0(@aws-sdk/client-sso-oidc@3.693.0(@aws-sdk/client-sts@3.693.0))
       '@aws-sdk/lib-storage': 3.693.0(@aws-sdk/client-s3@3.693.0)
       amazon-cognito-identity-js: 6.3.12
-      nodemailer: 6.9.9
+      nodemailer: 6.9.8
       payload: 3.0.1(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3)
     transitivePeerDependencies:
       - '@aws-sdk/client-sso-oidc'
@@ -10805,7 +10805,7 @@ snapshots:
 
   nodemailer@6.9.10: {}
 
-  nodemailer@6.9.9: {}
+  nodemailer@6.9.8: {}
 
   noms@0.0.0:
     dependencies:

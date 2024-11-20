@@ -1,15 +1,13 @@
 "use client";
-import React, { useCallback, useEffect, MouseEvent } from "react";
-
+import React, { useCallback, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useField } from 'payload/dist/admin/components/forms'
 import {
-  useField,
-  useFieldProps,
   Button,
   TextInput,
   FieldLabel,
-  useFormFields,
-} from "@payloadcms/ui";
-
+} from '@payloadcms/ui'
+import { slugify } from './slugify'
 import { formatSlug } from "./formatSlug";
 import "./index.scss";
 import { TextFieldClientProps } from "payload";
@@ -25,7 +23,7 @@ export const SlugComponent: React.FC<SlugComponentProps> = ({
   checkboxFieldPath: checkboxFieldPathFromProps,
 }) => {
   const { label } = field;
-  const { path, readOnly: readOnlyFromProps } = useFieldProps();
+  const { path, readOnly: readOnlyFromProps } = field;
 
   const checkboxFieldPath = path.includes(".")
     ? `${path}.${checkboxFieldPathFromProps}`
@@ -64,10 +62,19 @@ export const SlugComponent: React.FC<SlugComponentProps> = ({
 
   const readOnly = readOnlyFromProps || checkboxValue;
 
+  const inputProps = {
+    id: `field-${path}`,
+    name: path,
+    readOnly,
+  }
+
   return (
     <div className="field-type slug-field-component">
       <div className="label-wrapper">
-        <FieldLabel field={field} htmlFor={`field-${path}`} label={label} />
+        <FieldLabel
+          htmlFor={inputProps.id}
+          label={label}
+        />
 
         <Button className="lock-button" buttonStyle="none" onClick={handleLock}>
           {checkboxValue ? "Unlock" : "Lock"}
@@ -75,11 +82,9 @@ export const SlugComponent: React.FC<SlugComponentProps> = ({
       </div>
 
       <TextInput
-        label={""}
-        value={value}
+        {...inputProps}
+        value={value || ''}
         onChange={setValue}
-        path={path}
-        readOnly={readOnly}
       />
     </div>
   );
