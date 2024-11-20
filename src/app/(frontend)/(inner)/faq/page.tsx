@@ -1,5 +1,5 @@
 import React from "react";
-import { FAQCard } from "./AccordionCard";
+import { AccordionCard } from "@/components/AccordionCard";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import configPromise from "@payload-config";
 import { Faq } from "@/payload-types";
@@ -78,7 +78,7 @@ export default async function FAQPage() {
             <div className="w-full lg:w-2/3">
               <div className="w-full">
                 {faqs.docs.map((faq) => (
-                  <FAQCard key={faq.id} props={faq} />
+                  <AccordionCard key={faq.id} props={faq} />
                 ))}
               </div>
             </div>
