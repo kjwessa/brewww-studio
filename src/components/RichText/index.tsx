@@ -2,7 +2,11 @@ import React from 'react'
 import { serializeLexical } from './serialize'
 import { cn } from '@/utilities/cn'
 import { cva, type VariantProps } from 'class-variance-authority'
-import typographyPresets, { type TypographyPreset, type TextPreset, type StringPreset } from './presets'
+import typographyPresets, {
+  type TypographyPreset,
+  type TextPreset,
+  type StringPreset,
+} from './presets'
 
 const richTextVariants = cva('', {
   variants: {
@@ -28,13 +32,13 @@ type RichTextProps = VariantProps<typeof richTextVariants> & {
   preset?: keyof typeof typographyPresets
 }
 
-export const RichText: React.FC<RichTextProps> = ({
+const RichText: React.FC<RichTextProps> = ({
   className,
   content,
   enableGutter,
   enableProse,
   customClasses = {},
-  preset = 'default'
+  preset = 'default',
 }) => {
   if (!content || Array.isArray(content) || typeof content !== 'object' || !('root' in content)) {
     return null
@@ -42,7 +46,7 @@ export const RichText: React.FC<RichTextProps> = ({
 
   const mergedClasses = {
     ...typographyPresets[preset],
-    ...customClasses
+    ...customClasses,
   }
 
   return (
@@ -60,3 +64,4 @@ export const RichText: React.FC<RichTextProps> = ({
     </div>
   )
 }
+export default RichText

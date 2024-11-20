@@ -1,51 +1,47 @@
 // Next Imports
-import React from "react";
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
+import React from 'react'
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import Image from 'next/image'
+import Link from 'next/link'
 
 // Payload Imports
-import { PayloadRedirects } from "@/components/PayloadRedirects";
-import configPromise from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
-import { Post, Service } from "@/payload-types";
+import { PayloadRedirects } from '@/components/PayloadRedirects'
+import configPromise from '@payload-config'
+import { getPayloadHMR } from '@payloadcms/next/utilities'
+import { Post, Service } from '@/payload-types'
 
 // Components
-import { RichText } from "@/components/RichText";
-import TableOfContents from "@/components/TableOfContents/index";
-import { LexicalNode } from "@/components/RichText/nodeFormat";
+import RichText from '@/components/RichText/index'
+import TableOfContents from '@/components/TableOfContents/index'
+import { LexicalNode } from '@/components/RichText/nodeFormat'
 
 // Utilities
-import { formatDate } from "@/utilities/formatDateTime";
+import { formatDate } from '@/utilities/formatDateTime'
 
 export async function generateStaticParams() {
-  const payload = await getPayloadHMR({ config: configPromise });
+  const payload = await getPayloadHMR({ config: configPromise })
   const services = await payload.find({
-    collection: "services",
+    collection: 'services',
     limit: 1000,
     overrideAccess: false,
-  });
+  })
   return (
     services.docs?.map(({ slug }) => ({
       params: { slug },
     })) || []
-  );
+  )
 }
 
-export default async function ServicePage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const resolvedParams = await params;
+export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params
   if (!resolvedParams.slug) {
-    notFound();
+    notFound()
   }
 
-  const service = await queryServiceBySlug({ slug: resolvedParams.slug });
+  const service = await queryServiceBySlug({ slug: resolvedParams.slug })
   if (!service) {
-    notFound();
+    notFound()
   }
 
   return (
@@ -64,10 +60,7 @@ export default async function ServicePage({
               </Link>
             </li>
             <li>
-              <Link
-                href="/posts/category/web-design"
-                className="hover:underline"
-              >
+              <Link href="/posts/category/web-design" className="hover:underline">
                 Web Design
               </Link>
             </li>
@@ -92,16 +85,14 @@ export default async function ServicePage({
 
       <section className="container mx-auto px-4 pb-12 pt-12">
         <div className="max-w-5xl">
-          <h1 className="mb-4 text-5xl font-medium leading-tight md:text-6xl">
-            {service.title}
-          </h1>
+          <h1 className="mb-4 text-5xl font-medium leading-tight md:text-6xl">{service.title}</h1>
           <p className="mb-8 max-w-3xl text-xl text-gray-700">
-            {service.description || "Add a cool description here."}
+            {service.description || 'Add a cool description here.'}
           </p>
           <div className="flex items-center gap-1 text-sm text-gray-500">
             <span>
-              By{" "}
-              <Link className="text-gray-950" href={""}>
+              By{' '}
+              <Link className="text-gray-950" href={''}>
                 Kevin Wessa
               </Link>
             </span>
@@ -117,16 +108,12 @@ export default async function ServicePage({
         <div className="px-2">
           <div className="relative aspect-[3/2] w-full">
             <Image
-              src={
-                typeof service.image === "string"
-                  ? service.image
-                  : service.image?.url || ""
-              }
+              src={typeof service.image === 'string' ? service.image : service.image?.url || ''}
               fill
               alt={
-                typeof service.image === "object"
-                  ? service.image?.alt || ""
-                  : "Featured image for blog post"
+                typeof service.image === 'object'
+                  ? service.image?.alt || ''
+                  : 'Featured image for blog post'
               }
               className="rounded-md object-cover"
               priority
@@ -139,50 +126,33 @@ export default async function ServicePage({
         <div className="md:col-span-1"></div>
         <div className="md:col-span-2">
           <article className="prose mx-auto pb-24">
-            {service.description && 
-             typeof service.description === 'object' && 
-             'root' in service.description ? (
-              <RichText
-                content={service.description}
-                enableProse={true}
-                enableGutter={false}
-                preset="blogPost"
-                customClasses={{
-                  paragraph: 'text-body-medium text-gray-800',
-                  h2: 'text-headline-medium font-bold text-gray-900',
-                  link: 'underline hover:text-brand-gold text-gray-900'
-                }}
-              />
-            ) : (
-              <p className="text-body-medium text-gray-800">
-                {typeof service.description === 'string' ? service.description : ''}
-              </p>
-            )}
+            <RichText
+              content={service.description || ''}
+              enableProse={true}
+              enableGutter={false}
+              theme="light"
+            />
           </article>
         </div>
       </div>
     </article>
-  );
+  )
 }
 
-async function queryServiceBySlug({
-  slug,
-}: {
-  slug: string;
-}): Promise<Service | null> {
-  const payload = await getPayloadHMR({ config: configPromise });
+async function queryServiceBySlug({ slug }: { slug: string }): Promise<Service | null> {
+  const payload = await getPayloadHMR({ config: configPromise })
   try {
     const result = await payload.find({
-      collection: "services",
+      collection: 'services',
       limit: 1,
       where: {
         slug: {
           equals: slug,
         },
       },
-    });
-    return result.docs[0] || null;
+    })
+    return result.docs[0] || null
   } catch (error) {
-    return null;
+    return null
   }
 }

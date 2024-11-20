@@ -1,18 +1,18 @@
-"use client";
+'use client'
 
-import { RichText } from "@/components/RichText";
+import { RichText } from '@/components/RichText'
 
 interface LocationHeroTextProps {
-  title?: string;
+  title?: string
   description?: {
     root: {
-      children: any[];
-    };
-  };
+      children: any[]
+    }
+  }
 }
 
 export function LocationHeroText({
-  title = "A Web Design Studio in Penscaola, FL.",
+  title = 'A Web Design Studio in Penscaola, FL.',
   description,
 }: LocationHeroTextProps) {
   return (
@@ -31,20 +31,10 @@ export function LocationHeroText({
             </div>
           </div>
           <div className="mt-5 w-full px-2 text-lg font-light text-zinc-400 lg:mt-10 lg:w-[43.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-            <div className="w-full">
-              {description && (
-                <RichText 
-                  content={description} 
-                  enableProse={false}
-                  customClasses={{
-                    paragraph: 'text-body-medium text-zinc-400'
-                  }}
-                />
-              )}
-            </div>
+            <div className="w-full">{description && <RichText content={description} />}</div>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
