@@ -7,6 +7,7 @@ const config = {
   staticRoutes: [
     { path: "/", priority: 1.0 },
     { path: "/about", priority: 0.8 },
+    { path: "/location", priority: 0.9 },
   ],
   // Dynamic content configuration
   collections: {
@@ -14,6 +15,11 @@ const config = {
       endpoint: "pages",
       prefix: "/",
       priority: 0.8,
+    },
+    locations: {
+      endpoint: "locations",
+      prefix: "/location/",
+      priority: 0.9,
     },
   },
 } as const;
