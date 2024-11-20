@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export const BlogCard = ({ post }: { post: Post }) => {
   return (
-    <Link className="relative" href={`/blog/${post.slug}`}>
+    <Link className="relative" href={`/journal/${post.slug}`}>
       <div className="mb-5 overflow-hidden rounded-md">
         <div className="relative h-[0] w-full pb-[66%]">
           <Image
