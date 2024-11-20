@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@payloadcms/db-mongodb": "beta",
-    "@payloadcms/email-nodemailer": "3.0.0-beta.29",
+    "@payloadcms/email-nodemailer": "beta",
     "@payloadcms/live-preview-react": "beta",
     "@payloadcms/next": "beta",
     "@payloadcms/plugin-cloud": "beta",

@@ -10,7 +10,7 @@ import { seoPlugin } from "@payloadcms/plugin-seo";
 import { GenerateTitle, GenerateURL } from "@payloadcms/plugin-seo/types";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
-import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
+// import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
 import { s3Storage } from "@payloadcms/storage-s3";
 
 //* Import Collections
@@ -18,6 +18,7 @@ import { BlogCategories } from "@/collections/BlogCategories/config";
 import { BlogPosts } from "@/collections/BlogPosts/config";
 import { Brands } from "@/collections/Brands/config";
 import { FAQ } from "@/collections/FAQ/config";
+import { Industries } from "./collections/Industries/config";
 import { Journeys } from "@/collections/Journeys/config";
 import { Location } from "@/collections/Locations/config";
 import { Media } from "@/collections/Media/config";
@@ -41,7 +42,6 @@ import { Footer } from "./globals/Footer/index";
 
 //* Import Types
 import { Page, Post } from "@/payload-types";
-import { Industries } from "./collections/Industries/config";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -216,4 +216,11 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, "payload-types.ts"),
   },
+  // email: nodemailerAdapter({
+  //   defaultFromAddress: "hello@brewww.studio",
+  //   defaultFromName: "Brewww Studio",
+  //   transportOptions: {
+  //     apiKey: process.env.MAILEROO_API_KEY,
+  //   },
+  // }),
 });
