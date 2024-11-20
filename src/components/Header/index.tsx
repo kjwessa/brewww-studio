@@ -29,7 +29,7 @@ export default function Header() {
               <Link href="/home">
                 <Image
                   className="w-36 max-w-full cursor-pointer"
-                  src="/images/brewww-logotype-gold.png"
+                  src="/images/brand/brewww-logotype-gold.png"
                   alt="Brewww Logo"
                   width={144}
                   height={40}
