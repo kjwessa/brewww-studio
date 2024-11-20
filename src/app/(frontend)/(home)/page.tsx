@@ -1,20 +1,353 @@
-import Image from "next/image";
-export default function Page() {
+export default function HomePage() {
   return (
-    <div
-      className="fixed z-50 flex min-h-dvh w-full items-center justify-center bg-brand-dark-bg pt-64" // Center the image
-      style={{ marginBottom: "-100px" }}
-    >
-      <div className="container mx-auto">
-        <div className="flex w-full flex-row items-center justify-center">
-          <Image
-            src="/images/brewww_mark.png"
-            width={256}
-            height={256}
-            alt="Brewww Studio logo"
-          />
+    <>
+      <div>
+        <div className="min-h-full text-sm text-zinc-800">
+          <section className="absolute left-0 right-0 top-0 z-[3]">
+            <div className="grid auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto] border-b-2 border-solid border-b-white/[0.15]">
+              <div className="flex justify-between border-r-2 border-solid border-r-white/[0.15] p-4">
+                <a
+                  className="inline-block max-w-full text-blue-700 underline"
+                  href=""
+                >
+                  <img
+                    className="inline-block h-5 w-auto max-w-full cursor-pointer align-middle"
+                    src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66cdf718331a1c2297412f3e_Logo-White.png"
+                  />
+                </a>
+                <div className="text-white">©2024</div>
+              </div>
+              <div className="items-center justify-between p-4 text-blue-700">
+                <div className="flex justify-between">
+                  <div className="flex justify-start gap-4">
+                    <a
+                      className="inline-block max-w-full overflow-hidden"
+                      href=""
+                    >
+                      <div className="cursor-pointer text-white">Work</div>
+                    </a>
+                    <a
+                      className="inline-block max-w-full overflow-hidden"
+                      href=""
+                    >
+                      <div className="cursor-pointer text-white">About</div>
+                    </a>
+                    <a
+                      className="inline-block max-w-full overflow-hidden"
+                      href=""
+                    >
+                      <div className="cursor-pointer text-white">News</div>
+                    </a>
+                  </div>
+                  <a
+                    className="inline-block max-w-full overflow-hidden"
+                    href=""
+                  >
+                    <div className="cursor-pointer text-white">Contact</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div className="relative z-[3] flex h-[100svh] flex-col justify-between px-4 pb-4 pt-16">
+              <h1 className="mx-0 my-3 text-[10.63rem] font-medium leading-none text-white">
+                We craft brands beyond tomorrow.
+              </h1>
+              <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start gap-4">
+                <div className="col-start-1 col-end-3 row-start-1 row-end-2 self-end text-white">
+                  London / UK
+                </div>
+                <div className="col-start-4 row-start-1 row-end-2 text-white">
+                  • A strategic social media and marketing studio with a common
+                  vision of using social media to connect clients with their
+                  audiences
+                </div>
+                <div
+                  className="col-start-12 col-end-13 row-start-1 row-end-2 h-6 w-6 self-end justify-self-end overflow-hidden"
+                  style={{
+                    gridArea: "1 / 12 / 2 / 13",
+                  }}
+                >
+                  <img
+                    className="inline-block h-6 w-6 max-w-full align-middle"
+                    src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66cdf5d728a66eec679815ec_Down-Arrow.svg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="absolute bottom-0 left-0 top-0 z-[1] h-[100svh] w-full overflow-hidden">
+              <div className="relative h-[100svh] w-full overflow-hidden text-white">
+                <video
+                  className='absolute bottom-[-85.13rem] left-[-105.38rem] right-[-105.38rem] top-[-85.13rem] z-[-100] m-auto inline-block h-full w-full bg-[url("https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80%2F66d6c237377a44df6b2bcd7d_BG%20VIdeo-poster-00001.jpg")] bg-cover object-cover text-black'
+                  style={{
+                    backgroundPosition: "50% 50%",
+                  }}
+                >
+                  <source src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80%2F66d6c237377a44df6b2bcd7d_BG%20VIdeo-transcode.mp4" />
+                  <source src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80%2F66d6c237377a44df6b2bcd7d_BG%20VIdeo-transcode.webm" />
+                </video>
+              </div>
+              <div className="absolute bottom-0 left-0 top-0 z-[2] bg-black/[0.5]" />
+            </div>
+          </section>
+          <div className="px-4 py-4 pb-48">
+            <div className="mb-16">
+              <div className="flex flex-col gap-8">
+                <div className="border-b-2 border-solid border-b-black/[0.1] pb-3">
+                  <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start gap-4">
+                    <h2 className="col-start-1 row-start-1 row-end-2 text-[12.75rem] font-medium leading-none text-white">
+                      Work
+                    </h2>
+                    <div className="col-start-7 col-end-9 row-start-1 row-end-2 self-end text-white">
+                      <div>(2014-2024)</div>
+                    </div>
+                    <a
+                      className="col-start-11 col-end-13 row-start-1 row-end-2 inline-block max-w-full self-end justify-self-end overflow-hidden text-blue-700"
+                      href=""
+                    >
+                      <div className="cursor-pointer text-white">View All</div>
+                      <div className="h-0 w-full cursor-pointer bg-white" />
+                    </a>
+                  </div>
+                </div>
+                <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start text-5xl font-medium text-white">
+                  <div className="col-end-12 row-start-1 row-end-2">
+                    We help brands grow and tell their stories to the world
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="grid auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto] gap-x-4 gap-y-16">
+              <div />
+              <div />
+              <div />
+              <div />
+            </div>
+          </div>
+          <div className="px-4 py-4 pb-48 text-[12.75rem] font-medium leading-none text-white">
+            <div className="flex flex-col items-stretch justify-start">
+              <h2>Service</h2>
+            </div>
+          </div>
+          <div className="flex w-full flex-wrap items-start justify-center overflow-hidden">
+            <img
+              className="inline-block h-[59.33rem] w-full max-w-full align-middle"
+              src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d7195fe42755fefbae5362_Section%20Image%201.webp"
+              srcSet="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d7195fe42755fefbae5362_Section%20Image%201-p-500.webp 500w, https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d7195fe42755fefbae5362_Section%20Image%201-p-800.webp 800w, https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d7195fe42755fefbae5362_Section%20Image%201-p-1080.webp 1080w, https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d7195fe42755fefbae5362_Section%20Image%201-p-1600.webp 1600w, https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d7195fe42755fefbae5362_Section%20Image%201.webp 1920w"
+            />
+          </div>
+          <div className="px-4 py-4 pb-48">
+            <div className="mb-16">
+              <div className="flex flex-col gap-8">
+                <div className="border-b-2 border-solid border-b-black/[0.1] pb-3">
+                  <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start gap-4">
+                    <h2 className="col-start-1 row-start-1 row-end-2 text-[12.75rem] font-medium leading-none text-white">
+                      News
+                    </h2>
+                    <a
+                      className="col-start-11 col-end-13 row-start-1 row-end-2 inline-block max-w-full self-end justify-self-end overflow-hidden text-blue-700"
+                      href=""
+                    >
+                      <div className="cursor-pointer text-white">View All</div>
+                      <div className="h-0 w-full cursor-pointer bg-white" />
+                    </a>
+                  </div>
+                </div>
+                <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start text-5xl font-medium text-white">
+                  <div className="col-end-12 row-start-1 row-end-2">
+                    Achieve narrative design excellence by infusing your story
+                    with captivating visuals
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="grid auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr] grid-rows-[auto] gap-4">
+              <div />
+              <div />
+              <div />
+              <div />
+            </div>
+          </div>
+          <div className="border-t-2 border-solid border-t-black/[0.1]">
+            <div className="px-4 pb-0 pt-4">
+              <div className="flex flex-col gap-48">
+                <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start gap-x-4 gap-y-12">
+                  <a
+                    className="col-start-1 row-start-1 row-end-2 inline-block max-w-full text-blue-700 underline"
+                    href=""
+                  >
+                    <img
+                      className="inline-block h-5 w-auto max-w-full cursor-pointer align-middle"
+                      src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d737725cf1eed63493121c_Logo%20Black.png"
+                    />
+                  </a>
+                  <div className="col-end-7 row-start-1 row-end-2 flex flex-col items-start justify-start text-blue-700">
+                    <a
+                      className="inline-block max-w-full overflow-hidden"
+                      href=""
+                    >
+                      <div className="cursor-pointer text-5xl font-medium text-white">
+                        Work
+                      </div>
+                      <div className="h-0 w-full cursor-pointer bg-white" />
+                    </a>
+                    <a
+                      className="inline-block max-w-full overflow-hidden"
+                      href=""
+                    >
+                      <div className="cursor-pointer text-5xl font-medium text-white">
+                        About
+                      </div>
+                      <div className="h-0 w-full cursor-pointer bg-white" />
+                    </a>
+                    <a
+                      className="inline-block max-w-full overflow-hidden"
+                      href=""
+                    >
+                      <div className="cursor-pointer text-5xl font-medium text-white">
+                        News
+                      </div>
+                      <div className="h-0 w-full cursor-pointer bg-white" />
+                    </a>
+                    <a
+                      className="inline-block max-w-full overflow-hidden"
+                      href=""
+                    >
+                      <div className="cursor-pointer text-5xl font-medium text-white">
+                        Contact
+                      </div>
+                      <div className="h-0 w-full cursor-pointer bg-white" />
+                    </a>
+                  </div>
+                  <div
+                    className="col-start-10 col-end-13 row-start-1 row-end-2 flex flex-col gap-2"
+                    style={{
+                      gridArea: "1 / 10 / 2 / 13",
+                    }}
+                  >
+                    <div className="text-white">Social</div>
+                    <div className="text-blue-700">
+                      <a
+                        className="flex max-w-full items-center justify-between py-2"
+                        href=""
+                      >
+                        <div className="cursor-pointer text-white blur-[0px]">
+                          Instagram
+                        </div>
+                        <img
+                          className="inline-block h-4 w-4 max-w-full cursor-pointer align-middle blur-[0px]"
+                          src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d73da8c64d61796ed2fcd3_Link%20Arrow%20Black.svg"
+                        />
+                      </a>
+                      <a
+                        className="flex max-w-full items-center justify-between py-2"
+                        href=""
+                      >
+                        <div className="cursor-pointer text-white blur-[0px]">
+                          Facebook
+                        </div>
+                        <img
+                          className="inline-block h-4 w-4 max-w-full cursor-pointer align-middle blur-[0px]"
+                          src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d73da8c64d61796ed2fcd3_Link%20Arrow%20Black.svg"
+                        />
+                      </a>
+                      <a
+                        className="flex max-w-full items-center justify-between py-2"
+                        href=""
+                      >
+                        <div className="cursor-pointer text-white blur-[0px]">
+                          Tiktok
+                        </div>
+                        <img
+                          className="inline-block h-4 w-4 max-w-full cursor-pointer align-middle blur-[0px]"
+                          src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d73da8c64d61796ed2fcd3_Link%20Arrow%20Black.svg"
+                        />
+                      </a>
+                      <a
+                        className="flex max-w-full items-center justify-between py-2"
+                        href=""
+                      >
+                        <div className="cursor-pointer text-white blur-[0px]">
+                          Youtube
+                        </div>
+                        <img
+                          className="inline-block h-4 w-4 max-w-full cursor-pointer align-middle blur-[0px]"
+                          src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66d73da8c64d61796ed2fcd3_Link%20Arrow%20Black.svg"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start">
+                  <div className="col-end-13 row-start-1 row-end-2 flex flex-col gap-2 justify-self-start">
+                    <div className="text-white">
+                      Interested in working with us?
+                    </div>
+                    <a
+                      className="inline-block max-w-full overflow-hidden text-blue-700"
+                      href=""
+                    >
+                      <div className="cursor-pointer text-[12.75rem] font-medium leading-none text-white">
+                        Let's Chat
+                      </div>
+                      <div className="h-1 w-full cursor-pointer bg-white" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4 py-4">
+                <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] content-start gap-4">
+                  <a
+                    className="col-start-1 row-start-1 row-end-2 inline-block max-w-full justify-self-start overflow-hidden text-blue-700"
+                    href=""
+                  >
+                    <div className="cursor-pointer text-white">
+                      More Template
+                    </div>
+                    <div className="h-0 w-full cursor-pointer bg-white" />
+                  </a>
+                  <div className="col-start-4 col-end-8 row-start-1 row-end-2 flex gap-8 text-blue-700">
+                    <a
+                      className="inline-block max-w-full overflow-hidden"
+                      href=""
+                    >
+                      <div className="cursor-pointer text-white">Licenses</div>
+                      <div className="h-0 w-full cursor-pointer bg-white" />
+                    </a>
+                    <a
+                      className="inline-block max-w-full overflow-hidden"
+                      href=""
+                    >
+                      <div className="cursor-pointer text-white">Changelog</div>
+                      <div className="h-0 w-full cursor-pointer bg-white" />
+                    </a>
+                    <a
+                      className="inline-block max-w-full overflow-hidden"
+                      href=""
+                    >
+                      <div className="cursor-pointer text-white">
+                        Style Guide
+                      </div>
+                      <div className="h-0 w-full cursor-pointer bg-white" />
+                    </a>
+                    <a
+                      className="inline-block max-w-full overflow-hidden"
+                      href=""
+                    >
+                      <div className="cursor-pointer text-white">Webflow</div>
+                      <div className="h-0 w-full cursor-pointer bg-white" />
+                    </a>
+                  </div>
+                  <div className="col-end-13 row-start-1 row-end-2 justify-self-end text-white">
+                    ©2024
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
