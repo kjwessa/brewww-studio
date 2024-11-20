@@ -1,26 +1,33 @@
 import Image from "next/image";
+import { cn } from "@/utilities/cn";
 
 interface LogoCardProps {
   logo: string;
-  variant?: "surface";
+  variant?: "surface" | "default";
 }
 
-export function LogoCard({ logo, variant }: LogoCardProps) {
-  if (!logo) return null;
-
+export const LogoCard = ({ logo, variant = "default" }: LogoCardProps) => {
   return (
-    <div className="h-full w-[280px] flex-shrink-0 px-4">
-      <div className="flex w-full items-center justify-center rounded-3xl bg-zinc-900 py-10">
-        <div className="relative h-12 w-full px-8">
+    <div className="h-full w-[280px] px-4">
+      <div
+        className={cn(
+          "flex h-28 w-full items-center justify-center overflow-hidden rounded-3xl lg:h-40 min-[2100px]:h-44",
+          {
+            "bg-brand-dark-surface": variant === "surface",
+            "bg-brand-dark-bg": variant === "default",
+          }
+        )}
+      >
+        <div className="relative h-full w-full">
           <Image
             src={logo}
-            alt="Technology Logo"
+            alt="Logo"
             fill
             style={{ objectFit: "contain" }}
-            className="select-none"
+            className="px-4"
           />
         </div>
       </div>
     </div>
   );
-}
+};
