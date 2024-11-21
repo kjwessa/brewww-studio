@@ -150,7 +150,7 @@ export interface Page {
     image?: (string | null) | Media;
     description?: string | null;
   };
-  slug: string;
+  slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;
   createdAt: string;
@@ -197,7 +197,7 @@ export interface Post {
     description?: string | null;
   };
   featured?: boolean | null;
-  slug: string;
+  slug?: string | null;
   slugLock?: boolean | null;
   publishedOn: string;
   image: string | Media;
@@ -216,7 +216,7 @@ export interface Post {
 export interface Category {
   id: string;
   title: string;
-  slug: string;
+  slug?: string | null;
   slugLock?: boolean | null;
   meta?: {
     title?: string | null;
@@ -257,7 +257,7 @@ export interface Work {
     image?: (string | null) | Media;
     description?: string | null;
   };
-  slug: string;
+  slug?: string | null;
   slugLock?: boolean | null;
   image: string | Media;
   brand: string | Brand;
@@ -294,7 +294,7 @@ export interface Service {
   id: string;
   title: string;
   tagline?: string | null;
-  slug: string;
+  slug?: string | null;
   slugLock?: boolean | null;
   image?: (string | null) | Media;
   description?: string | null;
@@ -366,7 +366,7 @@ export interface Play {
     image?: (string | null) | Media;
     description?: string | null;
   };
-  slug: string;
+  slug?: string | null;
   slugLock?: boolean | null;
   publishedOn: string;
   image: string | Media;
@@ -410,7 +410,7 @@ export interface Pillar {
   title: string;
   tagline: string;
   services?: (string | null) | Service;
-  slug: string;
+  slug?: string | null;
   slugLock?: boolean | null;
   description: string;
   content?: {};
@@ -444,7 +444,7 @@ export interface Journey {
   id: string;
   title: string;
   tagline?: string | null;
-  slug: string;
+  slug?: string | null;
   slugLock?: boolean | null;
   services?: (string | null) | Service;
   description?: string | null;
@@ -483,7 +483,7 @@ export interface Location {
     };
     [k: string]: unknown;
   };
-  slug: string;
+  slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;
   createdAt: string;
@@ -511,7 +511,7 @@ export interface Result {
 export interface Team {
   id: string;
   title: string;
-  slug: string;
+  slug?: string | null;
   slugLock?: boolean | null;
   role: string;
   image?: (string | null) | Media;
@@ -548,7 +548,7 @@ export interface Industry {
   id: string;
   title: string;
   tagline?: string | null;
-  slug: string;
+  slug?: string | null;
   slugLock?: boolean | null;
   description?: string | null;
   content?: {};
