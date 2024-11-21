@@ -1,75 +1,71 @@
 // Payload Imports
-import type { CollectionConfig } from "payload";
+import type { CollectionConfig } from 'payload'
 
 // Access Control
-import { isAdmin } from "@/access/isAdmin";
-import { publishedOnly } from "@/access/publishedOnly";
+import { authenticated } from '@/access/authenticated'
+import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
 // Fields
-import { slugField } from "@/fields/slug";
+import { slugField } from '@/fields/slug'
 
 export const Location: CollectionConfig = {
-  slug: "locations",
+  slug: 'locations',
 
   //* Access Settings
   access: {
-    create: isAdmin,
-    delete: isAdmin,
-    read: publishedOnly,
-    readVersions: isAdmin,
-    update: isAdmin,
+    create: authenticated,
+    delete: authenticated,
+    read: authenticatedOrPublished,
+    update: authenticated,
   },
 
   //* Collection Fields
   fields: [
     {
-      name: "title",
-      type: "text",
-      label: "Location Title",
+      name: 'title',
+      type: 'text',
+      label: 'Location Title',
       required: true,
       unique: true,
       admin: {
-        description: "The title of the location as it appears around the site.",
+        description: 'The title of the location as it appears around the site.',
       },
     },
     {
-      name: "location",
-      type: "text",
-      label: "Location",
+      name: 'location',
+      type: 'text',
+      label: 'Location',
       required: false,
       admin: {
-        description:
-          "The location of the location as it appears around the site.",
+        description: 'The location of the location as it appears around the site.',
       },
     },
     {
-      name: "heroTitle",
-      type: "text",
-      label: "Hero Title",
+      name: 'heroTitle',
+      type: 'text',
+      label: 'Hero Title',
       required: true,
       admin: {
-        description:
-          "The hero title of the location as it appears around the site.",
+        description: 'The hero title of the location as it appears around the site.',
       },
     },
     {
-      name: "heroImage",
-      type: "upload",
-      label: "Hero Image",
-      relationTo: "media",
+      name: 'heroImage',
+      type: 'upload',
+      label: 'Hero Image',
+      relationTo: 'media',
       required: true,
       admin: {
-        description:
-          "The hero image displayed at the top of the location page.",
+        description: 'The hero image displayed at the top of the location page.',
       },
     },
     {
-      name: "heroDescription",
-      type: "richText",
-      label: "Hero Description",
+      name: 'heroDescription',
+      type: 'richText',
+      label: 'Hero Description',
       required: true,
       admin: {
-        description: "The hero description of the location.",
+        description: 'The hero description of the location.',
       },
     },
     ...slugField(),
@@ -78,17 +74,17 @@ export const Location: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    description: "Landing pages for locations",
-    group: "Service",
-    useAsTitle: "title",
+    description: 'Landing pages for locations',
+    group: 'Service',
+    useAsTitle: 'title',
   },
 
   labels: {
-    singular: "Location",
-    plural: "Locations",
+    singular: 'Location',
+    plural: 'Locations',
   },
   versions: {
     drafts: { autosave: { interval: 100 } },
     maxPerDoc: 25,
   },
-};
+}

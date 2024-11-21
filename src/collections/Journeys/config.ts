@@ -1,12 +1,12 @@
 // Payload Imports
-import type { CollectionConfig } from "payload";
+import type { CollectionConfig } from 'payload'
 
 // Access Control
-import { isAdmin } from "@/access/isAdmin";
-import { publishedOnly } from "@/access/publishedOnly";
+import { authenticated } from '@/access/authenticated'
+import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
 // Fields
-import { slugField } from "@/fields/slug";
+import { slugField } from '@/fields/slug'
 
 // SEO Fields
 import {
@@ -15,81 +15,80 @@ import {
   MetaTitleField,
   OverviewField,
   PreviewField,
-} from "@payloadcms/plugin-seo/fields";
+} from '@payloadcms/plugin-seo/fields'
 
 export const Journeys: CollectionConfig = {
-  slug: "journeys",
+  slug: 'journeys',
 
   access: {
-    create: isAdmin,
-    delete: isAdmin,
-    read: publishedOnly,
-    readVersions: isAdmin,
-    update: isAdmin,
+    create: authenticated,
+    delete: authenticated,
+    read: authenticatedOrPublished,
+    update: authenticated,
   },
 
   //* Collection Fields
   fields: [
     {
-      name: "title",
-      type: "text",
-      label: "Title",
+      name: 'title',
+      type: 'text',
+      label: 'Title',
       required: true,
       unique: true,
       admin: {
-        description: "Add the title of the journey here.",
+        description: 'Add the title of the journey here.',
       },
     },
     {
-      name: "tagline",
-      type: "text",
-      label: "Tagline",
+      name: 'tagline',
+      type: 'text',
+      label: 'Tagline',
       required: false,
       admin: {
-        description: "Add the tagline for the journey here.",
+        description: 'Add the tagline for the journey here.',
       },
     },
 
     ...slugField(),
     {
-      name: "services",
-      type: "relationship",
-      relationTo: "services",
-      label: "Services",
+      name: 'services',
+      type: 'relationship',
+      relationTo: 'services',
+      label: 'Services',
       required: false,
       admin: {
-        position: "sidebar",
+        position: 'sidebar',
       },
     },
     {
-      name: "description",
-      type: "textarea",
-      label: "Description",
+      name: 'description',
+      type: 'textarea',
+      label: 'Description',
       required: false,
       admin: {
-        description: "Add the description of the journey here.",
+        description: 'Add the description of the journey here.',
       },
     },
     {
-      type: "tabs",
+      type: 'tabs',
       tabs: [
         {
-          name: "content",
-          label: "Content",
+          name: 'content',
+          label: 'Content',
           fields: [],
         },
 
         {
-          name: "seo",
-          label: "SEO",
+          name: 'seo',
+          label: 'SEO',
           fields: [
             OverviewField({
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-              imagePath: "meta.image",
+              titlePath: 'meta.title',
+              descriptionPath: 'meta.description',
+              imagePath: 'meta.image',
             }),
             MetaImageField({
-              relationTo: "media",
+              relationTo: 'media',
             }),
             MetaTitleField({
               hasGenerateFn: true,
@@ -97,8 +96,8 @@ export const Journeys: CollectionConfig = {
             MetaDescriptionField({}),
             PreviewField({
               hasGenerateFn: true,
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
+              titlePath: 'meta.title',
+              descriptionPath: 'meta.description',
             }),
           ],
         },
@@ -109,23 +108,23 @@ export const Journeys: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    description: "Journeys of Brewww",
-    defaultColumns: ["title", "updatedAt"],
-    group: "Service",
-    listSearchableFields: ["title", "description"],
+    description: 'Journeys of Brewww',
+    defaultColumns: ['title', 'updatedAt'],
+    group: 'Service',
+    listSearchableFields: ['title', 'description'],
     pagination: {
       defaultLimit: 25,
       limits: [25, 50, 100],
     },
-    useAsTitle: "title",
+    useAsTitle: 'title',
   },
-  defaultSort: "title",
+  defaultSort: 'title',
   labels: {
-    singular: "Journey",
-    plural: "Journeys",
+    singular: 'Journey',
+    plural: 'Journeys',
   },
   versions: {
     drafts: { autosave: { interval: 100 } },
     maxPerDoc: 25,
   },
-};
+}

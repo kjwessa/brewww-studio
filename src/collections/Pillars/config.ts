@@ -1,12 +1,12 @@
 // Payload Imports
-import type { CollectionConfig } from "payload";
+import type { CollectionConfig } from 'payload'
 
 // Access Control
-import { isAdmin } from "@/access/isAdmin";
-import { publishedOnly } from "@/access/publishedOnly";
+import { authenticated } from '@/access/authenticated'
+import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
 // Fields
-import { slugField } from "@/fields/slug";
+import { slugField } from '@/fields/slug'
 
 // SEO Fields
 import {
@@ -15,84 +15,83 @@ import {
   MetaTitleField,
   OverviewField,
   PreviewField,
-} from "@payloadcms/plugin-seo/fields";
+} from '@payloadcms/plugin-seo/fields'
 
 export const Pillars: CollectionConfig = {
-  slug: "pillars",
+  slug: 'pillars',
 
   access: {
-    create: isAdmin,
-    delete: isAdmin,
-    read: publishedOnly,
-    readVersions: isAdmin,
-    update: isAdmin,
+    create: authenticated,
+    delete: authenticated,
+    read: authenticatedOrPublished,
+    update: authenticated,
   },
 
   //* Collection Fields
   fields: [
     {
-      name: "title",
-      type: "text",
-      label: "Title",
+      name: 'title',
+      type: 'text',
+      label: 'Title',
       required: true,
       unique: true,
       admin: {
-        description: "Add the title of the pillar here.",
+        description: 'Add the title of the pillar here.',
       },
     },
     {
-      name: "tagline",
-      type: "text",
-      label: "Tagline",
+      name: 'tagline',
+      type: 'text',
+      label: 'Tagline',
       required: true,
       admin: {
-        description: "Add the tagline for the pillar here.",
+        description: 'Add the tagline for the pillar here.',
       },
     },
     {
-      name: "services",
-      type: "relationship",
-      relationTo: "services",
-      label: "Services",
+      name: 'services',
+      type: 'relationship',
+      relationTo: 'services',
+      label: 'Services',
       required: false,
       admin: {
-        position: "sidebar",
+        position: 'sidebar',
       },
     },
     ...slugField(),
     {
-      name: "description",
-      type: "textarea",
-      label: "Description",
+      name: 'description',
+      type: 'textarea',
+      label: 'Description',
       required: true,
       admin: {
-        description: "Add the description of the pillar here.",
+        description: 'Add the description of the pillar here.',
       },
     },
     {
-      type: "tabs",
+      type: 'tabs',
       tabs: [
         {
-          name: "content",
-          label: "Content",
+          name: 'content',
+          label: 'Content',
           fields: [],
         },
         {
-          name: "metadata",
-          label: "Meta",
+          name: 'metadata',
+          label: 'Meta',
           fields: [],
         },
         {
-          name: "seo",
-          label: "SEO",
+          name: 'seo',
+          label: 'SEO',
           fields: [
             OverviewField({
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-              imagePath: "meta.image",
+              titlePath: 'meta.title',
+              descriptionPath: 'meta.description',
+              imagePath: 'meta.image',
             }),
             MetaImageField({
-              relationTo: "media",
+              relationTo: 'media',
             }),
             MetaTitleField({
               hasGenerateFn: true,
@@ -100,8 +99,8 @@ export const Pillars: CollectionConfig = {
             MetaDescriptionField({}),
             PreviewField({
               hasGenerateFn: true,
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
+              titlePath: 'meta.title',
+              descriptionPath: 'meta.description',
             }),
           ],
         },
@@ -112,23 +111,23 @@ export const Pillars: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    description: "Pillars of Brewww",
-    defaultColumns: ["title", "updatedAt"],
-    group: "Service",
-    listSearchableFields: ["title", "description"],
+    description: 'Pillars of Brewww',
+    defaultColumns: ['title', 'updatedAt'],
+    group: 'Service',
+    listSearchableFields: ['title', 'description'],
     pagination: {
       defaultLimit: 25,
       limits: [25, 50, 100],
     },
-    useAsTitle: "title",
+    useAsTitle: 'title',
   },
-  defaultSort: "title",
+  defaultSort: 'title',
   labels: {
-    singular: "Pillar",
-    plural: "Pillars",
+    singular: 'Pillar',
+    plural: 'Pillars',
   },
   versions: {
     drafts: { autosave: { interval: 100 } },
     maxPerDoc: 25,
   },
-};
+}

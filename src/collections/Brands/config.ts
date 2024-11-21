@@ -1,71 +1,68 @@
 // Payload Imports
-import type { CollectionConfig } from "payload";
+import type { CollectionConfig } from 'payload'
 
 // Access Control
-import { isAdmin } from "@/access/isAdmin";
-import { publishedOnly } from "@/access/publishedOnly";
+import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
+import { authenticated } from '@/access/authenticated'
 
 export const Brands: CollectionConfig = {
-  slug: "brands",
+  slug: 'brands',
 
   //* Access Settings
   access: {
-    create: isAdmin,
-    delete: isAdmin,
-    read: publishedOnly,
-    readVersions: isAdmin,
-    update: isAdmin,
+    create: authenticated,
+    delete: authenticated,
+    read: authenticatedOrPublished,
+    update: authenticated,
   },
 
   //* Collection Fields
   fields: [
     {
-      name: "title",
-      type: "text",
-      label: "Name",
+      name: 'title',
+      type: 'text',
+      label: 'Name',
       required: true,
       admin: {
-        description: "Add the client name as it will appear around the site.",
+        description: 'Add the client name as it will appear around the site.',
       },
     },
     {
-      name: "logoLight",
-      type: "upload",
-      relationTo: "media",
+      name: 'logoLight',
+      type: 'upload',
+      relationTo: 'media',
       required: false,
-      label: "Logo Light",
+      label: 'Logo Light',
       admin: {
-        description:
-          "Add the light version of the logo that appears on dark backgrounds",
+        description: 'Add the light version of the logo that appears on dark backgrounds',
       },
     },
     {
-      name: "logoDark",
-      type: "upload",
-      relationTo: "media",
+      name: 'logoDark',
+      type: 'upload',
+      relationTo: 'media',
       required: false,
-      label: "Logo Dark",
+      label: 'Logo Dark',
       admin: {
-        description:
-          "Add the dark version of the logo that appears on light backgrounds",
+        description: 'Add the dark version of the logo that appears on light backgrounds',
       },
     },
     {
-      name: "city",
-      type: "text",
-      label: "City",
+      name: 'city',
+      type: 'text',
+      label: 'City',
       required: true,
       admin: {
-        description: "The closest major city to the client.",
+        description: 'The closest major city to the client.',
       },
     },
     {
-      name: "state",
-      type: "text",
-      label: "State",
+      name: 'state',
+      type: 'text',
+      label: 'State',
       required: true,
       admin: {
-        description: "The state where the client is based.",
+        description: 'The state where the client is based.',
       },
     },
   ],
@@ -73,24 +70,23 @@ export const Brands: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    description:
-      "Our bread and butter. Add (or remove) brands from this list carefully.",
-    defaultColumns: ["title", "city", "state"],
-    group: "Portfolio",
-    listSearchableFields: ["title", "city", "state"],
+    description: 'Our bread and butter. Add (or remove) brands from this list carefully.',
+    defaultColumns: ['title', 'city', 'state'],
+    group: 'Portfolio',
+    listSearchableFields: ['title', 'city', 'state'],
     pagination: {
       defaultLimit: 25,
       limits: [25, 50, 100],
     },
-    useAsTitle: "title",
+    useAsTitle: 'title',
   },
-  defaultSort: "title",
+  defaultSort: 'title',
   labels: {
-    singular: "Brand",
-    plural: "Brands",
+    singular: 'Brand',
+    plural: 'Brands',
   },
   versions: {
     drafts: { autosave: { interval: 100 } },
     maxPerDoc: 25,
   },
-};
+}

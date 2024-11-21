@@ -1,34 +1,33 @@
 // Payload Imports
-import type { CollectionConfig } from "payload";
+import type { CollectionConfig } from 'payload'
 
 // Access Control
-import { isAdmin } from "@/access/isAdmin";
-import { publishedOnly } from "@/access/publishedOnly";
+import { authenticated } from '@/access/authenticated'
+import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
 export const FAQ: CollectionConfig = {
-  slug: "faq",
+  slug: 'faq',
 
   //* Access Settings
   access: {
-    create: isAdmin,
-    delete: isAdmin,
-    read: publishedOnly,
-    readVersions: isAdmin,
-    update: isAdmin,
+    create: authenticated,
+    delete: authenticated,
+    read: authenticatedOrPublished,
+    update: authenticated,
   },
 
   //* Collection Fields
   fields: [
     {
-      name: "title",
-      type: "text",
-      label: "Question",
+      name: 'title',
+      type: 'text',
+      label: 'Question',
       required: true,
     },
     {
-      name: "answer",
-      type: "richText",
-      label: "Answer",
+      name: 'answer',
+      type: 'richText',
+      label: 'Answer',
       required: true,
     },
   ],
@@ -36,19 +35,19 @@ export const FAQ: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    description: "Frequently asked questions",
-    defaultColumns: ["title"],
-    group: "Company",
-    listSearchableFields: ["title"],
+    description: 'Frequently asked questions',
+    defaultColumns: ['title'],
+    group: 'Company',
+    listSearchableFields: ['title'],
 
-    useAsTitle: "title",
+    useAsTitle: 'title',
   },
   labels: {
-    singular: "FAQ",
-    plural: "FAQ",
+    singular: 'FAQ',
+    plural: 'FAQ',
   },
   versions: {
     drafts: { autosave: { interval: 100 } },
     maxPerDoc: 25,
   },
-};
+}

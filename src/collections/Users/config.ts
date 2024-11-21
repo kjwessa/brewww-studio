@@ -1,76 +1,48 @@
 // Payload Imports
-import type { CollectionConfig } from "payload";
+import type { CollectionConfig } from 'payload'
 
 // Access Control
-import { isAdmin, isAdminFieldLevel } from "@/access/isAdmin";
-import { isAdminOrSelf, isAdminOrSelfFieldLevel } from "@/access/isAdminOrSelf";
+
+import { authenticated } from '@/access/authenticated'
 
 export const Users: CollectionConfig = {
-  slug: "users",
+  slug: 'users',
 
   //TODO Remove the FULL NAME on the MONGO side
 
   //* Access Settings
   access: {
-    create: isAdmin,
-    delete: isAdminOrSelf,
-    read: () => true,
-    update: isAdminOrSelf,
+    admin: authenticated,
+    create: authenticated,
+    delete: authenticated,
+    read: authenticated,
+    update: authenticated,
   },
 
   //* Collection Fields
   fields: [
     {
-      type: "row",
+      type: 'row',
       fields: [
         {
-          name: "firstName",
-          label: "First Name",
-          type: "text",
+          name: 'firstName',
+          label: 'First Name',
+          type: 'text',
           required: true,
         },
-        { name: "lastName", label: "Last Name", type: "text", required: true },
+        { name: 'lastName', label: 'Last Name', type: 'text', required: true },
       ],
     },
     {
-      name: "photo",
-      type: "upload",
-      relationTo: "media",
-    },
-    {
-      name: "roles",
-      type: "select",
-      access: {
-        create: isAdminFieldLevel,
-        read: isAdminOrSelfFieldLevel,
-        update: isAdminFieldLevel,
-      },
-      hasMany: true,
-      options: ["admin", "public"],
-      required: true,
+      name: 'photo',
+      type: 'upload',
+      relationTo: 'media',
     },
   ],
 
   //* Admin Settings
   admin: {
-    useAsTitle: "email",
+    useAsTitle: 'email',
   },
   auth: true,
-  // TODO: Uncomment this when we have a domain
-  // auth: {
-  //   cookies: {
-  //     domain: process.env.COOKIE_DOMAIN,
-  //     sameSite:
-  //       process.env.NODE_ENV === "production" &&
-  //       !process.env.DISABLE_SECURE_COOKIE
-  //         ? "None"
-  //         : undefined,
-  //     secure:
-  //       process.env.NODE_ENV === "production" &&
-  //       !process.env.DISABLE_SECURE_COOKIE
-  //         ? true
-  //         : undefined,
-  //   },
-  //   tokenExpiration: 28800, // 8 hours
-  // },
-};
+}

@@ -1,85 +1,78 @@
 // Payload Imports
-import type { CollectionConfig } from "payload";
+import type { CollectionConfig } from 'payload'
 
 // Access Control
-import { isAdmin } from "@/access/isAdmin";
-import { publishedOnly } from "@/access/publishedOnly";
+import { authenticated } from '@/access/authenticated'
+import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
 // Fields
-import { metaTab } from "@/fields/meta";
-import { slugField } from "@/fields/slug";
+import { metaTab } from '@/fields/meta'
+import { slugField } from '@/fields/slug'
 
 // Utilities & Hooks
-import { generatePreviewPath } from "@/utilities/generatePreviewPath";
-import { populatePublishedOn } from "@/hooks/populatePublishedOn";
-import { revalidatePost } from "./hooks/revalidatePost";
+import { generatePreviewPath } from '@/utilities/generatePreviewPath'
+import { populatePublishedOn } from '@/hooks/populatePublishedOn'
+import { revalidatePost } from './hooks/revalidatePost'
 
-import {
-  BlocksFeature,
-  HeadingFeature,
-  lexicalEditor,
-} from "@payloadcms/richtext-lexical";
+import { BlocksFeature, HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 
 export const BlogPosts: CollectionConfig = {
-  slug: "posts",
+  slug: 'posts',
 
   //* Access Settings
   access: {
-    create: isAdmin,
-    delete: isAdmin,
-    read: publishedOnly,
-    readVersions: isAdmin,
-    update: isAdmin,
+    create: authenticated,
+    delete: authenticated,
+    read: authenticatedOrPublished,
+    update: authenticated,
   },
 
   //* Collection Fields
   fields: [
     {
-      name: "title",
-      type: "text",
-      label: "Post Title",
+      name: 'title',
+      type: 'text',
+      label: 'Post Title',
       unique: true,
       required: true,
       admin: {
-        description: "The title of the article as it appears around the site.",
+        description: 'The title of the article as it appears around the site.',
       },
     },
     {
-      name: "tagline",
-      type: "text",
-      label: "Post Tagline",
+      name: 'tagline',
+      type: 'text',
+      label: 'Post Tagline',
       required: false,
       admin: {
-        description:
-          "The tagline of the article as it appears around the site.",
+        description: 'The tagline of the article as it appears around the site.',
       },
     },
     {
-      name: "description",
-      type: "textarea",
-      label: "Post Description",
+      name: 'description',
+      type: 'textarea',
+      label: 'Post Description',
       required: false,
       admin: {
-        description:
-          "The description of the article as it appears around the site.",
+        description: 'The description of the article as it appears around the site.',
       },
     },
 
     {
-      type: "tabs",
+      type: 'tabs',
       tabs: [
         {
-          label: "Content",
+          label: 'Content',
           fields: [
             {
-              name: "content",
-              type: "richText",
-              label: "Content",
+              name: 'content',
+              type: 'richText',
+              label: 'Content',
               editor: lexicalEditor({
                 features: ({ defaultFeatures }) => [
                   ...defaultFeatures,
                   HeadingFeature({
-                    enabledHeadingSizes: ["h2", "h3", "h4"],
+                    enabledHeadingSizes: ['h2', 'h3', 'h4'],
                   }),
                   BlocksFeature({
                     blocks: [],
@@ -94,128 +87,121 @@ export const BlogPosts: CollectionConfig = {
       ],
     },
     {
-      name: "featured",
-      type: "checkbox",
-      label: "Featured",
+      name: 'featured',
+      type: 'checkbox',
+      label: 'Featured',
       defaultValue: false,
       admin: {
-        position: "sidebar",
+        position: 'sidebar',
       },
     },
     ...slugField(),
     {
-      name: "publishedOn",
-      type: "date",
+      name: 'publishedOn',
+      type: 'date',
       required: true,
-      label: "Published On",
+      label: 'Published On',
       admin: {
-        position: "sidebar",
+        position: 'sidebar',
         date: {
-          pickerAppearance: "dayAndTime",
+          pickerAppearance: 'dayAndTime',
         },
       },
     },
     {
-      name: "image",
-      type: "upload",
-      relationTo: "media",
-      label: "Featured Image",
+      name: 'image',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Featured Image',
       required: true,
       admin: {
-        position: "sidebar",
+        position: 'sidebar',
       },
     },
     {
-      name: "status",
-      type: "select",
-      options: [
-        "not started",
-        "needs rewrite",
-        "needs polish",
-        "needs photos",
-        "ready",
-      ],
-      defaultValue: "not started",
-      label: "Status",
+      name: 'status',
+      type: 'select',
+      options: ['not started', 'needs rewrite', 'needs polish', 'needs photos', 'ready'],
+      defaultValue: 'not started',
+      label: 'Status',
       admin: {
-        position: "sidebar",
+        position: 'sidebar',
       },
     },
 
     {
-      name: "readTime",
-      type: "number",
+      name: 'readTime',
+      type: 'number',
       required: true,
-      label: "Read Time",
+      label: 'Read Time',
       admin: {
-        position: "sidebar",
+        position: 'sidebar',
       },
     },
     {
-      name: "categories",
-      type: "relationship",
+      name: 'categories',
+      type: 'relationship',
       admin: {
-        position: "sidebar",
+        position: 'sidebar',
       },
       hasMany: true,
-      relationTo: "categories",
+      relationTo: 'categories',
       required: true,
     },
     {
-      name: "relatedPosts",
-      type: "relationship",
+      name: 'relatedPosts',
+      type: 'relationship',
       admin: {
-        position: "sidebar",
+        position: 'sidebar',
       },
       filterOptions: ({ id }) => {
         return {
           id: {
             not_in: [id],
           },
-        };
+        }
       },
       hasMany: true,
-      relationTo: "posts",
+      relationTo: 'posts',
     },
   ],
 
   //* Admin Settings
 
   admin: {
-    description:
-      "Writing brings clarity. Writing is a way to make sense of the world.",
-    defaultColumns: ["title", "status", "publishedOn", "updatedAt", "featured"],
-    group: "Blog Posts",
-    listSearchableFields: ["title"],
+    description: 'Writing brings clarity. Writing is a way to make sense of the world.',
+    defaultColumns: ['title', 'status', 'publishedOn', 'updatedAt', 'featured'],
+    group: 'Blog Posts',
+    listSearchableFields: ['title'],
     livePreview: {
       url: ({ data }) => {
         const path = generatePreviewPath({
-          slug: typeof data?.slug === "string" ? data.slug : "",
-          collection: "posts",
-        });
+          slug: typeof data?.slug === 'string' ? data.slug : '',
+          collection: 'posts',
+        })
 
-        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`;
+        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
       },
     },
     preview: (data) => {
       const path = generatePreviewPath({
-        slug: typeof data?.slug === "string" ? data.slug : "",
-        collection: "posts",
-      });
+        slug: typeof data?.slug === 'string' ? data.slug : '',
+        collection: 'posts',
+      })
 
-      return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`;
+      return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
     },
     pagination: {
       defaultLimit: 100,
       limits: [25, 50, 100],
     },
-    useAsTitle: "title",
+    useAsTitle: 'title',
   },
 
-  defaultSort: "-publishedOn",
+  defaultSort: '-publishedOn',
   labels: {
-    singular: "Post",
-    plural: "Posts",
+    singular: 'Post',
+    plural: 'Posts',
   },
   versions: {
     drafts: { autosave: { interval: 100 } },
@@ -225,4 +211,4 @@ export const BlogPosts: CollectionConfig = {
     beforeChange: [populatePublishedOn],
     afterChange: [revalidatePost],
   },
-};
+}

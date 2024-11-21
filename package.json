@@ -6,27 +6,26 @@
   "scripts": {
     "clean": "rm -rf .next/ && rm -rf node_modules/ && rm -rf pnpm-lock.yaml && pnpm install && pnpm generate:importmap && pnpm generate:types",
     "dev": "NODE_OPTIONS=--no-deprecation next dev",
-    "dev:monitor": "node memory-monitor.js & pnpm dev",
     "build": "NODE_OPTIONS=--no-deprecation next build",
-    "start": "next start",
-    "build:start": "next build && next start",
-    "lint": "next lint",
-    "generate:importmap": "payload generate:importmap",
-    "generate:types": "payload generate:types"
+    "start": "NODE_OPTIONS=--no-deprecation next start",
+    "build:start": "NODE_OPTIONS=--no-deprecation next build && next start",
+    "lint": "NODE_OPTIONS=--no-deprecation next lint",
+    "generate:importmap": "NODE_OPTIONS=--no-deprecation payload generate:importmap",
+    "generate:types": "NODE_OPTIONS=--no-deprecation payload generate:types"
   },
   "dependencies": {
-    "@payloadcms/db-mongodb": "3.0.1",
-    "@payloadcms/email-nodemailer": "3.0.1",
-    "@payloadcms/live-preview-react": "3.0.1",
-    "@payloadcms/next": "3.0.1",
-    "@payloadcms/plugin-cloud": "3.0.1",
-    "@payloadcms/plugin-form-builder": "3.0.1",
-    "@payloadcms/plugin-nested-docs": "3.0.1",
-    "@payloadcms/plugin-redirects": "3.0.1",
-    "@payloadcms/plugin-seo": "3.0.1",
-    "@payloadcms/richtext-lexical": "3.0.1",
-    "@payloadcms/storage-s3": "3.0.1",
-    "@payloadcms/ui": "3.0.1",
+    "@payloadcms/db-mongodb": "3.0.2",
+    "@payloadcms/email-nodemailer": "3.0.2",
+    "@payloadcms/live-preview-react": "3.0.2",
+    "@payloadcms/next": "3.0.2",
+    "@payloadcms/plugin-cloud": "3.0.2",
+    "@payloadcms/plugin-form-builder": "3.0.2",
+    "@payloadcms/plugin-nested-docs": "3.0.2",
+    "@payloadcms/plugin-redirects": "3.0.2",
+    "@payloadcms/plugin-seo": "3.0.2",
+    "@payloadcms/richtext-lexical": "3.0.2",
+    "@payloadcms/storage-s3": "3.0.2",
+    "@payloadcms/ui": "3.0.2",
     "@radix-ui/react-checkbox": "^1.1.2",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-select": "^2.1.2",
@@ -42,7 +41,7 @@
     "jsonwebtoken": "9.0.2",
     "lucide-react": "^0.380.0",
     "next": "^15.0.3",
-    "payload": "3.0.1",
+    "payload": "3.0.2",
     "payload-admin-bar": "^1.0.6",
     "playwright": "^1.49.0",
     "prism-react-renderer": "^2.4.0",
@@ -57,39 +56,26 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "14.1.0",
+    "@next/eslint-plugin-next": "^13.1.6",
     "@payloadcms/eslint-config": "^1.1.1",
     "@tailwindcss/typography": "^0.5.15",
     "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "22.5.4",
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.19",
     "copyfiles": "^2.4.1",
-    "eslint": "9.15.0",
-    "eslint-config-next": "14.1.0",
-    "eslint-plugin-react": "7.33.2",
+    "eslint": "^8",
+    "eslint-config-next": "^15.0.0",
     "fluid-tailwind": "^1.0.4",
-    "postcss": "^8.4.49",
-    "prettier": "^3.3.3",
+    "postcss": "^8.4.38",
+    "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.6.9",
-    "tailwindcss": "^3.4.15",
-    "typescript": "^5.6.3"
+    "tailwindcss": "^3.4.3",
+    "typescript": "5.6.3"
   },
   "engines": {
     "node": "^18.20.2 || >=20.9.0"
-  },
-  "next-unused": {
-    "alias": {},
-    "include": [
-      "src"
-    ],
-    "exclude": [
-      "node_modules"
-    ],
-    "entrypoints": [
-      "src/app"
-    ]
   },
   "pnpm": {
     "overrides": {

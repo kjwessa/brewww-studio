@@ -528,7 +528,6 @@ export interface User {
   firstName: string;
   lastName: string;
   photo?: (string | null) | Media;
-  roles: ('admin' | 'public')[];
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -1245,7 +1244,6 @@ export interface UsersSelect<T extends boolean = true> {
   firstName?: T;
   lastName?: T;
   photo?: T;
-  roles?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;

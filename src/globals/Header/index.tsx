@@ -1,33 +1,32 @@
-import type { GlobalConfig } from "payload";
-import { isAdmin } from "@/access/isAdmin";
+import type { GlobalConfig } from 'payload'
+import { anyone } from '@/access/anyone'
 
 export const Header: GlobalConfig = {
-  slug: "header",
+  slug: 'header',
 
   //* Access Settings
   access: {
-    read: () => true,
-    update: isAdmin,
+    read: anyone,
   },
 
   //* Global Fields
   fields: [
     {
-      name: "logo",
-      type: "upload",
-      relationTo: "media",
-      label: "Logo",
+      name: 'logo',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Logo',
       required: false,
     },
     {
-      name: "nav",
-      type: "array",
-      label: "Navigation",
+      name: 'nav',
+      type: 'array',
+      label: 'Navigation',
       required: false,
       fields: [
-        { name: "label", label: "Label", type: "text" },
-        { name: "link", label: "Link", type: "text" },
+        { name: 'label', label: 'Label', type: 'text' },
+        { name: 'link', label: 'Link', type: 'text' },
       ],
     },
   ],
-};
+}

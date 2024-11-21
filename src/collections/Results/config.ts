@@ -1,42 +1,41 @@
 // Payload Imports
-import type { CollectionConfig } from "payload";
+import type { CollectionConfig } from 'payload'
 
 // Access Control
-import { isAdmin } from "@/access/isAdmin";
-import { publishedOnly } from "@/access/publishedOnly";
+import { authenticated } from '@/access/authenticated'
+import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
 export const Results: CollectionConfig = {
-  slug: "results",
+  slug: 'results',
 
   //* Access Settings
   access: {
-    create: isAdmin,
-    delete: isAdmin,
-    read: publishedOnly,
-    readVersions: isAdmin,
-    update: isAdmin,
+    create: authenticated,
+    delete: authenticated,
+    read: authenticatedOrPublished,
+    update: authenticated,
   },
 
   //* Collection Fields
   fields: [
     {
-      name: "title",
-      type: "text",
-      label: "Result Title",
+      name: 'title',
+      type: 'text',
+      label: 'Result Title',
       required: true,
     },
     {
-      name: "client",
-      type: "relationship",
-      relationTo: "brands",
+      name: 'client',
+      type: 'relationship',
+      relationTo: 'brands',
       required: true,
     },
-    { name: "number", type: "text", label: "Number", required: true },
-    { name: "support", type: "text", label: "Support", required: true },
+    { name: 'number', type: 'text', label: 'Number', required: true },
+    { name: 'support', type: 'text', label: 'Support', required: true },
     {
-      name: "description",
-      type: "textarea",
-      label: "Description",
+      name: 'description',
+      type: 'textarea',
+      label: 'Description',
       required: false,
     },
   ],
@@ -44,23 +43,23 @@ export const Results: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    description: "The impact of our work",
-    defaultColumns: ["title"],
-    group: "Portfolio",
-    listSearchableFields: ["title"],
+    description: 'The impact of our work',
+    defaultColumns: ['title'],
+    group: 'Portfolio',
+    listSearchableFields: ['title'],
     pagination: {
       defaultLimit: 25,
       limits: [25, 50],
     },
-    useAsTitle: "title",
+    useAsTitle: 'title',
   },
-  defaultSort: "-title",
+  defaultSort: '-title',
   labels: {
-    singular: "Result",
-    plural: "Results",
+    singular: 'Result',
+    plural: 'Results',
   },
   versions: {
     drafts: { autosave: { interval: 100 } },
     maxPerDoc: 25,
   },
-};
+}

@@ -1,63 +1,62 @@
 // Payload Imports
-import type { CollectionConfig } from "payload";
+import type { CollectionConfig } from 'payload'
 
 // Access Control
-import { isAdmin } from "@/access/isAdmin";
-import { publishedOnly } from "@/access/publishedOnly";
+import { authenticated } from '@/access/authenticated'
+import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
 export const Technologies: CollectionConfig = {
-  slug: "technologies",
+  slug: 'technologies',
 
   //* Access Settings
   access: {
-    create: isAdmin,
-    delete: isAdmin,
-    read: publishedOnly,
-    readVersions: isAdmin,
-    update: isAdmin,
+    create: authenticated,
+    delete: authenticated,
+    read: authenticatedOrPublished,
+    update: authenticated,
   },
 
   //* Collection Fields
   fields: [
     {
-      name: "title",
-      type: "text",
-      label: "Title",
+      name: 'title',
+      type: 'text',
+      label: 'Title',
       required: true,
       unique: true,
       admin: {
-        description: "Add the title of the technology here.",
+        description: 'Add the title of the technology here.',
       },
     },
     {
-      name: "logoLight",
-      type: "upload",
-      label: "Logo",
+      name: 'logoLight',
+      type: 'upload',
+      label: 'Logo',
       required: false,
-      relationTo: "media",
+      relationTo: 'media',
     },
   ],
 
   //* Admin Settings
 
   admin: {
-    description: "The tools of the trade.",
-    defaultColumns: ["title"],
-    group: "Portfolio",
-    listSearchableFields: ["title"],
+    description: 'The tools of the trade.',
+    defaultColumns: ['title'],
+    group: 'Portfolio',
+    listSearchableFields: ['title'],
     pagination: {
       defaultLimit: 25,
       limits: [10, 25, 50],
     },
-    useAsTitle: "title",
+    useAsTitle: 'title',
   },
-  defaultSort: "title",
+  defaultSort: 'title',
   labels: {
-    singular: "Technology",
-    plural: "Technologies",
+    singular: 'Technology',
+    plural: 'Technologies',
   },
   versions: {
     drafts: { autosave: { interval: 100 } },
     maxPerDoc: 25,
   },
-};
+}

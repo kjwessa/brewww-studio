@@ -1,16 +1,12 @@
 module.exports = {
-  extends: [
-    'next/core-web-vitals',
-    'next'
-  ],
+  extends: 'next',
   root: true,
-  plugins: ['react'],
   parserOptions: {
     project: ['./tsconfig.json'],
     tsconfigRootDir: __dirname,
   },
   rules: {
     'react/no-unescaped-entities': 'off',
-    'react/display-name': 'off'
-  }
+    'react/no-direct-mutation-state': 'off',
+  },
 }

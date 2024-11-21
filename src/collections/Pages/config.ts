@@ -2,8 +2,8 @@
 import type { CollectionConfig } from 'payload'
 
 // Access Imports
-import { isAdmin } from '@/access/isAdmin'
-import { publishedOnly } from '@/access/publishedOnly'
+import { authenticated } from '@/access/authenticated'
+import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
 // Field Imports
 import { slugField } from '@/fields/slug'
@@ -20,11 +20,10 @@ export const Pages: CollectionConfig = {
 
   //* Access Settings
   access: {
-    create: isAdmin,
-    delete: isAdmin,
-    read: publishedOnly,
-    readVersions: isAdmin,
-    update: isAdmin,
+    create: authenticated,
+    delete: authenticated,
+    read: authenticatedOrPublished,
+    update: authenticated,
   },
 
   //* Collection Fields

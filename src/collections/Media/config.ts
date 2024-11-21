@@ -1,63 +1,59 @@
 // Payload Imports
-import type { CollectionConfig } from "payload";
+import type { CollectionConfig } from 'payload'
 
 // Access Control
-import { isAdmin } from "@/access/isAdmin";
+import { authenticated } from '@/access/authenticated'
+import { anyone } from '@/access/anyone'
 
 // Lexical Editor
 import {
   FixedToolbarFeature,
   InlineToolbarFeature,
   lexicalEditor,
-} from "@payloadcms/richtext-lexical";
+} from '@payloadcms/richtext-lexical'
 
 export const Media: CollectionConfig = {
-  slug: "media",
+  slug: 'media',
 
   //* Access Settings
   access: {
-    create: isAdmin,
-    delete: isAdmin,
-    read: () => true,
-    update: isAdmin,
+    create: authenticated,
+    delete: authenticated,
+    read: anyone,
+    update: authenticated,
   },
 
   //* Collection Fields
   fields: [
     {
-      name: "title",
-      type: "text",
-      label: "File Name",
+      name: 'title',
+      type: 'text',
+      label: 'File Name',
       required: true,
       admin: {
-        description:
-          "This is the file name of the image, allowed for easier semantic searching.",
+        description: 'This is the file name of the image, allowed for easier semantic searching.',
       },
     },
     {
-      name: "alt",
-      type: "text",
-      label: "Alt Text",
+      name: 'alt',
+      type: 'text',
+      label: 'Alt Text',
       required: true,
       admin: {
-        description: "This is the alt text for the image",
+        description: 'This is the alt text for the image',
       },
     },
     {
-      name: "caption",
-      type: "richText",
-      label: "Caption",
+      name: 'caption',
+      type: 'richText',
+      label: 'Caption',
       admin: {
         description:
-          "This is the caption for the image. Optional, but helpful for Blog Posts requiring a caption.",
+          'This is the caption for the image. Optional, but helpful for Blog Posts requiring a caption.',
       },
       editor: lexicalEditor({
         features: ({ rootFeatures }) => {
-          return [
-            ...rootFeatures,
-            FixedToolbarFeature(),
-            InlineToolbarFeature(),
-          ];
+          return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
         },
       }),
     },
@@ -65,8 +61,8 @@ export const Media: CollectionConfig = {
 
   //* Admin Settings
   admin: {
-    listSearchableFields: ["title", "url", "alt"],
+    listSearchableFields: ['title', 'url', 'alt'],
   },
 
   upload: true,
-};
+}
