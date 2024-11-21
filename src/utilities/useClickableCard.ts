@@ -59,7 +59,7 @@ function useClickableCard<T extends HTMLElement>({
         }
       }
     },
-    [router, card, link, timeDown],
+    [], // No dependencies needed as we're only using refs
   )
 
   /**
@@ -88,7 +88,7 @@ function useClickableCard<T extends HTMLElement>({
         }
       }
     },
-    [router, card, link, timeDown, external, newTab, scroll],
+    [external, newTab, scroll], // Only include props that affect the behavior
   )
 
   /**
