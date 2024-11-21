@@ -1,12 +1,14 @@
 import { cn } from 'src/utilities/cn'
 import React, { Fragment } from 'react'
 
-import type { Page, MediaBlock as MediaBlockType } from '@/payload-types'
+import type { Page } from '@/payload-types'
 
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
+import { FormBlock } from '@/blocks/Form/Component'
 
 const blockComponents = {
   mediaBlock: MediaBlock,
+  formBlock: FormBlock,
 } as const
 
 // Define the block type using the non-null array element type
@@ -14,10 +16,10 @@ type PageLayoutBlock = NonNullable<Page['layout']>[number]
 
 /**
  * RenderBlocks Component
- * 
+ *
  * Renders an array of content blocks from Payload CMS.
  * Each block is rendered using its corresponding React component from blockComponents.
- * 
+ *
  * @param props.blocks - Array of content blocks from the page layout
  * @returns React elements for each block or null if no blocks exist
  */
