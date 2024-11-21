@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import configPromise from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 import { ImageGrow } from "./ImageGrow/index";
 import { HomeHeroSection } from "./HomeHeroSection/index";
 import { WorkGridSection } from "./WorkGridSection/index";
@@ -11,7 +11,7 @@ import { HomeAboutSection } from "./HomeAboutSection";
 import { HomeImpactSection } from "./HomeImpactSection";
 
 export default async function Home() {
-  const payload = await getPayloadHMR({ config: configPromise });
+  const payload = await getPayload({ config: configPromise });
   const posts = await payload.find({
     collection: "posts",
     limit: 4,

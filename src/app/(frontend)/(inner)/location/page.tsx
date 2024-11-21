@@ -1,9 +1,9 @@
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 import configPromise from "@payload-config";
 import Link from 'next/link';
 
 export default async function Page() {
-  const payload = await getPayloadHMR({ config: configPromise });
+  const payload = await getPayload({ config: configPromise });
   const locations = await payload.find({
     collection: "locations",
     limit: 1000,

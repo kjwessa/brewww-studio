@@ -1,10 +1,10 @@
 import { WorkCard } from "@/components/WorkCard";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 import configPromise from "@payload-config";
 import { Title } from "@/components/Title";
 
 export async function LocationWorkSlider() {
-  const payload = await getPayloadHMR({ config: configPromise });
+  const payload = await getPayload({ config: configPromise });
   const projects = await payload.find({
     collection: "work",
     limit: 3,
