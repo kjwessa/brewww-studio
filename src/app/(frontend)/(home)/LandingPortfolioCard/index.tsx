@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 interface LandingPortfolioCardProps {
@@ -19,9 +20,15 @@ export function LandingPortfolioCard({
       href={href}
     >
       <div className="w-full cursor-pointer overflow-hidden">
-        <img
+        <Image
           className="inline-block h-96 w-full max-w-full align-middle"
           src={imageUrl}
+          alt={title}
+          width={800}
+          height={384}
+          style={{
+            objectFit: "cover",
+          }}
         />
       </div>
       <div className="cursor-pointer">
