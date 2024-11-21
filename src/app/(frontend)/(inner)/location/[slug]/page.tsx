@@ -8,7 +8,7 @@ import Link from "next/link";
 // Payload Imports
 import { PayloadRedirects } from "@/components/PayloadRedirects";
 import configPromise from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 import { Location } from "@/payload-types";
 import type { Media } from "@/payload-types";
 
@@ -27,7 +27,7 @@ type LocationPageProps = {
 }
 
 export async function generateStaticParams() {
-  const payload = await getPayloadHMR({ config: configPromise });
+  const payload = await getPayload({ config: configPromise });
   const locations = await payload.find({
     collection: "locations",
     limit: 1000,
@@ -41,7 +41,7 @@ export async function generateStaticParams() {
 }
 
 async function getPageData({ slug }: { slug: string }) {
-  const payload = await getPayloadHMR({ config: configPromise });
+  const payload = await getPayload({ config: configPromise });
   const location = await payload.find({
     collection: "locations",
     where: {
@@ -88,7 +88,7 @@ export default async function LocationPage({
     slug: resolvedParams.slug,
   });
 
-  const payload = await getPayloadHMR({ config: configPromise });
+  const payload = await getPayload({ config: configPromise });
 
   const brands = await payload.find({
     collection: "brands",
@@ -669,7 +669,7 @@ export default async function LocationPage({
                     <svg
                       className="h-5 w-5 min-[2100px]:h-6 min-[2100px]:w-6"
                       fill="rgb(1, 2, 2)"
-                      height="22"
+                      height="16"
                       viewBox="0 0 22 22"
                       xmlns="http://www.w3.org/2000/svg"
                     >

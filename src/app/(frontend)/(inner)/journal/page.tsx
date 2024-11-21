@@ -1,11 +1,11 @@
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 import configPromise from "@payload-config";
 import { BlogCard } from "@/components/BlogCard/index";
 import { CategoryFilter } from "@/components/CategoryFilter/index";
 import { Category, Post } from "@/payload-types";
 
 export default async function BlogPage() {
-  const payload = await getPayloadHMR({ config: configPromise });
+  const payload = await getPayload({ config: configPromise });
   const posts = await payload.find({
     collection: "posts",
     limit: 1000,
@@ -80,7 +80,7 @@ export default async function BlogPage() {
 // };
 
 // export default async function Page() {
-//   const payload = await getPayloadHMR({ config: configPromise });
+//   const payload = await getPayload({ config: configPromise });
 //   const postsFeatured = await payload.find({
 //     collection: "posts",
 //     limit: 4,
@@ -379,7 +379,7 @@ export default async function BlogPage() {
 
 // Placeholder functions for data fetching (replace with actual API calls)
 // async function fetchDesignGuides(): Promise<Guide[]> {
-//   const payload = await getPayloadHMR({ config: configPromise });
+//   const payload = await getPayload({ config: configPromise });
 //   const guides = await payload.find({
 //     collection: "posts", // or "guides" if you have a separate collection
 //     where: {

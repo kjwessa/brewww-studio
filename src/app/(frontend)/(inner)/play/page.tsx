@@ -1,10 +1,10 @@
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 import configPromise from "@payload-config";
 import Link from "next/link";
 import Image from "next/image";
 import { PlayHero } from "./PlayHero";
 export default async function PlayPage() {
-  const payload = await getPayloadHMR({ config: configPromise });
+  const payload = await getPayload({ config: configPromise });
   const projects = await payload.find({
     collection: "play",
     limit: 1000,
@@ -279,13 +279,204 @@ export default async function PlayPage() {
           </div>
         </div>
       </section>
+      <section className="bg-white py-24">
+        <div className="container mx-auto px-6">
+          <h2 className="mb-6 text-2xl font-bold">Alternate Style</h2>
+          <div className="flex flex-col gap-y-[7.38rem]">
+            <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] items-start gap-y-[7.38rem]">
+              <div
+                className="col-start-4 col-end-9 row-start-1 row-end-2"
+                style={{
+                  gridArea: "1/4/2/9",
+                }}
+              >
+                <a
+                  className="col-span-2 row-span-1 inline-block w-full max-w-full"
+                  href=""
+                >
+                  <div className="flex w-full cursor-pointer overflow-hidden rounded-md">
+                    <Image
+                      className="inline-block h-full w-full max-w-full object-contain align-middle"
+                      src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10dcd8842ec2b57b28cb6_63c9187126433a43129cc944_image-ueno-template-02.jpeg"
+                      alt="Square"
+                    />
+                  </div>
+                  <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1 text-black">
+                    <div>
+                      <div className="inline-block font-semibold uppercase">
+                        Square
+                      </div>
+                      <div className="m-1 inline-block">·</div>
+                      The new norm of life
+                    </div>
+                    <div className="text-gray-600">Brand identity, Website</div>
+                  </div>
+                </a>
+              </div>
+              <div
+                className="col-start-9 col-end-13 row-start-1 row-end-2 flex-grow pl-28"
+                style={{
+                  gridArea: "1/9/2/13",
+                }}
+              >
+                <a
+                  className="col-span-2 row-span-1 inline-block w-full max-w-full"
+                  href=""
+                >
+                  <div className="flex w-full cursor-pointer overflow-hidden rounded-md">
+                    <Image
+                      className="inline-block h-full w-full max-w-full object-contain align-middle"
+                      src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10dfd80f1f22872630cce_63c91c81185e3416e7ba7960_image-ueno-template-06-p-2000.jpeg"
+                      alt="Castro Capital"
+                    />
+                  </div>
+                  <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1 text-black">
+                    <div>
+                      <div className="inline-block font-semibold uppercase">
+                        Castro Capital
+                      </div>
+                      <div className="m-1 inline-block">·</div>
+                      The new norm of life
+                    </div>
+                    <div className="text-gray-600">
+                      Digital design system, Website, Print
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] items-start gap-y-[7.38rem]">
+              <div className="col-span-9 row-span-1 w-full">
+                <a
+                  className="col-span-2 row-span-1 inline-block w-full max-w-full"
+                  href=""
+                >
+                  <div className="relative flex w-full cursor-pointer overflow-hidden rounded-md">
+                    <div className="relative w-full pt-[56.25%]">
+                      <Image
+                        className="absolute bottom-0 left-0 top-0 inline-block h-full w-full max-w-full object-cover align-middle"
+                        src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10e2f8842ec5dcab29324_63c91907a7ce6182b053ba02_image-ueno-template-03.jpeg"
+                        alt="Rucksack Magazine"
+                      />
+                    </div>
+                  </div>
+                  <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1 text-black">
+                    <div>
+                      <div className="inline-block font-semibold uppercase">
+                        Rucksack Magazine
+                      </div>
+                      <div className="m-1 inline-block">·</div>
+                      All about photography
+                    </div>
+                    <div className="text-gray-600">
+                      Brand identity, Website, Print
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] items-start gap-y-[7.38rem]">
+              <div
+                className="col-start-7 col-end-13 row-start-1 row-end-2 flex-grow pl-28"
+                style={{
+                  gridArea: "1/7/2/13",
+                }}
+              >
+                <a
+                  className="col-span-2 row-span-1 inline-block w-full max-w-full"
+                  href=""
+                >
+                  <div className="flex w-full cursor-pointer overflow-hidden rounded-md">
+                    <Image
+                      className="inline-block h-full w-full max-w-full object-contain align-middle"
+                      src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10e81559654d00360030b_63c91be70da88459ac7b5a3a_image-ueno-template-05.jpeg"
+                      alt="Romans"
+                    />
+                  </div>
+                  <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1 text-black">
+                    <div>
+                      <div className="inline-block font-semibold uppercase">
+                        Romans
+                      </div>
+                      <div className="m-1 inline-block">·</div>
+                      All about photography
+                    </div>
+                    <div className="text-gray-600">
+                      Brand identity, Website, Packaging
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div
+                className="col-start-4 col-end-7 row-start-1 row-end-2"
+                style={{
+                  gridArea: "1/4/2/7",
+                }}
+              >
+                <a
+                  className="col-span-2 row-span-1 inline-block w-full max-w-full"
+                  href=""
+                >
+                  <div className="flex w-full cursor-pointer overflow-hidden rounded-md">
+                    <Image
+                      className="inline-block h-full w-full max-w-full object-contain align-middle"
+                      src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d1162e150c60446a56cadd_63c91d6bd8d50020d6d274c0_image-ueno-template-07-p-2000.jpeg"
+                      alt="Hakuha"
+                    />
+                  </div>
+                  <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1 text-black">
+                    <div>
+                      <div className="inline-block font-semibold uppercase">
+                        Hakuha
+                      </div>
+                      <div className="m-1 inline-block">·</div>
+                      All about photography
+                    </div>
+                    <div className="text-gray-600">
+                      Digital product, Packaging
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] items-start gap-y-[7.38rem]">
+              <div className="col-span-8 row-span-1">
+                <a
+                  className="col-span-2 row-span-1 inline-block w-full max-w-full"
+                  href=""
+                >
+                  <div className="relative flex w-full cursor-pointer overflow-hidden rounded-md">
+                    <div className="relative w-full pt-[56.25%]">
+                      <Image
+                        className="absolute bottom-0 left-0 top-0 inline-block h-full w-full max-w-full object-cover align-middle"
+                        src="https://cdn.prod.website-files.com/63d10b7a4b5c9a525e3a297e/63d10ee4ad83658d2bc97c5a_63c91ec109d76d3e7e34327f_image-ueno-template-08-p-2000.jpeg"
+                        alt="Café de especialidad"
+                      />
+                    </div>
+                  </div>
+                  <div className="mt-3.5 flex cursor-pointer flex-col items-start pl-1 text-black">
+                    <div>
+                      <div className="inline-block font-semibold uppercase">
+                        Café de especialidad
+                      </div>
+                      <div className="m-1 inline-block">·</div>
+                      All about photography
+                    </div>
+                    <div className="text-gray-600">Brand identity, Website</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
 
 // import Image from "next/image";
 // import Link from "next/link";
-// import { getPayloadHMR } from "@payloadcms/next/utilities";
+// import { getPayload } from "payload";
 // import configPromise from "@payload-config";
 // import placeholderImage from "/public/images/Aldridge-02665.1200-p-1080.jpeg";
 // import { PreFooter } from "@/app/components/PreFooter";
@@ -310,7 +501,7 @@ export default async function PlayPage() {
 // };
 
 // export default async function Page() {
-//   const payload = await getPayloadHMR({ config: configPromise });
+//   const payload = await getPayload({ config: configPromise });
 //   const postsFeatured = await payload.find({
 //     collection: "posts",
 //     limit: 4,
@@ -609,7 +800,7 @@ export default async function PlayPage() {
 
 // Placeholder functions for data fetching (replace with actual API calls)
 // async function fetchDesignGuides(): Promise<Guide[]> {
-//   const payload = await getPayloadHMR({ config: configPromise });
+//   const payload = await getPayload({ config: configPromise });
 //   const guides = await payload.find({
 //     collection: "posts", // or "guides" if you have a separate collection
 //     where: {

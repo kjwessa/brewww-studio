@@ -1,4 +1,4 @@
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 import configPromise from "@payload-config";
 import { WorkCard } from "@/components/WorkCard";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import Image from "next/image";
 import { ImageGrow } from "./[slug]/HeroImageGrow";
 
 export default async function WorkPage() {
-  const payload = await getPayloadHMR({ config: configPromise });
+  const payload = await getPayload({ config: configPromise });
   const projects = await payload.find({
     collection: "work",
     limit: 1000,
@@ -287,7 +287,7 @@ export default async function WorkPage() {
         <div className="w-full text-neutral-900">
           <div className="m-auto flex min-h-screen w-full flex-col overflow-clip">
             <section className="relative bg-white min-[1000px]:pt-20 min-[1001px]:pt-28">
-              <div className="m-auto w-[92%] min-[1600px]:pb-10 min-[1600px]:pt-20 min-[1920px]:pb-12 min-[1920px]:pt-28 min-[1921px]:max-w-[118.75rem] min-[1921px]:pb-12 min-[1921px]:pt-28">
+              <div className="m-auto w-[92%] min-[1600px]:pb-10 min-[1600px]:pt-20 min-[1920px]:pb-12 min-[1920px]:pt-28 min-[1921px]:pb-12 min-[1921px]:pt-28">
                 <div>
                   <h1 className="text-[10.00rem] uppercase leading-none">
                     Our work

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 import config from "@payload-config";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +10,7 @@ import { Button } from "@/components/Button";
 
 export default function Header() {
   // TODO: bring back the Payload call when the design is completed
-  // const payload = await getPayloadHMR({ config });
+  // const payload = await getPayload({ config });
   // TODO: bring back the header when the design is completed
   // const header = (await payload.findGlobal({ slug: "header" })) as HeaderData;
 

@@ -1,11 +1,11 @@
 import React from "react";
 import { AccordionCard } from "@/components/AccordionCard";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 import configPromise from "@payload-config";
 import { Faq } from "@/payload-types";
 
 export default async function FAQPage() {
-  const payload = await getPayloadHMR({ config: configPromise });
+  const payload = await getPayload({ config: configPromise });
   const faqs = await payload.find({
     collection: "faq",
     limit: 1000,

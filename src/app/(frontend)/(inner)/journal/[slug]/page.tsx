@@ -8,7 +8,7 @@ import Link from 'next/link'
 // Payload Imports
 import { PayloadRedirects } from '@/components/PayloadRedirects'
 import configPromise from '@payload-config'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
+import { getPayload } from 'payload'
 import { Post } from '@/payload-types'
 
 // Components
@@ -20,7 +20,7 @@ import { LexicalNode } from '@/components/RichText/nodeFormat'
 import { formatDate } from '@/utilities/formatDateTime'
 
 export async function generateStaticParams() {
-  const payload = await getPayloadHMR({ config: configPromise })
+  const payload = await getPayload({ config: configPromise })
   const posts = await payload.find({
     collection: 'posts',
     limit: 1000,
@@ -141,7 +141,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 }
 
 async function queryPostBySlug({ slug }: { slug: string }): Promise<Post | null> {
-  const payload = await getPayloadHMR({ config: configPromise })
+  const payload = await getPayload({ config: configPromise })
   try {
     const result = await payload.find({
       collection: 'posts',

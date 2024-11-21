@@ -1,5 +1,5 @@
 import configPromise from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 import React from "react";
 import { notFound } from "next/navigation";
 import { Play } from "@/payload-types";
@@ -82,7 +82,7 @@ async function queryPlayBySlug({
 }: {
   slug: string;
 }): Promise<Play | null> {
-  const payload = await getPayloadHMR({ config: configPromise });
+  const payload = await getPayload({ config: configPromise });
   try {
     const result = await payload.find({
       collection: "play",
@@ -101,7 +101,7 @@ async function queryPlayBySlug({
 
 //* Generate static params for all play projects
 export async function generateStaticParams() {
-  const payload = await getPayloadHMR({ config: configPromise });
+  const payload = await getPayload({ config: configPromise });
   try {
     const plays = await payload.find({
       collection: "play",

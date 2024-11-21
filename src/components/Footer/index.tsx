@@ -1,5 +1,5 @@
 import React from "react";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 import config from "@payload-config";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,7 +28,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, label, badge }) => (
 );
 
 export default async function Footer() {
-  const payload = await getPayloadHMR({ config });
+  const payload = await getPayload({ config });
   const footer = await payload.findGlobal({ slug: "footer" });
   const getCurrentYear = (): number => {
     return new Date().getFullYear();
@@ -200,7 +200,7 @@ export default async function Footer() {
               className="-mt-2"
             />
             <div className="inline-flex w-auto items-center text-sm text-zinc-400 lg:ml-5 lg:mr-0">
-              © Brewww, LLC {getCurrentYear()}
+              &copy; Brewww, LLC {getCurrentYear()}
               <div className="mx-2 flex items-center">/</div>
               All Rights Reserved
             </div>

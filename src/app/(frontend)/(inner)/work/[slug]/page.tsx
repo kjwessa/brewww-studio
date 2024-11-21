@@ -1,5 +1,5 @@
 import configPromise from '@payload-config'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
+import { getPayload } from 'payload'
 import React from 'react'
 import { RichText } from '@/components/RichText/index'
 import { notFound } from 'next/navigation'
@@ -12,7 +12,7 @@ import { Service } from '@/payload-types'
 import { ImageGrow } from './HeroImageGrow'
 
 export async function generateStaticParams() {
-  const payload = await getPayloadHMR({ config: configPromise })
+  const payload = await getPayload({ config: configPromise })
   const projects = await payload.find({
     collection: 'work',
     limit: 1000,
@@ -242,13 +242,13 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
       <section className="w-full bg-brand-dark-bg py-10 text-white lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
         <div className="px-2 sm:px-6 xl:px-12 min-[1450px]:px-20 min-[1800px]:px-40 min-[2100px]:px-60">
           <div className="flex w-full flex-wrap justify-between">
-            <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:px-3 xl:w-[43.75%] xl:px-4">
+            <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:w-[43.75%] xl:pl-4 xl:pr-4">
               <h2 className="text-5xl text-white">
                 <span className="mr-4 text-sm font-light">/ Creative</span>
                 Catholic Identity, Beach Vibes
               </h2>
             </div>
-            <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:px-3 xl:px-4">
+            <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="w-full lg:pr-10">
                 <p className="mb-6">
                   For Blessed Kettle Brewing, we crafted a unique brand identity that embraces their
@@ -464,19 +464,19 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
             <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:w-[43.75%] xl:pl-4 xl:pr-4">
               <div className="mb-3 inline-flex w-auto items-center xl:absolute xl:left-[1.00rem] xl:top-[0.75rem] xl:mb-0">
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />
-                <div className="ml-2 font-light text-white">Craft</div>
+                <div className="ml-2 font-light text-white">Brand Identity</div>
               </div>
-              <h2 className="indent-32 text-5xl text-white">Brand Direction with Purpose</h2>
+              <h2 className="indent-32 text-5xl text-white">Faith, Community, and Craft</h2>
             </div>
             <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="w-full lg:pr-10">
                 <p className="mb-6">
-                  To capture the essence of Blessed Kettle Brewing, a Foley, AL microbrewery, we
-                  focused on their commitment to craft and community. We developed a brand voice
-                  that speaks to their local roots and artisanal approach. By introducing warm,
-                  inviting visuals and a conversational tone, we've created a digital presence that
-                  immerses visitors in the Blessed Kettle experience, showcasing their dedication to
-                  quality brews and local traditions.
+                  For Blessed Kettle Brewing, we crafted a brand identity that seamlessly blends
+                  their deep Catholic theology with an accessible, welcoming aesthetic. The
+                  challenge was to create a brand that resonates with the local Foley community
+                  while also appealing to beach-going tourists. Our design incorporates subtle
+                  religious symbolism with a laid-back, coastal vibe, resulting in a unique identity
+                  that reflects the brewery's values and attracts a diverse clientele.
                 </p>
               </div>
             </div>
@@ -494,14 +494,12 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[33.75rem]">
                         <picture className="absolute left-0 top-0 h-full w-full">
-                          <source
-                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-6.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862260&s=02ff2f62f0eed704232325e9a82aa85e"
-                            type="image/webp"
-                          />
-                          <img
+                          <source type="image/webp" />
+                          <Image
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-6.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862260&s=02ff2f62f0eed704232325e9a82aa85e"
                             alt="iET iPhone"
+                            fill
                           />
                         </picture>
                       </div>
@@ -511,10 +509,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[33.75rem]">
                         <picture className="absolute left-0 top-0 h-full w-full">
-                          <source
-                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-4.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862255&s=71717867d1f9651c7f99b5db5e428d82"
-                            type="image/webp"
-                          />
+                          <source type="image/webp" />
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-4.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862255&s=71717867d1f9651c7f99b5db5e428d82"
@@ -528,10 +523,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[33.75rem]">
                         <picture className="absolute left-0 top-0 h-full w-full">
-                          <source
-                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-5.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862257&s=b95fb9939e8919a53721a3536760bf0c"
-                            type="image/webp"
-                          />
+                          <source type="image/webp" />
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-5.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862257&s=b95fb9939e8919a53721a3536760bf0c"
@@ -545,10 +537,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[33.75rem]">
                         <picture className="absolute left-0 top-0 h-full w-full">
-                          <source
-                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-3.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862253&s=b0b226990cad5209e2c7837caf593d69"
-                            type="image/webp"
-                          />
+                          <source type="image/webp" />
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-3.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862253&s=b0b226990cad5209e2c7837caf593d69"
@@ -562,10 +551,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[33.75rem]">
                         <picture className="absolute left-0 top-0 h-full w-full">
-                          <source
-                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-2.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862251&s=f17aecdbb70e62e73735efc367d4d51a"
-                            type="image/webp"
-                          />
+                          <source type="image/webp" />
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-2.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862251&s=f17aecdbb70e62e73735efc367d4d51a"
@@ -579,10 +565,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[33.75rem]">
                         <picture className="absolute left-0 top-0 h-full w-full">
-                          <source
-                            src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-1.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862248&s=fe0fa50d4b15db9b3450973601b51599"
-                            type="image/webp"
-                          />
+                          <source type="image/webp" />
                           <img
                             className="h-auto w-full max-w-full"
                             src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Ipad-1.png?w=320&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621862248&s=fe0fa50d4b15db9b3450973601b51599"
@@ -956,286 +939,6 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
           </div>
         </div>
       </section>
-      <section className="bg-zinc-950 pt-20 text-neutral-400">
-        <div className="container relative mx-auto px-0" style={{ aspectRatio: '3/2' }}>
-          <Image
-            src="/images/audio-seven.jpg"
-            alt="Audio platform showcase"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-        </div>
-      </section>
-      <section className="bg-zinc-950 py-32 text-neutral-400">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-12">
-            <div className="col-start-6 col-end-11">
-              <h3 className="mb-8 text-[1.75rem] font-semibold leading-8 text-white">
-                <b className="font-bold">Specialized teams for each production</b>
-              </h3>
-              <p>
-                Throughout our creative process, The Merry Beggars assigns specialized teams to each
-                audio production, ensuring high-quality content and efficient storytelling. Our
-                approach allows for faster development of new shows while maintaining our commitment
-                to excellence. At any given time, we may have multiple teams working on various
-                projects, from podcasts to audio dramas. Our writers, voice actors, sound designers,
-                and producers collaborate seamlessly, often co-leading their respective productions
-                from concept to final release. This structure enables us to consistently deliver
-                engaging and innovative audio entertainment to our listeners.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="bg-zinc-950 text-neutral-400">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-7">
-              <div className="relative">
-                <Image
-                  src="/images/audio-six.jpg"
-                  alt="Audio Image Six"
-                  width={623}
-                  height={623}
-                  className="max-w-full"
-                />
-              </div>
-            </div>
-            <div className="col-span-5">
-              <div className="relative">
-                <Image
-                  src="/images/audio-eight.jpg"
-                  alt="Audio Image Eight"
-                  width={384}
-                  height={488}
-                  className="max-w-full"
-                />
-              </div>
-              <figure className="mt-8">
-                <blockquote className="mt-4 italic">
-                  I've worked in software development for 8 years, and I'd never experienced a
-                  provider that always delivers such high quality on time. Usually, if you have a
-                  large provider that brings all types of people to the table, you can have someone
-                  who isn't that good. However, we have nothing to complain about Brewww.
-                </blockquote>
-                <div className="mt-4 text-xs uppercase">
-                  <div>
-                    <span className="font-bold text-white">Peter Atkinson</span>
-                    <span className="ml-2 text-stone-500">President, The Merry Beggars</span>
-                  </div>
-                </div>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="bg-zinc-950 pb-20 text-neutral-400">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
-            <div className="relative">
-              <div className="-rotate-90 transform text-[35rem] font-bold uppercase text-white opacity-10">
-                02
-              </div>
-            </div>
-            <div>
-              <h1 className="mb-8 text-[6rem] font-bold uppercase leading-none text-white">
-                Matching TMB Audio quality
-              </h1>
-              <h3 className="text-[1.75rem] font-semibold leading-8 text-white">
-                Removing all decision fatigue
-              </h3>
-              <p className="mt-4">
-                To elevate The Merry Beggars platform, we drew inspiration from industry leaders
-                like Disney and Headspace, focusing on streamlining the user experience and
-                eliminating decision fatigue. Our strategy centered on creating an intuitive
-                interface that guides users effortlessly to their desired content. We implemented
-                smart categorization, personalized recommendations, and a simplified navigation
-                system, making it easier than ever for listeners to discover, enjoy, and share
-                episodes. By reducing cognitive load and enhancing content accessibility, we
-                transformed the platform into a seamless audio entertainment destination that keeps
-                users engaged and coming back for more.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="relative overflow-hidden bg-zinc-950 py-20 pl-12 text-neutral-400">
-        <div className="animate-slider flex space-x-12">
-          <div className="relative flex-shrink-0">
-            <div className="relative h-[59.63rem] w-[59.63rem]">
-              <Image
-                src="/images/audio-seven.jpeg"
-                alt="Audio production studio"
-                fill
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
-          </div>
-          <div className="relative flex-shrink-0">
-            <div className="relative h-[59.63rem] w-[48.90rem]">
-              <Image
-                src="/images/audio-eight.jpeg"
-                alt="Voice actor recording"
-                fill
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
-          </div>
-          <div className="relative flex-shrink-0">
-            <div className="relative h-[59.63rem] w-[48.90rem]">
-              <Image
-                src="/images/audio-four.jpeg"
-                alt="Sound mixing console"
-                fill
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
-          </div>
-          <div className="relative flex-shrink-0">
-            <div className="relative h-[59.63rem] w-[59.63rem]">
-              <Image
-                src="/images/audio-two.jpeg"
-                alt="Podcast recording session"
-                fill
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
-          </div>
-          <div className="relative flex-shrink-0">
-            <div className="relative h-[59.63rem] w-[59.63rem]">
-              <Image
-                src="/images/audio-five.jpg"
-                alt="Audio editing workstation"
-                fill
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
-          </div>
-          <div className="relative flex-shrink-0">
-            <div className="relative h-[59.63rem] w-[48.90rem]">
-              <Image
-                src="/images/audio-one.jpg"
-                alt="Microphone in recording booth"
-                fill
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
-          </div>
-          <div className="relative flex-shrink-0">
-            <div className="relative h-[59.63rem] w-[59.63rem]">
-              <Image
-                src="/images/audio-five.jpg"
-                alt="Audio production team meeting"
-                fill
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="mt-16 flex cursor-grab justify-center bg-zinc-950 text-neutral-400">
-          <span className="inline-block h-[2px] w-[100px] bg-stone-400" />
-          <span className="inline-block h-[2px] w-[100px] bg-neutral-600" />
-          <span className="inline-block h-[2px] w-[100px] bg-neutral-600" />
-          <span className="inline-block h-[2px] w-[100px] bg-neutral-600" />
-          <span className="inline-block h-[2px] w-[100px] bg-neutral-600" />
-          <span className="inline-block h-[2px] w-[100px] bg-neutral-600" />
-          <span className="inline-block h-[2px] w-[100px] bg-neutral-600" />
-        </div>
-      </section>
-      <section className="bg-zinc-950 py-32 text-neutral-400">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-12">
-            <div className="col-start-6 col-end-11">
-              <h3 className="mb-8 text-[1.75rem] font-semibold leading-8 text-white">
-                <b className="font-bold">Cross-team collaboration</b>
-              </h3>
-              <p>
-                Our cross-team collaboration is a key strength that allows us to deliver
-                high-quality audio productions efficiently. We have a dedicated team of writers,
-                voice actors, sound designers, and producers who work together seamlessly to bring
-                each production to life. This collaborative approach ensures that our shows are not
-                only engaging but also consistent in quality and style. allows for faster
-                development of new shows while maintaining our commitment to excellence. At any
-                given time, we may have multiple teams working on various projects, from podcasts to
-                audio dramas. Our writers, voice actors, sound designers, and producers collaborate
-                seamlessly, often co-leading their respective productions from concept to final
-                release. This structure enables us to consistently deliver engaging and innovative
-                audio entertainment to our listeners.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="bg-zinc-950 text-neutral-400">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-7">
-              <div className="relative">
-                <Image
-                  src="/images/audio-six.jpg"
-                  alt="Audio Image Six"
-                  width={623}
-                  height={623}
-                  className="max-w-full"
-                />
-              </div>
-            </div>
-            <div className="col-span-5">
-              <div className="relative">
-                <Image
-                  src="/images/audio-eight.jpg"
-                  alt="Audio Image Eight"
-                  width={384}
-                  height={488}
-                  className="max-w-full"
-                />
-              </div>
-              <figure className="mt-8">
-                <blockquote className="mt-4 italic">
-                  I've worked in software development for 8 years, and I'd never experienced a
-                  provider that always delivers such high quality on time. Usually, if you have a
-                  large provider that brings all types of people to the table, you can have someone
-                  who isn't that good. However, we have nothing to complain about Brewww.
-                </blockquote>
-                <div className="mt-4 text-xs uppercase">
-                  <div>
-                    <span className="font-bold text-white">Peter Atkinson</span>
-                    <span className="ml-2 text-stone-500">President, The Merry Beggars</span>
-                  </div>
-                </div>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-zinc-950 pb-20 text-neutral-400">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
-            <div className="relative">
-              <div className="-rotate-90 transform text-[35rem] font-bold uppercase text-white opacity-10">
-                03
-              </div>
-            </div>
-            <div>
-              <h1 className="mb-8 text-[6rem] font-bold uppercase leading-none text-white">
-                All-in-one audio platform
-              </h1>
-              <h3 className="text-[1.75rem] font-semibold leading-8 text-white">
-                Creating the ultimate entertainment experience
-              </h3>
-              <p className="mt-4">
-                To make The Merry Beggars platform the ultimate audio entertainment destination, we
-                first focused on user experience and content curation — to understand how to better
-                engage and delight our listeners. We developed a range of features across the
-                platform, including personalized recommendations, seamless playlist creation,
-                podcast subscriptions, interactive storytelling experiences, community forums for
-                fans, and exclusive behind-the-scenes content from our original productions.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
       <section className="bg-zinc-950 py-20 text-neutral-400">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 gap-5">
@@ -1297,7 +1000,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
 }
 
 async function queryPostBySlug({ slug }: { slug: string }): Promise<Work | null> {
-  const payload = await getPayloadHMR({ config: configPromise })
+  const payload = await getPayload({ config: configPromise })
   try {
     const result = await payload.find({
       collection: 'work',

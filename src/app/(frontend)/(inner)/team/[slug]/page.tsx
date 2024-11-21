@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 import configPromise from "@payload-config";
 import { notFound } from "next/navigation";
 import { Team, Media } from "@/payload-types";
 
 export async function generateStaticParams() {
-  const payload = await getPayloadHMR({ config: configPromise });
+  const payload = await getPayload({ config: configPromise });
   const teams = await payload.find({
     collection: "team",
     limit: 1000,
@@ -440,7 +440,7 @@ async function queryPostBySlug({
 }: {
   slug: string;
 }): Promise<Team | null> {
-  const payload = await getPayloadHMR({ config: configPromise });
+  const payload = await getPayload({ config: configPromise });
   try {
     const result = await payload.find({
       collection: "team",
