@@ -1,103 +1,112 @@
 // Next Imports
-import React from "react";
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
+import React from 'react'
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import Image from 'next/image'
+import Link from 'next/link'
 
 // Payload Imports
-import { PayloadRedirects } from "@/components/PayloadRedirects";
-import configPromise from "@payload-config";
-import { getPayload } from "payload";
-import { Location } from "@/payload-types";
-import type { Media } from "@/payload-types";
+import { PayloadRedirects } from '@/components/PayloadRedirects'
+import configPromise from '@payload-config'
+import { getPayload } from 'payload'
+import { Location } from '@/payload-types'
+import type { Media } from '@/payload-types'
 
 // Components
-import { LocationWorkSlider } from "./LocationWorkSlider";
-import { LocationLogoSlider } from "./LocationLogoSlider";
-import { LocationTechSlider } from "./LocationTechSlider";
-import { LocationHeroText } from "./LocationHeroText";
-import { LocationHeroImage } from "./LocationHeroImage";
-import { LocationFAQ } from "./LocationFAQ";
+import { LocationWorkSlider } from './LocationWorkSlider'
+import { LocationLogoSlider } from './LocationLogoSlider'
+import { LocationTechSlider } from './LocationTechSlider'
+import { LocationHeroText } from './LocationHeroText'
+import { LocationHeroImage } from './LocationHeroImage'
+import { LocationFAQ } from './LocationFAQ'
 
 // Add type definition for page props
 type LocationPageProps = {
-  params: Promise<{ slug: string }>;
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+  params: Promise<{ slug: string }>
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 export async function generateStaticParams() {
-  const payload = await getPayload({ config: configPromise });
+  const payload = await getPayload({ config: configPromise })
   const locations = await payload.find({
-    collection: "locations",
+    collection: 'locations',
     limit: 1000,
     overrideAccess: false,
-  });
+  })
   return (
     locations.docs?.map(({ slug }) => ({
       params: { slug },
     })) || []
-  );
+  )
 }
 
 async function getPageData({ slug }: { slug: string }) {
-  const payload = await getPayload({ config: configPromise });
+  const payload = await getPayload({ config: configPromise })
   const location = await payload.find({
-    collection: "locations",
+    collection: 'locations',
     where: {
       slug: {
         equals: slug,
       },
     },
-  });
+  })
 
   if (!location?.docs?.[0]) {
-    notFound();
+    notFound()
   }
 
   const faqs = await payload.find({
-    collection: "faq",
+    collection: 'faq',
     limit: 1000,
-  });
+  })
 
   const technologiesResponse = await fetch(
     `${process.env.NEXT_PUBLIC_SERVER_URL}/api/technologies`,
     {
-      next: { revalidate: 3600 }, // Cache for 1 hour
+      next: { revalidate: 3600 },
     },
-  );
-  const technologiesData = await technologiesResponse.json();
+  )
+  const technologiesData = await technologiesResponse.json()
+
+  const workItems = await payload.find({
+    collection: "work",
+    limit: 3,
+    sort: "-publishedOn",
+    where: {
+      _status: {
+        equals: "published",
+      },
+    },
+  })
 
   return {
     location: location.docs[0],
     faqs: faqs.docs,
     technologies: technologiesData.docs || [],
-  };
+    workItems: workItems.docs || [],
+  }
 }
 
-export default async function LocationPage({
-  params,
-  searchParams,
-}: LocationPageProps) {
-  const resolvedParams = await params;
+export default async function LocationPage({ params, searchParams }: LocationPageProps) {
+  const resolvedParams = await params
   if (!resolvedParams.slug) {
-    notFound();
+    notFound()
   }
 
-  const { technologies, location, faqs } = await getPageData({
+  const { technologies, location, faqs, workItems } = await getPageData({
     slug: resolvedParams.slug,
-  });
+  })
 
-  const payload = await getPayload({ config: configPromise });
+  const payload = await getPayload({ config: configPromise })
 
   const brands = await payload.find({
-    collection: "brands",
+    collection: 'brands',
     limit: 100,
     where: {
       and: [
         {
           _status: {
-            equals: "published",
+            equals: 'published',
           },
         },
         {
@@ -107,15 +116,11 @@ export default async function LocationPage({
         },
       ],
     },
-  });
+  })
 
   return (
     <>
-      <LocationHeroText
-        title={location.heroTitle}
-        description={location.heroDescription}
-      />
-
+      <LocationHeroText title={location.heroTitle} description={location.heroDescription} />
       <LocationHeroImage image={location.heroImage as Media} />
 
       <section className="w-full bg-brand-dark-bg py-20 text-black lg:pb-24 lg:pt-24 min-[1450px]:pb-32 min-[1450px]:pt-32 min-[2100px]:pb-40 min-[2100px]:pt-40">
@@ -128,18 +133,17 @@ export default async function LocationPage({
                   <div className="ml-2 font-light text-white">Web Design</div>
                 </div>
                 <h2 className="mb-5 mt-3 indent-48 text-6xl text-white lg:mb-0 lg:mt-5">
-                  Are you a startup brand, well established company, in the UK
-                  or worldwide? It doesn't matter. We work with a range of
-                  clients.
+                  Are you a startup brand, well established company, in the US or worldwide? It
+                  doesn't matter. We work with a range of clients.
                 </h2>
                 <div className="relative mb-0 mt-3 inline-flex items-center lg:mb-0 lg:mt-5">
                   <a
                     className="inline-flex"
                     href=""
                     style={{
-                      outlineOffset: "2px",
-                      outlineStyle: "solid",
-                      outlineWidth: "2px",
+                      outlineOffset: '2px',
+                      outlineStyle: 'solid',
+                      outlineWidth: '2px',
                     }}
                   >
                     <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
@@ -258,9 +262,7 @@ export default async function LocationPage({
                         />
                       </svg>
                     </div>
-                    <div className="ml-5 font-light text-white">
-                      Responsive Design
-                    </div>
+                    <div className="ml-5 font-light text-white">Responsive Design</div>
                   </div>
                 </div>
                 <div className="mb-3 w-full">
@@ -322,10 +324,7 @@ export default async function LocationPage({
                   xmlns="http://www.w3.org/2000/svg"
                   y="0"
                 >
-                  <path
-                    d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z"
-                    fill="rgb(14, 15, 17)"
-                  />
+                  <path d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z" fill="rgb(14, 15, 17)" />
                 </svg>
                 <svg
                   className="absolute bottom-0 left-[0.13rem] h-10 w-10 lg:h-12 lg:w-12"
@@ -337,10 +336,7 @@ export default async function LocationPage({
                   xmlns="http://www.w3.org/2000/svg"
                   y="0"
                 >
-                  <path
-                    d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z"
-                    fill="rgb(14, 15, 17)"
-                  />
+                  <path d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z" fill="rgb(14, 15, 17)" />
                 </svg>
               </div>
               <div className="absolute left-0 top-0 h-full w-full overflow-hidden rounded-3xl bg-zinc-900">
@@ -358,25 +354,21 @@ export default async function LocationPage({
               <div className="flex flex-col items-start">
                 <div className="inline-flex items-center">
                   <div className="h-1.5 w-1.5 rounded-full bg-white" />
-                  <div className="ml-2 font-light text-white">
-                    We're the real sh*t
-                  </div>
+                  <div className="ml-2 font-light text-white">We're the real sh*t</div>
                 </div>
                 <h2 className="mb-0 mt-3 text-[2.50rem] leading-none text-white lg:mb-0 lg:mt-5">
-                  We know it's hard for brands to setup an online experience,
-                  and budgets can be tight.
+                  We know it's hard for brands to setup an online experience, and budgets can be
+                  tight.
                 </h2>
               </div>
               <div className="mt-8 w-full text-lg font-light text-zinc-400">
                 <p className="mb-6">
-                  We like to help new brands grow and work in a long-term
-                  relationship.
+                  We like to help new brands grow and work in a long-term relationship.
                 </p>
                 <p className="mb-6">
-                  We also have experience designing, building, testing, and
-                  launching websites for large global organisations. We can be
-                  an extension of your in-house marketing team. Take advantage
-                  of our expert team to be your complete digital arm.
+                  We also have experience designing, building, testing, and launching websites for
+                  large global organisations. We can be an extension of your in-house marketing
+                  team. Take advantage of our expert team to be your complete digital arm.
                 </p>
               </div>
               <div className="mt-8 flex w-full flex-wrap">
@@ -396,9 +388,7 @@ export default async function LocationPage({
                         />
                       </svg>
                     </div>
-                    <div className="ml-5 font-light text-white">
-                      Here since 2010
-                    </div>
+                    <div className="ml-5 font-light text-white">Here since 2010</div>
                   </div>
                 </div>
                 <div className="mb-3.5 w-full">
@@ -417,9 +407,7 @@ export default async function LocationPage({
                         />
                       </svg>
                     </div>
-                    <div className="ml-5 font-light text-white">
-                      Next JS Verified Partner
-                    </div>
+                    <div className="ml-5 font-light text-white">Next JS Verified Partner</div>
                   </div>
                 </div>
               </div>
@@ -428,15 +416,13 @@ export default async function LocationPage({
                   className="inline-flex"
                   href=""
                   style={{
-                    outlineOffset: "2px",
-                    outlineStyle: "solid",
-                    outlineWidth: "2px",
+                    outlineOffset: '2px',
+                    outlineStyle: 'solid',
+                    outlineWidth: '2px',
                   }}
                 >
                   <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
-                    <div className="inline-flex">
-                      Schedule a call with our team
-                    </div>
+                    <div className="inline-flex">Schedule a call with our team</div>
                   </div>
                   <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold" />
                 </a>
@@ -491,10 +477,7 @@ export default async function LocationPage({
                   xmlns="http://www.w3.org/2000/svg"
                   y="0"
                 >
-                  <path
-                    d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z"
-                    fill="rgb(14, 15, 17)"
-                  />
+                  <path d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z" fill="rgb(14, 15, 17)" />
                 </svg>
                 <svg
                   className="absolute bottom-0 left-[0.13rem] h-10 w-10 lg:h-12 lg:w-12"
@@ -506,10 +489,7 @@ export default async function LocationPage({
                   xmlns="http://www.w3.org/2000/svg"
                   y="0"
                 >
-                  <path
-                    d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z"
-                    fill="rgb(14, 15, 17)"
-                  />
+                  <path d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z" fill="rgb(14, 15, 17)" />
                 </svg>
               </div>
               <div className="absolute left-0 top-0 h-full w-full overflow-hidden rounded-3xl bg-zinc-900">
@@ -532,17 +512,16 @@ export default async function LocationPage({
                   </div>
                 </div>
                 <h2 className="mb-0 mt-3 text-[2.50rem] leading-none text-white lg:mb-0 lg:mt-5">
-                  We like to remove the 'waffle' and design beautiful, easy to
-                  use websites that are functional.
+                  We like to remove the 'waffle' and design beautiful, easy to use websites that are
+                  functional.
                 </h2>
               </div>
               <div className="mt-8 w-full text-lg font-light text-zinc-400">
                 <p className="mb-6">
-                  We don't <em className="italic">just</em> build pretty
-                  websites. Here at Brewww, we understand all aspects of a
-                  successful site, from design through web development and
-                  testing, to SEO and Hosting. We tailor our service to the
-                  client and the project requirements.
+                  We don't <em className="italic">just</em> build pretty websites. Here at Brewww,
+                  we understand all aspects of a successful site, from design through web
+                  development and testing, to SEO and Hosting. We tailor our service to the client
+                  and the project requirements.
                 </p>
               </div>
               <div className="relative mt-8 inline-flex items-center">
@@ -550,9 +529,9 @@ export default async function LocationPage({
                   className="inline-flex"
                   href=""
                   style={{
-                    outlineOffset: "2px",
-                    outlineStyle: "solid",
-                    outlineWidth: "2px",
+                    outlineOffset: '2px',
+                    outlineStyle: 'solid',
+                    outlineWidth: '2px',
                   }}
                 >
                   <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
@@ -604,13 +583,11 @@ export default async function LocationPage({
               <div className="flex flex-col items-start">
                 <div className="inline-flex items-center">
                   <div className="h-1.5 w-1.5 rounded-full bg-white" />
-                  <div className="ml-2 font-light text-white">
-                    What we can help you with
-                  </div>
+                  <div className="ml-2 font-light text-white">What we can help you with</div>
                 </div>
                 <h2 className="mb-0 mt-3 max-w-xs pr-10 text-5xl text-white lg:mb-0 lg:mt-5 lg:max-w-xl lg:pr-0 min-[2100px]:max-w-2xl">
-                  A team of web design experts that can help you design and
-                  build a website you're proud of
+                  A team of web design experts that can help you design and build a website you're
+                  proud of
                 </h2>
               </div>
             </div>
@@ -620,7 +597,7 @@ export default async function LocationPage({
                   className="inline-flex"
                   href=""
                   style={{
-                    outlineOffset: "2px",
+                    outlineOffset: '2px',
                   }}
                 >
                   <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
@@ -683,8 +660,7 @@ export default async function LocationPage({
                 </div>
                 <div className="w-full max-w-sm text-lg font-light text-zinc-400">
                   <p className="mb-6">
-                    Bespoke web design perfect for your brand and target
-                    audience.
+                    Bespoke web design perfect for your brand and target audience.
                   </p>
                 </div>
               </div>
@@ -712,8 +688,8 @@ export default async function LocationPage({
                 </div>
                 <div className="w-full max-w-sm text-lg font-light text-zinc-400">
                   <p className="mb-6">
-                    Sell products online 24/7 through a well-designed,
-                    easy-to-use eCommerce website.
+                    Sell products online 24/7 through a well-designed, easy-to-use eCommerce
+                    website.
                   </p>
                 </div>
               </div>
@@ -741,8 +717,8 @@ export default async function LocationPage({
                 </div>
                 <div className="w-full max-w-sm text-lg font-light text-zinc-400">
                   <p className="mb-6">
-                    Provide meaningful and relevant experiences to users through
-                    user experience (UX) design.
+                    Provide meaningful and relevant experiences to users through user experience
+                    (UX) design.
                   </p>
                 </div>
               </div>
@@ -764,14 +740,11 @@ export default async function LocationPage({
                       />
                     </svg>
                   </div>
-                  <h2 className="ml-4 text-4xl text-white">
-                    Responsive Design
-                  </h2>
+                  <h2 className="ml-4 text-4xl text-white">Responsive Design</h2>
                 </div>
                 <div className="w-full max-w-sm text-lg font-light text-zinc-400">
                   <p className="mb-6">
-                    Designed for all the latest devices, including iPhone and
-                    iPad.
+                    Designed for all the latest devices, including iPhone and iPad.
                   </p>
                 </div>
               </div>
@@ -799,8 +772,8 @@ export default async function LocationPage({
                 </div>
                 <div className="w-full max-w-sm text-lg font-light text-zinc-400">
                   <p className="mb-6">
-                    A visualization tool for presenting a website's proposed
-                    structure, functions, and content.
+                    A visualization tool for presenting a website's proposed structure, functions,
+                    and content.
                   </p>
                 </div>
               </div>
@@ -826,8 +799,7 @@ export default async function LocationPage({
                 </div>
                 <div className="w-full max-w-sm text-lg font-light text-zinc-400">
                   <p className="mb-6">
-                    Not only looking at the now, but also to the future to see
-                    potential growth.
+                    Not only looking at the now, but also to the future to see potential growth.
                   </p>
                 </div>
               </div>
@@ -850,10 +822,7 @@ export default async function LocationPage({
                       viewBox="0 0 384 512"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M384 256L0 32v448l384-224z"
-                        fill="rgb(0, 0, 0)"
-                      />
+                      <path d="M384 256L0 32v448l384-224z" fill="rgb(0, 0, 0)" />
                     </svg>
                   </div>
                 </div>
@@ -913,10 +882,7 @@ export default async function LocationPage({
                     xmlns="http://www.w3.org/2000/svg"
                     y="0"
                   >
-                    <path
-                      d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z"
-                      fill="rgb(14, 15, 17)"
-                    />
+                    <path d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z" fill="rgb(14, 15, 17)" />
                   </svg>
                   <div className="flex items-end">
                     <div className="relative inline-flex h-9 w-9 overflow-hidden rounded-lg lg:h-12 lg:w-12">
@@ -935,9 +901,7 @@ export default async function LocationPage({
                     </div>
                     <div className="ml-2 mr-0 lg:ml-3 lg:mr-0">
                       <div className="text-white">Hannah Wessa</div>
-                      <div className="text-sm font-light text-zinc-400">
-                        Something
-                      </div>
+                      <div className="text-sm font-light text-zinc-400">Something</div>
                     </div>
                   </div>
                 </div>
@@ -953,10 +917,7 @@ export default async function LocationPage({
                   xmlns="http://www.w3.org/2000/svg"
                   y="0"
                 >
-                  <path
-                    d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z"
-                    fill="rgb(14, 15, 17)"
-                  />
+                  <path d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z" fill="rgb(14, 15, 17)" />
                 </svg>
                 <svg
                   className="absolute right-0 top-[0.13rem] h-10 w-10 text-neutral-950 lg:h-12 lg:w-12"
@@ -968,10 +929,7 @@ export default async function LocationPage({
                   xmlns="http://www.w3.org/2000/svg"
                   y="0"
                 >
-                  <path
-                    d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z"
-                    fill="rgb(14, 15, 17)"
-                  />
+                  <path d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z" fill="rgb(14, 15, 17)" />
                 </svg>
                 <div className="inline-flex flex-col items-start lg:flex-row">
                   <div className="hidden lg:inline-flex">
@@ -980,7 +938,7 @@ export default async function LocationPage({
                         className="inline-flex"
                         href="#"
                         style={{
-                          outlineOffset: "2px",
+                          outlineOffset: '2px',
                         }}
                       >
                         <div className="inline-flex w-auto items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
@@ -1027,7 +985,7 @@ export default async function LocationPage({
                       className="inline-flex"
                       href="#"
                       style={{
-                        outlineOffset: "2px",
+                        outlineOffset: '2px',
                       }}
                     >
                       <div className="inline-flex w-auto items-center justify-center overflow-hidden rounded-full bg-zinc-800 px-5 py-2 text-white">
@@ -1073,9 +1031,9 @@ export default async function LocationPage({
         </div>
       </section>
 
-      <LocationWorkSlider />
+      <LocationWorkSlider workItems={workItems} />
       <LocationTechSlider technologies={technologies} />
       <LocationFAQ faqs={faqs} />
     </>
-  );
+  )
 }
