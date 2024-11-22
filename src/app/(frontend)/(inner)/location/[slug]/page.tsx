@@ -60,13 +60,15 @@ async function getPageData({ slug }: { slug: string }) {
     limit: 1000,
   })
 
-  const technologiesResponse = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/technologies`,
-    {
-      next: { revalidate: 3600 },
+  const technologies = await payload.find({
+    collection: 'technologies',
+    limit: 1000,
+    where: {
+      _status: {
+        equals: 'published',
+      },
     },
-  )
-  const technologiesData = await technologiesResponse.json()
+  })
 
   const workItems = await payload.find({
     collection: "work",
@@ -82,7 +84,7 @@ async function getPageData({ slug }: { slug: string }) {
   return {
     location: location.docs[0],
     faqs: faqs.docs,
-    technologies: technologiesData.docs || [],
+    technologies: technologies.docs || [],
     workItems: workItems.docs || [],
   }
 }
