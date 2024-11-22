@@ -1,0 +1,158 @@
+import Image from 'next/image'
+
+export function LocationImageLeft() {
+  return (
+    <section className="bg-brand-dark-bg px-2 py-10 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40">
+      <div className="flex w-full flex-col lg:flex-row lg:justify-between">
+        <div className="relative mb-10 inline-flex w-full px-2 lg:mb-0 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="relative w-full pb-[100%] md:pb-[56.25%] lg:h-full lg:pb-0">
+            <div className="absolute bottom-0 right-0 z-20 h-14 w-32 rounded-tl-3xl text-neutral-950 lg:h-20">
+              <svg
+                className="absolute right-0 top-[0.13rem] h-10 w-10 lg:h-12 lg:w-12"
+                fill="rgb(14, 15, 17)"
+                version="1.1"
+                viewBox="0 0 100 100"
+                x="0"
+                xmlSpace="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+                y="0"
+              >
+                <path d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z" fill="rgb(14, 15, 17)" />
+              </svg>
+              <svg
+                className="absolute bottom-0 left-[0.13rem] h-10 w-10 lg:h-12 lg:w-12"
+                fill="rgb(14, 15, 17)"
+                version="1.1"
+                viewBox="0 0 100 100"
+                x="0"
+                xmlSpace="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+                y="0"
+              >
+                <path d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z" fill="rgb(14, 15, 17)" />
+              </svg>
+            </div>
+            <div className="absolute left-0 top-0 h-full w-full overflow-hidden rounded-3xl bg-zinc-900">
+              <Image
+                className="absolute left-0 top-0 h-full w-full max-w-full object-cover"
+                src="/bg-contact.1200.jpg"
+                alt="Contact"
+                fill
+              />
+            </div>
+          </div>
+        </div>
+        <div className="inline-flex w-full items-center px-2 lg:min-h-[35.00rem] lg:w-2/4 lg:justify-center lg:pb-20 lg:pl-3 lg:pr-3 lg:pt-20 xl:pl-4 xl:pr-4">
+          <div className="w-full lg:max-w-xl">
+            <div className="flex flex-col items-start">
+              <div className="inline-flex items-center">
+                <div className="h-1.5 w-1.5 rounded-full bg-white" />
+                <div className="ml-2 font-light text-white">We're the real sh*t</div>
+              </div>
+              <h2 className="mb-0 mt-3 text-[2.50rem] leading-none text-white lg:mb-0 lg:mt-5">
+                We know it's hard for brands to setup an online experience, and budgets can be
+                tight.
+              </h2>
+            </div>
+            <div className="mt-8 w-full text-lg font-light text-zinc-400">
+              <p className="mb-6">
+                We like to help new brands grow and work in a long-term relationship.
+              </p>
+              <p className="mb-6">
+                We also have experience designing, building, testing, and launching websites for
+                large global organisations. We can be an extension of your in-house marketing team.
+                Take advantage of our expert team to be your complete digital arm.
+              </p>
+            </div>
+            <div className="mt-8 flex w-full flex-wrap">
+              <div className="mb-3.5 w-full">
+                <div className="flex">
+                  <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold">
+                    <svg
+                      className="h-3 w-3"
+                      fill="rgb(1, 2, 2)"
+                      height="16"
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M447.9 142.5l-23.2 22L181 395.3l-22 20.8-22-20.8L23.2 287.6 0 265.6l44-46.5 23.2 22L159 328l221.7-210 23.2-22 44 46.5z"
+                        fill="rgb(1, 2, 2)"
+                      />
+                    </svg>
+                  </div>
+                  <div className="ml-5 font-light text-white">Here since 2010</div>
+                </div>
+              </div>
+              <div className="mb-3.5 w-full">
+                <div className="flex">
+                  <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold">
+                    <svg
+                      className="h-3 w-3"
+                      fill="rgb(1, 2, 2)"
+                      height="16"
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M447.9 142.5l-23.2 22L181 395.3l-22 20.8-22-20.8L23.2 287.6 0 265.6l44-46.5 23.2 22L159 328l221.7-210 23.2-22 44 46.5z"
+                        fill="rgb(1, 2, 2)"
+                      />
+                    </svg>
+                  </div>
+                  <div className="ml-5 font-light text-white">Next JS Verified Partner</div>
+                </div>
+              </div>
+            </div>
+            <div className="relative mt-8 inline-flex items-center">
+              <a
+                className="inline-flex"
+                href=""
+                style={{
+                  outlineOffset: '2px',
+                  outlineStyle: 'solid',
+                  outlineWidth: '2px',
+                }}
+              >
+                <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
+                  <div className="inline-flex">Schedule a call with our team</div>
+                </div>
+                <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold" />
+              </a>
+              <div className="absolute right-0 top-0 z-20 flex h-9 w-9 items-center justify-center">
+                <div className="relative overflow-hidden">
+                  <div>
+                    <svg
+                      className="h-3 w-3"
+                      fill="rgb(1, 2, 2)"
+                      viewBox="0 0 384 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M328 96h24v288h-48V177.9L81 401l-17 17-33.9-34 17-17 223-223H64V96h264z"
+                        fill="rgb(1, 2, 2)"
+                      />
+                    </svg>
+                  </div>
+                  <div className="absolute left-0 top-0">
+                    <svg
+                      className="h-3 w-3"
+                      fill="rgb(1, 2, 2)"
+                      viewBox="0 0 384 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M328 96h24v288h-48V177.9L81 401l-17 17-33.9-34 17-17 223-223H64V96h264z"
+                        fill="rgb(1, 2, 2)"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
