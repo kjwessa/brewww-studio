@@ -123,8 +123,8 @@ export default async function LocationPage({ params, searchParams }: LocationPag
       <LocationHeroText title={location.heroTitle} description={location.heroDescription} />
       <LocationHeroImage image={location.heroImage as Media} />
 
-      <section className="w-full bg-brand-dark-bg py-20 text-black lg:pb-24 lg:pt-24 min-[1450px]:pb-32 min-[1450px]:pt-32 min-[2100px]:pb-40 min-[2100px]:pt-40">
-        <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+      <section className="w-full bg-brand-dark-bg py-20 text-black lg:pb-24 lg:pt-24 min-[1450px]:pb-32 min-[1450px]:pt-32">
+        <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40">
           <div className="flex w-full flex-wrap justify-between">
             <div className="relative mb-10 w-full px-2 lg:mb-0 lg:w-[56.25%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4 min-[1800px]:w-[62.5%]">
               <div className="flex flex-col items-start">
@@ -191,9 +191,9 @@ export default async function LocationPage({ params, searchParams }: LocationPag
               <div className="w-full">
                 <div className="mb-3 w-full">
                   <div className="flex">
-                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950 min-[2100px]:h-6 min-[2100px]:w-6">
+                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950">
                       <svg
-                        className="h-3 w-3 min-[2100px]:h-3.5 min-[2100px]:w-3.5"
+                        className="h-3 w-3"
                         fill="rgb(14, 15, 17)"
                         height="16"
                         viewBox="0 0 448 512"
@@ -210,9 +210,9 @@ export default async function LocationPage({ params, searchParams }: LocationPag
                 </div>
                 <div className="mb-3 w-full">
                   <div className="flex">
-                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950 min-[2100px]:h-6 min-[2100px]:w-6">
+                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950">
                       <svg
-                        className="h-3 w-3 min-[2100px]:h-3.5 min-[2100px]:w-3.5"
+                        className="h-3 w-3"
                         fill="rgb(14, 15, 17)"
                         height="16"
                         viewBox="0 0 448 512"
@@ -229,9 +229,9 @@ export default async function LocationPage({ params, searchParams }: LocationPag
                 </div>
                 <div className="mb-3 w-full">
                   <div className="flex">
-                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950 min-[2100px]:h-6 min-[2100px]:w-6">
+                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950">
                       <svg
-                        className="h-3 w-3 min-[2100px]:h-3.5 min-[2100px]:w-3.5"
+                        className="h-3 w-3"
                         fill="rgb(14, 15, 17)"
                         height="16"
                         viewBox="0 0 448 512"
@@ -248,9 +248,9 @@ export default async function LocationPage({ params, searchParams }: LocationPag
                 </div>
                 <div className="mb-3 w-full">
                   <div className="flex">
-                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950 min-[2100px]:h-6 min-[2100px]:w-6">
+                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950">
                       <svg
-                        className="h-3 w-3 min-[2100px]:h-3.5 min-[2100px]:w-3.5"
+                        className="h-3 w-3"
                         fill="rgb(14, 15, 17)"
                         height="16"
                         viewBox="0 0 448 512"
@@ -267,9 +267,9 @@ export default async function LocationPage({ params, searchParams }: LocationPag
                 </div>
                 <div className="mb-3 w-full">
                   <div className="flex">
-                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950 min-[2100px]:h-6 min-[2100px]:w-6">
+                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950">
                       <svg
-                        className="h-3 w-3 min-[2100px]:h-3.5 min-[2100px]:w-3.5"
+                        className="h-3 w-3"
                         fill="rgb(14, 15, 17)"
                         height="16"
                         viewBox="0 0 448 512"
@@ -286,9 +286,9 @@ export default async function LocationPage({ params, searchParams }: LocationPag
                 </div>
                 <div className="mb-3 w-full">
                   <div className="flex">
-                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950 min-[2100px]:h-6 min-[2100px]:w-6">
+                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950">
                       <svg
-                        className="h-3 w-3 min-[2100px]:h-3.5 min-[2100px]:w-3.5"
+                        className="h-3 w-3"
                         fill="rgb(14, 15, 17)"
                         height="16"
                         viewBox="0 0 448 512"
@@ -309,7 +309,7 @@ export default async function LocationPage({ params, searchParams }: LocationPag
         </div>
       </section>
 
-      <section className="bg-brand-dark-bg px-2 py-10 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+      <section className="bg-brand-dark-bg px-2 py-10 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40">
         <div className="flex w-full flex-col lg:flex-row lg:justify-between">
           <div className="relative mb-10 inline-flex w-full px-2 lg:mb-0 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
             <div className="relative w-full pb-[100%] md:pb-[56.25%] lg:h-full lg:pb-0">
@@ -349,8 +349,8 @@ export default async function LocationPage({ params, searchParams }: LocationPag
               </div>
             </div>
           </div>
-          <div className="inline-flex w-full items-center px-2 lg:min-h-[35.00rem] lg:w-2/4 lg:justify-center lg:pb-20 lg:pl-3 lg:pr-3 lg:pt-20 xl:pl-4 xl:pr-4 min-[1800px]:min-h-[40.00rem] min-[2100px]:w-[43.75%]">
-            <div className="w-full lg:max-w-xl min-[2100px]:max-w-3xl">
+          <div className="inline-flex w-full items-center px-2 lg:min-h-[35.00rem] lg:w-2/4 lg:justify-center lg:pb-20 lg:pl-3 lg:pr-3 lg:pt-20 xl:pl-4 xl:pr-4">
+            <div className="w-full lg:max-w-xl">
               <div className="flex flex-col items-start">
                 <div className="inline-flex items-center">
                   <div className="h-1.5 w-1.5 rounded-full bg-white" />
@@ -374,9 +374,9 @@ export default async function LocationPage({ params, searchParams }: LocationPag
               <div className="mt-8 flex w-full flex-wrap">
                 <div className="mb-3.5 w-full">
                   <div className="flex">
-                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold min-[2100px]:h-6 min-[2100px]:w-6">
+                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold">
                       <svg
-                        className="h-3 w-3 min-[2100px]:h-3.5 min-[2100px]:w-3.5"
+                        className="h-3 w-3"
                         fill="rgb(1, 2, 2)"
                         height="16"
                         viewBox="0 0 448 512"
@@ -393,9 +393,9 @@ export default async function LocationPage({ params, searchParams }: LocationPag
                 </div>
                 <div className="mb-3.5 w-full">
                   <div className="flex">
-                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold min-[2100px]:h-6 min-[2100px]:w-6">
+                    <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold">
                       <svg
-                        className="h-3 w-3 min-[2100px]:h-3.5 min-[2100px]:w-3.5"
+                        className="h-3 w-3"
                         fill="rgb(1, 2, 2)"
                         height="16"
                         viewBox="0 0 448 512"
@@ -462,7 +462,7 @@ export default async function LocationPage({ params, searchParams }: LocationPag
         </div>
       </section>
 
-      <section className="bg-brand-dark-bg px-2 py-20 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+      <section className="bg-brand-dark-bg px-2 py-20 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40">
         <div className="flex w-full flex-col lg:flex-row-reverse lg:justify-between">
           <div className="relative mb-10 inline-flex w-full px-2 lg:mb-0 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
             <div className="relative w-full pb-[100%] md:pb-[56.25%] lg:h-full lg:pb-0">
@@ -502,8 +502,8 @@ export default async function LocationPage({ params, searchParams }: LocationPag
               </div>
             </div>
           </div>
-          <div className="inline-flex w-full items-center px-2 lg:min-h-[35.00rem] lg:w-2/4 lg:justify-center lg:pb-20 lg:pl-3 lg:pr-3 lg:pt-20 xl:pl-4 xl:pr-4 min-[1800px]:min-h-[40.00rem] min-[2100px]:w-[43.75%]">
-            <div className="w-full lg:max-w-xl min-[2100px]:max-w-3xl">
+          <div className="inline-flex w-full items-center px-2 lg:min-h-[35.00rem] lg:w-2/4 lg:justify-center lg:pb-20 lg:pl-3 lg:pr-3 lg:pt-20 xl:pl-4 xl:pr-4">
+            <div className="w-full lg:max-w-xl">
               <div className="flex flex-col items-start">
                 <div className="inline-flex items-center">
                   <div className="h-1.5 w-1.5 rounded-full bg-white" />
@@ -577,7 +577,7 @@ export default async function LocationPage({ params, searchParams }: LocationPag
 
       <LocationLogoSlider brands={brands} />
       <section className="relative w-full rounded-3xl bg-zinc-900 py-10 text-black lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
-        <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+        <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40">
           <div className="mb-8 mt-10 flex w-full flex-wrap items-end justify-between lg:mb-16 lg:mt-0">
             <div className="w-full px-2 lg:w-auto lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="flex flex-col items-start">
@@ -585,7 +585,7 @@ export default async function LocationPage({ params, searchParams }: LocationPag
                   <div className="h-1.5 w-1.5 rounded-full bg-white" />
                   <div className="ml-2 font-light text-white">What we can help you with</div>
                 </div>
-                <h2 className="mb-0 mt-3 max-w-xs pr-10 text-5xl text-white lg:mb-0 lg:mt-5 lg:max-w-xl lg:pr-0 min-[2100px]:max-w-2xl">
+                <h2 className="mb-0 mt-3 max-w-xs pr-10 text-5xl text-white lg:mb-0 lg:mt-5 lg:max-w-xl">
                   A team of web design experts that can help you design and build a website you're
                   proud of
                 </h2>
@@ -642,9 +642,9 @@ export default async function LocationPage({ params, searchParams }: LocationPag
             <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="mb-8 flex w-full flex-col items-start justify-start border-b-2 border-solid border-neutral-700 pb-8 lg:mb-12 lg:pb-12">
                 <div className="mb-3 flex w-full items-center">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold min-[2100px]:h-12 min-[2100px]:w-12">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold">
                     <svg
-                      className="h-5 w-5 min-[2100px]:h-6 min-[2100px]:w-6"
+                      className="h-5 w-5"
                       fill="rgb(1, 2, 2)"
                       height="16"
                       viewBox="0 0 22 22"
@@ -668,9 +668,9 @@ export default async function LocationPage({ params, searchParams }: LocationPag
             <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="mb-8 flex w-full flex-col items-start justify-start border-b-2 border-solid border-neutral-700 pb-8 lg:mb-12 lg:pb-12">
                 <div className="mb-3 flex w-full items-center">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold min-[2100px]:h-12 min-[2100px]:w-12">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold">
                     <svg
-                      className="h-5 w-5 min-[2100px]:h-6 min-[2100px]:w-6"
+                      className="h-5 w-5"
                       fill="rgb(1, 2, 2)"
                       height="21"
                       viewBox="0 0 21 21"
@@ -697,9 +697,9 @@ export default async function LocationPage({ params, searchParams }: LocationPag
             <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="mb-8 flex w-full flex-col items-start justify-start border-b-2 border-solid border-neutral-700 pb-8 lg:mb-12 lg:pb-12">
                 <div className="mb-3 flex w-full items-center">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold min-[2100px]:h-12 min-[2100px]:w-12">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold">
                     <svg
-                      className="h-5 w-5 min-[2100px]:h-6 min-[2100px]:w-6"
+                      className="h-5 w-5"
                       fill="rgb(1, 2, 2)"
                       height="19"
                       viewBox="0 0 22 19"
@@ -726,9 +726,9 @@ export default async function LocationPage({ params, searchParams }: LocationPag
             <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="mb-8 flex w-full flex-col items-start justify-start border-b-2 border-solid border-neutral-700 pb-8 lg:mb-12 lg:pb-12">
                 <div className="mb-3 flex w-full items-center">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold min-[2100px]:h-12 min-[2100px]:w-12">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold">
                     <svg
-                      className="h-5 w-5 min-[2100px]:h-6 min-[2100px]:w-6"
+                      className="h-5 w-5"
                       fill="rgb(1, 2, 2)"
                       height="22"
                       viewBox="0 0 24 22"
@@ -752,9 +752,9 @@ export default async function LocationPage({ params, searchParams }: LocationPag
             <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="mb-8 flex w-full flex-col items-start justify-start border-b-2 border-solid border-neutral-700 pb-8 lg:mb-12 lg:pb-12">
                 <div className="mb-3 flex w-full items-center">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold min-[2100px]:h-12 min-[2100px]:w-12">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold">
                     <svg
-                      className="h-5 w-5 min-[2100px]:h-6 min-[2100px]:w-6"
+                      className="h-5 w-5"
                       fill="rgb(1, 2, 2)"
                       height="22"
                       viewBox="0 0 17 22"
@@ -762,7 +762,7 @@ export default async function LocationPage({ params, searchParams }: LocationPag
                     >
                       <path
                         clipRule="evenodd"
-                        d="M8.37226 4.00197C12.9678 3.99836 16.6886 3.10387 16.6886 2.00099C16.6886 0.895872 12.9527 0 8.3443 0C3.73587 0 0 0.895872 0 2.00099C0 3.10387 3.72077 3.99836 8.31634 4.00197C3.72036 4.00823 0 5.55741 0 7.46679C0 9.12991 2.82353 10.5199 6.58933 10.8545C2.82353 11.3687 0.000818377 13.5001 0.000818377 16.0555C-0.000821781 18.993 3.73546 21.3745 8.34348 21.3745C12.9515 21.3745 16.6878 18.993 16.6878 16.0555C16.6878 13.5017 13.8643 11.3687 10.0985 10.8545C13.8643 10.5199 16.6878 9.13155 16.6878 7.46679H16.6886C16.6886 5.55741 12.9682 4.00823 8.37226 4.00197Z"
+                        d="M8.37226 4.24801C12.9678 3.99836 16.6886 3.10387 16.6886 2.00099C16.6886 0.895872 12.9527 0 8.3443 0C3.73587 0 0 0.895872 0 2.00099C0 3.10387 3.72077 3.99836 8.31634 4.00197C3.72036 4.00823 0 5.55741 0 7.46679C0 9.12991 2.82353 10.5199 6.58933 10.8545C2.82353 11.3687 0.000818377 13.5001 0.000818377 16.0555C-0.000821781 18.993 3.73546 21.3745 8.34348 21.3745C12.9515 21.3745 16.6878 18.993 16.6878 16.0555C16.6878 13.5017 13.8643 11.3687 10.0985 10.8545C13.8643 10.5199 16.6878 9.13155 16.6878 7.46679H16.6886C16.6886 5.55741 12.9682 4.00823 8.37226 4.00197Z"
                         fill="rgb(1, 2, 2)"
                         fillRule="evenodd"
                       />
@@ -781,9 +781,9 @@ export default async function LocationPage({ params, searchParams }: LocationPag
             <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
               <div className="mb-8 flex w-full flex-col items-start justify-start border-b-2 border-solid border-neutral-700 pb-8 lg:mb-12 lg:pb-12">
                 <div className="mb-3 flex w-full items-center">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold min-[2100px]:h-12 min-[2100px]:w-12">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold">
                     <svg
-                      className="h-5 w-5 min-[2100px]:h-6 min-[2100px]:w-6"
+                      className="h-5 w-5"
                       fill="rgb(1, 2, 2)"
                       height="27"
                       viewBox="0 0 27 27"
@@ -808,7 +808,7 @@ export default async function LocationPage({ params, searchParams }: LocationPag
         </div>
       </section>
 
-      <section className="bg-neutral-950 px-2 pb-10 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+      <section className="bg-neutral-950 px-2 pb-10 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40">
         <div className="flex w-full flex-wrap">
           <div className="relative w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
             <div className="relative flex w-full cursor-pointer flex-wrap lg:min-h-[30.00rem]">
