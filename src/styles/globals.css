@@ -7,13 +7,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ghost-text {
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 2.5px;
-  -webkit-text-stroke-color: theme("colors.brand.gold");
-  paint-order: stroke fill;
-}
-
 @keyframes marquee-reverse {
   0% {
     transform: translateX(0);
