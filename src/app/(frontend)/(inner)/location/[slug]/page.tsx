@@ -55,37 +55,56 @@ async function getPageData({ slug }: { slug: string }) {
     notFound()
   }
 
-  const faqs = await payload.find({
-    collection: 'faq',
-    limit: 1000,
-  })
-
-  const technologies = await payload.find({
-    collection: 'technologies',
-    limit: 1000,
-    where: {
-      _status: {
-        equals: 'published',
+  const [faqs, technologies, workItems, brands] = await Promise.all([
+    payload.find({
+      collection: 'faq',
+      limit: 1000,
+    }),
+    payload.find({
+      collection: 'technologies',
+      limit: 1000,
+      where: {
+        _status: {
+          equals: 'published',
+        },
       },
-    },
-  })
-
-  const workItems = await payload.find({
-    collection: "work",
-    limit: 3,
-    sort: "-publishedOn",
-    where: {
-      _status: {
-        equals: "published",
+    }),
+    payload.find({
+      collection: 'work',
+      limit: 4,
+      sort: '-publishedOn',
+      where: {
+        _status: {
+          equals: 'published',
+        },
       },
-    },
-  })
+    }),
+    payload.find({
+      collection: 'brands',
+      limit: 100,
+      where: {
+        and: [
+          {
+            _status: {
+              equals: 'published',
+            },
+          },
+          {
+            logoLight: {
+              exists: true,
+            },
+          },
+        ],
+      },
+    }),
+  ])
 
   return {
     location: location.docs[0],
     faqs: faqs.docs,
     technologies: technologies.docs || [],
     workItems: workItems.docs || [],
+    brands: brands.docs || [],
   }
 }
 
@@ -95,29 +114,8 @@ export default async function LocationPage({ params, searchParams }: LocationPag
     notFound()
   }
 
-  const { technologies, location, faqs, workItems } = await getPageData({
+  const { technologies, location, faqs, workItems, brands } = await getPageData({
     slug: resolvedParams.slug,
-  })
-
-  const payload = await getPayload({ config: configPromise })
-
-  const brands = await payload.find({
-    collection: 'brands',
-    limit: 100,
-    where: {
-      and: [
-        {
-          _status: {
-            equals: 'published',
-          },
-        },
-        {
-          logoLight: {
-            exists: true,
-          },
-        },
-      ],
-    },
   })
 
   return (
@@ -577,7 +575,7 @@ export default async function LocationPage({ params, searchParams }: LocationPag
         </div>
       </section>
 
-      <LocationLogoSlider brands={brands.docs} />
+      <LocationLogoSlider brands={brands} />
       <section className="relative w-full rounded-3xl bg-zinc-900 py-10 text-black lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
         <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
           <div className="mb-8 mt-10 flex w-full flex-wrap items-end justify-between lg:mb-16 lg:mt-0">
@@ -958,10 +956,7 @@ export default async function LocationPage({ params, searchParams }: LocationPag
                               viewBox="0 0 384 512"
                               xmlns="http://www.w3.org/2000/svg"
                             >
-                              <path
-                                d="M384 256L0 32v448l384-224z"
-                                fill="rgb(1, 2, 2)"
-                              />
+                              <path d="M384 256L0 32v448l384-224z" fill="rgb(1, 2, 2)" />
                             </svg>
                           </div>
                           <div className="absolute left-0 top-0">
@@ -972,10 +967,7 @@ export default async function LocationPage({ params, searchParams }: LocationPag
                               viewBox="0 0 384 512"
                               xmlns="http://www.w3.org/2000/svg"
                             >
-                              <path
-                                d="M384 256L0 32v448l384-224z"
-                                fill="rgb(1, 2, 2)"
-                              />
+                              <path d="M384 256L0 32v448l384-224z" fill="rgb(1, 2, 2)" />
                             </svg>
                           </div>
                         </div>
