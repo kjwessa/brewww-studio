@@ -4,11 +4,9 @@ import React, { Fragment } from 'react'
 import type { Page } from '@/payload-types'
 
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
-import { FormBlock } from '@/blocks/Form/Component'
 
 const blockComponents = {
   mediaBlock: MediaBlock,
-  formBlock: FormBlock,
 } as const
 
 // Define the block type using the non-null array element type
