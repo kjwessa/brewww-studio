@@ -1,8 +1,8 @@
-import Image from "next/image";
-import { Media } from "@/payload-types";
+import Image from 'next/image'
+import { Media } from '@/payload-types'
 
 interface LocationHeroImageProps {
-  image: Media;
+  image: Media
 }
 
 export const LocationHeroImage: React.FC<LocationHeroImageProps> = ({ image }) => {
@@ -20,10 +20,7 @@ export const LocationHeroImage: React.FC<LocationHeroImageProps> = ({ image }) =
             xmlns="http://www.w3.org/2000/svg"
             y="0"
           >
-            <path
-              d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z"
-              fill="rgb(14, 15, 17)"
-            />
+            <path d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z" fill="rgb(14, 15, 17)" />
           </svg>
           <svg
             className="absolute bottom-[0.13rem] left-0 h-10 w-10 text-neutral-950 lg:h-12 lg:w-12"
@@ -35,19 +32,16 @@ export const LocationHeroImage: React.FC<LocationHeroImageProps> = ({ image }) =
             xmlns="http://www.w3.org/2000/svg"
             y="0"
           >
-            <path
-              d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z"
-              fill="rgb(14, 15, 17)"
-            />
+            <path d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z" fill="rgb(14, 15, 17)" />
           </svg>
           <div className="relative inline-flex items-center">
             <a
               className="inline-flex"
               href=""
               style={{
-                outlineOffset: "2px",
-                outlineStyle: "solid",
-                outlineWidth: "2px",
+                outlineOffset: '2px',
+                outlineStyle: 'solid',
+                outlineWidth: '2px',
               }}
             >
               <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-zinc-800 px-5 py-2 text-white">
@@ -87,15 +81,15 @@ export const LocationHeroImage: React.FC<LocationHeroImageProps> = ({ image }) =
             </div>
           </div>
         </div>
-        <div className="relative h-[70vh] w-full overflow-hidden rounded-3xl bg-zinc-900">
+        <div className="relative h-[70vh] w-full overflow-hidden rounded-xl bg-zinc-900">
           <Image
             className="object-cover"
             src={typeof image.url === 'string' ? image.url : ''}
-            alt={image.alt || "Location Hero Image"}
+            alt={image.alt || 'Location Hero Image'}
             fill
           />
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

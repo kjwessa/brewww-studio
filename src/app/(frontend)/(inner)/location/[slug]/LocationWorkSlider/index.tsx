@@ -1,21 +1,12 @@
 import { WorkCard } from "@/components/WorkCard";
-import { getPayload } from "payload";
-import configPromise from "@payload-config";
 import { Title } from "@/components/Title";
+import { Work } from "@/payload-types";
 
-export async function LocationWorkSlider() {
-  const payload = await getPayload({ config: configPromise });
-  const projects = await payload.find({
-    collection: "work",
-    limit: 3,
-    sort: "-publishedOn",
-    where: {
-      _status: {
-        equals: "published",
-      },
-    },
-  });
-  //TODO figure out why the title isn't getting the right sizes
+interface LocationWorkSliderProps {
+  workItems: Work[];
+}
+
+export function LocationWorkSlider({ workItems }: LocationWorkSliderProps) {
   return (
     <>
       <section className="flex w-full flex-wrap bg-brand-dark-bg py-24 text-black">
@@ -86,12 +77,12 @@ export async function LocationWorkSlider() {
         <div className="w-full">
           <div className="relative m-auto h-auto w-full overflow-hidden">
             <div className="relative flex h-full w-full items-start">
-              {projects.docs.map((project) => (
+              {workItems.map((project) => (
                 <div
                   className="relative h-auto w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4"
                   key={project.id}
                 >
-                  <WorkCard project={project} />;
+                  <WorkCard project={project} />
                 </div>
               ))}
             </div>
