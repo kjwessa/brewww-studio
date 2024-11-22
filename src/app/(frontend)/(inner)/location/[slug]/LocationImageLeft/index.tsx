@@ -1,8 +1,9 @@
 import Image from 'next/image'
+import { Button } from '@/components/Button'
 
 export function LocationImageLeft() {
   return (
-    <section className="bg-brand-dark-bg px-2 py-10 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40">
+    <section className="bg-brand-dark-bg px-2 py-10 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
       <div className="flex w-full flex-col lg:flex-row lg:justify-between">
         <div className="relative mb-10 inline-flex w-full px-2 lg:mb-0 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
           <div className="relative w-full pb-[100%] md:pb-[56.25%] lg:h-full lg:pb-0">
@@ -105,50 +106,13 @@ export function LocationImageLeft() {
               </div>
             </div>
             <div className="relative mt-8 inline-flex items-center">
-              <a
-                className="inline-flex"
-                href=""
-                style={{
-                  outlineOffset: '2px',
-                  outlineStyle: 'solid',
-                  outlineWidth: '2px',
-                }}
-              >
-                <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
-                  <div className="inline-flex">Schedule a call with our team</div>
-                </div>
-                <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold" />
-              </a>
-              <div className="absolute right-0 top-0 z-20 flex h-9 w-9 items-center justify-center">
-                <div className="relative overflow-hidden">
-                  <div>
-                    <svg
-                      className="h-3 w-3"
-                      fill="rgb(1, 2, 2)"
-                      viewBox="0 0 384 512"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M328 96h24v288h-48V177.9L81 401l-17 17-33.9-34 17-17 223-223H64V96h264z"
-                        fill="rgb(1, 2, 2)"
-                      />
-                    </svg>
-                  </div>
-                  <div className="absolute left-0 top-0">
-                    <svg
-                      className="h-3 w-3"
-                      fill="rgb(1, 2, 2)"
-                      viewBox="0 0 384 512"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M328 96h24v288h-48V177.9L81 401l-17 17-33.9-34 17-17 223-223H64V96h264z"
-                        fill="rgb(1, 2, 2)"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
+              <Button
+                label="Schedule a call with our team"
+                intent="primary"
+                size="default"
+                icon="arrow"
+                iconPosition="right"
+              />
             </div>
           </div>
         </div>
