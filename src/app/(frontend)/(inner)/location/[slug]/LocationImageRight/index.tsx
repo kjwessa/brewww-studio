@@ -7,32 +7,6 @@ export function LocationImageRight() {
       <div className="flex w-full flex-col lg:flex-row-reverse lg:justify-between">
         <div className="relative mb-10 inline-flex w-full px-2 lg:mb-0 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
           <div className="relative w-full pb-[100%] md:pb-[56.25%] lg:h-full lg:pb-0">
-            <div className="absolute bottom-0 right-0 z-20 h-14 w-32 rounded-tl-3xl text-neutral-950 lg:h-20">
-              <svg
-                className="absolute right-0 top-[0.13rem] h-10 w-10 lg:h-12 lg:w-12"
-                fill="rgb(14, 15, 17)"
-                version="1.1"
-                viewBox="0 0 100 100"
-                x="0"
-                xmlSpace="preserve"
-                xmlns="http://www.w3.org/2000/svg"
-                y="0"
-              >
-                <path d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z" fill="rgb(14, 15, 17)" />
-              </svg>
-              <svg
-                className="absolute bottom-0 left-[0.13rem] h-10 w-10 lg:h-12 lg:w-12"
-                fill="rgb(14, 15, 17)"
-                version="1.1"
-                viewBox="0 0 100 100"
-                x="0"
-                xmlSpace="preserve"
-                xmlns="http://www.w3.org/2000/svg"
-                y="0"
-              >
-                <path d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z" fill="rgb(14, 15, 17)" />
-              </svg>
-            </div>
             <div className="absolute left-0 top-0 h-full w-full overflow-hidden rounded-3xl bg-zinc-900">
               <Image
                 className="absolute left-0 top-0 h-full w-full max-w-full object-cover"
