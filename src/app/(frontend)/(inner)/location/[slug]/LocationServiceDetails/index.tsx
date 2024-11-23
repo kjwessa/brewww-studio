@@ -1,6 +1,9 @@
+import { Title } from '@/components/Title'
+import { Button } from '@/components/Button'
+
 export function LocationServiceDetails() {
   return (
-    <section className="relative w-full rounded-3xl bg-zinc-900 py-10 text-black lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
+    <section className="relative w-full rounded-3xl bg-zinc-900 py-10 lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
       <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
         <div className="mb-8 mt-10 flex w-full flex-wrap items-end justify-between lg:mb-16 lg:mt-0">
           <div className="w-full px-2 lg:w-auto lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
@@ -9,56 +12,20 @@ export function LocationServiceDetails() {
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />
                 <div className="ml-2 font-light text-white">What we can help you with</div>
               </div>
-              <h2 className="mb-0 mt-3 max-w-xs pr-10 text-5xl text-white lg:mb-0 lg:mt-5 lg:max-w-xl">
+              <Title
+                size="headline-small"
+                className="mb-0 mt-3 max-w-xs pr-10 text-white lg:mb-0 lg:mt-5 lg:max-w-xl"
+              >
                 A team of web design experts that can help you design and build a website you're
                 proud of
-              </h2>
+              </Title>
             </div>
           </div>
           <div className="mt-5 w-full px-2 lg:mt-0 lg:w-auto lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
             <div className="relative inline-flex items-center">
-              <a
-                className="inline-flex"
-                href=""
-                style={{
-                  outlineOffset: '2px',
-                }}
-              >
-                <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
-                  <div className="inline-flex">Get in touch today</div>
-                </div>
-                <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold" />
-              </a>
-              <div className="absolute right-0 top-0 z-20 flex h-9 w-9 items-center justify-center">
-                <div className="relative overflow-hidden">
-                  <div>
-                    <svg
-                      className="h-3 w-3"
-                      fill="rgb(1, 2, 2)"
-                      viewBox="0 0 384 512"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M328 96h24v288h-48V177.9L81 401l-17 17-33.9-34 17-17 223-223H64V96h264z"
-                        fill="rgb(1, 2, 2)"
-                      />
-                    </svg>
-                  </div>
-                  <div className="absolute left-0 top-0">
-                    <svg
-                      className="h-3 w-3"
-                      fill="rgb(1, 2, 2)"
-                      viewBox="0 0 384 512"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M328 96h24v288h-48V177.9L81 401l-17 17-33.9-34 17-17 223-223H64V96h264z"
-                        fill="rgb(1, 2, 2)"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
+              <Button intent="primary" icon="arrow" iconPosition="right">
+                Get in touch today
+              </Button>
             </div>
           </div>
         </div>
@@ -80,7 +47,9 @@ export function LocationServiceDetails() {
                     />
                   </svg>
                 </div>
-                <h2 className="ml-4 text-4xl text-white">Web Design</h2>
+                <Title el="h3" size="title-large" className="ml-4 text-white">
+                  Web Design
+                </Title>
               </div>
               <div className="w-full max-w-sm text-lg font-light text-zinc-400">
                 <p className="mb-6">
@@ -108,7 +77,9 @@ export function LocationServiceDetails() {
                     />
                   </svg>
                 </div>
-                <h2 className="ml-4 text-4xl text-white">eCommerce</h2>
+                <Title el="h3" size="title-large" className="ml-4 text-white">
+                  eCommerce
+                </Title>
               </div>
               <div className="w-full max-w-sm text-lg font-light text-zinc-400">
                 <p className="mb-6">
@@ -136,7 +107,9 @@ export function LocationServiceDetails() {
                     />
                   </svg>
                 </div>
-                <h2 className="ml-4 text-4xl text-white">UX Design</h2>
+                <Title el="h3" size="title-large" className="ml-4 text-white">
+                  UX Design
+                </Title>
               </div>
               <div className="w-full max-w-sm text-lg font-light text-zinc-400">
                 <p className="mb-6">
@@ -163,7 +136,9 @@ export function LocationServiceDetails() {
                     />
                   </svg>
                 </div>
-                <h2 className="ml-4 text-4xl text-white">Responsive Design</h2>
+                <Title el="h3" size="title-large" className="ml-4 text-white">
+                  Responsive Design
+                </Title>
               </div>
               <div className="w-full max-w-sm text-lg font-light text-zinc-400">
                 <p className="mb-6">
@@ -191,7 +166,9 @@ export function LocationServiceDetails() {
                     />
                   </svg>
                 </div>
-                <h2 className="ml-4 text-4xl text-white">Wireframes</h2>
+                <Title el="h3" size="title-large" className="ml-4 text-white">
+                  Wireframes
+                </Title>
               </div>
               <div className="w-full max-w-sm text-lg font-light text-zinc-400">
                 <p className="mb-6">
@@ -218,7 +195,9 @@ export function LocationServiceDetails() {
                     />
                   </svg>
                 </div>
-                <h2 className="ml-4 text-4xl text-white">Strategy</h2>
+                <Title el="h3" size="title-large" className="ml-4 text-white">
+                  Strategy
+                </Title>
               </div>
               <div className="w-full max-w-sm text-lg font-light text-zinc-400">
                 <p className="mb-6">

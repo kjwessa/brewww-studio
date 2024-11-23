@@ -18,9 +18,9 @@ export function LocationTechSlider({ technologies }: LocationTechSliderProps) {
 
   React.useEffect(() => {
     if (containerRef.current) {
-      setConstraint(containerRef.current.scrollWidth)
-      // Set initial position to center the logos
-      baseX.current = -containerRef.current.scrollWidth / 4
+      setConstraint(containerRef.current.scrollWidth / 2)
+      // Set initial position to create a seamless loop
+      baseX.current = 0
     }
   }, [])
 
@@ -71,10 +71,10 @@ export function LocationTechSlider({ technologies }: LocationTechSliderProps) {
         </div>
       </div>
       <div className="w-full overflow-hidden">
-        <div className="w-full">
+        <div className="w-full -ml-4 -mr-4">
           <div
             ref={containerRef}
-            className="flex gap-4"
+            className="flex gap-4 px-4"
             style={{ willChange: 'transform', transform: 'translateX(0px)' }}
           >
             {logos.map(({ id, logo }, index) => (
