@@ -2,14 +2,13 @@ import React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/utilities/cn'
 
-// Type scale following Material Design. Update settings in the Tailwind config.
 const headingVariants = cva(
-  // Base styles - removed font-default as it's not defined
-  'tracking-tight leading-none',
+  // Add a base class that will help with specificity
+  '[&.title]:tracking-tight [&.title]:leading-none',
   {
     variants: {
-      level: {
-        h1: '', // Using font-sans instead of font-default
+      el: {
+        h1: '',
         h2: '',
         h3: '',
         h4: '',
@@ -18,20 +17,16 @@ const headingVariants = cva(
         p: '',
       },
       size: {
-        // Display sizes
-        'display-large': 'text-display-large',
-        'display-medium': 'text-display-medium',
-        'display-small': 'text-display-small',
-
-        // Headline sizes
-        'headline-large': 'text-headline-large',
-        'headline-medium': 'text-headline-medium',
-        'headline-small': 'text-headline-small',
-
-        // Title sizes
-        'title-large': 'text-title-large',
-        'title-medium': 'text-title-medium',
-        'title-small': 'text-title-small',
+        // Make size classes more specific with a parent class
+        'display-large': '[&.title]:text-display-large',
+        'display-medium': '[&.title]:text-display-medium',
+        'display-small': '[&.title]:text-display-small',
+        'headline-large': '[&.title]:text-headline-large',
+        'headline-medium': '[&.title]:text-headline-medium',
+        'headline-small': '[&.title]:text-headline-small',
+        'title-large': '[&.title]:text-title-large',
+        'title-medium': '[&.title]:text-title-medium',
+        'title-small': '[&.title]:text-title-small',
       },
       weight: {
         regular: 'font-normal',
@@ -43,7 +38,7 @@ const headingVariants = cva(
     defaultVariants: {
       weight: 'regular',
       size: 'headline-large',
-      level: 'h2',
+      el: 'h2',
     },
     compoundVariants: [
       {
@@ -55,33 +50,36 @@ const headingVariants = cva(
   },
 )
 
-interface TitleProps extends VariantProps<typeof headingVariants> {
+interface TitleProps
+  extends React.HTMLAttributes<HTMLHeadingElement>,
+    Omit<VariantProps<typeof headingVariants>, 'el'> {
   el?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   children?: React.ReactNode
-  className?: string
 }
 
-export const Title: React.FC<TitleProps> = ({
-  el = 'h2',
-  size = 'headline-large',
-  weight,
-  children,
-  className,
-}) => {
-  const Component = el
+export const Title = React.forwardRef<HTMLHeadingElement, TitleProps>(
+  ({ el = 'h2', size = 'headline-large', weight, children, className, ...props }, ref) => {
+    const Component = el
 
-  return (
-    <Component
-      className={cn(
-        headingVariants({
-          level: el,
-          size,
-          weight,
-        }),
-        className,
-      )}
-    >
-      {children}
-    </Component>
-  )
-}
+    return (
+      <Component
+        ref={ref}
+        // Add 'title' class to increase specificity
+        className={cn(
+          'title',
+          headingVariants({
+            el,
+            size,
+            weight,
+          }),
+          className,
+        )}
+        {...props}
+      >
+        {children}
+      </Component>
+    )
+  },
+)
+
+Title.displayName = 'Title'
