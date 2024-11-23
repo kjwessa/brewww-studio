@@ -23,7 +23,11 @@ export function LocationServiceDetails() {
           </div>
           <div className="mt-5 w-full px-2 lg:mt-0 lg:w-auto lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
             <div className="relative inline-flex items-center">
-              <Button intent="primary" icon="arrow" iconPosition="right">
+              <Button
+                intent="primary"
+                icon="arrow"
+                iconPosition="right"
+              >
                 Get in touch today
               </Button>
             </div>

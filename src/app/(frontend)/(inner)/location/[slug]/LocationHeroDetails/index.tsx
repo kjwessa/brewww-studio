@@ -1,3 +1,6 @@
+import { Title } from '@/components/Title'
+import { Button } from '@/components/Button'
+
 export function LocationHeroDetails() {
   return (
     <section className="w-full bg-brand-dark-bg py-20 text-black lg:pb-24 lg:pt-24 min-[1450px]:pb-32 min-[1450px]:pt-32">
@@ -9,55 +12,17 @@ export function LocationHeroDetails() {
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />
                 <div className="ml-2 font-light text-white">Web Design</div>
               </div>
-              <h2 className="mb-5 mt-3 indent-48 text-6xl text-white lg:mb-0 lg:mt-5">
+              <Title
+                size="headline-medium"
+                className="mb-5 mt-3 indent-48 text-white lg:mb-0 lg:mt-5"
+              >
                 Are you a startup brand, well established company, in the US or worldwide? It
                 doesn't matter. We work with a range of clients.
-              </h2>
+              </Title>
               <div className="relative mb-0 mt-3 inline-flex items-center lg:mb-0 lg:mt-5">
-                <a
-                  className="inline-flex"
-                  href=""
-                  style={{
-                    outlineOffset: '2px',
-                    outlineStyle: 'solid',
-                    outlineWidth: '2px',
-                  }}
-                >
-                  <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
-                    <div className="inline-flex">About Brewww</div>
-                  </div>
-                  <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold" />
-                </a>
-                <div className="absolute right-0 top-0 z-20 flex h-9 w-9 items-center justify-center">
-                  <div className="relative overflow-hidden">
-                    <div>
-                      <svg
-                        className="h-3 w-3"
-                        fill="rgb(1, 2, 2)"
-                        viewBox="0 0 384 512"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M328 96h24v288h-48V177.9L81 401l-17 17-33.9-34 17-17 223-223H64V96h264z"
-                          fill="rgb(1, 2, 2)"
-                        />
-                      </svg>
-                    </div>
-                    <div className="absolute left-0 top-0">
-                      <svg
-                        className="h-3 w-3"
-                        fill="rgb(1, 2, 2)"
-                        viewBox="0 0 384 512"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M328 96h24v288h-48V177.9L81 401l-17 17-33.9-34 17-17 223-223H64V96h264z"
-                          fill="rgb(1, 2, 2)"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
+                <Button intent="primary" icon="arrow" iconPosition="right">
+                  About Brewww
+                </Button>
               </div>
             </div>
           </div>
