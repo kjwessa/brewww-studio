@@ -5,8 +5,7 @@ import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 
 //* Import Plugins
-import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { postgresAdapter } from '@payloadcms/db-postgres'
 import { plugins } from './plugin'
 import { defaultLexical } from './fields/defaultLexical'
 
@@ -95,8 +94,14 @@ export default buildConfig({
     Users,
     Industries,
   ],
-  db: mongooseAdapter({
-    url: process.env.DATABASE_URI || '',
+  db: postgresAdapter({
+    pool: {
+      connectionString: process.env.POSTGRES_URL,
+      max: process.env.NODE_ENV === 'production' ? 20 : 5,
+    },
+    push: process.env.NODE_ENV === 'development',
+    migrationDir: './src/database/migrations',
+    idType: 'uuid',
   }),
   editor: defaultLexical,
   globals: [Header, Footer],
