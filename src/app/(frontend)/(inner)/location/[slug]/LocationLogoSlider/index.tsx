@@ -92,10 +92,10 @@ export function LocationLogoSlider({ brands }: LocationLogoSliderProps) {
                 <div className="flex flex-col items-start">
                   <div className="inline-flex items-center">
                     <div className="h-1.5 w-1.5 rounded-full bg-white" />
-                    <div className="ml-2 font-light text-white">Shameful Plug</div>
+                    <div className="ml-2 font-light text-white">Our Clients</div>
                   </div>
                   <h2 className="mb-0 mt-3 max-w-2xl text-5xl text-white lg:mb-0 lg:mt-5 xl:max-w-3xl">
-                    We work with start-up businesses through to global organisations.
+                    We work with start-up businesses through to national organizations.
                   </h2>
                 </div>
                 <div className="mt-5 flex">
@@ -111,7 +111,10 @@ export function LocationLogoSlider({ brands }: LocationLogoSliderProps) {
                 </div>
               </div>
             </div>
-            <div className="mx-auto mt-10 w-full overflow-hidden text-white lg:mt-16" id="logo-grid">
+            <div
+              className="mx-auto mt-10 w-full overflow-hidden text-white lg:mt-16"
+              id="logo-grid"
+            >
               <motion.div
                 ref={topRowRef}
                 className="flex gap-2"
@@ -120,7 +123,7 @@ export function LocationLogoSlider({ brands }: LocationLogoSliderProps) {
                 }}
                 transition={{
                   duration: 80,
-                  ease: "linear",
+                  ease: 'linear',
                   repeat: Infinity,
                 }}
               >
@@ -147,7 +150,7 @@ export function LocationLogoSlider({ brands }: LocationLogoSliderProps) {
                 }}
                 transition={{
                   duration: 80,
-                  ease: "linear",
+                  ease: 'linear',
                   repeat: Infinity,
                 }}
               >
