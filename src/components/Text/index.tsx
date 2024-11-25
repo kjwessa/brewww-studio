@@ -4,8 +4,8 @@ import { cn } from "@/utilities/cn";
 
 // Text component following Material Design type scale from Tailwind config
 const textVariants = cva(
-  // Base styles
-  "font-default tracking-tight",
+  // Base styles with increased specificity
+  '[&.text]:font-default [&.text]:tracking-tight',
   {
     variants: {
       level: {
@@ -14,15 +14,15 @@ const textVariants = cva(
         div: "", // Block-level text
       },
       size: {
-        // Body sizes
-        "body-large": "text-body-large",
-        "body-medium": "text-body-medium",
-        "body-small": "text-body-small",
+        // Body sizes with increased specificity
+        "body-large": "[&.text]:text-body-large",
+        "body-medium": "[&.text]:text-body-medium",
+        "body-small": "[&.text]:text-body-small",
 
-        // Label sizes
-        "label-large": "text-label-large",
-        "label-medium": "text-label-medium",
-        "label-small": "text-label-small",
+        // Label sizes with increased specificity
+        "label-large": "[&.text]:text-label-large",
+        "label-medium": "[&.text]:text-label-medium",
+        "label-small": "[&.text]:text-label-small",
       },
       weight: {
         regular: "font-normal",
@@ -37,6 +37,13 @@ const textVariants = cva(
       size: "body-medium",
       weight: "regular",
     },
+    compoundVariants: [
+      {
+        size: ["label-large", "label-medium", "label-small"],
+        weight: "regular",
+        className: "tracking-normal",
+      },
+    ],
   }
 );
 
@@ -61,6 +68,7 @@ export function Text({
   return (
     <Component
       className={cn(
+        'text',
         textVariants({ 
           level, 
           size, 
