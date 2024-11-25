@@ -22,13 +22,13 @@ export const FAQ: CollectionConfig = {
       name: 'title',
       type: 'text',
       label: 'Question',
-      required: true,
+      required: false,
     },
     {
       name: 'answer',
       type: 'richText',
       label: 'Answer',
-      required: true,
+      required: false,
     },
   ],
 

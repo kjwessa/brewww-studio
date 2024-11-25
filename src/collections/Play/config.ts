@@ -29,7 +29,7 @@ export const Playground: CollectionConfig = {
       name: 'title',
       type: 'text',
       label: 'Title',
-      required: true,
+      required: false,
       unique: true,
       admin: {
         description: 'Add the title of the Playground case study here.',
@@ -39,7 +39,7 @@ export const Playground: CollectionConfig = {
       name: 'tagline',
       type: 'text',
       label: 'Tagline',
-      required: true,
+      required: false,
       admin: {
         description: 'Add the tagline for the playground here.',
       },
@@ -63,7 +63,7 @@ export const Playground: CollectionConfig = {
     {
       name: 'publishedOn',
       type: 'date',
-      required: true,
+      required: false,
       label: 'Published On',
       admin: {
         position: 'sidebar',
@@ -87,7 +87,7 @@ export const Playground: CollectionConfig = {
       type: 'upload',
       relationTo: 'media',
       label: 'Featured Image',
-      required: true,
+      required: false,
       admin: {
         position: 'sidebar',
       },

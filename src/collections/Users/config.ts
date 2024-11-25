@@ -28,9 +28,9 @@ export const Users: CollectionConfig = {
           name: 'firstName',
           label: 'First Name',
           type: 'text',
-          required: true,
+          required: false,
         },
-        { name: 'lastName', label: 'Last Name', type: 'text', required: true },
+        { name: 'lastName', label: 'Last Name', type: 'text', required: false },
       ],
     },
     {

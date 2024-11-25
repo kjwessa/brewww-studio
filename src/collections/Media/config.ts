@@ -29,7 +29,7 @@ export const Media: CollectionConfig = {
       name: 'title',
       type: 'text',
       label: 'File Name',
-      required: true,
+      required: false,
       admin: {
         description: 'This is the file name of the image, allowed for easier semantic searching.',
       },
@@ -38,7 +38,7 @@ export const Media: CollectionConfig = {
       name: 'alt',
       type: 'text',
       label: 'Alt Text',
-      required: true,
+      required: false,
       admin: {
         description: 'This is the alt text for the image',
       },

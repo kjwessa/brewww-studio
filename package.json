@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@payloadcms/db-mongodb": "^3.1.0",
+    "@payloadcms/db-postgres": "^3.1.0",
     "@payloadcms/email-nodemailer": "^3.1.0",
     "@payloadcms/live-preview-react": "^3.1.0",
     "@payloadcms/next": "^3.1.0",

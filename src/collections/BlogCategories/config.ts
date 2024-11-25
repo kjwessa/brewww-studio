@@ -30,7 +30,7 @@ export const BlogCategories: CollectionConfig = {
       admin: {
         description: 'The title of the category as it appears around the site.',
       },
-      required: true,
+      required: false,
     },
     ...slugField(),
     {

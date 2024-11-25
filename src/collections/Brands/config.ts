@@ -22,7 +22,7 @@ export const Brands: CollectionConfig = {
       name: 'title',
       type: 'text',
       label: 'Name',
-      required: true,
+      required: false,
       admin: {
         description: 'Add the client name as it will appear around the site.',
       },
@@ -51,7 +51,7 @@ export const Brands: CollectionConfig = {
       name: 'city',
       type: 'text',
       label: 'City',
-      required: true,
+      required: false,
       admin: {
         description: 'The closest major city to the client.',
       },
@@ -60,7 +60,7 @@ export const Brands: CollectionConfig = {
       name: 'state',
       type: 'text',
       label: 'State',
-      required: true,
+      required: false,
       admin: {
         description: 'The state where the client is based.',
       },

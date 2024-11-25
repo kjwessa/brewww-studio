@@ -29,7 +29,7 @@ export const Services: CollectionConfig = {
       name: 'title',
       type: 'text',
       label: 'Service Title',
-      required: true,
+      required: false,
       unique: true,
       admin: {
         description: 'The name of the service as it appears around the site.',

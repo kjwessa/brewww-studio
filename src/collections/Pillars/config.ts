@@ -33,7 +33,7 @@ export const Pillars: CollectionConfig = {
       name: 'title',
       type: 'text',
       label: 'Title',
-      required: true,
+      required: false,
       unique: true,
       admin: {
         description: 'Add the title of the pillar here.',
@@ -43,7 +43,7 @@ export const Pillars: CollectionConfig = {
       name: 'tagline',
       type: 'text',
       label: 'Tagline',
-      required: true,
+      required: false,
       admin: {
         description: 'Add the tagline for the pillar here.',
       },
@@ -63,7 +63,7 @@ export const Pillars: CollectionConfig = {
       name: 'description',
       type: 'textarea',
       label: 'Description',
-      required: true,
+      required: false,
       admin: {
         description: 'Add the description of the pillar here.',
       },

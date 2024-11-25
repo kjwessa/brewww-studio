@@ -37,7 +37,7 @@ export const Work: CollectionConfig = {
       name: 'tagline',
       type: 'text',
       label: 'Tagline',
-      required: true,
+      required: false,
       admin: {
         description: 'The tagline of the project as it appears around the site.',
       },
@@ -79,7 +79,7 @@ export const Work: CollectionConfig = {
       name: 'image',
       type: 'upload',
       label: 'Featured Image',
-      required: true,
+      required: false,
       relationTo: 'media',
       admin: {
         position: 'sidebar',
@@ -90,7 +90,7 @@ export const Work: CollectionConfig = {
       type: 'relationship',
       relationTo: 'brands',
       hasMany: false,
-      required: true,
+      required: false,
       admin: {
         position: 'sidebar',
       },

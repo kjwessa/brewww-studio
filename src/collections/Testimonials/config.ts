@@ -22,7 +22,7 @@ export const Testimonials: CollectionConfig = {
       name: 'title',
       type: 'text',
       label: 'Title',
-      required: true,
+      required: false,
       admin: {
         description: 'Add the title of the testimonial here.',
       },
@@ -37,7 +37,7 @@ export const Testimonials: CollectionConfig = {
               name: 'callout',
               type: 'textarea',
               label: 'Callout',
-              required: true,
+              required: false,
               admin: {
                 description: 'Add a short excerpt of the testimonial here.',
               },
@@ -46,7 +46,7 @@ export const Testimonials: CollectionConfig = {
               name: 'testimonial',
               type: 'richText',
               label: 'Full Testimonial',
-              required: true,
+              required: false,
               admin: {
                 description: 'Add the full testimonial content here. ',
               },
@@ -60,7 +60,7 @@ export const Testimonials: CollectionConfig = {
               name: 'brand',
               type: 'relationship',
               relationTo: 'brands',
-              required: true,
+              required: false,
               hasMany: false,
               unique: true,
               admin: {
@@ -73,7 +73,7 @@ export const Testimonials: CollectionConfig = {
               type: 'text',
               label: 'Testimonial Author',
               unique: true,
-              required: true,
+              required: false,
               admin: {
                 description: 'Add the name of the person that left the testimonial',
               },
