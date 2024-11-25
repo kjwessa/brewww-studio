@@ -1,7 +1,7 @@
-import { AboutHeroSection } from "./AboutHeroSection";
-import Image from "next/image";
-import { AboutOffsetImageSection } from "./AboutOffsetImageSection";
-import { AboutWhySection } from "./AboutWhySection";
+import { AboutHeroSection } from './AboutHeroSection'
+import Image from 'next/image'
+import { AboutOffsetImageSection } from './AboutOffsetImageSection'
+import { AboutWhySection } from './AboutWhySection'
 
 export default function About() {
   return (
@@ -11,28 +11,23 @@ export default function About() {
 
       <section className="bg-brand-dark-bg text-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <h2 className="mb-6 max-w-3xl text-4xl font-bold">
-            Beyond the Expected
-          </h2>
+          <h2 className="mb-6 max-w-3xl text-4xl font-bold">Beyond the Expected</h2>
           <p className="mb-2 max-w-3xl text-lg">
-            The most powerful brands aren't built on guesswork—they're crafted
-            through clarity. We unite strategic thinking with creative vision to
-            build brands that don't just capture attention, but convert it into
-            lasting value.
+            The most powerful brands aren't built on guesswork—they're crafted through clarity. We
+            unite strategic thinking with creative vision to build brands that don't just capture
+            attention, but convert it into lasting value.
           </p>
           <p className="mb-2 max-w-3xl text-lg">
-            Here's the thing about building brands that last: you can't just
-            guess. Every choice we make is anchored in real business goals and
-            human behavior. But data alone doesn't move people. That's where
-            creative courage comes in—turning solid strategy into something that
-            sparks imagination and drives action.
+            Here's the thing about building brands that last: you can't just guess. Every choice we
+            make is anchored in real business goals and human behavior. But data alone doesn't move
+            people. That's where creative courage comes in—turning solid strategy into something
+            that sparks imagination and drives action.
           </p>
           <p className="mb-8 max-w-3xl text-lg">
-            We don't do cookie-cutter solutions or paint-by-numbers design. Your
-            brand deserves better than that. Instead, we craft unique paths
-            forward, shaped by your reality but reaching for your potential.
-            Because when strategy and creativity align, that's when brands stop
-            following trends and start setting them.
+            We don't do cookie-cutter solutions or paint-by-numbers design. Your brand deserves
+            better than that. Instead, we craft unique paths forward, shaped by your reality but
+            reaching for your potential. Because when strategy and creativity align, that's when
+            brands stop following trends and start setting them.
           </p>
         </div>
       </section>
@@ -45,12 +40,12 @@ export default function About() {
           <div
             className="z-10 col-span-3 col-start-4 row-start-4 flex h-full w-full flex-col items-center justify-center self-stretch text-[2.63rem] leading-none"
             style={{
-              justifySelf: "stretch",
+              justifySelf: 'stretch',
             }}
           >
             <h2 className="min-/images/brewww-eight.jpeg-[0vw] mb-8">
-              We are committed to treating everyone right, leaving our ego at
-              the door, and truly partnering with our clients.
+              We are committed to treating everyone right, leaving our ego at the door, and truly
+              partnering with our clients.
             </h2>
           </div>
           <div className="relative col-span-5 col-start-1 row-start-2 row-end-6 h-[75vh] self-stretch overflow-hidden">
@@ -74,7 +69,7 @@ export default function About() {
             alt="Theby Wessa 2020"
             className="h-full w-full object-cover"
             style={{
-              objectPosition: "50% 50%",
+              objectPosition: '50% 50%',
             }}
           />
         </div>
@@ -127,9 +122,8 @@ export default function About() {
             BREWWW
           </div>
           <h2 className="text-[5.00rem] leading-none">
-            We're a small team that solves big problems. By blending sharp
-            strategy with fearless creativity, we build brands that don't just
-            look different—they act different.
+            We're a small team that solves big problems. By blending sharp strategy with fearless
+            creativity, we build brands that don't just look different—they act different.
           </h2>
         </div>
       </section>
@@ -137,24 +131,21 @@ export default function About() {
       <section className="overflow-hidden bg-black py-12 text-[1.38rem] font-light leading-7 text-white lg:pb-20 lg:pl-0 lg:pr-0 lg:pt-20">
         <div className="m-auto max-w-[72.50rem] px-5">
           <h2 className="mb-8 text-[3.38rem] leading-none lg:mb-10 lg:max-w-[56.06rem]">
-            At the heart of our success is our team of experienced
-            professionals, each bringing their unique expertise and creativity
-            to the table. Our diverse team of creatives, strategists, and
-            developers turn ideas into digital realities
+            At the heart of our success is our team of experienced professionals, each bringing
+            their unique expertise and creativity to the table. Our diverse team of creatives,
+            strategists, and developers turn ideas into digital realities
           </h2>
           <div className="columns-2 gap-x-[3.75rem] text-xl opacity-[0.9585] lg:max-w-[51.25rem]">
-            We're not just an agency; we're your partners in navigating the
-            ever-evolving digital landscape. With over a decade of experience,
-            we've honed our skills to become masters in the art of digital-first
-            branding and the creation of cutting-edge web and digital products.
-            Our commitment to excellence is the cornerstone of our success, and
-            our goal is to make your brand stand out and thrive in the digital
-            realm. Whether you're a startup, an established business, or a
-            visionary entrepreneur, Brewww is here to empower your digital
-            journey. Our dedication to purposeful innovation, creative
-            excellence, and technical prowess ensures that your experience with
-            us is nothing short of exceptional. Let us be the architects of your
-            digital success, turning your vision into a digital reality.
+            We're not just an agency; we're your partners in navigating the ever-evolving digital
+            landscape. With over a decade of experience, we've honed our skills to become masters in
+            the art of digital-first branding and the creation of cutting-edge web and digital
+            products. Our commitment to excellence is the cornerstone of our success, and our goal
+            is to make your brand stand out and thrive in the digital realm. Whether you're a
+            startup, an established business, or a visionary entrepreneur, Brewww is here to empower
+            your digital journey. Our dedication to purposeful innovation, creative excellence, and
+            technical prowess ensures that your experience with us is nothing short of exceptional.
+            Let us be the architects of your digital success, turning your vision into a digital
+            reality.
           </div>
         </div>
       </section>
@@ -182,9 +173,9 @@ export default function About() {
               <div className="flex h-full w-full items-start">
                 <div className="h-auto w-full">
                   <blockquote className="text-[3.88rem] leading-none">
-                    "We were impressed with their creativity, technical
-                    capabilities, and great strategies - so a one stop shop. And
-                    essentially, nice people delivering great work."
+                    "We were impressed with their creativity, technical capabilities, and great
+                    strategies - so a one stop shop. And essentially, nice people delivering great
+                    work."
                   </blockquote>
                   <div className="mt-6 text-xl lg:mt-8">
                     Marketing Co-ordinator, Nickerson Seeds
@@ -230,7 +221,7 @@ export default function About() {
               alt="Stars"
             />
             <span>
-              Rated 4.6 Stars on{" "}
+              Rated 4.6 Stars on{' '}
               <a className="underline" href="https://clutch.co/profile/">
                 Clutch ›
               </a>
@@ -254,17 +245,14 @@ export default function About() {
           <div
             className="col-start-3 text-4xl"
             style={{
-              gridColumnEnd: "span 8",
+              gridColumnEnd: 'span 8',
             }}
           >
             <p>
-              <span className="inline-block pr-9 text-sm uppercase text-stone-500">
-                Hello!
-              </span>
-              We're Brewww, a studio that builds brands and digital experiences
-              worth remembering. Since 2017, we've partnered with clients like
-              The Merry Beggars, IES National, and Pietra Fitness to turn
-              ambitious ideas into reality
+              <span className="inline-block pr-9 text-sm uppercase text-stone-500">Hello!</span>
+              We're Brewww, a studio that builds brands and digital experiences worth remembering.
+              Since 2017, we've partnered with clients like The Merry Beggars, IES National, and
+              Pietra Fitness to turn ambitious ideas into reality
               <a className="inline-block underline" href="">
                 and more.
                 <span className="cursor-pointer text-sm uppercase text-stone-500">
@@ -276,20 +264,19 @@ export default function About() {
           <div
             className="col-start-3 text-4xl"
             style={{
-              gridColumnEnd: "span 5",
+              gridColumnEnd: 'span 5',
             }}
           >
             <p>
-              We keep things straightforward here. Take on exciting challenges.
-              Push creative boundaries. Build things that last. Every strategy
-              we develop, every pixel we place, and every line of code we write
-              is crafted with tomorrow in mind.
+              We keep things straightforward here. Take on exciting challenges. Push creative
+              boundaries. Build things that last. Every strategy we develop, every pixel we place,
+              and every line of code we write is crafted with tomorrow in mind.
             </p>
           </div>
           <div
             className="col-start-9"
             style={{
-              gridColumnEnd: "span 2",
+              gridColumnEnd: 'span 2',
             }}
           >
             <figure>
@@ -303,29 +290,27 @@ export default function About() {
                 />
               </span>
               <div className="text-sm uppercase text-stone-500">
-                <span className="text-white">Kevin Wessa,</span> Founder and CEO
-                of Brewww
+                <span className="text-white">Kevin Wessa,</span> Founder and CEO of Brewww
               </div>
             </figure>
           </div>
           <div
             className="col-start-3 text-4xl"
             style={{
-              gridColumnEnd: "span 8",
+              gridColumnEnd: 'span 8',
             }}
           >
             <p>
-              Our best work happens when we truly collaborate with our clients.
-              No egos, no unnecessary complexity—just clear thinking and
-              purposeful design that moves businesses forward.{" "}
-              <span className="text-brand-gold">We want to do top work.</span>{" "}
-              Got something big you want to build? Or maybe you need help
-              shaping that vision? Either way, we're all in. (let's talk)
+              Our best work happens when we truly collaborate with our clients. No egos, no
+              unnecessary complexity—just clear thinking and purposeful design that moves businesses
+              forward. <span className="text-brand-gold">We want to do top work.</span> Got
+              something big you want to build? Or maybe you need help shaping that vision? Either
+              way, we're all in. (let's talk)
               <a className="inline-block underline" href="">
                 stands behind.
                 <span className="cursor-pointer text-sm uppercase text-stone-500">
                   <span className="inline-block align-top">
-                    (Here's why{" "}
+                    (Here's why{' '}
                     <svg
                       className="inline-block h-3 w-3 rotate-90"
                       fill="none"
@@ -343,25 +328,24 @@ export default function About() {
                     )
                   </span>
                 </span>
-              </a>{" "}
-              That's been our approach since day one. While we've grown stronger
-              and sharper, our drive to craft something exceptional hasn't
-              changed.
+              </a>{' '}
+              That's been our approach since day one. While we've grown stronger and sharper, our
+              drive to craft something exceptional hasn't changed.
             </p>
           </div>
           <div
             className="col-start-3 text-4xl"
             style={{
-              gridColumnEnd: "span 8",
+              gridColumnEnd: 'span 8',
             }}
           >
             <p>
-              We are{" "}
+              We are{' '}
               <a className="inline-block underline" href="">
                 curious individuals
                 <span className="cursor-pointer text-sm uppercase text-stone-500">
                   <span className="inline-block align-top">
-                    (Meet us{" "}
+                    (Meet us{' '}
                     <svg
                       className="inline-block h-3 w-3 rotate-90"
                       fill="none"
@@ -379,27 +363,26 @@ export default function About() {
                     )
                   </span>
                 </span>
-              </a>{" "}
-              Got something big you want to build? Or maybe you need help
-              shaping that vision? Either way, we're all in.
+              </a>{' '}
+              Got something big you want to build? Or maybe you need help shaping that vision?
+              Either way, we're all in.
             </p>
           </div>
           <div
             className="col-start-3 text-4xl"
             style={{
-              gridColumnEnd: "span 8",
+              gridColumnEnd: 'span 8',
             }}
           >
             <p>
-              That's been our approach since day one. While we've grown stronger
-              and sharper, our drive to craft something exceptional hasn't
-              changed.
+              That's been our approach since day one. While we've grown stronger and sharper, our
+              drive to craft something exceptional hasn't changed.
             </p>
           </div>
           <div
             className="col-start-3 text-sm font-bold uppercase"
             style={{
-              gridColumnEnd: "span 8",
+              gridColumnEnd: 'span 8',
             }}
           >
             <div className="grid grid-flow-col grid-cols-[220px_220px] grid-rows-[3.75rem] justify-start gap-10">
@@ -456,14 +439,11 @@ export default function About() {
         <div className="border-b-2 border-solid border-black">
           <div className="m-auto w-[95vw] max-w-[95vw]">
             <div className="m-auto flex min-h-[calc(240px)] max-w-[56.25rem] flex-col flex-wrap content-center items-center justify-center py-20 text-center">
-              <h1 className="mb-8 text-display-large leading-none">
-                Future-Forward, Human-First
-              </h1>
+              <h1 className="mb-8 text-display-large leading-none">Future-Forward, Human-First</h1>
               <h3 className="mb-8 text-[2.38rem] leading-none">
-                We're a team of strategists and creators who see beyond the
-                obvious to craft brands that endure. Our secret? We never forget
-                that behind every pixel and strategy lives a human story waiting
-                to be told.
+                We're a team of strategists and creators who see beyond the obvious to craft brands
+                that endure. Our secret? We never forget that behind every pixel and strategy lives
+                a human story waiting to be told.
               </h3>
             </div>
           </div>
@@ -474,22 +454,19 @@ export default function About() {
         <div className="flex basis-full justify-between px-12 py-24">
           <div className="flex basis-[47%] content-center items-center justify-center text-center">
             <div>
-              <h3 className="mb-8 text-[2.38rem] leading-none">
-                Let's not forget about people.
-              </h3>
+              <h3 className="mb-8 text-[2.38rem] leading-none">Let's not forget about people.</h3>
               <p className="mb-8 text-xl">
-                We know how to design and build for the web, how to talk about
-                lead-gen and build for conversions and so on. But we also
-                understand something just as vital – we're not creating for
-                robots, but people.
+                We know how to design and build for the web, how to talk about lead-gen and build
+                for conversions and so on. But we also understand something just as vital – we're
+                not creating for robots, but people.
               </p>
               <p className="mb-8 text-xl">
-                We bring a human-centered approach to our work by bringing
-                through elements of delight and humanity.
+                We bring a human-centered approach to our work by bringing through elements of
+                delight and humanity.
               </p>
               <p className="mb-8 text-xl">
-                Nothing makes us happier than when we can partner with our
-                clients to bring more beauty into the world.
+                Nothing makes us happier than when we can partner with our clients to bring more
+                beauty into the world.
               </p>
             </div>
           </div>
@@ -502,10 +479,7 @@ export default function About() {
                     cursor:
                       'url("https://grainandmortar.com/wp-content/themes/gm/_assets/img/cursor-arrow.svg") 0 0, default',
                   }}
-                >
-                  {/* Image stack */}
-                  {/* ... (image stack code remains unchanged) */}
-                </div>
+                ></div>
               </div>
             </div>
           </div>
@@ -517,7 +491,7 @@ export default function About() {
           <div className="relative grid h-auto auto-rows-[minmax(0px,_1fr)] grid-cols-[146px_146px_146px_146px_146px_146px_146px_146px] grid-rows-[21.13rem] justify-start gap-8">
             <div
               className="relative flex h-min w-full content-center items-center justify-center gap-[0.63rem] self-start justify-self-start text-lg"
-              style={{ gridColumnEnd: "span 3" }}
+              style={{ gridColumnEnd: 'span 3' }}
             >
               <div className="relative flex h-min flex-grow content-center items-center justify-start gap-[0.38rem]">
                 <div className="flex h-auto w-auto flex-col justify-start font-medium">
@@ -535,16 +509,15 @@ export default function About() {
             </div>
             <div
               className="relative flex h-full w-full flex-col content-start items-start justify-center self-start justify-self-start text-[3.50rem] leading-none"
-              style={{ gridColumnEnd: "span 5" }}
+              style={{ gridColumnEnd: 'span 5' }}
             >
               <div
                 className="flex h-auto w-full flex-col justify-start"
-                style={{ wordBreak: "break-word" }}
+                style={{ wordBreak: 'break-word' }}
               >
                 <h2>
-                  Like our ancestors in days of old, we're building our own
-                  tribe of passionate visionaries unafraid of sharing their
-                  ideas and culture with the world.
+                  Like our ancestors in days of old, we're building our own tribe of passionate
+                  visionaries unafraid of sharing their ideas and culture with the world.
                 </h2>
               </div>
             </div>
@@ -553,12 +526,9 @@ export default function About() {
         <div className="relative grid h-min w-full auto-rows-min grid-cols-[repeat(8,_minmax(1px,_1fr))] grid-rows-[repeat(1,_min-content)] justify-center gap-8 min-[810px]:p-8">
           <div
             className="relative flex h-min w-full content-center items-center justify-start self-start justify-self-start min-[810px]:items-start min-[810px]:pb-0 min-[810px]:pl-0 min-[810px]:pr-8 min-[810px]:pt-0"
-            style={{ gridColumnEnd: "span 3", gridRowStart: "1" }}
+            style={{ gridColumnEnd: 'span 3', gridRowStart: '1' }}
           >
-            <div
-              className="relative h-96 rounded-xl min-[810px]:h-72"
-              style={{ flexGrow: "0.7" }}
-            >
+            <div className="relative h-96 rounded-xl min-[810px]:h-72" style={{ flexGrow: '0.7' }}>
               <div className="rounded-xl">
                 <Image
                   className="h-96 w-80 rounded-xl object-cover"
@@ -571,7 +541,7 @@ export default function About() {
           </div>
           <div
             className="relative col-start-auto flex h-auto w-full flex-col content-start items-start justify-start gap-10 self-start justify-self-start min-[810px]:col-start-auto"
-            style={{ gridColumnEnd: "span 5", gridRowStart: "1" }}
+            style={{ gridColumnEnd: 'span 5', gridRowStart: '1' }}
           >
             <div className="relative w-full rounded-xl">
               <div className="rounded-xl">
@@ -586,26 +556,26 @@ export default function About() {
             <div className="flex h-min w-full flex-col content-start items-start justify-center gap-6 text-lg">
               <div
                 className="flex h-auto w-full flex-col justify-start"
-                style={{ wordBreak: "break-word" }}
+                style={{ wordBreak: 'break-word' }}
               >
                 <p>More than a studio, we're your long-term ally.</p>
               </div>
               <div
                 className="flex h-auto w-full flex-col justify-start"
-                style={{ wordBreak: "break-word" }}
+                style={{ wordBreak: 'break-word' }}
               >
                 <p>
                   <span className="text-neutral-400">
-                    We specialize in human-centered design where technology
-                    serves humanity, not the other way around. This not only
-                    elevates your brand but also solves real-world problems.{" "}
+                    We specialize in human-centered design where technology serves humanity, not the
+                    other way around. This not only elevates your brand but also solves real-world
+                    problems.{' '}
                   </span>
                   <br />
                   <br />
                   <span className="text-neutral-400">
-                    We see ourselves as your long-term partner – working closely
-                    with you for true collaboration, from initial concept to
-                    final product. This way, we're invested in your success.
+                    We see ourselves as your long-term partner – working closely with you for true
+                    collaboration, from initial concept to final product. This way, we're invested
+                    in your success.
                   </span>
                 </p>
               </div>
@@ -620,7 +590,7 @@ export default function About() {
             <div
               className="flex h-min w-0 content-center items-center justify-start overflow-hidden text-lg min-[810px]:w-full"
               style={{
-                flexGrow: "2",
+                flexGrow: '2',
               }}
             >
               <div className="flex h-auto w-auto flex-col justify-start">
@@ -630,13 +600,12 @@ export default function About() {
             <div
               className="flex h-min w-0 flex-col content-start items-start justify-start overflow-hidden text-[5.50rem] leading-normal min-[810px]:w-full"
               style={{
-                flexGrow: "10",
+                flexGrow: '10',
               }}
             >
               <div className="flex h-min w-full flex-wrap content-center items-center justify-start overflow-hidden">
                 <h1 className="leading-relaxed">
-                  We believe in the power of quality, direct and honest
-                  communication.
+                  We believe in the power of quality, direct and honest communication.
                 </h1>
               </div>
             </div>
@@ -650,7 +619,7 @@ export default function About() {
             <div
               className="flex h-min w-0 content-center items-center justify-start overflow-hidden text-lg min-[810px]:w-full"
               style={{
-                flexGrow: "2",
+                flexGrow: '2',
               }}
             >
               <div className="flex h-auto w-auto flex-col justify-start">
@@ -660,7 +629,7 @@ export default function About() {
             <div
               className="flex h-min w-0 flex-col content-start items-start justify-start overflow-hidden text-[5.50rem] leading-normal min-[810px]:w-full"
               style={{
-                flexGrow: "10",
+                flexGrow: '10',
               }}
             >
               <div className="flex h-min w-full flex-wrap content-center items-center justify-start overflow-hidden">
@@ -685,7 +654,7 @@ export default function About() {
                 <div
                   className="relative flex h-min w-full content-center items-center justify-center gap-[0.63rem] self-start justify-self-start overflow-visible"
                   style={{
-                    gridColumnEnd: "span 3",
+                    gridColumnEnd: 'span 3',
                   }}
                 >
                   <div className="relative flex h-min flex-grow content-center items-center justify-start gap-[0.38rem]">
@@ -705,15 +674,12 @@ export default function About() {
                 <div
                   className="relative flex h-auto w-full flex-col content-end items-end justify-center self-start justify-self-start"
                   style={{
-                    gridColumnEnd: "span 5",
+                    gridColumnEnd: 'span 5',
                   }}
                 >
                   <div className="absolute bottom-0 left-0 top-0 flex h-auto w-auto flex-col justify-start">
                     <p className="text-right">
-                      <a
-                        className="text-neutral-700"
-                        href="https://smalltribe.studio/./contact"
-                      >
+                      <a className="text-neutral-700" href="https://smalltribe.studio/./contact">
                         Let's work together
                       </a>
                     </p>
@@ -730,7 +696,7 @@ export default function About() {
                   <div
                     className="h-1 w-full"
                     style={{
-                      imageRendering: "pixelated",
+                      imageRendering: 'pixelated',
                     }}
                   >
                     <svg
@@ -746,7 +712,7 @@ export default function About() {
                   <div
                     className="flex h-auto w-full flex-col justify-start text-lg"
                     style={{
-                      wordBreak: "break-word",
+                      wordBreak: 'break-word',
                     }}
                   >
                     <p>Excellence</p>
@@ -754,13 +720,12 @@ export default function About() {
                   <div
                     className="flex h-auto w-full flex-col justify-start text-lg opacity-[0.35]"
                     style={{
-                      wordBreak: "break-word",
+                      wordBreak: 'break-word',
                     }}
                   >
                     <p>
-                      We aim to design excellent digital products and
-                      experiences for you, in order to let your business
-                      succeed. We don't play it safe.
+                      We aim to design excellent digital products and experiences for you, in order
+                      to let your business succeed. We don't play it safe.
                     </p>
                   </div>
                 </div>
@@ -773,7 +738,7 @@ export default function About() {
                   <div
                     className="h-1 w-full"
                     style={{
-                      imageRendering: "pixelated",
+                      imageRendering: 'pixelated',
                     }}
                   >
                     <svg
@@ -789,7 +754,7 @@ export default function About() {
                   <div
                     className="flex h-auto w-full flex-col justify-start text-lg"
                     style={{
-                      wordBreak: "break-word",
+                      wordBreak: 'break-word',
                     }}
                   >
                     <p>Partnership</p>
@@ -797,12 +762,12 @@ export default function About() {
                   <div
                     className="flex h-auto w-full flex-col justify-start text-lg opacity-[0.35]"
                     style={{
-                      wordBreak: "break-word",
+                      wordBreak: 'break-word',
                     }}
                   >
                     <p>
-                      No time tracking, no timesheets, no headcount. We believe
-                      that trust is a fundamental part of a good partnership.
+                      No time tracking, no timesheets, no headcount. We believe that trust is a
+                      fundamental part of a good partnership.
                     </p>
                   </div>
                 </div>
@@ -815,7 +780,7 @@ export default function About() {
                   <div
                     className="h-1 w-full"
                     style={{
-                      imageRendering: "pixelated",
+                      imageRendering: 'pixelated',
                     }}
                   >
                     <svg
@@ -831,7 +796,7 @@ export default function About() {
                   <div
                     className="flex h-auto w-full flex-col justify-start text-lg"
                     style={{
-                      wordBreak: "break-word",
+                      wordBreak: 'break-word',
                     }}
                   >
                     <p>Collaboration</p>
@@ -839,13 +804,12 @@ export default function About() {
                   <div
                     className="flex h-auto w-full flex-col justify-start text-lg opacity-[0.35]"
                     style={{
-                      wordBreak: "break-word",
+                      wordBreak: 'break-word',
                     }}
                   >
                     <p>
-                      Good work is a collaborative effort. The project will
-                      require your input, expertise, and support at a number of
-                      stages. Be prepared!
+                      Good work is a collaborative effort. The project will require your input,
+                      expertise, and support at a number of stages. Be prepared!
                     </p>
                   </div>
                 </div>
@@ -858,7 +822,7 @@ export default function About() {
                   <div
                     className="h-1 w-full"
                     style={{
-                      imageRendering: "pixelated",
+                      imageRendering: 'pixelated',
                     }}
                   >
                     <svg
@@ -874,7 +838,7 @@ export default function About() {
                   <div
                     className="flex h-auto w-full flex-col justify-start text-lg"
                     style={{
-                      wordBreak: "break-word",
+                      wordBreak: 'break-word',
                     }}
                   >
                     <p>Transparency</p>
@@ -882,13 +846,13 @@ export default function About() {
                   <div
                     className="flex h-auto w-full flex-col justify-start text-lg opacity-[0.35]"
                     style={{
-                      wordBreak: "break-word",
+                      wordBreak: 'break-word',
                     }}
                   >
                     <p>
-                      We don't work in isolation. Our work and progress is
-                      transparent from the beginning. We'll inform you about
-                      different stages and when to review and feedback our work.
+                      We don't work in isolation. Our work and progress is transparent from the
+                      beginning. We'll inform you about different stages and when to review and
+                      feedback our work.
                     </p>
                   </div>
                 </div>
@@ -901,7 +865,7 @@ export default function About() {
                   <div
                     className="h-1 w-full"
                     style={{
-                      imageRendering: "pixelated",
+                      imageRendering: 'pixelated',
                     }}
                   >
                     <svg
@@ -917,7 +881,7 @@ export default function About() {
                   <div
                     className="flex h-auto w-full flex-col justify-start text-lg"
                     style={{
-                      wordBreak: "break-word",
+                      wordBreak: 'break-word',
                     }}
                   >
                     <p>Play Offense</p>
@@ -925,13 +889,12 @@ export default function About() {
                   <div
                     className="flex h-auto w-full flex-col justify-start text-lg opacity-[0.35]"
                     style={{
-                      wordBreak: "break-word",
+                      wordBreak: 'break-word',
                     }}
                   >
                     <p>
-                      We aim to work asynchronously whenever possible and
-                      appropriate. Our goal is to document & communicate our
-                      work and process while respecting your time.
+                      We aim to work asynchronously whenever possible and appropriate. Our goal is
+                      to document & communicate our work and process while respecting your time.
                     </p>
                   </div>
                 </div>
@@ -944,7 +907,7 @@ export default function About() {
                   <div
                     className="h-1 w-full"
                     style={{
-                      imageRendering: "pixelated",
+                      imageRendering: 'pixelated',
                     }}
                   >
                     <svg
@@ -960,7 +923,7 @@ export default function About() {
                   <div
                     className="flex h-auto w-full flex-col justify-start text-lg"
                     style={{
-                      wordBreak: "break-word",
+                      wordBreak: 'break-word',
                     }}
                   >
                     <p>Craft</p>
@@ -968,13 +931,12 @@ export default function About() {
                   <div
                     className="flex h-auto w-full flex-col justify-start text-lg opacity-[0.35]"
                     style={{
-                      wordBreak: "break-word",
+                      wordBreak: 'break-word',
                     }}
                   >
                     <p>
-                      Prototypes over slides. We work hands-on while providing a
-                      well-documented process and communicating our rationales
-                      and decisions.
+                      Prototypes over slides. We work hands-on while providing a well-documented
+                      process and communicating our rationales and decisions.
                     </p>
                   </div>
                 </div>
@@ -988,8 +950,8 @@ export default function About() {
         <div className="absolute bottom-[830.13rem] left-0 right-0 top-[-3.13rem] z-[-1] bg-[linear-gradient(198.91deg,_rgb(255,_255,_255)_64.12%,_rgb(250,_246,_249)_72.26%,_rgb(251,_234,_248)_81.42%,_rgb(252,_213,_245)_89.56%,_rgb(254,_185,_241)_98.72%,_rgb(255,_173,_239)_101.78%)]" />
         <div className="text-7xl">
           <h1 className="max-w-4xl">
-            It's our pursuit to eradicate mediocrity from this world. And that
-            makes 'becoming obsolete' our ultimate goal.
+            It's our pursuit to eradicate mediocrity from this world. And that makes 'becoming
+            obsolete' our ultimate goal.
           </h1>
         </div>
         <div className="flex items-end justify-between text-[1.38rem] leading-7">
@@ -1016,9 +978,7 @@ export default function About() {
           </picture>
         </div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <h2 className="text-8xl font-bold uppercase text-white">
-            Kill off the Average
-          </h2>
+          <h2 className="text-8xl font-bold uppercase text-white">Kill off the Average</h2>
         </div>
       </section>
 
@@ -1026,41 +986,35 @@ export default function About() {
         <div className="container mx-auto">
           <div className="flex flex-wrap justify-between">
             <div className="mb-16 w-full">
-              <h2 className="max-w-3xl text-7xl">
-                Mediocrity does not stand a chance with us
-              </h2>
+              <h2 className="max-w-3xl text-7xl">Mediocrity does not stand a chance with us</h2>
             </div>
             <div className="mt-8 w-full lg:w-1/2 lg:pr-16">
               <div className="mb-12 text-[1.63rem] leading-8">
                 <p className="text-xl">
-                  Customers come and go. Many products barely meet expectations.
-                  Most brand promises are never kept. Mediocrity is everywhere
-                  and fatal to business success. But industry leaders are never
-                  mediocre. Never.
+                  Customers come and go. Many products barely meet expectations. Most brand promises
+                  are never kept. Mediocrity is everywhere and fatal to business success. But
+                  industry leaders are never mediocre. Never.
                   <br />
                   <br />
-                  We set high standards for ourselves and our clients. We are
-                  driven by the need to unleash full potential and get the most
-                  out of every situation. With top-notch branding, we do justice
-                  to our mantra: 'Kill off the average™'. Mediocrity is way too
-                  boring.
+                  We set high standards for ourselves and our clients. We are driven by the need to
+                  unleash full potential and get the most out of every situation. With top-notch
+                  branding, we do justice to our mantra: 'Kill off the average™'. Mediocrity is way
+                  too boring.
                 </p>
               </div>
               <div className="mt-16 text-xl">
                 <strong className="font-bold">The label premium</strong>
                 <p className="mt-4">
-                  We work exclusively with companies that are keen to become or
-                  remain a leader within their industry. Companies that dare to
-                  swim against the current. Companies that are perfectly aware
-                  of the fact that the bar can always be set higher, and so are
-                  willing to do whatever it takes to take their business to the
-                  next level. In short: companies that are worthy of the label
-                  premium.
+                  We work exclusively with companies that are keen to become or remain a leader
+                  within their industry. Companies that dare to swim against the current. Companies
+                  that are perfectly aware of the fact that the bar can always be set higher, and so
+                  are willing to do whatever it takes to take their business to the next level. In
+                  short: companies that are worthy of the label premium.
                 </p>
               </div>
             </div>
             <div className="relative mt-8 w-full lg:mt-0 lg:w-1/2 lg:pl-16">
-              <div className="aspect-w-16 aspect-h-9" style={{ height: "70%" }}>
+              <div className="aspect-w-16 aspect-h-9" style={{ height: '70%' }}>
                 <Image
                   className="h-full w-full object-cover"
                   src="https://www.datocms-assets.com/63464/1661347408-stuurmen-office-interior.jpg?auto=format&h=1080&w=1920"
@@ -1092,11 +1046,10 @@ export default function About() {
                 <div className="relative flex h-full flex-col justify-end bg-black bg-opacity-50 p-16 text-stone-50">
                   <h3 className="mb-6 text-4xl">Think before you ink</h3>
                   <p className="text-[1.63rem] leading-8">
-                    Dive deep, consider all the relevant factors, and weigh the
-                    potential consequences of your actions before committing to
-                    a course of action. This will help you make smarter and more
-                    effective decisions, and increases the chances of reaching
-                    the desired outcome.
+                    Dive deep, consider all the relevant factors, and weigh the potential
+                    consequences of your actions before committing to a course of action. This will
+                    help you make smarter and more effective decisions, and increases the chances of
+                    reaching the desired outcome.
                   </p>
                 </div>
               </div>
@@ -1112,11 +1065,10 @@ export default function About() {
                 <div className="relative flex h-full flex-col justify-end bg-black bg-opacity-50 p-16 text-stone-50">
                   <h3 className="mb-6 text-4xl">No guts, no glory</h3>
                   <p className="text-[1.63rem] leading-8">
-                    Take charge and make things happen by being confident and
-                    bold. This can be intimidating, but it is also the key to
-                    achieving your goals and realising your full potential.
-                    Embrace your power and responsibility, and take the reins
-                    with courage and determination.
+                    Take charge and make things happen by being confident and bold. This can be
+                    intimidating, but it is also the key to achieving your goals and realising your
+                    full potential. Embrace your power and responsibility, and take the reins with
+                    courage and determination.
                   </p>
                 </div>
               </div>
@@ -1132,10 +1084,9 @@ export default function About() {
                 <div className="relative flex h-full flex-col justify-end bg-black bg-opacity-50 p-16 text-stone-50">
                   <h3 className="mb-6 text-4xl">No bullshit bingo</h3>
                   <p className="text-[1.63rem] leading-8">
-                    Honesty is essential for building and maintaining trust.
-                    Don't waste time or energy on pretence, and cut to the chase
-                    instead. Speak your mind, and be sincere but direct, even if
-                    the message is uncomfortable.
+                    Honesty is essential for building and maintaining trust. Don't waste time or
+                    energy on pretence, and cut to the chase instead. Speak your mind, and be
+                    sincere but direct, even if the message is uncomfortable.
                   </p>
                 </div>
               </div>
@@ -1151,9 +1102,9 @@ export default function About() {
                 <div className="relative flex h-full flex-col justify-end bg-black bg-opacity-50 p-16 text-stone-50">
                   <h3 className="mb-6 text-4xl">A touch of wit</h3>
                   <p className="text-[1.63rem] leading-8">
-                    Come up with creative solutions to complex problems. Do you
-                    have a sense of humour? Don't waste it. Use it in a subtle
-                    and entertaining way to make things memorable and engaging.
+                    Come up with creative solutions to complex problems. Do you have a sense of
+                    humour? Don't waste it. Use it in a subtle and entertaining way to make things
+                    memorable and engaging.
                   </p>
                 </div>
               </div>
@@ -1169,10 +1120,9 @@ export default function About() {
                 <div className="relative flex h-full flex-col justify-end bg-black bg-opacity-50 p-16 text-stone-50">
                   <h3 className="mb-6 text-4xl">Lead by example</h3>
                   <p className="text-[1.63rem] leading-8">
-                    Embody the behaviours and values that you expect from
-                    others. Have respect for others' time and be punctual.
-                    Practise clear communication and take responsibility for
-                    mistakes and work to rectify them.
+                    Embody the behaviours and values that you expect from others. Have respect for
+                    others' time and be punctual. Practise clear communication and take
+                    responsibility for mistakes and work to rectify them.
                   </p>
                 </div>
               </div>
@@ -1181,5 +1131,5 @@ export default function About() {
         </div>
       </section>
     </>
-  );
+  )
 }
