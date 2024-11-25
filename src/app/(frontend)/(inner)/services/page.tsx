@@ -12,13 +12,27 @@ export default function ServicesPage() {
         <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
           <div className="mb-3 flex flex-wrap justify-between md:mb-5 lg:mb-0">
             <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-              <div className="mb-3 inline-flex w-auto items-center">
+              <div className="mb-3 inline-flex w-auto items-center justify-between">
                 <div className="ml-2 text-lg font-light text-white">
                   Services
                 </div>
+                <div className="ml-4 text-sm font-semibold">
+                  <svg
+                    className="mr-2 inline-block h-3 w-3"
+                    fill="none"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m6 0 .87252 3.89355 3.37008-2.13619-2.13615 3.37012L12 6l-3.89355.87252 2.13615 3.37008-3.37008-2.13615L6 12l-.87252-3.89355-3.37012 2.13615 2.13619-3.37008L0 6l3.89355-.87252-2.13619-3.37012 3.37012 2.13619L6 0Z"
+                      fill="rgb(255, 255, 255)"
+                    />
+                  </svg>
+                  7 Services available
+                </div>
               </div>
               <div className="max-w-6xl">
-                {" "}
                 <Title el="h1" size="display-small">
                   The talent, tools, and deliverables to spark action for your
                   brand.
@@ -33,6 +47,9 @@ export default function ServicesPage() {
                   We bring our passion for good design to brave brands and
                   deliver something you can shout about.
                 </Text>
+                <div className="mt-8 text-sm font-semibold opacity-75">
+                  ↓ Scroll to learn how
+                </div>
               </div>
             </div>
           </div>
@@ -885,7 +902,9 @@ export default function ServicesPage() {
                       </a>
                     </h5>
 
-                    <p className="opacity-50">True legends never die.</p>
+                    <p className="opacity-50">
+                      True legends never die.
+                    </p>
                   </div>
 
                   <div className="ml-5 text-lg uppercase">
@@ -1066,38 +1085,6 @@ export default function ServicesPage() {
               </div>
             </div>
           </section>
-        </div>
-      </section>
-
-      <section className="relative grid grid-cols-[105.50rem] grid-rows-[1155px_104px] items-center justify-items-center bg-brand-dark-bg text-center uppercase text-brand-dark-text">
-        <span className="text-[13.00rem] font-bold leading-none text-white">
-          <span>
-            <span className="inline-block">
-              <span className="inline-block">We build Software</span>
-            </span>
-            <br />
-            <span className="inline-block">
-              <span className="inline-block">Solutions</span>
-            </span>
-          </span>
-        </span>
-        <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-20 pb-10 text-sm font-semibold text-white">
-          <span>↓ Scroll to learn how</span>
-          <span>
-            <svg
-              className="inline-block h-3 w-3"
-              fill="none"
-              height="12"
-              viewBox="0 0 12 12"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="m6 0 .87252 3.89355 3.37008-2.13619-2.13615 3.37012L12 6l-3.89355.87252 2.13615 3.37008-3.37008-2.13615L6 12l-.87252-3.89355-3.37012 2.13615 2.13619-3.37008L0 6l3.89355-.87252-2.13619-3.37012 3.37012 2.13619L6 0Z"
-                fill="rgb(255, 255, 255)"
-              />
-            </svg>{" "}
-            7 Services available
-          </span>
         </div>
       </section>
     </>
