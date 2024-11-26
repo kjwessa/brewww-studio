@@ -49,7 +49,7 @@ export default async function BlogPage() {
             {categories.docs.map((category) => (
               <li key={category.id} className="mb-2 mr-4">
                 <CategoryFilter
-                  title={category.title}
+                  title={category.title || 'Untitled Category'}
                   count={categoryCounts[category.id] || 0}
                   slug={`/journal/category/${category.slug}`}
                 />

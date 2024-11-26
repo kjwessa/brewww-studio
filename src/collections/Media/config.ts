@@ -5,13 +5,6 @@ import type { CollectionConfig } from 'payload'
 import { authenticated } from '@/access/authenticated'
 import { anyone } from '@/access/anyone'
 
-// Lexical Editor
-import {
-  FixedToolbarFeature,
-  InlineToolbarFeature,
-  lexicalEditor,
-} from '@payloadcms/richtext-lexical'
-
 export const Media: CollectionConfig = {
   slug: 'media',
 
@@ -36,17 +29,12 @@ export const Media: CollectionConfig = {
     },
     {
       name: 'caption',
-      type: 'richText',
+      type: 'textarea',
       label: 'Caption',
       admin: {
         description:
           'This is the caption for the image. Optional, but helpful for Blog Posts requiring a caption.',
       },
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => {
-          return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
-        },
-      }),
     },
   ],
 
