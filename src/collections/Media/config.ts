@@ -26,15 +26,6 @@ export const Media: CollectionConfig = {
   //* Collection Fields
   fields: [
     {
-      name: 'title',
-      type: 'text',
-      label: 'File Name',
-      required: false,
-      admin: {
-        description: 'This is the file name of the image, allowed for easier semantic searching.',
-      },
-    },
-    {
       name: 'alt',
       type: 'text',
       label: 'Alt Text',
@@ -61,8 +52,25 @@ export const Media: CollectionConfig = {
 
   //* Admin Settings
   admin: {
-    listSearchableFields: ['title', 'url', 'alt'],
+    listSearchableFields: ['url', 'alt'],
   },
-
-  upload: true,
+  upload: {
+    adminThumbnail: 'thumbnail',
+    focalPoint: true,
+    imageSizes: [
+      {
+        name: 'thumbnail',
+        width: 300,
+      },
+      {
+        name: 'square',
+        width: 500,
+        height: 500,
+      },
+      {
+        name: 'full',
+        width: 2600,
+      },
+    ],
+  },
 }
