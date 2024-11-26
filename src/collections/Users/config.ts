@@ -1,14 +1,10 @@
 // Payload Imports
 import type { CollectionConfig } from 'payload'
-
 // Access Control
-
 import { authenticated } from '@/access/authenticated'
 
 export const Users: CollectionConfig = {
   slug: 'users',
-
-  //TODO Remove the FULL NAME on the MONGO side
 
   //* Access Settings
   access: {
@@ -25,18 +21,11 @@ export const Users: CollectionConfig = {
       type: 'row',
       fields: [
         {
-          name: 'firstName',
-          label: 'First Name',
+          name: 'name',
           type: 'text',
-          required: false,
+          label: 'Full Name',
         },
-        { name: 'lastName', label: 'Last Name', type: 'text', required: false },
       ],
-    },
-    {
-      name: 'photo',
-      type: 'upload',
-      relationTo: 'media',
     },
   ],
 
@@ -45,4 +34,5 @@ export const Users: CollectionConfig = {
     useAsTitle: 'email',
   },
   auth: true,
+  timestamps: true,
 }

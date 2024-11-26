@@ -11,10 +11,15 @@
     "build:start": "NODE_OPTIONS=--no-deprecation next build && next start",
     "lint": "NODE_OPTIONS=--no-deprecation next lint",
     "generate:importmap": "NODE_OPTIONS=--no-deprecation payload generate:importmap",
-    "generate:types": "NODE_OPTIONS=--no-deprecation payload generate:types"
+    "generate:types": "NODE_OPTIONS=--no-deprecation payload generate:types",
+    "payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload",
+    "db:generate": "pnpm payload migrate:create",
+    "db:migrate": "pnpm payload migrate",
+    "db:status": "pnpm payload migrate:status",
+    "db:down": "pnpm payload migrate:down",
+    "ci": "pnpm payload migrate && pnpm build"
   },
   "dependencies": {
-    "@payloadcms/db-mongodb": "^3.1.0",
     "@payloadcms/db-postgres": "^3.1.0",
     "@payloadcms/email-nodemailer": "^3.1.0",
     "@payloadcms/live-preview-react": "^3.1.0",
