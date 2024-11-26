@@ -19,6 +19,17 @@ import { LexicalNode } from '@/components/RichText/nodeFormat'
 // Utilities
 import { formatDate } from '@/utilities/formatDateTime'
 
+const emptyLexicalContent = {
+  root: {
+    type: 'root',
+    children: [],
+    direction: null,
+    format: '',
+    indent: 0,
+    version: 1
+  }
+} as const;
+
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
   const posts = await payload.find({
@@ -132,7 +143,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         </div>
         <div className="md:col-span-2">
           <article className="prose mx-auto pb-24">
-            <RichText content={post.content || ''} enableProse={true} enableGutter={false} />
+            <RichText 
+              content={post.content?.root ? post.content : emptyLexicalContent}
+              enableProse={true} 
+              enableGutter={false} 
+            />
           </article>
         </div>
       </div>
