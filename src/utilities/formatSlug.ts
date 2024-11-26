@@ -39,7 +39,7 @@ export const formatSlugHook =
       return formatSlug(value)
     }
 
-    // Only generate a slug automatically on document creation
+    // Only generate a slug automatically on document creation or if no slug exists
     if (operation === 'create' || !data?.slug) {
       // Try to get the fallback value from either the incoming data or original document
       const fallbackData = data?.[fallback] || originalDoc?.[fallback]
