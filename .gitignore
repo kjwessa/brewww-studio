@@ -15,8 +15,6 @@
 /build
 
 # database
-/src/database/migrations/*
-!/src/database/migrations/.gitkeep
 .drizzle/
 drizzle.config.*
 
