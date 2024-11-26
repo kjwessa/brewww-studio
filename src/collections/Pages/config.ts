@@ -32,7 +32,7 @@ export const Pages: CollectionConfig = {
       name: 'title',
       label: 'Title',
       type: 'text',
-      required: true,
+      required: false,
       admin: {
         description: 'The title of the page.',
       },

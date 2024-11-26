@@ -34,7 +34,7 @@ export const BlogPosts: CollectionConfig = {
       type: 'text',
       label: 'Post Title',
       unique: true,
-      required: true,
+      required: false,
       admin: {
         description: 'The title of the article as it appears around the site.',
       },
@@ -79,7 +79,7 @@ export const BlogPosts: CollectionConfig = {
                   }),
                 ],
               }),
-              required: true,
+              required: false,
             },
           ],
         },
@@ -99,7 +99,7 @@ export const BlogPosts: CollectionConfig = {
     {
       name: 'publishedOn',
       type: 'date',
-      required: true,
+      required: false,
       label: 'Published On',
       admin: {
         position: 'sidebar',
@@ -113,7 +113,7 @@ export const BlogPosts: CollectionConfig = {
       type: 'upload',
       relationTo: 'media',
       label: 'Featured Image',
-      required: true,
+      required: false,
       admin: {
         position: 'sidebar',
       },
@@ -132,7 +132,7 @@ export const BlogPosts: CollectionConfig = {
     {
       name: 'readTime',
       type: 'number',
-      required: true,
+      required: false,
       label: 'Read Time',
       admin: {
         position: 'sidebar',
@@ -146,7 +146,7 @@ export const BlogPosts: CollectionConfig = {
       },
       hasMany: true,
       relationTo: 'categories',
-      required: true,
+      required: false,
     },
     {
       name: 'relatedPosts',

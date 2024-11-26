@@ -22,7 +22,7 @@ export const Technologies: CollectionConfig = {
       name: 'title',
       type: 'text',
       label: 'Title',
-      required: true,
+      required: false,
       unique: true,
       admin: {
         description: 'Add the title of the technology here.',

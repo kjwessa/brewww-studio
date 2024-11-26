@@ -25,7 +25,7 @@ export const Location: CollectionConfig = {
       name: 'title',
       type: 'text',
       label: 'Location Title',
-      required: true,
+      required: false,
       unique: true,
       admin: {
         description: 'The title of the location as it appears around the site.',
@@ -44,7 +44,7 @@ export const Location: CollectionConfig = {
       name: 'heroTitle',
       type: 'text',
       label: 'Hero Title',
-      required: true,
+      required: false,
       admin: {
         description: 'The hero title of the location as it appears around the site.',
       },
@@ -54,7 +54,7 @@ export const Location: CollectionConfig = {
       type: 'upload',
       label: 'Hero Image',
       relationTo: 'media',
-      required: true,
+      required: false,
       admin: {
         description: 'The hero image displayed at the top of the location page.',
       },
@@ -63,7 +63,7 @@ export const Location: CollectionConfig = {
       name: 'heroDescription',
       type: 'richText',
       label: 'Hero Description',
-      required: true,
+      required: false,
       admin: {
         description: 'The hero description of the location.',
       },

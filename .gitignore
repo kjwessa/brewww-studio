@@ -4,9 +4,6 @@
 .pnp.js
 .yarn/install-state.gz
 
-# building
-/llc
-
 # testing
 /coverage
 
@@ -30,9 +27,6 @@ yarn-error.log*
 .env*.local
 .env
 
-# content collections
-.content-collections
-
 # vercel
 .vercel
 
@@ -40,7 +34,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# memory usage log
-memory-usage.log
 # Sentry Config File
 .env.sentry-build-plugin

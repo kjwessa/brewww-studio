@@ -23,7 +23,7 @@ export const Team: CollectionConfig = {
     {
       name: 'title',
       type: 'text',
-      required: true,
+      required: false,
       unique: true,
       label: 'Full Name',
     },
@@ -31,7 +31,7 @@ export const Team: CollectionConfig = {
     {
       name: 'role',
       type: 'text',
-      required: true,
+      required: false,
       label: 'Role',
       admin: {
         position: 'sidebar',
