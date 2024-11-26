@@ -5,9 +5,9 @@ import { CollectionSlug } from "payload";
  * Used to generate the correct preview paths for different content types
  */
 const collectionPrefixMap: Partial<Record<CollectionSlug, string>> = {
-  work: "/work",     // Work items are prefixed with /work
-  posts: "/journal", // Blog posts are prefixed with /journal
-  pages: "",         // Pages use their slug directly without a prefix
+  // work: "/work",     // Work items are prefixed with /work
+  // posts: "/journal", // Blog posts are prefixed with /journal
+  // pages: "",         // Pages use their slug directly without a prefix
 };
 
 /**

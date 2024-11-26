@@ -33,134 +33,134 @@ export const Work: CollectionConfig = {
         description: 'The title of the project as it appears around the site.',
       },
     },
-    {
-      name: 'tagline',
-      type: 'text',
-      label: 'Tagline',
-      required: false,
-      admin: {
-        description: 'The tagline of the project as it appears around the site.',
-      },
-    },
-    {
-      name: 'description',
-      type: 'textarea',
-      label: 'Description',
-      required: false,
-      admin: {
-        description: 'The description of the project as it appears around the site.',
-      },
-    },
-    {
-      type: 'tabs',
-      tabs: [
-        {
-          label: 'Content',
-          fields: [
-            {
-              name: 'storyTitle',
-              type: 'text',
-              label: 'Story Title',
-              required: false,
-            },
-            {
-              name: 'storyContent',
-              type: 'richText',
-              label: 'Story Content',
-              required: false,
-            },
-          ],
-        },
-        metaTab,
-      ],
-    },
-    ...slugField(),
-    {
-      name: 'image',
-      type: 'upload',
-      label: 'Featured Image',
-      required: false,
-      relationTo: 'media',
-      admin: {
-        position: 'sidebar',
-      },
-    },
-    {
-      name: 'brand',
-      type: 'relationship',
-      relationTo: 'brands',
-      hasMany: false,
-      required: false,
-      admin: {
-        position: 'sidebar',
-      },
-    },
-    {
-      name: 'featured',
-      type: 'checkbox',
-      label: 'Is this a featured project?',
-      required: false,
-      admin: {
-        position: 'sidebar',
-      },
-    },
-    {
-      name: 'services',
-      type: 'relationship',
-      label: 'Services',
-      relationTo: 'services',
-      hasMany: true,
-      required: false,
-      admin: {
-        position: 'sidebar',
-      },
-    },
-    {
-      name: 'projectYear',
-      type: 'number',
-      label: 'Project Year',
-      required: false,
-      admin: {
-        position: 'sidebar',
-      },
-    },
-    {
-      name: 'testimonial',
-      type: 'relationship',
-      relationTo: 'testimonials',
-      hasMany: false,
-      required: false,
-      admin: {
-        position: 'sidebar',
-      },
-    },
-    {
-      name: 'projectLink',
-      type: 'text',
-      label: 'Project Link',
-      required: false,
-      admin: {
-        position: 'sidebar',
-      },
-    },
-    {
-      name: 'relatedWorks',
-      type: 'relationship',
-      label: 'Related Case Studies',
-      admin: {
-        position: 'sidebar',
-      },
-      filterOptions: ({ id }) => {
-        return {
-          id: {
-            not_in: [id],
-          },
-        }
-      },
-      hasMany: true,
-      required: false,
-      relationTo: 'work',
-    },
+    // {
+    //   name: 'tagline',
+    //   type: 'text',
+    //   label: 'Tagline',
+    //   required: false,
+    //   admin: {
+    //     description: 'The tagline of the project as it appears around the site.',
+    //   },
+    // },
+    // {
+    //   name: 'description',
+    //   type: 'textarea',
+    //   label: 'Description',
+    //   required: false,
+    //   admin: {
+    //     description: 'The description of the project as it appears around the site.',
+    //   },
+    // },
+    // {
+    //   type: 'tabs',
+    //   tabs: [
+    //     {
+    //       label: 'Content',
+    //       fields: [
+    //         {
+    //           name: 'storyTitle',
+    //           type: 'text',
+    //           label: 'Story Title',
+    //           required: false,
+    //         },
+    //         {
+    //           name: 'storyContent',
+    //           type: 'richText',
+    //           label: 'Story Content',
+    //           required: false,
+    //         },
+    //       ],
+    //     },
+    //     metaTab,
+    //   ],
+    // },
+    // ...slugField(),
+    // {
+    //   name: 'image',
+    //   type: 'upload',
+    //   label: 'Featured Image',
+    //   required: false,
+    //   relationTo: 'media',
+    //   admin: {
+    //     position: 'sidebar',
+    //   },
+    // },
+    // {
+    //   name: 'brand',
+    //   type: 'relationship',
+    //   relationTo: 'brands',
+    //   hasMany: false,
+    //   required: false,
+    //   admin: {
+    //     position: 'sidebar',
+    //   },
+    // },
+    // {
+    //   name: 'featured',
+    //   type: 'checkbox',
+    //   label: 'Is this a featured project?',
+    //   required: false,
+    //   admin: {
+    //     position: 'sidebar',
+    //   },
+    // },
+    // {
+    //   name: 'services',
+    //   type: 'relationship',
+    //   label: 'Services',
+    //   relationTo: 'services',
+    //   hasMany: true,
+    //   required: false,
+    //   admin: {
+    //     position: 'sidebar',
+    //   },
+    // },
+    // {
+    //   name: 'projectYear',
+    //   type: 'number',
+    //   label: 'Project Year',
+    //   required: false,
+    //   admin: {
+    //     position: 'sidebar',
+    //   },
+    // },
+    // {
+    //   name: 'testimonial',
+    //   type: 'relationship',
+    //   relationTo: 'testimonials',
+    //   hasMany: false,
+    //   required: false,
+    //   admin: {
+    //     position: 'sidebar',
+    //   },
+    // },
+    // {
+    //   name: 'projectLink',
+    //   type: 'text',
+    //   label: 'Project Link',
+    //   required: false,
+    //   admin: {
+    //     position: 'sidebar',
+    //   },
+    // },
+    // {
+    //   name: 'relatedWorks',
+    //   type: 'relationship',
+    //   label: 'Related Case Studies',
+    //   admin: {
+    //     position: 'sidebar',
+    //   },
+    //   filterOptions: ({ id }) => {
+    //     return {
+    //       id: {
+    //         not_in: [id],
+    //       },
+    //     }
+    //   },
+    //   hasMany: true,
+    //   required: false,
+    //   relationTo: 'work',
+    // },
   ],
 
   //* Admin Settings
@@ -168,27 +168,27 @@ export const Work: CollectionConfig = {
   admin: {
     useAsTitle: 'title',
     description: 'All we do is work, work, work.',
-    defaultColumns: ['title', 'tagline', 'status'],
+    defaultColumns: ['title'],
     group: 'Portfolio',
-    listSearchableFields: ['title', 'tagline'],
-    livePreview: {
-      url: ({ data }) => {
-        const path = generatePreviewPath({
-          slug: typeof data?.slug === 'string' ? data.slug : '',
-          collection: 'work',
-        })
+    listSearchableFields: ['title'],
+    // livePreview: {
+    //   url: ({ data }) => {
+    //     const path = generatePreviewPath({
+    //       slug: typeof data?.slug === 'string' ? data.slug : '',
+    //       collection: 'work',
+    //     })
 
-        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
-      },
-    },
-    preview: (data) => {
-      const path = generatePreviewPath({
-        slug: typeof data?.slug === 'string' ? data.slug : '',
-        collection: 'work',
-      })
+    //     return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
+    //   },
+    // },
+    // preview: (data) => {
+    //   const path = generatePreviewPath({
+    //     slug: typeof data?.slug === 'string' ? data.slug : '',
+    //     collection: 'work',
+    //   })
 
-      return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
-    },
+    //   return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
+    // },
     pagination: {
       defaultLimit: 25,
       limits: [10, 25, 50],

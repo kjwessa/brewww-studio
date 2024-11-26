@@ -1,6 +1,6 @@
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import React, { Fragment, JSX } from 'react'
-import { CMSLink } from '@/components/Link'
+// import { CMSLink } from '@/components/Link'
 import { DefaultNodeTypes, SerializedBlockNode } from '@payloadcms/richtext-lexical'
 import { cn } from '@/utilities/cn'
 import { Text } from '@/components/Text'
@@ -207,21 +207,21 @@ export function serializeLexical({ nodes, customClasses = {} }: Props): JSX.Elem
                 </blockquote>
               )
             }
-            case 'link': {
-              const fields = node.fields
-              return (
-                <CMSLink
-                  key={index}
-                  className={customClasses.link}
-                  newTab={Boolean(fields?.newTab)}
-                  reference={fields.doc as any}
-                  type={fields.linkType === 'internal' ? 'reference' : 'custom'}
-                  url={fields.url}
-                >
-                  {serializedChildren}
-                </CMSLink>
-              )
-            }
+            // case 'link': {
+            //   const fields = node.fields
+            //   return (
+            //     <CMSLink
+            //       key={index}
+            //       className={customClasses.link}
+            //       newTab={Boolean(fields?.newTab)}
+            //       reference={fields.doc as any}
+            //       type={fields.linkType === 'internal' ? 'reference' : 'custom'}
+            //       url={fields.url}
+            //     >
+            //       {serializedChildren}
+            //     </CMSLink>
+            //   )
+            // }
 
             default:
               return null

@@ -30,13 +30,13 @@ export const BlogCategories: CollectionConfig = {
       admin: {
         description: 'The title of the category as it appears around the site.',
       },
-      required: false,
+      required: true,
     },
-    ...slugField(),
-    {
-      type: 'tabs',
-      tabs: [metaTab],
-    },
+    // ...slugField(),
+    // {
+    //   type: 'tabs',
+    //   tabs: [metaTab],
+    // },
   ],
 
   //* Admin Settings

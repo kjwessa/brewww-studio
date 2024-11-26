@@ -4,7 +4,7 @@ import React, { forwardRef } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/utilities/cn";
 import Link from "next/link";
-import { LinkType, Reference } from "../CMSLink/index.js";
+// import { LinkType, Reference } from "../CMSLink/index.js";
 import { Page as PayloadPage } from "@/payload-types";
 
 interface Page extends PayloadPage {
@@ -55,8 +55,10 @@ export interface ButtonProps
   iconPosition?: "left" | "right";
   label?: string;
   el?: "button" | "link" | "a";
-  type?: LinkType | "submit" | "reset" | "button";
-  reference?: Reference;
+  type?: string | "submit" | "reset" | "button";
+  // type?: LinkType | "submit" | "reset" | "button";
+  reference?: any;
+  // reference?: Reference;
   fullWidth?: boolean;
   mobileFullWidth?: boolean;
   htmlButtonType?: "button" | "submit" | "reset";
@@ -69,41 +71,44 @@ const generateHref = ({
   url,
   reference,
 }: {
-  type?: LinkType;
+  type?: string;
+  // type?: LinkType;
   url?: string;
-  reference?: Reference;
+  reference?: any;
+  // reference?: Reference;
 }): string => {
-  if ((type === "custom" || type === undefined) && url) {
-    return url;
-  }
+  return url || "";
+  // if ((type === "custom" || type === undefined) && url) {
+  //   return url;
+  // }
 
-  if (
-    type === "reference" &&
-    reference?.value &&
-    typeof reference.value !== "string"
-  ) {
-    if (reference.relationTo === "pages") {
-      const value = reference.value as Page;
-      const breadcrumbs = value?.breadcrumbs;
-      const hasBreadcrumbs =
-        breadcrumbs && Array.isArray(breadcrumbs) && breadcrumbs.length > 0;
-      if (hasBreadcrumbs) {
-        return breadcrumbs[breadcrumbs.length - 1]?.url as string;
-      }
-    }
+  // if (
+  //   type === "reference" &&
+  //   reference?.value &&
+  //   typeof reference.value !== "string"
+  // ) {
+  //   if (reference.relationTo === "pages") {
+  //     const value = reference.value as Page;
+  //     const breadcrumbs = value?.breadcrumbs;
+  //     const hasBreadcrumbs =
+  //       breadcrumbs && Array.isArray(breadcrumbs) && breadcrumbs.length > 0;
+  //     if (hasBreadcrumbs) {
+  //       return breadcrumbs[breadcrumbs.length - 1]?.url as string;
+  //     }
+  //   }
 
-    if (reference.relationTo === "posts") {
-      return `/blog/${reference.value.slug}`;
-    }
+  //   if (reference.relationTo === "posts") {
+  //     return `/blog/${reference.value.slug}`;
+  //   }
 
-    if (reference.relationTo === "work") {
-      return `/work/${reference.value.slug}`;
-    }
+  //   if (reference.relationTo === "work") {
+  //     return `/work/${reference.value.slug}`;
+  //   }
 
-    return `/${reference.relationTo}/${reference.value.slug}`;
-  }
+  //   return `/${reference.relationTo}/${reference.value.value.slug}`;
+  // }
 
-  return "";
+  // return "";
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -130,7 +135,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ) => {
     const hrefValue =
-      href || generateHref({ type: type as LinkType, reference, url });
+      href || generateHref({ type, reference, url });
+    // href || generateHref({ type: type as LinkType, reference, url });
 
     const content = (
       <span className="flex h-full w-full cursor-pointer items-center justify-center">

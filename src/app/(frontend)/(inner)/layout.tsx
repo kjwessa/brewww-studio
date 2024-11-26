@@ -1,8 +1,8 @@
 import localFont from "next/font/local";
 import "@/styles/globals.css";
 import { Metadata } from "next";
-import Header from "@/components/Header/index";
-import Footer from "@/components/Footer/index";
+// import Header from "@/components/Header/index";
+// import Footer from "@/components/Footer/index";
 import { LivePreviewListener } from "@/components/LivePreviewListener";
 import { GridGuide } from "@/components/GridGuide/index";
 import { Grain } from "@/components/Grain/index";
@@ -51,9 +51,9 @@ export default async function InnerLayout({
         <AdminBar adminBarProps={{ preview: isEnabled }} />
         <Grain>
           <LivePreviewListener />
-          <Header />
+          {/* <Header /> */}
           <main className="min-h-[80vh]">{children}</main>
-          <Footer />
+          {/* <Footer /> */}
         </Grain>
         <GridGuide />
       </body>
