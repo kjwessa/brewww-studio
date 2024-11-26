@@ -12,7 +12,7 @@ import { slugField } from '@/fields/slug'
 // Utilities & Hooks
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
 import { populatePublishedOn } from '@/hooks/populatePublishedOn'
-import { revalidatePost } from './hooks/revalidatePost'
+// import { revalidatePost } from './hooks/revalidatePost'
 
 import { BlocksFeature, HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 
@@ -34,136 +34,134 @@ export const BlogPosts: CollectionConfig = {
       type: 'text',
       label: 'Post Title',
       unique: true,
-      required: false,
+      required: true,
       admin: {
         description: 'The title of the article as it appears around the site.',
       },
     },
-    {
-      name: 'tagline',
-      type: 'text',
-      label: 'Post Tagline',
-      required: false,
-      admin: {
-        description: 'The tagline of the article as it appears around the site.',
-      },
-    },
-    {
-      name: 'description',
-      type: 'textarea',
-      label: 'Post Description',
-      required: false,
-      admin: {
-        description: 'The description of the article as it appears around the site.',
-      },
-    },
-
-    {
-      type: 'tabs',
-      tabs: [
-        {
-          label: 'Content',
-          fields: [
-            {
-              name: 'content',
-              type: 'richText',
-              label: 'Content',
-              editor: lexicalEditor({
-                features: ({ defaultFeatures }) => [
-                  ...defaultFeatures,
-                  HeadingFeature({
-                    enabledHeadingSizes: ['h2', 'h3', 'h4'],
-                  }),
-                  BlocksFeature({
-                    blocks: [],
-                  }),
-                ],
-              }),
-              required: false,
-            },
-          ],
-        },
-        metaTab,
-      ],
-    },
-    {
-      name: 'featured',
-      type: 'checkbox',
-      label: 'Featured',
-      defaultValue: false,
-      admin: {
-        position: 'sidebar',
-      },
-    },
-    ...slugField(),
-    {
-      name: 'publishedOn',
-      type: 'date',
-      required: false,
-      label: 'Published On',
-      admin: {
-        position: 'sidebar',
-        date: {
-          pickerAppearance: 'dayAndTime',
-        },
-      },
-    },
-    {
-      name: 'image',
-      type: 'upload',
-      relationTo: 'media',
-      label: 'Featured Image',
-      required: false,
-      admin: {
-        position: 'sidebar',
-      },
-    },
-    {
-      name: 'status',
-      type: 'select',
-      options: ['not started', 'needs rewrite', 'needs polish', 'needs photos', 'ready'],
-      defaultValue: 'not started',
-      label: 'Status',
-      admin: {
-        position: 'sidebar',
-      },
-    },
-
-    {
-      name: 'readTime',
-      type: 'number',
-      required: false,
-      label: 'Read Time',
-      admin: {
-        position: 'sidebar',
-      },
-    },
-    {
-      name: 'categories',
-      type: 'relationship',
-      admin: {
-        position: 'sidebar',
-      },
-      hasMany: true,
-      relationTo: 'categories',
-      required: false,
-    },
-    {
-      name: 'relatedPosts',
-      type: 'relationship',
-      admin: {
-        position: 'sidebar',
-      },
-      filterOptions: ({ id }) => {
-        return {
-          id: {
-            not_in: [id],
-          },
-        }
-      },
-      hasMany: true,
-      relationTo: 'posts',
-    },
+    // {
+    //   name: 'tagline',
+    //   type: 'text',
+    //   label: 'Post Tagline',
+    //   required: false,
+    //   admin: {
+    //     description: 'The tagline of the article as it appears around the site.',
+    //   },
+    // },
+    // {
+    //   name: 'description',
+    //   type: 'textarea',
+    //   label: 'Post Description',
+    //   required: false,
+    //   admin: {
+    //     description: 'The description of the article as it appears around the site.',
+    //   },
+    // },
+    // {
+    //   type: 'tabs',
+    //   tabs: [
+    //     {
+    //       label: 'Content',
+    //       fields: [
+    //         {
+    //           name: 'content',
+    //           type: 'richText',
+    //           label: 'Content',
+    //           editor: lexicalEditor({
+    //             features: ({ defaultFeatures }) => [
+    //               ...defaultFeatures,
+    //               HeadingFeature({
+    //                 enabledHeadingSizes: ['h2', 'h3', 'h4'],
+    //               }),
+    //               BlocksFeature({
+    //                 blocks: [],
+    //               }),
+    //             ],
+    //           }),
+    //           required: false,
+    //         },
+    //       ],
+    //     },
+    //     metaTab,
+    //   ],
+    // },
+    // {
+    //   name: 'featured',
+    //   type: 'checkbox',
+    //   label: 'Featured',
+    //   defaultValue: false,
+    //   admin: {
+    //     position: 'sidebar',
+    //   },
+    // },
+    // ...slugField(),
+    // {
+    //   name: 'publishedOn',
+    //   type: 'date',
+    //   required: false,
+    //   label: 'Published On',
+    //   admin: {
+    //     position: 'sidebar',
+    //     date: {
+    //       pickerAppearance: 'dayAndTime',
+    //     },
+    //   },
+    // },
+    // {
+    //   name: 'image',
+    //   type: 'upload',
+    //   relationTo: 'media',
+    //   label: 'Featured Image',
+    //   required: false,
+    //   admin: {
+    //     position: 'sidebar',
+    //   },
+    // },
+    // {
+    //   name: 'status',
+    //   type: 'select',
+    //   options: ['not started', 'needs rewrite', 'needs polish', 'needs photos', 'ready'],
+    //   defaultValue: 'not started',
+    //   label: 'Status',
+    //   admin: {
+    //     position: 'sidebar',
+    //   },
+    // },
+    // {
+    //   name: 'readTime',
+    //   type: 'number',
+    //   required: false,
+    //   label: 'Read Time',
+    //   admin: {
+    //     position: 'sidebar',
+    //   },
+    // },
+    // {
+    //   name: 'categories',
+    //   type: 'relationship',
+    //   admin: {
+    //     position: 'sidebar',
+    //   },
+    //   hasMany: true,
+    //   relationTo: 'categories',
+    //   required: false,
+    // },
+    // {
+    //   name: 'relatedPosts',
+    //   type: 'relationship',
+    //   admin: {
+    //     position: 'sidebar',
+    //   },
+    //   filterOptions: ({ id }) => {
+    //     return {
+    //       id: {
+    //         not_in: [id],
+    //       },
+    //     }
+    //   },
+    //   hasMany: true,
+    //   relationTo: 'posts',
+    // },
   ],
 
   //* Admin Settings
@@ -173,24 +171,24 @@ export const BlogPosts: CollectionConfig = {
     defaultColumns: ['title', 'status', 'publishedOn', 'updatedAt', 'featured'],
     group: 'Blog Posts',
     listSearchableFields: ['title'],
-    livePreview: {
-      url: ({ data }) => {
-        const path = generatePreviewPath({
-          slug: typeof data?.slug === 'string' ? data.slug : '',
-          collection: 'posts',
-        })
+    // livePreview: {
+    //   url: ({ data }) => {
+    //     const path = generatePreviewPath({
+    //       slug: typeof data?.slug === 'string' ? data.slug : '',
+    //       collection: 'posts',
+    //     })
 
-        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
-      },
-    },
-    preview: (data) => {
-      const path = generatePreviewPath({
-        slug: typeof data?.slug === 'string' ? data.slug : '',
-        collection: 'posts',
-      })
+    //     return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
+    //   },
+    // },
+    // preview: (data) => {
+    //   const path = generatePreviewPath({
+    //     slug: typeof data?.slug === 'string' ? data.slug : '',
+    //     collection: 'posts',
+    //   })
 
-      return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
-    },
+    //   return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
+    // },
     pagination: {
       defaultLimit: 100,
       limits: [25, 50, 100],
@@ -209,6 +207,6 @@ export const BlogPosts: CollectionConfig = {
   },
   hooks: {
     beforeChange: [populatePublishedOn],
-    afterChange: [revalidatePost],
+    // afterChange: [revalidatePost],
   },
 }

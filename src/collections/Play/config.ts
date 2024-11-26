@@ -29,114 +29,113 @@ export const Playground: CollectionConfig = {
       name: 'title',
       type: 'text',
       label: 'Title',
-      required: false,
+      required: true,
       unique: true,
       admin: {
         description: 'Add the title of the Playground case study here.',
       },
     },
-    {
-      name: 'tagline',
-      type: 'text',
-      label: 'Tagline',
-      required: false,
-      admin: {
-        description: 'Add the tagline for the playground here.',
-      },
-    },
-    {
-      name: 'description',
-      type: 'textarea',
-      label: 'Description',
-      required: false,
-      admin: {
-        description: 'Add the description for the playground here.',
-      },
-    },
+    // {
+    //   name: 'tagline',
+    //   type: 'text',
+    //   label: 'Tagline',
+    //   required: false,
+    //   admin: {
+    //     description: 'Add the tagline for the playground here.',
+    //   },
+    // },
+    // {
+    //   name: 'description',
+    //   type: 'textarea',
+    //   label: 'Description',
+    //   required: false,
+    //   admin: {
+    //     description: 'Add the description for the playground here.',
+    //   },
+    // },
 
-    {
-      type: 'tabs',
-      tabs: [metaTab],
-    },
-    // TODO: make sure the slug locks after being published
-    ...slugField(),
-    {
-      name: 'publishedOn',
-      type: 'date',
-      required: false,
-      label: 'Published On',
-      admin: {
-        position: 'sidebar',
-        date: {
-          pickerAppearance: 'dayAndTime',
-        },
-      },
-      hooks: {
-        beforeChange: [
-          ({ siblingData, value }) => {
-            if (siblingData._status === 'published' && !value) {
-              return new Date()
-            }
-            return value
-          },
-        ],
-      },
-    },
-    {
-      name: 'image',
-      type: 'upload',
-      relationTo: 'media',
-      label: 'Featured Image',
-      required: false,
-      admin: {
-        position: 'sidebar',
-      },
-    },
-    {
-      name: 'relatedPlaygrounds',
-      type: 'relationship',
-      label: 'Related Playgrounds',
-      admin: {
-        position: 'sidebar',
-        description: 'Add the related playgrounds here.',
-      },
-      filterOptions: ({ id }) => {
-        return {
-          id: {
-            not_in: [id],
-          },
-        }
-      },
-      hasMany: true,
-      relationTo: 'play',
-    },
+    // {
+    //   type: 'tabs',
+    //   tabs: [metaTab],
+    // },
+    // ...slugField(),
+    // {
+    //   name: 'publishedOn',
+    //   type: 'date',
+    //   required: false,
+    //   label: 'Published On',
+    //   admin: {
+    //     position: 'sidebar',
+    //     date: {
+    //       pickerAppearance: 'dayAndTime',
+    //     },
+    //   },
+    //   hooks: {
+    //     beforeChange: [
+    //       ({ siblingData, value }) => {
+    //         if (siblingData._status === 'published' && !value) {
+    //           return new Date()
+    //         }
+    //         return value
+    //       },
+    //     ],
+    //   },
+    // },
+    // {
+    //   name: 'image',
+    //   type: 'upload',
+    //   relationTo: 'media',
+    //   label: 'Featured Image',
+    //   required: false,
+    //   admin: {
+    //     position: 'sidebar',
+    //   },
+    // },
+    // {
+    //   name: 'relatedPlaygrounds',
+    //   type: 'relationship',
+    //   label: 'Related Playgrounds',
+    //   admin: {
+    //     position: 'sidebar',
+    //     description: 'Add the related playgrounds here.',
+    //   },
+    //   filterOptions: ({ id }) => {
+    //     return {
+    //       id: {
+    //         not_in: [id],
+    //       },
+    //     }
+    //   },
+    //   hasMany: true,
+    //   relationTo: 'play',
+    // },
   ],
 
   //* Admin Settings
 
   admin: {
     description: 'Interior Brewww projects',
-    defaultColumns: ['title', 'tagline', 'updatedAt'],
+    defaultColumns: ['title', ],
     group: 'Portfolio',
-    listSearchableFields: ['title', 'tagline', 'description'],
-    livePreview: {
-      url: ({ data }) => {
-        const path = generatePreviewPath({
-          slug: typeof data?.slug === 'string' ? data.slug : '',
-          collection: 'play',
-        })
+    listSearchableFields: ['title', ],
+    // livePreview: {
+    //   url: ({ data }) => {
+    //     const path = generatePreviewPath({
+    //       slug: typeof data?.slug === 'string' ? data.slug : '',
+    //       collection: 'play',
+    //     })
 
-        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
-      },
-    },
-    preview: (data) => {
-      const path = generatePreviewPath({
-        slug: typeof data?.slug === 'string' ? data.slug : '',
-        collection: 'play',
-      })
+    //     return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
+    //   },
+    // },
+    // preview: (data) => {
+    //   const path = generatePreviewPath({
+    //     slug: typeof data?.slug === 'string' ? data.slug : '',
+    //     collection: 'play',
+    //   })
 
-      return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
-    },
+    //   return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
+    // },
     pagination: {
       defaultLimit: 25,
       limits: [25, 50, 100],

@@ -22,19 +22,19 @@ export const Technologies: CollectionConfig = {
       name: 'title',
       type: 'text',
       label: 'Title',
-      required: false,
+      required: true,
       unique: true,
       admin: {
         description: 'Add the title of the technology here.',
       },
     },
-    {
-      name: 'logoLight',
-      type: 'upload',
-      label: 'Logo',
-      required: false,
-      relationTo: 'media',
-    },
+    // {
+    //   name: 'logoLight',
+    //   type: 'upload',
+    //   label: 'Logo',
+    //   required: false,
+    //   relationTo: 'media',
+    // },
   ],
 
   //* Admin Settings
