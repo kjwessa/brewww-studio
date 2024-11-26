@@ -76,7 +76,7 @@ export default async function Page() {
 
   const brands: Brand[] = brandsResponse.docs.map((doc) => ({
     id: doc.id,
-    title: doc.title,
+    title: doc.title ?? 'Untitled Brand',
     logoLight:
       doc.logoLight &&
       typeof doc.logoLight === "object" &&

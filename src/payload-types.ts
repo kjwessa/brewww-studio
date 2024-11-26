@@ -107,8 +107,7 @@ export interface UserAuthOperations {
  */
 export interface Media {
   id: string;
-  title: string;
-  alt: string;
+  alt?: string | null;
   caption?: {
     root: {
       type: string;
@@ -136,6 +135,32 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+  sizes?: {
+    thumbnail?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    square?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    full?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+  };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -143,7 +168,7 @@ export interface Media {
  */
 export interface Page {
   id: string;
-  title: string;
+  title?: string | null;
   layout?: MediaBlock[] | null;
   meta?: {
     title?: string | null;
@@ -173,10 +198,10 @@ export interface MediaBlock {
  */
 export interface Post {
   id: string;
-  title: string;
+  title?: string | null;
   tagline?: string | null;
   description?: string | null;
-  content: {
+  content?: {
     root: {
       type: string;
       children: {
@@ -190,7 +215,7 @@ export interface Post {
       version: number;
     };
     [k: string]: unknown;
-  };
+  } | null;
   meta?: {
     title?: string | null;
     image?: (string | null) | Media;
@@ -199,11 +224,11 @@ export interface Post {
   featured?: boolean | null;
   slug?: string | null;
   slugLock?: boolean | null;
-  publishedOn: string;
-  image: string | Media;
+  publishedOn?: string | null;
+  image?: (string | null) | Media;
   status?: ('not started' | 'needs rewrite' | 'needs polish' | 'needs photos' | 'ready') | null;
-  readTime: number;
-  categories: (string | Category)[];
+  readTime?: number | null;
+  categories?: (string | Category)[] | null;
   relatedPosts?: (string | Post)[] | null;
   updatedAt: string;
   createdAt: string;
@@ -215,7 +240,7 @@ export interface Post {
  */
 export interface Category {
   id: string;
-  title: string;
+  title?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;
   meta?: {
@@ -234,7 +259,7 @@ export interface Category {
 export interface Work {
   id: string;
   title: string;
-  tagline: string;
+  tagline?: string | null;
   description?: string | null;
   storyTitle?: string | null;
   storyContent?: {
@@ -259,8 +284,8 @@ export interface Work {
   };
   slug?: string | null;
   slugLock?: boolean | null;
-  image: string | Media;
-  brand: string | Brand;
+  image?: (string | null) | Media;
+  brand?: (string | null) | Brand;
   featured?: boolean | null;
   services?: (string | Service)[] | null;
   projectYear?: number | null;
@@ -277,11 +302,11 @@ export interface Work {
  */
 export interface Brand {
   id: string;
-  title: string;
+  title?: string | null;
   logoLight?: (string | null) | Media;
   logoDark?: (string | null) | Media;
-  city: string;
-  state: string;
+  city?: string | null;
+  state?: string | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -292,7 +317,7 @@ export interface Brand {
  */
 export interface Service {
   id: string;
-  title: string;
+  title?: string | null;
   tagline?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;
@@ -329,9 +354,9 @@ export interface Service {
  */
 export interface Testimonial {
   id: string;
-  title: string;
-  callout: string;
-  testimonial: {
+  title?: string | null;
+  callout?: string | null;
+  testimonial?: {
     root: {
       type: string;
       children: {
@@ -345,9 +370,9 @@ export interface Testimonial {
       version: number;
     };
     [k: string]: unknown;
-  };
-  brand: string | Brand;
-  author: string;
+  } | null;
+  brand?: (string | null) | Brand;
+  author?: string | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -358,8 +383,8 @@ export interface Testimonial {
  */
 export interface Play {
   id: string;
-  title: string;
-  tagline: string;
+  title?: string | null;
+  tagline?: string | null;
   description?: string | null;
   meta?: {
     title?: string | null;
@@ -368,8 +393,8 @@ export interface Play {
   };
   slug?: string | null;
   slugLock?: boolean | null;
-  publishedOn: string;
-  image: string | Media;
+  publishedOn?: string | null;
+  image?: (string | null) | Media;
   relatedPlaygrounds?: (string | Play)[] | null;
   updatedAt: string;
   createdAt: string;
@@ -381,8 +406,8 @@ export interface Play {
  */
 export interface Faq {
   id: string;
-  title: string;
-  answer: {
+  title?: string | null;
+  answer?: {
     root: {
       type: string;
       children: {
@@ -396,7 +421,7 @@ export interface Faq {
       version: number;
     };
     [k: string]: unknown;
-  };
+  } | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -407,12 +432,12 @@ export interface Faq {
  */
 export interface Pillar {
   id: string;
-  title: string;
-  tagline: string;
+  title?: string | null;
+  tagline?: string | null;
   services?: (string | null) | Service;
   slug?: string | null;
   slugLock?: boolean | null;
-  description: string;
+  description?: string | null;
   content?: {};
   metadata?: {};
   seo?: {
@@ -430,7 +455,7 @@ export interface Pillar {
  */
 export interface Technology {
   id: string;
-  title: string;
+  title?: string | null;
   logoLight?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
@@ -442,7 +467,7 @@ export interface Technology {
  */
 export interface Journey {
   id: string;
-  title: string;
+  title?: string | null;
   tagline?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;
@@ -464,11 +489,11 @@ export interface Journey {
  */
 export interface Location {
   id: string;
-  title: string;
+  title?: string | null;
   location?: string | null;
-  heroTitle: string;
-  heroImage: string | Media;
-  heroDescription: {
+  heroTitle?: string | null;
+  heroImage?: (string | null) | Media;
+  heroDescription?: {
     root: {
       type: string;
       children: {
@@ -482,7 +507,7 @@ export interface Location {
       version: number;
     };
     [k: string]: unknown;
-  };
+  } | null;
   slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;
@@ -495,10 +520,10 @@ export interface Location {
  */
 export interface Result {
   id: string;
-  title: string;
-  client: string | Brand;
-  number: string;
-  support: string;
+  title?: string | null;
+  client?: (string | null) | Brand;
+  number?: string | null;
+  support?: string | null;
   description?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -510,10 +535,10 @@ export interface Result {
  */
 export interface Team {
   id: string;
-  title: string;
+  title?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;
-  role: string;
+  role?: string | null;
   image?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
@@ -525,9 +550,7 @@ export interface Team {
  */
 export interface User {
   id: string;
-  firstName: string;
-  lastName: string;
-  photo?: (string | null) | Media;
+  name?: string | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -545,7 +568,7 @@ export interface User {
  */
 export interface Industry {
   id: string;
-  title: string;
+  title?: string | null;
   tagline?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;
@@ -905,7 +928,6 @@ export interface PayloadMigration {
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
-  title?: T;
   alt?: T;
   caption?: T;
   prefix?: T;
@@ -920,6 +942,40 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+  sizes?:
+    | T
+    | {
+        thumbnail?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        square?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        full?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -942,8 +998,6 @@ export interface PagesSelect<T extends boolean = true> {
   meta?:
     | T
     | {
-        preview?: T;
-        overview?: T;
         title?: T;
         image?: T;
         description?: T;
@@ -966,8 +1020,6 @@ export interface PostsSelect<T extends boolean = true> {
   meta?:
     | T
     | {
-        preview?: T;
-        overview?: T;
         title?: T;
         image?: T;
         description?: T;
@@ -996,8 +1048,6 @@ export interface CategoriesSelect<T extends boolean = true> {
   meta?:
     | T
     | {
-        preview?: T;
-        overview?: T;
         title?: T;
         image?: T;
         description?: T;
@@ -1019,8 +1069,6 @@ export interface WorkSelect<T extends boolean = true> {
   meta?:
     | T
     | {
-        preview?: T;
-        overview?: T;
         title?: T;
         image?: T;
         description?: T;
@@ -1050,8 +1098,6 @@ export interface PlaySelect<T extends boolean = true> {
   meta?:
     | T
     | {
-        preview?: T;
-        overview?: T;
         title?: T;
         image?: T;
         description?: T;
@@ -1081,8 +1127,6 @@ export interface ServicesSelect<T extends boolean = true> {
   meta?:
     | T
     | {
-        preview?: T;
-        overview?: T;
         title?: T;
         image?: T;
         description?: T;
@@ -1132,11 +1176,9 @@ export interface PillarsSelect<T extends boolean = true> {
   seo?:
     | T
     | {
-        overview?: T;
         image?: T;
         title?: T;
         description?: T;
-        preview?: T;
       };
   updatedAt?: T;
   createdAt?: T;
@@ -1182,11 +1224,9 @@ export interface JourneysSelect<T extends boolean = true> {
   seo?:
     | T
     | {
-        overview?: T;
         image?: T;
         title?: T;
         description?: T;
-        preview?: T;
       };
   updatedAt?: T;
   createdAt?: T;
@@ -1241,9 +1281,7 @@ export interface TeamSelect<T extends boolean = true> {
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
-  firstName?: T;
-  lastName?: T;
-  photo?: T;
+  name?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
@@ -1273,11 +1311,9 @@ export interface IndustriesSelect<T extends boolean = true> {
   seo?:
     | T
     | {
-        overview?: T;
         image?: T;
         title?: T;
         description?: T;
-        preview?: T;
       };
   updatedAt?: T;
   createdAt?: T;
