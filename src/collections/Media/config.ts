@@ -22,7 +22,7 @@ export const Media: CollectionConfig = {
       name: 'alt',
       type: 'text',
       label: 'Alt Text',
-      required: false,
+      required: true,
       admin: {
         description: 'This is the alt text for the image',
       },
@@ -31,6 +31,7 @@ export const Media: CollectionConfig = {
       name: 'caption',
       type: 'textarea',
       label: 'Caption',
+      required: false,
       admin: {
         description:
           'This is the caption for the image. Optional, but helpful for Blog Posts requiring a caption.',

@@ -24,6 +24,7 @@ export const Users: CollectionConfig = {
           name: 'name',
           type: 'text',
           label: 'Full Name',
+          required: true,
         },
       ],
     },

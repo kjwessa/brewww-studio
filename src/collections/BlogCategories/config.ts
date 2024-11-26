@@ -27,21 +27,16 @@ export const BlogCategories: CollectionConfig = {
       type: 'text',
       label: 'Category Title',
       unique: true,
+      required: true,
       admin: {
         description: 'The title of the category as it appears around the site.',
       },
-      required: true,
     },
-    // ...slugField(),
-    // {
-    //   type: 'tabs',
-    //   tabs: [metaTab],
-    // },
+    ...slugField(),
   ],
 
   //* Admin Settings
   admin: {
-    description: 'Categories for blog posts.',
     defaultColumns: ['title'],
     group: 'Blog Posts',
     listSearchableFields: ['title'],

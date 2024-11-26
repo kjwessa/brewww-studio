@@ -10,8 +10,8 @@ import { plugins } from './plugin'
 import { defaultLexical } from './fields/defaultLexical'
 
 //* Import Collections
-// import { BlogCategories } from '@/collections/BlogCategories/config'
-// import { BlogPosts } from '@/collections/BlogPosts/config'
+import { BlogCategories } from '@/collections/BlogCategories/config'
+import { BlogPosts } from '@/collections/BlogPosts/config'
 // import { Brands } from '@/collections/Brands/config'
 // import { FAQ } from '@/collections/FAQ/config'
 // import { Industries } from './collections/Industries/config'
@@ -72,7 +72,7 @@ export default buildConfig({
     user: Users.slug,
   },
 
-  collections: [Media, Users, Pages],
+  collections: [Media, Users, Pages, BlogPosts, BlogCategories],
   db: postgresAdapter({
     pool: {
       connectionString: process.env.POSTGRES_URL,

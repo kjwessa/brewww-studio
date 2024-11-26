@@ -12,7 +12,7 @@ import { slugField } from '@/fields/slug'
 // Utilities & Hooks
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
 import { populatePublishedOn } from '@/hooks/populatePublishedOn'
-// import { revalidatePost } from './hooks/revalidatePost'
+import { revalidatePost } from './hooks/revalidatePost'
 
 import { BlocksFeature, HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 
@@ -39,24 +39,75 @@ export const BlogPosts: CollectionConfig = {
         description: 'The title of the article as it appears around the site.',
       },
     },
-    // {
-    //   name: 'tagline',
-    //   type: 'text',
-    //   label: 'Post Tagline',
-    //   required: false,
-    //   admin: {
-    //     description: 'The tagline of the article as it appears around the site.',
-    //   },
-    // },
-    // {
-    //   name: 'description',
-    //   type: 'textarea',
-    //   label: 'Post Description',
-    //   required: false,
-    //   admin: {
-    //     description: 'The description of the article as it appears around the site.',
-    //   },
-    // },
+    {
+      name: 'description',
+      type: 'textarea',
+      label: 'Post Description',
+      required: false,
+      admin: {
+        description: 'The description of the article as it appears around the site.',
+      },
+    },
+    {
+      name: 'tagline',
+      type: 'text',
+      label: 'Post Tagline',
+      required: false,
+      admin: {
+        description: 'The tagline of the article as it appears around the site.',
+      },
+    },
+    {
+      name: 'content',
+      type: 'richText',
+      label: 'Content',
+      editor: lexicalEditor({
+        features: ({ defaultFeatures }) => [
+          ...defaultFeatures,
+          HeadingFeature({
+            enabledHeadingSizes: ['h2', 'h3', 'h4'],
+          }),
+          BlocksFeature({
+            blocks: [],
+          }),
+        ],
+      }),
+      required: true,
+    },
+
+    ...slugField(),
+    {
+      name: 'publishedOn',
+      type: 'date',
+      required: true,
+      label: 'Published On',
+      admin: {
+        position: 'sidebar',
+        date: {
+          pickerAppearance: 'dayAndTime',
+        },
+      },
+    },
+    {
+      name: 'image',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Featured Image',
+      required: true,
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'categories',
+      type: 'relationship',
+      admin: {
+        position: 'sidebar',
+      },
+      hasMany: true,
+      relationTo: 'categories',
+      required: true,
+    },
     // {
     //   type: 'tabs',
     //   tabs: [
@@ -94,29 +145,6 @@ export const BlogPosts: CollectionConfig = {
     //     position: 'sidebar',
     //   },
     // },
-    // ...slugField(),
-    // {
-    //   name: 'publishedOn',
-    //   type: 'date',
-    //   required: false,
-    //   label: 'Published On',
-    //   admin: {
-    //     position: 'sidebar',
-    //     date: {
-    //       pickerAppearance: 'dayAndTime',
-    //     },
-    //   },
-    // },
-    // {
-    //   name: 'image',
-    //   type: 'upload',
-    //   relationTo: 'media',
-    //   label: 'Featured Image',
-    //   required: false,
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    // },
     // {
     //   name: 'status',
     //   type: 'select',
@@ -136,39 +164,12 @@ export const BlogPosts: CollectionConfig = {
     //     position: 'sidebar',
     //   },
     // },
-    // {
-    //   name: 'categories',
-    //   type: 'relationship',
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    //   hasMany: true,
-    //   relationTo: 'categories',
-    //   required: false,
-    // },
-    // {
-    //   name: 'relatedPosts',
-    //   type: 'relationship',
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    //   filterOptions: ({ id }) => {
-    //     return {
-    //       id: {
-    //         not_in: [id],
-    //       },
-    //     }
-    //   },
-    //   hasMany: true,
-    //   relationTo: 'posts',
-    // },
   ],
 
   //* Admin Settings
 
   admin: {
-    description: 'Writing brings clarity. Writing is a way to make sense of the world.',
-    defaultColumns: ['title', 'status', 'publishedOn', 'updatedAt', 'featured'],
+    defaultColumns: ['title', 'status', 'publishedOn', 'updatedAt'],
     group: 'Blog Posts',
     listSearchableFields: ['title'],
     // livePreview: {
@@ -207,6 +208,6 @@ export const BlogPosts: CollectionConfig = {
   },
   hooks: {
     beforeChange: [populatePublishedOn],
-    // afterChange: [revalidatePost],
+    afterChange: [revalidatePost],
   },
 }
