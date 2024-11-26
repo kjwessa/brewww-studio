@@ -85,7 +85,7 @@ export default buildConfig({
   }),
   editor: defaultLexical,
   // globals: [Header, Footer],
-  // plugins: [...plugins],
+  plugins: [...plugins],
   secret: process.env.PAYLOAD_SECRET || '',
   sharp,
   typescript: {

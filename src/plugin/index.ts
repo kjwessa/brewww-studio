@@ -2,27 +2,27 @@ import { Plugin } from 'payload'
 import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
 import { redirectsPlugin } from '@payloadcms/plugin-redirects'
 import { seoPlugin } from '@payloadcms/plugin-seo'
-// import { Page, Post } from '@/payload-types'
+import { Page, Post } from '@/payload-types'
 import { s3Storage } from '@payloadcms/storage-s3'
 import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
 
 //* Import Hooks
 import { revalidateRedirects } from '@/hooks/revalidateRedirects'
 
-// const generateTitle: GenerateTitle<Page | Post> = ({ doc }: { doc: any }) => {
-//   return doc?.title ? `${doc.title} | Brewww Studio` : 'Brewww Studio '
-// }
+const generateTitle: GenerateTitle<Page | Post> = ({ doc }: { doc: any }) => {
+  return doc?.title ? `${doc.title} | Brewww Studio` : 'Brewww Studio '
+}
 
-// const generateURL: GenerateURL<Page | Post> = ({ doc }: { doc: any }) => {
-//   if (!doc?.slug) return process.env.NEXT_PUBLIC_SERVER_URL!
+const generateURL: GenerateURL<Page | Post> = ({ doc }: { doc: any }) => {
+  if (!doc?.slug) return process.env.NEXT_PUBLIC_SERVER_URL!
 
-//   // Add the /blog prefix for posts
-//   if (doc.collection === 'posts') {
-//     return `${process.env.NEXT_PUBLIC_SERVER_URL!}/blog/${doc.slug}`
-//   }
+  // Add the /blog prefix for posts
+  if (doc.collection === 'posts') {
+    return `${process.env.NEXT_PUBLIC_SERVER_URL!}/blog/${doc.slug}`
+  }
 
-//   return `${process.env.NEXT_PUBLIC_SERVER_URL!}/${doc.slug}`
-// }
+  return `${process.env.NEXT_PUBLIC_SERVER_URL!}/${doc.slug}`
+}
 
 export const plugins: Plugin[] = [
   redirectsPlugin({
@@ -70,8 +70,8 @@ export const plugins: Plugin[] = [
   }),
 
   seoPlugin({
-    // generateTitle,
-    // generateURL,
+    generateTitle,
+    generateURL,
     uploadsCollection: 'media',
   }),
   formBuilderPlugin({
