@@ -22,7 +22,7 @@ import { Pages } from '@/collections/Pages/config'
 // import { Pillars } from '@/collections/Pillars/config'
 // import { Playground } from '@/collections/Play/config'
 // import { Results } from '@/collections/Results/config'
-// import { Services } from '@/collections/Services/config'
+import { Services } from '@/collections/Services/config'
 // import { Team } from '@/collections/Team/config'
 // import { Technologies } from '@/collections/Technologies/config'
 // import { Testimonials } from '@/collections/Testimonials/config'
@@ -41,36 +41,34 @@ const dirname = path.dirname(filename)
 export default buildConfig({
   admin: {
     components: {
-      // Temporarily disable components that depend on pages collection
       beforeLogin: [],
       beforeDashboard: [],
     },
     importMap: {
       baseDir: path.resolve(dirname),
     },
-    // Temporarily disable live preview
-    // livePreview: {
-    //   breakpoints: [
-    //     {
-    //       label: 'Mobile',
-    //       name: 'mobile',
-    //       width: 375,
-    //       height: 667,
-    //     },
-    //     {
-    //       label: 'Tablet',
-    //       name: 'tablet',
-    //       width: 768,
-    //       height: 1024,
-    //     },
-    //     {
-    //       label: 'Desktop',
-    //       name: 'desktop',
-    //       width: 1440,
-    //       height: 900,
-    //     },
-    //   ],
-    // },
+    livePreview: {
+      breakpoints: [
+        {
+          label: 'Mobile',
+          name: 'mobile',
+          width: 375,
+          height: 667,
+        },
+        {
+          label: 'Tablet',
+          name: 'tablet',
+          width: 768,
+          height: 1024,
+        },
+        {
+          label: 'Desktop',
+          name: 'desktop',
+          width: 1440,
+          height: 900,
+        },
+      ],
+    },
     user: Users.slug,
   },
 
@@ -84,7 +82,7 @@ export default buildConfig({
     migrationDir: './src/database/migrations',
     idType: 'uuid',
   }),
-  // editor: defaultLexical,
+  editor: defaultLexical,
   // globals: [Header, Footer],
   // plugins: [...plugins],
   secret: process.env.PAYLOAD_SECRET || '',
