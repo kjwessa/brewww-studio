@@ -37,7 +37,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const dynamicContent = await Promise.all(
     Object.entries(config.collections).map(async ([_, collection]) => {
       try {
-        const { docs } = await fetch(
+        const response = await fetch(
           `${config.serverUrl}/api/${collection.endpoint}?where[_status][equals]=published&limit=0`,
           {
             // Use stale-while-revalidate caching
@@ -46,8 +46,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
               tags: ['sitemap', `collection-${collection.endpoint}`], // Tag-based invalidation
             },
           },
-        ).then((res) => res.json())
-        return { docs, ...collection }
+        )
+
+        if (!response.ok) {
+          console.error(`Failed to fetch ${collection.endpoint}: ${response.status}`)
+          return { docs: [], ...collection }
+        }
+
+        const data = await response.json()
+        return { 
+          docs: Array.isArray(data?.docs) ? data.docs : [], 
+          ...collection 
+        }
       } catch (error) {
         console.error(`Error fetching ${collection.endpoint}:`, error)
         return { docs: [], ...collection }
@@ -66,12 +76,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // Dynamic routes
     ...dynamicContent.flatMap(({ docs, prefix, priority }) =>
-      docs.map((doc: any) => ({
-        url: `${config.serverUrl}${prefix}${doc.slug}`,
-        lastModified: new Date(doc.updatedAt).toISOString(),
+      (docs || []).map((doc: any) => ({
+        url: `${config.serverUrl}${prefix}${doc?.slug || ''}`,
+        lastModified: new Date(doc?.updatedAt || Date.now()).toISOString(),
         changeFrequency: 'weekly' as const,
         priority,
-      })),
+      })).filter(entry => entry.url.endsWith('/')), // Filter out any malformed URLs
     ),
   ]
 
