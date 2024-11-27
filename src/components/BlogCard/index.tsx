@@ -11,12 +11,14 @@ export const BlogCard = ({ post }: { post: Post }) => {
     <Link className="relative" href={`/journal/${post.slug}`}>
       <div className="mb-5 overflow-hidden rounded-md">
         <div className="relative h-[0] w-full pb-[66%]">
-          <Image
-            className="object-cover"
-            src={(post.image as Media)?.url || ''}
-            alt={post.title}
-            fill
-          />
+          {post.image && (
+            <Image
+              className="object-cover"
+              src={typeof post.image === 'string' ? post.image : post.image.url || ''}
+              alt={post.title}
+              fill
+            />
+          )}
         </div>
       </div>
       <div className="mt-4">
