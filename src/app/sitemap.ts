@@ -1,31 +1,37 @@
-import type { MetadataRoute } from "next";
+import type { MetadataRoute } from 'next'
 
 // Site-specific configuration
 const config = {
   serverUrl: process.env.SITE_URL || 'https://brewww.studio',
   // Add static routes with their configurations
   staticRoutes: [
-    { path: "/", priority: 1.0 },
-    { path: "/about", priority: 0.8 },
-    { path: "/location", priority: 0.9 },
+    { path: '/', priority: 1.0 },
+    { path: '/about', priority: 0.8 },
+    { path: '/location', priority: 0.9 },
+    { path: '/journal', priority: 0.9 },
   ],
   // Dynamic content configuration
   collections: {
     pages: {
-      endpoint: "pages",
-      prefix: "/",
+      endpoint: 'pages',
+      prefix: '/',
       priority: 0.8,
     },
     locations: {
-      endpoint: "locations",
-      prefix: "/location/",
+      endpoint: 'locations',
+      prefix: '/location/',
       priority: 0.9,
     },
+    blogPosts: {
+      endpoint: 'posts',
+      prefix: '/journal/',
+      priority: 0.8,
+    },
   },
-} as const;
+} as const
 
-// Revalidate every 12 hours
-export const revalidate = 43200;
+// Revalidate every 6 hours (21600 seconds)
+export const revalidate = 21600
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const dynamicContent = await Promise.all(
@@ -34,38 +40,40 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         const { docs } = await fetch(
           `${config.serverUrl}/api/${collection.endpoint}?where[_status][equals]=published&limit=0`,
           {
-            cache: "no-store",
+            // Use stale-while-revalidate caching
             next: {
-              tags: ["sitemap"],
+              revalidate: 21600, // Cache for 6 hours
+              tags: ['sitemap', `collection-${collection.endpoint}`], // Tag-based invalidation
             },
           },
-        ).then((res) => res.json());
-        return { docs, ...collection };
+        ).then((res) => res.json())
+        return { docs, ...collection }
       } catch (error) {
-        return { docs: [], ...collection };
+        console.error(`Error fetching ${collection.endpoint}:`, error)
+        return { docs: [], ...collection }
       }
     }),
-  );
+  )
 
   const sitemapData: MetadataRoute.Sitemap = [
     // Static routes
-    ...config.staticRoutes.map((route) => ({
-      url: `${config.serverUrl}${route.path}`,
+    ...config.staticRoutes.map(({ path, priority }) => ({
+      url: `${config.serverUrl}${path}`,
       lastModified: new Date().toISOString(),
-      changeFrequency: "weekly" as const,
-      priority: route.priority,
+      changeFrequency: 'weekly' as const,
+      priority,
     })),
 
-    // Dynamic content
+    // Dynamic routes
     ...dynamicContent.flatMap(({ docs, prefix, priority }) =>
-      docs.map((doc) => ({
+      docs.map((doc: any) => ({
         url: `${config.serverUrl}${prefix}${doc.slug}`,
         lastModified: new Date(doc.updatedAt).toISOString(),
-        changeFrequency: "weekly" as const,
+        changeFrequency: 'weekly' as const,
         priority,
       })),
     ),
-  ];
+  ]
 
-  return sitemapData;
+  return sitemapData
 }
