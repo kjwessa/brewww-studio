@@ -30,6 +30,8 @@ const emptyLexicalContent = {
   },
 } as const
 
+export const revalidate = 3600 // Revalidate every hour
+
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
   const posts = await payload.find({
@@ -42,6 +44,12 @@ export async function generateStaticParams() {
       params: { slug },
     })) || []
   )
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  return {
+    title: 'Blog Post',
+  }
 }
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
