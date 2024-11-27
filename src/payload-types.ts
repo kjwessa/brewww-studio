@@ -171,8 +171,8 @@ export interface MediaBlock {
 export interface Post {
   id: string;
   title: string;
-  description?: string | null;
   tagline?: string | null;
+  description?: string | null;
   content: {
     root: {
       type: string;
@@ -602,8 +602,8 @@ export interface PagesSelect<T extends boolean = true> {
  */
 export interface PostsSelect<T extends boolean = true> {
   title?: T;
-  description?: T;
   tagline?: T;
+  description?: T;
   content?: T;
   slug?: T;
   slugLock?: T;
