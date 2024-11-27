@@ -51,8 +51,12 @@ export const SlugComponent: React.FC<SlugComponentProps> = ({
 
   // Update actual slug value when conditions are met
   useEffect(() => {
-    // Only update the slug if it's unlocked (checkboxValue is false)
-    if (!checkboxValue) {
+    // Only update the slug if:
+    // 1. It's unlocked (checkboxValue is false)
+    // 2. AND either:
+    //    a) The current value is empty (new post)
+    //    b) OR we're not in edit mode (value hasn't been saved yet)
+    if (!checkboxValue && (!value || !value.length)) {
       if (targetFieldValue) {
         const formattedSlug = formatSlug(targetFieldValue)
         if (value !== formattedSlug) setValue(formattedSlug)
@@ -70,6 +74,8 @@ export const SlugComponent: React.FC<SlugComponentProps> = ({
         path: checkboxFieldPath,
         value: !checkboxValue,
       })
+      // When unlocking, don't auto-update from title
+      // This allows manual editing while unlocked
     },
     [checkboxValue, checkboxFieldPath, dispatchFields],
   )
