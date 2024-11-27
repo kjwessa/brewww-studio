@@ -1,5 +1,5 @@
 // Payload Imports
-import type { CollectionConfig } from 'payload'
+import type { CollectionConfig, GetAdminThumbnail } from 'payload'
 
 // Access Control
 import { authenticated } from '@/access/authenticated'
@@ -44,7 +44,16 @@ export const Media: CollectionConfig = {
     listSearchableFields: ['url', 'alt'],
   },
   upload: {
-    adminThumbnail: 'thumbnail',
+    adminThumbnail: (({
+      doc,
+    }: {
+      doc: { sizes: { thumbnail?: { url: string } }; url?: string }
+    }) => {
+      if (doc.sizes?.thumbnail?.url) {
+        return doc.sizes.thumbnail.url
+      }
+      return doc.url || null
+    }) satisfies GetAdminThumbnail,
     focalPoint: true,
     imageSizes: [
       {

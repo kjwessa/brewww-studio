@@ -52,7 +52,12 @@ export const plugins: Plugin[] = [
       media: {
         prefix: 'media',
         disablePayloadAccessControl: true,
-        generateFileURL: (file: { filename: string }) => {
+        generateFileURL: (file: {
+          filename: string
+          prefix?: string
+          size?: { name: string; width?: number; height?: number }
+        }) => {
+          // Just use the filename as-is, since Payload already adds the dimensions
           return `${process.env.CLOUDFLARE_PUBLIC_URL}/${file.filename}`
         },
       },
