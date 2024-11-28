@@ -52,13 +52,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
-export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params
-  if (!resolvedParams.slug) {
+export default async function PostPage(props: any) {
+  const { params } = props
+  if (!params?.slug) {
     notFound()
   }
 
-  const post = await queryPostBySlug({ slug: resolvedParams.slug })
+  const post = await queryPostBySlug({ slug: params.slug })
   if (!post) {
     notFound()
   }
