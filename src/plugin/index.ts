@@ -18,7 +18,7 @@ const generateURL: GenerateURL<Page | Post> = ({ doc }: { doc: any }) => {
 
   // Add the /blog prefix for posts
   if (doc.collection === 'posts') {
-    return `${process.env.NEXT_PUBLIC_SERVER_URL!}/blog/${doc.slug}`
+    return `${process.env.NEXT_PUBLIC_SERVER_URL!}/journal/${doc.slug}`
   }
 
   return `${process.env.NEXT_PUBLIC_SERVER_URL!}/${doc.slug}`
@@ -57,7 +57,6 @@ export const plugins: Plugin[] = [
           prefix?: string
           size?: { name: string; width?: number; height?: number }
         }) => {
-          // Just use the filename as-is, since Payload already adds the dimensions
           return `${process.env.CLOUDFLARE_PUBLIC_URL}/${file.filename}`
         },
       },
