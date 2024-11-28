@@ -21,6 +21,7 @@ export interface Config {
     faq: Faq;
     brands: Brand;
     technologies: Technology;
+    testimonials: Testimonial;
     redirects: Redirect;
     forms: Form;
     'form-submissions': FormSubmission;
@@ -40,6 +41,7 @@ export interface Config {
     faq: FaqSelect<false> | FaqSelect<true>;
     brands: BrandsSelect<false> | BrandsSelect<true>;
     technologies: TechnologiesSelect<false> | TechnologiesSelect<true>;
+    testimonials: TestimonialsSelect<false> | TestimonialsSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
@@ -251,6 +253,21 @@ export interface Work {
 export interface Faq {
   id: string;
   title?: string | null;
+  answer?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -273,6 +290,34 @@ export interface Brand {
 export interface Technology {
   id: string;
   title: string;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials".
+ */
+export interface Testimonial {
+  id: string;
+  title: string;
+  callout: string;
+  testimonial: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  author: string;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -529,6 +574,10 @@ export interface PayloadLockedDocument {
         value: string | Technology;
       } | null)
     | ({
+        relationTo: 'testimonials';
+        value: string | Testimonial;
+      } | null)
+    | ({
         relationTo: 'redirects';
         value: string | Redirect;
       } | null)
@@ -741,6 +790,7 @@ export interface WorkSelect<T extends boolean = true> {
  */
 export interface FaqSelect<T extends boolean = true> {
   title?: T;
+  answer?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
@@ -761,6 +811,19 @@ export interface BrandsSelect<T extends boolean = true> {
  */
 export interface TechnologiesSelect<T extends boolean = true> {
   title?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials_select".
+ */
+export interface TestimonialsSelect<T extends boolean = true> {
+  title?: T;
+  callout?: T;
+  testimonial?: T;
+  author?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
