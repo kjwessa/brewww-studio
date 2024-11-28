@@ -39,8 +39,63 @@ The development journey for Brewww Studio is outlined as follows:
 
 ## Technologies Used
 
-This project is crafted with the following technologies:
+This project is built with modern web technologies and tools:
 
-- **Next JS**
-- **Tailwind**
-- **TypeScript**
+### Core Technologies
+- **Next.js 15** - React framework for production
+- **React 19** - UI library
+- **TypeScript 5** - Type-safe JavaScript
+- **Tailwind CSS 3** - Utility-first CSS framework
+- **Payload CMS 3** - Headless CMS for content management
+- **PostgreSQL** - Database (via @payloadcms/db-postgres)
+- **Neon Database** - Serverless Postgres
+
+### Key Dependencies
+- **Motion 12** - UI animations
+- **Radix UI** - Accessible UI components
+- **Lexical** - Rich text editor (@payloadcms/richtext-lexical)
+- **S3 Storage** - Media storage (@payloadcms/storage-s3)
+- **Sentry** - Error tracking and monitoring
+
+## Requirements
+
+- Node.js ^18.20.2 or >=20.9.0
+- PNPM package manager
+- PostgreSQL database
+
+## Getting Started
+
+1. **Install Dependencies**
+```bash
+pnpm install
+```
+
+2. **Environment Setup**
+Create a `.env` file with necessary environment variables (database, S3, etc.)
+
+3. **Database Setup**
+```bash
+pnpm db:migrate
+```
+
+4. **Development**
+```bash
+pnpm dev
+```
+
+5. **Build & Start**
+```bash
+pnpm build
+pnpm start
+```
+
+## Available Scripts
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm start` - Start production server
+- `pnpm clean` - Clean installation and regenerate types
+- `pnpm lint` - Run linting
+- `pnpm db:migrate` - Run database migrations
+- `pnpm db:status` - Check migration status
+- `pnpm generate:types` - Generate Payload types
