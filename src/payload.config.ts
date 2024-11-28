@@ -12,8 +12,8 @@ import { defaultLexical } from './fields/defaultLexical'
 //* Import Collections
 import { BlogCategories } from '@/collections/BlogCategories/config'
 import { BlogPosts } from '@/collections/BlogPosts/config'
-// import { Brands } from '@/collections/Brands/config'
-// import { FAQ } from '@/collections/FAQ/config'
+import { Brands } from '@/collections/Brands/config'
+import { FAQ } from '@/collections/FAQ/config'
 // import { Industries } from './collections/Industries/config'
 // import { Journeys } from '@/collections/Journeys/config'
 import { Location } from '@/collections/Locations/config'
@@ -24,10 +24,10 @@ import { Pages } from '@/collections/Pages/config'
 // import { Results } from '@/collections/Results/config'
 import { Services } from '@/collections/Services/config'
 // import { Team } from '@/collections/Team/config'
-// import { Technologies } from '@/collections/Technologies/config'
+import { Technologies } from '@/collections/Technologies/config'
 // import { Testimonials } from '@/collections/Testimonials/config'
 import { Users } from '@/collections/Users/config'
-// import { Work } from '@/collections/Work/config'
+import { Work } from '@/collections/Work/config'
 
 //* Import Globals
 // import { Header } from './globals/Header/index'
@@ -72,7 +72,18 @@ export default buildConfig({
     user: Users.slug,
   },
 
-  collections: [Media, Users, Pages, BlogPosts, BlogCategories, Location],
+  collections: [
+    Media,
+    Users,
+    Pages,
+    BlogPosts,
+    BlogCategories,
+    Location,
+    Work,
+    FAQ,
+    Brands,
+    Technologies,
+  ],
   db: postgresAdapter({
     pool: {
       connectionString: process.env.POSTGRES_URL,

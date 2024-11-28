@@ -4,7 +4,6 @@ import { BlogCard } from '@/components/BlogCard/index'
 import { CategoryFilter } from '@/components/CategoryFilter/index'
 import { Category, Post } from '@/payload-types'
 
-// Add revalidation time - 1 hour
 export const revalidate = 3600
 
 export default async function BlogPage() {
@@ -21,7 +20,6 @@ export default async function BlogPage() {
     sort: '-publishedOn',
   })
 
-  // Count posts for each category
   const categoryCounts = categories.docs.reduce(
     (acc, category) => {
       acc[category.id] = posts.docs.filter((post) =>

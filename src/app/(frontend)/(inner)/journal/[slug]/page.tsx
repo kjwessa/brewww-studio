@@ -30,7 +30,7 @@ const emptyLexicalContent = {
   },
 } as const
 
-export const revalidate = 3600 // Revalidate every hour
+export const revalidate = 3600
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -46,19 +46,30 @@ export async function generateStaticParams() {
   )
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}): Promise<Metadata> {
   return {
     title: 'Blog Post',
   }
 }
 
-export default async function PostPage(props: any) {
-  const { params } = props
-  if (!params?.slug) {
+type Params = Promise<{ slug: string | string[] }>
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
+
+export default async function PostPage(props: { params: Params; searchParams?: SearchParams }) {
+  const params = await props.params
+  const searchParams = await props.searchParams
+  const { slug } = params
+  const slugValue = Array.isArray(slug) ? slug[0] : slug
+  
+  if (!slugValue) {
     notFound()
   }
 
-  const post = await queryPostBySlug({ slug: params.slug })
+  const post = await queryPostBySlug({ slug: slugValue })
   if (!post) {
     notFound()
   }
