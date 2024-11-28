@@ -24,12 +24,12 @@ export const FAQ: CollectionConfig = {
       label: 'Question',
       required: false,
     },
-    // {
-    //   name: 'answer',
-    //   type: 'richText',
-    //   label: 'Answer',
-    //   required: false,
-    // },
+    {
+      name: 'answer',
+      type: 'richText',
+      label: 'Answer',
+      required: false,
+    },
   ],
 
   //* Admin Settings

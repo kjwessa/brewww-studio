@@ -5,6 +5,8 @@ import * as migration_20241128_032031_add_location_title from './20241128_032031
 import * as migration_20241128_032621_add_work_title from './20241128_032621_add_work_title';
 import * as migration_20241128_032723_add_faq_title from './20241128_032723_add_faq_title';
 import * as migration_20241128_032942_add_brand_title_and_technology_title from './20241128_032942_add_brand_title_and_technology_title';
+import * as migration_20241128_034215_add_faq_answer from './20241128_034215_add_faq_answer';
+import * as migration_20241128_034546_add_callout_and_full_testimonial_fields from './20241128_034546_add_callout_and_full_testimonial_fields';
 
 export const migrations = [
   {
@@ -40,6 +42,16 @@ export const migrations = [
   {
     up: migration_20241128_032942_add_brand_title_and_technology_title.up,
     down: migration_20241128_032942_add_brand_title_and_technology_title.down,
-    name: '20241128_032942_add_brand_title_and_technology_title'
+    name: '20241128_032942_add_brand_title_and_technology_title',
+  },
+  {
+    up: migration_20241128_034215_add_faq_answer.up,
+    down: migration_20241128_034215_add_faq_answer.down,
+    name: '20241128_034215_add_faq_answer',
+  },
+  {
+    up: migration_20241128_034546_add_callout_and_full_testimonial_fields.up,
+    down: migration_20241128_034546_add_callout_and_full_testimonial_fields.down,
+    name: '20241128_034546_add_callout_and_full_testimonial_fields'
   },
 ];

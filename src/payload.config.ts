@@ -25,7 +25,7 @@ import { Pages } from '@/collections/Pages/config'
 import { Services } from '@/collections/Services/config'
 // import { Team } from '@/collections/Team/config'
 import { Technologies } from '@/collections/Technologies/config'
-// import { Testimonials } from '@/collections/Testimonials/config'
+import { Testimonials } from '@/collections/Testimonials/config'
 import { Users } from '@/collections/Users/config'
 import { Work } from '@/collections/Work/config'
 
@@ -83,6 +83,7 @@ export default buildConfig({
     FAQ,
     Brands,
     Technologies,
+    Testimonials,
   ],
   db: postgresAdapter({
     pool: {
