@@ -16,7 +16,7 @@ import { BlogPosts } from '@/collections/BlogPosts/config'
 // import { FAQ } from '@/collections/FAQ/config'
 // import { Industries } from './collections/Industries/config'
 // import { Journeys } from '@/collections/Journeys/config'
-// import { Location } from '@/collections/Locations/config'
+import { Location } from '@/collections/Locations/config'
 import { Media } from '@/collections/Media/config'
 import { Pages } from '@/collections/Pages/config'
 // import { Pillars } from '@/collections/Pillars/config'
@@ -72,7 +72,7 @@ export default buildConfig({
     user: Users.slug,
   },
 
-  collections: [Media, Users, Pages, BlogPosts, BlogCategories],
+  collections: [Media, Users, Pages, BlogPosts, BlogCategories, Location],
   db: postgresAdapter({
     pool: {
       connectionString: process.env.POSTGRES_URL,
