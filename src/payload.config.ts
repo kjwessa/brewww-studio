@@ -19,11 +19,11 @@ import { FAQ } from '@/collections/FAQ/config'
 import { Location } from '@/collections/Locations/config'
 import { Media } from '@/collections/Media/config'
 import { Pages } from '@/collections/Pages/config'
-// import { Pillars } from '@/collections/Pillars/config'
-// import { Playground } from '@/collections/Play/config'
-// import { Results } from '@/collections/Results/config'
+import { Pillars } from '@/collections/Pillars/config'
+import { Playground } from '@/collections/Play/config'
+import { Results } from '@/collections/Results/config'
 import { Services } from '@/collections/Services/config'
-// import { Team } from '@/collections/Team/config'
+import { Team } from '@/collections/Team/config'
 import { Technologies } from '@/collections/Technologies/config'
 import { Testimonials } from '@/collections/Testimonials/config'
 import { Users } from '@/collections/Users/config'
@@ -84,6 +84,13 @@ export default buildConfig({
     Brands,
     Technologies,
     Testimonials,
+    Services,
+    Pillars,
+    Playground,
+    Results,
+    // Industries,
+    Team,
+    // Journeys,
   ],
   db: postgresAdapter({
     pool: {

@@ -6,7 +6,7 @@ import { authenticated } from '@/access/authenticated'
 import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
 // Fields
-// import { slugField } from '@/fields/slug'
+import { slugField } from '@/fields/slug'
 
 export const Team: CollectionConfig = {
   slug: 'team',
@@ -27,25 +27,25 @@ export const Team: CollectionConfig = {
       unique: true,
       label: 'Full Name',
     },
-    // ...slugField(),
-    // {
-    //   name: 'role',
-    //   type: 'text',
-    //   required: false,
-    //   label: 'Role',
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    // },
-    // {
-    //   name: 'image',
-    //   type: 'upload',
-    //   relationTo: 'media',
-    //   label: 'Featured Image',
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    // },
+    ...slugField(),
+    {
+      name: 'role',
+      type: 'text',
+      required: false,
+      label: 'Role',
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'image',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Featured Image',
+      admin: {
+        position: 'sidebar',
+      },
+    },
   ],
 
   //* Admin Settings

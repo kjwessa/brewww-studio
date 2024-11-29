@@ -35,24 +35,24 @@ export const Playground: CollectionConfig = {
         description: 'Add the title of the Playground case study here.',
       },
     },
-    // {
-    //   name: 'tagline',
-    //   type: 'text',
-    //   label: 'Tagline',
-    //   required: false,
-    //   admin: {
-    //     description: 'Add the tagline for the playground here.',
-    //   },
-    // },
-    // {
-    //   name: 'description',
-    //   type: 'textarea',
-    //   label: 'Description',
-    //   required: false,
-    //   admin: {
-    //     description: 'Add the description for the playground here.',
-    //   },
-    // },
+    {
+      name: 'tagline',
+      type: 'text',
+      label: 'Tagline',
+      required: false,
+      admin: {
+        description: 'Add the tagline for the playground here.',
+      },
+    },
+    {
+      name: 'description',
+      type: 'textarea',
+      label: 'Description',
+      required: false,
+      admin: {
+        description: 'Add the description for the playground here.',
+      },
+    },
 
     // {
     //   type: 'tabs',
@@ -81,16 +81,16 @@ export const Playground: CollectionConfig = {
     //     ],
     //   },
     // },
-    // {
-    //   name: 'image',
-    //   type: 'upload',
-    //   relationTo: 'media',
-    //   label: 'Featured Image',
-    //   required: false,
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    // },
+    {
+      name: 'image',
+      type: 'upload',
+      relationTo: 'media',
+      label: 'Featured Image',
+      required: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
     // {
     //   name: 'relatedPlaygrounds',
     //   type: 'relationship',
@@ -115,9 +115,9 @@ export const Playground: CollectionConfig = {
 
   admin: {
     description: 'Interior Brewww projects',
-    defaultColumns: ['title', ],
+    defaultColumns: ['title'],
     group: 'Portfolio',
-    listSearchableFields: ['title', ],
+    listSearchableFields: ['title'],
     // livePreview: {
     //   url: ({ data }) => {
     //     const path = generatePreviewPath({

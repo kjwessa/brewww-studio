@@ -35,36 +35,36 @@ export const Services: CollectionConfig = {
         description: 'The name of the service as it appears around the site.',
       },
     },
-    // {
-    //   name: 'tagline',
-    //   type: 'text',
-    //   label: 'Tagline',
-    //   required: false,
-    //   admin: {
-    //     description: 'The tagline of the service as it appears around the site.',
-    //   },
-    // },
+    {
+      name: 'tagline',
+      type: 'text',
+      label: 'Tagline',
+      required: false,
+      admin: {
+        description: 'The tagline of the service as it appears around the site.',
+      },
+    },
 
-    // ...slugField(),
-    // {
-    //   name: 'image',
-    //   type: 'upload',
-    //   label: 'Featured Image',
-    //   required: false,
-    //   relationTo: 'media',
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    // },
-    // {
-    //   name: 'description',
-    //   type: 'textarea',
-    //   label: 'Description',
-    //   required: false,
-    //   admin: {
-    //     description: 'The description of the service as it appears around the site.',
-    //   },
-    // },
+    ...slugField(),
+    {
+      name: 'image',
+      type: 'upload',
+      label: 'Featured Image',
+      required: false,
+      relationTo: 'media',
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'description',
+      type: 'textarea',
+      label: 'Description',
+      required: false,
+      admin: {
+        description: 'The description of the service as it appears around the site.',
+      },
+    },
 
     // {
     //   type: 'tabs',
