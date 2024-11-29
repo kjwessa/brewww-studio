@@ -34,7 +34,7 @@ export function WorkCard({ project }: WorkCardProps) {
                     src={
                       typeof project.image === 'string' ? project.image : project.image?.url || ''
                     }
-                    alt={typeof project.image === 'object' ? project.image?.alt : ''}
+                    alt={(typeof project.image === 'object' && project.image?.alt) || project.title || ''}
                     fill
                     style={{ objectFit: 'cover' }}
                   />
