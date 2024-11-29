@@ -272,32 +272,14 @@ export interface Location {
 export interface Work {
   id: string;
   title: string;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "faq".
- */
-export interface Faq {
-  id: string;
-  title?: string | null;
-  answer?: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
+  tagline?: string | null;
+  description?: string | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  image?: (string | null) | Media;
+  brand?: (string | null) | Brand;
+  featured?: boolean | null;
+  projectLink?: string | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -313,6 +295,32 @@ export interface Brand {
   logoDark?: (string | null) | Media;
   city?: string | null;
   state?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faq".
+ */
+export interface Faq {
+  id: string;
+  title: string;
+  answer: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -912,6 +920,14 @@ export interface LocationsSelect<T extends boolean = true> {
  */
 export interface WorkSelect<T extends boolean = true> {
   title?: T;
+  tagline?: T;
+  description?: T;
+  slug?: T;
+  slugLock?: T;
+  image?: T;
+  brand?: T;
+  featured?: T;
+  projectLink?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;

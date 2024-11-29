@@ -15,7 +15,7 @@ export function AccordionCard({ props }: { props: Faq }): React.ReactElement {
         onClick={() => setIsOpen(!isOpen)}
       >
         <Title el="h3" size="title-small" weight="medium" className="pr-10">
-          {props.title}
+          {props.title || ''}
         </Title>
         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-800">
           <svg
@@ -31,7 +31,7 @@ export function AccordionCard({ props }: { props: Faq }): React.ReactElement {
           </svg>
         </div>
       </button>
-      {isOpen && props.answer.root && (
+      {isOpen && props.answer?.root && (
         <div className="w-full text-lg font-light text-zinc-400">
           <div className="w-full px-6 pb-6 lg:pr-28">
             <div className="w-full text-white">
