@@ -108,62 +108,24 @@ export const BlogPosts: CollectionConfig = {
       relationTo: 'categories',
       required: true,
     },
-    // {
-    //   type: 'tabs',
-    //   tabs: [
-    //     {
-    //       label: 'Content',
-    //       fields: [
-    //         {
-    //           name: 'content',
-    //           type: 'richText',
-    //           label: 'Content',
-    //           editor: lexicalEditor({
-    //             features: ({ defaultFeatures }) => [
-    //               ...defaultFeatures,
-    //               HeadingFeature({
-    //                 enabledHeadingSizes: ['h2', 'h3', 'h4'],
-    //               }),
-    //               BlocksFeature({
-    //                 blocks: [],
-    //               }),
-    //             ],
-    //           }),
-    //           required: false,
-    //         },
-    //       ],
-    //     },
-    //     metaTab,
-    //   ],
-    // },
-    // {
-    //   name: 'featured',
-    //   type: 'checkbox',
-    //   label: 'Featured',
-    //   defaultValue: false,
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    // },
-    // {
-    //   name: 'status',
-    //   type: 'select',
-    //   options: ['not started', 'needs rewrite', 'needs polish', 'needs photos', 'ready'],
-    //   defaultValue: 'not started',
-    //   label: 'Status',
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    // },
-    // {
-    //   name: 'readTime',
-    //   type: 'number',
-    //   required: false,
-    //   label: 'Read Time',
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    // },
+    {
+      name: 'featured',
+      type: 'checkbox',
+      label: 'Featured',
+      defaultValue: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'readTime',
+      type: 'number',
+      required: false,
+      label: 'Read Time',
+      admin: {
+        position: 'sidebar',
+      },
+    },
   ],
 
   //* Admin Settings
