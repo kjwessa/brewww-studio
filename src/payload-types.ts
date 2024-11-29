@@ -231,6 +231,24 @@ export interface Category {
 export interface Location {
   id: string;
   title: string;
+  location?: string | null;
+  heroTitle?: string | null;
+  heroImage?: (string | null) | Media;
+  heroDescription?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;
@@ -776,6 +794,10 @@ export interface CategoriesSelect<T extends boolean = true> {
  */
 export interface LocationsSelect<T extends boolean = true> {
   title?: T;
+  location?: T;
+  heroTitle?: T;
+  heroImage?: T;
+  heroDescription?: T;
   slug?: T;
   slugLock?: T;
   updatedAt?: T;
