@@ -7,6 +7,7 @@ import * as migration_20241128_032723_add_faq_title from './20241128_032723_add_
 import * as migration_20241128_032942_add_brand_title_and_technology_title from './20241128_032942_add_brand_title_and_technology_title';
 import * as migration_20241128_034215_add_faq_answer from './20241128_034215_add_faq_answer';
 import * as migration_20241128_034546_add_callout_and_full_testimonial_fields from './20241128_034546_add_callout_and_full_testimonial_fields';
+import * as migration_20241129_170939_add_location_and_logo_fields_to_brands from './20241129_170939_add_location_and_logo_fields_to_brands';
 
 export const migrations = [
   {
@@ -52,6 +53,11 @@ export const migrations = [
   {
     up: migration_20241128_034546_add_callout_and_full_testimonial_fields.up,
     down: migration_20241128_034546_add_callout_and_full_testimonial_fields.down,
-    name: '20241128_034546_add_callout_and_full_testimonial_fields'
+    name: '20241128_034546_add_callout_and_full_testimonial_fields',
+  },
+  {
+    up: migration_20241129_170939_add_location_and_logo_fields_to_brands.up,
+    down: migration_20241129_170939_add_location_and_logo_fields_to_brands.down,
+    name: '20241129_170939_add_location_and_logo_fields_to_brands'
   },
 ];
