@@ -12,6 +12,7 @@ import * as migration_20241129_225216_add from './20241129_225216_add';
 import * as migration_20241129_225538_add from './20241129_225538_add';
 import * as migration_20241129_225833_add from './20241129_225833_add';
 import * as migration_20241129_230030_add_team_image_and_role from './20241129_230030_add_team_image_and_role';
+import * as migration_20241129_230133_add_logoLight_to_technologies from './20241129_230133_add_logoLight_to_technologies';
 
 export const migrations = [
   {
@@ -82,6 +83,11 @@ export const migrations = [
   {
     up: migration_20241129_230030_add_team_image_and_role.up,
     down: migration_20241129_230030_add_team_image_and_role.down,
-    name: '20241129_230030_add_team_image_and_role'
+    name: '20241129_230030_add_team_image_and_role',
+  },
+  {
+    up: migration_20241129_230133_add_logoLight_to_technologies.up,
+    down: migration_20241129_230133_add_logoLight_to_technologies.down,
+    name: '20241129_230133_add_logoLight_to_technologies'
   },
 ];

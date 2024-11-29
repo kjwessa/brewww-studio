@@ -28,13 +28,13 @@ export const Technologies: CollectionConfig = {
         description: 'Add the title of the technology here.',
       },
     },
-    // {
-    //   name: 'logoLight',
-    //   type: 'upload',
-    //   label: 'Logo',
-    //   required: false,
-    //   relationTo: 'media',
-    // },
+    {
+      name: 'logoLight',
+      type: 'upload',
+      label: 'Logo',
+      required: false,
+      relationTo: 'media',
+    },
   ],
 
   //* Admin Settings
