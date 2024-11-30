@@ -39,26 +39,26 @@ export const Pillars: CollectionConfig = {
         description: 'Add the title of the pillar here.',
       },
     },
-    // {
-    //   name: 'tagline',
-    //   type: 'text',
-    //   label: 'Tagline',
-    //   required: false,
-    //   admin: {
-    //     description: 'Add the tagline for the pillar here.',
-    //   },
-    // },
-    // {
-    //   name: 'services',
-    //   type: 'relationship',
-    //   relationTo: 'services',
-    //   label: 'Services',
-    //   required: false,
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    // },
-    // ...slugField(),
+    {
+      name: 'tagline',
+      type: 'text',
+      label: 'Tagline',
+      required: false,
+      admin: {
+        description: 'Add the tagline for the pillar here.',
+      },
+    },
+    {
+      name: 'services',
+      type: 'relationship',
+      relationTo: 'services',
+      label: 'Services',
+      required: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    ...slugField(),
     // {
     //   name: 'description',
     //   type: 'textarea',

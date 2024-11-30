@@ -10,6 +10,8 @@ import * as migration_20241128_034546_add_callout_and_full_testimonial_fields fr
 import * as migration_20241129_170939_add_location_and_logo_fields_to_brands from './20241129_170939_add_location_and_logo_fields_to_brands';
 import * as migration_20241129_225216_add from './20241129_225216_add';
 import * as migration_20241129_225538_add from './20241129_225538_add';
+import * as migration_20241129_225833_add from './20241129_225833_add';
+import * as migration_20241129_230030_add_team_image_and_role from './20241129_230030_add_team_image_and_role';
 
 export const migrations = [
   {
@@ -70,6 +72,16 @@ export const migrations = [
   {
     up: migration_20241129_225538_add.up,
     down: migration_20241129_225538_add.down,
-    name: '20241129_225538_add'
+    name: '20241129_225538_add',
+  },
+  {
+    up: migration_20241129_225833_add.up,
+    down: migration_20241129_225833_add.down,
+    name: '20241129_225833_add',
+  },
+  {
+    up: migration_20241129_230030_add_team_image_and_role.up,
+    down: migration_20241129_230030_add_team_image_and_role.down,
+    name: '20241129_230030_add_team_image_and_role'
   },
 ];
