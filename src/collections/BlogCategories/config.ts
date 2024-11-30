@@ -7,7 +7,6 @@ import { authenticated } from '@/access/authenticated'
 
 // Fields
 import { slugField } from '@/fields/slug'
-import { PreviewField, OverviewField, MetaTitleField, MetaImageField, MetaDescriptionField } from '@/fields/meta'
 
 export const BlogCategories: CollectionConfig = {
   slug: 'categories',
@@ -33,33 +32,6 @@ export const BlogCategories: CollectionConfig = {
       },
     },
     ...slugField(),
-    {
-      type: 'tabs',
-      tabs: [
-        {
-          label: 'Meta',
-          fields: [
-            PreviewField({
-              hasGenerateFn: true,
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-            }),
-            OverviewField({
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-              imagePath: "meta.image",
-            }),
-            MetaTitleField({
-              hasGenerateFn: true,
-            }),
-            MetaImageField({
-              relationTo: "media",
-            }),
-            MetaDescriptionField({}),
-          ],
-        },
-      ],
-    },
   ],
 
   //* Admin Settings

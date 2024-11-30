@@ -7,7 +7,7 @@ import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
 // Fields
 import { slugField } from '@/fields/slug'
-import { metaTab } from '@/fields/meta'
+
 import { generatePreviewPath } from '@root/utilities/generatePreviewPath'
 
 export const Work: CollectionConfig = {
@@ -51,29 +51,29 @@ export const Work: CollectionConfig = {
         description: 'The description of the project as it appears around the site.',
       },
     },
-    // {
-    //   type: 'tabs',
-    //   tabs: [
-    //     {
-    //       label: 'Content',
-    //       fields: [
-    //         {
-    //           name: 'storyTitle',
-    //           type: 'text',
-    //           label: 'Story Title',
-    //           required: false,
-    //         },
-    //         {
-    //           name: 'storyContent',
-    //           type: 'richText',
-    //           label: 'Story Content',
-    //           required: false,
-    //         },
-    //       ],
-    //     },
-    //     metaTab,
-    //   ],
-    // },
+    {
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Content',
+          fields: [
+            {
+              name: 'storyTitle',
+              type: 'text',
+              label: 'Story Title',
+              required: false,
+            },
+            {
+              name: 'storyContent',
+              type: 'richText',
+              label: 'Story Content',
+              required: false,
+            },
+          ],
+        },
+      ],
+    },
+
     ...slugField(),
     {
       name: 'image',
@@ -104,36 +104,7 @@ export const Work: CollectionConfig = {
         position: 'sidebar',
       },
     },
-    // {
-    //   name: 'services',
-    //   type: 'relationship',
-    //   label: 'Services',
-    //   relationTo: 'services',
-    //   hasMany: true,
-    //   required: false,
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    // },
-    // {
-    //   name: 'projectYear',
-    //   type: 'number',
-    //   label: 'Project Year',
-    //   required: false,
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    // },
-    // {
-    //   name: 'testimonial',
-    //   type: 'relationship',
-    //   relationTo: 'testimonials',
-    //   hasMany: false,
-    //   required: false,
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    // },
+
     {
       name: 'projectLink',
       type: 'text',
@@ -143,24 +114,6 @@ export const Work: CollectionConfig = {
         position: 'sidebar',
       },
     },
-    // {
-    //   name: 'relatedWorks',
-    //   type: 'relationship',
-    //   label: 'Related Case Studies',
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    //   filterOptions: ({ id }) => {
-    //     return {
-    //       id: {
-    //         not_in: [id],
-    //       },
-    //     }
-    //   },
-    //   hasMany: true,
-    //   required: false,
-    //   relationTo: 'work',
-    // },
   ],
 
   //* Admin Settings
@@ -171,24 +124,24 @@ export const Work: CollectionConfig = {
     defaultColumns: ['title'],
     group: 'Portfolio',
     listSearchableFields: ['title'],
-    // livePreview: {
-    //   url: ({ data }) => {
-    //     const path = generatePreviewPath({
-    //       slug: typeof data?.slug === 'string' ? data.slug : '',
-    //       collection: 'work',
-    //     })
+    livePreview: {
+      url: ({ data }) => {
+        const path = generatePreviewPath({
+          slug: typeof data?.slug === 'string' ? data.slug : '',
+          collection: 'work',
+        })
 
-    //     return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
-    //   },
-    // },
-    // preview: (data) => {
-    //   const path = generatePreviewPath({
-    //     slug: typeof data?.slug === 'string' ? data.slug : '',
-    //     collection: 'work',
-    //   })
+        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
+      },
+    },
+    preview: (data) => {
+      const path = generatePreviewPath({
+        slug: typeof data?.slug === 'string' ? data.slug : '',
+        collection: 'work',
+      })
 
-    //   return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
-    // },
+      return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
+    },
     pagination: {
       defaultLimit: 25,
       limits: [10, 25, 50],

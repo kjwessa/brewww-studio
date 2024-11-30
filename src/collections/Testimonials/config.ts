@@ -23,6 +23,7 @@ export const Testimonials: CollectionConfig = {
       type: 'text',
       label: 'Title',
       required: true,
+      unique: true,
       admin: {
         description: 'Add the title of the testimonial here.',
       },

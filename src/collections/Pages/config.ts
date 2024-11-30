@@ -33,9 +33,32 @@ export const Pages: CollectionConfig = {
       label: 'Title',
       type: 'text',
       required: false,
+      unique: true,
       admin: {
         description: 'The title of the page.',
       },
+    },
+    {
+      name: 'meta',
+      type: 'group',
+      fields: [
+        {
+          name: 'title',
+          type: 'text',
+          label: 'Meta Title',
+        },
+        {
+          name: 'description',
+          type: 'textarea',
+          label: 'Meta Description',
+        },
+        {
+          name: 'image',
+          type: 'upload',
+          relationTo: 'media',
+          label: 'Meta Image',
+        },
+      ],
     },
     {
       type: 'tabs',
@@ -52,35 +75,12 @@ export const Pages: CollectionConfig = {
             },
           ],
         },
-        {
-          label: 'Meta',
-          fields: [
-            PreviewField({
-              hasGenerateFn: true,
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-            }),
-            OverviewField({
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-              imagePath: "meta.image",
-            }),
-            MetaTitleField({
-              hasGenerateFn: true,
-            }),
-            MetaImageField({
-              relationTo: "media",
-            }),
-            MetaDescriptionField({}),
-          ],
-        },
       ],
     },
     ...slugField(),
   ],
 
   //* Admin Settings
-
   admin: {
     useAsTitle: 'title',
     livePreview: {

@@ -24,20 +24,20 @@ export const Results: CollectionConfig = {
       label: 'Result Title',
       required: true,
     },
-    // {
-    //   name: 'client',
-    //   type: 'relationship',
-    //   relationTo: 'brands',
-    //   required: false,
-    // },
-    // { name: 'number', type: 'text', label: 'Number', required: false },
-    // { name: 'support', type: 'text', label: 'Support', required: false },
-    // {
-    //   name: 'description',
-    //   type: 'textarea',
-    //   label: 'Description',
-    //   required: false,
-    // },
+    {
+      name: 'client',
+      type: 'relationship',
+      relationTo: 'brands',
+      required: false,
+    },
+    { name: 'number', type: 'text', label: 'Number', required: false },
+    { name: 'support', type: 'text', label: 'Support', required: false },
+    {
+      name: 'description',
+      type: 'textarea',
+      label: 'Description',
+      required: false,
+    },
   ],
 
   //* Admin Settings

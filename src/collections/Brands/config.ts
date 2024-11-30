@@ -23,6 +23,7 @@ export const Brands: CollectionConfig = {
       type: 'text',
       label: 'Name',
       required: true,
+      unique: true,
       admin: {
         description: 'Add the client name as it will appear around the site.',
       },

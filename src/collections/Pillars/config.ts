@@ -9,13 +9,6 @@ import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 import { slugField } from '@/fields/slug'
 
 // SEO Fields
-import {
-  MetaDescriptionField,
-  MetaImageField,
-  MetaTitleField,
-  OverviewField,
-  PreviewField,
-} from '@payloadcms/plugin-seo/fields'
 
 export const Pillars: CollectionConfig = {
   slug: 'pillars',
@@ -59,53 +52,6 @@ export const Pillars: CollectionConfig = {
       },
     },
     ...slugField(),
-    // {
-    //   name: 'description',
-    //   type: 'textarea',
-    //   label: 'Description',
-    //   required: false,
-    //   admin: {
-    //     description: 'Add the description of the pillar here.',
-    //   },
-    // },
-    // {
-    //   type: 'tabs',
-    //   tabs: [
-    //     {
-    //       name: 'content',
-    //       label: 'Content',
-    //       fields: [],
-    //     },
-    //     {
-    //       name: 'metadata',
-    //       label: 'Meta',
-    //       fields: [],
-    //     },
-    //     {
-    //       name: 'seo',
-    //       label: 'SEO',
-    //       fields: [
-    //         OverviewField({
-    //           titlePath: 'meta.title',
-    //           descriptionPath: 'meta.description',
-    //           imagePath: 'meta.image',
-    //         }),
-    //         MetaImageField({
-    //           relationTo: 'media',
-    //         }),
-    //         MetaTitleField({
-    //           hasGenerateFn: true,
-    //         }),
-    //         MetaDescriptionField({}),
-    //         PreviewField({
-    //           hasGenerateFn: true,
-    //           titlePath: 'meta.title',
-    //           descriptionPath: 'meta.description',
-    //         }),
-    //       ],
-    //     },
-    //   ],
-    // },
   ],
 
   //* Admin Settings

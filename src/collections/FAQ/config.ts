@@ -23,6 +23,7 @@ export const FAQ: CollectionConfig = {
       type: 'text',
       label: 'Question',
       required: true,
+      unique: true,
     },
     {
       name: 'answer',
