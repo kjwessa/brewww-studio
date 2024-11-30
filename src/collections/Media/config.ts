@@ -5,6 +5,9 @@ import type { CollectionConfig, GetAdminThumbnail } from 'payload'
 import { authenticated } from '@/access/authenticated'
 import { anyone } from '@/access/anyone'
 
+// Hooks
+import { generateFileHash } from './hooks/generateFileHash'
+
 export const Media: CollectionConfig = {
   slug: 'media',
 
@@ -18,6 +21,7 @@ export const Media: CollectionConfig = {
 
   //* Collection Fields
   fields: [
+  
     {
       name: 'alt',
       type: 'text',
@@ -37,12 +41,25 @@ export const Media: CollectionConfig = {
           'This is the caption for the image. Optional, but helpful for Blog Posts requiring a caption.',
       },
     },
+      {
+      name: 'fileHash',
+      type: 'text',
+      admin: {
+        hidden: true,
+      },
+      unique: true,
+    },
   ],
 
   //* Admin Settings
   admin: {
     listSearchableFields: ['url', 'alt'],
   },
+  
+  hooks: {
+    beforeChange: [generateFileHash],
+  },
+
   upload: {
     adminThumbnail: (({
       doc,

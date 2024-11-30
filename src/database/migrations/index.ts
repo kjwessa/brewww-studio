@@ -19,6 +19,7 @@ import * as migration_20241130_154252_update_metatitle_name_in_pages from './202
 import * as migration_20241130_161414_update_tagline_name_to_run_migrate_test from './20241130_161414_update_tagline_name_to_run_migrate_test';
 import * as migration_20241130_162147_revert_pillar_tagline_name from './20241130_162147_revert_pillar_tagline_name';
 import * as migration_20241130_163332_add_meta_fields_to_blogposts from './20241130_163332_add_meta_fields_to_blogposts';
+import * as migration_20241130_233551_add_hidden_file_hash_to_media from './20241130_233551_add_hidden_file_hash_to_media';
 
 export const migrations = [
   {
@@ -124,6 +125,11 @@ export const migrations = [
   {
     up: migration_20241130_163332_add_meta_fields_to_blogposts.up,
     down: migration_20241130_163332_add_meta_fields_to_blogposts.down,
-    name: '20241130_163332_add_meta_fields_to_blogposts'
+    name: '20241130_163332_add_meta_fields_to_blogposts',
+  },
+  {
+    up: migration_20241130_233551_add_hidden_file_hash_to_media.up,
+    down: migration_20241130_233551_add_hidden_file_hash_to_media.down,
+    name: '20241130_233551_add_hidden_file_hash_to_media'
   },
 ];

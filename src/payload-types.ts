@@ -103,6 +103,7 @@ export interface Media {
   id: string;
   alt: string;
   caption?: string | null;
+  fileHash?: string | null;
   prefix?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -843,6 +844,7 @@ export interface PayloadMigration {
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
   caption?: T;
+  fileHash?: T;
   prefix?: T;
   updatedAt?: T;
   createdAt?: T;
