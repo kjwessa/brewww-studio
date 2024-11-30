@@ -214,11 +214,18 @@ export interface Post {
     };
     [k: string]: unknown;
   };
+  categories: (string | Category)[];
+  meta?: {
+    meta?: {
+      title?: string | null;
+      image?: (string | null) | Media;
+      description?: string | null;
+    };
+  };
   slug?: string | null;
   slugLock?: boolean | null;
   publishedOn: string;
   image: string | Media;
-  categories: (string | Category)[];
   featured?: boolean | null;
   readTime?: number | null;
   updatedAt: string;
@@ -408,7 +415,7 @@ export interface Service {
 export interface Pillar {
   id: string;
   title: string;
-  taglineTest?: string | null;
+  tagline?: string | null;
   services?: (string | null) | Service;
   slug?: string | null;
   slugLock?: boolean | null;
@@ -939,11 +946,22 @@ export interface PostsSelect<T extends boolean = true> {
   tagline?: T;
   description?: T;
   content?: T;
+  categories?: T;
+  meta?:
+    | T
+    | {
+        meta?:
+          | T
+          | {
+              title?: T;
+              image?: T;
+              description?: T;
+            };
+      };
   slug?: T;
   slugLock?: T;
   publishedOn?: T;
   image?: T;
-  categories?: T;
   featured?: T;
   readTime?: T;
   updatedAt?: T;
@@ -1068,7 +1086,7 @@ export interface ServicesSelect<T extends boolean = true> {
  */
 export interface PillarsSelect<T extends boolean = true> {
   title?: T;
-  taglineTest?: T;
+  tagline?: T;
   services?: T;
   slug?: T;
   slugLock?: T;

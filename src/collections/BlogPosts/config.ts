@@ -6,7 +6,13 @@ import { authenticated } from '@/access/authenticated'
 import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
 // Fields
-
+import {
+  MetaDescriptionField,
+  MetaImageField,
+  MetaTitleField,
+  OverviewField,
+  PreviewField,
+} from '@payloadcms/plugin-seo/fields'
 import { slugField } from '@/fields/slug'
 
 // Utilities & Hooks
@@ -58,21 +64,76 @@ export const BlogPosts: CollectionConfig = {
       },
     },
     {
-      name: 'content',
-      type: 'richText',
-      label: 'Content',
-      editor: lexicalEditor({
-        features: ({ defaultFeatures }) => [
-          ...defaultFeatures,
-          HeadingFeature({
-            enabledHeadingSizes: ['h2', 'h3', 'h4'],
-          }),
-          BlocksFeature({
-            blocks: [],
-          }),
-        ],
-      }),
-      required: true,
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Content',
+          fields: [
+            {
+              name: 'content',
+              type: 'richText',
+              editor: lexicalEditor({
+                features: ({ defaultFeatures }) => [
+                  ...defaultFeatures,
+                  HeadingFeature({
+                    enabledHeadingSizes: ['h2', 'h3', 'h4'],
+                  }),
+                  BlocksFeature({
+                    blocks: [],
+                  }),
+                ],
+              }),
+              label: false,
+              required: true,
+            },
+          ],
+        },
+        {
+          label: 'Meta',
+          fields: [
+            {
+              name: 'categories',
+              type: 'relationship',
+              admin: {
+                position: 'sidebar',
+              },
+              hasMany: true,
+              relationTo: 'categories',
+              required: true,
+            },
+          ],
+        },
+        {
+          label: 'SEO',
+          name: 'meta',
+          fields: [
+            {
+              name: 'meta',
+              type: 'group',
+              label: 'Meta',
+              fields: [
+                PreviewField({
+                  hasGenerateFn: true,
+                  titlePath: 'meta.title',
+                  descriptionPath: 'meta.description',
+                }),
+                OverviewField({
+                  titlePath: 'meta.title',
+                  descriptionPath: 'meta.description',
+                  imagePath: 'meta.image',
+                }),
+                MetaTitleField({
+                  hasGenerateFn: true,
+                }),
+                MetaImageField({
+                  relationTo: 'media',
+                }),
+                MetaDescriptionField({}),
+              ],
+            },
+          ],
+        },
+      ],
     },
     ...slugField(),
 
@@ -98,16 +159,7 @@ export const BlogPosts: CollectionConfig = {
         position: 'sidebar',
       },
     },
-    {
-      name: 'categories',
-      type: 'relationship',
-      admin: {
-        position: 'sidebar',
-      },
-      hasMany: true,
-      relationTo: 'categories',
-      required: true,
-    },
+
     {
       name: 'featured',
       type: 'checkbox',
@@ -131,7 +183,7 @@ export const BlogPosts: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    defaultColumns: ['title', 'status', 'publishedOn', 'updatedAt'],
+    defaultColumns: ['title', 'publishedOn', 'updatedAt'],
     group: 'Blog Posts',
     listSearchableFields: ['title'],
     livePreview: {

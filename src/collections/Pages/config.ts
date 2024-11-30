@@ -49,6 +49,11 @@ export const Pages: CollectionConfig = {
       type: 'group',
       label: 'Meta',
       fields: [
+        PreviewField({
+          hasGenerateFn: true,
+          titlePath: 'meta.title',
+          descriptionPath: 'meta.description',
+        }),
         OverviewField({
           titlePath: 'meta.title',
           descriptionPath: 'meta.description',
@@ -60,16 +65,7 @@ export const Pages: CollectionConfig = {
         MetaImageField({
           relationTo: 'media',
         }),
-
         MetaDescriptionField({}),
-        PreviewField({
-          // if the `generateUrl` function is configured
-          hasGenerateFn: true,
-
-          // field paths to match the target field for data
-          titlePath: 'meta.title',
-          descriptionPath: 'meta.description',
-        }),
       ],
     },
     {

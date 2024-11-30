@@ -33,7 +33,7 @@ export const Pillars: CollectionConfig = {
       },
     },
     {
-      name: 'taglineTest',
+      name: 'tagline',
       type: 'text',
       label: 'Tagline',
       required: false,
