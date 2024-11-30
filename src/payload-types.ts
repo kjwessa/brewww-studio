@@ -324,6 +324,7 @@ export interface Brand {
 export interface Technology {
   id: string;
   title: string;
+  logoLight?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -946,6 +947,7 @@ export interface BrandsSelect<T extends boolean = true> {
  */
 export interface TechnologiesSelect<T extends boolean = true> {
   title?: T;
+  logoLight?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
