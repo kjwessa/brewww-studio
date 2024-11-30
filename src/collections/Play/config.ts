@@ -7,7 +7,13 @@ import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
 // Fields
 import { slugField } from '@/fields/slug'
-import { metaTab } from '@/fields/meta'
+import {
+  PreviewField,
+  OverviewField,
+  MetaTitleField,
+  MetaImageField,
+  MetaDescriptionField,
+} from '@/fields/meta'
 
 // Utilities
 import { generatePreviewPath } from '@root/utilities/generatePreviewPath'
@@ -58,29 +64,57 @@ export const Playground: CollectionConfig = {
     //   type: 'tabs',
     //   tabs: [metaTab],
     // },
-    // ...slugField(),
-    // {
-    //   name: 'publishedOn',
-    //   type: 'date',
-    //   required: false,
-    //   label: 'Published On',
-    //   admin: {
-    //     position: 'sidebar',
-    //     date: {
-    //       pickerAppearance: 'dayAndTime',
-    //     },
-    //   },
-    //   hooks: {
-    //     beforeChange: [
-    //       ({ siblingData, value }) => {
-    //         if (siblingData._status === 'published' && !value) {
-    //           return new Date()
-    //         }
-    //         return value
-    //       },
-    //     ],
-    //   },
-    // },
+    {
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Meta',
+          fields: [
+            PreviewField({
+              hasGenerateFn: true,
+              titlePath: 'meta.title',
+              descriptionPath: 'meta.description',
+            }),
+            OverviewField({
+              titlePath: 'meta.title',
+              descriptionPath: 'meta.description',
+              imagePath: 'meta.image',
+            }),
+            MetaTitleField({
+              hasGenerateFn: true,
+            }),
+            MetaImageField({
+              relationTo: 'media',
+            }),
+            MetaDescriptionField({}),
+          ],
+        },
+      ],
+    },
+
+    ...slugField(),
+    {
+      name: 'publishedOn',
+      type: 'date',
+      required: false,
+      label: 'Published On',
+      admin: {
+        position: 'sidebar',
+        date: {
+          pickerAppearance: 'dayAndTime',
+        },
+      },
+      hooks: {
+        beforeChange: [
+          ({ siblingData, value }) => {
+            if (siblingData._status === 'published' && !value) {
+              return new Date()
+            }
+            return value
+          },
+        ],
+      },
+    },
     {
       name: 'image',
       type: 'upload',
@@ -91,24 +125,24 @@ export const Playground: CollectionConfig = {
         position: 'sidebar',
       },
     },
-    // {
-    //   name: 'relatedPlaygrounds',
-    //   type: 'relationship',
-    //   label: 'Related Playgrounds',
-    //   admin: {
-    //     position: 'sidebar',
-    //     description: 'Add the related playgrounds here.',
-    //   },
-    //   filterOptions: ({ id }) => {
-    //     return {
-    //       id: {
-    //         not_in: [id],
-    //       },
-    //     }
-    //   },
-    //   hasMany: true,
-    //   relationTo: 'play',
-    // },
+    {
+      name: 'relatedPlaygrounds',
+      type: 'relationship',
+      label: 'Related Playgrounds',
+      admin: {
+        position: 'sidebar',
+        description: 'Add the related playgrounds here.',
+      },
+      filterOptions: ({ id }) => {
+        return {
+          id: {
+            not_in: [id],
+          },
+        }
+      },
+      hasMany: true,
+      relationTo: 'play',
+    },
   ],
 
   //* Admin Settings
@@ -118,24 +152,24 @@ export const Playground: CollectionConfig = {
     defaultColumns: ['title'],
     group: 'Portfolio',
     listSearchableFields: ['title'],
-    // livePreview: {
-    //   url: ({ data }) => {
-    //     const path = generatePreviewPath({
-    //       slug: typeof data?.slug === 'string' ? data.slug : '',
-    //       collection: 'play',
-    //     })
+    livePreview: {
+      url: ({ data }) => {
+        const path = generatePreviewPath({
+          slug: typeof data?.slug === 'string' ? data.slug : '',
+          collection: 'play',
+        })
 
-    //     return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
-    //   },
-    // },
-    // preview: (data) => {
-    //   const path = generatePreviewPath({
-    //     slug: typeof data?.slug === 'string' ? data.slug : '',
-    //     collection: 'play',
-    //   })
+        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
+      },
+    },
+    preview: (data) => {
+      const path = generatePreviewPath({
+        slug: typeof data?.slug === 'string' ? data.slug : '',
+        collection: 'play',
+      })
 
-    //   return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
-    // },
+      return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
+    },
     pagination: {
       defaultLimit: 25,
       limits: [25, 50, 100],

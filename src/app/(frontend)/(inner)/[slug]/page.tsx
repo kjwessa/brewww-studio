@@ -63,16 +63,16 @@ export default async function Page({ params: paramsPromise }: Args) {
   })
 
   // If no page is found, render the redirects component
-  // if (!page) {
-  //   return <PayloadRedirects url={url} />
-  // }
+  if (!page) {
+    return <PayloadRedirects url={url} />
+  }
 
   // Extract the layout blocks from the page data
   const { layout } = page
   return (
     <article className="bg-blue-500">
       {/* Handle any configured redirects, but don't show 404 */}
-      {/* <PayloadRedirects disableNotFound url={url} /> */}
+      <PayloadRedirects disableNotFound url={url} />
       {/* Render the page content blocks */}
       <RenderBlocks blocks={layout || []} />
     </article>

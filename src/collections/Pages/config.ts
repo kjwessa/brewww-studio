@@ -7,7 +7,7 @@ import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
 // Field Imports
 import { slugField } from '@/fields/slug'
-import { metaTab } from '@/fields/meta'
+import { PreviewField, OverviewField, MetaTitleField, MetaImageField, MetaDescriptionField } from '@/fields/meta'
 
 // Block Imports
 import { MediaBlock } from '@/blocks/MediaBlock/config'
@@ -52,7 +52,28 @@ export const Pages: CollectionConfig = {
             },
           ],
         },
-        metaTab,
+        {
+          label: 'Meta',
+          fields: [
+            PreviewField({
+              hasGenerateFn: true,
+              titlePath: "meta.title",
+              descriptionPath: "meta.description",
+            }),
+            OverviewField({
+              titlePath: "meta.title",
+              descriptionPath: "meta.description",
+              imagePath: "meta.image",
+            }),
+            MetaTitleField({
+              hasGenerateFn: true,
+            }),
+            MetaImageField({
+              relationTo: "media",
+            }),
+            MetaDescriptionField({}),
+          ],
+        },
       ],
     },
     ...slugField(),
