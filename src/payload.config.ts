@@ -14,8 +14,8 @@ import { BlogCategories } from '@/collections/BlogCategories/config'
 import { BlogPosts } from '@/collections/BlogPosts/config'
 import { Brands } from '@/collections/Brands/config'
 import { FAQ } from '@/collections/FAQ/config'
-// import { Industries } from './collections/Industries/config'
-// import { Journeys } from '@/collections/Journeys/config'
+import { Industries } from './collections/Industries/config'
+import { Journeys } from '@/collections/Journeys/config'
 import { Location } from '@/collections/Locations/config'
 import { Media } from '@/collections/Media/config'
 import { Pages } from '@/collections/Pages/config'
@@ -88,9 +88,9 @@ export default buildConfig({
     Pillars,
     Playground,
     Results,
-    // Industries,
+    Industries,
     Team,
-    // Journeys,
+    Journeys,
   ],
   db: postgresAdapter({
     pool: {

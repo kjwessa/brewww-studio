@@ -7,7 +7,13 @@ import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
 // Fields
 import { slugField } from '@/fields/slug'
-import { metaTab } from '@/fields/meta'
+import {
+  PreviewField,
+  OverviewField,
+  MetaTitleField,
+  MetaImageField,
+  MetaDescriptionField,
+} from '@/fields/meta'
 
 // Utilities
 import { generatePreviewPath } from '@root/utilities/generatePreviewPath'
@@ -65,29 +71,6 @@ export const Services: CollectionConfig = {
         description: 'The description of the service as it appears around the site.',
       },
     },
-
-    // {
-    //   type: 'tabs',
-    //   tabs: [
-    //     {
-    //       label: 'Content',
-    //       fields: [
-    //         {
-    //           name: 'overview',
-    //           type: 'richText',
-    //           label: 'Overview Test',
-    //           required: false,
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       name: 'metadata',
-    //       label: 'Meta',
-    //       fields: [],
-    //     },
-    //     metaTab,
-    //   ],
-    // },
   ],
 
   //* Admin Settings
@@ -97,24 +80,24 @@ export const Services: CollectionConfig = {
     defaultColumns: ['title'],
     group: 'Service',
     listSearchableFields: ['title'],
-    // livePreview: {
-    //   url: ({ data }) => {
-    //     const path = generatePreviewPath({
-    //       slug: typeof data?.slug === 'string' ? data.slug : '',
-    //       collection: 'services',
-    //     })
+    livePreview: {
+      url: ({ data }) => {
+        const path = generatePreviewPath({
+          slug: typeof data?.slug === 'string' ? data.slug : '',
+          collection: 'services',
+        })
 
-    //     return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
-    //   },
-    // },
-    // preview: (data) => {
-    //   const path = generatePreviewPath({
-    //     slug: typeof data?.slug === 'string' ? data.slug : '',
-    //     collection: 'services',
-    //   })
+        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
+      },
+    },
+    preview: (data) => {
+      const path = generatePreviewPath({
+        slug: typeof data?.slug === 'string' ? data.slug : '',
+        collection: 'services',
+      })
 
-    //   return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
-    // },
+      return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
+    },
     pagination: {
       defaultLimit: 25,
       limits: [10, 25, 50],

@@ -26,7 +26,9 @@ export interface Config {
     pillars: Pillar;
     play: Play;
     results: Result;
+    industries: Industry;
     team: Team;
+    journeys: Journey;
     redirects: Redirect;
     forms: Form;
     'form-submissions': FormSubmission;
@@ -51,7 +53,9 @@ export interface Config {
     pillars: PillarsSelect<false> | PillarsSelect<true>;
     play: PlaySelect<false> | PlaySelect<true>;
     results: ResultsSelect<false> | ResultsSelect<true>;
+    industries: IndustriesSelect<false> | IndustriesSelect<true>;
     team: TeamSelect<false> | TeamSelect<true>;
+    journeys: JourneysSelect<false> | JourneysSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
@@ -163,12 +167,12 @@ export interface User {
 export interface Page {
   id: string;
   title?: string | null;
-  layout?: MediaBlock[] | null;
   meta?: {
     title?: string | null;
-    image?: (string | null) | Media;
     description?: string | null;
+    image?: (string | null) | Media;
   };
+  layout?: MediaBlock[] | null;
   slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;
@@ -274,6 +278,22 @@ export interface Work {
   title: string;
   tagline?: string | null;
   description?: string | null;
+  storyTitle?: string | null;
+  storyContent?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   slug?: string | null;
   slugLock?: boolean | null;
   image?: (string | null) | Media;
@@ -405,6 +425,9 @@ export interface Play {
   title: string;
   tagline?: string | null;
   description?: string | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  publishedOn?: string | null;
   image?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
@@ -417,6 +440,25 @@ export interface Play {
 export interface Result {
   id: string;
   title: string;
+  client?: (string | null) | Brand;
+  number?: string | null;
+  support?: string | null;
+  description?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "industries".
+ */
+export interface Industry {
+  id: string;
+  title: string;
+  tagline?: string | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  description?: string | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -432,6 +474,20 @@ export interface Team {
   slugLock?: boolean | null;
   role?: string | null;
   image?: (string | null) | Media;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "journeys".
+ */
+export interface Journey {
+  id: string;
+  title: string;
+  tagline?: string | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -708,8 +764,16 @@ export interface PayloadLockedDocument {
         value: string | Result;
       } | null)
     | ({
+        relationTo: 'industries';
+        value: string | Industry;
+      } | null)
+    | ({
         relationTo: 'team';
         value: string | Team;
+      } | null)
+    | ({
+        relationTo: 'journeys';
+        value: string | Journey;
       } | null)
     | ({
         relationTo: 'redirects';
@@ -841,6 +905,13 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface PagesSelect<T extends boolean = true> {
   title?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
   layout?:
     | T
     | {
@@ -852,13 +923,6 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
-      };
-  meta?:
-    | T
-    | {
-        title?: T;
-        image?: T;
-        description?: T;
       };
   slug?: T;
   slugLock?: T;
@@ -922,6 +986,8 @@ export interface WorkSelect<T extends boolean = true> {
   title?: T;
   tagline?: T;
   description?: T;
+  storyTitle?: T;
+  storyContent?: T;
   slug?: T;
   slugLock?: T;
   image?: T;
@@ -1018,6 +1084,9 @@ export interface PlaySelect<T extends boolean = true> {
   title?: T;
   tagline?: T;
   description?: T;
+  slug?: T;
+  slugLock?: T;
+  publishedOn?: T;
   image?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -1029,6 +1098,24 @@ export interface PlaySelect<T extends boolean = true> {
  */
 export interface ResultsSelect<T extends boolean = true> {
   title?: T;
+  client?: T;
+  number?: T;
+  support?: T;
+  description?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "industries_select".
+ */
+export interface IndustriesSelect<T extends boolean = true> {
+  title?: T;
+  tagline?: T;
+  slug?: T;
+  slugLock?: T;
+  description?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
@@ -1043,6 +1130,19 @@ export interface TeamSelect<T extends boolean = true> {
   slugLock?: T;
   role?: T;
   image?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "journeys_select".
+ */
+export interface JourneysSelect<T extends boolean = true> {
+  title?: T;
+  tagline?: T;
+  slug?: T;
+  slugLock?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;

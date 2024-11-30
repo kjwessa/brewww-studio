@@ -6,7 +6,7 @@ import { authenticated } from '@/access/authenticated'
 import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
 // Fields
-import { PreviewField, OverviewField, MetaTitleField, MetaImageField, MetaDescriptionField } from '@/fields/meta'
+
 import { slugField } from '@/fields/slug'
 
 // Utilities & Hooks
@@ -75,33 +75,7 @@ export const BlogPosts: CollectionConfig = {
       required: true,
     },
     ...slugField(),
-    {
-      type: 'tabs',
-      tabs: [
-        {
-          label: 'Meta',
-          fields: [
-            PreviewField({
-              hasGenerateFn: true,
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-            }),
-            OverviewField({
-              titlePath: "meta.title",
-              descriptionPath: "meta.description",
-              imagePath: "meta.image",
-            }),
-            MetaTitleField({
-              hasGenerateFn: true,
-            }),
-            MetaImageField({
-              relationTo: "media",
-            }),
-            MetaDescriptionField({}),
-          ],
-        },
-      ],
-    },
+
     {
       name: 'publishedOn',
       type: 'date',

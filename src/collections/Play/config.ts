@@ -60,38 +60,6 @@ export const Playground: CollectionConfig = {
       },
     },
 
-    // {
-    //   type: 'tabs',
-    //   tabs: [metaTab],
-    // },
-    {
-      type: 'tabs',
-      tabs: [
-        {
-          label: 'Meta',
-          fields: [
-            PreviewField({
-              hasGenerateFn: true,
-              titlePath: 'meta.title',
-              descriptionPath: 'meta.description',
-            }),
-            OverviewField({
-              titlePath: 'meta.title',
-              descriptionPath: 'meta.description',
-              imagePath: 'meta.image',
-            }),
-            MetaTitleField({
-              hasGenerateFn: true,
-            }),
-            MetaImageField({
-              relationTo: 'media',
-            }),
-            MetaDescriptionField({}),
-          ],
-        },
-      ],
-    },
-
     ...slugField(),
     {
       name: 'publishedOn',
@@ -124,24 +92,6 @@ export const Playground: CollectionConfig = {
       admin: {
         position: 'sidebar',
       },
-    },
-    {
-      name: 'relatedPlaygrounds',
-      type: 'relationship',
-      label: 'Related Playgrounds',
-      admin: {
-        position: 'sidebar',
-        description: 'Add the related playgrounds here.',
-      },
-      filterOptions: ({ id }) => {
-        return {
-          id: {
-            not_in: [id],
-          },
-        }
-      },
-      hasMany: true,
-      relationTo: 'play',
     },
   ],
 

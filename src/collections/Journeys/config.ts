@@ -39,70 +39,17 @@ export const Journeys: CollectionConfig = {
         description: 'Add the title of the journey here.',
       },
     },
-    // {
-    //   name: 'tagline',
-    //   type: 'text',
-    //   label: 'Tagline',
-    //   required: false,
-    //   admin: {
-    //     description: 'Add the tagline for the journey here.',
-    //   },
-    // },
+    {
+      name: 'tagline',
+      type: 'text',
+      label: 'Tagline',
+      required: false,
+      admin: {
+        description: 'Add the tagline for the journey here.',
+      },
+    },
 
-    // ...slugField(),
-    // {
-    //   name: 'services',
-    //   type: 'relationship',
-    //   relationTo: 'services',
-    //   label: 'Services',
-    //   required: false,
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    // },
-    // {
-    //   name: 'description',
-    //   type: 'textarea',
-    //   label: 'Description',
-    //   required: false,
-    //   admin: {
-    //     description: 'Add the description of the journey here.',
-    //   },
-    // },
-    // {
-    //   type: 'tabs',
-    //   tabs: [
-    //     {
-    //       name: 'content',
-    //       label: 'Content',
-    //       fields: [],
-    //     },
-
-    //     {
-    //       name: 'seo',
-    //       label: 'SEO',
-    //       fields: [
-    //         OverviewField({
-    //           titlePath: 'meta.title',
-    //           descriptionPath: 'meta.description',
-    //           imagePath: 'meta.image',
-    //         }),
-    //         MetaImageField({
-    //           relationTo: 'media',
-    //         }),
-    //         MetaTitleField({
-    //           hasGenerateFn: true,
-    //         }),
-    //         MetaDescriptionField({}),
-    //         PreviewField({
-    //           hasGenerateFn: true,
-    //           titlePath: 'meta.title',
-    //           descriptionPath: 'meta.description',
-    //         }),
-    //       ],
-    //     },
-    //   ],
-    // },
+    ...slugField(),
   ],
 
   //* Admin Settings
