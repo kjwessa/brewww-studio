@@ -33,24 +33,24 @@ export const Work: CollectionConfig = {
         description: 'The title of the project as it appears around the site.',
       },
     },
-    // {
-    //   name: 'tagline',
-    //   type: 'text',
-    //   label: 'Tagline',
-    //   required: false,
-    //   admin: {
-    //     description: 'The tagline of the project as it appears around the site.',
-    //   },
-    // },
-    // {
-    //   name: 'description',
-    //   type: 'textarea',
-    //   label: 'Description',
-    //   required: false,
-    //   admin: {
-    //     description: 'The description of the project as it appears around the site.',
-    //   },
-    // },
+    {
+      name: 'tagline',
+      type: 'text',
+      label: 'Tagline',
+      required: false,
+      admin: {
+        description: 'The tagline of the project as it appears around the site.',
+      },
+    },
+    {
+      name: 'description',
+      type: 'textarea',
+      label: 'Description',
+      required: false,
+      admin: {
+        description: 'The description of the project as it appears around the site.',
+      },
+    },
     // {
     //   type: 'tabs',
     //   tabs: [
@@ -74,36 +74,36 @@ export const Work: CollectionConfig = {
     //     metaTab,
     //   ],
     // },
-    // ...slugField(),
-    // {
-    //   name: 'image',
-    //   type: 'upload',
-    //   label: 'Featured Image',
-    //   required: false,
-    //   relationTo: 'media',
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    // },
-    // {
-    //   name: 'brand',
-    //   type: 'relationship',
-    //   relationTo: 'brands',
-    //   hasMany: false,
-    //   required: false,
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    // },
-    // {
-    //   name: 'featured',
-    //   type: 'checkbox',
-    //   label: 'Is this a featured project?',
-    //   required: false,
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    // },
+    ...slugField(),
+    {
+      name: 'image',
+      type: 'upload',
+      label: 'Featured Image',
+      required: false,
+      relationTo: 'media',
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'brand',
+      type: 'relationship',
+      relationTo: 'brands',
+      hasMany: false,
+      required: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'featured',
+      type: 'checkbox',
+      label: 'Is this a featured project?',
+      required: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
     // {
     //   name: 'services',
     //   type: 'relationship',
@@ -134,15 +134,15 @@ export const Work: CollectionConfig = {
     //     position: 'sidebar',
     //   },
     // },
-    // {
-    //   name: 'projectLink',
-    //   type: 'text',
-    //   label: 'Project Link',
-    //   required: false,
-    //   admin: {
-    //     position: 'sidebar',
-    //   },
-    // },
+    {
+      name: 'projectLink',
+      type: 'text',
+      label: 'Project Link',
+      required: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
     // {
     //   name: 'relatedWorks',
     //   type: 'relationship',
