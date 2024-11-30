@@ -31,43 +31,43 @@ export const Location: CollectionConfig = {
         description: 'The title of the location as it appears around the site.',
       },
     },
-    // {
-    //   name: 'location',
-    //   type: 'text',
-    //   label: 'Location',
-    //   required: false,
-    //   admin: {
-    //     description: 'The location of the location as it appears around the site.',
-    //   },
-    // },
-    // {
-    //   name: 'heroTitle',
-    //   type: 'text',
-    //   label: 'Hero Title',
-    //   required: false,
-    //   admin: {
-    //     description: 'The hero title of the location as it appears around the site.',
-    //   },
-    // },
-    // {
-    //   name: 'heroImage',
-    //   type: 'upload',
-    //   label: 'Hero Image',
-    //   relationTo: 'media',
-    //   required: false,
-    //   admin: {
-    //     description: 'The hero image displayed at the top of the location page.',
-    //   },
-    // },
-    // {
-    //   name: 'heroDescription',
-    //   type: 'richText',
-    //   label: 'Hero Description',
-    //   required: false,
-    //   admin: {
-    //     description: 'The hero description of the location.',
-    //   },
-    // },
+    {
+      name: 'location',
+      type: 'text',
+      label: 'Location',
+      required: false,
+      admin: {
+        description: 'The location of the location as it appears around the site.',
+      },
+    },
+    {
+      name: 'heroTitle',
+      type: 'text',
+      label: 'Hero Title',
+      required: false,
+      admin: {
+        description: 'The hero title of the location as it appears around the site.',
+      },
+    },
+    {
+      name: 'heroImage',
+      type: 'upload',
+      label: 'Hero Image',
+      relationTo: 'media',
+      required: false,
+      admin: {
+        description: 'The hero image displayed at the top of the location page.',
+      },
+    },
+    {
+      name: 'heroDescription',
+      type: 'richText',
+      label: 'Hero Description',
+      required: false,
+      admin: {
+        description: 'The hero description of the location.',
+      },
+    },
     ...slugField(),
   ],
 
