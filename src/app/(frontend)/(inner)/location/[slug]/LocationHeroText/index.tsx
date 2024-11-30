@@ -1,20 +1,13 @@
 'use client'
 
-import { RichText } from '@/components/RichText/index'
 import { Title } from '@/components/Title'
 
 interface LocationHeroTextProps {
   title?: string
-  description?: {
-    root: {
-      children: any[]
-    }
-  }
 }
 
 export function LocationHeroText({
   title = 'A Web Design Studio in Penscaola, FL.',
-  description,
 }: LocationHeroTextProps) {
   return (
     <section className="w-full bg-brand-dark-bg pb-10 pt-20 text-white lg:pb-16 lg:pt-32 xl:pt-40">
@@ -32,7 +25,10 @@ export function LocationHeroText({
             </div>
           </div>
           <div className="mt-5 w-full px-2 text-lg font-light text-zinc-400 lg:mt-10 lg:w-[43.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-            <div className="w-full">{description && <RichText content={description} />}</div>
+            <div className="w-full space-y-10">
+              <p>Here at Brewww, we offer honest advice, industry experience, and a great portfolio of work.</p>
+              <p>UI/UX, wireframes, research and development — we understand all areas of web design. We can take a start-up business with nothing to a fully functioning brand online and offline. We can revamp an existing website or take a successful brand to the next level. Our talented and creative in-house web design team will work alongside you in collaboration to create a site that reflects your brand, talks to your audience with meaning and personality, and has great functionality across the latest devices.</p>
+            </div>
           </div>
         </div>
       </div>

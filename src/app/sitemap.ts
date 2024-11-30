@@ -54,9 +54,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         }
 
         const data = await response.json()
-        return { 
-          docs: Array.isArray(data?.docs) ? data.docs : [], 
-          ...collection 
+        return {
+          docs: Array.isArray(data?.docs) ? data.docs : [],
+          ...collection,
         }
       } catch (error) {
         console.error(`Error fetching ${collection.endpoint}:`, error)
@@ -75,13 +75,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
 
     // Dynamic routes
-    ...dynamicContent.flatMap(({ docs, prefix, priority }) =>
-      (docs || []).map((doc: any) => ({
-        url: `${config.serverUrl}${prefix}${doc?.slug || ''}`,
-        lastModified: new Date(doc?.updatedAt || Date.now()).toISOString(),
-        changeFrequency: 'weekly' as const,
-        priority,
-      })).filter(entry => entry.url.endsWith('/')), // Filter out any malformed URLs
+    ...dynamicContent.flatMap(
+      ({ docs, prefix, priority }) =>
+        (docs || [])
+          .map((doc: any) => ({
+            url: `${config.serverUrl}${prefix}${doc?.slug || ''}`,
+            lastModified: new Date(doc?.updatedAt || Date.now()).toISOString(),
+            changeFrequency: 'weekly' as const,
+            priority,
+          }))
+          .filter((entry) => entry.url.endsWith('/')), // Filter out any malformed URLs
     ),
   ]
 
