@@ -15,6 +15,7 @@ import * as migration_20241129_230030_add_team_image_and_role from './20241129_2
 import * as migration_20241129_230133_add_logoLight_to_technologies from './20241129_230133_add_logoLight_to_technologies';
 import * as migration_20241129_231156_add_slug_to_work from './20241129_231156_add_slug_to_work';
 import * as migration_20241130_002307_add_all_initial_fields from './20241130_002307_add_all_initial_fields';
+import * as migration_20241130_154252_update_metatitle_name_in_pages from './20241130_154252_update_metatitle_name_in_pages';
 
 export const migrations = [
   {
@@ -100,6 +101,11 @@ export const migrations = [
   {
     up: migration_20241130_002307_add_all_initial_fields.up,
     down: migration_20241130_002307_add_all_initial_fields.down,
-    name: '20241130_002307_add_all_initial_fields'
+    name: '20241130_002307_add_all_initial_fields',
+  },
+  {
+    up: migration_20241130_154252_update_metatitle_name_in_pages.up,
+    down: migration_20241130_154252_update_metatitle_name_in_pages.down,
+    name: '20241130_154252_update_metatitle_name_in_pages'
   },
 ];

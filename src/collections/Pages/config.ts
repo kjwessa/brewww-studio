@@ -7,7 +7,13 @@ import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
 // Field Imports
 import { slugField } from '@/fields/slug'
-import { PreviewField, OverviewField, MetaTitleField, MetaImageField, MetaDescriptionField } from '@/fields/meta'
+import {
+  MetaDescriptionField,
+  MetaImageField,
+  MetaTitleField,
+  OverviewField,
+  PreviewField,
+} from '@payloadcms/plugin-seo/fields'
 
 // Block Imports
 import { MediaBlock } from '@/blocks/MediaBlock/config'
@@ -41,23 +47,29 @@ export const Pages: CollectionConfig = {
     {
       name: 'meta',
       type: 'group',
+      label: 'Meta',
       fields: [
-        {
-          name: 'title',
-          type: 'text',
-          label: 'Meta Title',
-        },
-        {
-          name: 'description',
-          type: 'textarea',
-          label: 'Meta Description',
-        },
-        {
-          name: 'image',
-          type: 'upload',
+        OverviewField({
+          titlePath: 'meta.title',
+          descriptionPath: 'meta.description',
+          imagePath: 'meta.image',
+        }),
+        MetaTitleField({
+          hasGenerateFn: true,
+        }),
+        MetaImageField({
           relationTo: 'media',
-          label: 'Meta Image',
-        },
+        }),
+
+        MetaDescriptionField({}),
+        PreviewField({
+          // if the `generateUrl` function is configured
+          hasGenerateFn: true,
+
+          // field paths to match the target field for data
+          titlePath: 'meta.title',
+          descriptionPath: 'meta.description',
+        }),
       ],
     },
     {

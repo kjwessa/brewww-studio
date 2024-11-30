@@ -169,8 +169,8 @@ export interface Page {
   title?: string | null;
   meta?: {
     title?: string | null;
-    description?: string | null;
     image?: (string | null) | Media;
+    description?: string | null;
   };
   layout?: MediaBlock[] | null;
   slug?: string | null;
@@ -909,8 +909,8 @@ export interface PagesSelect<T extends boolean = true> {
     | T
     | {
         title?: T;
-        description?: T;
         image?: T;
+        description?: T;
       };
   layout?:
     | T
