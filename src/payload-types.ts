@@ -408,7 +408,7 @@ export interface Service {
 export interface Pillar {
   id: string;
   title: string;
-  tagline?: string | null;
+  taglineTest?: string | null;
   services?: (string | null) | Service;
   slug?: string | null;
   slugLock?: boolean | null;
@@ -1068,7 +1068,7 @@ export interface ServicesSelect<T extends boolean = true> {
  */
 export interface PillarsSelect<T extends boolean = true> {
   title?: T;
-  tagline?: T;
+  taglineTest?: T;
   services?: T;
   slug?: T;
   slugLock?: T;

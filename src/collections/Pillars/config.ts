@@ -33,7 +33,7 @@ export const Pillars: CollectionConfig = {
       },
     },
     {
-      name: 'tagline',
+      name: 'taglineTest',
       type: 'text',
       label: 'Tagline',
       required: false,
@@ -57,7 +57,6 @@ export const Pillars: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    description: 'Pillars of Brewww',
     defaultColumns: ['title', 'updatedAt'],
     group: 'Service',
     listSearchableFields: ['title'],

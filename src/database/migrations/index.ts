@@ -16,6 +16,7 @@ import * as migration_20241129_230133_add_logoLight_to_technologies from './2024
 import * as migration_20241129_231156_add_slug_to_work from './20241129_231156_add_slug_to_work';
 import * as migration_20241130_002307_add_all_initial_fields from './20241130_002307_add_all_initial_fields';
 import * as migration_20241130_154252_update_metatitle_name_in_pages from './20241130_154252_update_metatitle_name_in_pages';
+import * as migration_20241130_161414_update_tagline_name_to_run_migrate_test from './20241130_161414_update_tagline_name_to_run_migrate_test';
 
 export const migrations = [
   {
@@ -106,6 +107,11 @@ export const migrations = [
   {
     up: migration_20241130_154252_update_metatitle_name_in_pages.up,
     down: migration_20241130_154252_update_metatitle_name_in_pages.down,
-    name: '20241130_154252_update_metatitle_name_in_pages'
+    name: '20241130_154252_update_metatitle_name_in_pages',
+  },
+  {
+    up: migration_20241130_161414_update_tagline_name_to_run_migrate_test.up,
+    down: migration_20241130_161414_update_tagline_name_to_run_migrate_test.down,
+    name: '20241130_161414_update_tagline_name_to_run_migrate_test'
   },
 ];
