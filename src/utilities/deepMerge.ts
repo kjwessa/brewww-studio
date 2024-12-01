@@ -1,56 +1,49 @@
-// Temporarily disable TypeScript type checking for this file
+/**
+ * @fileoverview Deep merge utility for objects with complex type handling.
+ * Type checking is disabled due to dynamic key access and recursive nature of the merge.
+ */
 // @ts-nocheck
 
 /**
  * Checks if a value is a plain object (not null, not an array, and typeof 'object')
- * @param item - The value to check
- * @returns {boolean} - True if the item is a plain object, false otherwise
+ * @param {unknown} item - The value to check
+ * @returns {boolean} True if the item is a plain object
  */
 export function isObject(item: unknown): boolean {
   return item && typeof item === 'object' && !Array.isArray(item)
 }
 
 /**
- * Recursively merges two objects together, creating a new object without modifying the originals.
- * If both objects have the same key and the value is an object, it will deep merge those objects.
- * If the value is not an object, the source value will override the target value.
+ * Recursively merges two objects deeply, creating a new object without modifying the originals.
+ * Objects are merged recursively, arrays and other types are replaced.
  * 
- * @param target - The first object to merge
- * @param source - The second object to merge, its values take precedence
- * @returns - A new object containing the merged properties
+ * @template T - Type of the target object
+ * @template R - Type of the source object
+ * @param {T} target - Base object to merge into
+ * @param {R} source - Object to merge from, its values take precedence
+ * @returns {T & R} New object with merged properties
  * 
  * @example
- * const obj1 = { a: { b: 2 }, c: 3 }
- * const obj2 = { a: { d: 4 }, e: 5 }
- * deepMerge(obj1, obj2) // { a: { b: 2, d: 4 }, c: 3, e: 5 }
+ * const obj1 = { a: { b: 2 }, c: 3 };
+ * const obj2 = { a: { d: 4 }, e: 5 };
+ * deepMerge(obj1, obj2); // { a: { b: 2, d: 4 }, c: 3, e: 5 }
  */
-export default function deepMerge<T, R>(target: T, source: R): T {
-  // Create a shallow copy of the target object as our starting point
+export default function deepMerge<T extends object, R extends object>(target: T, source: R): T & R {
   const output = { ...target }
 
-  // Only proceed if both target and source are objects
   if (isObject(target) && isObject(source)) {
-    // Iterate through all keys in the source object
     Object.keys(source).forEach((key) => {
       if (isObject(source[key])) {
-        // If the current source value is an object
-        if (!(key in target)) {
-          // If the key doesn't exist in target, simply assign the source value
-          Object.assign(output, { [key]: source[key] })
-        } else {
-          // If the key exists in both and both are objects, recursively merge them
-          output[key] = deepMerge(target[key], source[key])
-        }
+        // Recursively merge nested objects
+        output[key] = !(key in target)
+          ? source[key]
+          : deepMerge(target[key], source[key])
       } else {
-        // If the source value is not an object, override the target value
-        Object.assign(output, { [key]: source[key] })
+        // For non-objects, source value takes precedence
+        output[key] = source[key]
       }
     })
   }
 
-  return output
+  return output as T & R
 }
-
-
-
-

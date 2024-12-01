@@ -1,56 +1,62 @@
-import { CollectionSlug } from "payload";
+/**
+ * @fileoverview Utility for generating preview URLs for Payload CMS collections.
+ * Handles path generation and parameter encoding for the Next.js preview mode.
+ */
+
+import { CollectionSlug } from 'payload'
 
 /**
- * Maps collection slugs to their corresponding URL prefixes
- * Used to generate the correct preview paths for different content types
+ * Maps collection types to their URL prefixes.
+ * - posts: Prefixed with '/posts'
+ * - pages: No prefix (root-level URLs)
  */
 const collectionPrefixMap: Partial<Record<CollectionSlug, string>> = {
-  // work: "/work",     // Work items are prefixed with /work
-  // posts: "/journal", // Blog posts are prefixed with /journal
-  // pages: "",         // Pages use their slug directly without a prefix
-};
+  posts: '/posts',
+  pages: '',
+}
 
 /**
- * Props for generating a preview path
- * @property collection - The collection type (work, posts, or pages)
- * @property slug - The document's slug/URL path
+ * Parameters required for generating a preview path
  */
-type Props = {
-  collection: keyof typeof collectionPrefixMap;
-  slug: string;
-};
+interface Props {
+  /** The collection type (e.g., 'posts' or 'pages') */
+  collection: keyof typeof collectionPrefixMap
+  /** The slug of the content item */
+  slug: string
+}
 
 /**
- * Generates a preview URL for Payload CMS documents
+ * Generates a preview URL for Payload CMS content items.
+ * Creates a Next.js preview URL with encoded parameters for accessing draft content.
+ * 
+ * @param {Props} options - The options for generating the preview path
+ * @param {keyof typeof collectionPrefixMap} options.collection - Collection type
+ * @param {string} options.slug - Content item slug
+ * @returns {string} The complete preview URL with encoded parameters
  * 
  * @example
- * // Returns "/next/preview?slug=my-post&collection=posts&path=/journal/my-post"
- * generatePreviewPath({ collection: "posts", slug: "my-post" })
+ * generatePreviewPath({ collection: 'posts', slug: 'my-blog-post' })
+ * // Returns "/next/preview?slug=my-blog-post&collection=posts&path=/posts/my-blog-post"
  * 
- * @param collection - The collection type (work, posts, or pages)
- * @param slug - The document's slug
- * @returns A preview URL with encoded parameters
+ * generatePreviewPath({ collection: 'pages', slug: 'about' })
+ * // Returns "/next/preview?slug=about&collection=pages&path=/about"
  */
-export const generatePreviewPath = ({ collection, slug }: Props) => {
-  // Combine the collection prefix with the slug to create the full path
-  const path = `${collectionPrefixMap[collection]}/${slug}`;
+export const generatePreviewPath = ({ collection, slug }: Props): string => {
+  // Combine collection prefix with slug to create the full path
+  const path = `${collectionPrefixMap[collection]}/${slug}`
 
-  // Parameters needed for the preview functionality
+  // Prepare parameters for the preview URL
   const params = {
     slug,
     collection,
     path,
-  };
+  }
 
-  // Create URLSearchParams object for proper URL encoding
-  const encodedParams = new URLSearchParams();
-
-  // Add each parameter to the URLSearchParams object
+  // Encode parameters for URL-safe format
+  const encodedParams = new URLSearchParams()
   Object.entries(params).forEach(([key, value]) => {
-    encodedParams.append(key, value);
-  });
+    encodedParams.append(key, value)
+  })
 
-  // Return the complete preview URL
-  return `/next/preview?${encodedParams.toString()}`;
-};
-
+  return `/next/preview?${encodedParams.toString()}`
+}

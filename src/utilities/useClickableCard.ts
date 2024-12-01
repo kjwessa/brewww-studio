@@ -1,30 +1,54 @@
-'use client'
-import type { RefObject } from 'react'
+/**
+ * @fileoverview A custom React hook that makes a card element clickable while preserving 
+ * nested link functionality. This allows for better UX where the entire card is clickable
+ * but internal links still work independently.
+ */
 
+'use client'
+
+import type { RefObject } from 'react'
 import { useRouter } from 'next/navigation'
 import { useCallback, useEffect, useRef } from 'react'
 
-// Type definition for the hook's return value
-// Contains refs for both the card container and the link element
+/**
+ * Return type for the useClickableCard hook.
+ * Provides refs for both the card container and the link element.
+ */
 type UseClickableCardType<T extends HTMLElement> = {
   card: {
     ref: RefObject<T | null>
   }
   link: {
-    ref: RefObject<HTMLAnchorElement | null>
+    ref: RefObject<HTMLAnchorElement>
   }
 }
 
-// Props interface for configuring the clickable card behavior
+/**
+ * Configuration options for the clickable card behavior
+ * @property {boolean} external - Whether the link points to an external site
+ * @property {boolean} newTab - Whether to open the link in a new tab
+ * @property {boolean} scroll - Whether to scroll to top on navigation
+ */
 interface Props {
-  external?: boolean  // Whether the link points to an external site
-  newTab?: boolean    // Whether to open the link in a new tab
-  scroll?: boolean    // Whether to scroll to top on navigation
+  external?: boolean
+  newTab?: boolean
+  scroll?: boolean
 }
 
 /**
- * A custom hook that makes a card element clickable while preserving nested link functionality
- * Handles both internal and external navigation with configurable behavior
+ * A custom hook that enables card-like elements to be fully clickable while maintaining
+ * proper behavior for nested interactive elements.
+ * 
+ * @param {Props} props - Configuration options for the clickable behavior
+ * @returns {UseClickableCardType<T>} Refs for the card container and link element
+ * 
+ * @example
+ * const { card, link } = useClickableCard({ external: false, newTab: true })
+ * return (
+ *   <div ref={card.ref}>
+ *     <a ref={link.ref} href="/some-path">Click me</a>
+ *   </div>
+ * )
  */
 function useClickableCard<T extends HTMLElement>({
   external = false,
@@ -32,67 +56,70 @@ function useClickableCard<T extends HTMLElement>({
   scroll = true,
 }: Props): UseClickableCardType<T> {
   const router = useRouter()
-  const card = useRef<T>(null)                           // Reference to the card container
-  const link = useRef<HTMLAnchorElement>(null)           // Reference to the link element
-  const timeDown = useRef<number>(0)                     // Tracks when mouse button was pressed
-  const hasActiveParent = useRef<boolean>(false)         // Tracks if click originated on a nested link
-  const pressedButton = useRef<number>(0)                // Tracks which mouse button was pressed
+  // Ref for the main card container element
+  const card = useRef<T>(null)
+  // Ref for the primary link element within the card
+  const link = useRef<HTMLAnchorElement>(null)
+  // Track mousedown timestamp for click duration calculation
+  const timeDown = useRef<number>(0)
+  // Flag to check if click started on a nested interactive element
+  const hasActiveParent = useRef<boolean>(false)
+  // Track which mouse button was pressed
+  const pressedButton = useRef<number>(0)
 
   /**
-   * Handles the mousedown event
-   * Records timing and checks if click started on a nested link
+   * Handles the mousedown event on the card.
+   * Records timing and checks if click originated on a nested link.
    */
   const handleMouseDown = useCallback(
     (e: MouseEvent) => {
       if (e.target) {
-        const target = e.target as Element
+        const target = e.target as HTMLElement
+        pressedButton.current = e.button
+
         const timeNow = +new Date()
         const parent = target?.closest('a')
 
-        pressedButton.current = e.button
-
-        if (!parent) {
-          hasActiveParent.current = false
-          timeDown.current = timeNow
-        } else {
-          hasActiveParent.current = true
-        }
+        timeDown.current = timeNow
+        hasActiveParent.current = !!parent && parent !== link.current
       }
     },
-    [], // No dependencies needed as we're only using refs
+    // Dependencies are handled by refs
+    [],
   )
 
   /**
-   * Handles the mouseup event
-   * Triggers navigation if conditions are met:
-   * - Click duration is less than 250ms
+   * Handles the mouseup event on the card.
+   * Triggers navigation if:
+   * - Click duration is < 250ms (not a drag)
    * - Click didn't start on a nested link
    * - Left mouse button was used
-   * - Ctrl key wasn't pressed
+   * - No modifier keys were pressed
    */
   const handleMouseUp = useCallback(
     (e: MouseEvent) => {
       if (link.current?.href) {
         const timeNow = +new Date()
-        const difference = timeNow - timeDown.current
 
-        if (link.current?.href && difference <= 250) {
-          if (!hasActiveParent.current && pressedButton.current === 0 && !e.ctrlKey) {
-            if (external) {
-              const target = newTab ? '_blank' : '_self'
-              window.open(link.current.href, target)
-            } else {
-              router.push(link.current.href, { scroll })
-            }
-          }
+        if (
+          timeNow - timeDown.current < 250 && // Click duration check
+          !hasActiveParent.current && // Not clicking nested link
+          pressedButton.current === 0 && // Left click only
+          !e.ctrlKey // No modifier key
+        ) {
+          e.preventDefault()
+          external || newTab
+            ? window.open(link.current.href, newTab ? '_blank' : '_self')
+            : router.push(link.current.href, { scroll })
         }
       }
     },
-    [external, newTab, scroll], // Only include props that affect the behavior
+    [external, newTab, router, scroll],
   )
 
   /**
-   * Sets up and cleans up event listeners on the card element
+   * Sets up event listeners for mouse interactions on component mount
+   * and cleans them up on unmount.
    */
   useEffect(() => {
     const cardNode = card.current
@@ -104,13 +131,12 @@ function useClickableCard<T extends HTMLElement>({
 
     return () => {
       if (cardNode) {
-        cardNode?.removeEventListener('mousedown', handleMouseDown)
-        cardNode?.removeEventListener('mouseup', handleMouseUp)
+        cardNode.removeEventListener('mousedown', handleMouseDown)
+        cardNode.removeEventListener('mouseup', handleMouseUp)
       }
     }
-  }, [card, link, router, handleMouseDown, handleMouseUp])
+  }, [handleMouseDown, handleMouseUp])
 
-  // Return refs for the card container and link element
   return {
     card: {
       ref: card,

@@ -1,20 +1,30 @@
-import type { Config } from "src/payload-types";
+/**
+ * @fileoverview Utility functions for retrieving and caching Payload CMS documents.
+ * Provides both direct and cached access to collection documents using Next.js caching.
+ */
 
-import configPromise from "@payload-config";
-import { getPayload } from "payload";
-import { unstable_cache } from "next/cache";
+import type { Config } from 'src/payload-types'
+import configPromise from '@payload-config'
+import { getPayload } from 'payload'
+import { unstable_cache } from 'next/cache'
 
-type Collection = keyof Config["collections"];
+/** Type representing valid collection names from the Payload config */
+type Collection = keyof Config['collections']
 
 /**
- * Fetches a single document from a Payload collection by its slug
- * @param collection - The name of the collection to query
- * @param slug - The slug of the document to find
- * @param depth - How many levels of relationships to populate (defaults to 0)
- * @returns The first matching document or undefined
+ * Retrieves a document from a Payload CMS collection by its slug.
+ * 
+ * @param {Collection} collection - The name of the collection to query
+ * @param {string} slug - The unique slug identifier of the document
+ * @param {number} [depth=0] - Depth of relationship fields to populate
+ * @returns {Promise<Document | undefined>} The found document or undefined
+ * 
+ * @example
+ * const post = await getDocument('posts', 'my-blog-post')
+ * const pageWithRelations = await getDocument('pages', 'about', 2)
  */
 async function getDocument(collection: Collection, slug: string, depth = 0) {
-  const payload = await getPayload({ config: configPromise });
+  const payload = await getPayload({ config: configPromise })
 
   const page = await payload.find({
     collection,
@@ -24,19 +34,25 @@ async function getDocument(collection: Collection, slug: string, depth = 0) {
         equals: slug,
       },
     },
-  });
+  })
 
-  return page.docs[0];
+  return page.docs[0]
 }
 
 /**
- * Creates a cached version of getDocument using Next.js unstable_cache
- * @param collection - The collection name to query
- * @param slug - The slug to look up
- * @returns A cached function that returns the document
+ * Creates a cached version of getDocument using Next.js unstable_cache.
+ * The cache is automatically invalidated when the document is updated.
  * 
- * The cache is tagged with `${collection}_${slug}` for targeted revalidation
- * Example tag: 'pages_about-us' or 'posts_my-first-post'
+ * @param {Collection} collection - The name of the collection to query
+ * @param {string} slug - The unique slug identifier of the document
+ * @returns {Promise<Document | undefined>} Cached document or undefined
+ * 
+ * @example
+ * Create a cached getter for a specific document
+ * const getCachedPost = getCachedDocument('posts', 'my-blog-post')
+ * 
+ * Use the cached getter (subsequent calls will use cache)
+ * const post = await getCachedPost()
  */
 export const getCachedDocument = (collection: Collection, slug: string) =>
   unstable_cache(
@@ -44,5 +60,5 @@ export const getCachedDocument = (collection: Collection, slug: string) =>
     [collection, slug],
     {
       tags: [`${collection}_${slug}`],
-    },
-  );
+    }
+  )
