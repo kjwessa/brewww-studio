@@ -1,20 +1,19 @@
 // Next Imports
-import React from 'react'
+import React, { cache } from 'react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
+import { draftMode } from 'next/headers'
 
 // Payload Imports
-// import { PayloadRedirects } from '@/components/PayloadRedirects'
+import { PayloadRedirects } from '@/components/PayloadRedirects'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import { Post } from '@/payload-types'
 
 // Components
 import { RichText } from '@/components/RichText/index'
-import TableOfContents from '@/components/TableOfContents/index'
-import { LexicalNode } from '@/components/RichText/nodeFormat'
 import { generateMeta } from '@/utilities/generateMeta'
 
 // Utilities
@@ -22,42 +21,58 @@ import { formatDate } from '@/utilities/formatDateTime'
 
 export const revalidate = 3600
 
+// export async function generateStaticParams() {
+//   const payload = await getPayload({ config: configPromise })
+//   const posts = await payload.find({
+//     collection: 'posts',
+//     limit: 1000,
+//     overrideAccess: false,
+//   })
+//   return (
+//     posts.docs?.map(({ slug }) => ({
+//       params: { slug },
+//     })) || []
+//   )
+// }
+
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
   const posts = await payload.find({
     collection: 'posts',
+    draft: false,
     limit: 1000,
     overrideAccess: false,
+    select: {
+      slug: true,
+    },
   })
-  return (
-    posts.docs?.map(({ slug }) => ({
-      params: { slug },
-    })) || []
-  )
+
+  const params = posts.docs.map(({ slug }) => {
+    return { slug }
+  })
+
+  return params
 }
 
+// type Params = Promise<{ slug: string | string[] }>
+// type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
 
+type Args = {
+  params: Promise<{
+    slug?: string
+  }>
+}
 
-type Params = Promise<{ slug: string | string[] }>
-type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
-
-export default async function PostPage(props: { params: Params; searchParams?: SearchParams }) {
-  const params = await props.params
-  const searchParams = await props.searchParams
-  const { slug } = params
-  const slugValue = Array.isArray(slug) ? slug[0] : slug
-
-  if (!slugValue) {
-    notFound()
-  }
-
-  const post = await queryPostBySlug({ slug: slugValue })
-  if (!post) {
-    notFound()
-  }
+export default async function PostPage({ params: paramsPromise }: Args) {
+  const { slug = "" } = await paramsPromise
+  const url = `/journal/${slug}`
+ const post = await queryPostBySlug({ slug })
+ 
+  if (!post) return <PayloadRedirects url={url} />
 
   return (
     <article className="bg-white pt-24 text-black">
+        <PayloadRedirects disableNotFound url={url} />
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <ul className="hidden list-none flex-wrap gap-4 md:flex">
@@ -138,19 +153,14 @@ export default async function PostPage(props: { params: Params; searchParams?: S
         </div>
       </div>
 
-      <div className="container mx-auto grid grid-cols-1 gap-8 pt-8 md:grid-cols-3">
-        <div className="md:col-span-1">
-          <TableOfContents content={(post.content?.root?.children || []) as LexicalNode[]} />
-        </div>
-        <div className="md:col-span-2">
-          <article className="prose mx-auto pb-24">
-            <RichText
-              content={post.content}
-              enableProse={true}
-              enableGutter={false}
-            />
-          </article>
-        </div>
+      <div className="container mx-auto px-4 pt-8">
+        <article className="prose mx-auto max-w-4xl pb-24">
+          <RichText
+            content={post.content}
+            enableProse={true}
+            enableGutter={false}
+          />
+        </article>
       </div>
     </article>
   )
@@ -174,20 +184,42 @@ export async function generateMetadata({ params: paramsPromise }: Args): Promise
 }
 
 
-async function queryPostBySlug({ slug }: { slug: string }): Promise<Post | null> {
+// async function queryPostBySlug({ slug }: { slug: string }): Promise<Post | null> {
+//   const payload = await getPayload({ config: configPromise })
+//   try {
+//     const result = await payload.find({
+//       collection: 'posts',
+//       limit: 1,
+//       where: {
+//         slug: {
+//           equals: slug,
+//         },
+//       },
+//     })
+//     return result.docs[0] || null
+//   } catch (error) {
+//     return null
+//   }
+// }
+
+
+const queryPostBySlug = cache(async ({ slug }: { slug: string }) => {
+  const { isEnabled: draft } = await draftMode()
+
   const payload = await getPayload({ config: configPromise })
-  try {
-    const result = await payload.find({
-      collection: 'posts',
-      limit: 1,
-      where: {
-        slug: {
-          equals: slug,
-        },
+
+  const result = await payload.find({
+    collection: 'posts',
+    draft,
+    limit: 1,
+    overrideAccess: draft,
+    pagination: false,
+    where: {
+      slug: {
+        equals: slug,
       },
-    })
-    return result.docs[0] || null
-  } catch (error) {
-    return null
-  }
-}
+    },
+  })
+
+  return result.docs?.[0] || null
+})
