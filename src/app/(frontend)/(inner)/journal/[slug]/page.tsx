@@ -21,20 +21,6 @@ import { formatDate } from '@/utilities/formatDateTime'
 
 export const revalidate = 3600
 
-// export async function generateStaticParams() {
-//   const payload = await getPayload({ config: configPromise })
-//   const posts = await payload.find({
-//     collection: 'posts',
-//     limit: 1000,
-//     overrideAccess: false,
-//   })
-//   return (
-//     posts.docs?.map(({ slug }) => ({
-//       params: { slug },
-//     })) || []
-//   )
-// }
-
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
   const posts = await payload.find({
@@ -53,9 +39,6 @@ export async function generateStaticParams() {
 
   return params
 }
-
-// type Params = Promise<{ slug: string | string[] }>
-// type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
 
 type Args = {
   params: Promise<{
@@ -166,16 +149,6 @@ export default async function PostPage({ params: paramsPromise }: Args) {
   )
 }
 
-// export async function generateMetadata({
-//   params,
-// }: {
-//   params: { slug: string }
-// }): Promise<Metadata> {
-//   return {
-//     title: 'Blog Post',
-//   }
-// }
-
 export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
   const { slug = '' } = await paramsPromise
   const post = await queryPostBySlug({ slug })
@@ -183,24 +156,6 @@ export async function generateMetadata({ params: paramsPromise }: Args): Promise
   return generateMeta({ doc: post })
 }
 
-
-// async function queryPostBySlug({ slug }: { slug: string }): Promise<Post | null> {
-//   const payload = await getPayload({ config: configPromise })
-//   try {
-//     const result = await payload.find({
-//       collection: 'posts',
-//       limit: 1,
-//       where: {
-//         slug: {
-//           equals: slug,
-//         },
-//       },
-//     })
-//     return result.docs[0] || null
-//   } catch (error) {
-//     return null
-//   }
-// }
 
 
 const queryPostBySlug = cache(async ({ slug }: { slug: string }) => {
