@@ -1,60 +1,80 @@
+/**
+ * @fileoverview Utility for retrieving the currently authenticated user's information.
+ * Handles authentication token management and conditional redirects based on user state.
+ */
+
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
-
-import type { User } from '@/payload-types'
+import type { User } from '../payload-types'
+import { getClientSideURL } from './getURL'
 
 /**
- * Retrieves the currently authenticated user using the JWT token stored in cookies
- * @param args Optional configuration object for redirect behavior
- * @param args.nullUserRedirect Path to redirect to if no user is found
- * @param args.validUserRedirect Path to redirect to if a valid user is found
- * @returns Object containing the JWT token and user data
+ * Arguments for the getMeUser function
  */
-export const getMeUser = async (args?: {
+interface GetMeUserArgs {
+  /** URL to redirect to if no user is authenticated */
   nullUserRedirect?: string
+  /** URL to redirect to if a valid user is found */
   validUserRedirect?: string
-}): Promise<{
-  token: string
-  user: User
-}> => {
-  // Destructure optional redirect paths from args
-  const { nullUserRedirect, validUserRedirect } = args || {}
+}
 
-  // Get the cookie store and extract the payload-token
+/**
+ * Response type for the getMeUser function
+ */
+interface GetMeUserResponse {
+  /** JWT authentication token */
+  token: string
+  /** Authenticated user data */
+  user: User
+}
+
+/**
+ * Retrieves the currently authenticated user's information using the JWT token
+ * stored in cookies. Can optionally redirect based on authentication state.
+ * 
+ * @param {GetMeUserArgs} [args] - Optional configuration for redirect behavior
+ * @param {string} [args.nullUserRedirect] - Redirect path for unauthenticated users
+ * @param {string} [args.validUserRedirect] - Redirect path for authenticated users
+ * @returns {Promise<GetMeUserResponse>} User data and authentication token
+ * @throws {RedirectError} When redirect conditions are met
+ * 
+ * @example
+ * Get user without redirects
+ * const { user, token } = await getMeUser()
+ * 
+ * Redirect unauthenticated users to login
+ * const { user } = await getMeUser({ nullUserRedirect: '/login' })
+ * 
+ * Redirect authenticated users to dashboard
+ * const { user } = await getMeUser({ validUserRedirect: '/dashboard' })
+ */
+export const getMeUser = async (args?: GetMeUserArgs): Promise<GetMeUserResponse> => {
+  const { nullUserRedirect, validUserRedirect } = args || {}
+  
+  // Get authentication token from cookies
   const cookieStore = await cookies()
   const token = cookieStore.get('payload-token')?.value
 
-  // Make API request to /api/users/me endpoint to get the current user
-  const meUserReq = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/me`, {
+  // Fetch user data from API
+  const meUserReq = await fetch(`${getClientSideURL()}/api/users/me`, {
     headers: {
       Authorization: `JWT ${token}`,
     },
   })
 
-  // Parse the response to get user data
-  const {
-    user,
-  }: {
-    user: User
-  } = await meUserReq.json()
+  const { user }: { user: User } = await meUserReq.json()
 
-  // If validUserRedirect is provided and we have a valid user,
-  // redirect to the specified path
+  // Handle redirects based on authentication state
   if (validUserRedirect && meUserReq.ok && user) {
     redirect(validUserRedirect)
   }
 
-  // If nullUserRedirect is provided and either the request failed
-  // or no user was found, redirect to the specified path
   if (nullUserRedirect && (!meUserReq.ok || !user)) {
     redirect(nullUserRedirect)
   }
 
-  // Return the token and user data
-  // Note: Token is force-unwrapped (!) because if it doesn't exist,
-  // the user would have been redirected by now
   return {
-    token: token!,
+    token: token!, // Token is guaranteed to exist if we reach this point
     user,
   }
 }

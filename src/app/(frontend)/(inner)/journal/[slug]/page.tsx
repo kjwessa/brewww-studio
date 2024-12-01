@@ -15,20 +15,10 @@ import { Post } from '@/payload-types'
 import { RichText } from '@/components/RichText/index'
 import TableOfContents from '@/components/TableOfContents/index'
 import { LexicalNode } from '@/components/RichText/nodeFormat'
+import { generateMeta } from '@/utilities/generateMeta'
 
 // Utilities
 import { formatDate } from '@/utilities/formatDateTime'
-
-const emptyLexicalContent = {
-  root: {
-    type: 'root',
-    children: [],
-    direction: null,
-    format: '',
-    indent: 0,
-    version: 1,
-  },
-} as const
 
 export const revalidate = 3600
 
@@ -46,15 +36,7 @@ export async function generateStaticParams() {
   )
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string }
-}): Promise<Metadata> {
-  return {
-    title: 'Blog Post',
-  }
-}
+
 
 type Params = Promise<{ slug: string | string[] }>
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
@@ -163,7 +145,7 @@ export default async function PostPage(props: { params: Params; searchParams?: S
         <div className="md:col-span-2">
           <article className="prose mx-auto pb-24">
             <RichText
-              content={post.content?.root ? post.content : emptyLexicalContent}
+              content={post.content}
               enableProse={true}
               enableGutter={false}
             />
@@ -173,6 +155,24 @@ export default async function PostPage(props: { params: Params; searchParams?: S
     </article>
   )
 }
+
+// export async function generateMetadata({
+//   params,
+// }: {
+//   params: { slug: string }
+// }): Promise<Metadata> {
+//   return {
+//     title: 'Blog Post',
+//   }
+// }
+
+export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
+  const { slug = '' } = await paramsPromise
+  const post = await queryPostBySlug({ slug })
+
+  return generateMeta({ doc: post })
+}
+
 
 async function queryPostBySlug({ slug }: { slug: string }): Promise<Post | null> {
   const payload = await getPayload({ config: configPromise })
@@ -191,4 +191,3 @@ async function queryPostBySlug({ slug }: { slug: string }): Promise<Post | null>
     return null
   }
 }
-
