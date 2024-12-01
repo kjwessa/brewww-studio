@@ -20,6 +20,7 @@ import * as migration_20241130_161414_update_tagline_name_to_run_migrate_test fr
 import * as migration_20241130_162147_revert_pillar_tagline_name from './20241130_162147_revert_pillar_tagline_name';
 import * as migration_20241130_163332_add_meta_fields_to_blogposts from './20241130_163332_add_meta_fields_to_blogposts';
 import * as migration_20241130_233551_add_hidden_file_hash_to_media from './20241130_233551_add_hidden_file_hash_to_media';
+import * as migration_20241201_014900_add_header_and_footer from './20241201_014900_add_header_and_footer';
 
 export const migrations = [
   {
@@ -130,6 +131,11 @@ export const migrations = [
   {
     up: migration_20241130_233551_add_hidden_file_hash_to_media.up,
     down: migration_20241130_233551_add_hidden_file_hash_to_media.down,
-    name: '20241130_233551_add_hidden_file_hash_to_media'
+    name: '20241130_233551_add_hidden_file_hash_to_media',
+  },
+  {
+    up: migration_20241201_014900_add_header_and_footer.up,
+    down: migration_20241201_014900_add_header_and_footer.down,
+    name: '20241201_014900_add_header_and_footer'
   },
 ];
