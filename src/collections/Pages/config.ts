@@ -38,35 +38,8 @@ export const Pages: CollectionConfig = {
       name: 'title',
       label: 'Title',
       type: 'text',
-      required: false,
+      required: true,
       unique: true,
-      admin: {
-        description: 'The title of the page.',
-      },
-    },
-    {
-      name: 'meta',
-      type: 'group',
-      label: 'Meta',
-      fields: [
-        PreviewField({
-          hasGenerateFn: true,
-          titlePath: 'meta.title',
-          descriptionPath: 'meta.description',
-        }),
-        OverviewField({
-          titlePath: 'meta.title',
-          descriptionPath: 'meta.description',
-          imagePath: 'meta.image',
-        }),
-        MetaTitleField({
-          hasGenerateFn: true,
-        }),
-        MetaImageField({
-          relationTo: 'media',
-        }),
-        MetaDescriptionField({}),
-      ],
     },
     {
       type: 'tabs',
@@ -81,6 +54,29 @@ export const Pages: CollectionConfig = {
               required: false,
               blocks: [MediaBlock],
             },
+          ],
+        },
+        {
+          name: 'meta',
+          label: 'SEO',
+          fields: [
+            MetaTitleField({
+              hasGenerateFn: true,
+            }),
+            MetaImageField({
+              relationTo: 'media',
+            }),
+            MetaDescriptionField({}),
+            OverviewField({
+              titlePath: 'meta.title',
+              descriptionPath: 'meta.description',
+              imagePath: 'meta.image',
+            }),
+            PreviewField({
+              hasGenerateFn: true,
+              titlePath: 'meta.title',
+              descriptionPath: 'meta.description',
+            }),
           ],
         },
       ],

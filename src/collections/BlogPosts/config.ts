@@ -104,38 +104,32 @@ export const BlogPosts: CollectionConfig = {
           ],
         },
         {
-          label: 'SEO',
           name: 'meta',
+          label: 'SEO',
           fields: [
-            {
-              name: 'meta',
-              type: 'group',
-              label: 'Meta',
-              fields: [
-                PreviewField({
-                  hasGenerateFn: true,
-                  titlePath: 'meta.title',
-                  descriptionPath: 'meta.description',
-                }),
-                OverviewField({
-                  titlePath: 'meta.title',
-                  descriptionPath: 'meta.description',
-                  imagePath: 'meta.image',
-                }),
-                MetaTitleField({
-                  hasGenerateFn: true,
-                }),
-                MetaImageField({
-                  relationTo: 'media',
-                }),
-                MetaDescriptionField({}),
-              ],
-            },
+            MetaTitleField({
+              hasGenerateFn: true,
+            }),
+            MetaImageField({
+              relationTo: 'media',
+            }),
+            MetaDescriptionField({}),
+            OverviewField({
+              titlePath: 'meta.title',
+              descriptionPath: 'meta.description',
+              imagePath: 'meta.image',
+            }),
+            PreviewField({
+              hasGenerateFn: true,
+              titlePath: 'meta.title',
+              descriptionPath: 'meta.description',
+            }),
           ],
         },
       ],
     },
     ...slugField(),
+   
 
     {
       name: 'publishedOn',
