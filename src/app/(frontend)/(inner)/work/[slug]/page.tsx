@@ -1,11 +1,13 @@
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
-import React from 'react'
+import React, { cache } from 'react'
 import { RichText } from '@/components/RichText/index'
 import { notFound } from 'next/navigation'
 import { Work } from '@/payload-types'
 import Image from 'next/image'
 import Link from 'next/link'
+import { PayloadRedirects } from '@/components/PayloadRedirects'
+import { draftMode } from 'next/headers'
 
 import { BeforeAfter } from './BeforeAfter'
 import { Service } from '@/payload-types'
@@ -15,29 +17,37 @@ export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
   const projects = await payload.find({
     collection: 'work',
+    draft: false,
     limit: 1000,
     overrideAccess: false,
+    select: {
+      slug: true,
+    },
   })
-  return (
-    projects.docs?.map(({ slug }) => ({
-      params: { slug },
-    })) || []
-  )
+
+  const params = projects.docs.map(({ slug }) => {
+    return { slug }
+  })
+
+  return params
 }
 
-export default async function WorkPage({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params
-  if (!resolvedParams.slug) {
-    notFound()
-  }
+type Args = {
+  params: Promise<{
+    slug?: string
+  }>
+}
 
-  const project = await queryPostBySlug({ slug: resolvedParams.slug })
-  if (!project) {
-    notFound()
-  }
+export default async function WorkPage({ params: paramsPromise }: Args) {
+  const { slug = '' } = await paramsPromise
+  const url = `/work/${slug}`
+  const project = await queryPostBySlug({ slug })
+
+  if (!project) return <PayloadRedirects url={url} />
 
   return (
     <>
+      <PayloadRedirects disableNotFound url={url} />
       <section className="w-full bg-brand-dark-bg pb-20 pt-40 text-black">
         <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
           <div className="relative flex w-full flex-wrap items-start justify-between">
@@ -985,20 +995,23 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   )
 }
 
-async function queryPostBySlug({ slug }: { slug: string }): Promise<Work | null> {
+const queryPostBySlug = cache(async ({ slug }: { slug: string }) => {
+  const { isEnabled: draft } = await draftMode()
+
   const payload = await getPayload({ config: configPromise })
-  try {
-    const result = await payload.find({
-      collection: 'work',
-      limit: 1,
-      where: {
-        slug: {
-          equals: slug,
-        },
+
+  const result = await payload.find({
+    collection: 'work',
+    draft,
+    limit: 1,
+    overrideAccess: draft,
+    pagination: false,
+    where: {
+      slug: {
+        equals: slug,
       },
-    })
-    return result.docs[0] || null
-  } catch (error) {
-    return null
-  }
-}
+    },
+  })
+
+  return result.docs?.[0] || null
+})
