@@ -9,6 +9,13 @@ import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 import { slugField } from '@/fields/slug'
 
 import { generatePreviewPath } from '@root/utilities/generatePreviewPath'
+import {
+  MetaDescriptionField,
+  MetaImageField,
+  MetaTitleField,
+  OverviewField,
+  PreviewField,
+} from '@payloadcms/plugin-seo/fields'
 
 export const Work: CollectionConfig = {
   slug: 'work',
@@ -52,23 +59,41 @@ export const Work: CollectionConfig = {
       },
     },
     {
+      name: 'storyTitle',
+      type: 'text',
+      label: 'Story Title',
+      required: false,
+    },
+    {
+      name: 'storyContent',
+      type: 'richText',
+      label: 'Story Content',
+      required: false,
+    },
+    {
       type: 'tabs',
       tabs: [
         {
-          label: 'Content',
+          name: 'meta',
+          label: 'SEO',
           fields: [
-            {
-              name: 'storyTitle',
-              type: 'text',
-              label: 'Story Title',
-              required: false,
-            },
-            {
-              name: 'storyContent',
-              type: 'richText',
-              label: 'Story Content',
-              required: false,
-            },
+            MetaTitleField({
+              hasGenerateFn: true,
+            }),
+            MetaImageField({
+              relationTo: 'media',
+            }),
+            MetaDescriptionField({}),
+            OverviewField({
+              titlePath: 'meta.title',
+              descriptionPath: 'meta.description',
+              imagePath: 'meta.image',
+            }),
+            PreviewField({
+              hasGenerateFn: true,
+              titlePath: 'meta.title',
+              descriptionPath: 'meta.description',
+            }),
           ],
         },
       ],

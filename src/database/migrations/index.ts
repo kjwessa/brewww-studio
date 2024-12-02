@@ -22,6 +22,7 @@ import * as migration_20241130_163332_add_meta_fields_to_blogposts from './20241
 import * as migration_20241130_233551_add_hidden_file_hash_to_media from './20241130_233551_add_hidden_file_hash_to_media';
 import * as migration_20241201_014900_add_header_and_footer from './20241201_014900_add_header_and_footer';
 import * as migration_20241201_234638_update_structure_of_blogposts_meta from './20241201_234638_update_structure_of_blogposts_meta';
+import * as migration_20241202_154355_add_meta_fields_to_work from './20241202_154355_add_meta_fields_to_work';
 
 export const migrations = [
   {
@@ -142,6 +143,11 @@ export const migrations = [
   {
     up: migration_20241201_234638_update_structure_of_blogposts_meta.up,
     down: migration_20241201_234638_update_structure_of_blogposts_meta.down,
-    name: '20241201_234638_update_structure_of_blogposts_meta'
+    name: '20241201_234638_update_structure_of_blogposts_meta',
+  },
+  {
+    up: migration_20241202_154355_add_meta_fields_to_work.up,
+    down: migration_20241202_154355_add_meta_fields_to_work.down,
+    name: '20241202_154355_add_meta_fields_to_work'
   },
 ];

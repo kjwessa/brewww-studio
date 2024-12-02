@@ -306,6 +306,11 @@ export interface Work {
     };
     [k: string]: unknown;
   } | null;
+  meta?: {
+    title?: string | null;
+    image?: (string | null) | Media;
+    description?: string | null;
+  };
   slug?: string | null;
   slugLock?: boolean | null;
   image?: (string | null) | Media;
@@ -1008,6 +1013,13 @@ export interface WorkSelect<T extends boolean = true> {
   description?: T;
   storyTitle?: T;
   storyContent?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
   slug?: T;
   slugLock?: T;
   image?: T;

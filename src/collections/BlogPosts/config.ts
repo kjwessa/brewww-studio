@@ -13,6 +13,7 @@ import {
   OverviewField,
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
+
 import { slugField } from '@/fields/slug'
 
 // Utilities & Hooks
