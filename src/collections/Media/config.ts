@@ -21,7 +21,6 @@ export const Media: CollectionConfig = {
 
   //* Collection Fields
   fields: [
-  
     {
       name: 'alt',
       type: 'text',
@@ -41,7 +40,7 @@ export const Media: CollectionConfig = {
           'This is the caption for the image. Optional, but helpful for Blog Posts requiring a caption.',
       },
     },
-      {
+    {
       name: 'fileHash',
       type: 'text',
       admin: {
@@ -53,9 +52,10 @@ export const Media: CollectionConfig = {
 
   //* Admin Settings
   admin: {
-    listSearchableFields: ['url', 'alt'],
+    defaultColumns: ['url', 'alt', 'caption'],
+    listSearchableFields: ['url', 'alt', 'caption'],
   },
-  
+
   hooks: {
     beforeChange: [generateFileHash],
   },

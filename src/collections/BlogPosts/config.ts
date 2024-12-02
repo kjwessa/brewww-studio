@@ -20,6 +20,7 @@ import { slugField } from '@/fields/slug'
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
 import { populatePublishedOn } from '@/hooks/populatePublishedOn'
 import { revalidatePost } from './hooks/revalidatePost'
+import { setMetaImageFallback } from '@/hooks/setMetaImageFallback'
 
 import { BlocksFeature, HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 
@@ -216,7 +217,7 @@ export const BlogPosts: CollectionConfig = {
     maxPerDoc: 25,
   },
   hooks: {
-    beforeChange: [populatePublishedOn],
+    beforeChange: [populatePublishedOn, setMetaImageFallback],
     afterChange: [revalidatePost],
   },
 }
