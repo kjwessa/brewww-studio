@@ -17,7 +17,7 @@ export default async function Page() {
       <div className="container mx-auto px-4 py-16">
         <div className="mb-16 text-center">
           <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">
-            Our Global Locations
+            Our National Locations
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-gray-600">
             Discover our presence and services across different locations.
@@ -31,7 +31,7 @@ export default async function Page() {
               href={`/location/${location.slug}`}
               className="group transform overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              {/* <div className="relative h-56 w-full overflow-hidden">
+              <div className="relative h-56 w-full overflow-hidden">
                 {location.heroImage ? (
                   <Image
                     src={(location.heroImage as Media)?.url || ''}
@@ -106,7 +106,7 @@ export default async function Page() {
                     />
                   </svg>
                 </div>
-              </div> */}
+              </div>
             </Link>
           ))}
         </div>

@@ -32,7 +32,7 @@ export const Technologies: CollectionConfig = {
       name: 'logoLight',
       type: 'upload',
       label: 'Logo',
-      required: false,
+      required: true,
       relationTo: 'media',
     },
   ],

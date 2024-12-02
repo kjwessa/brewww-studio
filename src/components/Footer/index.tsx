@@ -1,14 +1,14 @@
-import React from "react";
-import { getPayload } from "payload";
-import config from "@payload-config";
-import Image from "next/image";
-import Link from "next/link";
-import BrewwwMark from "/images/brand/brewww-mark-white.png";
+import React from 'react'
+import { getPayload } from 'payload'
+import config from '@payload-config'
+import Image from 'next/image'
+import Link from 'next/link'
+import BrewwwMark from '/images/brand/brewww-mark-white.png'
 
 interface FooterLinkProps {
-  href: string;
-  label: string;
-  badge?: string;
+  href: string
+  label: string
+  badge?: string
 }
 
 const FooterLink: React.FC<FooterLinkProps> = ({ href, label, badge }) => (
@@ -25,14 +25,14 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, label, badge }) => (
       </div>
     )}
   </Link>
-);
+)
 
 export default async function Footer() {
-  const payload = await getPayload({ config });
-  const footer = await payload.findGlobal({ slug: "footer" });
+  const payload = await getPayload({ config })
+  const footer = await payload.findGlobal({ slug: 'footer' })
   const getCurrentYear = (): number => {
-    return new Date().getFullYear();
-  };
+    return new Date().getFullYear()
+  }
   return (
     <footer className="w-full border-b-4 border-brand-gold bg-brand-dark-bg p-10 text-black">
       <div className="relative w-full overflow-hidden rounded-lg bg-zinc-900 pb-16 pt-3 lg:pb-10 lg:pt-16">
@@ -79,7 +79,7 @@ export default async function Footer() {
                   className="inline-flex"
                   href=""
                   style={{
-                    outlineOffset: "2px",
+                    outlineOffset: '2px',
                   }}
                 >
                   <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
@@ -178,12 +178,12 @@ export default async function Footer() {
         </div>
         <div className="mb-10 hidden w-full justify-center text-[8.5rem] font-light leading-none text-white lg:mb-5 lg:flex">
           <div className="text-center">
-            <span className="-mr-3 -mt-11 inline-block align-middle">
+            <span className="-mr-6 -mt-11 inline-block align-middle">
               <Image
-                src="/images/brewww-mark-white.png"
+                src="https://bucket.brewww.studio/brewww/media/brewww_logo_mark_letter-b_white.svg"
                 alt="Brewww Mark"
-                width={115}
-                height={115}
+                width={140}
+                height={140}
                 className="inline-block"
               />
             </span>
@@ -215,5 +215,5 @@ export default async function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }
