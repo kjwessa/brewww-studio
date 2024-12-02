@@ -96,7 +96,7 @@ export default buildConfig({
     pool: {
       connectionString: process.env.POSTGRES_URL,
       max: process.env.NODE_ENV === 'production' ? 20 : 5,
-      connectionTimeoutMillis: 3000,
+      connectionTimeoutMillis: 10000,
     },
     push: process.env.NODE_ENV === 'development',
     migrationDir: './src/migrations',
