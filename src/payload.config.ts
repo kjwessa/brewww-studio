@@ -99,7 +99,7 @@ export default buildConfig({
       connectionTimeoutMillis: 3000,
     },
     push: process.env.NODE_ENV === 'development',
-    migrationDir: './src/database/migrations',
+    migrationDir: './src/migrations',
     idType: 'uuid',
   }),
   editor: defaultLexical,

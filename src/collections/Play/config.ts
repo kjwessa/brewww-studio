@@ -13,7 +13,7 @@ import {
   MetaTitleField,
   MetaImageField,
   MetaDescriptionField,
-} from '@/fields/meta'
+} from '@payloadcms/plugin-seo/fields'
 
 // Utilities
 import { generatePreviewPath } from '@root/utilities/generatePreviewPath'
