@@ -173,13 +173,13 @@ export interface User {
  */
 export interface Page {
   id: string;
-  title?: string | null;
+  title: string;
+  layout?: MediaBlock[] | null;
   meta?: {
     title?: string | null;
     image?: (string | null) | Media;
     description?: string | null;
   };
-  layout?: MediaBlock[] | null;
   slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;
@@ -223,11 +223,9 @@ export interface Post {
   };
   categories: (string | Category)[];
   meta?: {
-    meta?: {
-      title?: string | null;
-      image?: (string | null) | Media;
-      description?: string | null;
-    };
+    title?: string | null;
+    image?: (string | null) | Media;
+    description?: string | null;
   };
   slug?: string | null;
   slugLock?: boolean | null;
@@ -920,13 +918,6 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface PagesSelect<T extends boolean = true> {
   title?: T;
-  meta?:
-    | T
-    | {
-        title?: T;
-        image?: T;
-        description?: T;
-      };
   layout?:
     | T
     | {
@@ -938,6 +929,13 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+      };
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
       };
   slug?: T;
   slugLock?: T;
@@ -958,13 +956,9 @@ export interface PostsSelect<T extends boolean = true> {
   meta?:
     | T
     | {
-        meta?:
-          | T
-          | {
-              title?: T;
-              image?: T;
-              description?: T;
-            };
+        title?: T;
+        image?: T;
+        description?: T;
       };
   slug?: T;
   slugLock?: T;

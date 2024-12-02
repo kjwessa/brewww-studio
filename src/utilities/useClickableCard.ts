@@ -16,7 +16,7 @@ import { useCallback, useEffect, useRef } from 'react'
  */
 type UseClickableCardType<T extends HTMLElement> = {
   card: {
-    ref: RefObject<T | null>
+    ref: RefObject<T>
   }
   link: {
     ref: RefObject<HTMLAnchorElement>
@@ -56,15 +56,10 @@ function useClickableCard<T extends HTMLElement>({
   scroll = true,
 }: Props): UseClickableCardType<T> {
   const router = useRouter()
-  // Ref for the main card container element
-  const card = useRef<T>(null)
-  // Ref for the primary link element within the card
-  const link = useRef<HTMLAnchorElement>(null)
-  // Track mousedown timestamp for click duration calculation
+  const card = useRef<T>(null) as RefObject<T>
+  const link = useRef<HTMLAnchorElement>(null) as RefObject<HTMLAnchorElement>
   const timeDown = useRef<number>(0)
-  // Flag to check if click started on a nested interactive element
   const hasActiveParent = useRef<boolean>(false)
-  // Track which mouse button was pressed
   const pressedButton = useRef<number>(0)
 
   /**
