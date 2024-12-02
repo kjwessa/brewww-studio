@@ -1,6 +1,6 @@
-import { BeforeChangeHook } from 'payload/dist/collections/config/types'
+import type { CollectionBeforeChangeHook } from "payload";
 
-export const setMetaImageFallback: BeforeChangeHook = ({ data, operation }) => {
+export const setMetaImageFallback: CollectionBeforeChangeHook = ({ data, operation }) => {
   if (operation === 'create' || operation === 'update') {
     if (!data.meta?.image && data.image) {
       data.meta = {
