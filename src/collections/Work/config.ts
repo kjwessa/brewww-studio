@@ -44,7 +44,7 @@ export const Work: CollectionConfig = {
       name: 'tagline',
       type: 'text',
       label: 'Tagline',
-      required: false,
+      required: true,
       admin: {
         description: 'The tagline of the project as it appears around the site.',
       },
@@ -104,7 +104,7 @@ export const Work: CollectionConfig = {
       name: 'image',
       type: 'upload',
       label: 'Featured Image',
-      required: false,
+      required: true,
       relationTo: 'media',
       admin: {
         position: 'sidebar',
@@ -146,7 +146,7 @@ export const Work: CollectionConfig = {
   admin: {
     useAsTitle: 'title',
     description: 'All we do is work, work, work.',
-    defaultColumns: ['title'],
+    defaultColumns: ['title', 'status'],
     group: 'Portfolio',
     listSearchableFields: ['title'],
     livePreview: {

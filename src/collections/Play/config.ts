@@ -45,7 +45,7 @@ export const Playground: CollectionConfig = {
       name: 'tagline',
       type: 'text',
       label: 'Tagline',
-      required: false,
+      required: true,
       admin: {
         description: 'Add the tagline for the playground here.',
       },
@@ -88,7 +88,7 @@ export const Playground: CollectionConfig = {
       type: 'upload',
       relationTo: 'media',
       label: 'Featured Image',
-      required: false,
+      required: true,
       admin: {
         position: 'sidebar',
       },

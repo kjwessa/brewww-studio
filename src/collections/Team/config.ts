@@ -31,7 +31,7 @@ export const Team: CollectionConfig = {
     {
       name: 'role',
       type: 'text',
-      required: false,
+      required: true,
       label: 'Role',
       admin: {
         position: 'sidebar',
@@ -41,6 +41,7 @@ export const Team: CollectionConfig = {
       name: 'image',
       type: 'upload',
       relationTo: 'media',
+      required: true,
       label: 'Featured Image',
       admin: {
         position: 'sidebar',

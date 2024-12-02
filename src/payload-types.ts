@@ -288,7 +288,7 @@ export interface Location {
 export interface Work {
   id: string;
   title: string;
-  tagline?: string | null;
+  tagline: string;
   description?: string | null;
   storyTitle?: string | null;
   storyContent?: {
@@ -313,7 +313,7 @@ export interface Work {
   };
   slug?: string | null;
   slugLock?: boolean | null;
-  image?: (string | null) | Media;
+  image: string | Media;
   brand?: (string | null) | Brand;
   featured?: boolean | null;
   projectLink?: string | null;
@@ -440,12 +440,12 @@ export interface Pillar {
 export interface Play {
   id: string;
   title: string;
-  tagline?: string | null;
+  tagline: string;
   description?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;
   publishedOn?: string | null;
-  image?: (string | null) | Media;
+  image: string | Media;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -489,8 +489,8 @@ export interface Team {
   title: string;
   slug?: string | null;
   slugLock?: boolean | null;
-  role?: string | null;
-  image?: (string | null) | Media;
+  role: string;
+  image: string | Media;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;

@@ -61,12 +61,12 @@ export const Testimonials: CollectionConfig = {
 
   admin: {
     description: 'Kind clients saying kind things.',
-    defaultColumns: ['title'],
+    defaultColumns: ['title', 'callout', 'author', 'status'],
     group: 'Portfolio',
-    listSearchableFields: ['title'],
+    listSearchableFields: ['title', 'author'],
     pagination: {
       defaultLimit: 25,
-      limits: [10, 25, 50],
+      limits: [25, 50, 100],
     },
     useAsTitle: 'title',
   },

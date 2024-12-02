@@ -36,12 +36,12 @@ export const BlogCategories: CollectionConfig = {
 
   //* Admin Settings
   admin: {
-    defaultColumns: ['title'],
+    defaultColumns: ['title', 'status'],
     group: 'Blog Posts',
     listSearchableFields: ['title'],
     pagination: {
       defaultLimit: 25,
-      limits: [10, 25, 50, 100],
+      limits: [10, 25, 50],
     },
     useAsTitle: 'title',
   },
