@@ -7,6 +7,8 @@ import { Title } from '../Title'
 import { Text } from '../Text'
 
 export const BlogCard = ({ post }: { post: Post }) => {
+  const category = post.categories?.[0] as Category | undefined
+
   return (
     <Link className="relative" href={`/journal/${post.slug}`}>
       <div className="mb-5 overflow-hidden rounded-md">
@@ -23,7 +25,7 @@ export const BlogCard = ({ post }: { post: Post }) => {
       </div>
       <div className="mt-4">
         <Text level="p" size="label-medium" className="mb-2 flex flex-row items-center uppercase">
-          <span>{(post.categories[0] as Category)?.title || 'Uncategorized'}</span>
+          <span>{category?.title || 'Uncategorized'}</span>
           <span className="ml-2">/ min read</span>
         </Text>
         <Title el="h3" size="title-medium" className="leading-none">

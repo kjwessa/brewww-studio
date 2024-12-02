@@ -4,6 +4,10 @@ import { Title } from '@/components/Title'
 import { Text } from '@/components/Text'
 
 export function BlogGridSection({ posts }: { posts: Post[] }) {
+  if (!posts || posts.length === 0) {
+    return null
+  }
+
   return (
     <section className="relative bg-white pt-3 text-black">
       <div className="relative z-10 m-auto w-full max-w-[100.00rem] px-24 pt-24">
@@ -22,20 +26,28 @@ export function BlogGridSection({ posts }: { posts: Post[] }) {
       <div className="m-auto w-full max-w-[100.00rem] px-24 text-black">
         <div className="flex flex-wrap px-24">
           <div className="relative w-full max-w-[50%] basis-1/2">
-            <div className="-ml-24 mb-36 w-[33.44rem] pb-3">
-              <BlogCard post={posts[0]} />
-            </div>
-            <div className="float-right mb-36 mr-24 w-[33.44rem] pb-3">
-              <BlogCard post={posts[2]} />
-            </div>
+            {posts[0] && (
+              <div className="-ml-24 mb-36 w-[33.44rem] pb-3">
+                <BlogCard post={posts[0]} />
+              </div>
+            )}
+            {posts[2] && (
+              <div className="float-right mb-36 mr-24 w-[33.44rem] pb-3">
+                <BlogCard post={posts[2]} />
+              </div>
+            )}
           </div>
           <div className="relative w-full max-w-[50%] basis-1/2">
-            <div className="mb-36 mt-28 w-[33.44rem] pb-3">
-              <BlogCard post={posts[1]} />
-            </div>
-            <div className="float-right -mr-24 mb-36 w-[33.44rem] pb-3">
-              <BlogCard post={posts[3]} />
-            </div>
+            {posts[1] && (
+              <div className="mb-36 mt-28 w-[33.44rem] pb-3">
+                <BlogCard post={posts[1]} />
+              </div>
+            )}
+            {posts[3] && (
+              <div className="float-right -mr-24 mb-36 w-[33.44rem] pb-3">
+                <BlogCard post={posts[3]} />
+              </div>
+            )}
           </div>
         </div>
       </div>

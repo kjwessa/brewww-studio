@@ -41,24 +41,10 @@
 //       <section className="w-full bg-brand-dark-bg pb-20 pt-40 text-black">
 //         <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
 //           <div className="relative flex w-full flex-wrap items-start justify-between">
-//             <div className="mb-2 hidden w-full px-2 text-white lg:mb-0 lg:flex lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-//               {project.services && project.services.length > 0 && (
-//                 <div className="mb-3 flex flex-wrap items-center lg:mb-20">
-//                   {project.services.map((service, index) => (
-//                     <div
-//                       key={index}
-//                       className="mb-2 mr-2 rounded-full bg-zinc-800 px-4 pb-1.5 pt-2 lg:mb-3 lg:mr-3 lg:inline-flex"
-//                     >
-//                       {typeof service === 'string' ? service : service.title}
-//                     </div>
-//                   ))}
-//                 </div>
-//               )}
-//             </div>
+//             <div className="mb-2 hidden w-full px-2 text-white lg:mb-0 lg:flex lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4"></div>
 //             <div className="w-full px-2 lg:w-[62.5%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
 //               <div className="relative rounded-bl-3xl lg:pb-5 lg:pl-10 lg:pr-10 lg:pt-0">
 //                 <div className="mb-3 flex items-center text-zinc-400 xl:mb-5">
-//                   <div className="font-light">{project.projectYear || 'Add Year'}</div>
 //                   <div className="ml-3 h-1.5 w-1.5 rounded-full bg-zinc-400" />
 //                   <div className="ml-3 font-light">{project.title}</div>
 //                 </div>
