@@ -162,8 +162,8 @@ export function TeamBio({ team }: { team: Team }) {
                   <div className="w-full overflow-hidden rounded-3xl bg-zinc-800">
                     <div className="relative w-full overflow-hidden pt-96">
                       <Image
-                        src={(team.image as Media)?.url || ''}
-                        alt={(team.image as Media)?.alt || ''}
+                        src={(team.bioImage as Media)?.url || ''}
+                        alt={(team.bioImage as Media)?.alt || ''}
                         layout="fill"
                         objectFit="cover"
                         quality={80}

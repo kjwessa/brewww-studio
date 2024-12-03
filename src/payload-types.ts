@@ -508,6 +508,21 @@ export interface Team {
     };
     [k: string]: unknown;
   };
+  bio: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
   linkWebsite?: string | null;
   linkLinkedin?: string | null;
   linkInstagram?: string | null;
@@ -1191,6 +1206,7 @@ export interface TeamSelect<T extends boolean = true> {
   bioImage?: T;
   heroTitle?: T;
   heroDescription?: T;
+  bio?: T;
   linkWebsite?: T;
   linkLinkedin?: T;
   linkInstagram?: T;

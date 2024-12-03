@@ -85,6 +85,15 @@ export const Team: CollectionConfig = {
       },
     },
     {
+      name: 'bio',
+      type: 'richText',
+      label: 'Biography',
+      required: true,
+      admin: {
+        description: 'The biography of the team member.',
+      },
+    },
+    {
       name: 'linkWebsite',
       type: 'text',
       label: 'Website Link',

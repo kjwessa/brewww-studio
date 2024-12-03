@@ -1,4 +1,6 @@
 import { Team } from '@/payload-types'
+import { RichText } from '@/components/RichText'
+import { Title } from '@/components/Title'
 
 export function TeamHeroDetails({ team }: { team: Team }) {
   return (
@@ -12,9 +14,9 @@ export function TeamHeroDetails({ team }: { team: Team }) {
                 <div className="ml-2 font-light text-white">Meet {team.title}</div>
               </div>
               <div className="mb-5 w-full indent-48 text-5xl text-white lg:mb-10 lg:pr-16">
-                <h3 className="mb-3 indent-48">
-                  Get to know the founder and lead developer of Brewww Studio, Kevin Wessa.
-                </h3>
+                <Title el="h3" size="headline-medium" className="mb-3 indent-48">
+                  {team.heroTitle}
+                </Title>
               </div>
             </div>
             <div className="order-3 mb-5 w-full">
@@ -68,20 +70,7 @@ export function TeamHeroDetails({ team }: { team: Team }) {
           </div>
           <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-[43.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
             <div className="mb-10 w-full xl:pr-10">
-              <p className="mb-6">
-                With a background in economics, Kevin had always planned on a career in finance. But
-                while working for two start-ups after college, he learned the importance of branding
-                and the split second decisions people make about the tone, voice, and visuals of
-                brand presentation. Beginning as a concept NorthernDNA in 2012, it was in 2017 when
-                Kevin went all in on building Brewww.
-              </p>
-              <p className="mb-6">
-                Family man and entrepreneur, it's Kevin's goal to help "bring about" the dreams of
-                others, hence Brewww Studio was born. The company thrives on the simple goal to
-                craft unbounded brands. Kevin's passion for branding and his entrepreneurial spirit
-                have transformed Brewww into a studio that helps businesses make lasting impressions
-                through innovative brand strategies.
-              </p>
+              <RichText content={team.heroDescription} enableGutter={false} enableProse={false} />
             </div>
           </div>
         </div>
