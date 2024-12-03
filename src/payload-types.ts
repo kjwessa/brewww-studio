@@ -489,8 +489,30 @@ export interface Team {
   title: string;
   slug?: string | null;
   slugLock?: boolean | null;
-  role?: string | null;
-  image?: (string | null) | Media;
+  role: string;
+  image: string | Media;
+  bioImage: string | Media;
+  heroTitle: string;
+  heroDescription: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  meta?: {
+    title?: string | null;
+    image?: (string | null) | Media;
+    description?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -1162,6 +1184,16 @@ export interface TeamSelect<T extends boolean = true> {
   slugLock?: T;
   role?: T;
   image?: T;
+  bioImage?: T;
+  heroTitle?: T;
+  heroDescription?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   _status?: T;

@@ -2,10 +2,10 @@ import { Team } from '@/payload-types'
 
 export function TeamHeroDetails({ team }: { team: Team }) {
   return (
-    <section className="w-full bg-brand-dark-bg py-10 text-black lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
-      <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
+    <section className="w-full bg-brand-dark-bg py-10 text-black lg:pb-16 lg:pt-16">
+      <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
         <div className="relative flex flex-wrap items-start justify-between">
-          <div className="relative flex w-full flex-wrap px-2 lg:mb-0 lg:w-[56.25%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4 min-[2100px]:w-2/4">
+          <div className="relative flex w-full flex-wrap px-2 lg:mb-0 lg:w-[56.25%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
             <div className="order-1">
               <div className="mb-3 inline-flex w-auto items-center xl:absolute xl:left-[1.00rem] xl:top-[0.50rem]">
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />

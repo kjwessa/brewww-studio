@@ -23,6 +23,9 @@ import * as migration_20241130_233551_add_hidden_file_hash_to_media from './2024
 import * as migration_20241201_014900_add_header_and_footer from './20241201_014900_add_header_and_footer';
 import * as migration_20241201_234638_update_structure_of_blogposts_meta from './20241201_234638_update_structure_of_blogposts_meta';
 import * as migration_20241202_154355_add_meta_fields_to_work from './20241202_154355_add_meta_fields_to_work';
+import * as migration_20241203_205917_add_bioimage_to_team from './20241203_205917_add_bioimage_to_team';
+import * as migration_20241203_210256_add_meta_fields_to_team from './20241203_210256_add_meta_fields_to_team';
+import * as migration_20241203_210836_add_herotitle_and_description_to_team from './20241203_210836_add_herotitle_and_description_to_team';
 
 export const migrations = [
   {
@@ -148,6 +151,21 @@ export const migrations = [
   {
     up: migration_20241202_154355_add_meta_fields_to_work.up,
     down: migration_20241202_154355_add_meta_fields_to_work.down,
-    name: '20241202_154355_add_meta_fields_to_work'
+    name: '20241202_154355_add_meta_fields_to_work',
+  },
+  {
+    up: migration_20241203_205917_add_bioimage_to_team.up,
+    down: migration_20241203_205917_add_bioimage_to_team.down,
+    name: '20241203_205917_add_bioimage_to_team',
+  },
+  {
+    up: migration_20241203_210256_add_meta_fields_to_team.up,
+    down: migration_20241203_210256_add_meta_fields_to_team.down,
+    name: '20241203_210256_add_meta_fields_to_team',
+  },
+  {
+    up: migration_20241203_210836_add_herotitle_and_description_to_team.up,
+    down: migration_20241203_210836_add_herotitle_and_description_to_team.down,
+    name: '20241203_210836_add_herotitle_and_description_to_team'
   },
 ];
