@@ -52,7 +52,7 @@ export const Media: CollectionConfig = {
 
   //* Admin Settings
   admin: {
-    defaultColumns: ['alt', 'caption'],
+    defaultColumns: ['filename', 'alt', 'caption'],
     listSearchableFields: ['alt', 'caption'],
   },
 
