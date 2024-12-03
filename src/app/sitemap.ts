@@ -28,12 +28,22 @@ type SitemapEntry = {
   priority: number
 }
 
+interface CollectionConfig {
+  endpoint: string
+  prefix: string
+  priority: number
+}
+
+interface CollectionData extends CollectionConfig {
+  docs: Document[]
+}
+
 // Site-specific configuration
 const config = {
   serverUrl: process.env.SITE_URL || 'https://brewww.studio',
   maxRetries: 3,
-  retryDelay: 1000, // 1 second
-  timeout: 5000, // 5 seconds
+  retryDelay: 2000, // 2 seconds
+  timeout: 30000, // 30 seconds
   // Add static routes with their configurations
   staticRoutes: [
     { path: '/', priority: 1.0 },
@@ -58,7 +68,7 @@ const config = {
       prefix: '/journal/',
       priority: 0.8,
     },
-  },
+  } satisfies Record<string, CollectionConfig>,
 } as const
 
 // Helper function to validate and format URLs
@@ -108,85 +118,72 @@ async function fetchWithRetry(
 export const revalidate = 3600
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const dynamicContent = await Promise.all(
-    Object.entries(config.collections).map(async ([_, collection]) => {
-      try {
-        const apiUrl = formatUrl(config.serverUrl, `/api/${collection.endpoint}?where[_status][equals]=published&limit=100`)
-        if (!apiUrl) return { docs: [], ...collection }
-
-        const response = await fetchWithRetry(
-          apiUrl,
-          {
-            headers: {
-              'Accept': 'application/json',
-              'Cache-Control': 'no-cache',
-            },
-            next: {
-              revalidate: 3600,
-              tags: ['sitemap', `collection-${collection.endpoint}`],
-            },
-          }
-        )
-
-        if (!response.ok) {
-          console.error(
-            `Failed to fetch ${collection.endpoint}: ${response.status}`,
-            `URL: ${apiUrl}`,
-            await response.text()
-          )
-          return { docs: [], ...collection }
-        }
-
-        const data = await response.json() as PayloadResponse<Document>
-        if (!data?.docs || !Array.isArray(data.docs)) {
-          console.error(`Invalid response format for ${collection.endpoint}:`, data)
-          return { docs: [], ...collection }
-        }
-
-        console.log(`Successfully fetched ${data.docs.length} items from ${collection.endpoint}`)
-        return {
-          docs: data.docs,
-          ...collection,
-        }
-      } catch (error) {
-        console.error(`Error fetching ${collection.endpoint}:`, error)
-        return { docs: [], ...collection }
-      }
-    }),
-  )
-
   const sitemapEntries: MetadataRoute.Sitemap = [
-    // Static routes
-    ...config.staticRoutes.map(({ path, priority }): MetadataRoute.Sitemap[number] => {
-      const url = formatUrl(config.serverUrl, path)
-      if (!url) return {
-        url: `${config.serverUrl}${path}`,
-        lastModified: new Date().toISOString(),
-        changeFrequency: 'weekly',
-        priority,
-      }
-      return {
-        url,
-        lastModified: new Date().toISOString(),
-        changeFrequency: 'weekly',
-        priority,
-      }
-    }),
-
-    // Dynamic routes
-    ...dynamicContent.flatMap(
-      ({ docs, prefix, priority }) =>
-        (docs || []).map((doc: Document): MetadataRoute.Sitemap[number] => {
-          const url = formatUrl(config.serverUrl, `${prefix}${doc?.slug || ''}`)
-          return {
-            url: url || `${config.serverUrl}${prefix}${doc?.slug || ''}`,
-            lastModified: new Date(doc?.updatedAt || Date.now()).toISOString(),
-            changeFrequency: 'weekly',
-            priority,
-          }
-        })
-    ),
+    // Static routes first since they're immediate
+    ...config.staticRoutes.map(({ path, priority }): MetadataRoute.Sitemap[number] => ({
+      url: formatUrl(config.serverUrl, path) || `${config.serverUrl}${path}`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: 'weekly',
+      priority,
+    })),
   ]
+
+  // Fetch each collection separately to avoid timeout
+  for (const [_, collection] of Object.entries(config.collections)) {
+    try {
+      const apiUrl = formatUrl(
+        config.serverUrl,
+        `/api/${collection.endpoint}?where[_status][equals]=published&limit=100`
+      )
+      
+      if (!apiUrl) continue
+
+      console.log(`Fetching ${collection.endpoint}...`)
+      const response = await fetchWithRetry(
+        apiUrl,
+        {
+          headers: {
+            'Accept': 'application/json',
+            'Cache-Control': 'no-cache',
+          },
+          next: {
+            revalidate: 3600,
+            tags: ['sitemap', `collection-${collection.endpoint}`],
+          },
+        }
+      )
+
+      if (!response.ok) {
+        console.error(
+          `Failed to fetch ${collection.endpoint}: ${response.status}`,
+          `URL: ${apiUrl}`
+        )
+        continue
+      }
+
+      const data = await response.json() as PayloadResponse<Document>
+      if (!data?.docs || !Array.isArray(data.docs)) {
+        console.error(`Invalid response format for ${collection.endpoint}:`, data)
+        continue
+      }
+
+      console.log(`Successfully fetched ${data.docs.length} items from ${collection.endpoint}`)
+      
+      // Add entries for this collection immediately
+      sitemapEntries.push(
+        ...data.docs.map((doc): MetadataRoute.Sitemap[number] => ({
+          url: formatUrl(config.serverUrl, `${collection.prefix}${doc?.slug || ''}`) || 
+               `${config.serverUrl}${collection.prefix}${doc?.slug || ''}`,
+          lastModified: new Date(doc?.updatedAt || Date.now()).toISOString(),
+          changeFrequency: 'weekly',
+          priority: collection.priority,
+        }))
+      )
+    } catch (error) {
+      console.error(`Error processing ${collection.endpoint}:`, error)
+      continue
+    }
+  }
 
   return sitemapEntries
 }
