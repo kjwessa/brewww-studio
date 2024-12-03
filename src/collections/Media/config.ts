@@ -7,7 +7,7 @@ import { anyone } from '@/access/anyone'
 
 // Hooks
 import { generateFileHash } from './hooks/generateFileHash'
-
+//TODO ensure the hash gets wiped if an image fails to actually upload
 export const Media: CollectionConfig = {
   slug: 'media',
 
