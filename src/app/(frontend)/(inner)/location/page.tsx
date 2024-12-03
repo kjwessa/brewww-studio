@@ -31,7 +31,7 @@ export default async function Page() {
               href={`/location/${location.slug}`}
               className="group transform overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              {/* <div className="relative h-56 w-full overflow-hidden">
+              <div className="relative h-56 w-full overflow-hidden">
                 {location.heroImage ? (
                   <Image
                     src={(location.heroImage as Media)?.url || ''}
@@ -106,7 +106,7 @@ export default async function Page() {
                     />
                   </svg>
                 </div>
-              </div> */}
+              </div>
             </Link>
           ))}
         </div>
