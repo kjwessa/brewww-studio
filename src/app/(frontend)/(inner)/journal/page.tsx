@@ -2,6 +2,7 @@ import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import { BlogCard } from '@/components/BlogCard/index'
 import { CategoryFilterBar } from './_components/CategoryFilterBar'
+import { Post } from '@/payload-types'
 
 export const revalidate = 3600
 
@@ -11,6 +12,11 @@ export default async function BlogPage() {
     collection: 'posts',
     limit: 1000,
     sort: '-publishedOn',
+    where: {
+      _status: {
+        equals: 'published'
+      }
+    }
   })
 
   const categories = await payload.find({

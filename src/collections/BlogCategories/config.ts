@@ -36,7 +36,7 @@ export const BlogCategories: CollectionConfig = {
 
   //* Admin Settings
   admin: {
-    defaultColumns: ['title'],
+    defaultColumns: ['title', '_status'],
     group: 'Blog Posts',
     listSearchableFields: ['title'],
     pagination: {

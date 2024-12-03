@@ -131,7 +131,6 @@ export const BlogPosts: CollectionConfig = {
       ],
     },
     ...slugField(),
-   
 
     {
       name: 'publishedOn',
@@ -179,7 +178,7 @@ export const BlogPosts: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    defaultColumns: ['title', 'publishedOn', 'updatedAt'],
+    defaultColumns: ['title', 'publishedOn', 'updatedAt', '_status'],
     group: 'Blog Posts',
     listSearchableFields: ['title'],
     livePreview: {
