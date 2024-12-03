@@ -15,11 +15,15 @@ export const CategoryFilter = ({
 }) => {
   return (
     <Link
-      className={`inline-flex items-end ${isActive ? "text-white" : "text-neutral-400"}`}
+      className={`inline-flex items-end transition-colors duration-300 ease-in-out hover:text-white ${
+        isActive ? "text-white" : "text-neutral-400"
+      }`}
       href={slug || "#"}
     >
       <div
-        className={`cursor-pointer text-title-medium lowercase leading-none ${title.toLowerCase() === "explore all" ? "indent-48" : ""}`}
+        className={`cursor-pointer text-title-medium lowercase leading-none ${
+          title.toLowerCase() === "explore all" ? "indent-48" : ""
+        }`}
       >
         {title}
       </div>
