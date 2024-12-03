@@ -328,12 +328,8 @@ export interface Work {
 export interface Brand {
   id: string;
   title: string;
-<<<<<<< HEAD
   logoLight?: (string | null) | Media;
   logoDark?: (string | null) | Media;
-=======
-  logoLight: string | Media;
->>>>>>> a4894d8 (refactor(work): remove unneeded breakpoint tailwind styles)
   city?: string | null;
   state?: string | null;
   updatedAt: string;
@@ -373,7 +369,7 @@ export interface Faq {
 export interface Technology {
   id: string;
   title: string;
-  logoLight: string | Media;
+  logoLight?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;

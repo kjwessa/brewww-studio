@@ -9,36 +9,36 @@ interface JournalHeroProps {
 export function JournalHero({ post }: JournalHeroProps) {
   return (
     <>
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex items-start justify-start">
           <ul className="hidden list-none flex-wrap gap-4 md:flex">
             <li>
-              <Link href="/posts" className="hover:underline">
+              <Link href="/journal" className="hover:underline">
                 All Posts
               </Link>
             </li>
             <li>
-              <Link href="/posts/category/branding" className="hover:underline">
+              <Link href="/journal/category/branding" className="hover:underline">
                 Branding
               </Link>
             </li>
             <li>
-              <Link href="/posts/category/web-design" className="hover:underline">
+              <Link href="/journal/category/web-design" className="hover:underline">
                 Web Design
               </Link>
             </li>
             <li>
-              <Link href="/posts/category/content" className="hover:underline">
+              <Link href="/journal/category/content" className="hover:underline">
                 Content
               </Link>
             </li>
             <li>
-              <Link href="/posts/category/guides" className="hover:underline">
+              <Link href="/journal/category/guides" className="hover:underline">
                 Guides
               </Link>
             </li>
             <li>
-              <Link href="/posts/category/updates" className="hover:underline">
+              <Link href="/journal/category/updates" className="hover:underline">
                 Updates
               </Link>
             </li>
