@@ -508,6 +508,10 @@ export interface Team {
     };
     [k: string]: unknown;
   };
+  linkWebsite?: string | null;
+  linkLinkedin?: string | null;
+  linkInstagram?: string | null;
+  linkFacebook?: string | null;
   meta?: {
     title?: string | null;
     image?: (string | null) | Media;
@@ -1187,6 +1191,10 @@ export interface TeamSelect<T extends boolean = true> {
   bioImage?: T;
   heroTitle?: T;
   heroDescription?: T;
+  linkWebsite?: T;
+  linkLinkedin?: T;
+  linkInstagram?: T;
+  linkFacebook?: T;
   meta?:
     | T
     | {

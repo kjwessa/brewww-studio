@@ -26,6 +26,7 @@ import * as migration_20241202_154355_add_meta_fields_to_work from './20241202_1
 import * as migration_20241203_205917_add_bioimage_to_team from './20241203_205917_add_bioimage_to_team';
 import * as migration_20241203_210256_add_meta_fields_to_team from './20241203_210256_add_meta_fields_to_team';
 import * as migration_20241203_210836_add_herotitle_and_description_to_team from './20241203_210836_add_herotitle_and_description_to_team';
+import * as migration_20241203_211118_add_links_to_team from './20241203_211118_add_links_to_team';
 
 export const migrations = [
   {
@@ -166,6 +167,11 @@ export const migrations = [
   {
     up: migration_20241203_210836_add_herotitle_and_description_to_team.up,
     down: migration_20241203_210836_add_herotitle_and_description_to_team.down,
-    name: '20241203_210836_add_herotitle_and_description_to_team'
+    name: '20241203_210836_add_herotitle_and_description_to_team',
+  },
+  {
+    up: migration_20241203_211118_add_links_to_team.up,
+    down: migration_20241203_211118_add_links_to_team.down,
+    name: '20241203_211118_add_links_to_team'
   },
 ];

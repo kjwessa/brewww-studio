@@ -85,6 +85,34 @@ export const Team: CollectionConfig = {
       },
     },
     {
+      name: 'linkWebsite',
+      type: 'text',
+      label: 'Website Link',
+      required: false,
+      admin: { position: 'sidebar' },
+    },
+    {
+      name: 'linkLinkedin',
+      type: 'text',
+      label: 'LinkedIn Link',
+      required: false,
+      admin: { position: 'sidebar' },
+    },
+    {
+      name: 'linkInstagram',
+      type: 'text',
+      label: 'Instagram Link',
+      required: false,
+      admin: { position: 'sidebar' },
+    },
+    {
+      name: 'linkFacebook',
+      type: 'text',
+      label: 'Facebook Link',
+      required: false,
+      admin: { position: 'sidebar' },
+    },
+    {
       type: 'tabs',
       tabs: [
         {
