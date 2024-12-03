@@ -17,6 +17,8 @@
 # database
 .drizzle/
 drizzle.config.*
+*.sql
+prod_dump.sql
 
 # misc
 .DS_Store

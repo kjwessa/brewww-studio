@@ -17,8 +17,10 @@
     "db:migrate": "pnpm payload migrate",
     "db:status": "pnpm payload migrate:status",
     "db:down": "pnpm payload migrate:down",
-    "db:dump": "pg_dump -d [production-url] > prod_dump.sql",
-    "db:restore": "psql -d [local-url] < prod_dump.sql",
+    "db:dump": "echo '🔒 Pulling from production...' && source .env.production && pg_dump \"$POSTGRES_URL\" > prod_dump.sql",
+    "db:restore": "echo '💾 Restoring to local...' && source .env.local && [ \"$POSTGRES_URL\" = *\"localhost\"* ] && psql \"$POSTGRES_URL\" < prod_dump.sql || (echo '⚠️  Error: Not a local database' && exit 1)",
+    "db:sync": "echo '🔄 Syncing database...' && pnpm db:dump && pnpm db:restore",
+    "db:reset": "echo '🗑️  Resetting local database...' && dropdb neondb && createdb neondb && pnpm db:sync",
     "ci": "pnpm payload migrate && pnpm build"
   },
   "dependencies": {

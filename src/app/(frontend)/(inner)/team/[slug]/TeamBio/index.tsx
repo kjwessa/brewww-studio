@@ -1,5 +1,6 @@
 import { Media, Team } from '@/payload-types'
 import Image from 'next/image'
+import { RichText } from '@/components/RichText'
 
 export function TeamBio({ team }: { team: Team }) {
   return (
@@ -7,69 +8,13 @@ export function TeamBio({ team }: { team: Team }) {
       <div className="container mx-auto flex flex-wrap">
         <div className="mb-10 w-full px-2 lg:w-[68.75%] lg:pl-3 lg:pr-3 xl:w-[75%] xl:pl-4 xl:pr-4">
           <div className="w-full">
-            <h3 className="mb-3 text-[1.75rem] leading-8 text-white">
-              You're the founder of Brewww Studio. How did it all start?
-            </h3>
-            <p className="mb-6 text-lg font-light text-zinc-400">
-              My journey in the branding industry began in 2009 when I started working with
-              start-ups. It was then that I realized the crucial importance of branding, quality
-              websites, and clear language. In 2017, feeling the need for a career change, I took on
-              a few client projects. What started as small endeavors kept growing, snowballing into
-              something bigger year after year. This organic growth led to the creation of Brewww
-              Studio, where we focus on crafting impactful brands and helping businesses make
-              lasting impressions.
-            </p>
-            <h3 className="mb-3 text-[1.75rem] leading-8 text-white">
-              What's your favourite thing about working at Brewww?
-            </h3>
-            <p className="mb-6 text-lg font-light text-zinc-400">
-              Two things come to mind. The first is getting to meet incredible people and being in a
-              privileged position to hear their vision. It's truly inspiring to watch their eyes
-              light up as their ideas unfold. There's something magical about being part of that
-              process.
-            </p>
-            <p className="mb-6 text-lg font-light text-zinc-400">
-              The second is how this career beautifully blends work and play. It's rekindled my
-              sense of curiosity and exploration, moving away from the monotony of punching a clock.
-              Every day brings new challenges and opportunities, making work feel less like a job
-              and more like an adventure.
-            </p>
-            <h3 className="mb-3 text-[1.75rem] leading-8 text-white">
-              You mention that you get to really impact people's businesses. Do any projects stand
-              out?
-            </h3>
-            <p className="mb-6 text-lg font-light text-zinc-400">
-              There are obviously a lot of projects near and dear to my heart, but The Merry Beggars
-              stands out. When we began working together in 2021, they had just joined Relevant
-              Radio to increase their reach, beginning with two series and a small but interested
-              audience. Years later, our work together impacts millions, has charted on Apple
-              Podcasts, and is well received by an audience looking for original content. It's
-              incredibly rewarding to see how our collaboration has helped them grow and reach such
-              a wide audience.
-            </p>
-            <h3 className="mb-3 text-[1.75rem] leading-8 text-white">
-              Have you always wanted to be a web designer/developer?
-            </h3>
-            <p className="mb-6 text-lg font-light text-zinc-400">
-              I've always had an interest in computers, but for the longest time I saw Economics and
-              Business as my path in life. Brewww was the convergence of all those interests, as I
-              get to solve real business problems with tools I love. There's something unique about
-              the web - unlike anything else in human history, you can make a change in code or
-              design language and impact a worldwide audience of millions. The stakes are high, and
-              that keeps it interesting. It's not the path I initially envisioned, but I wouldn't
-              change it for anything. I'm incredibly proud of what we've created here at Brewww.
-            </p>
-            <h3 className="mb-3 text-[1.75rem] leading-8 text-white">
-              You are a family man. Tell us more.
-            </h3>
-            <p className="mb-6 text-lg font-light text-zinc-400">
-              My wife Christine and our three beautiful kids - James, John, and Ava - are the reason
-              for everything I do and my sole motivator. I'm fortunate to have shaped a career that
-              allows me to be present and provide, while also enjoying many moments with my kids
-              throughout the day as they grow up. They're all artistic, and I'm always happy to
-              cheer them on. This balance between work and family is what drives me and makes
-              everything worthwhile.
-            </p>
+            {team.bio && (
+              <RichText
+                content={team.bio}
+                enableGutter={false}
+                className="text-white [&_h3]:mb-3 [&_h3]:text-[1.75rem] [&_h3]:leading-8 [&_h3]:text-white [&_p]:mb-6 [&_p]:text-lg [&_p]:font-light [&_p]:text-zinc-400"
+              />
+            )}
           </div>
           <div className="mt-5 w-full">
             <div className="relative inline-flex items-center">
@@ -204,8 +149,8 @@ export function TeamBio({ team }: { team: Team }) {
                       />
                     </svg>
                     <div>
-                      <div className="text-white">Kevin</div>
-                      <div className="text-sm font-light text-neutral-400">Founder</div>
+                      <div className="text-white">{team.title.split(' ')[0]}</div>
+                      <div className="text-sm font-light text-neutral-400">{team.role}</div>
                     </div>
                   </div>
                 </div>
