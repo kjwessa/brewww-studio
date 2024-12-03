@@ -52,8 +52,8 @@ export const Media: CollectionConfig = {
 
   //* Admin Settings
   admin: {
-    defaultColumns: ['url', 'alt', 'caption'],
-    listSearchableFields: ['url', 'alt', 'caption'],
+    defaultColumns: ['alt', 'caption'],
+    listSearchableFields: ['alt', 'caption'],
   },
 
   hooks: {
