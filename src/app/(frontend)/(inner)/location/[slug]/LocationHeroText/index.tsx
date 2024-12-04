@@ -1,7 +1,6 @@
-'use client'
-
 import { Section } from '@/components/Section'
 import { Title } from '@/components/Title'
+import { Container } from '@/components/Container'
 
 interface LocationHeroTextProps {
   location: {
@@ -14,7 +13,7 @@ export function LocationHeroText({ location }: LocationHeroTextProps) {
   const title = `A Web Design Studio in ${location.locationCity}, ${location.locationState}.`
   return (
     <Section theme="dark">
-      <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
+      <Container size="2xl" spacing="large" spacingTop="xlarge">
         <div className="flex w-full flex-wrap justify-between">
           <div className="w-full px-2 lg:w-[56.25%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
             <div className="flex flex-col items-start">
@@ -44,7 +43,7 @@ export function LocationHeroText({ location }: LocationHeroTextProps) {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </Section>
   )
 }
