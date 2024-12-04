@@ -8,18 +8,16 @@ import { Text } from '../Text'
 
 export const BlogCard = ({ post }: { post: Post }) => {
   return (
-    <Link className="relative" href={`/journal/${post.slug}`}>
-      <div className="mb-5 overflow-hidden rounded-md">
-        <div className="relative h-[0] w-full pb-[66%]">
-          {post.image && (
-            <Image
-              className="object-cover"
-              src={typeof post.image === 'string' ? post.image : post.image.url || ''}
-              alt={post.title}
-              fill
-            />
-          )}
-        </div>
+    <Link className="group block h-full" href={`/journal/${post.slug}`}>
+      <div className="relative h-0 w-full pb-[66%] overflow-hidden rounded-md">
+        {post.image && (
+          <Image
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            src={typeof post.image === 'string' ? post.image : post.image.url || ''}
+            alt={post.title}
+            fill
+          />
+        )}
       </div>
       <div className="mt-4">
         <Text level="p" size="label-medium" className="mb-2 flex flex-row items-center uppercase">

@@ -53,38 +53,29 @@ export function LocationWorkSlider({ workItems }: LocationWorkSliderProps) {
             </div>
           </div>
         </div>
-        <div className="relative w-full px-2 sm:px-6 xl:px-12">
-          <div className="relative overflow-hidden">
-            <Swiper
-              modules={[Navigation]}
-              spaceBetween={24}
-              slidesPerView={1}
-              breakpoints={{
-                640: {
-                  slidesPerView: 2,
-                },
-                1024: {
-                  slidesPerView: 3,
-                },
-              }}
-              navigation={{
-                prevEl: navigationPrevRef.current,
-                nextEl: navigationNextRef.current,
-              }}
-              onBeforeInit={(swiper) => {
-                // @ts-ignore
-                swiper.params.navigation.prevEl = navigationPrevRef.current
-                // @ts-ignore
-                swiper.params.navigation.nextEl = navigationNextRef.current
-              }}
-            >
-              {workItems.map((project) => (
-                <SwiperSlide key={project.id}>
-                  <WorkCard project={project} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+        <div className="relative w-full">
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={24}
+            slidesPerView={3}
+            navigation={{
+              prevEl: navigationPrevRef.current,
+              nextEl: navigationNextRef.current,
+            }}
+            onBeforeInit={(swiper) => {
+              // @ts-ignore
+              swiper.params.navigation.prevEl = navigationPrevRef.current
+              // @ts-ignore
+              swiper.params.navigation.nextEl = navigationNextRef.current
+            }}
+            className="px-2 sm:px-6 xl:px-12"
+          >
+            {workItems.map((project) => (
+              <SwiperSlide key={project.id}>
+                <WorkCard project={project} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
           {/* Navigation Buttons */}
           <div className="mt-8 flex justify-center gap-4">
@@ -94,7 +85,7 @@ export function LocationWorkSlider({ workItems }: LocationWorkSliderProps) {
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
-            
+
             <button
               ref={navigationNextRef}
               className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-dark-surface transition-opacity hover:bg-brand-dark-surface/80 disabled:cursor-not-allowed disabled:opacity-50"

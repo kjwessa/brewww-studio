@@ -23,6 +23,7 @@ import { LocationImageRight } from './LocationImageRight'
 import { LocationHeroDetails } from './LocationHeroDetails'
 import { LocationServiceDetails } from './LocationServiceDetails'
 import { LocationFAQ } from './LocationFAQ'
+import { LocationBlogSlider } from './LocationBlogSlider'
 
 // Add type definition for page props
 type LocationPageProps = {
@@ -59,7 +60,7 @@ async function getPageData({ slug }: { slug: string }) {
     notFound()
   }
 
-  const [faqs, technologies, workItems, brands] = await Promise.all([
+  const [faqs, technologies, workItems, brands, posts] = await Promise.all([
     payload.find({
       collection: 'faq',
       limit: 1000,
@@ -101,6 +102,16 @@ async function getPageData({ slug }: { slug: string }) {
         ],
       },
     }),
+    payload.find({
+      collection: 'posts',
+      limit: 10,
+      sort: '-publishedOn',
+      where: {
+        _status: {
+          equals: 'published',
+        },
+      },
+    }),
   ])
 
   return {
@@ -109,6 +120,7 @@ async function getPageData({ slug }: { slug: string }) {
     technologies: technologies.docs || [],
     workItems: workItems.docs || [],
     brands: brands.docs || [],
+    posts: posts.docs || [],
   }
 }
 
@@ -118,13 +130,15 @@ export default async function LocationPage({ params, searchParams }: LocationPag
     notFound()
   }
 
-  const { technologies, location, faqs, workItems, brands } = await getPageData({
+  const { technologies, location, faqs, workItems, brands, posts } = await getPageData({
     slug: resolvedParams.slug,
   })
 
   return (
     <>
-      <LocationHeroText location={{ locationCity: location.locationCity, locationState: location.locationState }} />
+      <LocationHeroText
+        location={{ locationCity: location.locationCity, locationState: location.locationState }}
+      />
       <LocationHeroImage image={location.image as Media} />
       <LocationHeroDetails />
       <LocationImageLeft />
@@ -134,6 +148,7 @@ export default async function LocationPage({ params, searchParams }: LocationPag
       <LocationWorkSlider workItems={workItems} />
       <LocationTechSlider technologies={technologies} />
       <LocationFAQ faqs={faqs} />
+      <LocationBlogSlider posts={posts} />
     </>
   )
 }
