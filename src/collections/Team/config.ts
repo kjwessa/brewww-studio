@@ -14,6 +14,7 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 import { slugField } from '@/fields/slug'
+import { HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 
 export const Team: CollectionConfig = {
   slug: 'team',
@@ -77,6 +78,14 @@ export const Team: CollectionConfig = {
     {
       name: 'heroDescription',
       type: 'richText',
+      editor: lexicalEditor({
+        features: ({ defaultFeatures }) => [
+          ...defaultFeatures,
+          HeadingFeature({
+            enabledHeadingSizes: ['h2', 'h3', 'h4'],
+          }),
+        ],
+      }),
       label: 'Hero Description',
       required: true,
       admin: {
@@ -87,6 +96,14 @@ export const Team: CollectionConfig = {
     {
       name: 'bio',
       type: 'richText',
+      editor: lexicalEditor({
+        features: ({ defaultFeatures }) => [
+          ...defaultFeatures,
+          HeadingFeature({
+            enabledHeadingSizes: ['h2', 'h3', 'h4'],
+          }),
+        ],
+      }),
       label: 'Biography',
       required: true,
       admin: {
