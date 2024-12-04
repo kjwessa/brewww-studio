@@ -52,20 +52,20 @@ export const Location: CollectionConfig = {
     {
       name: 'heroTitle',
       type: 'text',
-      label: 'Hero Title',
+      label: 'DELETE - Hero Title',
       required: false,
       admin: {
         description: 'The hero title of the location as it appears around the site.',
       },
     },
     {
-      name: 'heroImage',
+      name: 'image',
       type: 'upload',
-      label: 'Hero Image',
+      label: 'Featured Image',
       relationTo: 'media',
       required: false,
       admin: {
-        description: 'The hero image displayed at the top of the location page.',
+        description: 'The featured image displayed at the top of the location page.',
       },
     },
     {

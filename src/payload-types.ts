@@ -260,7 +260,7 @@ export interface Location {
   locationCity: string;
   locationState: string;
   heroTitle?: string | null;
-  heroImage?: (string | null) | Media;
+  image?: (string | null) | Media;
   heroDescription?: {
     root: {
       type: string;
@@ -1058,7 +1058,7 @@ export interface LocationsSelect<T extends boolean = true> {
   locationCity?: T;
   locationState?: T;
   heroTitle?: T;
-  heroImage?: T;
+  image?: T;
   heroDescription?: T;
   slug?: T;
   slugLock?: T;

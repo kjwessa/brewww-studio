@@ -32,9 +32,9 @@ export default async function Page() {
               className="group transform overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="relative h-56 w-full overflow-hidden">
-                {location.heroImage ? (
+                {location.image ? (
                   <Image
-                    src={(location.heroImage as Media)?.url || ''}
+                    src={(location.image as Media)?.url || ''}
                     alt={location.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -63,7 +63,7 @@ export default async function Page() {
                 <h2 className="mb-2 text-xl font-bold text-gray-900 transition-colors group-hover:text-blue-600">
                   {location.title}
                 </h2>
-                {location.location && (
+                {location.locationCity && (
                   <div className="mb-4 flex items-center text-sm text-gray-600">
                     <svg
                       className="mr-2 h-4 w-4"
@@ -84,7 +84,7 @@ export default async function Page() {
                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                       />
                     </svg>
-                    <p className="line-clamp-1">{location.location}</p>
+                    <p className="line-clamp-1">{location.locationCity}</p>
                   </div>
                 )}
                 {location.heroTitle && (

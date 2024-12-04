@@ -31,6 +31,7 @@ import * as migration_20241203_213124_add_bio_to_team_member from './20241203_21
 import * as migration_20241204_015409_add_overview_to_services from './20241204_015409_add_overview_to_services';
 import * as migration_20241204_021645_add_meta_fields_to_services from './20241204_021645_add_meta_fields_to_services';
 import * as migration_20241204_181721 from './20241204_181721';
+import * as migration_20241204_182212 from './20241204_182212';
 
 export const migrations = [
   {
@@ -196,6 +197,11 @@ export const migrations = [
   {
     up: migration_20241204_181721.up,
     down: migration_20241204_181721.down,
-    name: '20241204_181721'
+    name: '20241204_181721',
+  },
+  {
+    up: migration_20241204_182212.up,
+    down: migration_20241204_182212.down,
+    name: '20241204_182212'
   },
 ];
