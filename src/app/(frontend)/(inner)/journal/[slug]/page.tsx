@@ -17,6 +17,13 @@ import { JournalContent } from './JournalContent'
 export const revalidate = 3600
 
 export async function generateStaticParams() {
+  // Skip generating static params during local production builds
+  const isLocalProdBuild = process.env.NODE_ENV === 'production' && !process.env.VERCEL
+  if (isLocalProdBuild) {
+    console.log('Skipping static params generation for local production build')
+    return []
+  }
+
   const payload = await getPayload({ config: configPromise })
   const posts = await payload.find({
     collection: 'posts',
@@ -34,6 +41,8 @@ export async function generateStaticParams() {
 
   return params
 }
+
+export const dynamicParams = true // Allow dynamic params when static params are skipped
 
 type Args = {
   params: Promise<{
