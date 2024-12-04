@@ -1,49 +1,55 @@
 // Next Imports
-import React from 'react'
+import React, { cache } from 'react'
 import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
+import { draftMode } from 'next/headers'
 import Image from 'next/image'
-import Link from 'next/link'
 
 // Payload Imports
 import { PayloadRedirects } from '@/components/PayloadRedirects'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
-import { Post, Service } from '@/payload-types'
+import { Service } from '@/payload-types'
 
 // Components
-import { RichText } from '@/components/RichText/index'
+import { generateMeta } from '@/utilities/generateMeta'
 
-// Utilities
-import { formatDate } from '@/utilities/formatDateTime'
+export const revalidate = 3600
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
   const services = await payload.find({
     collection: 'services',
+    draft: false,
     limit: 1000,
     overrideAccess: false,
+    select: {
+      slug: true,
+    },
   })
-  return (
-    services.docs?.map(({ slug }) => ({
-      params: { slug },
-    })) || []
-  )
+
+  const params = services.docs.map(({ slug }) => {
+    return { slug }
+  })
+
+  return params
 }
 
-export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params
-  if (!resolvedParams.slug) {
-    notFound()
-  }
+type Args = {
+  params: Promise<{
+    slug?: string
+  }>
+}
 
-  const service = await queryServiceBySlug({ slug: resolvedParams.slug })
-  if (!service) {
-    notFound()
-  }
+export default async function ServicePage({ params: paramsPromise }: Args) {
+  const { slug = '' } = await paramsPromise
+  const url = `/services/${slug}`
+  const service = await queryServiceBySlug({ slug })
+
+  if (!service) return <PayloadRedirects url={url} />
 
   return (
     <>
+      <PayloadRedirects disableNotFound url={url} />
       <section className="bg-white py-24 text-black">
         <div className="flex w-full items-end px-16 pt-44 text-center">
           <div className="flex w-full flex-wrap justify-center">
@@ -939,20 +945,36 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   )
 }
 
-async function queryServiceBySlug({ slug }: { slug: string }): Promise<Service | null> {
-  const payload = await getPayload({ config: configPromise })
-  try {
-    const result = await payload.find({
-      collection: 'services',
-      limit: 1,
-      where: {
-        slug: {
-          equals: slug,
-        },
-      },
-    })
-    return result.docs[0] || null
-  } catch (error) {
-    return null
+export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
+  const { slug = '' } = await paramsPromise
+  const service = await queryServiceBySlug({ slug })
+
+  if (!service) {
+    return {
+      title: 'Service Not Found',
+    }
   }
+
+  return generateMeta({ doc: service })
 }
+
+const queryServiceBySlug = cache(async ({ slug }: { slug: string }): Promise<Service | null> => {
+  const { isEnabled: draft } = await draftMode()
+
+  const payload = await getPayload({ config: configPromise })
+
+  const result = await payload.find({
+    collection: 'services',
+    draft,
+    limit: 1,
+    overrideAccess: draft,
+    pagination: false,
+    where: {
+      slug: {
+        equals: slug,
+      },
+    },
+  })
+
+  return result.docs?.[0] || null
+})
