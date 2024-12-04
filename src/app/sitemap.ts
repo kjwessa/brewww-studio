@@ -68,6 +68,11 @@ const config = {
       prefix: '/journal/',
       priority: 0.8,
     },
+    team: {
+      endpoint: 'team',
+      prefix: '/team/',
+      priority: 0.8,
+    },
   } satisfies Record<string, CollectionConfig>,
 } as const
 
