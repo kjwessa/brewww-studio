@@ -30,6 +30,7 @@ import * as migration_20241203_211118_add_links_to_team from './20241203_211118_
 import * as migration_20241203_213124_add_bio_to_team_member from './20241203_213124_add_bio_to_team_member';
 import * as migration_20241204_015409_add_overview_to_services from './20241204_015409_add_overview_to_services';
 import * as migration_20241204_021645_add_meta_fields_to_services from './20241204_021645_add_meta_fields_to_services';
+import * as migration_20241204_181721 from './20241204_181721';
 
 export const migrations = [
   {
@@ -190,6 +191,11 @@ export const migrations = [
   {
     up: migration_20241204_021645_add_meta_fields_to_services.up,
     down: migration_20241204_021645_add_meta_fields_to_services.down,
-    name: '20241204_021645_add_meta_fields_to_services'
+    name: '20241204_021645_add_meta_fields_to_services',
+  },
+  {
+    up: migration_20241204_181721.up,
+    down: migration_20241204_181721.down,
+    name: '20241204_181721'
   },
 ];

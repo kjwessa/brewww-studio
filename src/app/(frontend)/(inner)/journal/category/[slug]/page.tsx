@@ -74,32 +74,4 @@ export default async function CategoryPage({ params: paramsPromise }: Args) {
       </section>
     </>
   )
-}
-
-export async function generateStaticParams() {
-  // Skip generating static params during local production builds
-  const isLocalProdBuild = process.env.NODE_ENV === 'production' && !process.env.VERCEL
-  if (isLocalProdBuild) {
-    console.log('Skipping static params generation for local production build')
-    return []
-  }
-
-  const payload = await getPayload({ config: configPromise })
-  const categories = await payload.find({
-    collection: 'categories',
-    draft: false,
-    limit: 1000,
-    overrideAccess: false,
-    select: {
-      slug: true,
-    },
-  })
-
-  const params = categories.docs.map(({ slug }) => {
-    return { slug }
-  })
-
-  return params
-}
-
-export const dynamicParams = true // Allow dynamic params when static params are skipped 
+} 

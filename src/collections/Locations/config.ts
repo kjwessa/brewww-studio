@@ -32,12 +32,21 @@ export const Location: CollectionConfig = {
       },
     },
     {
-      name: 'location',
+      name: 'locationCity',
       type: 'text',
-      label: 'Location',
-      required: false,
+      label: 'Location City',
+      required: true,
       admin: {
-        description: 'The location of the location as it appears around the site.',
+        description: 'The city of the location.',
+      },
+    },
+    {
+      name: 'locationState',
+      type: 'text',
+      label: 'Location State',
+      required: true,
+      admin: {
+        description: 'The state of the location.',
       },
     },
     {

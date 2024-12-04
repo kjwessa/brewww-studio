@@ -257,7 +257,8 @@ export interface Category {
 export interface Location {
   id: string;
   title: string;
-  location?: string | null;
+  locationCity: string;
+  locationState: string;
   heroTitle?: string | null;
   heroImage?: (string | null) | Media;
   heroDescription?: {
@@ -1054,7 +1055,8 @@ export interface CategoriesSelect<T extends boolean = true> {
  */
 export interface LocationsSelect<T extends boolean = true> {
   title?: T;
-  location?: T;
+  locationCity?: T;
+  locationState?: T;
   heroTitle?: T;
   heroImage?: T;
   heroDescription?: T;
