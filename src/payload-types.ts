@@ -414,6 +414,21 @@ export interface Service {
   slugLock?: boolean | null;
   image?: (string | null) | Media;
   description?: string | null;
+  overview?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -1131,6 +1146,7 @@ export interface ServicesSelect<T extends boolean = true> {
   slugLock?: T;
   image?: T;
   description?: T;
+  overview?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;

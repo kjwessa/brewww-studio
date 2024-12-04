@@ -17,6 +17,8 @@ import {
 
 // Utilities
 import { generatePreviewPath } from '@root/utilities/generatePreviewPath'
+import { HeadingFeature } from '@payloadcms/richtext-lexical'
+import { lexicalEditor } from '@payloadcms/richtext-lexical'
 
 export const Services: CollectionConfig = {
   slug: 'services',
@@ -70,6 +72,14 @@ export const Services: CollectionConfig = {
       admin: {
         description: 'The description of the service as it appears around the site.',
       },
+    },
+    {
+      name: 'overview',
+      type: 'richText',
+      label: 'Overview',
+      editor: lexicalEditor({
+        features: ({ defaultFeatures }) => [...defaultFeatures, HeadingFeature({})],
+      }),
     },
   ],
 
