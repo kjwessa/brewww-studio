@@ -61,7 +61,6 @@ export const Media: CollectionConfig = {
   },
 
   upload: {
-    maxFileSize: 25000000, // 25MB in bytes
     adminThumbnail: (({
       doc,
     }: {
