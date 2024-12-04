@@ -124,10 +124,8 @@ export default async function LocationPage({ params, searchParams }: LocationPag
 
   return (
     <>
-      <LocationHeroText
-        title={location.heroTitle || undefined}
-      />
-      <LocationHeroImage image={location.heroImage as Media} />
+      <LocationHeroText title={location.heroTitle || undefined} />
+      <LocationHeroImage image={location.image as Media} />
       <LocationHeroDetails />
       <LocationImageLeft />
       <LocationImageRight />
