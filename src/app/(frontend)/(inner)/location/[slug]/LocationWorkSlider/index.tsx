@@ -53,7 +53,7 @@ export function LocationWorkSlider({ workItems }: LocationWorkSliderProps) {
             </div>
           </div>
         </div>
-        <div className="relative w-full">
+        <div className="relative w-full overflow-hidden">
           <Swiper
             modules={[Navigation]}
             spaceBetween={24}

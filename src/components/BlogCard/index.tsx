@@ -13,7 +13,11 @@ export const BlogCard = ({ post }: { post: Post }) => {
         {post.image && (
           <Image
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            src={typeof post.image === 'string' ? post.image : post.image.url || ''}
+            src={
+              typeof post.image === 'string'
+                ? post.image
+                : post.image?.sizes?.full?.url || post.image?.url || ''
+            }
             alt={post.title}
             fill
           />

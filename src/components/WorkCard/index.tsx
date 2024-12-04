@@ -32,7 +32,9 @@ export function WorkCard({ project }: WorkCardProps) {
                 <div className="relative w-full overflow-hidden pb-[75%]">
                   <Image
                     src={
-                      typeof project.image === 'string' ? project.image : project.image?.url || ''
+                      typeof project.image === 'string'
+                        ? project.image
+                        : project.image?.sizes?.full?.url || project.image?.url || ''
                     }
                     alt={(typeof project.image === 'object' && project.image?.alt) || project.title || ''}
                     fill
