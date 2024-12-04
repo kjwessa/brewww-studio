@@ -68,6 +68,7 @@ const sentryConfig = {
   hideSourceMaps: true,
   disableLogger: true,
   automaticVercelMonitors: true,
+  deleteSourceMapsAfterUpload: true,
 }
 
 // Apply both Payload and Sentry configurations

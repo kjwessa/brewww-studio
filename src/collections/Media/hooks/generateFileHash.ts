@@ -7,7 +7,7 @@ export const generateFileHash: CollectionBeforeChangeHook<Media> = async ({
   req,
 }) => {
   if (req.file) {
-    const fileBuffer = req.file.data
+    const fileBuffer = new Uint8Array(req.file.data)
     const hash = crypto.createHash('sha256').update(fileBuffer).digest('hex')
     
     // Check if file with this hash already exists
