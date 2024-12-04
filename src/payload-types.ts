@@ -330,7 +330,6 @@ export interface Brand {
   id: string;
   title: string;
   logoLight?: (string | null) | Media;
-  logoDark?: (string | null) | Media;
   city?: string | null;
   state?: string | null;
   updatedAt: string;
@@ -1111,7 +1110,6 @@ export interface FaqSelect<T extends boolean = true> {
 export interface BrandsSelect<T extends boolean = true> {
   title?: T;
   logoLight?: T;
-  logoDark?: T;
   city?: T;
   state?: T;
   updatedAt?: T;

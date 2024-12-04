@@ -32,6 +32,7 @@ import * as migration_20241204_015409_add_overview_to_services from './20241204_
 import * as migration_20241204_021645_add_meta_fields_to_services from './20241204_021645_add_meta_fields_to_services';
 import * as migration_20241204_181721 from './20241204_181721';
 import * as migration_20241204_182212 from './20241204_182212';
+import * as migration_20241204_184049 from './20241204_184049';
 
 export const migrations = [
   {
@@ -202,6 +203,11 @@ export const migrations = [
   {
     up: migration_20241204_182212.up,
     down: migration_20241204_182212.down,
-    name: '20241204_182212'
+    name: '20241204_182212',
+  },
+  {
+    up: migration_20241204_184049.up,
+    down: migration_20241204_184049.down,
+    name: '20241204_184049'
   },
 ];
