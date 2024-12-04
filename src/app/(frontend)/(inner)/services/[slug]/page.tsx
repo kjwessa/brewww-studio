@@ -247,7 +247,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
         </div>
       </section>
 
-      <section className="w-full bg-brand-dark-bg text-white min-[1600px]:pb-16 min-[1600px]:pt-20 min-[1920px]:pb-24 min-[1920px]:pt-28 min-[1921px]:pb-24 min-[1921px]:pt-28">
+      <section className="w-full bg-brand-dark-bg text-white pb-16 pt-20">
         <div className="mx-auto w-full max-w-[118.75rem] px-[4%]">
           <h3 className="inline-block text-lg uppercase min-[671px]:pl-6">
             Beautifully bespoke websites
@@ -272,7 +272,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
             </a>
           </div>
         </div>
-        <div className="m-auto w-[92%] min-[1921px]:max-w-[118.75rem]">
+        <div className="m-auto w-[92%]">
           <div className="relative">
             <ul className="list-none flex-wrap min-[769px]:flex">
               <li className="relative list-item min-[769px]:w-[30.9474%]">
@@ -586,24 +586,24 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
           />
         </div>
 
-        <div className="md:mt-10 min-[769px]:ml-auto lg:w-[48.2105%] min-[1025px]:w-[39.5789%]">
-          <div>
-            <h3 className="text-[7.50rem] uppercase leading-none">
-              <span className="text-[6.25rem] leading-none">What is WordPress</span>
-            </h3>
+            <div className="md:mt-10 lg:w-[48.2105%] min-[1025px]:w-[39.5789%]">
+              <div>
+                <h3 className="text-[7.50rem] uppercase leading-none">
+                  <span className="text-[6.25rem] leading-none">What is WordPress</span>
+                </h3>
 
-            <p className="text-[1.38rem] leading-7 lg:mt-8 min-[1025px]:mt-12">
-              WordPress is an online, open-source website creation tool. In simple terms, WordPress
-              is a tool that we lean on to manage and maintain a websites content. Brands like
-              TechCrunch and Mashable use WordPress as do many other famous blogs, music sites, and
-              Fortune 500 companies, so you're in good company when choosing to use it.
-            </p>
-          </div>
-        </div>
+                <p className="text-[1.38rem] leading-7 lg:mt-8 min-[1025px]:mt-12">
+                  WordPress is an online, open-source website creation tool. In simple terms, WordPress
+                is a tool that we lean on to manage and maintain a websites content. Brands like
+                TechCrunch and Mashable use WordPress as do many other famous blogs, music sites, and
+                Fortune 500 companies, so you&apos;re in good company when choosing to use it.
+              </p>
+              </div>
+            </div>
       </section>
 
-      <section className="bg-brand-dark-bg text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
-        <div className="m-auto w-[92%] min-[1921px]:max-w-[118.75rem]">
+      <section className="bg-brand-dark-bg pb-20 pt-20 text-white">
+        <div className="m-auto mb-16 w-[92%]">
           <div className="min-[769px]:flex min-[769px]:items-center">
             <div className="order-1 overflow-hidden min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
               <Image
@@ -638,8 +638,8 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
         </div>
       </section>
 
-      <section className="relative bg-brand-dark-bg text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
-        <div className="m-auto w-[92%] min-[1921px]:max-w-[118.75rem]">
+      <section className="relative bg-brand-dark-bg text-white pb-20 pt-20">
+        <div className="m-auto w-[92%]">
           <div className="min-[769px]:flex min-[769px]:items-center">
             <div className="overflow-hidden min-[769px]:w-[48.2105%]">
               <Image
@@ -672,7 +672,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 </p>
               </div>
 
-              <ul className="list-none flex-wrap text-lg min-[671px]:flex min-[1600px]:mt-8 min-[1920px]:mt-8 min-[1921px]:mt-8">
+              <ul className="list-none flex-wrap text-lg min-[671px]:flex">
                 <li className="relative list-item pl-7 min-[671px]:w-[48.2105%]">
                   Brochure Websites
                 </li>
@@ -706,7 +706,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
         </div>
       </section>
 
-      <section className="bg-white text-black min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
+      <section className="bg-white text-black pb-20 pt-20">
         <div className="container mx-auto w-[92%] max-w-[118.75rem]">
           <div className="m-auto w-[65.4737%] min-[768px]:w-full">
             <blockquote>
@@ -728,8 +728,8 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
         </div>
       </section>
 
-      <section className="relative bg-brand-dark-bg text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
-        <div className="m-auto w-[92%] text-center uppercase min-[1600px]:mb-16 min-[1920px]:mb-24 min-[1921px]:mb-24 min-[1921px]:max-w-[77.75rem]">
+      <section className="relative bg-brand-dark-bg text-white pb-20 pt-20">
+        <div className="m-auto w-[92%] text-center uppercase mb-16 max-w-[77.75rem]">
           <div>
             <h2 className="inline-block text-lg min-[671px]:pl-6">
               Looking for a Cleveland Next JS agency?
@@ -765,60 +765,63 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
         </div>
       </section>
 
-      <div className="min-[1600px]:mt-16 min-[1920px]:mt-24 min-[1921px]:mt-24">
+      <div className="mt-16">
         <div className="overflow-hidden">
-          <div className="flex md:w-[168vw] lg:w-[132vw] min-[1600px]:w-[120vw] min-[1601px]:w-[96vw]">
-            <div className="flex md:w-[168vw] lg:w-[132vw] min-[1600px]:w-[120vw] min-[1601px]:w-[96vw]">
-              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 min-[1600px]:w-96 min-[1601px]:w-72">
+          <div className="flex md:w-[168vw] lg:w-[132vw] w-[120vw] w-[96vw]">
+            <div className="flex md:w-[168vw] lg:w-[132vw] w-[120vw] w-[96vw]">
+              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 w-[96vw] w-[72vw]">
                 {'                                                                 '}
               </div>
 
-              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 min-[1600px]:w-96 min-[1601px]:w-72">
+              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 w-[96vw] w-[72vw]">
                 {'                                                                 '}
               </div>
 
-              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 min-[1600px]:w-96 min-[1601px]:w-72">
+              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 w-[96vw] w-[72vw]">
                 {'                                                                 '}
               </div>
 
-              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 min-[1600px]:w-96 min-[1601px]:w-72">
+              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 w-[96vw] w-[72vw]">
                 {'                                                                 '}
               </div>
 
-              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 min-[1600px]:w-96 min-[1601px]:w-72">
+              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 w-[96vw] w-[72vw]">
                 {'                                                                 '}
               </div>
 
-              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 min-[1600px]:w-96 min-[1601px]:w-72">
+              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 w-[96vw] w-[72vw]">
                 {'                                                                 '}
               </div>
 
-              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 min-[1600px]:w-96 min-[1601px]:w-72">
+              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 w-[96vw] w-[72vw]">
                 {'                                                                 '}
               </div>
 
-              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 min-[1600px]:w-96 min-[1601px]:w-72">
+              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 w-[96vw] w-[72vw]">
                 {'                                                                 '}
               </div>
             </div>
           </div>
         </div>
       </div>
-      <section className="relative bg-white text-neutral-900 min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
-        <div className="m-auto w-[92%] min-[769px]:flex min-[1600px]:mb-16 min-[1920px]:mb-24 min-[1921px]:mb-24 min-[1921px]:max-w-[118.75rem]">
-          <div className="min-[769px]:w-[65.4737%]">
-            <h6 className="inline-block text-lg uppercase min-[671px]:pl-6">
-              How else can we help?
-            </h6>
+
+      <section className="relative bg-white text-neutral-900 pb-20 pt-20">
+        <div className="m-auto w-[92%] mb-16">
+          <div className="min-[769px]:flex min-[769px]:items-center">
+            <div className="min-[769px]:w-[65.4737%]">
+              <h6 className="inline-block text-lg uppercase min-[671px]:pl-6">
+                How else can we help?
+              </h6>
 
             <h2 className="text-[5rem] font-bold uppercase leading-none lg:mt-10 min-[1025px]:mt-16">
-              We&apos;ll build you a brand, a website, or a shop
-            </h2>
+                We&apos;ll build you a brand, a website, or a shop
+              </h2>
+            </div>
           </div>
         </div>
 
-        <div className="m-auto w-[92%] text-[1.38rem] leading-7 min-[1921px]:max-w-[118.75rem]">
-          <ul className="ml-auto grid list-none grid-cols-1 gap-8 md:grid-cols-2 lg:w-full min-[1025px]:w-[65.4737%]">
+        <div className="m-auto w-[92%] text-[1.38rem] leading-7">
+          <ul className="ml-auto grid grid-cols-1 gap-8 md:grid-cols-2 lg:w-full min-[1025px]:w-[65.4737%]">
             <li className="list-item">
               <h2 className="text-[8.75rem] uppercase leading-none">
                 <span className="text-[3.13rem] leading-none">WooCommerce</span>

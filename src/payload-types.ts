@@ -412,7 +412,11 @@ export interface Service {
   tagline?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;
-  image?: (string | null) | Media;
+  meta?: {
+    title?: string | null;
+    image?: (string | null) | Media;
+    description?: string | null;
+  };
   description?: string | null;
   overview?: {
     root: {
@@ -429,6 +433,7 @@ export interface Service {
     };
     [k: string]: unknown;
   } | null;
+  image?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -1144,9 +1149,16 @@ export interface ServicesSelect<T extends boolean = true> {
   tagline?: T;
   slug?: T;
   slugLock?: T;
-  image?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
   description?: T;
   overview?: T;
+  image?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;

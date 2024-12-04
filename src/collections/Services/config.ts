@@ -52,17 +52,34 @@ export const Services: CollectionConfig = {
         description: 'The tagline of the service as it appears around the site.',
       },
     },
-
     ...slugField(),
     {
-      name: 'image',
-      type: 'upload',
-      label: 'Featured Image',
-      required: false,
-      relationTo: 'media',
-      admin: {
-        position: 'sidebar',
-      },
+      type: 'tabs',
+      tabs: [
+        {
+          name: 'meta',
+          label: 'SEO',
+          fields: [
+            MetaTitleField({
+              hasGenerateFn: true,
+            }),
+            MetaImageField({
+              relationTo: 'media',
+            }),
+            MetaDescriptionField({}),
+            OverviewField({
+              titlePath: 'meta.title',
+              descriptionPath: 'meta.description',
+              imagePath: 'meta.image',
+            }),
+            PreviewField({
+              hasGenerateFn: true,
+              titlePath: 'meta.title',
+              descriptionPath: 'meta.description',
+            }),
+          ],
+        },
+      ],
     },
     {
       name: 'description',
@@ -81,10 +98,19 @@ export const Services: CollectionConfig = {
         features: ({ defaultFeatures }) => [...defaultFeatures, HeadingFeature({})],
       }),
     },
+    {
+      name: 'image',
+      type: 'upload',
+      label: 'Featured Image',
+      required: false,
+      relationTo: 'media',
+      admin: {
+        position: 'sidebar',
+      },
+    },
   ],
 
   //* Admin Settings
-
   admin: {
     description: 'How we help people. Be specific.',
     defaultColumns: ['title'],
