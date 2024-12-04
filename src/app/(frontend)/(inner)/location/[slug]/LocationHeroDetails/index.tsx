@@ -1,10 +1,12 @@
 import { Title } from '@/components/Title'
 import { Button } from '@/components/Button'
+import { Section } from '@/components/Section'
+import { Container } from '@/components/Container'
 
 export function LocationHeroDetails() {
   return (
-    <section className="w-full bg-brand-dark-bg py-20 text-black lg:pb-24 lg:pt-24 min-[1450px]:pb-32 min-[1450px]:pt-32">
-      <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
+    <Section theme="dark">
+      <Container size="2xl">
         <div className="flex w-full flex-wrap justify-between">
           <div className="relative mb-10 w-full px-2 lg:mb-0 lg:w-[56.25%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
             <div className="flex flex-col items-start">
@@ -20,9 +22,7 @@ export function LocationHeroDetails() {
                 doesn't matter. We work with a range of clients.
               </Title>
               <div className="relative mb-0 mt-3 inline-flex items-center lg:mb-0 lg:mt-5">
-                <Button intent="primary" icon="arrow" iconPosition="right">
-                  About Brewww
-                </Button>
+                <Button intent="primary" icon="arrow" iconPosition="right" label="About Brewww" />
               </div>
             </div>
           </div>
@@ -146,7 +146,7 @@ export function LocationHeroDetails() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   )
 }

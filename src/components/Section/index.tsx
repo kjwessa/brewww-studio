@@ -55,7 +55,7 @@ const sectionVariants = cva('relative w-full', {
     },
   ],
   defaultVariants: {
-    theme: 'light',
+    theme: 'dark',
     bg: 'default',
     transparent: false,
   },

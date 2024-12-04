@@ -5,6 +5,7 @@ import { Technology, Media } from '@/payload-types'
 import { motion, useAnimationFrame } from 'framer-motion'
 import { LogoCard } from '@/components/LogoCard'
 import { Title } from '@/components/Title'
+import { Section } from '@/components/Section'
 
 interface LocationTechSliderProps {
   technologies: Technology[]
@@ -56,11 +57,11 @@ export function LocationTechSlider({ technologies }: LocationTechSliderProps) {
       }))
       .filter((tech) => tech.logo)
 
-    return [...processedLogos, ...processedLogos] // Duplicate for continuous loop
+    return [...processedLogos, ...processedLogos]
   }, [technologies])
 
   return (
-    <section className="w-full bg-brand-dark-bg py-24 pb-20 text-black">
+    <Section theme="dark">
       <div className="mb-32 flex w-full flex-wrap items-end justify-between px-2 text-5xl text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
         <div className="px-2 text-white lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
           <div className="flex flex-col items-start">
@@ -85,6 +86,6 @@ export function LocationTechSlider({ technologies }: LocationTechSliderProps) {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Swiper styles */
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+
+.swiper {
+  overflow: visible !important;
+}
+
+.swiper-slide {
+  height: auto;
+}
+
+/* Hide default navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+
 :root {
   /* Font Sizes - Using CSS clamp for fluid typography */
   --font-display-large: clamp(2.89rem, 1.47rem + 7.1vw, 9.31rem);
@@ -62,11 +80,18 @@ select {
 }
 
 /* Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
 /* Create a root stacking context */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }

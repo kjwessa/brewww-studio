@@ -5,6 +5,8 @@ import Image from 'next/image'
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/Button'
+import { Section } from '@/components/Section'
+import { Container } from '@/components/Container'
 
 // Payload Imports
 import { Brand, Media } from '@/payload-types'
@@ -56,8 +58,8 @@ export function LocationLogoSlider({ brands }: LocationLogoSliderProps) {
   }, [brands])
 
   return (
-    <section className="w-full bg-brand-dark-bg px-2 pb-20 text-black lg:pb-24 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4 min-[1450px]:pb-32">
-      <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
+    <Section theme="dark" bg="default">
+      <Container size="2xl" spacing="xlarge">
         <div className="relative w-full overflow-hidden rounded-bl-3xl rounded-br-3xl rounded-tr-3xl bg-zinc-900 py-20 lg:pb-24 lg:pt-24 min-[1450px]:pb-32 min-[1450px]:pt-32">
           <div>
             <div className="absolute left-0 top-0 h-12 w-[31.25%] bg-neutral-950 text-neutral-950 lg:h-20 lg:w-72">
@@ -87,7 +89,7 @@ export function LocationLogoSlider({ brands }: LocationLogoSliderProps) {
               </svg>
             </div>
 
-            <div className="flex w-full flex-wrap px-2 sm:pl-6 sm:pr-6 lg:justify-end xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
+            <div className="flex w-full flex-wrap lg:justify-end">
               <div className="flex w-auto flex-col items-start px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
                 <div className="flex flex-col items-start">
                   <div className="inline-flex items-center">
@@ -170,7 +172,7 @@ export function LocationLogoSlider({ brands }: LocationLogoSliderProps) {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   )
 }

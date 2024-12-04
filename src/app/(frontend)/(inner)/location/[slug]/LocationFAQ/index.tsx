@@ -2,11 +2,13 @@ import { AccordionCard } from '@/components/AccordionCard'
 import { Faq } from '@/payload-types'
 import { Title } from '@/components/Title'
 import { Button } from '@/components/Button'
+import { Section } from '@/components/Section'
+import { Container } from '@/components/Container'
 
 export function LocationFAQ({ faqs }: { faqs: Faq[] }) {
   return (
-    <section className="w-full bg-brand-dark-bg py-32 text-white lg:py-40">
-      <div className="container mx-auto px-6 lg:px-12">
+    <Section theme="dark">
+      <Container size="2xl" spacing="xlarge">
         <div className="flex flex-wrap justify-between">
           <div className="mb-10 w-full lg:mb-0 lg:w-1/3">
             <div className="lg:sticky lg:top-32">
@@ -38,7 +40,7 @@ export function LocationFAQ({ faqs }: { faqs: Faq[] }) {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   )
 }

@@ -1,22 +1,34 @@
+'use client'
+
 import { WorkCard } from '@/components/WorkCard'
 import { Title } from '@/components/Title'
 import { Work } from '@/payload-types'
 import { Button } from '@/components/Button'
+import { Container } from '@/components/Container'
+import { Section } from '@/components/Section'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation } from 'swiper/modules'
+import { useRef } from 'react'
+import { cn } from '@/utilities/cn'
 
 interface LocationWorkSliderProps {
   workItems: Work[]
 }
 
 export function LocationWorkSlider({ workItems }: LocationWorkSliderProps) {
+  const navigationPrevRef = useRef<HTMLButtonElement>(null)
+  const navigationNextRef = useRef<HTMLButtonElement>(null)
+
   return (
-    <>
-      <section className="flex w-full flex-wrap bg-brand-dark-bg py-24 text-black">
-        <div className="mb-10 flex w-full flex-wrap items-end justify-between px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
+    <Section theme="dark">
+      <Container size="full" spacing="xlarge">
+        <div className="mb-10 flex w-full flex-wrap items-end justify-between px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12">
           <div className="w-[87.5%] px-2 lg:w-auto lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
             <div className="flex flex-col items-start">
               <div className="inline-flex items-center">
-                <div className="h-1.5 w-1.5 rounded-full bg-white" />
-                <div className="ml-2 font-light text-white">Our Work</div>
+                <div className="h-1.5 w-1.5 rounded-full" />
+                <div className="ml-2 font-light">Our Work</div>
               </div>
               <Title
                 el="h2"
@@ -24,7 +36,7 @@ export function LocationWorkSlider({ workItems }: LocationWorkSliderProps) {
                 weight="medium"
                 className="mb-0 mt-3 text-white lg:mb-0 lg:mt-5"
               >
-                Our favorite Web design Projects
+                Our favourite Web design Projects
               </Title>
             </div>
           </div>
@@ -41,21 +53,57 @@ export function LocationWorkSlider({ workItems }: LocationWorkSliderProps) {
             </div>
           </div>
         </div>
-        <div className="w-full">
-          <div className="relative m-auto h-auto w-full overflow-hidden">
-            <div className="relative flex h-full w-full items-start">
+        <div className="relative w-full px-2 sm:px-6 xl:px-12">
+          <div className="relative overflow-hidden">
+            <Swiper
+              modules={[Navigation]}
+              spaceBetween={24}
+              slidesPerView={1}
+              breakpoints={{
+                640: {
+                  slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 3,
+                },
+              }}
+              navigation={{
+                prevEl: navigationPrevRef.current,
+                nextEl: navigationNextRef.current,
+              }}
+              onBeforeInit={(swiper) => {
+                // @ts-ignore
+                swiper.params.navigation.prevEl = navigationPrevRef.current
+                // @ts-ignore
+                swiper.params.navigation.nextEl = navigationNextRef.current
+              }}
+            >
               {workItems.map((project) => (
-                <div
-                  className="relative h-auto w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4"
-                  key={project.id}
-                >
+                <SwiperSlide key={project.id}>
                   <WorkCard project={project} />
-                </div>
+                </SwiperSlide>
               ))}
-            </div>
+            </Swiper>
+          </div>
+
+          {/* Navigation Buttons */}
+          <div className="mt-8 flex justify-center gap-4">
+            <button
+              ref={navigationPrevRef}
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-dark-surface transition-opacity hover:bg-brand-dark-surface/80 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            
+            <button
+              ref={navigationNextRef}
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-dark-surface transition-opacity hover:bg-brand-dark-surface/80 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
           </div>
         </div>
-      </section>
-    </>
+      </Container>
+    </Section>
   )
 }

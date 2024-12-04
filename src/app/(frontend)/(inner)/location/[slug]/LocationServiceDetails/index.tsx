@@ -1,9 +1,10 @@
 import { Title } from '@/components/Title'
 import { Button } from '@/components/Button'
+import { Section } from '@/components/Section'
 
 export function LocationServiceDetails() {
   return (
-    <section className="relative w-full rounded-3xl bg-zinc-900 py-10 lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
+    <Section theme="dark">
       <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
         <div className="mb-8 mt-10 flex w-full flex-wrap items-end justify-between lg:mb-16 lg:mt-0">
           <div className="w-full px-2 lg:w-auto lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
@@ -27,9 +28,8 @@ export function LocationServiceDetails() {
                 intent="primary"
                 icon="arrow"
                 iconPosition="right"
-              >
-                Get in touch today
-              </Button>
+                label="Get in touch today"
+              />
             </div>
           </div>
         </div>
@@ -212,6 +212,6 @@ export function LocationServiceDetails() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }
