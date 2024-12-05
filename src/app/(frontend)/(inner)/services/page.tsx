@@ -4,172 +4,50 @@ import Link from 'next/link'
 import { Title } from '@/components/Title'
 import { Text } from '@/components/Text'
 import { ServiceCategoryCard } from '@/components/ServiceCategoryCard'
+import { ServicesHero } from './ServicesHero'
+import { ServicesPillarSection } from './ServicesPillarSection'
 
 export default function ServicesPage() {
   return (
     <>
-      <section className="w-full bg-brand-dark-bg pb-10 pt-20 text-white lg:pb-16 lg:pt-32 xl:pt-40">
-        <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
-          <div className="mb-3 flex flex-wrap justify-between md:mb-5 lg:mb-0">
-            <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-              <div className="mb-3 inline-flex w-auto items-center justify-between">
-                <div className="ml-2 text-lg font-light text-white">Services</div>
-                <div className="ml-4 text-sm font-semibold">
-                  <svg
-                    className="mr-2 inline-block h-3 w-3"
-                    fill="none"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m6 0 .87252 3.89355 3.37008-2.13619-2.13615 3.37012L12 6l-3.89355.87252 2.13615 3.37008-3.37008-2.13615L6 12l-.87252-3.89355-3.37012 2.13615 2.13619-3.37008L0 6l3.89355-.87252-2.13619-3.37012 3.37012 2.13619L6 0Z"
-                      fill="rgb(255, 255, 255)"
-                    />
-                  </svg>
-                  7 Services available
-                </div>
-              </div>
-              <div className="max-w-6xl">
-                <Title el="h1" size="display-small">
-                  The talent, tools, and deliverables to spark action for your brand.
-                </Title>
-              </div>
-            </div>
-          </div>
-          <div className="flex w-full flex-wrap pt-20 text-[2.50rem] leading-none text-white md:justify-end">
-            <div className="px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-              <div className="w-full max-w-xl pr-10 font-light lg:max-w-2xl lg:pl-10 lg:pr-0">
-                <Text el="p" size="body-large" className="mb-3">
-                  We bring our passion for good design to brave brands and deliver something you can
-                  shout about.
-                </Text>
-                <div className="mt-8 text-sm font-semibold opacity-75">↓ Scroll to learn how</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServicesHero />
+      <ServicesPillarSection
+        title="Design"
+        tagline="Brand designers and web designers in-house crafting visuals to match your brand values."
+        services={[
+          { number: '01', title: 'Brand Identity', href: '/services/brand-identity' },
+          { number: '02', title: 'Web Design', href: '/services/web-design' },
+          { number: '03', title: 'eCommerce', href: '/services/ecommerce' },
+          { number: '04', title: 'Shopify', href: '/services/shopify' },
+          { number: '05', title: 'Graphic Design', href: '/services/graphic-design' },
+        ]}
+      />
 
-      <section className="bg-brand-dark-bg px-2 pb-20 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
-        <div className="mb-10 border-t border-gray-700 lg:mb-16"></div>
-        <div className="mb-5 flex w-full flex-wrap text-display-large leading-none text-white lg:mb-20">
-          <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-            <div className="w-full">
-              <Title el="h2" size="display-large">
-                Design
-              </Title>
-            </div>
-          </div>
-        </div>
-        <div className="flex w-full flex-wrap justify-between text-white">
-          <div className="mb-5 w-full px-2 text-[2.50rem] leading-none lg:mb-0 lg:w-[43.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-            <Text size="body-large" className="pr-10 lg:pr-0">
-              Brand designers and web designers in-house crafting visuals to match your brand
-              values.
-            </Text>
-          </div>
-          <div className="mb-5 w-full px-2 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4 min-[2100px]:w-[43.75%]">
-            <ServiceCategoryCard
-              number="01"
-              title="Brand Identity"
-              href="/services/brand-identity"
-            />
-            <ServiceCategoryCard number="02" title="Web Design" href="/services/web-design" />
-            <ServiceCategoryCard number="03" title="eCommerce" href="/services/ecommerce" />
-            <ServiceCategoryCard number="04" title="Shopify" href="/services/shopify" />
-            <ServiceCategoryCard
-              number="05"
-              title="Graphic Design"
-              href="/services/graphic-design"
-            />
-          </div>
-        </div>
-      </section>
+      <ServicesPillarSection
+        title="Develop"
+        tagline="Web development to the highest standards, and matching the latest industry requirements."
+        services={[
+          { number: '01', title: 'Web Development', href: '/services/web-development' },
+          { number: '02', title: 'Craft CMS', href: '/services/craft-cms' },
+          { number: '03', title: 'Shopify', href: '/services/shopify' },
+          { number: '04', title: 'Craft Commerce', href: '/services/craft-commerce' },
+          { number: '05', title: 'eCommerce', href: '/services/ecommerce' },
+          { number: '06', title: 'Technical SEO', href: '/services/technical-seo' },
+        ]}
+      />
 
-      <section className="bg-brand-dark-bg px-2 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
-        <div className="mb-5 flex w-full flex-wrap text-display-large leading-none text-white lg:mb-20">
-          <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-            <div className="w-full">
-              <Title el="h2" size="display-large">
-                Develop
-              </Title>
-            </div>
-          </div>
-        </div>
-        <div className="flex w-full flex-wrap justify-between text-white">
-          <div className="mb-5 w-full px-2 text-[2.50rem] leading-none lg:mb-0 lg:w-[43.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-            <Text size="body-large" className="pr-10 lg:pr-0">
-              Web development to the highest standards, and matching the latest industry
-              requirements.
-            </Text>
-          </div>
-          <div className="mb-5 w-full px-2 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4 min-[2100px]:w-[43.75%]">
-            <ServiceCategoryCard
-              number="01"
-              title="Web Development"
-              href="/services/web-development"
-            />
-            <ServiceCategoryCard number="02" title="Craft CMS" href="/services/craft-cms" />
-            <ServiceCategoryCard number="03" title="Shopify" href="/services/shopify" />
-            <ServiceCategoryCard
-              number="04"
-              title="Craft Commerce"
-              href="/services/craft-commerce"
-            />
-            <ServiceCategoryCard number="05" title="eCommerce" href="/services/ecommerce" />
-            <ServiceCategoryCard number="06" title="Technical SEO" href="/services/technical-seo" />
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-brand-dark-bg px-2 pb-20 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20 min-[1800px]:pl-40 min-[1800px]:pr-40 min-[2100px]:pl-60 min-[2100px]:pr-60">
-        <div className="mb-10 border-t border-gray-700 lg:mb-16"></div>
-        <div className="mb-5 flex w-full flex-wrap text-[21.13rem] leading-none text-white lg:mb-20">
-          <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-            <div className="w-full">
-              <Title el="h2" size="display-large">
-                Support
-              </Title>
-            </div>
-          </div>
-        </div>
-        <div className="flex w-full flex-wrap justify-between text-white">
-          <div className="mb-5 w-full px-2 text-[2.50rem] leading-none lg:mb-0 lg:w-[43.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-            <Text size="body-large" className="pr-10 lg:pr-0">
-              Lean on our in-house team to support with your design, development and seo needs.
-            </Text>
-          </div>
-          <div className="mb-5 w-full px-2 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4 min-[2100px]:w-[43.75%]">
-            <ServiceCategoryCard
-              number="01"
-              title="SEO"
-              href="https://madebyshape.co.uk/search-engine-optimisation/"
-            />
-            <ServiceCategoryCard
-              number="02"
-              title="Web Hosting"
-              href="https://madebyshape.co.uk/web-hosting/"
-            />
-            <ServiceCategoryCard
-              number="03"
-              title="Shape Support"
-              href="https://madebyshape.co.uk/shape-support/"
-            />
-            <ServiceCategoryCard number="04" title="PPC" href="https://madebyshape.co.uk/ppc/" />
-            <ServiceCategoryCard
-              number="05"
-              title="Content Writing"
-              href="https://madebyshape.co.uk/content-writing/"
-            />
-            <ServiceCategoryCard
-              number="06"
-              title="Craft CMS"
-              href="https://madebyshape.co.uk/craft-cms/"
-            />
-          </div>
-        </div>
-      </section>
+      <ServicesPillarSection
+        title="Support"
+        tagline="Lean on our in-house team to support with your design, development and seo needs."
+        services={[
+          { number: "01", title: "SEO", href: "/services/seo" },
+          { number: "02", title: "Web Hosting", href: "/services/web-hosting" },
+          { number: "03", title: "Shape Support", href: "/services/shape-support" },
+          { number: "04", title: "PPC", href: "/services/ppc" },
+          { number: "05", title: "Content Writing", href: "/services/content-writing" },
+          { number: "06", title: "Craft CMS", href: "/services/craft-cms" }
+        ]}
+      />
 
       <section className="flex bg-white text-stone-950">
         <div className="relative flex h-[50.46rem] w-full">
@@ -262,7 +140,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-3 gap-8">
             <div className="">
               <div className="mb-6 flex items-start text-6xl">
-                3<span className="ml-3 mt-6 text-xl">m</span>
+                3<span className="mt-6 ml-3 text-xl">m</span>
               </div>
               <p className="mb-12 text-lg">
                 Brand strategy and site development of The Merry Beggars led to 3 million downloads
@@ -272,7 +150,7 @@ export default function ServicesPage() {
             <div className="">
               <div className="mb-6 flex items-start text-6xl">
                 10
-                <span className="ml-3 mt-6 text-xl">x</span>
+                <span className="mt-6 ml-3 text-xl">x</span>
               </div>
               <p className="mb-12 text-lg">
                 Brand strategy and development of Fem Catholic led to a grant for their initiative,
@@ -282,7 +160,7 @@ export default function ServicesPage() {
             <div className="">
               <div className="mb-6 flex items-start text-6xl">
                 760
-                <span className="ml-3 mt-6 text-xl">%</span>
+                <span className="mt-6 ml-3 text-xl">%</span>
               </div>
               <p className="mb-12 text-lg">
                 Increase in online donations within 90 days after Joseph House site rebrand and
@@ -298,7 +176,7 @@ export default function ServicesPage() {
             <h2 className="text-4xl font-bold uppercase">
               "I would recommend using his services to anyone."
             </h2>
-            <p className="whitespace-pre-line p-8">
+            <p className="p-8 whitespace-pre-line">
               "Kevin created a website for me that is out of this world! I would recommend using his
               services to anyone. I literally expressed an idea and together we conceived a concrete
               plan and he created a stellar one of a kind website for me. Kevin Wessa is a man of
@@ -376,7 +254,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-      <section className="flex min-h-[75vh] items-center bg-brand-dark-bg py-32 text-white">
+      <section className="bg-brand-dark-bg flex min-h-[75vh] items-center py-32 text-white">
         <div className="container mx-auto px-4">
           <h3 className="mb-8 text-lg">Digital agency services</h3>
 
@@ -419,9 +297,9 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white text-[1.38rem] leading-7 text-stone-950 min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
+      <section className="relative overflow-hidden bg-white text-[1.38rem] leading-7 text-stone-950 min-[1600px]:pt-20 min-[1600px]:pb-20 min-[1920px]:pt-28 min-[1920px]:pb-28 min-[1921px]:pt-28 min-[1921px]:pb-28">
         <div className="m-auto w-[92%] min-[769px]:flex min-[1921px]:max-w-[118.75rem]">
-          <div className="text-[3.13rem] uppercase leading-none min-[769px]:w-96">
+          <div className="text-[3.13rem] leading-none uppercase min-[769px]:w-96">
             <p className="opacity-10">01</p>
             <h2>
               <span className="inline-block overflow-hidden">Plan</span>
@@ -430,10 +308,10 @@ export default function ServicesPage() {
 
           <div className="min-[769px]:ml-auto min-[769px]:w-[65.4737%]">
             <div className="min-[1600px]:mb-10 min-[1920px]:mb-12 min-[1921px]:mb-12">
-              <h2 className="text-[6rem] font-black uppercase leading-none">
+              <h2 className="text-[6rem] leading-none font-black uppercase">
                 Building the foundations for a successful project
               </h2>
-              <p className="lg:mt-8 min-[1025px]:mt-12">
+              <p className="min-[1025px]:mt-12 lg:mt-8">
                 Since 2008, we've built and refined a robust process that works. Guaranteed to put a
                 smile on your face and reward you with the results you've been looking for. Whatever
                 the project size or scope, our approach stays the same wherever you are on your
@@ -443,10 +321,10 @@ export default function ServicesPage() {
             <ul className="list-none text-[1.38rem] leading-7">
               <li className="list-item border-b-2 border-solid border-b-neutral-300">
                 <a
-                  className="flex items-center gap-5 min-[769px]:pb-8 min-[769px]:pl-0 min-[769px]:pr-0 min-[769px]:pt-8"
+                  className="flex items-center gap-5 min-[769px]:pt-8 min-[769px]:pr-0 min-[769px]:pb-8 min-[769px]:pl-0"
                   href=""
                 >
-                  <h3 className="cursor-pointer text-[3.13rem] font-black uppercase leading-none">
+                  <h3 className="cursor-pointer text-[3.13rem] leading-none font-black uppercase">
                     Strategy
                   </h3>
                 </a>
@@ -460,10 +338,10 @@ export default function ServicesPage() {
               </li>
               <li className="list-item border-b-2 border-solid border-b-neutral-300">
                 <a
-                  className="flex items-center gap-5 min-[769px]:pb-8 min-[769px]:pl-0 min-[769px]:pr-0 min-[769px]:pt-8"
+                  className="flex items-center gap-5 min-[769px]:pt-8 min-[769px]:pr-0 min-[769px]:pb-8 min-[769px]:pl-0"
                   href=""
                 >
-                  <h3 className="cursor-pointer text-[3.13rem] font-black uppercase leading-none">
+                  <h3 className="cursor-pointer text-[3.13rem] leading-none font-black uppercase">
                     User Experience Design
                   </h3>
                 </a>
@@ -478,10 +356,10 @@ export default function ServicesPage() {
               </li>
               <li className="list-item border-b-2 border-solid border-b-neutral-300">
                 <a
-                  className="flex items-center gap-5 min-[769px]:pb-8 min-[769px]:pl-0 min-[769px]:pr-0 min-[769px]:pt-8"
+                  className="flex items-center gap-5 min-[769px]:pt-8 min-[769px]:pr-0 min-[769px]:pb-8 min-[769px]:pl-0"
                   href=""
                 >
-                  <h3 className="cursor-pointer text-[3.13rem] font-black uppercase leading-none">
+                  <h3 className="cursor-pointer text-[3.13rem] leading-none font-black uppercase">
                     Project Management
                   </h3>
                 </a>
@@ -500,7 +378,7 @@ export default function ServicesPage() {
           <div className="relative">
             <ul className="list-none flex-wrap min-[769px]:flex">
               <li className="relative list-item min-[769px]:w-[48.2105%]">
-                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase text-white min-[1025px]:p-8">
+                <span className="absolute top-0 left-0 z-2 w-full text-lg text-white uppercase min-[1025px]:p-8">
                   <Link href="">Websites</Link>
                 </span>
 
@@ -530,9 +408,9 @@ export default function ServicesPage() {
                       className="relative inline-block overflow-hidden rounded-full bg-gray-200 text-center"
                       href=""
                     >
-                      <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
+                      <span className="relative cursor-pointer min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5">
                         View
-                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
+                        <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-white min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5" />
                       </span>
                     </Link>
                   </div>
@@ -540,7 +418,7 @@ export default function ServicesPage() {
               </li>
 
               <li className="relative list-item min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
-                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase text-white min-[1025px]:p-8">
+                <span className="absolute top-0 left-0 z-2 w-full text-lg text-white uppercase min-[1025px]:p-8">
                   <Link href="">Websites</Link>
                 </span>
 
@@ -570,9 +448,9 @@ export default function ServicesPage() {
                       className="relative inline-block overflow-hidden rounded-full bg-gray-200 text-center"
                       href=""
                     >
-                      <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
+                      <span className="relative cursor-pointer min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5">
                         View
-                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
+                        <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-white min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5" />
                       </span>
                     </Link>
                   </div>
@@ -583,19 +461,19 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative bg-brand-dark-bg text-white min-[1600px]:py-20 min-[1920px]:py-28 min-[1921px]:py-28">
+      <section className="bg-brand-dark-bg relative text-white min-[1600px]:py-20 min-[1920px]:py-28 min-[1921px]:py-28">
         <div className="m-auto w-[92%] min-[769px]:flex min-[1921px]:max-w-[118.75rem]">
-          <div className="text-[3.13rem] uppercase leading-none min-[769px]:w-96">
+          <div className="text-[3.13rem] leading-none uppercase min-[769px]:w-96">
             <p className="opacity-10">02</p>
             <h2>Design</h2>
           </div>
 
           <div className="min-[769px]:ml-auto min-[769px]:w-[65.4737%]">
             <div className="text-4xl min-[1600px]:mb-10 min-[1920px]:mb-12 min-[1921px]:mb-12">
-              <h2 className="text-[6rem] font-black uppercase leading-none">
+              <h2 className="text-[6rem] leading-none font-black uppercase">
                 Concepts and visuals that achieve your commercial goals
               </h2>
-              <p className="text-4xl lg:mt-8 min-[1025px]:mt-12">
+              <p className="text-4xl min-[1025px]:mt-12 lg:mt-8">
                 Our digital products and websites are designed to look great and work across all
                 devices and platforms. Add interactions and touchpoints to draw users through a
                 journey, and the result is a digital representation of your business that will
@@ -606,7 +484,7 @@ export default function ServicesPage() {
             <ul className="list-none text-[1.38rem] leading-7">
               <li className="list-item border-b-2 border-solid border-b-white/[0.1]">
                 <a className="flex items-center gap-5 min-[769px]:py-8" href="">
-                  <h3 className="cursor-pointer text-[3.13rem] uppercase leading-none">
+                  <h3 className="cursor-pointer text-[3.13rem] leading-none uppercase">
                     Branding + Identity
                   </h3>
                 </a>
@@ -621,7 +499,7 @@ export default function ServicesPage() {
               </li>
               <li className="list-item border-b-2 border-solid border-b-white/[0.1]">
                 <a className="flex items-center gap-5 min-[769px]:py-8" href="">
-                  <h3 className="cursor-pointer text-[3.13rem] uppercase leading-none">
+                  <h3 className="cursor-pointer text-[3.13rem] leading-none uppercase">
                     Website Design
                   </h3>
                 </a>
@@ -639,7 +517,7 @@ export default function ServicesPage() {
           <div className="relative">
             <ul className="list-none flex-wrap min-[769px]:flex">
               <li className="relative list-item min-[769px]:w-[48.2105%]">
-                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
+                <span className="absolute top-0 left-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
                   <Link href="">Shops</Link>
                 </span>
 
@@ -668,7 +546,7 @@ export default function ServicesPage() {
                       className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
                       href=""
                     >
-                      <span className="relative cursor-pointer lg:p-1.5 min-[1025px]:p-1.5">
+                      <span className="relative cursor-pointer min-[1025px]:p-1.5 lg:p-1.5">
                         View
                       </span>
                     </Link>
@@ -677,7 +555,7 @@ export default function ServicesPage() {
               </li>
 
               <li className="relative list-item min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
-                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
+                <span className="absolute top-0 left-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
                   Shops
                 </span>
 
@@ -706,7 +584,7 @@ export default function ServicesPage() {
                       className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
                       href=""
                     >
-                      <span className="relative cursor-pointer lg:p-1.5 min-[1025px]:p-1.5">
+                      <span className="relative cursor-pointer min-[1025px]:p-1.5 lg:p-1.5">
                         View
                       </span>
                     </Link>
@@ -721,17 +599,17 @@ export default function ServicesPage() {
       <section className="relative bg-white text-[1.38rem] leading-7 text-neutral-900 min-[1600px]:py-20 min-[1920px]:py-28 min-[1921px]:py-28">
         <div className="m-auto w-[92%] min-[769px]:flex min-[1921px]:max-w-[118.75rem]">
           <div className="min-[769px]:flex">
-            <div className="text-[3.13rem] uppercase leading-none min-[769px]:w-96">
+            <div className="text-[3.13rem] leading-none uppercase min-[769px]:w-96">
               <p className="opacity-10">03</p>
               <h2>Platforms</h2>
             </div>
 
             <div className="min-[769px]:ml-auto min-[769px]:w-[65.4737%]">
               <div className="text-4xl min-[1600px]:mb-10 min-[1920px]:mb-12 min-[1921px]:mb-12">
-                <h2 className="text-[6rem] font-black uppercase leading-none">
+                <h2 className="text-[6rem] leading-none font-black uppercase">
                   Bespoke website development delivered with flair
                 </h2>
-                <p className="lg:mt-8 min-[1025px]:mt-12">
+                <p className="min-[1025px]:mt-12 lg:mt-8">
                   Working with industry-leading platforms to power systems and websites, our
                   developers are the experts in delivering everything from simple to complex builds
                   and extending functionality where your business needs it.
@@ -741,7 +619,7 @@ export default function ServicesPage() {
               <ul className="list-none">
                 <li className="list-item border-b-2 border-solid border-b-neutral-300">
                   <a className="flex items-center gap-5 min-[769px]:py-8" href="">
-                    <h3 className="cursor-pointer text-[3.13rem] uppercase leading-none">
+                    <h3 className="cursor-pointer text-[3.13rem] leading-none uppercase">
                       Next.js
                     </h3>
                   </a>
@@ -761,7 +639,7 @@ export default function ServicesPage() {
           <div className="relative mt-20">
             <ul className="list-none flex-wrap min-[769px]:flex">
               <li className="relative list-item min-[769px]:w-[48.2105%]">
-                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase text-white min-[1025px]:p-8">
+                <span className="absolute top-0 left-0 z-2 w-full text-lg text-white uppercase min-[1025px]:p-8">
                   <a href="">Shops</a>
                 </span>
 
@@ -789,7 +667,7 @@ export default function ServicesPage() {
                       className="relative inline-block overflow-hidden rounded-full bg-gray-200 text-center"
                       href=""
                     >
-                      <span className="relative cursor-pointer lg:p-1.5 min-[1025px]:p-1.5">
+                      <span className="relative cursor-pointer min-[1025px]:p-1.5 lg:p-1.5">
                         View
                       </span>
                     </a>
@@ -798,7 +676,7 @@ export default function ServicesPage() {
               </li>
 
               <li className="relative list-item min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
-                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase text-white min-[1025px]:p-8">
+                <span className="absolute top-0 left-0 z-2 w-full text-lg text-white uppercase min-[1025px]:p-8">
                   <a href="">Websites</a>
                 </span>
 
@@ -828,7 +706,7 @@ export default function ServicesPage() {
                       className="relative inline-block overflow-hidden rounded-full bg-gray-200 text-center"
                       href=""
                     >
-                      <span className="relative cursor-pointer lg:p-1.5 min-[1025px]:p-1.5">
+                      <span className="relative cursor-pointer min-[1025px]:p-1.5 lg:p-1.5">
                         View
                       </span>
                     </a>
@@ -840,20 +718,20 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative bg-brand-dark-bg text-white min-[1600px]:py-20 min-[1920px]:py-28 min-[1921px]:py-28">
+      <section className="bg-brand-dark-bg relative text-white min-[1600px]:py-20 min-[1920px]:py-28 min-[1921px]:py-28">
         <div className="m-auto w-[92%] min-[769px]:flex min-[1921px]:max-w-[118.75rem]">
-          <div className="text-[3.13rem] uppercase leading-none min-[769px]:w-96">
+          <div className="text-[3.13rem] leading-none uppercase min-[769px]:w-96">
             <p className="opacity-10">04</p>
             <h2>Grow</h2>
           </div>
 
           <div className="min-[769px]:ml-auto min-[769px]:w-[65.4737%]">
             <div className="text-4xl min-[1600px]:mb-10 min-[1920px]:mb-12 min-[1921px]:mb-12">
-              <h2 className="text-[6rem] font-black uppercase leading-none">
+              <h2 className="text-[6rem] leading-none font-black uppercase">
                 Supporting the growth of your business
               </h2>
 
-              <p className="text-4xl lg:mt-8 min-[1025px]:mt-12">
+              <p className="text-4xl min-[1025px]:mt-12 lg:mt-8">
                 Supporting the growth of your business, we can continue to help breathe new life
                 into other areas of your brand. We revitalise identities and bring a focus to
                 services and products as they evolve.
@@ -863,7 +741,7 @@ export default function ServicesPage() {
             <ul className="list-none text-[1.38rem] leading-7">
               <li className="list-item border-b-2 border-solid border-b-white/[0.1]">
                 <a className="flex items-center gap-5 min-[769px]:py-8" href="">
-                  <h3 className="cursor-pointer text-[3.13rem] uppercase leading-none">
+                  <h3 className="cursor-pointer text-[3.13rem] leading-none uppercase">
                     Web Applications
                   </h3>
                 </a>
@@ -878,7 +756,7 @@ export default function ServicesPage() {
 
               <li className="list-item border-b-2 border-solid border-b-white/[0.1]">
                 <a className="flex items-center gap-5 min-[769px]:py-8" href="">
-                  <h3 className="cursor-pointer text-[3.13rem] uppercase leading-none">
+                  <h3 className="cursor-pointer text-[3.13rem] leading-none uppercase">
                     Digital Marketing
                   </h3>
                 </a>
@@ -891,7 +769,7 @@ export default function ServicesPage() {
 
               <li className="list-item border-b-2 border-solid border-b-white/[0.1]">
                 <a className="flex items-center gap-5 min-[769px]:py-8" href="">
-                  <h3 className="cursor-pointer text-[3.13rem] uppercase leading-none">
+                  <h3 className="cursor-pointer text-[3.13rem] leading-none uppercase">
                     Ongoing Support
                   </h3>
                 </a>
@@ -904,7 +782,7 @@ export default function ServicesPage() {
           </div>
         </div>
         <div>
-          <section className="relative overflow-hidden bg-brand-dark-bg text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
+          <section className="bg-brand-dark-bg relative overflow-hidden text-white min-[1600px]:pt-20 min-[1600px]:pb-20 min-[1920px]:pt-28 min-[1920px]:pb-28 min-[1921px]:pt-28 min-[1921px]:pb-28">
             <div className="m-auto w-[92%] text-lg uppercase min-[1600px]:mb-10 min-[1920px]:mb-12 min-[1921px]:mb-12 min-[1921px]:max-w-[118.75rem]">
               <p className="inline-block min-[671px]:pl-6">Related Projects</p>
             </div>
@@ -913,7 +791,7 @@ export default function ServicesPage() {
               <div className="relative">
                 <ul className="list-none flex-wrap min-[769px]:flex">
                   <li className="relative list-item min-[769px]:w-[48.2105%]">
-                    <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
+                    <span className="absolute top-0 left-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
                       Websites
                     </span>
                     <Link className="w-full overflow-hidden" href="">
@@ -942,9 +820,9 @@ export default function ServicesPage() {
                           className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
                           href=""
                         >
-                          <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
+                          <span className="relative cursor-pointer min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5">
                             View
-                            <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
+                            <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-neutral-900 min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5" />
                           </span>
                         </Link>
                       </div>
@@ -952,7 +830,7 @@ export default function ServicesPage() {
                   </li>
 
                   <li className="relative list-item min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
-                    <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
+                    <span className="absolute top-0 left-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
                       Websites
                     </span>
                     <Link className="w-full overflow-hidden" href="">
@@ -981,9 +859,9 @@ export default function ServicesPage() {
                           className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
                           href=""
                         >
-                          <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
+                          <span className="relative cursor-pointer min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5">
                             View
-                            <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
+                            <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-neutral-900 min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5" />
                           </span>
                         </Link>
                       </div>

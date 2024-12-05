@@ -63,11 +63,11 @@ async function getPageData({ slug }: { slug: string }) {
   const [faqs, technologies, workItems, brands, posts] = await Promise.all([
     payload.find({
       collection: 'faq',
-      limit: 1000,
+      limit: 100,
     }),
     payload.find({
       collection: 'technologies',
-      limit: 1000,
+      limit: 100,
       where: {
         _status: {
           equals: 'published',
@@ -76,7 +76,7 @@ async function getPageData({ slug }: { slug: string }) {
     }),
     payload.find({
       collection: 'work',
-      limit: 4,
+      limit: 6,
       sort: '-publishedOn',
       where: {
         _status: {
@@ -88,23 +88,14 @@ async function getPageData({ slug }: { slug: string }) {
       collection: 'brands',
       limit: 100,
       where: {
-        and: [
-          {
-            _status: {
-              equals: 'published',
-            },
-          },
-          {
-            logoLight: {
-              exists: true,
-            },
-          },
-        ],
+        _status: {
+          equals: 'published',
+        },
       },
     }),
     payload.find({
       collection: 'posts',
-      limit: 10,
+      limit: 6,
       sort: '-publishedOn',
       where: {
         _status: {

@@ -1,20 +1,21 @@
-import Image from "next/image";
-import { Title } from "@/components/Title";
+import Image from 'next/image'
+import { Title } from '@/components/Title'
+import { Section } from '@/components/Section'
+import { Container } from '@/components/Container'
 
 export function AboutHeroSection() {
   return (
-    <section>
-      <div className="relative content-stretch items-start justify-start bg-brand-dark-bg pb-80 pl-60 pr-24 pt-64 font-light text-white">
-        <div className="grid-rows-auto grid-cols-[repeat(6, 1fr)] relative grid auto-cols-fr gap-4">
+    <Section theme="dark">
+      <Container spacing="xlarge" className="relative pt-64 pr-24 pb-80 pl-60 text-white">
+        <div className="grid-rows-auto 1fr)] relative grid auto-cols-fr grid-cols-[repeat(6, gap-4">
           <div className="col-span-4 row-start-1 row-end-2 flex h-full w-full flex-col items-start justify-start self-start font-bold uppercase">
             <div className="pb-5">+ About Our Studio</div>
           </div>
-          <div className="col-start-1 col-end-6 row-start-2 flex h-full w-full flex-col items-center justify-center self-stretch text-headline-medium leading-none">
-            <h1 className="mx-0 my-3 min-h-[0vw]">
-              In a world obsessed with the next big thing, we're focused on
-              crafting the next right thing. Our studio exists to transform bold
-              visions into enduring brand realities.
-            </h1>
+          <div className="text-headline-medium col-start-1 col-end-6 row-start-2 flex h-full w-full flex-col items-center justify-center self-stretch leading-none">
+            <Title el="h1" size="headline-medium">
+              In a world obsessed with the next big thing, we're focused on crafting the next right
+              thing. Our studio exists to transform bold visions into enduring brand realities.
+            </Title>
           </div>
           <div className="relative col-start-2 col-end-6 row-start-4 row-end-6 h-[50vh] self-stretch">
             <div className="absolute inset-0 z-0 overflow-hidden">
@@ -26,11 +27,11 @@ export function AboutHeroSection() {
                 alt="Blurred Studio Image"
                 className="h-[120%] w-[120%] object-cover"
                 style={{
-                  objectPosition: "50% 50%",
-                  filter: "blur-sm(20px)",
-                  transform: "scale(1.1)",
-                  marginLeft: "-10%",
-                  marginTop: "-10%",
+                  objectPosition: '50% 50%',
+                  filter: 'blur-sm(20px)',
+                  transform: 'scale(1.1)',
+                  marginLeft: '-10%',
+                  marginTop: '-10%',
                 }}
               />
             </div>
@@ -43,33 +44,22 @@ export function AboutHeroSection() {
                 alt="Studio Image"
                 className="h-[120%] w-full object-cover"
                 style={{
-                  objectPosition: "50% 50%",
+                  objectPosition: '50% 50%',
                 }}
               />
             </div>
           </div>
-          <div className="relative col-start-1 col-end-2 row-start-4 row-end-5 flex h-full max-h-[9.38rem] min-h-[6.25rem] w-full items-end justify-start">
-            <a
-              className="relative inline-block h-full w-3 max-w-full self-end overflow-hidden"
-              href=""
-            >
-              <div className="absolute left-[0.38rem] top-0 z-1 h-full w-0 bg-white/[0.35]" />
-              <div className="absolute left-[0.38rem] top-0 h-full w-0 bg-white" />
-            </a>
-          </div>
-          <div className="col-start-3 col-end-6 row-start-5 row-end-7 flex h-full w-full flex-col items-center justify-end self-end text-body-medium">
+          <div className="text-body-medium col-start-3 col-end-6 row-start-5 row-end-7 flex h-full w-full flex-col items-center justify-end self-end">
             <p className="z-10 mb-8">
-              Since day one, we have focused on collaborative relationships,
-              expansive creativity, and consistently delivering results.{" "}
-              <strong className="font-extrabold">
-                Crafting unbounded brands
-              </strong>{" "}
-              - that's what sets us apart from everyone else.
+              Since day one, we have focused on collaborative relationships, expansive creativity,
+              and consistently delivering results.{' '}
+              <strong className="font-extrabold">Crafting unbounded brands</strong> - that's what
+              sets us apart from everyone else.
               <br />
             </p>
           </div>
         </div>
-      </div>
-    </section>
-  );
+      </Container>
+    </Section>
+  )
 }
