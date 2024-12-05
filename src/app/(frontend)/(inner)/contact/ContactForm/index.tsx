@@ -16,7 +16,7 @@ export function ContactForm() {
                 id="name"
                 name="name"
                 type="text"
-                className="peer h-14 w-full rounded-lg border-2 border-neutral-700 bg-zinc-900 px-5 pb-2 pt-6 text-white placeholder-transparent transition duration-200 focus:border-brand-gold focus:outline-none"
+                className="peer h-14 w-full rounded-lg border-2 border-neutral-700 bg-zinc-900 px-5 pb-2 pt-6 text-white placeholder-transparent transition duration-200 focus:border-brand-gold focus:outline-hidden"
                 placeholder="Name"
                 required
               />
@@ -32,7 +32,7 @@ export function ContactForm() {
                 id="email"
                 name="email"
                 type="email"
-                className="peer h-14 w-full rounded-lg border-2 border-neutral-700 bg-zinc-900 px-5 pb-2 pt-6 text-white placeholder-transparent transition duration-200 focus:border-brand-gold focus:outline-none"
+                className="peer h-14 w-full rounded-lg border-2 border-neutral-700 bg-zinc-900 px-5 pb-2 pt-6 text-white placeholder-transparent transition duration-200 focus:border-brand-gold focus:outline-hidden"
                 placeholder="Email Address"
                 required
               />
@@ -51,7 +51,7 @@ export function ContactForm() {
                 id="phone"
                 name="phone"
                 type="tel"
-                className="peer h-14 w-full rounded-lg border-2 border-neutral-700 bg-zinc-900 px-5 pb-2 pt-6 text-white placeholder-transparent transition duration-200 focus:border-brand-gold focus:outline-none"
+                className="peer h-14 w-full rounded-lg border-2 border-neutral-700 bg-zinc-900 px-5 pb-2 pt-6 text-white placeholder-transparent transition duration-200 focus:border-brand-gold focus:outline-hidden"
                 placeholder="Phone (Optional)"
               />
               <label
@@ -65,7 +65,7 @@ export function ContactForm() {
               <select
                 id="referral"
                 name="referral"
-                className="peer h-14 w-full appearance-none rounded-lg border-2 border-neutral-700 bg-zinc-900 px-5 pb-2 pt-6 text-white transition duration-200 focus:border-brand-gold focus:outline-none"
+                className="peer h-14 w-full appearance-none rounded-lg border-2 border-neutral-700 bg-zinc-900 px-5 pb-2 pt-6 text-white transition duration-200 focus:border-brand-gold focus:outline-hidden"
                 defaultValue=""
                 required
               >
@@ -102,7 +102,7 @@ export function ContactForm() {
             <textarea
               id="project"
               name="project"
-              className="peer h-32 w-full resize-y rounded-lg border-2 border-neutral-700 bg-zinc-900 px-5 pb-2 pt-6 text-white placeholder-transparent transition duration-200 focus:border-brand-gold focus:outline-none"
+              className="peer h-32 w-full resize-y rounded-lg border-2 border-neutral-700 bg-zinc-900 px-5 pb-2 pt-6 text-white placeholder-transparent transition duration-200 focus:border-brand-gold focus:outline-hidden"
               placeholder="Tell us about your project"
               required
             ></textarea>
@@ -122,7 +122,7 @@ export function ContactForm() {
                 type="checkbox"
                 className="peer sr-only"
               />
-              <div className="h-6 w-6 rounded border-2 border-neutral-700 bg-zinc-900 transition-colors peer-checked:border-brand-gold peer-checked:bg-brand-gold"></div>
+              <div className="h-6 w-6 rounded-sm border-2 border-neutral-700 bg-zinc-900 transition-colors peer-checked:border-brand-gold peer-checked:bg-brand-gold"></div>
               <svg
                 className="pointer-events-none absolute left-1 top-1 h-4 w-4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
                 xmlns="http://www.w3.org/2000/svg"

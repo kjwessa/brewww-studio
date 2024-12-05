@@ -103,8 +103,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority,
   }))
 
-  // Skip dynamic routes only during local production builds
-  if (process.env.NODE_ENV === 'production' && !process.env.VERCEL) {
+  // Only process dynamic routes in production on Vercel
+  if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
     return sitemapEntries
   }
 

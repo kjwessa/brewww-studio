@@ -29,7 +29,7 @@ export function LocationBlogSlider({ posts, title }: LocationBlogSliderProps) {
       <Container size="2xl" spacing="xlarge">
         <div className="flex flex-col lg:flex-row lg:gap-12">
           {/* Left Column - Text and Button */}
-          <div className="mb-10 lg:mb-0 lg:w-[400px] lg:flex-shrink-0">
+          <div className="mb-10 lg:mb-0 lg:w-[400px] lg:shrink-0">
             <div className="flex flex-col items-start">
               <div className="inline-flex items-center">
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />

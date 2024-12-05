@@ -123,7 +123,7 @@
 //                 </a>
 //               </div>
 //               <div
-//                 className="col-start-9 col-end-13 row-start-1 row-end-2 flex-grow pl-28"
+//                 className="col-start-9 col-end-13 row-start-1 row-end-2 grow pl-28"
 //                 style={{
 //                   gridArea: "1/9/2/13",
 //                 }}
@@ -186,7 +186,7 @@
 //             </div>
 //             <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] items-start gap-y-[7.38rem]">
 //               <div
-//                 className="col-start-7 col-end-13 row-start-1 row-end-2 flex-grow pl-28"
+//                 className="col-start-7 col-end-13 row-start-1 row-end-2 grow pl-28"
 //                 style={{
 //                   gridArea: "1/7/2/13",
 //                 }}
@@ -314,7 +314,7 @@
 //                 </a>
 //               </div>
 //               <div
-//                 className="col-start-9 col-end-13 row-start-1 row-end-2 flex-grow pl-28"
+//                 className="col-start-9 col-end-13 row-start-1 row-end-2 grow pl-28"
 //                 style={{
 //                   gridArea: "1/9/2/13",
 //                 }}
@@ -377,7 +377,7 @@
 //             </div>
 //             <div className="grid w-full auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[auto] items-start gap-y-[7.38rem]">
 //               <div
-//                 className="col-start-7 col-end-13 row-start-1 row-end-2 flex-grow pl-28"
+//                 className="col-start-7 col-end-13 row-start-1 row-end-2 grow pl-28"
 //                 style={{
 //                   gridArea: "1/7/2/13",
 //                 }}
@@ -672,9 +672,9 @@
 // // );
 
 // // const FeaturedPostCard = ({ post }: { post: Post }) => (
-// //   <div className="relative w-[85vw] flex-shrink-0 overflow-hidden rounded-lg sm:w-[70vw] md:w-[60vw] lg:w-[50vw]">
+// //   <div className="relative w-[85vw] shrink-0 overflow-hidden rounded-lg sm:w-[70vw] md:w-[60vw] lg:w-[50vw]">
 // //     <Link href={`/posts/${post.slug}`}>
-// //       <div className="relative aspect-[16/9]">
+// //       <div className="relative aspect-16/9">
 // //         <Image
 // //           src={post.featuredImage?.url || placeholderImage}
 // //           alt={post.name || ""}
@@ -682,7 +682,7 @@
 // //           objectFit="cover"
 // //           className="rounded-lg"
 // //         />
-// //         <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/60 to-transparent" />
+// //         <div className="absolute inset-0 rounded-lg bg-linear-to-t from-black/60 to-transparent" />
 // //       </div>
 // //       <div className="absolute bottom-6 left-6 right-6 text-white">
 // //         <p className="mb-2 text-sm uppercase tracking-wider">
@@ -712,11 +712,11 @@
 // //   featured?: boolean;
 // // }) => (
 // //   <li
-// //     className={`flex flex-col overflow-hidden rounded-sm shadow-sm ${featured ? "h-full" : ""}`}
+// //     className={`flex flex-col overflow-hidden rounded-xs shadow-xs ${featured ? "h-full" : ""}`}
 // //   >
-// //     <Link href={`/posts/${post.slug}`} className="block flex-grow">
+// //     <Link href={`/posts/${post.slug}`} className="block grow">
 // //       <div
-// //         className={`overflow-hidden ${featured ? "aspect-video md:aspect-[16/9]" : "aspect-video"}`}
+// //         className={`overflow-hidden ${featured ? "aspect-video md:aspect-16/9" : "aspect-video"}`}
 // //       >
 // //         <Image
 // //           src={post.featuredImage?.url || placeholderImage}
@@ -746,7 +746,7 @@
 // //   <li className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1rem)]">
 // //     <Link
 // //       href={`/blog/guides/${guide.slug || guide.id}`}
-// //       className="relative block overflow-hidden rounded-sm"
+// //       className="relative block overflow-hidden rounded-xs"
 // //     >
 // //       <Image
 // //         src={placeholderImage}
@@ -755,7 +755,7 @@
 // //         height={720}
 // //         className="object-cover"
 // //       />
-// //       <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/60 to-transparent p-4 text-white">
+// //       <div className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-black/60 to-transparent p-4 text-white">
 // //         <h4 className="mt-2 text-xl">{guide.title}</h4>
 // //       </div>
 // //     </Link>

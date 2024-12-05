@@ -10,7 +10,7 @@ import { twMerge } from "tailwind-merge";
  * @returns A merged and deduplicated className string
  * 
  * @example
- * cn('px-2 py-1', isActive && 'bg-blue-500', ['text-white', 'rounded'])
+ * cn('px-2 py-1', isActive && 'bg-blue-500', ['text-white', 'rounded-sm'])
  */
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

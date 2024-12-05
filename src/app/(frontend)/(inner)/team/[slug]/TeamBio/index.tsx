@@ -174,7 +174,7 @@ export function TeamBio({ team }: { team: Team }) {
                   />
                 </svg>
               </a>
-              <div className="flex h-12 flex-grow items-center justify-center rounded-full bg-zinc-800 px-4 text-center">
+              <div className="flex h-12 grow items-center justify-center rounded-full bg-zinc-800 px-4 text-center">
                 Favorite Food: Tacos
               </div>
             </div>

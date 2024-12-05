@@ -15,19 +15,19 @@ export function HomeBackupSection() {
 
     if (sun && firstElement && secondElement) {
       gsap.set([firstElement, secondElement], { opacity: 0 });
-      gsap.set(sun, { filter: "blur(0px)" });
+      gsap.set(sun, { filter: "blur-sm(0px)" });
 
       const tl = gsap.timeline();
 
       tl.to(firstElement, { opacity: 1, duration: 1, ease: "power2.inOut" })
         .to(secondElement, { opacity: 1, duration: 1, ease: "power2.inOut" })
         .to(sun, {
-          filter: "blur(100px)",
+          filter: "blur-sm(100px)",
           duration: 2,
           ease: "power2.inOut",
           onComplete: () => {
             gsap.to(sun, {
-              filter: "blur(150px)",
+              filter: "blur-sm(150px)",
               duration: 2,
               yoyo: true,
               repeat: -1,

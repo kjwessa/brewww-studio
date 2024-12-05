@@ -500,7 +500,7 @@ export default function ServicesPage() {
           <div className="relative">
             <ul className="list-none flex-wrap min-[769px]:flex">
               <li className="relative list-item min-[769px]:w-[48.2105%]">
-                <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase text-white min-[1025px]:p-8">
+                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase text-white min-[1025px]:p-8">
                   <Link href="">Websites</Link>
                 </span>
 
@@ -515,7 +515,7 @@ export default function ServicesPage() {
                 </Link>
 
                 <div className="flex justify-between min-[1025px]:mt-5">
-                  <div className="flex-grow">
+                  <div className="grow">
                     <h5>
                       <Link className="inline-block" href="">
                         Heritage Driven
@@ -540,7 +540,7 @@ export default function ServicesPage() {
               </li>
 
               <li className="relative list-item min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
-                <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase text-white min-[1025px]:p-8">
+                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase text-white min-[1025px]:p-8">
                   <Link href="">Websites</Link>
                 </span>
 
@@ -555,7 +555,7 @@ export default function ServicesPage() {
                 </Link>
 
                 <div className="flex justify-between min-[1025px]:mt-5">
-                  <div className="flex-grow">
+                  <div className="grow">
                     <h5>
                       <Link className="inline-block" href="">
                         Neck of The Woods
@@ -639,7 +639,7 @@ export default function ServicesPage() {
           <div className="relative">
             <ul className="list-none flex-wrap min-[769px]:flex">
               <li className="relative list-item min-[769px]:w-[48.2105%]">
-                <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
+                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
                   <Link href="">Shops</Link>
                 </span>
 
@@ -654,7 +654,7 @@ export default function ServicesPage() {
                 </Link>
 
                 <div className="flex justify-between min-[1025px]:mt-5">
-                  <div className="flex-grow">
+                  <div className="grow">
                     <h5>
                       <Link className="inline-block" href="">
                         Combat Fuel
@@ -677,7 +677,7 @@ export default function ServicesPage() {
               </li>
 
               <li className="relative list-item min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
-                <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
+                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
                   Shops
                 </span>
 
@@ -692,7 +692,7 @@ export default function ServicesPage() {
                 </Link>
 
                 <div className="flex justify-between min-[1025px]:mt-5">
-                  <div className="flex-grow">
+                  <div className="grow">
                     <h5>
                       <Link className="inline-block" href="">
                         Xpert Workwear
@@ -761,7 +761,7 @@ export default function ServicesPage() {
           <div className="relative mt-20">
             <ul className="list-none flex-wrap min-[769px]:flex">
               <li className="relative list-item min-[769px]:w-[48.2105%]">
-                <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase text-white min-[1025px]:p-8">
+                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase text-white min-[1025px]:p-8">
                   <a href="">Shops</a>
                 </span>
 
@@ -776,7 +776,7 @@ export default function ServicesPage() {
                 </a>
 
                 <div className="flex justify-between min-[1025px]:mt-5">
-                  <div className="flex-grow">
+                  <div className="grow">
                     <h5>
                       <a className="inline-block" href="">
                         The Millshop Online
@@ -798,7 +798,7 @@ export default function ServicesPage() {
               </li>
 
               <li className="relative list-item min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
-                <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase text-white min-[1025px]:p-8">
+                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase text-white min-[1025px]:p-8">
                   <a href="">Websites</a>
                 </span>
 
@@ -813,7 +813,7 @@ export default function ServicesPage() {
                 </a>
 
                 <div className="flex justify-between min-[1025px]:mt-5">
-                  <div className="flex-grow">
+                  <div className="grow">
                     <h5>
                       <a className="inline-block" href="">
                         New Legend 4×4
@@ -913,7 +913,7 @@ export default function ServicesPage() {
               <div className="relative">
                 <ul className="list-none flex-wrap min-[769px]:flex">
                   <li className="relative list-item min-[769px]:w-[48.2105%]">
-                    <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
+                    <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
                       Websites
                     </span>
                     <Link className="w-full overflow-hidden" href="">
@@ -927,7 +927,7 @@ export default function ServicesPage() {
                     </Link>
 
                     <div className="flex justify-between min-[1025px]:mt-5">
-                      <div className="flex-grow">
+                      <div className="grow">
                         <h5>
                           <Link className="inline-block" href="">
                             HICONSUMPTION
@@ -952,7 +952,7 @@ export default function ServicesPage() {
                   </li>
 
                   <li className="relative list-item min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
-                    <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
+                    <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
                       Websites
                     </span>
                     <Link className="w-full overflow-hidden" href="">
@@ -966,7 +966,7 @@ export default function ServicesPage() {
                     </Link>
 
                     <div className="flex justify-between min-[1025px]:mt-5">
-                      <div className="flex-grow">
+                      <div className="grow">
                         <h5>
                           <Link className="inline-block" href="">
                             Adige Design

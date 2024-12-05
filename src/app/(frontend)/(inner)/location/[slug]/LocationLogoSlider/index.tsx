@@ -131,12 +131,12 @@ export function LocationLogoSlider({ brands }: LocationLogoSliderProps) {
               >
                 <div className="flex gap-2">
                   {topRowLogos.map(({ id, logo }, index) => (
-                    <div key={`${id}-${index}`} className="flex-shrink-0">
+                    <div key={`${id}-${index}`} className="shrink-0">
                       <LogoCard logo={logo} variant="default" />
                     </div>
                   ))}
                   {topRowLogos.map(({ id, logo }, index) => (
-                    <div key={`${id}-${index}-duplicate`} className="flex-shrink-0">
+                    <div key={`${id}-${index}-duplicate`} className="shrink-0">
                       <LogoCard logo={logo} variant="default" />
                     </div>
                   ))}
@@ -158,12 +158,12 @@ export function LocationLogoSlider({ brands }: LocationLogoSliderProps) {
               >
                 <div className="flex gap-2">
                   {bottomRowLogos.map(({ id, logo }, index) => (
-                    <div key={`${id}-${index}`} className="flex-shrink-0">
+                    <div key={`${id}-${index}`} className="shrink-0">
                       <LogoCard logo={logo} variant="default" />
                     </div>
                   ))}
                   {bottomRowLogos.map(({ id, logo }, index) => (
-                    <div key={`${id}-${index}-duplicate`} className="flex-shrink-0">
+                    <div key={`${id}-${index}-duplicate`} className="shrink-0">
                       <LogoCard logo={logo} variant="default" />
                     </div>
                   ))}

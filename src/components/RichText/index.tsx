@@ -15,7 +15,7 @@ const richTextVariants = cva('', {
       false: 'max-w-none',
     },
     enableProse: {
-      true: 'prose dark:prose-invert mx-auto [&>h1]:!mb-6 [&>h2]:!mb-6 [&>h3]:!mb-6 [&>h4]:!mb-4 [&>h5]:!mb-4 [&>h6]:!mb-4 [&>p]:!mb-4',
+      true: 'prose dark:prose-invert mx-auto [&>h1]:mb-6! [&>h2]:mb-6! [&>h3]:mb-6! [&>h4]:mb-4! [&>h5]:mb-4! [&>h6]:mb-4! [&>p]:mb-4!',
       false: '',
     },
   },

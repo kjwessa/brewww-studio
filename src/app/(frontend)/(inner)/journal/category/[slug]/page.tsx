@@ -6,6 +6,24 @@ import { Category } from '@/payload-types'
 
 export const revalidate = 3600
 
+export async function generateStaticParams() {
+  // Only generate static params in production on Vercel
+  if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+    return []
+  }
+
+  const payload = await getPayload({ config: configPromise })
+  const categories = await payload.find({
+    collection: 'categories',
+    limit: 1000,
+    select: {
+      slug: true,
+    },
+  })
+
+  return categories.docs.map(({ slug }) => ({ slug }))
+}
+
 type Args = {
   params: Promise<{
     slug?: string

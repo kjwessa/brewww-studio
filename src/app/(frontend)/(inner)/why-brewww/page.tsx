@@ -206,7 +206,7 @@ export default function WhyPage() {
                 alt="Logo Circle"
               />
             </div>
-            <div className="absolute bottom-0 left-0 right-0 top-0 z-[2]">
+            <div className="absolute bottom-0 left-0 right-0 top-0 z-2">
               <div className="absolute bottom-auto left-0 right-auto top-[10%] h-40 w-56 overflow-hidden min-[1920px]:w-96">
                 <Image
                   width={384}

@@ -199,7 +199,7 @@ export default async function WorkPage() {
                     </div>
                     <div className="relative inline-flex items-center">
                       <a
-                        className="inline-flex blur"
+                        className="inline-flex blur-sm"
                         href=""
                         style={{
                           outlineOffset: '2px',
@@ -483,11 +483,11 @@ export default async function WorkPage() {
                           key={project.id}
                           className={`relative list-item h-full ${isWide ? 'md:col-span-2' : ''} mb-8 flex h-full flex-col`}
                         >
-                          <span className="absolute left-0 top-0 z-[2] w-full p-4 text-lg uppercase text-white md:p-6 lg:p-8">
+                          <span className="absolute left-0 top-0 z-2 w-full p-4 text-lg uppercase text-white md:p-6 lg:p-8">
                             <Link href="">Website</Link>
                           </span>
                           <Link
-                            className="w-full flex-grow overflow-hidden"
+                            className="w-full grow overflow-hidden"
                             href={`/work/${project.slug}`}
                           >
                             <div className="relative pt-[75%]">
@@ -504,7 +504,7 @@ export default async function WorkPage() {
                             </div>
                           </Link>
                           <div className="mt-4 flex flex-col justify-between min-[1025px]:mt-5">
-                            <div className="flex-grow">
+                            <div className="grow">
                               <h5 className="mb-2 text-xl font-semibold">
                                 <Link className="inline-block" href="">
                                   {project.title}

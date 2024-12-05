@@ -27,7 +27,7 @@ export function AboutHeroSection() {
                 className="h-[120%] w-[120%] object-cover"
                 style={{
                   objectPosition: "50% 50%",
-                  filter: "blur(20px)",
+                  filter: "blur-sm(20px)",
                   transform: "scale(1.1)",
                   marginLeft: "-10%",
                   marginTop: "-10%",
@@ -53,7 +53,7 @@ export function AboutHeroSection() {
               className="relative inline-block h-full w-3 max-w-full self-end overflow-hidden"
               href=""
             >
-              <div className="absolute left-[0.38rem] top-0 z-[1] h-full w-0 bg-white/[0.35]" />
+              <div className="absolute left-[0.38rem] top-0 z-1 h-full w-0 bg-white/[0.35]" />
               <div className="absolute left-[0.38rem] top-0 h-full w-0 bg-white" />
             </a>
           </div>

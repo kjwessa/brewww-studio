@@ -5,7 +5,7 @@ export function JournalHeroImage({ post }: { post: Post }) {
   return (
     <div className="w-full">
       <div className="px-2">
-        <div className="relative aspect-[3/2] w-full">
+        <div className="relative aspect-3/2 w-full">
       <Image
         src={typeof post.image === 'string' ? post.image : post.image?.url || ''}
         fill

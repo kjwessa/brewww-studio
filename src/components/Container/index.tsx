@@ -5,11 +5,11 @@ import { cva, type VariantProps } from 'class-variance-authority'
 const containerVariants = cva('mx-auto w-full px-4 md:px-6 lg:px-8', {
   variants: {
     size: {
-      small: 'max-w-screen-sm',
-      medium: 'max-w-screen-md',
-      large: 'max-w-screen-lg',
-      xl: 'max-w-screen-xl',
-      '2xl': 'max-w-screen-2xl',
+      small: 'max-w-(--breakpoint-sm)',
+      medium: 'max-w-(--breakpoint-md)',
+      large: 'max-w-(--breakpoint-lg)',
+      xl: 'max-w-(--breakpoint-xl)',
+      '2xl': 'max-w-(--breakpoint-2xl)',
       full: 'max-w-full',
     },
     spacing: {

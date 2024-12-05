@@ -276,7 +276,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
           <div className="relative">
             <ul className="list-none flex-wrap min-[769px]:flex">
               <li className="relative list-item min-[769px]:w-[30.9474%]">
-                <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
+                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
                   Websites
                 </span>
 
@@ -296,7 +296,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 </a>
 
                 <div className="flex justify-between min-[1025px]:mt-5">
-                  <div className="flex-grow">
+                  <div className="grow">
                     <h5>
                       <a className="inline-block" href="">
                         Heritage Driven
@@ -321,7 +321,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
               </li>
 
               <li className="relative list-item md:mt-12 min-[769px]:ml-auto min-[769px]:w-[65.4737%]">
-                <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
+                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
                   Shops
                 </span>
 
@@ -341,7 +341,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 </a>
 
                 <div className="flex justify-between min-[1025px]:mt-5">
-                  <div className="flex-grow">
+                  <div className="grow">
                     <h5>
                       <a className="inline-block" href="">
                         Combat Fuel
@@ -366,7 +366,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
               </li>
 
               <li className="relative list-item md:mt-12 min-[769px]:mt-28 min-[769px]:w-[65.4737%]">
-                <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
+                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
                   Websites
                 </span>
 
@@ -386,7 +386,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 </a>
 
                 <div className="flex justify-between min-[1025px]:mt-5">
-                  <div className="flex-grow">
+                  <div className="grow">
                     <h5>
                       <a className="inline-block" href="">
                         Neck of The Woods
@@ -411,7 +411,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
               </li>
 
               <li className="relative list-item md:mt-12 min-[769px]:ml-auto min-[769px]:mt-28 min-[769px]:w-[30.9474%]">
-                <span className="absolute left-0 top-0 z-[2] w-full text-lg uppercase min-[1025px]:p-8">
+                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
                   Websites
                 </span>
                 <a className="w-full overflow-hidden" href="">
@@ -430,7 +430,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 </a>
 
                 <div className="flex justify-between min-[1025px]:mt-5">
-                  <div className="flex-grow">
+                  <div className="grow">
                     <h5>
                       <a className="inline-block" href="">
                         Metal & Gas

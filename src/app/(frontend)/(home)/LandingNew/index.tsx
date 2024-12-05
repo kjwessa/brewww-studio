@@ -55,7 +55,7 @@ export function LandingNew() {
       </section>
 
       <section>
-        <div className="relative z-[3] flex h-[100svh] flex-col justify-between px-4 pb-4 pt-16">
+        <div className="relative z-3 flex h-[100svh] flex-col justify-between px-4 pb-4 pt-16">
           <h1 className="mx-0 my-3 text-[10.63rem] font-medium leading-none text-white">
             We craft brands beyond tomorrow.
           </h1>
@@ -85,7 +85,7 @@ export function LandingNew() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 top-0 z-[1] h-[100svh] w-full overflow-hidden">
+        <div className="absolute bottom-0 left-0 top-0 z-1 h-[100svh] w-full overflow-hidden">
           <div className="relative h-[100svh] w-full overflow-hidden text-white">
             <Image
               src="/craft-creative.comp.jpg"
@@ -95,7 +95,7 @@ export function LandingNew() {
               style={{ objectFit: 'cover' }}
             />
           </div>
-          <div className="absolute bottom-0 left-0 top-0 z-[2] bg-black/[0.5]" />
+          <div className="absolute bottom-0 left-0 top-0 z-2 bg-black/[0.5]" />
         </div>
       </section>
 

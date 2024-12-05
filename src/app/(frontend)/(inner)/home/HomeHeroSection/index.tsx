@@ -107,7 +107,7 @@ export function HomeHeroSection() {
 
   return (
     <section
-      className="relative flex min-h-[100vh] items-center justify-center overflow-hidden bg-gradient-to-b from-brand-dark-bg to-brand-dark-surface text-zinc-50"
+      className="relative flex min-h-[100vh] items-center justify-center overflow-hidden bg-linear-to-b from-brand-dark-bg to-brand-dark-surface text-zinc-50"
       id="hero"
     >
       <div className="absolute inset-0 overflow-hidden">{stars}</div>

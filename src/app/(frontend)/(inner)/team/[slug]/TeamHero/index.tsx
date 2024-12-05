@@ -13,7 +13,7 @@ export const TeamHero = ({ team }: { team: Team }) => (
         priority
       />
     </div>
-    <div className="absolute inset-0 z-20 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+    <div className="absolute inset-0 z-20 bg-linear-to-b from-transparent to-black opacity-70"></div>
     <div className="absolute inset-0 z-30 flex items-end justify-start">
       <div className="w-full max-w-xl p-8 lg:p-16">
         <div className="relative mb-4">

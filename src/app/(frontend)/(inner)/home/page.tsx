@@ -56,7 +56,7 @@
 //       <HomeImpactSection />
 //       <section className="bg-brand-dark-bg text-zinc-50">
 //         <div className="relative content-stretch items-start justify-start px-24 py-48 font-light">
-//           <div className="relative m-auto flex w-full max-w-[62.50rem] flex-grow auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto_auto] flex-col items-stretch justify-center self-start">
+//           <div className="relative m-auto flex w-full max-w-[62.50rem] grow auto-cols-fr grid-cols-[1fr_1fr] grid-rows-[auto_auto] flex-col items-stretch justify-center self-start">
 //             <div className="relative grid h-[40.63rem] auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[minmax(auto,.25fr)_auto_auto_auto_auto_auto_minmax(auto,.25fr)] gap-4">
 //               <div className="relative z-10 col-start-1 col-end-6 row-start-1 row-end-4 self-center">
 //                 <div className="overflow-hidden text-[3.63rem] leading-none">

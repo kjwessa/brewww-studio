@@ -159,7 +159,7 @@ export default function Header() {
           <div className="relative z-10 flex justify-end">
             <button
               onClick={toggleMenu}
-              className="text-white focus:outline-none"
+              className="text-white focus:outline-hidden"
             >
               <svg
                 width="32"

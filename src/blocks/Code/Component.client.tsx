@@ -14,7 +14,7 @@ export const Code: React.FC<Props> = ({ code, language = '' }) => {
   return (
     <Highlight code={code} language={language} theme={themes.vsDark}>
       {({ getLineProps, getTokenProps, tokens }) => (
-        <pre className="border-border overflow-x-auto rounded border bg-black p-4 text-xs">
+        <pre className="border-border overflow-x-auto rounded-sm border bg-black p-4 text-xs">
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ className: 'table-row', line })}>
               <span className="table-cell select-none text-right text-white/25">{i + 1}</span>

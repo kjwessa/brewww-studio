@@ -79,7 +79,7 @@ export function LocationTechSlider({ technologies }: LocationTechSliderProps) {
             style={{ willChange: 'transform', transform: 'translateX(0px)' }}
           >
             {logos.map(({ id, logo }, index) => (
-              <div key={`${id}-${index}`} className="flex-shrink-0">
+              <div key={`${id}-${index}`} className="shrink-0">
                 <LogoCard logo={logo} variant="surface" />
               </div>
             ))}

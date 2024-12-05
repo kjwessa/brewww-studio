@@ -379,7 +379,7 @@ export default function About() {
           >
             <div className="grid grid-flow-col grid-cols-[220px_220px] grid-rows-[3.75rem] justify-start gap-10">
               <a
-                className="flex items-center justify-center rounded-sm bg-brand-gold px-5 text-black"
+                className="flex items-center justify-center rounded-xs bg-brand-gold px-5 text-black"
                 href=""
               >
                 <span className="flex cursor-pointer items-center justify-between">
@@ -401,7 +401,7 @@ export default function About() {
                 </span>
               </a>
               <a
-                className="flex items-center justify-center rounded-sm border-2 border-solid border-zinc-800 px-5"
+                className="flex items-center justify-center rounded-xs border-2 border-solid border-zinc-800 px-5"
                 href=""
               >
                 <span className="flex cursor-pointer items-center justify-between">
@@ -485,7 +485,7 @@ export default function About() {
               className="relative flex h-min w-full content-center items-center justify-center gap-[0.63rem] self-start justify-self-start text-lg"
               style={{ gridColumnEnd: 'span 3' }}
             >
-              <div className="relative flex h-min flex-grow content-center items-center justify-start gap-[0.38rem]">
+              <div className="relative flex h-min grow content-center items-center justify-start gap-[0.38rem]">
                 <div className="flex h-auto w-auto flex-col justify-start font-medium">
                   <p>●</p>
                 </div>
@@ -493,7 +493,7 @@ export default function About() {
                   <p>ST/01</p>
                 </div>
               </div>
-              <div className="relative flex h-min flex-grow content-center items-center justify-start">
+              <div className="relative flex h-min grow content-center items-center justify-start">
                 <div className="flex h-auto w-auto flex-col justify-start">
                   <p>How it started</p>
                 </div>
@@ -515,7 +515,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="relative grid h-min w-full auto-rows-min grid-cols-[repeat(8,_minmax(1px,_1fr))] grid-rows-[repeat(1,_min-content)] justify-center gap-8 min-[810px]:p-8">
+        <div className="relative grid h-min w-full auto-rows-min grid-cols-[repeat(8,minmax(1px,1fr))] grid-rows-[repeat(1,min-content)] justify-center gap-8 min-[810px]:p-8">
           <div
             className="relative flex h-min w-full content-center items-center justify-start self-start justify-self-start min-[810px]:items-start min-[810px]:pb-0 min-[810px]:pl-0 min-[810px]:pr-8 min-[810px]:pt-0"
             style={{ gridColumnEnd: 'span 3', gridRowStart: '1' }}
@@ -642,14 +642,14 @@ export default function About() {
         <div className="container mx-auto">
           <div className="relative flex h-min w-full max-w-[90.00rem] flex-col content-start items-start justify-center gap-20 px-6 py-20 text-xs">
             <div className="relative h-auto w-full text-lg">
-              <div className="relative grid h-auto auto-rows-min grid-cols-[146px_146px_146px_146px_146px_146px_146px_146px] grid-rows-[repeat(1,_min-content)] justify-start gap-8 pb-6">
+              <div className="relative grid h-auto auto-rows-min grid-cols-[146px_146px_146px_146px_146px_146px_146px_146px] grid-rows-[repeat(1,min-content)] justify-start gap-8 pb-6">
                 <div
                   className="relative flex h-min w-full content-center items-center justify-center gap-[0.63rem] self-start justify-self-start overflow-visible"
                   style={{
                     gridColumnEnd: 'span 3',
                   }}
                 >
-                  <div className="relative flex h-min flex-grow content-center items-center justify-start gap-[0.38rem]">
+                  <div className="relative flex h-min grow content-center items-center justify-start gap-[0.38rem]">
                     <div className="absolute bottom-0 left-0 top-0 flex h-auto w-auto flex-col justify-start font-medium">
                       <p>●</p>
                     </div>
@@ -657,7 +657,7 @@ export default function About() {
                       <p>ST/04</p>
                     </div>
                   </div>
-                  <div className="relative flex h-min flex-grow content-center items-center justify-start overflow-visible">
+                  <div className="relative flex h-min grow content-center items-center justify-start overflow-visible">
                     <div className="absolute bottom-0 left-0 top-0 flex h-auto w-auto flex-col justify-start">
                       <p>Our principles</p>
                     </div>
@@ -679,7 +679,7 @@ export default function About() {
                 </div>
               </div>
             </div>
-            <div className="grid h-min w-full auto-rows-min grid-cols-[repeat(3,_minmax(1px,_1fr))] grid-rows-[repeat(9,_min-content)] justify-start gap-8">
+            <div className="grid h-min w-full auto-rows-min grid-cols-[repeat(3,minmax(1px,1fr))] grid-rows-[repeat(9,min-content)] justify-start gap-8">
               <div className="h-auto self-start justify-self-start">
                 <div className="flex h-auto flex-col content-start items-start justify-start gap-4 py-6">
                   <div className="flex h-auto w-auto flex-col justify-start text-lg">

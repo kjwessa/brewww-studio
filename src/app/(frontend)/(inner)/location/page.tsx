@@ -13,7 +13,7 @@ export default async function Page() {
   })
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-linear-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 py-16">
         <div className="mb-16 text-center">
           <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">
@@ -29,7 +29,7 @@ export default async function Page() {
             <Link
               key={location.id}
               href={`/location/${location.slug}`}
-              className="group transform overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="group transform overflow-hidden rounded-2xl bg-white shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="relative h-56 w-full overflow-hidden">
                 {location.image ? (
@@ -41,7 +41,7 @@ export default async function Page() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
+                  <div className="flex h-full w-full items-center justify-center bg-linear-to-br from-gray-100 to-gray-200">
                     <svg
                       className="h-16 w-16 text-gray-400"
                       fill="none"
