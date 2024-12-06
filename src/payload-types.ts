@@ -314,8 +314,8 @@ export interface Work {
   };
   slug?: string | null;
   slugLock?: boolean | null;
-  image?: (string | null) | Media;
-  brand?: (string | null) | Brand;
+  image: string | Media;
+  brand: string | Brand;
   projectLink?: string | null;
   updatedAt: string;
   createdAt: string;

@@ -120,6 +120,7 @@ export const Work: CollectionConfig = {
         position: 'sidebar',
       },
     },
+
     {
       name: 'projectLink',
       type: 'text',
