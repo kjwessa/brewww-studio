@@ -316,7 +316,6 @@ export interface Work {
   slugLock?: boolean | null;
   image?: (string | null) | Media;
   brand?: (string | null) | Brand;
-  featured?: boolean | null;
   projectLink?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -1086,7 +1085,6 @@ export interface WorkSelect<T extends boolean = true> {
   slugLock?: T;
   image?: T;
   brand?: T;
-  featured?: T;
   projectLink?: T;
   updatedAt?: T;
   createdAt?: T;

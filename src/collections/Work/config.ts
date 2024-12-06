@@ -104,7 +104,7 @@ export const Work: CollectionConfig = {
       name: 'image',
       type: 'upload',
       label: 'Featured Image',
-      required: false,
+      required: true,
       relationTo: 'media',
       admin: {
         position: 'sidebar',
@@ -115,21 +115,11 @@ export const Work: CollectionConfig = {
       type: 'relationship',
       relationTo: 'brands',
       hasMany: false,
-      required: false,
+      required: true,
       admin: {
         position: 'sidebar',
       },
     },
-    {
-      name: 'featured',
-      type: 'checkbox',
-      label: 'Is this a featured project?',
-      required: false,
-      admin: {
-        position: 'sidebar',
-      },
-    },
-
     {
       name: 'projectLink',
       type: 'text',
