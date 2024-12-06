@@ -57,12 +57,12 @@ export const Pillars: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    defaultColumns: ['title', 'updatedAt'],
+    defaultColumns: ['title', '_status', 'updatedAt'],
     group: 'Service',
     listSearchableFields: ['title'],
     pagination: {
-      defaultLimit: 25,
-      limits: [25, 50, 100],
+      defaultLimit: 50,
+      limits: [10, 25, 50, 100],
     },
     useAsTitle: 'title',
   },

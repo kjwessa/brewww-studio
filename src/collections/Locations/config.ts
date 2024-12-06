@@ -83,11 +83,16 @@ export const Location: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    description: 'Landing pages for locations',
+    defaultColumns: ['title', '_status', 'updatedAt'],
     group: 'Service',
+    listSearchableFields: ['title', 'locationCity', 'locationState'],
+    pagination: {
+      defaultLimit: 50,
+      limits: [10, 25, 50, 100],
+    },
     useAsTitle: 'title',
   },
-
+  defaultSort: 'locationCity',
   labels: {
     singular: 'Location',
     plural: 'Locations',

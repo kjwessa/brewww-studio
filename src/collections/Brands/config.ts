@@ -61,13 +61,12 @@ export const Brands: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    description: 'Our bread and butter. Add (or remove) brands from this list carefully.',
-    defaultColumns: ['title', ],
+    defaultColumns: ['title', '_status', 'updatedAt'],
     group: 'Portfolio',
     listSearchableFields: ['title'],
     pagination: {
-      defaultLimit: 25,
-      limits: [25, 50, 100],
+      defaultLimit: 50,
+      limits: [10, 25, 50, 100],
     },
     useAsTitle: 'title',
   },

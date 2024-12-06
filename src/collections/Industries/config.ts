@@ -63,8 +63,7 @@ export const Industries: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    description: 'Industries of Brewww',
-    defaultColumns: ['title', 'updatedAt'],
+    defaultColumns: ['title', '_status', 'updatedAt'],
     group: 'Service',
     listSearchableFields: ['title'],
     pagination: {

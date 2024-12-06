@@ -43,13 +43,12 @@ export const Results: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    description: 'The impact of our work',
-    defaultColumns: ['title'],
+    defaultColumns: ['title', '_status', 'updatedAt'],
     group: 'Portfolio',
     listSearchableFields: ['title'],
     pagination: {
-      defaultLimit: 25,
-      limits: [25, 50],
+      defaultLimit: 50,
+      limits: [10, 25, 50, 100],
     },
     useAsTitle: 'title',
   },

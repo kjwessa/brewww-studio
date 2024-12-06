@@ -31,7 +31,7 @@ export const Technologies: CollectionConfig = {
     {
       name: 'logoLight',
       type: 'upload',
-      label: 'Logo',
+      label: 'Logo Light',
       required: false,
       relationTo: 'media',
     },
@@ -40,13 +40,12 @@ export const Technologies: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    description: 'The tools of the trade.',
-    defaultColumns: ['title'],
+    defaultColumns: ['title', '_status', 'updatedAt'],
     group: 'Portfolio',
     listSearchableFields: ['title'],
     pagination: {
-      defaultLimit: 25,
-      limits: [10, 25, 50],
+      defaultLimit: 50,
+      limits: [10, 25, 50, 100],
     },
     useAsTitle: 'title',
   },

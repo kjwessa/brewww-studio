@@ -98,8 +98,7 @@ export const Playground: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    description: 'Interior Brewww projects',
-    defaultColumns: ['title'],
+    defaultColumns: ['title', '_status', 'updatedAt'],
     group: 'Portfolio',
     listSearchableFields: ['title'],
     livePreview: {
@@ -121,8 +120,8 @@ export const Playground: CollectionConfig = {
       return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
     },
     pagination: {
-      defaultLimit: 25,
-      limits: [25, 50, 100],
+      defaultLimit: 50,
+      limits: [10, 25, 50, 100],
     },
     useAsTitle: 'title',
   },

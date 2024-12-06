@@ -178,7 +178,7 @@ export const BlogPosts: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    defaultColumns: ['title', 'publishedOn', 'updatedAt', '_status'],
+    defaultColumns: ['title', '_status', 'publishedOn', 'updatedAt'],
     group: 'Blog Posts',
     listSearchableFields: ['title'],
     livePreview: {

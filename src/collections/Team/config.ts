@@ -171,13 +171,12 @@ export const Team: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    description: 'Our team of experts.',
-    defaultColumns: ['title'],
+    defaultColumns: ['title', '_status', 'updatedAt'],
     group: 'Company',
     listSearchableFields: ['title'],
     pagination: {
-      defaultLimit: 25,
-      limits: [10, 25, 50],
+      defaultLimit: 50,
+      limits: [10, 25, 50, 100],
     },
     useAsTitle: 'title',
   },

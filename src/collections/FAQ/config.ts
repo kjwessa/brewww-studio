@@ -36,13 +36,16 @@ export const FAQ: CollectionConfig = {
   //* Admin Settings
 
   admin: {
-    description: 'Frequently asked questions',
-    defaultColumns: ['title'],
+    defaultColumns: ['title', '_status', 'updatedAt'],
     group: 'Company',
     listSearchableFields: ['title'],
-
+    pagination: {
+      defaultLimit: 50,
+      limits: [10, 25, 50, 100],
+    },
     useAsTitle: 'title',
   },
+  defaultSort: 'title',
   labels: {
     singular: 'FAQ',
     plural: 'FAQ',

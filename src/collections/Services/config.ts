@@ -112,8 +112,7 @@ export const Services: CollectionConfig = {
 
   //* Admin Settings
   admin: {
-    description: 'How we help people. Be specific.',
-    defaultColumns: ['title'],
+    defaultColumns: ['title', '_status', 'updatedAt'],
     group: 'Service',
     listSearchableFields: ['title'],
     livePreview: {
@@ -135,8 +134,8 @@ export const Services: CollectionConfig = {
       return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
     },
     pagination: {
-      defaultLimit: 25,
-      limits: [10, 25, 50],
+      defaultLimit: 50,
+      limits: [10, 25, 50, 100],
     },
     useAsTitle: 'title',
   },
