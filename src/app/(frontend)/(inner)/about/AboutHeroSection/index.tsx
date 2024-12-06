@@ -5,9 +5,9 @@ import { Container } from '@/components/Layout/Container'
 
 export function AboutHeroSection() {
   return (
-    <Section theme="dark">
-      <Container spacing="xlarge" className="relative pt-64 pr-24 pb-80 pl-60 text-white">
-        <div className="grid-rows-auto 1fr)] relative grid auto-cols-fr grid-cols-[repeat(6, gap-4">
+    <Section theme="dark" color="default">
+      <Container size="xl" spacing="2xl" className="pr-24 pl-60">
+        <div className="grid-rows-auto 1fr)] grid auto-cols-fr grid-cols-[repeat(6, gap-4">
           <div className="col-span-4 row-start-1 row-end-2 flex h-full w-full flex-col items-start justify-start self-start font-bold uppercase">
             <div className="pb-5">+ About Our Studio</div>
           </div>

@@ -1,10 +1,13 @@
 import { WorkCard } from '@/components/WorkCard'
 import { Work } from '@/payload-types'
+import { Section } from '@/components/Layout/Section'
+import { Container } from '@/components/Layout/Container'
+import { Title } from '@/components/Title'
 
 export async function WorkGridSection({ projects }: { projects: Work[] }) {
   return (
-    <section className="bg-brand-dark-bg py-16 text-black md:py-24 lg:py-32">
-      <div className="container mx-auto px-4">
+    <Section theme="dark" color="default">
+      <Container size="full" spacing="large">
         <div className="flex flex-wrap">
           <div className="w-full px-2 md:mt-20 md:w-2/4 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="mb-16 w-full lg:mb-28">
@@ -92,9 +95,9 @@ export async function WorkGridSection({ projects }: { projects: Work[] }) {
                   <div className="h-1.5 w-1.5 rounded-full bg-white" />
                   <div className="ml-2 font-light text-white">Our Work</div>
                 </div>
-                <h2 className="text-headline-large mt-3 mb-0 max-w-md leading-none text-white min-[2100px]:max-w-lg lg:mt-5 lg:mb-0 xl:max-w-md">
+                <Title el="h2" size="headline-medium">
                   A few projects to explore
-                </h2>
+                </Title>
               </div>
             </div>
             <div className="mb-16 w-full lg:mb-28">
@@ -105,7 +108,7 @@ export async function WorkGridSection({ projects }: { projects: Work[] }) {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   )
 }

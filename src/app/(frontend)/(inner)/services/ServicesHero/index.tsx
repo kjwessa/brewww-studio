@@ -5,8 +5,8 @@ import { Container } from '@/components/Layout/Container'
 
 export function ServicesHero() {
   return (
-    <Section theme="dark">
-      <Container size="2xl" spacing="2xl">
+    <Section theme="dark" color="default">
+      <Container size="3xl" spacing="2xl">
         <div className="mb-3 flex flex-wrap justify-between md:mb-5 lg:mb-0">
           <div className="w-full px-2 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="mb-3 inline-flex w-auto items-center justify-between">

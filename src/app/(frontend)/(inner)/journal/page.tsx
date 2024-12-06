@@ -3,6 +3,8 @@ import configPromise from '@payload-config'
 import { BlogCard } from '@/components/BlogCard/index'
 import { CategoryFilterBar } from './_components/CategoryFilterBar'
 import { Post } from '@/payload-types'
+import { Section } from '@/components/Layout/Section'
+import { Container } from '@/components/Layout/Container'
 
 export const revalidate = 3600
 
@@ -33,15 +35,15 @@ export default async function BlogPage() {
         totalPostCount={posts.totalDocs}
       />
 
-      <section className="">
-        <div className="container mx-auto">
+      <Section theme="dark" color="default">
+        <Container size="3xl" spacing="large">
           <div className="relative grid auto-rows-auto grid-cols-3 gap-x-8 gap-y-24 text-zinc-100">
             {posts.docs.map((post) => (
               <BlogCard key={post.id} post={post} />
             ))}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
     </>
   )
 }

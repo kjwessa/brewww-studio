@@ -1,5 +1,7 @@
 import { Category, Post } from '@/payload-types'
 import { CategoryFilter } from '@/components/CategoryFilter/index'
+import { Section } from '@/components/Layout/Section'
+import { Container } from '@/components/Layout/Container'
 
 type Props = {
   categories: Category[]
@@ -8,7 +10,12 @@ type Props = {
   currentCategorySlug?: string
 }
 
-export function CategoryFilterBar({ categories, posts, totalPostCount, currentCategorySlug }: Props) {
+export function CategoryFilterBar({
+  categories,
+  posts,
+  totalPostCount,
+  currentCategorySlug,
+}: Props) {
   const categoryCounts = categories.reduce(
     (acc, category) => {
       acc[category.id] = posts.filter((post) =>
@@ -25,19 +32,19 @@ export function CategoryFilterBar({ categories, posts, totalPostCount, currentCa
   )
 
   return (
-    <section className="flex w-full flex-wrap bg-brand-dark-bg px-2 py-4 text-black lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-      <div className="container mx-auto w-full">
+    <Section theme="dark" color="default">
+      <Container size="full" spacing="small" spacingTop="large">
         <ul className="flex list-none flex-row flex-wrap justify-start">
-          <li className="mb-2 mr-4">
-            <CategoryFilter 
-              title="Explore All" 
-              count={totalPostCount} 
+          <li className="mr-4 mb-2">
+            <CategoryFilter
+              title="Explore All"
+              count={totalPostCount}
               isActive={!currentCategorySlug}
               slug="/journal"
             />
           </li>
           {categories.map((category) => (
-            <li key={category.id} className="mb-2 mr-4">
+            <li key={category.id} className="mr-4 mb-2">
               <CategoryFilter
                 title={category.title || 'Untitled Category'}
                 count={categoryCounts[category.id] || 0}
@@ -47,7 +54,7 @@ export function CategoryFilterBar({ categories, posts, totalPostCount, currentCa
             </li>
           ))}
         </ul>
-      </div>
-    </section>
+      </Container>
+    </Section>
   )
-} 
+}

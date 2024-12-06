@@ -16,8 +16,8 @@ interface ServicesPillarSectionProps {
 
 export function ServicesPillarSection({ title, tagline, services }: ServicesPillarSectionProps) {
   return (
-    <Section theme="dark">
-      <Container size="2xl" spacing="2xl">
+    <Section theme="dark" color="default">
+      <Container size="3xl" spacing="2xl">
         <div className="border-t border-gray-700 lg:mb-16"></div>
         <div className="text-display-large mb-5 flex w-full flex-wrap leading-none text-white lg:mb-20">
           <div className="w-full px-2 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
