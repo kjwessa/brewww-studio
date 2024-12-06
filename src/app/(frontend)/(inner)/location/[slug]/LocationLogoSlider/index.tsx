@@ -6,7 +6,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/Button'
 import { Section } from '@/components/Layout/Section'
-import { Container } from '@/components/Container'
+import { Container } from '@/components/Layout/Container'
 
 // Payload Imports
 import { Brand, Media } from '@/payload-types'

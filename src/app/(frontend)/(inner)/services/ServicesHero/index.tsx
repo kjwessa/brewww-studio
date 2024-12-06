@@ -1,7 +1,7 @@
 import { Title } from '@/components/Title'
 import { Text } from '@/components/Text'
 import { Section } from '@/components/Layout/Section'
-import { Container } from '@/components/Container'
+import { Container } from '@/components/Layout/Container'
 
 export function ServicesHero() {
   return (

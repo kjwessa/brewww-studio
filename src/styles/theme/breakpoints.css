@@ -1,9 +1,0 @@
-:root {
-  --breakpoint-xs: 375px; /* Small phones */
-  --breakpoint-sm: 640px; /* Larger phones */
-  --breakpoint-md: 768px; /* Small tablets */
-  --breakpoint-lg: 1024px; /* Landscape tablets/small laptops */
-  --breakpoint-xl: 1280px; /* Laptops/Small desktops */
-  --breakpoint-2xl: 1440px; /* Large desktops */
-  --breakpoint-3xl: 1600px; /* Extra large displays */
-}

@@ -3,7 +3,7 @@ import { Faq } from '@/payload-types'
 import { Title } from '@/components/Title'
 import { Button } from '@/components/Button'
 import { Section } from '@/components/Layout/Section'
-import { Container } from '@/components/Container'
+import { Container } from '@/components/Layout/Container'
 
 export function LocationFAQ({ faqs }: { faqs: Faq[] }) {
   return (

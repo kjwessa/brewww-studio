@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Media } from '@/payload-types'
 import { Section } from '@/components/Layout/Section'
-import { Container } from '@/components/Container'
+import { Container } from '@/components/Layout/Container'
 
 interface LocationHeroImageProps {
   image?: Media

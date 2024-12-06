@@ -1,6 +1,6 @@
 import { Section } from '@/components/Layout/Section'
 import { Title } from '@/components/Title'
-import { Container } from '@/components/Container'
+import { Container } from '@/components/Layout/Container'
 
 interface LocationHeroTextProps {
   location: {
