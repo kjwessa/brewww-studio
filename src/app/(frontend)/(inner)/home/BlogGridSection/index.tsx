@@ -7,7 +7,7 @@ import { Container } from '@/components/Layout/Container'
 
 export function BlogGridSection({ posts }: { posts: Post[] }) {
   return (
-    <Section theme="light" color="default">
+    <Section theme="dark" color="primary">
       <Container size="3xl" spacing="large">
         <div className="relative z-10 m-auto w-full max-w-[100.00rem] px-24 pt-24">
           <div className="flex flex-wrap px-24">
@@ -21,8 +21,8 @@ export function BlogGridSection({ posts }: { posts: Post[] }) {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 bottom-0 left-0 z-0 w-[20%] bg-[#F9F9F9]" />
-        <div className="m-auto w-full max-w-[100.00rem] px-24 text-black">
+        <div className="bg-secondary absolute top-0 bottom-0 left-0 z-0 w-[20%]" />
+        <div className="m-auto w-full max-w-[100.00rem] px-24">
           <div className="flex flex-wrap px-24">
             <div className="relative w-full max-w-[50%] basis-1/2">
               <div className="mb-36 -ml-24 w-[33.44rem] pb-3">

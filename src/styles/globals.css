@@ -59,25 +59,25 @@
   --color-brand-light-text: oklch(20% 0 0);
 
   /* Light Theme Colors */
-  --color-background-light: oklch(95% 0.02 262.1);
-  --color-foreground-light: oklch(5% 0 262.1);
-  --color-card-light: oklch(90% 0.05 262.1);
-  --color-card-foreground-light: oklch(15% 0 262.1);
-  --color-popover-light: oklch(95% 0.02 262.1);
-  --color-popover-foreground-light: oklch(5% 0 262.1);
-  --color-primary-light: oklch(60% 0.2 262.1);
+  --color-background-light: oklch(100% 0 0);
+  --color-foreground-light: oklch(5% 0 0);
+  --color-card-light: oklch(98% 0 0);
+  --color-card-foreground-light: oklch(15% 0 0);
+  --color-popover-light: oklch(100% 0 0);
+  --color-popover-foreground-light: oklch(5% 0 0);
+  --color-primary-light: oklch(60% 0.2 80);
   --color-primary-foreground-light: oklch(100% 0 0);
-  --color-secondary-light: oklch(75% 0.1 262.1);
+  --color-secondary-light: oklch(98% 0 0);
   --color-secondary-foreground-light: oklch(0% 0 0);
-  --color-muted-light: oklch(85% 0.05 224.1);
-  --color-muted-foreground-light: oklch(40% 0 262.1);
-  --color-accent-light: oklch(80% 0.05 224.1);
-  --color-accent-foreground-light: oklch(15% 0 262.1);
+  --color-muted-light: oklch(98% 0 0);
+  --color-muted-foreground-light: oklch(40% 0 0);
+  --color-accent-light: oklch(98% 0 0);
+  --color-accent-foreground-light: oklch(15% 0 0);
   --color-destructive-light: oklch(45% 0.25 0);
-  --color-destructive-foreground-light: oklch(90% 0 262.1);
-  --color-border-light: oklch(55% 0.1 262.1);
-  --color-input-light: oklch(25% 0.1 262.1);
-  --color-ring-light: oklch(60% 0.2 262.1);
+  --color-destructive-foreground-light: oklch(100% 0 0);
+  --color-border-light: oklch(90% 0 0);
+  --color-input-light: oklch(25% 0 0);
+  --color-ring-light: oklch(60% 0.2 80);
 
   /* Dark Theme Colors */
   --color-background-dark: oklch(10% 0 262.1);

@@ -18,9 +18,18 @@ export default async function Home() {
     limit: 4,
     sort: '-publishedOn',
     where: {
-      _status: {
-        equals: 'published',
-      },
+      and: [
+        {
+          _status: {
+            equals: 'published',
+          },
+        },
+        {
+          featured: {
+            equals: true,
+          },
+        },
+      ],
     },
   })
 

@@ -5,8 +5,8 @@ import { Container } from '@/components/Layout/Container'
 
 export function HomeServicesSection({ services }: { services: Service[] }) {
   return (
-    <Section theme="dark">
-      <Container size="2xl" spacing="2xl">
+    <Section theme="dark" color="default">
+      <Container size="3xl" spacing="2xl">
         <div className="w-full rounded-xl bg-zinc-900 py-20 text-black">
           <div className="bg-zinc-900 px-2">
             <div className="mb-10 flex w-full flex-wrap justify-between lg:mb-20">
