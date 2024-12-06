@@ -10,6 +10,7 @@ import { getPayload } from 'payload'
 
 // Components
 import { generateMeta } from '@/utilities/generateMeta'
+import { JournalBreadcrumbs } from './JournalBreadcrumbs'
 import { JournalHero } from './JournalHero'
 import { JournalHeroImage } from './JournalHeroImage'
 import { JournalContent } from './JournalContent'
@@ -54,12 +55,13 @@ export default async function PostPage({ params: paramsPromise }: Args) {
   if (!post) return <PayloadRedirects url={url} />
 
   return (
-    <article className="bg-white pt-24 text-black">
+    <div>
       <PayloadRedirects disableNotFound url={url} />
+      <JournalBreadcrumbs />
       <JournalHero post={post} />
       <JournalHeroImage post={post} />
       <JournalContent post={post} />
-    </article>
+    </div>
   )
 }
 

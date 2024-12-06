@@ -1,62 +1,25 @@
-import { formatDate } from "@root/utilities/formatDateTime";
-import Link from "next/link";
-import { Post } from '@/payload-types';
+import { formatDate } from '@root/utilities/formatDateTime'
+import Link from 'next/link'
+import { Post } from '@/payload-types'
+import { Section } from '@/components/Layout/Section'
+import { Container } from '@/components/Layout/Container'
+import { Title } from '@/components/Title'
+import { Text } from '@/components/Text'
 
 interface JournalHeroProps {
-  post: Post;
+  post: Post
 }
 
 export function JournalHero({ post }: JournalHeroProps) {
   return (
-    <>
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex items-start justify-start">
-          <ul className="hidden list-none flex-wrap gap-4 md:flex">
-            <li>
-              <Link href="/journal" className="hover:underline">
-                All Posts
-              </Link>
-            </li>
-            <li>
-              <Link href="/journal/category/branding" className="hover:underline">
-                Branding
-              </Link>
-            </li>
-            <li>
-              <Link href="/journal/category/web-design" className="hover:underline">
-                Web Design
-              </Link>
-            </li>
-            <li>
-              <Link href="/journal/category/content" className="hover:underline">
-                Content
-              </Link>
-            </li>
-            <li>
-              <Link href="/journal/category/guides" className="hover:underline">
-                Guides
-              </Link>
-            </li>
-            <li>
-              <Link href="/journal/category/updates" className="hover:underline">
-                Updates
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <section className="container mx-auto px-4 pb-12 pt-12">
+    <Section theme="dark">
+      <Container size="3xl" spacing="large" spacingTop="xlarge">
         <div className="max-w-5xl">
-          <h1 className="mb-4 text-5xl font-medium leading-tight md:text-6xl">{post.title}</h1>
-          <p className="mb-8 max-w-3xl text-xl text-gray-700">
-            {post.description || 'Add a cool description here.'}
-          </p>
-          <div className="flex items-center gap-1 text-sm text-gray-500">
+          <Title size="headline-large">{post.title}</Title>
+          <Text size="body-large">{post.description || 'Add a cool description here.'}</Text>
+          <div className="flex items-center gap-1 text-sm">
             <span>
-              By{' '}
-              <Link className="text-gray-950" href={''}>
-                Kevin Wessa
-              </Link>
+              By <Link href={''}>Kevin Wessa</Link>
             </span>
             <span>•</span>
             <span>
@@ -68,7 +31,7 @@ export function JournalHero({ post }: JournalHeroProps) {
             {/* <span>{post.readTime ? `${post.readTime} min read` : 'Add Read Time'}</span> */}
           </div>
         </div>
-      </section>
-    </>
-  );
+      </Container>
+    </Section>
+  )
 }

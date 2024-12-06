@@ -14,9 +14,9 @@ export default async function BlogPage() {
     sort: '-publishedOn',
     where: {
       _status: {
-        equals: 'published'
-      }
-    }
+        equals: 'published',
+      },
+    },
   })
 
   const categories = await payload.find({
@@ -27,13 +27,13 @@ export default async function BlogPage() {
 
   return (
     <>
-      <CategoryFilterBar 
+      <CategoryFilterBar
         categories={categories.docs}
         posts={posts.docs}
         totalPostCount={posts.totalDocs}
       />
 
-      <section className="bg-brand-dark-bg py-24 text-white">
+      <section className="">
         <div className="container mx-auto">
           <div className="relative grid auto-rows-auto grid-cols-3 gap-x-8 gap-y-24 text-zinc-100">
             {posts.docs.map((post) => (
