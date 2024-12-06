@@ -6,6 +6,7 @@ import { motion, useAnimationFrame } from 'framer-motion'
 import { LogoCard } from '@/components/LogoCard'
 import { Title } from '@/components/Title'
 import { Section } from '@/components/Layout/Section'
+import { Container } from '@/components/Layout/Container'
 
 interface LocationTechSliderProps {
   technologies: Technology[]
@@ -62,30 +63,32 @@ export function LocationTechSlider({ technologies }: LocationTechSliderProps) {
 
   return (
     <Section theme="dark">
-      <div className="mb-32 flex w-full flex-wrap items-end justify-between px-2 text-5xl text-black min-[1450px]:pr-20 min-[1450px]:pl-20 min-[1800px]:pr-40 min-[1800px]:pl-40 min-[2100px]:pr-60 min-[2100px]:pl-60 sm:pr-6 sm:pl-6 xl:pr-12 xl:pl-12">
-        <div className="px-2 text-white lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
-          <div className="flex flex-col items-start">
-            <Title el="h2" size="headline-small">
-              We use the latest technologies available to create timeless designs.
-            </Title>
+      <Container size="full" spacing="xlarge">
+        <div className="mb-32 flex w-full flex-wrap items-end justify-between px-2 text-5xl text-black min-[1450px]:pr-20 min-[1450px]:pl-20 min-[1800px]:pr-40 min-[1800px]:pl-40 min-[2100px]:pr-60 min-[2100px]:pl-60 sm:pr-6 sm:pl-6 xl:pr-12 xl:pl-12">
+          <div className="px-2 text-white lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
+            <div className="flex flex-col items-start">
+              <Title el="h2" size="headline-small">
+                We use the latest technologies available to create timeless designs.
+              </Title>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="w-full overflow-hidden">
-        <div className="-mr-4 -ml-4 w-full">
-          <div
-            ref={containerRef}
-            className="flex gap-4 px-4"
-            style={{ willChange: 'transform', transform: 'translateX(0px)' }}
-          >
-            {logos.map(({ id, logo }, index) => (
-              <div key={`${id}-${index}`} className="shrink-0">
-                <LogoCard logo={logo} variant="surface" />
-              </div>
-            ))}
+        <div className="w-full overflow-hidden">
+          <div className="-mr-4 -ml-4 w-full">
+            <div
+              ref={containerRef}
+              className="flex gap-4 px-4"
+              style={{ willChange: 'transform', transform: 'translateX(0px)' }}
+            >
+              {logos.map(({ id, logo }, index) => (
+                <div key={`${id}-${index}`} className="shrink-0">
+                  <LogoCard logo={logo} variant="surface" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </Container>
     </Section>
   )
 }

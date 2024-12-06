@@ -4,7 +4,7 @@ import { Section } from '@/components/Layout/Section'
 
 export function LocationServiceDetails() {
   return (
-    <Section theme="dark">
+    <Section theme="dark" color="default">
       <div className="px-2 min-[1450px]:pr-20 min-[1450px]:pl-20 sm:pr-6 sm:pl-6 xl:pr-12 xl:pl-12">
         <div className="mt-10 mb-8 flex w-full flex-wrap items-end justify-between lg:mt-0 lg:mb-16">
           <div className="w-full px-2 lg:w-auto lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">

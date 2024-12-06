@@ -48,6 +48,16 @@
   --border-width-4: 4px;
   --border-width-6: 6px;
 
+  /* Legacy Brand Colors - To be deprecated */
+  --color-brand-gold: oklch(71.5% 0.15 80);
+  --color-brand-dark-bg: oklch(2% 0 0);
+  --color-brand-dark-surface: oklch(5% 0 0);
+  --color-brand-dark-text: oklch(88% 0 0);
+  --color-brand-gunmetal: oklch(25% 0.02 180);
+  --color-brand-light-bg: oklch(96% 0 0);
+  --color-brand-light-surface: oklch(100% 0 0);
+  --color-brand-light-text: oklch(20% 0 0);
+
   /* Light Theme Colors */
   --color-background-light: oklch(95% 0.02 262.1);
   --color-foreground-light: oklch(5% 0 262.1);

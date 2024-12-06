@@ -16,7 +16,7 @@ export const LocationHeroImage: React.FC<LocationHeroImageProps> = ({ image }) =
 
   return (
     <Section theme="dark" bg="default">
-      <Container size="2xl" spacing="none">
+      <Container size="3xl" spacing="none">
         <div className="relative flex w-full flex-wrap px-2 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
           <div className="relative h-[70vh] w-full overflow-hidden rounded-xl bg-zinc-900">
             <Image className="object-cover" src={imageUrl} alt={imageAlt} fill priority />
