@@ -1,0 +1,35 @@
+:root {
+  /* Font Sizes - Using CSS clamp for fluid typography */
+  --font-display-large: clamp(2.89rem, 1.47rem + 7.1vw, 9.31rem);
+  --font-display-medium: clamp(2.57rem, 1.43rem + 5.7vw, 7.45rem);
+  --font-display-small: clamp(2.28rem, 1.37rem + 4.55vw, 5.96rem);
+  --font-headline-large: clamp(2.03rem, 1.31rem + 3.6vw, 4.77rem);
+  --font-headline-medium: clamp(1.8rem, 1.24rem + 2.8vw, 3.81rem);
+  --font-headline-small: clamp(1.6rem, 1.18rem + 2.1vw, 3.05rem);
+  --font-title-large: clamp(1.42rem, 1.12rem + 1.5vw, 2.44rem);
+  --font-title-medium: clamp(1.27rem, 1.07rem + 1vw, 1.95rem);
+  --font-title-small: clamp(1.13rem, 1.03rem + 0.5vw, 1.56rem);
+  --font-body-large: clamp(1.17rem, 1.09rem + 0.4vw, 1.48rem);
+  --font-body-medium: clamp(1.07rem, 1.02rem + 0.25vw, 1.28rem);
+  --font-body-small: clamp(0.98rem, 0.96rem + 0.1vw, 1.1rem);
+  --font-label-large: clamp(0.9rem, 0.89rem + 0.05vw, 0.95rem);
+  --font-label-medium: clamp(0.83rem, 0.83rem + -0.05vw, 0.82rem);
+  --font-label-small: clamp(0.76rem, 0.77rem + -0.05vw, 0.71rem);
+
+  /* Typography scale references */
+  --text-display-large: var(--font-display-large);
+  --text-display-medium: var(--font-display-medium);
+  --text-display-small: var(--font-display-small);
+  --text-headline-large: var(--font-headline-large);
+  --text-headline-medium: var(--font-headline-medium);
+  --text-headline-small: var(--font-headline-small);
+  --text-title-large: var(--font-title-large);
+  --text-title-medium: var(--font-title-medium);
+  --text-title-small: var(--font-title-small);
+  --text-body-large: var(--font-body-large);
+  --text-body-medium: var(--font-body-medium);
+  --text-body-small: var(--font-body-small);
+  --text-label-large: var(--font-label-large);
+  --text-label-medium: var(--font-label-medium);
+  --text-label-small: var(--font-label-small);
+}

@@ -1,0 +1,73 @@
+:root {
+  /* Brand colors */
+  --color-brand-gold: #f8ac43;
+  --color-brand-dark-bg: #010101;
+  --color-brand-dark-surface: #050609;
+  --color-brand-dark-text: #e0e0e0;
+  --color-brand-gunmetal: #242e2e;
+  --color-brand-light-bg: #f5f5f5;
+  --color-brand-light-surface: #ffffff;
+  --color-brand-light-text: #333333;
+
+  /* Default theme (dark) */
+  --background: oklch(10% 0 262.1);
+  --foreground: oklch(90% 0 262.1);
+
+  --card: oklch(5% 0 262.1);
+  --card-foreground: oklch(90% 0 262.1);
+
+  --popover: oklch(10% 0 262.1);
+  --popover-foreground: oklch(90% 0 262.1);
+
+  --primary: oklch(60% 0.2 262.1);
+  --primary-foreground: oklch(100% 0 0);
+
+  --secondary: oklch(15% 0.1 262.1);
+  --secondary-foreground: oklch(100% 0 0);
+
+  --muted: oklch(20% 0.05 224.1);
+  --muted-foreground: oklch(65% 0 262.1);
+
+  --accent: oklch(20% 0.05 224.1);
+  --accent-foreground: oklch(90% 0 262.1);
+
+  --destructive: oklch(45% 0.25 0);
+  --destructive-foreground: oklch(90% 0 262.1);
+
+  --border: oklch(25% 0.1 262.1);
+  --input: oklch(25% 0.1 262.1);
+  --ring: oklch(60% 0.2 262.1);
+
+  --radius: 0.5rem;
+}
+
+/* Light theme */
+:root[data-theme='light'] {
+  --background: oklch(95% 0.02 262.1);
+  --foreground: oklch(5% 0 262.1);
+
+  --card: oklch(90% 0.05 262.1);
+  --card-foreground: oklch(15% 0 262.1);
+
+  --popover: oklch(95% 0.02 262.1);
+  --popover-foreground: oklch(5% 0 262.1);
+
+  --primary: oklch(60% 0.2 262.1);
+  --primary-foreground: oklch(100% 0 0);
+
+  --secondary: oklch(75% 0.1 262.1);
+  --secondary-foreground: oklch(0% 0 0);
+
+  --muted: oklch(85% 0.05 224.1);
+  --muted-foreground: oklch(40% 0 262.1);
+
+  --accent: oklch(80% 0.05 224.1);
+  --accent-foreground: oklch(15% 0 262.1);
+
+  --destructive: oklch(45% 0.25 0);
+  --destructive-foreground: oklch(90% 0 262.1);
+
+  --border: oklch(55% 0.1 262.1);
+  --input: oklch(25% 0.1 262.1);
+  --ring: oklch(60% 0.2 262.1);
+}
