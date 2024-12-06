@@ -26,22 +26,17 @@ export function LocationBlogSlider({ posts, title }: LocationBlogSliderProps) {
 
   return (
     <Section theme="dark">
-      <Container size="2xl" spacing="xlarge">
+      <Container size="3xl" spacing="3xl">
         <div className="flex flex-col lg:flex-row lg:gap-12">
           {/* Left Column - Text and Button */}
           <div className="mb-10 lg:mb-0 lg:w-[400px] lg:shrink-0">
             <div className="flex flex-col items-start">
               <div className="inline-flex items-center">
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />
-                <div className="ml-2 font-light text-white">Our Journal</div>
+                <div className="ml-2 font-light text-white">Still here? </div>
               </div>
-              <Title
-                el="h2"
-                size="headline-medium"
-                weight="medium"
-                className="mt-3 mb-8 text-white lg:mt-5"
-              >
-                Latest insights from our team
+              <Title el="h2" size="headline-medium" weight="medium" className="mt-3 mb-8 lg:mt-5">
+                Some bonus content from the team
               </Title>
               <div className="relative inline-flex items-center">
                 <Button

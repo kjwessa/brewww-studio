@@ -10,6 +10,7 @@ const containerVariants = cva('mx-auto w-full px-4 md:px-6 lg:px-8', {
       large: 'max-w-[var(--breakpoint-lg)]',
       xl: 'max-w-[var(--breakpoint-xl)]',
       '2xl': 'max-w-[var(--breakpoint-2xl)]',
+      '3xl': 'max-w-[var(--breakpoint-3xl)]',
       full: 'max-w-full',
     },
     spacing: {
@@ -19,6 +20,7 @@ const containerVariants = cva('mx-auto w-full px-4 md:px-6 lg:px-8', {
       large: 'py-12 md:py-16',
       xlarge: 'py-16 md:py-24',
       '2xl': 'py-24 md:py-32',
+      '3xl': 'py-32 md:py-40',
     },
     spacingTop: {
       none: 'pt-0',
@@ -27,6 +29,7 @@ const containerVariants = cva('mx-auto w-full px-4 md:px-6 lg:px-8', {
       large: 'pt-12 md:pt-16',
       xlarge: 'pt-16 md:pt-24',
       '2xl': 'pt-24 md:pt-32',
+      '3xl': 'pt-32 md:pt-40',
     },
     spacingBottom: {
       none: 'pb-0',
@@ -35,11 +38,12 @@ const containerVariants = cva('mx-auto w-full px-4 md:px-6 lg:px-8', {
       large: 'pb-12 md:pb-16',
       xlarge: 'pb-16 md:pb-24',
       '2xl': 'pb-24 md:pb-32',
+      '3xl': 'pb-32 md:pb-40',
     },
   },
   defaultVariants: {
-    size: '2xl',
-    spacing: 'medium',
+    size: '3xl',
+    spacing: 'large',
   },
 })
 

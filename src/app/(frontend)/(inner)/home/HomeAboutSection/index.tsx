@@ -5,7 +5,7 @@ import { Container } from '@/components/Layout/Container'
 export function HomeAboutSection() {
   return (
     <Section theme="dark">
-      <Container size="2xl" spacing="2xl">
+      <Container size="3xl" spacing="3xl">
         <div className="flex flex-col items-center">
           <div className="grid grid-cols-12 py-16 sm:py-24 md:py-32">
             <div className="col-span-9 col-start-1">

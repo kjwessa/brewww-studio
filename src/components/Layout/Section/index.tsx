@@ -5,55 +5,20 @@ import { cva, type VariantProps } from 'class-variance-authority'
 const sectionVariants = cva('relative w-full', {
   variants: {
     theme: {
-      light: 'text-gray-900',
-      dark: 'text-brand-dark-text',
+      light: 'text-foreground [data-theme="light"]',
+      dark: 'text-foreground [data-theme="dark"]',
     },
     bg: {
-      default: '',
-      primary: '',
-      secondary: '',
+      default: 'bg-background',
+      primary: 'bg-card',
+      secondary: 'bg-muted',
+      accent: 'bg-accent',
     },
     transparent: {
       true: 'bg-transparent',
       false: '',
     },
   },
-  compoundVariants: [
-    // Light theme backgrounds
-    {
-      theme: 'light',
-      transparent: false,
-      bg: 'default',
-      className: 'bg-white',
-    },
-    {
-      theme: 'light',
-      bg: 'primary',
-      className: 'bg-gray-50',
-    },
-    {
-      theme: 'light',
-      bg: 'secondary',
-      className: 'bg-gray-100',
-    },
-    // Dark theme backgrounds
-    {
-      theme: 'dark',
-      transparent: false,
-      bg: 'default',
-      className: 'bg-brand-dark-bg',
-    },
-    {
-      theme: 'dark',
-      bg: 'primary',
-      className: 'bg-brand-dark-surface',
-    },
-    {
-      theme: 'dark',
-      bg: 'secondary',
-      className: 'bg-zinc-900',
-    },
-  ],
   defaultVariants: {
     theme: 'dark',
     bg: 'default',
@@ -79,7 +44,11 @@ export const Section = ({
   ...props
 }: SectionProps) => {
   return (
-    <Component className={cn(sectionVariants({ theme, bg, transparent }), className)} {...props}>
+    <Component
+      data-theme={theme}
+      className={cn(sectionVariants({ theme, bg, transparent }), className)}
+      {...props}
+    >
       {children}
     </Component>
   )

@@ -1,126 +1,153 @@
 @import 'tailwindcss';
-
-/* Swiper styles */
 @import 'swiper/css' layer(utilities);
 @import 'swiper/css/navigation' layer(utilities);
 
+/* Define dark mode variant */
+@variant dark (html[data-theme="dark"] &);
+
 @theme {
-  /* Font Sizes - Using CSS clamp for fluid typography */
-  --font-display-large: clamp(2.89rem, 1.47rem + 7.1vw, 9.31rem);
-  --font-display-medium: clamp(2.57rem, 1.43rem + 5.7vw, 7.45rem);
-  --font-display-small: clamp(2.28rem, 1.37rem + 4.55vw, 5.96rem);
-  --font-headline-large: clamp(2.03rem, 1.31rem + 3.6vw, 4.77rem);
-  --font-headline-medium: clamp(1.8rem, 1.24rem + 2.8vw, 3.81rem);
-  --font-headline-small: clamp(1.6rem, 1.18rem + 2.1vw, 3.05rem);
-  --font-title-large: clamp(1.42rem, 1.12rem + 1.5vw, 2.44rem);
-  --font-title-medium: clamp(1.27rem, 1.07rem + 1vw, 1.95rem);
-  --font-title-small: clamp(1.13rem, 1.03rem + 0.5vw, 1.56rem);
-  --font-body-large: clamp(1.17rem, 1.09rem + 0.4vw, 1.48rem);
-  --font-body-medium: clamp(1.07rem, 1.02rem + 0.25vw, 1.28rem);
-  --font-body-small: clamp(0.98rem, 0.96rem + 0.1vw, 1.1rem);
-  --font-label-large: clamp(0.9rem, 0.89rem + 0.05vw, 0.95rem);
-  --font-label-medium: clamp(0.83rem, 0.83rem + -0.05vw, 0.82rem);
-  --font-label-small: clamp(0.76rem, 0.77rem + -0.05vw, 0.71rem);
+  /* Typography - Font Families */
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-bebas-neue), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
 
-  /* Typography mappings */
-  --text-display-large: var(--font-display-large);
-  --text-display-medium: var(--font-display-medium);
-  --text-display-small: var(--font-display-small);
-  --text-headline-large: var(--font-headline-large);
-  --text-headline-medium: var(--font-headline-medium);
-  --text-headline-small: var(--font-headline-small);
-  --text-title-large: var(--font-title-large);
-  --text-title-medium: var(--font-title-medium);
-  --text-title-small: var(--font-title-small);
-  --text-body-large: var(--font-body-large);
-  --text-body-medium: var(--font-body-medium);
-  --text-body-small: var(--font-body-small);
-  --text-label-large: var(--font-label-large);
-  --text-label-medium: var(--font-label-medium);
-  --text-label-small: var(--font-label-small);
-
-  --font-sans: var(--font-dm-sans), 'ui-sans-serif', 'system-ui', 'sans-serif';
-  --font-mono: var(--font-bebas-neue), 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco',
-    'Consolas', 'Liberation Mono', 'Courier New', 'monospace';
-
-  /* Border width */
-  --border-width-6: 6px;
+  /* Typography - Fluid Scale */
+  --text-display-large: clamp(2.89rem, 1.47rem + 7.1vw, 9.31rem);
+  --text-display-medium: clamp(2.57rem, 1.43rem + 5.7vw, 7.45rem);
+  --text-display-small: clamp(2.28rem, 1.37rem + 4.55vw, 5.96rem);
+  --text-headline-large: clamp(2.03rem, 1.31rem + 3.6vw, 4.77rem);
+  --text-headline-medium: clamp(1.8rem, 1.24rem + 2.8vw, 3.81rem);
+  --text-headline-small: clamp(1.6rem, 1.18rem + 2.1vw, 3.05rem);
+  --text-title-large: clamp(1.42rem, 1.12rem + 1.5vw, 2.44rem);
+  --text-title-medium: clamp(1.27rem, 1.07rem + 1vw, 1.95rem);
+  --text-title-small: clamp(1.13rem, 1.03rem + 0.5vw, 1.56rem);
+  --text-body-large: clamp(1.17rem, 1.09rem + 0.4vw, 1.48rem);
+  --text-body-medium: clamp(1.07rem, 1.02rem + 0.25vw, 1.28rem);
+  --text-body-small: clamp(0.98rem, 0.96rem + 0.1vw, 1.1rem);
+  --text-label-large: clamp(0.9rem, 0.89rem + 0.05vw, 0.95rem);
+  --text-label-medium: clamp(0.83rem, 0.83rem + -0.05vw, 0.82rem);
+  --text-label-small: clamp(0.76rem, 0.77rem + -0.05vw, 0.71rem);
 
   /* Breakpoints */
-  --breakpoint-xs: 375px; /* Small phones */
-  --breakpoint-sm: 640px; /* Larger phones */
-  --breakpoint-md: 768px; /* Small tablets */
-  --breakpoint-lg: 1024px; /* Landscape tablets/small laptops */
-  --breakpoint-xl: 1280px; /* Laptops/Small desktops */
-  --breakpoint-2xl: 1440px; /* Large desktops */
-  --breakpoint-3xl: 1600px; /* Extra large displays */
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+  --breakpoint-3xl: 1600px;
 
-  /* Brand colors */
-  --color-brand-gold: #f8ac43;
-  --color-brand-dark-bg: #010101;
-  --color-brand-dark-surface: #050609;
-  --color-brand-dark-text: #e0e0e0;
-  --color-brand-gunmetal: #242e2e;
-  --color-brand-light-bg: #f5f5f5;
-  --color-brand-light-surface: #ffffff;
-  --color-brand-light-text: #333333;
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
 
-  /* Default theme (light) */
-  --background: oklch(95% 0.02 262.1);
-  --foreground: oklch(5% 0 262.1);
-  --card: oklch(90% 0.05 262.1);
-  --card-foreground: oklch(15% 0 262.1);
-  --popover: oklch(95% 0.02 262.1);
-  --popover-foreground: oklch(5% 0 262.1);
-  --primary: oklch(60% 0.2 262.1);
-  --primary-foreground: oklch(100% 0 0);
-  --secondary: oklch(75% 0.1 262.1);
-  --secondary-foreground: oklch(0% 0 0);
-  --muted: oklch(85% 0.05 224.1);
-  --muted-foreground: oklch(40% 0 262.1);
-  --accent: oklch(80% 0.05 224.1);
-  --accent-foreground: oklch(15% 0 262.1);
-  --destructive: oklch(45% 0.25 0);
-  --destructive-foreground: oklch(90% 0 262.1);
-  --border: oklch(55% 0.1 262.1);
-  --input: oklch(25% 0.1 262.1);
-  --ring: oklch(60% 0.2 262.1);
-  --radius: 0.5rem;
+  /* Border Width */
+  --border-width-1: 1px;
+  --border-width-2: 2px;
+  --border-width-4: 4px;
+  --border-width-6: 6px;
 
-  /* Dark theme */
-  &[data-theme='dark'] {
-    --background: oklch(10% 0 262.1);
-    --foreground: oklch(90% 0 262.1);
-    --card: oklch(5% 0 262.1);
-    --card-foreground: oklch(90% 0 262.1);
-    --popover: oklch(10% 0 262.1);
-    --popover-foreground: oklch(90% 0 262.1);
-    --primary: oklch(60% 0.2 262.1);
-    --primary-foreground: oklch(100% 0 0);
-    --secondary: oklch(15% 0.1 262.1);
-    --secondary-foreground: oklch(100% 0 0);
-    --muted: oklch(20% 0.05 224.1);
-    --muted-foreground: oklch(65% 0 262.1);
-    --accent: oklch(20% 0.05 224.1);
-    --accent-foreground: oklch(90% 0 262.1);
-    --destructive: oklch(45% 0.25 0);
-    --destructive-foreground: oklch(90% 0 262.1);
-    --border: oklch(25% 0.1 262.1);
-    --input: oklch(25% 0.1 262.1);
-    --ring: oklch(60% 0.2 262.1);
-  }
+  /* Light Theme Colors */
+  --color-background-light: oklch(95% 0.02 262.1);
+  --color-foreground-light: oklch(5% 0 262.1);
+  --color-card-light: oklch(90% 0.05 262.1);
+  --color-card-foreground-light: oklch(15% 0 262.1);
+  --color-popover-light: oklch(95% 0.02 262.1);
+  --color-popover-foreground-light: oklch(5% 0 262.1);
+  --color-primary-light: oklch(60% 0.2 262.1);
+  --color-primary-foreground-light: oklch(100% 0 0);
+  --color-secondary-light: oklch(75% 0.1 262.1);
+  --color-secondary-foreground-light: oklch(0% 0 0);
+  --color-muted-light: oklch(85% 0.05 224.1);
+  --color-muted-foreground-light: oklch(40% 0 262.1);
+  --color-accent-light: oklch(80% 0.05 224.1);
+  --color-accent-foreground-light: oklch(15% 0 262.1);
+  --color-destructive-light: oklch(45% 0.25 0);
+  --color-destructive-foreground-light: oklch(90% 0 262.1);
+  --color-border-light: oklch(55% 0.1 262.1);
+  --color-input-light: oklch(25% 0.1 262.1);
+  --color-ring-light: oklch(60% 0.2 262.1);
+
+  /* Dark Theme Colors */
+  --color-background-dark: oklch(10% 0 262.1);
+  --color-foreground-dark: oklch(90% 0 262.1);
+  --color-card-dark: oklch(5% 0 262.1);
+  --color-card-foreground-dark: oklch(90% 0 262.1);
+  --color-popover-dark: oklch(10% 0 262.1);
+  --color-popover-foreground-dark: oklch(90% 0 262.1);
+  --color-primary-dark: oklch(60% 0.2 262.1);
+  --color-primary-foreground-dark: oklch(100% 0 0);
+  --color-secondary-dark: oklch(15% 0.1 262.1);
+  --color-secondary-foreground-dark: oklch(100% 0 0);
+  --color-muted-dark: oklch(20% 0.05 224.1);
+  --color-muted-foreground-dark: oklch(65% 0 262.1);
+  --color-accent-dark: oklch(20% 0.05 224.1);
+  --color-accent-foreground-dark: oklch(90% 0 262.1);
+  --color-destructive-dark: oklch(45% 0.25 0);
+  --color-destructive-foreground-dark: oklch(90% 0 262.1);
+  --color-border-dark: oklch(25% 0.1 262.1);
+  --color-input-dark: oklch(25% 0.1 262.1);
+  --color-ring-dark: oklch(60% 0.2 262.1);
+
+  /* Default theme colors (pointing to light theme) */
+  --color-background: var(--color-background-light);
+  --color-foreground: var(--color-foreground-light);
+  --color-card: var(--color-card-light);
+  --color-card-foreground: var(--color-card-foreground-light);
+  --color-popover: var(--color-popover-light);
+  --color-popover-foreground: var(--color-popover-foreground-light);
+  --color-primary: var(--color-primary-light);
+  --color-primary-foreground: var(--color-primary-foreground-light);
+  --color-secondary: var(--color-secondary-light);
+  --color-secondary-foreground: var(--color-secondary-foreground-light);
+  --color-muted: var(--color-muted-light);
+  --color-muted-foreground: var(--color-muted-foreground-light);
+  --color-accent: var(--color-accent-light);
+  --color-accent-foreground: var(--color-accent-foreground-light);
+  --color-destructive: var(--color-destructive-light);
+  --color-destructive-foreground: var(--color-destructive-foreground-light);
+  --color-border: var(--color-border-light);
+  --color-input: var(--color-input-light);
+  --color-ring: var(--color-ring-light);
 }
 
+/* Base styles */
 @layer base {
+  /* Reset border colors */
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+    border-color: var(--color-border, currentColor);
+  }
+
+  /* Switch to dark theme colors when dark mode is active */
+  [data-theme='dark'] {
+    --color-background: var(--color-background-dark);
+    --color-foreground: var(--color-foreground-dark);
+    --color-card: var(--color-card-dark);
+    --color-card-foreground: var(--color-card-foreground-dark);
+    --color-popover: var(--color-popover-dark);
+    --color-popover-foreground: var(--color-popover-foreground-dark);
+    --color-primary: var(--color-primary-dark);
+    --color-primary-foreground: var(--color-primary-foreground-dark);
+    --color-secondary: var(--color-secondary-dark);
+    --color-secondary-foreground: var(--color-secondary-foreground-dark);
+    --color-muted: var(--color-muted-dark);
+    --color-muted-foreground: var(--color-muted-foreground-dark);
+    --color-accent: var(--color-accent-dark);
+    --color-accent-foreground: var(--color-accent-foreground-dark);
+    --color-destructive: var(--color-destructive-dark);
+    --color-destructive-foreground: var(--color-destructive-foreground-dark);
+    --color-border: var(--color-border-dark);
+    --color-input: var(--color-input-dark);
+    --color-ring: var(--color-ring-dark);
   }
 }
 
+/* Swiper overrides */
 .swiper {
   overflow: visible !important;
 }
@@ -129,7 +156,6 @@
   height: auto;
 }
 
-/* Hide default navigation buttons */
 .swiper-button-next,
 .swiper-button-prev {
   display: none !important;

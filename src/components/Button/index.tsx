@@ -1,69 +1,66 @@
-"use client";
+'use client'
 
-import React, { forwardRef } from "react";
-import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/utilities/cn";
-import Link from "next/link";
+import React, { forwardRef } from 'react'
+import { cva, type VariantProps } from 'class-variance-authority'
+import { cn } from '@/utilities/cn'
+import Link from 'next/link'
 // import { LinkType, Reference } from "../CMSLink/index.js";
-import { Page as PayloadPage } from "@/payload-types";
+import { Page as PayloadPage } from '@/payload-types'
 
 interface Page extends PayloadPage {
-  breadcrumbs?: { url: string }[];
+  breadcrumbs?: { url: string }[]
 }
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-xs font-bold transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  'inline-flex items-center justify-center whitespace-nowrap rounded-xs font-bold transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       intent: {
-        primary: "bg-brand-gold text-black hover:bg-brand-gold/90",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+        primary: 'bg-brand-gold text-black hover:bg-brand-gold/90',
+        secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+        destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
+        outline: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+        ghost: 'hover:bg-accent hover:text-accent-foreground',
+        link: 'text-primary underline-offset-4 hover:underline',
       },
       size: {
-        default: "h-12 text-base px-5 min-w-[9.88rem] ",
-        sm: "h-9 rounded-md px-3 text-sm",
-        lg: "h-16 rounded-md px-8 text-xl",
-        icon: "h-10 w-10",
+        default: 'h-12 text-base px-5 min-w-[9.88rem] ',
+        sm: 'h-9 rounded-md px-3 text-sm',
+        lg: 'h-16 rounded-md px-8 text-xl',
+        icon: 'h-10 w-10',
       },
       fullWidth: {
-        true: "w-full",
+        true: 'w-full',
       },
       mobileFullWidth: {
-        true: "w-full md:w-auto",
+        true: 'w-full md:w-auto',
       },
     },
     defaultVariants: {
-      intent: "primary",
-      size: "default",
+      intent: 'primary',
+      size: 'default',
     },
   },
-);
+)
 
 export interface ButtonProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "type">,
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'type'>,
     VariantProps<typeof buttonVariants> {
-  href?: string;
-  newTab?: boolean;
-  icon?: "arrow" | "search" | "plus" | "loading";
-  iconPosition?: "left" | "right";
-  label?: string;
-  el?: "button" | "link" | "a";
-  type?: string | "submit" | "reset" | "button";
+  href?: string
+  newTab?: boolean
+  icon?: 'arrow' | 'search' | 'plus' | 'loading'
+  iconPosition?: 'left' | 'right'
+  label?: string
+  el?: 'button' | 'link' | 'a'
+  type?: string | 'submit' | 'reset' | 'button'
   // type?: LinkType | "submit" | "reset" | "button";
-  reference?: any;
+  reference?: any
   // reference?: Reference;
-  fullWidth?: boolean;
-  mobileFullWidth?: boolean;
-  htmlButtonType?: "button" | "submit" | "reset";
-  url?: string;
-  disabled?: boolean;
+  fullWidth?: boolean
+  mobileFullWidth?: boolean
+  htmlButtonType?: 'button' | 'submit' | 'reset'
+  url?: string
+  disabled?: boolean
 }
 
 const generateHref = ({
@@ -71,13 +68,13 @@ const generateHref = ({
   url,
   reference,
 }: {
-  type?: string;
+  type?: string
   // type?: LinkType;
-  url?: string;
-  reference?: any;
+  url?: string
+  reference?: any
   // reference?: Reference;
 }): string => {
-  return url || "";
+  return url || ''
   // if ((type === "custom" || type === undefined) && url) {
   //   return url;
   // }
@@ -109,7 +106,7 @@ const generateHref = ({
   // }
 
   // return "";
-};
+}
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -120,31 +117,28 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       fullWidth,
       mobileFullWidth,
       icon,
-      iconPosition = "right",
+      iconPosition = 'right',
       label,
-      el = "button",
+      el = 'button',
       href,
       newTab,
       type,
       reference,
-      htmlButtonType = "button",
+      htmlButtonType = 'button',
       url,
       disabled,
       ...props
     },
     ref,
   ) => {
-    const hrefValue =
-      href || generateHref({ type, reference, url });
+    const hrefValue = href || generateHref({ type, reference, url })
     // href || generateHref({ type: type as LinkType, reference, url });
 
     const content = (
-      <span className="flex h-full w-full cursor-pointer items-center justify-center">
-        {label}
-      </span>
-    );
+      <span className="flex h-full w-full cursor-pointer items-center justify-center">{label}</span>
+    )
 
-    if (el === "link") {
+    if (el === 'link') {
       return (
         <Link
           href={hrefValue}
@@ -157,14 +151,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
               className,
             }),
           )}
-          {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          {...(newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
         >
           {content}
         </Link>
-      );
+      )
     }
 
-    if (el === "a") {
+    if (el === 'a') {
       return (
         <a
           className={cn(
@@ -177,12 +171,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             }),
           )}
           href={hrefValue}
-          {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          {...(newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
           {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
         >
           {content}
         </a>
-      );
+      )
     }
 
     return (
@@ -197,14 +191,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           }),
         )}
         ref={ref}
-        type={(type as "submit" | "reset" | "button") || htmlButtonType}
+        type={(type as 'submit' | 'reset' | 'button') || htmlButtonType}
         disabled={disabled}
         {...props}
       >
         {content}
       </button>
-    );
+    )
   },
-);
+)
 
-Button.displayName = "Button";
+Button.displayName = 'Button'

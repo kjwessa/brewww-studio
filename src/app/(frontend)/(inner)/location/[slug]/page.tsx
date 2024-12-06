@@ -138,8 +138,8 @@ export default async function LocationPage({ params, searchParams }: LocationPag
       <LocationServiceDetails />
       <LocationWorkSlider workItems={workItems} />
       <LocationTechSlider technologies={technologies} />
-      <LocationFAQ faqs={faqs} />
       <LocationBlogSlider posts={posts} />
+      <LocationFAQ faqs={faqs} />
     </>
   )
 }

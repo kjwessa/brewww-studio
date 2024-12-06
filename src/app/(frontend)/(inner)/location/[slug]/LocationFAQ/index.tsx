@@ -8,7 +8,7 @@ import { Container } from '@/components/Layout/Container'
 export function LocationFAQ({ faqs }: { faqs: Faq[] }) {
   return (
     <Section theme="dark">
-      <Container size="2xl" spacing="xlarge">
+      <Container size="3xl" spacing="3xl">
         <div className="flex flex-wrap justify-between">
           <div className="mb-10 w-full lg:mb-0 lg:w-1/3">
             <div className="lg:sticky lg:top-32">
@@ -17,7 +17,7 @@ export function LocationFAQ({ faqs }: { faqs: Faq[] }) {
                   <div className="h-1.5 w-1.5 rounded-full bg-white" />
                   <div className="ml-2 font-light text-white">Anything else?</div>
                 </h2>
-                <Title el="h2" size="headline-small" weight="medium" className="mt-5">
+                <Title el="h2" size="headline-medium" weight="medium" className="mt-5">
                   The answers to your questions.
                 </Title>
                 <div className="relative mt-8 inline-flex items-center">
