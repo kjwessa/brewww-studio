@@ -1,6 +1,6 @@
 import { Title } from '@/components/Title'
 import { Button } from '@/components/Button'
-import { Section } from '@/components/Section'
+import { Section } from '@/components/Layout/Section'
 import { Container } from '@/components/Container'
 
 export function LocationHeroDetails() {
@@ -8,30 +8,30 @@ export function LocationHeroDetails() {
     <Section theme="dark">
       <Container size="2xl">
         <div className="flex w-full flex-wrap justify-between">
-          <div className="relative mb-10 w-full px-2 lg:mb-0 lg:w-[56.25%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="relative mb-10 w-full px-2 lg:mb-0 lg:w-[56.25%] lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="flex flex-col items-start">
-              <div className="inline-flex w-auto items-center lg:absolute lg:left-[1.00rem] lg:top-[1.75rem]">
+              <div className="inline-flex w-auto items-center lg:absolute lg:top-[1.75rem] lg:left-[1.00rem]">
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />
                 <div className="ml-2 font-light text-white">Web Design</div>
               </div>
               <Title
                 size="headline-medium"
-                className="mb-5 mt-3 indent-48 text-white lg:mb-0 lg:mt-5"
+                className="mt-3 mb-5 indent-48 text-white lg:mt-5 lg:mb-0"
               >
                 Are you a startup brand, well established company, in the US or worldwide? It
                 doesn't matter. We work with a range of clients.
               </Title>
-              <div className="relative mb-0 mt-3 inline-flex items-center lg:mb-0 lg:mt-5">
+              <div className="relative mt-3 mb-0 inline-flex items-center lg:mt-5 lg:mb-0">
                 <Button intent="primary" icon="arrow" iconPosition="right" label="About Brewww" />
               </div>
             </div>
           </div>
-          <div className="w-full px-2 lg:w-1/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="w-full px-2 lg:w-1/4 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="mb-5 text-sm font-light text-neutral-400">Our Website Capabilities</div>
             <div className="w-full">
               <div className="mb-3 w-full">
                 <div className="flex">
-                  <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950">
+                  <div className="bg-brand-gold mt-0 flex h-5 w-5 items-center justify-center rounded-full text-neutral-950">
                     <svg
                       className="h-3 w-3"
                       fill="rgb(14, 15, 17)"
@@ -50,7 +50,7 @@ export function LocationHeroDetails() {
               </div>
               <div className="mb-3 w-full">
                 <div className="flex">
-                  <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950">
+                  <div className="bg-brand-gold mt-0 flex h-5 w-5 items-center justify-center rounded-full text-neutral-950">
                     <svg
                       className="h-3 w-3"
                       fill="rgb(14, 15, 17)"
@@ -69,7 +69,7 @@ export function LocationHeroDetails() {
               </div>
               <div className="mb-3 w-full">
                 <div className="flex">
-                  <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950">
+                  <div className="bg-brand-gold mt-0 flex h-5 w-5 items-center justify-center rounded-full text-neutral-950">
                     <svg
                       className="h-3 w-3"
                       fill="rgb(14, 15, 17)"
@@ -88,7 +88,7 @@ export function LocationHeroDetails() {
               </div>
               <div className="mb-3 w-full">
                 <div className="flex">
-                  <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950">
+                  <div className="bg-brand-gold mt-0 flex h-5 w-5 items-center justify-center rounded-full text-neutral-950">
                     <svg
                       className="h-3 w-3"
                       fill="rgb(14, 15, 17)"
@@ -107,7 +107,7 @@ export function LocationHeroDetails() {
               </div>
               <div className="mb-3 w-full">
                 <div className="flex">
-                  <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950">
+                  <div className="bg-brand-gold mt-0 flex h-5 w-5 items-center justify-center rounded-full text-neutral-950">
                     <svg
                       className="h-3 w-3"
                       fill="rgb(14, 15, 17)"
@@ -126,7 +126,7 @@ export function LocationHeroDetails() {
               </div>
               <div className="mb-3 w-full">
                 <div className="flex">
-                  <div className="mt-0 flex h-5 w-5 items-center justify-center rounded-full bg-brand-gold text-neutral-950">
+                  <div className="bg-brand-gold mt-0 flex h-5 w-5 items-center justify-center rounded-full text-neutral-950">
                     <svg
                       className="h-3 w-3"
                       fill="rgb(14, 15, 17)"

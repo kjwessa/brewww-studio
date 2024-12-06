@@ -1,6 +1,6 @@
 import { Title } from '@/components/Title'
 import { Text } from '@/components/Text'
-import { Section } from '@/components/Section'
+import { Section } from '@/components/Layout/Section'
 import { Container } from '@/components/Container'
 
 export function ServicesHero() {

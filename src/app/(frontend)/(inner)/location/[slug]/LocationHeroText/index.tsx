@@ -1,4 +1,4 @@
-import { Section } from '@/components/Section'
+import { Section } from '@/components/Layout/Section'
 import { Title } from '@/components/Title'
 import { Container } from '@/components/Container'
 
@@ -15,18 +15,18 @@ export function LocationHeroText({ location }: LocationHeroTextProps) {
     <Section theme="dark">
       <Container size="2xl" spacing="large" spacingTop="xlarge">
         <div className="flex w-full flex-wrap justify-between">
-          <div className="w-full px-2 lg:w-[56.25%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="w-full px-2 lg:w-[56.25%] lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="flex flex-col items-start">
               <div className="inline-flex items-center">
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />
                 <div className="ml-2 font-light">Web Design</div>
               </div>
-              <Title el="h1" size="headline-large" className="mb-0 mt-3 lg:mb-0 lg:mt-5 lg:pr-20">
+              <Title el="h1" size="headline-large" className="mt-3 mb-0 lg:mt-5 lg:mb-0 lg:pr-20">
                 {title}
               </Title>
             </div>
           </div>
-          <div className="mt-5 w-full px-2 text-lg font-light text-zinc-400 lg:mt-10 lg:w-[43.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="mt-5 w-full px-2 text-lg font-light text-zinc-400 lg:mt-10 lg:w-[43.75%] lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="w-full space-y-10">
               <p>
                 Here at Brewww, we offer honest advice, industry experience, and a great portfolio

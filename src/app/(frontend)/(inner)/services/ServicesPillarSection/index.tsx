@@ -2,7 +2,7 @@ import { ServiceCategoryCard } from '@/components/ServiceCategoryCard'
 import { Title } from '@/components/Title'
 import { Text } from '@/components/Text'
 import { Container } from '@/components/Container'
-import { Section } from '@/components/Section'
+import { Section } from '@/components/Layout/Section'
 
 interface ServicesPillarSectionProps {
   title: string

@@ -2,7 +2,7 @@ import { AccordionCard } from '@/components/AccordionCard'
 import { Faq } from '@/payload-types'
 import { Title } from '@/components/Title'
 import { Button } from '@/components/Button'
-import { Section } from '@/components/Section'
+import { Section } from '@/components/Layout/Section'
 import { Container } from '@/components/Container'
 
 export function LocationFAQ({ faqs }: { faqs: Faq[] }) {

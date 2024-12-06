@@ -1,13 +1,13 @@
 import { Title } from '@/components/Title'
 import { Button } from '@/components/Button'
-import { Section } from '@/components/Section'
+import { Section } from '@/components/Layout/Section'
 
 export function LocationServiceDetails() {
   return (
     <Section theme="dark">
-      <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
-        <div className="mb-8 mt-10 flex w-full flex-wrap items-end justify-between lg:mb-16 lg:mt-0">
-          <div className="w-full px-2 lg:w-auto lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+      <div className="px-2 min-[1450px]:pr-20 min-[1450px]:pl-20 sm:pr-6 sm:pl-6 xl:pr-12 xl:pl-12">
+        <div className="mt-10 mb-8 flex w-full flex-wrap items-end justify-between lg:mt-0 lg:mb-16">
+          <div className="w-full px-2 lg:w-auto lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="flex flex-col items-start">
               <div className="inline-flex items-center">
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />
@@ -15,14 +15,14 @@ export function LocationServiceDetails() {
               </div>
               <Title
                 size="headline-small"
-                className="mb-0 mt-3 max-w-xs pr-10 text-white lg:mb-0 lg:mt-5 lg:max-w-xl"
+                className="mt-3 mb-0 max-w-xs pr-10 text-white lg:mt-5 lg:mb-0 lg:max-w-xl"
               >
                 A team of web design experts that can help you design and build a website you're
                 proud of
               </Title>
             </div>
           </div>
-          <div className="mt-5 w-full px-2 lg:mt-0 lg:w-auto lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="mt-5 w-full px-2 lg:mt-0 lg:w-auto lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="relative inline-flex items-center">
               <Button
                 intent="primary"
@@ -34,10 +34,10 @@ export function LocationServiceDetails() {
           </div>
         </div>
         <div className="-mb-12 flex w-full flex-wrap">
-          <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="mb-8 flex w-full flex-col items-start justify-start border-b-2 border-solid border-neutral-700 pb-8 lg:mb-12 lg:pb-12">
               <div className="mb-3 flex w-full items-center">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold">
+                <div className="bg-brand-gold inline-flex h-10 w-10 items-center justify-center rounded-xl">
                   <svg
                     className="h-5 w-5"
                     fill="rgb(1, 2, 2)"
@@ -62,10 +62,10 @@ export function LocationServiceDetails() {
               </div>
             </div>
           </div>
-          <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="mb-8 flex w-full flex-col items-start justify-start border-b-2 border-solid border-neutral-700 pb-8 lg:mb-12 lg:pb-12">
               <div className="mb-3 flex w-full items-center">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold">
+                <div className="bg-brand-gold inline-flex h-10 w-10 items-center justify-center rounded-xl">
                   <svg
                     className="h-5 w-5"
                     fill="rgb(1, 2, 2)"
@@ -92,10 +92,10 @@ export function LocationServiceDetails() {
               </div>
             </div>
           </div>
-          <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="mb-8 flex w-full flex-col items-start justify-start border-b-2 border-solid border-neutral-700 pb-8 lg:mb-12 lg:pb-12">
               <div className="mb-3 flex w-full items-center">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold">
+                <div className="bg-brand-gold inline-flex h-10 w-10 items-center justify-center rounded-xl">
                   <svg
                     className="h-5 w-5"
                     fill="rgb(1, 2, 2)"
@@ -123,10 +123,10 @@ export function LocationServiceDetails() {
               </div>
             </div>
           </div>
-          <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="mb-8 flex w-full flex-col items-start justify-start border-b-2 border-solid border-neutral-700 pb-8 lg:mb-12 lg:pb-12">
               <div className="mb-3 flex w-full items-center">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold">
+                <div className="bg-brand-gold inline-flex h-10 w-10 items-center justify-center rounded-xl">
                   <svg
                     className="h-5 w-5"
                     fill="rgb(1, 2, 2)"
@@ -151,10 +151,10 @@ export function LocationServiceDetails() {
               </div>
             </div>
           </div>
-          <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="mb-8 flex w-full flex-col items-start justify-start border-b-2 border-solid border-neutral-700 pb-8 lg:mb-12 lg:pb-12">
               <div className="mb-3 flex w-full items-center">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold">
+                <div className="bg-brand-gold inline-flex h-10 w-10 items-center justify-center rounded-xl">
                   <svg
                     className="h-5 w-5"
                     fill="rgb(1, 2, 2)"
@@ -182,10 +182,10 @@ export function LocationServiceDetails() {
               </div>
             </div>
           </div>
-          <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="flex w-full px-2 md:w-2/4 lg:w-1/3 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="mb-8 flex w-full flex-col items-start justify-start border-b-2 border-solid border-neutral-700 pb-8 lg:mb-12 lg:pb-12">
               <div className="mb-3 flex w-full items-center">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold">
+                <div className="bg-brand-gold inline-flex h-10 w-10 items-center justify-center rounded-xl">
                   <svg
                     className="h-5 w-5"
                     fill="rgb(1, 2, 2)"

@@ -1,5 +1,5 @@
 import { Title } from '@/components/Title'
-import { Section } from '@/components/Section'
+import { Section } from '@/components/Layout/Section'
 import { Container } from '@/components/Container'
 
 export function HomeAboutSection() {

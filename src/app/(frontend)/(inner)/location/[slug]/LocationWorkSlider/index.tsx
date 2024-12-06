@@ -5,7 +5,7 @@ import { Title } from '@/components/Title'
 import { Work } from '@/payload-types'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import { Section } from '@/components/Section'
+import { Section } from '@/components/Layout/Section'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
@@ -23,8 +23,8 @@ export function LocationWorkSlider({ workItems }: LocationWorkSliderProps) {
   return (
     <Section theme="dark">
       <Container size="full" spacing="xlarge">
-        <div className="mb-10 flex w-full flex-wrap items-end justify-between px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12">
-          <div className="w-[87.5%] px-2 lg:w-auto lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+        <div className="mb-10 flex w-full flex-wrap items-end justify-between px-2 sm:pr-6 sm:pl-6 xl:pr-12 xl:pl-12">
+          <div className="w-[87.5%] px-2 lg:w-auto lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="flex flex-col items-start">
               <div className="inline-flex items-center">
                 <div className="h-1.5 w-1.5 rounded-full" />
@@ -34,13 +34,13 @@ export function LocationWorkSlider({ workItems }: LocationWorkSliderProps) {
                 el="h2"
                 size="headline-medium"
                 weight="medium"
-                className="mb-0 mt-3 text-white lg:mb-0 lg:mt-5"
+                className="mt-3 mb-0 text-white lg:mt-5 lg:mb-0"
               >
                 Our favourite Web design Projects
               </Title>
             </div>
           </div>
-          <div className="mt-3 w-full px-2 lg:mt-0 lg:w-auto lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="mt-3 w-full px-2 lg:mt-0 lg:w-auto lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="relative inline-flex items-center">
               <Button
                 label="View our work"
@@ -81,14 +81,14 @@ export function LocationWorkSlider({ workItems }: LocationWorkSliderProps) {
           <div className="mt-8 flex justify-center gap-4">
             <button
               ref={navigationPrevRef}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-dark-surface transition-opacity hover:bg-brand-dark-surface/80 disabled:cursor-not-allowed disabled:opacity-50"
+              className="bg-brand-dark-surface hover:bg-brand-dark-surface/80 flex h-10 w-10 items-center justify-center rounded-full transition-opacity disabled:cursor-not-allowed disabled:opacity-50"
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
 
             <button
               ref={navigationNextRef}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-dark-surface transition-opacity hover:bg-brand-dark-surface/80 disabled:cursor-not-allowed disabled:opacity-50"
+              className="bg-brand-dark-surface hover:bg-brand-dark-surface/80 flex h-10 w-10 items-center justify-center rounded-full transition-opacity disabled:cursor-not-allowed disabled:opacity-50"
             >
               <ChevronRight className="h-6 w-6" />
             </button>

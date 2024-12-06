@@ -5,7 +5,7 @@ import Image from 'next/image'
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/Button'
-import { Section } from '@/components/Section'
+import { Section } from '@/components/Layout/Section'
 import { Container } from '@/components/Container'
 
 // Payload Imports
@@ -60,11 +60,11 @@ export function LocationLogoSlider({ brands }: LocationLogoSliderProps) {
   return (
     <Section theme="dark" bg="default">
       <Container size="2xl" spacing="xlarge">
-        <div className="relative w-full overflow-hidden rounded-bl-3xl rounded-br-3xl rounded-tr-3xl bg-zinc-900 py-20 lg:pb-24 lg:pt-24 min-[1450px]:pb-32 min-[1450px]:pt-32">
+        <div className="relative w-full overflow-hidden rounded-tr-3xl rounded-br-3xl rounded-bl-3xl bg-zinc-900 py-20 min-[1450px]:pt-32 min-[1450px]:pb-32 lg:pt-24 lg:pb-24">
           <div>
-            <div className="absolute left-0 top-0 h-12 w-[31.25%] bg-neutral-950 text-neutral-950 lg:h-20 lg:w-72">
+            <div className="absolute top-0 left-0 h-12 w-[31.25%] bg-neutral-950 text-neutral-950 lg:h-20 lg:w-72">
               <svg
-                className="absolute right-[0.13rem] top-0 h-10 w-10 lg:h-12 lg:w-12"
+                className="absolute top-0 right-[0.13rem] h-10 w-10 lg:h-12 lg:w-12"
                 fill="rgb(14, 15, 17)"
                 version="1.1"
                 viewBox="0 0 100 100"
@@ -90,13 +90,13 @@ export function LocationLogoSlider({ brands }: LocationLogoSliderProps) {
             </div>
 
             <div className="flex w-full flex-wrap lg:justify-end">
-              <div className="flex w-auto flex-col items-start px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+              <div className="flex w-auto flex-col items-start px-2 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
                 <div className="flex flex-col items-start">
                   <div className="inline-flex items-center">
                     <div className="h-1.5 w-1.5 rounded-full bg-white" />
                     <div className="ml-2 font-light text-white">Our Clients</div>
                   </div>
-                  <h2 className="mb-0 mt-3 max-w-2xl text-5xl text-white lg:mb-0 lg:mt-5 xl:max-w-3xl">
+                  <h2 className="mt-3 mb-0 max-w-2xl text-5xl text-white lg:mt-5 lg:mb-0 xl:max-w-3xl">
                     We work with start-up businesses through to national organizations.
                   </h2>
                 </div>

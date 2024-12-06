@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Title } from '@/components/Title'
-import { Section } from '@/components/Section'
+import { Section } from '@/components/Layout/Section'
 import { Container } from '@/components/Container'
 
 export function AboutHeroSection() {

@@ -7,7 +7,7 @@ import { Navigation } from 'swiper/modules'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useRef } from 'react'
 import { Button } from '@/components/Button'
-import { Section } from '@/components/Section'
+import { Section } from '@/components/Layout/Section'
 import { Container } from '@/components/Container'
 import { Title } from '@/components/Title'
 import 'swiper/css'
@@ -39,7 +39,7 @@ export function LocationBlogSlider({ posts, title }: LocationBlogSliderProps) {
                 el="h2"
                 size="headline-medium"
                 weight="medium"
-                className="mb-8 mt-3 text-white lg:mt-5"
+                className="mt-3 mb-8 text-white lg:mt-5"
               >
                 Latest insights from our team
               </Title>
@@ -57,13 +57,13 @@ export function LocationBlogSlider({ posts, title }: LocationBlogSliderProps) {
               <div className="mt-8 flex gap-4">
                 <button
                   ref={navigationPrevRef}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-dark-surface transition-opacity hover:bg-brand-dark-surface/80 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="bg-brand-dark-surface hover:bg-brand-dark-surface/80 flex h-10 w-10 items-center justify-center rounded-full transition-opacity disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   <ChevronLeft className="h-6 w-6 text-white" />
                 </button>
                 <button
                   ref={navigationNextRef}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-dark-surface transition-opacity hover:bg-brand-dark-surface/80 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="bg-brand-dark-surface hover:bg-brand-dark-surface/80 flex h-10 w-10 items-center justify-center rounded-full transition-opacity disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   <ChevronRight className="h-6 w-6 text-white" />
                 </button>

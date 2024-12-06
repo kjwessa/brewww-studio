@@ -1,6 +1,6 @@
 import { ServiceCard } from '@/components/ServiceCard'
 import { Service } from '@/payload-types'
-import { Section } from '@/components/Section'
+import { Section } from '@/components/Layout/Section'
 import { Container } from '@/components/Container'
 
 export function HomeServicesSection({ services }: { services: Service[] }) {
