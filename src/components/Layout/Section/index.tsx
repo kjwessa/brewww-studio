@@ -7,6 +7,8 @@ const sectionVariants = cva('relative w-full', {
     theme: {
       light: 'text-foreground [data-theme="light"]',
       dark: 'text-foreground [data-theme="dark"]',
+      inherit: '',
+      invert: '[data-theme-invert]',
     },
     bg: {
       default: 'bg-background',

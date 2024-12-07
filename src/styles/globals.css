@@ -59,46 +59,46 @@
   --color-brand-light-text: oklch(20% 0 0);
 
   /* Light Theme Colors */
-  --color-background-light: oklch(100% 0 0);
-  --color-foreground-light: oklch(5% 0 0);
-  --color-card-light: oklch(98% 0 0);
-  --color-card-foreground-light: oklch(15% 0 0);
-  --color-popover-light: oklch(100% 0 0);
-  --color-popover-foreground-light: oklch(5% 0 0);
-  --color-primary-light: oklch(60% 0.2 80);
-  --color-primary-foreground-light: oklch(100% 0 0);
-  --color-secondary-light: oklch(98% 0 0);
-  --color-secondary-foreground-light: oklch(0% 0 0);
-  --color-muted-light: oklch(98% 0 0);
-  --color-muted-foreground-light: oklch(40% 0 0);
-  --color-accent-light: oklch(98% 0 0);
-  --color-accent-foreground-light: oklch(15% 0 0);
-  --color-destructive-light: oklch(45% 0.25 0);
-  --color-destructive-foreground-light: oklch(100% 0 0);
-  --color-border-light: oklch(90% 0 0);
-  --color-input-light: oklch(25% 0 0);
-  --color-ring-light: oklch(60% 0.2 80);
+  --color-background-light: oklch(100% 0 0);     /* Pure white - lightest */
+  --color-foreground-light: oklch(5% 0 0);       /* Almost black - for text */
+  --color-card-light: oklch(98% 0 0);           /* Slightly darker than background */
+  --color-card-foreground-light: oklch(15% 0 0); /* Dark gray for card text */
+  --color-popover-light: oklch(100% 0 0);       /* Same as background */
+  --color-popover-foreground-light: oklch(5% 0 0); /* Same as foreground */
+  --color-primary-light: oklch(60% 0.2 80);      /* Gold - brand color */
+  --color-primary-foreground-light: oklch(100% 0 0); /* White text on primary */
+  --color-secondary-light: oklch(96% 0 0);       /* Slightly darker than card */
+  --color-secondary-foreground-light: oklch(0% 0 0); /* Black text on secondary */
+  --color-muted-light: oklch(94% 0 0);          /* Darker than secondary */
+  --color-muted-foreground-light: oklch(40% 0 0); /* Mid-gray for muted text */
+  --color-accent-light: oklch(92% 0 0);         /* Darker than muted */
+  --color-accent-foreground-light: oklch(15% 0 0); /* Dark gray for accent text */
+  --color-destructive-light: oklch(45% 0.25 0);   /* Red for destructive actions */
+  --color-destructive-foreground-light: oklch(100% 0 0); /* White text on destructive */
+  --color-border-light: oklch(90% 0 0);         /* Light gray for borders */
+  --color-input-light: oklch(25% 0 0);          /* Dark gray for input text */
+  --color-ring-light: oklch(60% 0.2 80);        /* Same as primary for focus rings */
 
   /* Dark Theme Colors */
-  --color-background-dark: oklch(10% 0 262.1);
-  --color-foreground-dark: oklch(90% 0 262.1);
-  --color-card-dark: oklch(5% 0 262.1);
-  --color-card-foreground-dark: oklch(90% 0 262.1);
-  --color-popover-dark: oklch(10% 0 262.1);
-  --color-popover-foreground-dark: oklch(90% 0 262.1);
-  --color-primary-dark: oklch(60% 0.2 262.1);
+  --color-background-dark: oklch(10% 0 0);
+  --color-foreground-dark: oklch(90% 0 0);
+  --color-card-dark: oklch(5% 0 0);
+  --color-card-foreground-dark: oklch(90% 0 0);
+  --color-popover-dark: oklch(10% 0 0);
+  --color-popover-foreground-dark: oklch(90% 0 0);
+  --color-primary-dark: oklch(60% 0.2 80);
   --color-primary-foreground-dark: oklch(100% 0 0);
-  --color-secondary-dark: oklch(15% 0.1 262.1);
+  --color-secondary-dark: oklch(15% 0 0);
   --color-secondary-foreground-dark: oklch(100% 0 0);
-  --color-muted-dark: oklch(20% 0.05 224.1);
-  --color-muted-foreground-dark: oklch(65% 0 262.1);
-  --color-accent-dark: oklch(20% 0.05 224.1);
-  --color-accent-foreground-dark: oklch(90% 0 262.1);
+  --color-muted-dark: oklch(13% 0 0);
+  --color-muted-foreground-dark: oklch(65% 0 0);
+  --color-accent-dark: oklch(18% 0 0);
+  --color-accent-foreground-dark: oklch(90% 0 0);
   --color-destructive-dark: oklch(45% 0.25 0);
-  --color-destructive-foreground-dark: oklch(90% 0 262.1);
-  --color-border-dark: oklch(25% 0.1 262.1);
-  --color-input-dark: oklch(25% 0.1 262.1);
-  --color-ring-dark: oklch(60% 0.2 262.1);
+  --color-destructive-foreground-dark: oklch(90% 0 0);
+  --color-border-dark: oklch(25% 0 0);
+  --color-input-dark: oklch(25% 0 0);
+  --color-ring-dark: oklch(60% 0.2 80);
 
   /* Default theme colors (pointing to light theme) */
   --color-background: var(--color-background-light);
