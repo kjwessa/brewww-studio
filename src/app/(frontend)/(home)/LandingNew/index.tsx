@@ -10,12 +10,12 @@ import { LandingFooter } from '../LandingFooter'
 export function LandingNew() {
   return (
     <div className="min-h-full text-sm text-zinc-800">
-      <section className="absolute left-0 right-0 top-0 z-10" id="header">
+      <section className="absolute top-0 right-0 left-0 z-10" id="header">
         <div className="grid auto-cols-fr grid-cols-2 grid-rows-[auto] border-b-2 border-solid border-b-white/[0.15]">
           <div className="flex items-center justify-between border-r-2 border-solid border-r-white/[0.15] p-4">
             <Image
               className="inline-block h-6 w-auto max-w-full align-middle"
-              src="/images/brand/brewww-logotype-gold.png"
+              src="https://bucket.brewww.studio/brewww/media/brewww_logo_logotype_full_gold.svg"
               alt="Brewww Logo"
               width={200}
               height={40}
@@ -55,8 +55,8 @@ export function LandingNew() {
       </section>
 
       <section>
-        <div className="relative z-3 flex h-[100svh] flex-col justify-between px-4 pb-4 pt-16">
-          <h1 className="mx-0 my-3 text-[10.63rem] font-medium leading-none text-white">
+        <div className="relative z-3 flex h-[100svh] flex-col justify-between px-4 pt-16 pb-4">
+          <h1 className="mx-0 my-3 text-[10.63rem] leading-none font-medium text-white">
             We craft brands beyond tomorrow.
           </h1>
           <div className="grid w-full auto-cols-fr grid-cols-12 grid-rows-[auto] content-start gap-4">
@@ -85,17 +85,17 @@ export function LandingNew() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 top-0 z-1 h-[100svh] w-full overflow-hidden">
+        <div className="absolute top-0 bottom-0 left-0 z-1 h-[100svh] w-full overflow-hidden">
           <div className="relative h-[100svh] w-full overflow-hidden text-white">
             <Image
-              src="/craft-creative.comp.jpg"
+              src="https://bucket.brewww.studio/brewww/media/space-sunrise-over-earth.full.jpg"
               alt="Background image"
               fill
               priority
               style={{ objectFit: 'cover' }}
             />
           </div>
-          <div className="absolute bottom-0 left-0 top-0 z-2 bg-black/[0.5]" />
+          <div className="absolute top-0 bottom-0 left-0 z-2 bg-black/[0.5]" />
         </div>
       </section>
 
@@ -126,7 +126,7 @@ export function LandingNew() {
           <div className="flex flex-col gap-8">
             <div className="border-b-2 border-solid border-b-black/[0.1] pb-3">
               <div className="grid w-full auto-cols-fr grid-cols-12 grid-rows-[auto] content-start gap-4">
-                <h2 className="col-start-1 row-start-1 row-end-2 text-[12.75rem] font-medium leading-none text-black">
+                <h2 className="col-start-1 row-start-1 row-end-2 text-[12.75rem] leading-none font-medium text-black">
                   Work
                 </h2>
                 <div className="col-start-7 col-end-9 row-start-1 row-end-2 self-end text-black">
@@ -178,7 +178,7 @@ export function LandingNew() {
 
       <section className="bg-white px-4 py-4 pb-48 text-sm text-zinc-800" id="services">
         <div className="flex flex-col items-stretch justify-start gap-4">
-          <h2 className="text-[12.75rem] font-medium leading-none text-black">Services</h2>
+          <h2 className="text-[12.75rem] leading-none font-medium text-black">Services</h2>
           <section className="flex-col">
             <LandingServiceAccordion
               id="01"

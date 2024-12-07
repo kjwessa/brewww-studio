@@ -1,53 +1,42 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image'
+import Link from 'next/link'
 
 export function LandingFooter() {
   return (
-    <section
-      className="border-t-2 border-solid border-t-black/[0.1] bg-white"
-      id="contact"
-    >
-      <div className="px-4 pb-0 pt-4">
+    <section className="border-t-2 border-solid border-t-black/[0.1] bg-white" id="contact">
+      <div className="px-4 pt-4 pb-0">
         <div className="flex flex-col gap-48">
           <div className="grid w-full auto-cols-fr grid-cols-12 grid-rows-[auto] content-start gap-x-4 gap-y-12">
             <div className="col-start-1 col-end-4 row-start-1 row-end-2">
               <Image
-                src="/images/brand/brewww-logotype-gold.png"
+                src="https://bucket.brewww.studio/brewww/media/brewww_logo_logotype_full_gold.svg"
                 alt="Brewww Logo"
                 width={200}
                 height={20}
               />
             </div>
             <div className="col-end-7 row-start-1 row-end-2 flex flex-col items-start justify-start text-blue-700">
-              <a className="inline-block max-w-full " href="">
-                <div className="cursor-pointer text-5xl font-medium text-black">
-                  Work
-                </div>
+              <a className="inline-block max-w-full" href="">
+                <div className="cursor-pointer text-5xl font-medium text-black">Work</div>
                 <div className="h-0 w-full cursor-pointer bg-black" />
               </a>
-              <a className="inline-block max-w-full " href="">
-                <div className="cursor-pointer text-5xl font-medium text-black">
-                  About
-                </div>
+              <a className="inline-block max-w-full" href="">
+                <div className="cursor-pointer text-5xl font-medium text-black">About</div>
                 <div className="h-0 w-full cursor-pointer bg-black" />
               </a>
-              <a className="inline-block max-w-full " href="">
-                <div className="cursor-pointer text-5xl font-medium text-black">
-                  News
-                </div>
+              <a className="inline-block max-w-full" href="">
+                <div className="cursor-pointer text-5xl font-medium text-black">News</div>
                 <div className="h-0 w-full cursor-pointer bg-black" />
               </a>
-              <a className="inline-block max-w-full " href="">
-                <div className="cursor-pointer text-5xl font-medium text-black">
-                  Contact
-                </div>
+              <a className="inline-block max-w-full" href="">
+                <div className="cursor-pointer text-5xl font-medium text-black">Contact</div>
                 <div className="h-0 w-full cursor-pointer bg-black" />
               </a>
             </div>
             <div
               className="col-start-10 col-end-13 row-start-1 row-end-2 flex flex-col gap-2"
               style={{
-                gridArea: "1 / 10 / 2 / 13",
+                gridArea: '1 / 10 / 2 / 13',
               }}
             >
               <div className="text-black">Social</div>
@@ -92,14 +81,13 @@ export function LandingFooter() {
           <div className="grid w-full auto-cols-fr grid-cols-12 grid-rows-[auto] content-start">
             <div className="col-span-8 col-start-3 row-start-1 row-end-2 flex flex-col gap-2 justify-self-start">
               <div className="text-black">
-                Interested in working with us? Schedule a free 30 minute
-                consultation.
+                Interested in working with us? Schedule a free 30 minute consultation.
               </div>
               <Link
                 className="group inline-block max-w-full overflow-hidden text-blue-700 opacity-80 transition-opacity duration-300 hover:opacity-100"
                 href="https://go.brewww.studio/discovery"
               >
-                <div className="cursor-pointer text-[12.75rem] font-medium leading-none text-black">
+                <div className="cursor-pointer text-[12.75rem] leading-none font-medium text-black">
                   Let's Chat
                 </div>
                 <div className="h-1 w-full origin-left scale-x-[0.1] cursor-pointer bg-black transition-[transform] duration-300 group-hover:scale-x-100" />
@@ -129,5 +117,5 @@ export function LandingFooter() {
         </div>
       </div>
     </section>
-  );
+  )
 }
