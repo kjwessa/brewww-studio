@@ -35,7 +35,7 @@ export function AccordionCard({ props }: { props: Faq }): React.ReactElement {
         <div className="w-full text-lg font-light text-zinc-400">
           <div className="w-full px-6 pb-6 lg:pr-28">
             <div className="w-full text-white">
-              <RichText content={props.answer} />
+              <RichText data={props.answer} />
             </div>
           </div>
         </div>

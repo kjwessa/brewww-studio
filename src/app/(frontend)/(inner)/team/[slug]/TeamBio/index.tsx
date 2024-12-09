@@ -4,13 +4,13 @@ import { RichText } from '@/components/RichText'
 
 export function TeamBio({ team }: { team: Team }) {
   return (
-    <section className="flex w-full flex-wrap justify-between bg-brand-dark-bg py-24 text-black">
+    <section className="bg-brand-dark-bg flex w-full flex-wrap justify-between py-24 text-black">
       <div className="container mx-auto flex flex-wrap">
-        <div className="mb-10 w-full px-2 lg:w-[68.75%] lg:pl-3 lg:pr-3 xl:w-[75%] xl:pl-4 xl:pr-4">
+        <div className="mb-10 w-full px-2 lg:w-[68.75%] lg:pr-3 lg:pl-3 xl:w-[75%] xl:pr-4 xl:pl-4">
           <div className="w-full">
             {team.bio && (
               <RichText
-                content={team.bio}
+                data={team.bio}
                 enableGutter={false}
                 className="text-white [&_h3]:mb-3 [&_h3]:text-[1.75rem] [&_h3]:leading-8 [&_h3]:text-white [&_p]:mb-6 [&_p]:text-lg [&_p]:font-light [&_p]:text-zinc-400"
               />
@@ -27,7 +27,7 @@ export function TeamBio({ team }: { team: Team }) {
                   outlineWidth: '2px',
                 }}
               >
-                <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
+                <div className="bg-brand-gold inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full px-5 py-2">
                   <div className="inline-flex">
                     Follow Kevin on
                     <svg
@@ -43,9 +43,9 @@ export function TeamBio({ team }: { team: Team }) {
                     </svg>
                   </div>
                 </div>
-                <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold" />
+                <div className="bg-brand-gold -ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full" />
               </a>
-              <div className="absolute right-0 top-0 z-20 flex h-9 w-9 items-center justify-center">
+              <div className="absolute top-0 right-0 z-20 flex h-9 w-9 items-center justify-center">
                 <div className="relative overflow-hidden">
                   <div>
                     <svg
@@ -60,7 +60,7 @@ export function TeamBio({ team }: { team: Team }) {
                       />
                     </svg>
                   </div>
-                  <div className="absolute left-0 top-0">
+                  <div className="absolute top-0 left-0">
                     <svg
                       className="h-3 w-3"
                       fill="rgb(1, 2, 2)"
@@ -78,12 +78,12 @@ export function TeamBio({ team }: { team: Team }) {
             </div>
           </div>
         </div>
-        <div className="w-full px-2 lg:w-[31.25%] lg:pl-3 lg:pr-3 xl:w-1/4 xl:pl-4 xl:pr-4">
+        <div className="w-full px-2 lg:w-[31.25%] lg:pr-3 lg:pl-3 xl:w-1/4 xl:pr-4 xl:pl-4">
           <div className="sticky top-[2.50rem] w-full">
             <div className="w-full">
               <div className="relative flex w-full flex-wrap pl-1">
-                <a className="absolute left-0 top-0 z-10 h-full w-full" href=""></a>
-                <div className="absolute right-[0.75rem] top-[0.75rem] z-20 inline-flex items-center">
+                <a className="absolute top-0 left-0 z-10 h-full w-full" href=""></a>
+                <div className="absolute top-[0.75rem] right-[0.75rem] z-20 inline-flex items-center">
                   <div className="flex items-center">
                     <a
                       className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-lime-300"
@@ -117,9 +117,9 @@ export function TeamBio({ team }: { team: Team }) {
                   </div>
                 </div>
                 <div className="absolute bottom-0 left-0 z-20 w-full pr-14">
-                  <div className="relative inline-flex w-auto flex-wrap rounded-tr-3xl pr-5 pt-3 lg:pr-8">
+                  <div className="relative inline-flex w-auto flex-wrap rounded-tr-3xl pt-3 pr-5 lg:pr-8">
                     <svg
-                      className="absolute bottom-0 right-[0.13rem] h-10 w-10 text-neutral-950 lg:h-12 lg:w-12"
+                      className="absolute right-[0.13rem] bottom-0 h-10 w-10 text-neutral-950 lg:h-12 lg:w-12"
                       fill="rgb(14, 15, 17)"
                       version="1.1"
                       viewBox="0 0 100 100"
@@ -134,7 +134,7 @@ export function TeamBio({ team }: { team: Team }) {
                       />
                     </svg>
                     <svg
-                      className="absolute left-0 top-[0.13rem] h-10 w-10 text-neutral-950 lg:h-12 lg:w-12"
+                      className="absolute top-[0.13rem] left-0 h-10 w-10 text-neutral-950 lg:h-12 lg:w-12"
                       fill="rgb(14, 15, 17)"
                       version="1.1"
                       viewBox="0 0 100 100"
@@ -156,7 +156,7 @@ export function TeamBio({ team }: { team: Team }) {
                 </div>
               </div>
             </div>
-            <div className="flex text-white lg:mb-0 lg:mt-6">
+            <div className="flex text-white lg:mt-6 lg:mb-0">
               <a
                 className="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-800"
                 href=""

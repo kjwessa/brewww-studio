@@ -9,7 +9,7 @@ export function JournalContent({ post }: { post: Post }) {
     <Section theme="dark" color="default">
       <Container size="large" spacing="xlarge">
         <Flow as="article" spacing="custom">
-          <RichText content={post.content} enableGutter={false} />
+          <RichText data={post.content} enableGutter={false} />
         </Flow>
       </Container>
     </Section>

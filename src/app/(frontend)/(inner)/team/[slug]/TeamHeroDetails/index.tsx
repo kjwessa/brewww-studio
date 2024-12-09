@@ -70,7 +70,7 @@ export function TeamHeroDetails({ team }: { team: Team }) {
           </div>
           <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-[43.75%] lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="mb-10 w-full xl:pr-10">
-              <RichText content={team.heroDescription} enableGutter={false} />
+              <RichText data={team.heroDescription} enableGutter={false} />
             </div>
           </div>
         </div>

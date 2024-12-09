@@ -1,10 +1,11 @@
 'use client'
 import type { Form as FormType } from '@payloadcms/plugin-form-builder/types'
+import type { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
 
 import { useRouter } from 'next/navigation'
 import React, { useCallback, useState } from 'react'
 import { useForm, FormProvider } from 'react-hook-form'
-import { RichText } from '@/components/RichText/index'
+import { RichText } from '@/components/RichText'
 import { Button } from '@/components/Button'
 
 import { buildInitialFormState } from './buildInitialFormState'
@@ -25,9 +26,7 @@ export type FormBlockType = {
   blockType?: 'formBlock'
   enableIntro: boolean
   form: FormType
-  introContent?: {
-    [k: string]: unknown
-  }[]
+  introContent?: SerializedEditorState
 }
 
 export const FormBlock: React.FC<
@@ -128,10 +127,10 @@ export const FormBlock: React.FC<
     <div className="container pb-20 lg:max-w-[48rem]">
       <FormProvider {...formMethods}>
         {enableIntro && introContent && !hasSubmitted && (
-          <RichText className="mb-8" content={introContent} enableGutter={false} />
+          <RichText className="mb-8" data={introContent} enableGutter={false} />
         )}
         {!isLoading && hasSubmitted && confirmationType === 'message' && (
-          <RichText content={confirmationMessage} />
+          <RichText data={confirmationMessage} />
         )}
         {isLoading && !hasSubmitted && <p>Loading, please wait...</p>}
         {error && <div>{`${error.status || '500'}: ${error.message || ''}`}</div>}

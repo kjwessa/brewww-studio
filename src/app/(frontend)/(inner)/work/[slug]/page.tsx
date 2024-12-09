@@ -48,12 +48,12 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
   return (
     <>
       <PayloadRedirects disableNotFound url={url} />
-      <section className="w-full bg-brand-dark-bg pb-20 pt-40 text-black">
-        <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
+      <section className="bg-brand-dark-bg w-full pt-40 pb-20 text-black">
+        <div className="px-2 min-[1450px]:pr-20 min-[1450px]:pl-20 sm:pr-6 sm:pl-6 xl:pr-12 xl:pl-12">
           <div className="relative flex w-full flex-wrap items-start justify-between">
-            <div className="mb-2 hidden w-full px-2 text-white lg:mb-0 lg:flex lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4"></div>
-            <div className="w-full px-2 lg:w-[62.5%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-              <div className="relative rounded-bl-3xl lg:pb-5 lg:pl-10 lg:pr-10 lg:pt-0">
+            <div className="mb-2 hidden w-full px-2 text-white lg:mb-0 lg:flex lg:w-[37.5%] lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4"></div>
+            <div className="w-full px-2 lg:w-[62.5%] lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
+              <div className="relative rounded-bl-3xl lg:pt-0 lg:pr-10 lg:pb-5 lg:pl-10">
                 <div className="mb-3 flex items-center text-zinc-400 xl:mb-5">
                   <div className="ml-3 h-1.5 w-1.5 rounded-full bg-zinc-400" />
                   <div className="ml-3 font-light">{project.title}</div>
@@ -71,9 +71,9 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
         />
       </section>
 
-      <section className="bg-brand-dark-bg px-2 py-20 text-black sm:px-6 xl:px-12 min-[1450px]:px-20">
+      <section className="bg-brand-dark-bg px-2 py-20 text-black min-[1450px]:px-20 sm:px-6 xl:px-12">
         <div className="relative flex flex-wrap items-start justify-between">
-          <div className="relative flex w-full flex-wrap px-2 lg:mb-0 lg:w-[56.25%] lg:px-3 xl:px-4 min-[2100px]:w-2/4">
+          <div className="relative flex w-full flex-wrap px-2 min-[2100px]:w-2/4 lg:mb-0 lg:w-[56.25%] lg:px-3 xl:px-4">
             <div className="order-1 text-5xl text-white">
               <h2 className="text-5xl text-white">
                 <span className="mr-4 text-sm font-light">/ The Story</span>
@@ -84,7 +84,7 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
           <div className="w-full px-2 lg:w-[43.75%] lg:px-3 xl:px-4">
             <div className="w-full text-lg font-light text-zinc-400 xl:pr-10">
               {project.storyContent ? (
-                <RichText content={project.storyContent} enableGutter={false} />
+                <RichText data={project.storyContent} enableGutter={false} />
               ) : (
                 <p className="mb-6">Add storyContent</p>
               )}
@@ -107,13 +107,13 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
         </div>
       </section>
 
-      <section className="bg-brand-dark-bg px-2 py-16 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
+      <section className="bg-brand-dark-bg px-2 py-16 text-black min-[1450px]:pr-20 min-[1450px]:pl-20 sm:pr-6 sm:pl-6 xl:pr-12 xl:pl-12">
         <div className="flex w-full flex-wrap">
-          <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="w-full px-2 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="relative flex w-full cursor-pointer flex-wrap">
-              <div className="absolute left-0 top-0 z-20 h-full w-full">
-                <div className="absolute left-0 top-0 flex h-full w-full items-end justify-start p-6">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-gold md:h-16 md:w-16">
+              <div className="absolute top-0 left-0 z-20 h-full w-full">
+                <div className="absolute top-0 left-0 flex h-full w-full items-end justify-start p-6">
+                  <div className="bg-brand-gold flex h-14 w-14 items-center justify-center rounded-full md:h-16 md:w-16">
                     <svg
                       className="h-3 w-3 md:h-4 md:w-4"
                       fill="rgb(0, 0, 0)"
@@ -128,11 +128,11 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
               </div>
               <div className="relative w-full overflow-hidden rounded-3xl pb-[56.25%]">
                 <iframe
-                  className="absolute left-0 top-0 h-full w-full"
+                  className="absolute top-0 left-0 h-full w-full"
                   src="https://player.vimeo.com/video/937680303?autoplay=1&loop=1&autopause=0&mute=1&controls=0&background=1"
                 />
               </div>
-              <div className="absolute bottom-0 right-0 z-30 rounded-tl-3xl pl-4 pt-4">
+              <div className="absolute right-0 bottom-0 z-30 rounded-tl-3xl pt-4 pl-4">
                 <svg
                   className="absolute bottom-0 left-[0.13rem] h-10 w-10 text-neutral-950 lg:h-12 lg:w-12"
                   fill="rgb(14, 15, 17)"
@@ -146,7 +146,7 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
                   <path d="M51.9 0v1.9c-27.6 0-50 22.4-50 50H0V0h51.9z" fill="rgb(14, 15, 17)" />
                 </svg>
                 <svg
-                  className="absolute right-0 top-[0.13rem] h-10 w-10 text-neutral-950 lg:h-12 lg:w-12"
+                  className="absolute top-[0.13rem] right-0 h-10 w-10 text-neutral-950 lg:h-12 lg:w-12"
                   fill="rgb(14, 15, 17)"
                   version="1.1"
                   viewBox="0 0 100 100"
@@ -166,12 +166,12 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
                       outlineWidth: '2px',
                     }}
                   >
-                    <div className="inline-flex w-auto items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2 text-white">
+                    <div className="bg-brand-gold inline-flex w-auto items-center justify-center overflow-hidden rounded-full px-5 py-2 text-white">
                       <div className="inline-flex">Play video</div>
                     </div>
-                    <div className="-ml-1 flex h-9 w-9 items-center justify-center overflow-hidden rounded-full bg-brand-gold" />
+                    <div className="bg-brand-gold -ml-1 flex h-9 w-9 items-center justify-center overflow-hidden rounded-full" />
                   </div>
-                  <div className="absolute right-0 top-0 z-20 flex h-9 w-9 items-center justify-center text-white">
+                  <div className="absolute top-0 right-0 z-20 flex h-9 w-9 items-center justify-center text-white">
                     <div className="relative overflow-hidden">
                       <div>
                         <svg
@@ -186,7 +186,7 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
                           />
                         </svg>
                       </div>
-                      <div className="absolute left-0 top-0">
+                      <div className="absolute top-0 left-0">
                         <svg
                           className="h-3 w-3"
                           fill="rgb(255, 255, 255)"
@@ -208,7 +208,7 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
         </div>
       </section>
 
-      <section className="bg-brand-dark-bg px-2 py-16 text-black sm:px-6 xl:px-12 min-[1450px]:px-20">
+      <section className="bg-brand-dark-bg px-2 py-16 text-black min-[1450px]:px-20 sm:px-6 xl:px-12">
         <div className="-mb-5 flex w-full flex-wrap md:mb-0">
           <div className="mb-5 w-full px-2 md:mb-0 md:w-2/4 lg:px-3 xl:px-4">
             <div className="h-full rounded-3xl bg-zinc-900 px-20 py-16 sm:p-32 md:p-14 lg:p-16">
@@ -235,16 +235,16 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
         </div>
       </section>
 
-      <section className="w-full bg-brand-dark-bg py-10 text-white lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
-        <div className="px-2 sm:px-6 xl:px-12 min-[1450px]:px-20">
+      <section className="bg-brand-dark-bg w-full py-10 text-white min-[1450px]:pt-24 min-[1450px]:pb-24 lg:pt-16 lg:pb-16">
+        <div className="px-2 min-[1450px]:px-20 sm:px-6 xl:px-12">
           <div className="flex w-full flex-wrap justify-between">
-            <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:w-[43.75%] xl:pl-4 xl:pr-4">
+            <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:pr-3 lg:pl-3 xl:w-[43.75%] xl:pr-4 xl:pl-4">
               <h2 className="text-5xl text-white">
                 <span className="mr-4 text-sm font-light">/ Creative</span>
                 Catholic Identity, Beach Vibes
               </h2>
             </div>
-            <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+            <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
               <div className="w-full lg:pr-10">
                 <p className="mb-6">
                   For Blessed Kettle Brewing, we crafted a unique brand identity that embraces their
@@ -260,11 +260,11 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
         </div>
       </section>
 
-      <section className="bg-neutral-950 px-2 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
-        <div className="flex w-full flex-wrap px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+      <section className="bg-neutral-950 px-2 text-black min-[1450px]:pr-20 min-[1450px]:pl-20 sm:pr-6 sm:pl-6 xl:pr-12 xl:pl-12">
+        <div className="flex w-full flex-wrap px-2 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
           <div className="h-full w-full overflow-hidden rounded-3xl bg-zinc-900">
             <div className="relative w-full overflow-hidden pt-[66.00rem]">
-              <picture className="absolute left-0 top-0 h-full w-full">
+              <picture className="absolute top-0 left-0 h-full w-full">
                 <Image
                   className="h-full w-full max-w-full object-cover"
                   src="https://made-byshape.transforms.svdcdn.com/production/uploads/images/Projects/iET/Billboard.jpg?w=1920&q=95&auto=format&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1621853760&s=93dd3e38bf63aa5bbc8fc2177f457a2f"
@@ -277,17 +277,17 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
         </div>
       </section>
 
-      <section className="w-full bg-neutral-950 py-10 text-black lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
-        <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
+      <section className="w-full bg-neutral-950 py-10 text-black min-[1450px]:pt-24 min-[1450px]:pb-24 lg:pt-16 lg:pb-16">
+        <div className="px-2 min-[1450px]:pr-20 min-[1450px]:pl-20 sm:pr-6 sm:pl-6 xl:pr-12 xl:pl-12">
           <div className="flex w-full flex-wrap justify-between">
-            <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:w-[43.75%] xl:pl-4 xl:pr-4">
-              <div className="mb-3 inline-flex w-auto items-center xl:absolute xl:left-[1.00rem] xl:top-[0.75rem] xl:mb-0">
+            <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:pr-3 lg:pl-3 xl:w-[43.75%] xl:pr-4 xl:pl-4">
+              <div className="mb-3 inline-flex w-auto items-center xl:absolute xl:top-[0.75rem] xl:left-[1.00rem] xl:mb-0">
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />
                 <div className="ml-2 font-light text-white">Brand Identity</div>
               </div>
               <h2 className="indent-32 text-5xl text-white">Faith, Community, and Craft</h2>
             </div>
-            <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+            <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
               <div className="w-full lg:pr-10">
                 <p className="mb-6">
                   For Blessed Kettle Brewing, we crafted a brand identity that seamlessly blends
@@ -303,16 +303,16 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
         </div>
       </section>
 
-      <section className="bg-neutral-950 px-2 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
-        <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-          <div className="relative w-full overflow-hidden rounded-3xl bg-zinc-900 py-10 lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
+      <section className="bg-neutral-950 px-2 text-black min-[1450px]:pr-20 min-[1450px]:pl-20 sm:pr-6 sm:pl-6 xl:pr-12 xl:pl-12">
+        <div className="w-full px-2 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
+          <div className="relative w-full overflow-hidden rounded-3xl bg-zinc-900 py-10 min-[1450px]:pt-24 min-[1450px]:pb-24 lg:pt-16 lg:pb-16">
             <div>
               <div className="relative m-auto w-full overflow-hidden">
                 <div className="relative flex h-full w-full">
-                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pr-3 lg:pl-3 xl:w-2/4 xl:pr-4 xl:pl-4">
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[44.75rem]">
-                        <picture className="absolute left-0 top-0 h-full w-full">
+                        <picture className="absolute top-0 left-0 h-full w-full">
                           <source type="image/webp" />
                           <Image
                             className="h-auto w-full max-w-full"
@@ -324,10 +324,10 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
                       </div>
                     </div>
                   </div>
-                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pr-3 lg:pl-3 xl:w-2/4 xl:pr-4 xl:pl-4">
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[44.75rem]">
-                        <picture className="absolute left-0 top-0 h-full w-full">
+                        <picture className="absolute top-0 left-0 h-full w-full">
                           <source type="image/webp" />
                           <img
                             className="h-auto w-full max-w-full"
@@ -338,10 +338,10 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
                       </div>
                     </div>
                   </div>
-                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pr-3 lg:pl-3 xl:w-2/4 xl:pr-4 xl:pl-4">
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[44.75rem]">
-                        <picture className="absolute left-0 top-0 h-full w-full">
+                        <picture className="absolute top-0 left-0 h-full w-full">
                           <source type="image/webp" />
                           <img
                             className="h-auto w-full max-w-full"
@@ -352,10 +352,10 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
                       </div>
                     </div>
                   </div>
-                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pr-3 lg:pl-3 xl:w-2/4 xl:pr-4 xl:pl-4">
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[44.75rem]">
-                        <picture className="absolute left-0 top-0 h-full w-full">
+                        <picture className="absolute top-0 left-0 h-full w-full">
                           <source type="image/webp" />
                           <img
                             className="h-auto w-full max-w-full"
@@ -366,10 +366,10 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
                       </div>
                     </div>
                   </div>
-                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pr-3 lg:pl-3 xl:w-2/4 xl:pr-4 xl:pl-4">
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[44.75rem]">
-                        <picture className="absolute left-0 top-0 h-full w-full">
+                        <picture className="absolute top-0 left-0 h-full w-full">
                           <source type="image/webp" />
                           <img
                             className="h-auto w-full max-w-full"
@@ -380,10 +380,10 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
                       </div>
                     </div>
                   </div>
-                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pr-3 lg:pl-3 xl:w-2/4 xl:pr-4 xl:pl-4">
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[44.75rem]">
-                        <picture className="absolute left-0 top-0 h-full w-full">
+                        <picture className="absolute top-0 left-0 h-full w-full">
                           <source type="image/webp" />
                           <img
                             className="h-auto w-full max-w-full"
@@ -394,10 +394,10 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
                       </div>
                     </div>
                   </div>
-                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pr-3 lg:pl-3 xl:w-2/4 xl:pr-4 xl:pl-4">
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[44.75rem]">
-                        <picture className="absolute left-0 top-0 h-full w-full">
+                        <picture className="absolute top-0 left-0 h-full w-full">
                           <source type="image/webp" />
                           <img
                             className="h-auto w-full max-w-full"
@@ -454,17 +454,17 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
         </div>
       </section>
 
-      <section className="w-full bg-neutral-950 py-10 text-black lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
-        <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
+      <section className="w-full bg-neutral-950 py-10 text-black min-[1450px]:pt-24 min-[1450px]:pb-24 lg:pt-16 lg:pb-16">
+        <div className="px-2 min-[1450px]:pr-20 min-[1450px]:pl-20 sm:pr-6 sm:pl-6 xl:pr-12 xl:pl-12">
           <div className="flex w-full flex-wrap justify-between">
-            <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:w-[43.75%] xl:pl-4 xl:pr-4">
-              <div className="mb-3 inline-flex w-auto items-center xl:absolute xl:left-[1.00rem] xl:top-[0.75rem] xl:mb-0">
+            <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:pr-3 lg:pl-3 xl:w-[43.75%] xl:pr-4 xl:pl-4">
+              <div className="mb-3 inline-flex w-auto items-center xl:absolute xl:top-[0.75rem] xl:left-[1.00rem] xl:mb-0">
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />
                 <div className="ml-2 font-light text-white">Brand Identity</div>
               </div>
               <h2 className="indent-32 text-5xl text-white">Faith, Community, and Craft</h2>
             </div>
-            <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+            <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
               <div className="w-full lg:pr-10">
                 <p className="mb-6">
                   For Blessed Kettle Brewing, we crafted a brand identity that seamlessly blends
@@ -480,16 +480,16 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
         </div>
       </section>
 
-      <section className="bg-neutral-950 px-2 text-black sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
-        <div className="w-full px-2 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
-          <div className="relative w-full overflow-hidden rounded-3xl bg-zinc-900 py-10 lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
+      <section className="bg-neutral-950 px-2 text-black min-[1450px]:pr-20 min-[1450px]:pl-20 sm:pr-6 sm:pl-6 xl:pr-12 xl:pl-12">
+        <div className="w-full px-2 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
+          <div className="relative w-full overflow-hidden rounded-3xl bg-zinc-900 py-10 min-[1450px]:pt-24 min-[1450px]:pb-24 lg:pt-16 lg:pb-16">
             <div>
               <div className="relative m-auto w-full overflow-hidden">
                 <div className="relative flex h-full w-full">
-                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pr-3 lg:pl-3 xl:w-2/4 xl:pr-4 xl:pl-4">
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[33.75rem]">
-                        <picture className="absolute left-0 top-0 h-full w-full">
+                        <picture className="absolute top-0 left-0 h-full w-full">
                           <source type="image/webp" />
                           <Image
                             className="h-auto w-full max-w-full"
@@ -501,10 +501,10 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
                       </div>
                     </div>
                   </div>
-                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pr-3 lg:pl-3 xl:w-2/4 xl:pr-4 xl:pl-4">
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[33.75rem]">
-                        <picture className="absolute left-0 top-0 h-full w-full">
+                        <picture className="absolute top-0 left-0 h-full w-full">
                           <source type="image/webp" />
                           <img
                             className="h-auto w-full max-w-full"
@@ -515,10 +515,10 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
                       </div>
                     </div>
                   </div>
-                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pr-3 lg:pl-3 xl:w-2/4 xl:pr-4 xl:pl-4">
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[33.75rem]">
-                        <picture className="absolute left-0 top-0 h-full w-full">
+                        <picture className="absolute top-0 left-0 h-full w-full">
                           <source type="image/webp" />
                           <img
                             className="h-auto w-full max-w-full"
@@ -529,10 +529,10 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
                       </div>
                     </div>
                   </div>
-                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pr-3 lg:pl-3 xl:w-2/4 xl:pr-4 xl:pl-4">
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[33.75rem]">
-                        <picture className="absolute left-0 top-0 h-full w-full">
+                        <picture className="absolute top-0 left-0 h-full w-full">
                           <source type="image/webp" />
                           <img
                             className="h-auto w-full max-w-full"
@@ -543,10 +543,10 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
                       </div>
                     </div>
                   </div>
-                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pr-3 lg:pl-3 xl:w-2/4 xl:pr-4 xl:pl-4">
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[33.75rem]">
-                        <picture className="absolute left-0 top-0 h-full w-full">
+                        <picture className="absolute top-0 left-0 h-full w-full">
                           <source type="image/webp" />
                           <img
                             className="h-auto w-full max-w-full"
@@ -557,10 +557,10 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
                       </div>
                     </div>
                   </div>
-                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pl-3 lg:pr-3 xl:w-2/4 xl:pl-4 xl:pr-4">
+                  <div className="relative h-full w-5/6 px-2 md:w-2/3 lg:pr-3 lg:pl-3 xl:w-2/4 xl:pr-4 xl:pl-4">
                     <div className="w-full">
                       <div className="relative w-full overflow-hidden pt-[33.75rem]">
-                        <picture className="absolute left-0 top-0 h-full w-full">
+                        <picture className="absolute top-0 left-0 h-full w-full">
                           <source type="image/webp" />
                           <img
                             className="h-auto w-full max-w-full"
@@ -619,11 +619,11 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
 
       <BeforeAfter />
 
-      <section className="w-full bg-neutral-950 py-10 text-black lg:pb-16 lg:pt-16 min-[1450px]:pb-24 min-[1450px]:pt-24">
-        <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
+      <section className="w-full bg-neutral-950 py-10 text-black min-[1450px]:pt-24 min-[1450px]:pb-24 lg:pt-16 lg:pb-16">
+        <div className="px-2 min-[1450px]:pr-20 min-[1450px]:pl-20 sm:pr-6 sm:pl-6 xl:pr-12 xl:pl-12">
           <div className="flex w-full flex-wrap justify-between">
-            <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:pl-3 lg:pr-3 xl:w-[43.75%] xl:pl-4 xl:pr-4">
-              <div className="mb-3 inline-flex w-auto items-center xl:absolute xl:left-[1.00rem] xl:top-[0.75rem] xl:mb-0">
+            <div className="mb-5 w-full px-2 lg:mb-0 lg:w-[37.5%] lg:pr-3 lg:pl-3 xl:w-[43.75%] xl:pr-4 xl:pl-4">
+              <div className="mb-3 inline-flex w-auto items-center xl:absolute xl:top-[0.75rem] xl:left-[1.00rem] xl:mb-0">
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />
                 <div className="ml-2 font-light text-white">Craft</div>
               </div>
@@ -631,7 +631,7 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
                 Tradition, Quality, and Local Flavor
               </h2>
             </div>
-            <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+            <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-2/4 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
               <div className="w-full lg:pr-10">
                 <p className="mb-6">
                   Blessed Kettle Brewing, a microbrewery in Foley, AL, needed assistance in
@@ -647,7 +647,7 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
       </section>
 
       <section className="bg-zinc-950 py-16">
-        <h1 className="text-center text-[7rem] font-bold uppercase leading-none text-white">
+        <h1 className="text-center text-[7rem] leading-none font-bold text-white uppercase">
           Original Audio Entertainment for the Whole Family
         </h1>
       </section>
@@ -656,14 +656,14 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
           <div className="grid grid-cols-[1fr_3fr] gap-5">
             <div className="col-start-1">
               <div>
-                <h4 className="text-xs font-bold uppercase text-stone-500">
+                <h4 className="text-xs font-bold text-stone-500 uppercase">
                   <span>Quick Links</span>
                 </h4>
 
                 <ul className="space-y-4">
                   <li>
                     <Link
-                      className="relative inline-block min-w-max text-brand-gold after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-[100px] after:bg-brand-gold after:transition-all after:duration-300 hover:text-brand-gold hover:after:w-full hover:after:bg-brand-gold"
+                      className="text-brand-gold after:bg-brand-gold hover:text-brand-gold hover:after:bg-brand-gold relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-[100px] after:transition-all after:duration-300 hover:after:w-full"
                       href="#what-we-did"
                     >
                       What we did
@@ -671,7 +671,7 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
                   </li>
                   <li>
                     <Link
-                      className="relative inline-block min-w-max text-brand-gold after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-[100px] after:bg-brand-gold after:transition-all after:duration-300 hover:text-brand-gold hover:after:w-full hover:after:bg-brand-gold"
+                      className="text-brand-gold after:bg-brand-gold hover:text-brand-gold hover:after:bg-brand-gold relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-[100px] after:transition-all after:duration-300 hover:after:w-full"
                       href="#highlights"
                     >
                       Highlights
@@ -679,7 +679,7 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
                   </li>
                   <li>
                     <Link
-                      className="relative inline-block min-w-max text-brand-gold after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-[100px] after:bg-brand-gold after:transition-all after:duration-300 hover:text-brand-gold hover:after:w-full hover:after:bg-brand-gold"
+                      className="text-brand-gold after:bg-brand-gold hover:text-brand-gold hover:after:bg-brand-gold relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-[100px] after:transition-all after:duration-300 hover:after:w-full"
                       href="#key-insights"
                     >
                       Key insights
@@ -689,7 +689,7 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
               </div>
             </div>
             <div className="col-start-2">
-              <span className="text-sm uppercase text-stone-500">
+              <span className="text-sm text-stone-500 uppercase">
                 <sub>#AUDIOENTERTAINER</sub>
               </span>
               <div className="text-[1.75rem] leading-[2.5rem] text-white">
@@ -751,11 +751,11 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
               </div>
             </div>
             <div className="w-1/2 pl-8">
-              <h1 className="mb-16 text-[6rem] font-bold uppercase leading-none text-white">
+              <h1 className="mb-16 text-[6rem] leading-none font-bold text-white uppercase">
                 What we did
               </h1>
               <div className="mt-8 text-[1.75rem] leading-8 text-white">
-                <span className="mr-4 text-sm uppercase text-stone-500">
+                <span className="mr-4 text-sm text-stone-500 uppercase">
                   <sub>#AUDIOENTERTAINER</sub>
                 </span>
                 Brewww supported The Merry Beggars with a fully self-empowered team across design,
@@ -775,7 +775,7 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
                   </span>
                 </p>
 
-                <h4 className="mt-12 text-xs font-bold uppercase text-stone-500">Links</h4>
+                <h4 className="mt-12 text-xs font-bold text-stone-500 uppercase">Links</h4>
 
                 <p className="mt-4">
                   <a className="text-red-700 underline" href="#">
@@ -794,18 +794,18 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
       <section className="overflow-hidden bg-zinc-950">
         <div className="relative flex whitespace-nowrap">
           <div className="animate-marquee-reverse flex items-center">
-            <span className="mx-4 text-[45.00rem] font-bold leading-none text-neutral-400">
+            <span className="mx-4 text-[45.00rem] leading-none font-bold text-neutral-400">
               HIGHLIGHTS
             </span>
-            <span className="mx-4 text-[45.00rem] font-bold leading-none text-neutral-400">
+            <span className="mx-4 text-[45.00rem] leading-none font-bold text-neutral-400">
               &nbsp;&nbsp;&nbsp;&nbsp;HIGHLIGHTS
             </span>
           </div>
           <div className="animate-marquee-reverse flex items-center" aria-hidden="true">
-            <span className="mx-4 text-[45.00rem] font-bold leading-none text-neutral-400">
+            <span className="mx-4 text-[45.00rem] leading-none font-bold text-neutral-400">
               HIGHLIGHTS
             </span>
-            <span className="mx-4 text-[45.00rem] font-bold leading-none text-neutral-400">
+            <span className="mx-4 text-[45.00rem] leading-none font-bold text-neutral-400">
               &nbsp;&nbsp;&nbsp;&nbsp;HIGHLIGHTS
             </span>
           </div>
@@ -816,7 +816,7 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
           <ul className="grid list-none grid-cols-[630.922px_374.844px_481.234px] grid-rows-[19.75rem] gap-5 text-neutral-400">
             <li className="list-item">
               <div>
-                <h3 className="text-[11.75rem] font-bold leading-none text-white">150K+</h3>
+                <h3 className="text-[11.75rem] leading-none font-bold text-white">150K+</h3>
                 <span className="text-[1.38rem] leading-7 text-zinc-500">
                   Active app users in a few months post-release
                 </span>
@@ -824,13 +824,13 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
             </li>
             <li className="list-item">
               <div>
-                <h3 className="text-[11.75rem] font-bold leading-none text-white">47</h3>
+                <h3 className="text-[11.75rem] leading-none font-bold text-white">47</h3>
                 <span className="text-[1.38rem] leading-7 text-zinc-500">Countries using app</span>
               </div>
             </li>
             <li className="list-item">
               <div>
-                <h3 className="text-[11.75rem] font-bold leading-none text-white">2x</h3>
+                <h3 className="text-[11.75rem] leading-none font-bold text-white">2x</h3>
                 <span className="text-[1.38rem] leading-7 text-zinc-500">
                   Winner of eMobility Excellence
                 </span>
@@ -871,11 +871,11 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
         <div className="container mx-auto px-4">
           <div className="flex items-start justify-between">
             <div className="flex items-center">
-              <h3 className="mr-4 whitespace-nowrap text-9xl font-bold uppercase text-stone-500">
+              <h3 className="mr-4 text-9xl font-bold whitespace-nowrap text-stone-500 uppercase">
                 Key Insights
               </h3>
               <svg
-                className="max-w-full text-brand-gold"
+                className="text-brand-gold max-w-full"
                 fill="none"
                 height="20"
                 width="20"
@@ -912,15 +912,15 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
             <div className="relative">
-              <div className="-rotate-90 transform text-[35rem] font-bold uppercase text-white opacity-10">
+              <div className="-rotate-90 transform text-[35rem] font-bold text-white uppercase opacity-10">
                 01
               </div>
             </div>
             <div>
-              <h1 className="mb-8 text-[6rem] font-bold uppercase leading-none text-white">
+              <h1 className="mb-8 text-[6rem] leading-none font-bold text-white uppercase">
                 All-in-one audio platform
               </h1>
-              <h3 className="text-[1.75rem] font-semibold leading-8 text-white">
+              <h3 className="text-[1.75rem] leading-8 font-semibold text-white">
                 Creating the ultimate entertainment experience
               </h3>
               <p className="mt-4">
@@ -961,7 +961,7 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-12">
             <div className="col-start-6 col-end-11">
-              <h3 className="mb-8 text-[1.75rem] font-semibold leading-8 text-white">
+              <h3 className="mb-8 text-[1.75rem] leading-8 font-semibold text-white">
                 <b className="font-bold">Cross-team collaboration</b>
               </h3>
               <p>
@@ -982,7 +982,7 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
         </div>
       </section>
       <section className="bg-zinc-950 pt-20 text-neutral-400">
-        <div className="container relative mx-auto px-0" style={{ aspectRatio: '3/2' }}>
+        <div className="relative container mx-auto px-0" style={{ aspectRatio: '3/2' }}>
           <Image
             src={'/images/audio-seven.jpg'}
             alt="Audio platform showcase"
