@@ -5,8 +5,8 @@ import { Technology, Media } from '@/payload-types'
 import { motion, useAnimationFrame } from 'framer-motion'
 import { LogoCard } from '@/components/LogoCard'
 import { Title } from '@/components/Title'
-import { Section } from '@/components/Layout/Section'
-import { Container } from '@/components/Layout/Container'
+import { Section } from '@/components/layout/Section'
+import { Container } from '@/components/layout/Container'
 
 interface LocationTechSliderProps {
   technologies: Technology[]

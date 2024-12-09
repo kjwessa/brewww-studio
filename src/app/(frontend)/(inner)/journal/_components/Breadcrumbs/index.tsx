@@ -1,7 +1,7 @@
 import { Category, Post } from '@/payload-types'
 import { CategoryFilter } from '@/components/CategoryFilter/index'
-import { Section } from '@/components/Layout/Section'
-import { Container } from '@/components/Layout/Container'
+import { Section } from '@/components/layout/Section'
+import { Container } from '@/components/layout/Container'
 
 type Props = {
   categories: Category[]
@@ -10,12 +10,7 @@ type Props = {
   currentCategorySlug?: string
 }
 
-export function CategoryFilterBar({
-  categories,
-  posts,
-  totalPostCount,
-  currentCategorySlug,
-}: Props) {
+export function Breadcrumbs({ categories, posts, totalPostCount, currentCategorySlug }: Props) {
   const categoryCounts = categories.reduce(
     (acc, category) => {
       acc[category.id] = posts.filter((post) =>

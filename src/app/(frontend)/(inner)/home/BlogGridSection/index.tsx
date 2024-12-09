@@ -2,8 +2,8 @@ import { Post } from '@/payload-types'
 import { BlogCard } from '@/components/BlogCard/index'
 import { Title } from '@/components/Title'
 import { Text } from '@/components/Text'
-import { Section } from '@/components/Layout/Section'
-import { Container } from '@/components/Layout/Container'
+import { Section } from '@/components/layout/Section'
+import { Container } from '@/components/layout/Container'
 
 export function BlogGridSection({ posts }: { posts: Post[] }) {
   return (

@@ -5,8 +5,8 @@ import Image from 'next/image'
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/Button'
-import { Section } from '@/components/Layout/Section'
-import { Container } from '@/components/Layout/Container'
+import { Section } from '@/components/layout/Section'
+import { Container } from '@/components/layout/Container'
 
 // Payload Imports
 import { Brand, Media } from '@/payload-types'

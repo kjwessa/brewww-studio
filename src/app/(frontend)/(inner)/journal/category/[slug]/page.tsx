@@ -1,7 +1,7 @@
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import { BlogCard } from '@/components/BlogCard/index'
-import { CategoryFilterBar } from '../../_components/CategoryFilterBar'
+import { Breadcrumbs } from '../../_components/Breadcrumbs'
 import { Category } from '@/payload-types'
 
 export const revalidate = 3600
@@ -39,10 +39,10 @@ export default async function CategoryPage({ params: paramsPromise }: Args) {
     collection: 'categories',
     where: {
       slug: {
-        equals: slug
-      }
+        equals: slug,
+      },
     },
-    limit: 1
+    limit: 1,
   })
   const currentCategory = categoryResponse.docs[0]
 
@@ -60,9 +60,9 @@ export default async function CategoryPage({ params: paramsPromise }: Args) {
     sort: '-publishedOn',
     where: {
       categories: {
-        contains: currentCategory.id
-      }
-    }
+        contains: currentCategory.id,
+      },
+    },
   })
 
   // Get all categories for the navigation
@@ -74,7 +74,7 @@ export default async function CategoryPage({ params: paramsPromise }: Args) {
 
   return (
     <>
-      <CategoryFilterBar 
+      <Breadcrumbs
         categories={categories.docs}
         posts={allPosts.docs}
         totalPostCount={allPosts.totalDocs}
@@ -92,4 +92,4 @@ export default async function CategoryPage({ params: paramsPromise }: Args) {
       </section>
     </>
   )
-} 
+}

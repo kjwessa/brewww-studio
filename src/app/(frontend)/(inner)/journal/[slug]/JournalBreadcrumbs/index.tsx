@@ -1,5 +1,5 @@
-import { Section } from '@/components/Layout/Section'
-import { Container } from '@/components/Layout/Container'
+import { Section } from '@/components/layout/Section'
+import { Container } from '@/components/layout/Container'
 import Link from 'next/link'
 
 export function JournalBreadcrumbs() {

@@ -1,7 +1,7 @@
 import { WorkCard } from '@/components/WorkCard'
 import { Work } from '@/payload-types'
-import { Section } from '@/components/Layout/Section'
-import { Container } from '@/components/Layout/Container'
+import { Section } from '@/components/layout/Section'
+import { Container } from '@/components/layout/Container'
 import { Title } from '@/components/Title'
 
 export async function WorkGridSection({ projects }: { projects: Work[] }) {

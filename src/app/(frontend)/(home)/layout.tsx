@@ -1,7 +1,7 @@
 import localFont from 'next/font/local'
 import '@/styles/globals.css'
 import { Metadata, Viewport } from 'next'
-import { GridGuide } from '@/components/Layout/GridGuide/index'
+import { GridGuide } from '@/components/layout/GridGuide/index'
 import { Grain } from '@/components/Grain/index'
 
 export const viewport: Viewport = {

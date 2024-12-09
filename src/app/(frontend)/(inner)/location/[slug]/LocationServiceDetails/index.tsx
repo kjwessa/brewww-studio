@@ -1,6 +1,6 @@
 import { Title } from '@/components/Title'
 import { Button } from '@/components/Button'
-import { Section } from '@/components/Layout/Section'
+import { Section } from '@/components/layout/Section'
 
 export function LocationServiceDetails() {
   return (

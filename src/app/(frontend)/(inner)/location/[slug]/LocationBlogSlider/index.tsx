@@ -7,8 +7,8 @@ import { Navigation } from 'swiper/modules'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { useRef } from 'react'
 import { Button } from '@/components/Button'
-import { Section } from '@/components/Layout/Section'
-import { Container } from '@/components/Layout/Container'
+import { Section } from '@/components/layout/Section'
+import { Container } from '@/components/layout/Container'
 import { Title } from '@/components/Title'
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -52,13 +52,13 @@ export function LocationBlogSlider({ posts, title }: LocationBlogSliderProps) {
               <div className="mt-8 flex gap-4">
                 <button
                   ref={navigationPrevRef}
-                  className="bg-brand-dark-surface text-white/50 hover:text-white flex h-10 w-10 items-center justify-center rounded-full transition-all cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 hover:bg-brand-dark-surface/80"
+                  className="bg-brand-dark-surface hover:bg-brand-dark-surface/80 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full text-white/50 transition-all hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   <ArrowLeft className="h-4 w-4" />
                 </button>
                 <button
                   ref={navigationNextRef}
-                  className="bg-brand-dark-surface text-white/50 hover:text-white flex h-10 w-10 items-center justify-center rounded-full transition-all cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 hover:bg-brand-dark-surface/80"
+                  className="bg-brand-dark-surface hover:bg-brand-dark-surface/80 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full text-white/50 transition-all hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   <ArrowRight className="h-4 w-4" />
                 </button>

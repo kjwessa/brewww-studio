@@ -2,8 +2,8 @@ import { AccordionCard } from '@/components/AccordionCard'
 import { Faq } from '@/payload-types'
 import { Title } from '@/components/Title'
 import { Button } from '@/components/Button'
-import { Section } from '@/components/Layout/Section'
-import { Container } from '@/components/Layout/Container'
+import { Section } from '@/components/layout/Section'
+import { Container } from '@/components/layout/Container'
 
 export function LocationFAQ({ faqs }: { faqs: Faq[] }) {
   return (

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Button } from '@/components/Button'
-import { Section } from '@/components/Layout/Section'
-import { Container } from '@/components/Layout/Container'
+import { Section } from '@/components/layout/Section'
+import { Container } from '@/components/layout/Container'
 
 export function LocationImageRight() {
   return (

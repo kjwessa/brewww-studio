@@ -1,8 +1,8 @@
 import { formatDate } from '@root/utilities/formatDateTime'
 import Link from 'next/link'
 import { Post } from '@/payload-types'
-import { Section } from '@/components/Layout/Section'
-import { Container } from '@/components/Layout/Container'
+import { Section } from '@/components/layout/Section'
+import { Container } from '@/components/layout/Container'
 import { Title } from '@/components/Title'
 import { Text } from '@/components/Text'
 

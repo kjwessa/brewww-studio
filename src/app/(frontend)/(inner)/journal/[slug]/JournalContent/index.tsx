@@ -1,7 +1,7 @@
 import { RichText } from '@/components/RichText'
 import { Post } from '@root/payload-types'
-import { Section } from '@/components/Layout/Section'
-import { Container } from '@/components/Layout/Container'
+import { Section } from '@/components/layout/Section'
+import { Container } from '@/components/layout/Container'
 
 export function JournalContent({ post }: { post: Post }) {
   return (
