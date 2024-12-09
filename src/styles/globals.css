@@ -49,17 +49,17 @@
 
   /* Headline Styles */
   --text-headline-large: clamp(2.03rem, 1.31rem + 3.6vw, 4.77rem);
-  --text-headline-large--line-height: var(--leading-snug);
+  --text-headline-large--line-height: var(--leading-none);
   --text-headline-large--letter-spacing: var(--tracking-tight);
   --text-headline-large--font-family: var(--font-secondary);
 
   --text-headline-medium: clamp(1.8rem, 1.24rem + 2.8vw, 3.81rem);
-  --text-headline-medium--line-height: var(--leading-snug);
+  --text-headline-medium--line-height: var(--leading-none);
   --text-headline-medium--letter-spacing: var(--tracking-tight);
   --text-headline-medium--font-family: var(--font-secondary);
 
   --text-headline-small: clamp(1.6rem, 1.18rem + 2.1vw, 3.05rem);
-  --text-headline-small--line-height: var(--leading-normal);
+  --text-headline-small--line-height: var(--leading-none);
   --text-headline-small--letter-spacing: var(--tracking-normal);
   --text-headline-small--font-family: var(--font-secondary);
 

@@ -4,18 +4,18 @@ import { cva, type VariantProps } from 'class-variance-authority'
 
 const flowVariants = cva(
   // Base styles - targets all direct children
-  '[&>*]:max-w-prose',
+  '[&>*]:first:mt-0 [&>*]:last:mb-0',
   {
     variants: {
       spacing: {
         // Default spacing between elements
         small: '[&>*+*]:mt-4',
         medium: '[&>*+*]:mt-6',
-        large: '[&>*+*]:mt-8',
+        large: '[&>*+*]:mt-12',
         // Custom spacing for specific elements
         custom: `
           [&>*+*]:mt-6
-          [&>h2]:mt-12
+          [&>h2]:mt-24
           [&>h3]:mt-8
           [&>h4]:mt-8
           [&>blockquote]:mt-8
