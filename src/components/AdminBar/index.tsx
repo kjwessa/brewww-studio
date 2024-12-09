@@ -7,6 +7,10 @@ import { PayloadAdminBar } from "payload-admin-bar";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
+import { getClientSideURL } from "@/utilities/getURL";
+
+const baseClass = "admin-bar";
+
 const collectionLabels = {
   pages: {
     plural: "Pages",
@@ -15,6 +19,10 @@ const collectionLabels = {
   posts: {
     plural: "Posts",
     singular: "Post",
+  },
+  projects: {
+    plural: "Projects",
+    singular: "Project",
   },
 };
 
@@ -37,7 +45,7 @@ export const AdminBar: React.FC<{
 
   return (
     <div
-      className={cn("bg-black py-2 text-white", {
+      className={cn(baseClass, "bg-black py-2 text-white", {
         block: show,
         hidden: !show,
       })}
@@ -48,10 +56,10 @@ export const AdminBar: React.FC<{
           className="py-2 text-white"
           classNames={{
             controls: "font-medium text-white",
-            logo: "text-black",
-            user: "text-black",
+            logo: "text-white",
+            user: "text-white",
           }}
-          cmsURL={process.env.NEXT_PUBLIC_SERVER_URL}
+          cmsURL={getClientSideURL()}
           collection={collection}
           collectionLabels={{
             plural: collectionLabels[collection]?.plural || "Pages",

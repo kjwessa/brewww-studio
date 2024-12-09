@@ -1,60 +1,66 @@
-// import { Button, type ButtonProps } from '@/components/Button'
-// import { cn } from '@root/utilities/cn'
-// import Link from 'next/link'
-// import React from 'react'
+import { Button, type ButtonProps } from '@/components/ui/button'
+import { cn } from 'src/utilities/cn'
+import Link from 'next/link'
+import React from 'react'
 
-// import type { Page, Post } from '@/payload-types'
+import type { Page, Post, Work, Team, Play } from '@/payload-types'
 
-// // Define the props for the CMSLink component
-// type CMSLinkType = {
-//   children?: React.ReactNode
-//   className?: string
-//   label?: string | null
-//   newTab?: boolean | null
-//   reference?: {
-//     relationTo: 'pages' | 'posts'
-//     value: Page | Post | string | number
-//   } | null
-//   size?: ButtonProps['size'] | null
-//   type?: 'custom' | 'reference' | null
-//   url?: string | null
-// }
+type CMSLinkType = {
+  appearance?: 'inline' | ButtonProps['variant']
+  children?: React.ReactNode
+  className?: string
+  label?: string | null
+  newTab?: boolean | null
+  reference?: {
+    relationTo: 'pages' | 'posts' | 'work' | 'team' | 'play'
+    value: Page | Post | Work | Team | Play | string | number
+  } | null
+  size?: ButtonProps['size'] | null
+  type?: 'custom' | 'reference' | null
+  url?: string | null
+}
 
-// // CMSLink component for rendering links with various options
-// export const CMSLink: React.FC<CMSLinkType> = (props) => {
-//   const { type, children, className, label, newTab, reference, size: sizeFromProps, url } = props
+export const CMSLink: React.FC<CMSLinkType> = (props) => {
+  const {
+    type,
+    appearance = 'inline',
+    children,
+    className,
+    label,
+    newTab,
+    reference,
+    size: sizeFromProps,
+    url,
+  } = props
 
-//   // Determine the href based on the link type and reference
-//   const href =
-//     type === 'reference' && typeof reference?.value === 'object' && reference.value.slug
-//       ? `${reference?.relationTo !== 'pages' ? `/${reference?.relationTo}` : ''}/${
-//           reference.value.slug
-//         }`
-//       : url
+  const href =
+    type === 'reference' && typeof reference?.value === 'object' && reference.value.slug
+      ? `${reference?.relationTo !== 'pages' ? `/${reference?.relationTo}` : ''}/${
+          reference.value.slug
+        }`
+      : url
 
-//   // If there's no href, don't render anything
-//   if (!href) return null
+  if (!href) return null
 
-//   // Set props for opening in a new tab if specified
-//   const newTabProps = newTab ? { rel: 'noopener noreferrer', target: '_blank' } : {}
+  const size = appearance === 'link' ? 'clear' : sizeFromProps
+  const newTabProps = newTab ? { rel: 'noopener noreferrer', target: '_blank' } : {}
 
-//   // Render a simple Link if no size is specified
-//   if (!sizeFromProps) {
-//     return (
-//       <Link className={cn(className)} href={href || url || ''} {...newTabProps}>
-//         {label && label}
-//         {children && children}
-//       </Link>
-//     )
-//   }
+  /* Ensure we don't break any styles set by richText */
+  if (appearance === 'inline') {
+    return (
+      <Link className={cn(className)} href={href || url || ''} {...newTabProps}>
+        {label && label}
+        {children && children}
+      </Link>
+    )
+  }
 
-//   // Render a Button with a Link inside if size is specified
-//   return (
-//     <Button size={sizeFromProps}>
-//       <Link className={cn(className)} href={href || url || ''} {...newTabProps}>
-//         {label && label}
-//         {children && children}
-//       </Link>
-//     </Button>
-//   )
-// }
+  return (
+    <Button asChild className={className} size={size} variant={appearance}>
+      <Link className={cn(className)} href={href || url || ''} {...newTabProps}>
+        {label && label}
+        {children && children}
+      </Link>
+    </Button>
+  )
+}
