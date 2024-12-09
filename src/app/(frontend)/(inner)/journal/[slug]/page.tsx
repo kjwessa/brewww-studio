@@ -10,7 +10,7 @@ import { getPayload } from 'payload'
 
 // Components
 import { generateMeta } from '@/utilities/generateMeta'
-import { JournalBreadcrumbs } from './JournalBreadcrumbs'
+import { CategoryBreadcrumbs } from '@/components/CategoryBreadcrumbs'
 import { JournalHero } from './JournalHero'
 import { JournalHeroImage } from './JournalHeroImage'
 import { JournalContent } from './JournalContent'
@@ -50,14 +50,37 @@ type Args = {
 export default async function PostPage({ params: paramsPromise }: Args) {
   const { slug = '' } = await paramsPromise
   const url = `/journal/${slug}`
-  const post = await queryPostBySlug({ slug })
+  const payload = await getPayload({ config: configPromise })
+  
+  const [post, categories, posts] = await Promise.all([
+    queryPostBySlug({ slug }),
+    payload.find({
+      collection: 'categories',
+      limit: 1000,
+      sort: '-publishedOn',
+    }),
+    payload.find({
+      collection: 'posts',
+      limit: 1000,
+      sort: '-publishedOn',
+      where: {
+        _status: {
+          equals: 'published',
+        },
+      },
+    })
+  ])
 
   if (!post) return <PayloadRedirects url={url} />
 
   return (
     <div>
       <PayloadRedirects disableNotFound url={url} />
-      <JournalBreadcrumbs />
+      <CategoryBreadcrumbs 
+        categories={categories.docs}
+        posts={posts.docs}
+        totalPostCount={posts.totalDocs}
+      />
       <JournalHero post={post} />
       <JournalHeroImage post={post} />
       <JournalContent post={post} />

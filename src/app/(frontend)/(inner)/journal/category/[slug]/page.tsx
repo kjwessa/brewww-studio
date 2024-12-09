@@ -1,8 +1,10 @@
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import { BlogCard } from '@/components/BlogCard/index'
-import { Breadcrumbs } from '../../_components/Breadcrumbs'
+import { CategoryBreadcrumbs } from '@/components/CategoryBreadcrumbs'
 import { Category } from '@/payload-types'
+import { Section } from '@/components/layout/Section'
+import { Container } from '@/components/layout/Container'
 
 export const revalidate = 3600
 
@@ -74,22 +76,22 @@ export default async function CategoryPage({ params: paramsPromise }: Args) {
 
   return (
     <>
-      <Breadcrumbs
+      <CategoryBreadcrumbs
         categories={categories.docs}
         posts={allPosts.docs}
         totalPostCount={allPosts.totalDocs}
         currentCategorySlug={slug}
       />
 
-      <section className="bg-brand-dark-bg py-24 text-white">
-        <div className="container mx-auto">
-          <div className="relative grid auto-rows-auto grid-cols-3 gap-x-8 gap-y-24 text-zinc-100">
+      <Section theme="dark" color="default">
+        <Container size="3xl" spacing="large">
+          <div className="relative grid auto-rows-auto grid-cols-3 gap-x-8 gap-y-24">
             {filteredPosts.docs.map((post) => (
               <BlogCard key={post.id} post={post} />
             ))}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
     </>
   )
 }

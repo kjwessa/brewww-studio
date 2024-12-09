@@ -23,7 +23,7 @@ export function CategorySection({ posts, title, theme, archiveLink }: CategorySe
             <BlogCard key={post.id} post={post} />
           ))}
         </div>
-        <div className="mt-8 grid gap-8 md:grid-cols-3">
+        <div className="mt-16 grid gap-8 md:grid-cols-3">
           {posts.slice(2, 5).map((post) => (
             <BlogCard key={post.id} post={post} />
           ))}

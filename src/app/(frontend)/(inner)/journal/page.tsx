@@ -1,7 +1,7 @@
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import { BlogCard } from '@/components/BlogCard/index'
-import { Breadcrumbs } from './_components/Breadcrumbs'
+import { CategoryBreadcrumbs } from '@/components/CategoryBreadcrumbs'
 import { Post, Category } from '@/payload-types'
 import { Section } from '@/components/layout/Section'
 import { Container } from '@/components/layout/Container'
@@ -43,7 +43,7 @@ export default async function BlogPage() {
 
   return (
     <>
-      <Breadcrumbs
+      <CategoryBreadcrumbs
         categories={categories.docs}
         posts={posts.docs}
         totalPostCount={posts.totalDocs}

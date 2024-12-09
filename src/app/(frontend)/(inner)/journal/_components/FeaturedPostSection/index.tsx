@@ -8,6 +8,8 @@ import { Navigation } from 'swiper/modules'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { cn } from '@/utilities/cn'
+import { Title } from '@/components/Title'
+import { Text } from '@/components/Text'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -28,10 +30,12 @@ export function FeaturedPostSection({ postsFeatured }: { postsFeatured: Post[] }
       <Container size="full" spacing="large">
         <div className="mb-10 flex flex-col justify-between md:flex-row md:items-end">
           <div>
-            <h1 className="mb-6 text-5xl font-bold">Blog</h1>
-            <p className="mb-0 text-2xl text-white/80">
+            <Title el="h1" size="display-small">
+              Journal
+            </Title>
+            <Text size="body-large" color="white/80">
               News and insights on all things design by Brewww
-            </p>
+            </Text>
           </div>
           <div className="mt-6 flex gap-4 md:mt-0">
             <button

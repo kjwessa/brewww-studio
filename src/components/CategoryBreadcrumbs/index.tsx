@@ -1,7 +1,7 @@
 import { Category, Post } from '@/payload-types'
-import { CategoryFilter } from '@/components/CategoryFilter/index'
 import { Section } from '@/components/layout/Section'
 import { Container } from '@/components/layout/Container'
+import Link from 'next/link'
 
 type Props = {
   categories: Category[]
@@ -10,7 +10,36 @@ type Props = {
   currentCategorySlug?: string
 }
 
-export function Breadcrumbs({ categories, posts, totalPostCount, currentCategorySlug }: Props) {
+const CategoryFilter = ({
+  title,
+  count,
+  slug,
+  isActive = false,
+}: {
+  title: string
+  count: number
+  slug?: string
+  isActive?: boolean
+}) => {
+  return (
+    <Link
+      className={`inline-flex items-end transition-colors duration-300 ease-in-out hover:text-white ${
+        isActive ? 'text-white' : 'text-neutral-400'
+      }`}
+      href={slug || '#'}
+    >
+      <div className={`text-label-large cursor-pointer leading-none lowercase`}>{title}</div>
+      <div className="text-label-small ml-1 cursor-pointer lg:mb-2">{count}</div>
+    </Link>
+  )
+}
+
+export function CategoryBreadcrumbs({
+  categories,
+  posts,
+  totalPostCount,
+  currentCategorySlug,
+}: Props) {
   const categoryCounts = categories.reduce(
     (acc, category) => {
       acc[category.id] = posts.filter((post) =>
@@ -28,9 +57,9 @@ export function Breadcrumbs({ categories, posts, totalPostCount, currentCategory
 
   return (
     <Section theme="dark" color="default">
-      <Container size="full" spacing="small" spacingTop="large">
-        <ul className="flex list-none flex-row flex-wrap justify-start">
-          <li className="mr-4 mb-2">
+      <Container size="3xl" spacing="small" spacingTop="large">
+        <ul className="flex list-none flex-row flex-wrap gap-6">
+          <li className="mb-2">
             <CategoryFilter
               title="Explore All"
               count={totalPostCount}
@@ -39,7 +68,7 @@ export function Breadcrumbs({ categories, posts, totalPostCount, currentCategory
             />
           </li>
           {categories.map((category) => (
-            <li key={category.id} className="mr-4 mb-2">
+            <li key={category.id} className="mb-2 gap-6">
               <CategoryFilter
                 title={category.title || 'Untitled Category'}
                 count={categoryCounts[category.id] || 0}
