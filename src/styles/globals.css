@@ -6,28 +6,113 @@
 @variant dark (html[data-theme="dark"] &);
 
 @theme {
+  /* Line Heights (Leading) */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* Letter Spacing (Tracking) */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  /* Font Families */
+  --font-primary: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-secondary: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+
   /* Typography - Font Families */
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-bebas-neue), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
 
-  /* Typography - Fluid Scale */
+  /* Display Styles */
   --text-display-large: clamp(2.89rem, 1.47rem + 7.1vw, 9.31rem);
-  --text-display-medium: clamp(2.57rem, 1.43rem + 5.7vw, 7.45rem);
-  --text-display-small: clamp(2.28rem, 1.37rem + 4.55vw, 5.96rem);
-  --text-headline-large: clamp(2.03rem, 1.31rem + 3.6vw, 4.77rem);
-  --text-headline-medium: clamp(1.8rem, 1.24rem + 2.8vw, 3.81rem);
-  --text-headline-small: clamp(1.6rem, 1.18rem + 2.1vw, 3.05rem);
-  --text-title-large: clamp(1.42rem, 1.12rem + 1.5vw, 2.44rem);
-  --text-title-medium: clamp(1.27rem, 1.07rem + 1vw, 1.95rem);
-  --text-title-small: clamp(1.13rem, 1.03rem + 0.5vw, 1.56rem);
-  --text-body-large: clamp(1.17rem, 1.09rem + 0.4vw, 1.48rem);
-  --text-body-medium: clamp(1.07rem, 1.02rem + 0.25vw, 1.28rem);
-  --text-body-small: clamp(0.98rem, 0.96rem + 0.1vw, 1.1rem);
-  --text-label-large: clamp(0.9rem, 0.89rem + 0.05vw, 0.95rem);
-  --text-label-medium: clamp(0.83rem, 0.83rem + -0.05vw, 0.82rem);
-  --text-label-small: clamp(0.76rem, 0.77rem + -0.05vw, 0.71rem);
+  --text-display-large--line-height: var(--leading-tight);
+  --text-display-large--letter-spacing: var(--tracking-tighter);
+  --text-display-large--font-family: var(--font-secondary);
 
+  --text-display-medium: clamp(2.57rem, 1.43rem + 5.7vw, 7.45rem);
+  --text-display-medium--line-height: var(--leading-tight);
+  --text-display-medium--letter-spacing: var(--tracking-tighter);
+  --text-display-medium--font-family: var(--font-secondary);
+
+  --text-display-small: clamp(2.28rem, 1.37rem + 4.55vw, 5.96rem);
+  --text-display-small--line-height: var(--leading-snug);
+  --text-display-small--letter-spacing: var(--tracking-tight);
+  --text-display-small--font-family: var(--font-secondary);
+
+  /* Headline Styles */
+  --text-headline-large: clamp(2.03rem, 1.31rem + 3.6vw, 4.77rem);
+  --text-headline-large--line-height: var(--leading-snug);
+  --text-headline-large--letter-spacing: var(--tracking-tight);
+  --text-headline-large--font-family: var(--font-secondary);
+
+  --text-headline-medium: clamp(1.8rem, 1.24rem + 2.8vw, 3.81rem);
+  --text-headline-medium--line-height: var(--leading-snug);
+  --text-headline-medium--letter-spacing: var(--tracking-tight);
+  --text-headline-medium--font-family: var(--font-secondary);
+
+  --text-headline-small: clamp(1.6rem, 1.18rem + 2.1vw, 3.05rem);
+  --text-headline-small--line-height: var(--leading-normal);
+  --text-headline-small--letter-spacing: var(--tracking-normal);
+  --text-headline-small--font-family: var(--font-secondary);
+
+  /* Title Styles */
+  --text-title-large: clamp(1.42rem, 1.12rem + 1.5vw, 2.44rem);
+  --text-title-large--line-height: var(--leading-normal);
+  --text-title-large--letter-spacing: var(--tracking-normal);
+  --text-title-large--font-family: var(--font-secondary);
+
+  --text-title-medium: clamp(1.27rem, 1.07rem + 1vw, 1.95rem);
+  --text-title-medium--line-height: var(--leading-normal);
+  --text-title-medium--letter-spacing: var(--tracking-wide);
+  --text-title-medium--font-family: var(--font-secondary);
+
+  --text-title-small: clamp(1.13rem, 1.03rem + 0.5vw, 1.56rem);
+  --text-title-small--line-height: var(--leading-relaxed);
+  --text-title-small--letter-spacing: var(--tracking-wide);
+  --text-title-small--font-family: var(--font-secondary);
+
+  /* Body Styles */
+  --text-body-large: clamp(1.17rem, 1.09rem + 0.4vw, 1.48rem);
+  --text-body-large--line-height: var(--leading-relaxed);
+  --text-body-large--letter-spacing: var(--tracking-wide);
+  --text-body-large--font-family: var(--font-primary);
+
+  --text-body-medium: clamp(1.07rem, 1.02rem + 0.25vw, 1.28rem);
+  --text-body-medium--line-height: var(--leading-relaxed);
+  --text-body-medium--letter-spacing: var(--tracking-wider);
+  --text-body-medium--font-family: var(--font-primary);
+
+  --text-body-small: clamp(0.98rem, 0.96rem + 0.1vw, 1.1rem);
+  --text-body-small--line-height: var(--leading-relaxed);
+  --text-body-small--letter-spacing: var(--tracking-wider);
+  --text-body-small--font-family: var(--font-primary);
+
+  /* Label Styles (All uppercase) */
+  --text-label-large: clamp(0.9rem, 0.89rem + 0.05vw, 0.95rem);
+  --text-label-large--line-height: var(--leading-normal);
+  --text-label-large--letter-spacing: var(--tracking-wider);
+  --text-label-large--font-family: var(--font-primary);
+  --text-label-large--text-transform: uppercase;
+
+  --text-label-medium: clamp(0.83rem, 0.83rem + -0.05vw, 0.82rem);
+  --text-label-medium--line-height: var(--leading-normal);
+  --text-label-medium--letter-spacing: var(--tracking-widest);
+  --text-label-medium--font-family: var(--font-primary);
+  --text-label-medium--text-transform: uppercase;
+
+  --text-label-small: clamp(0.76rem, 0.77rem + -0.05vw, 0.71rem);
+  --text-label-small--line-height: var(--leading-normal);
+  --text-label-small--letter-spacing: var(--tracking-widest);
+  --text-label-small--font-family: var(--font-primary);
+  --text-label-small--text-transform: uppercase;
   /* Breakpoints */
   --breakpoint-xs: 375px;
   --breakpoint-sm: 640px;
@@ -59,25 +144,25 @@
   --color-brand-light-text: oklch(20% 0 0);
 
   /* Light Theme Colors */
-  --color-background-light: oklch(100% 0 0);     /* Pure white - lightest */
-  --color-foreground-light: oklch(5% 0 0);       /* Almost black - for text */
-  --color-card-light: oklch(98% 0 0);           /* Slightly darker than background */
+  --color-background-light: oklch(100% 0 0); /* Pure white - lightest */
+  --color-foreground-light: oklch(5% 0 0); /* Almost black - for text */
+  --color-card-light: oklch(98% 0 0); /* Slightly darker than background */
   --color-card-foreground-light: oklch(15% 0 0); /* Dark gray for card text */
-  --color-popover-light: oklch(100% 0 0);       /* Same as background */
+  --color-popover-light: oklch(100% 0 0); /* Same as background */
   --color-popover-foreground-light: oklch(5% 0 0); /* Same as foreground */
-  --color-primary-light: oklch(60% 0.2 80);      /* Gold - brand color */
+  --color-primary-light: oklch(60% 0.2 80); /* Gold - brand color */
   --color-primary-foreground-light: oklch(100% 0 0); /* White text on primary */
-  --color-secondary-light: oklch(96% 0 0);       /* Slightly darker than card */
+  --color-secondary-light: oklch(96% 0 0); /* Slightly darker than card */
   --color-secondary-foreground-light: oklch(0% 0 0); /* Black text on secondary */
-  --color-muted-light: oklch(94% 0 0);          /* Darker than secondary */
+  --color-muted-light: oklch(94% 0 0); /* Darker than secondary */
   --color-muted-foreground-light: oklch(40% 0 0); /* Mid-gray for muted text */
-  --color-accent-light: oklch(92% 0 0);         /* Darker than muted */
+  --color-accent-light: oklch(92% 0 0); /* Darker than muted */
   --color-accent-foreground-light: oklch(15% 0 0); /* Dark gray for accent text */
-  --color-destructive-light: oklch(45% 0.25 0);   /* Red for destructive actions */
+  --color-destructive-light: oklch(45% 0.25 0); /* Red for destructive actions */
   --color-destructive-foreground-light: oklch(100% 0 0); /* White text on destructive */
-  --color-border-light: oklch(90% 0 0);         /* Light gray for borders */
-  --color-input-light: oklch(25% 0 0);          /* Dark gray for input text */
-  --color-ring-light: oklch(60% 0.2 80);        /* Same as primary for focus rings */
+  --color-border-light: oklch(90% 0 0); /* Light gray for borders */
+  --color-input-light: oklch(25% 0 0); /* Dark gray for input text */
+  --color-ring-light: oklch(60% 0.2 80); /* Same as primary for focus rings */
 
   /* Dark Theme Colors */
   --color-background-dark: oklch(10% 0 0);

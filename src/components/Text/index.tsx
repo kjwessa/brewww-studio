@@ -1,84 +1,106 @@
-import React from "react";
-import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/utilities/cn";
+import React from 'react'
+import { cva, type VariantProps } from 'class-variance-authority'
+import { cn } from '@/utilities/cn'
 
-// Text component following Material Design type scale from Tailwind config
-const textVariants = cva(
-  // Base styles with increased specificity
-  '[&.text]:font-default [&.text]:tracking-tight',
-  {
-    variants: {
-      level: {
-        p: "", // Paragraph
-        span: "", // Inline text
-        div: "", // Block-level text
-      },
-      size: {
-        // Body sizes with increased specificity
-        "body-large": "[&.text]:text-body-large",
-        "body-medium": "[&.text]:text-body-medium",
-        "body-small": "[&.text]:text-body-small",
-
-        // Label sizes with increased specificity
-        "label-large": "[&.text]:text-label-large",
-        "label-medium": "[&.text]:text-label-medium",
-        "label-small": "[&.text]:text-label-small",
-      },
-      weight: {
-        regular: "font-normal",
-        light: "font-light",
-        medium: "font-medium",
-        semibold: "font-semibold",
-        bold: "font-bold",
-      },
+const textVariants = cva('text', {
+  variants: {
+    level: {
+      p: '',
+      span: '',
+      div: '',
     },
-    defaultVariants: {
-      level: "p",
-      size: "body-medium",
-      weight: "regular",
-    },
-    compoundVariants: [
-      {
-        size: ["label-large", "label-medium", "label-small"],
-        weight: "regular",
-        className: "tracking-normal",
-      },
-    ],
-  }
-);
+    size: {
+      // Body sizes
+      'body-large': '[&]:text-body-large',
+      'body-medium': '[&]:text-body-medium',
+      'body-small': '[&]:text-body-small',
 
-export interface TextProps extends React.HTMLAttributes<HTMLElement>, 
-  VariantProps<typeof textVariants> {
-  children?: React.ReactNode;
-  className?: string;
-  el?: "p" | "span" | "div";
+      // Label sizes
+      'label-large': '[&]:text-label-large',
+      'label-medium': '[&]:text-label-medium',
+      'label-small': '[&]:text-label-small',
+    },
+    weight: {
+      thin: 'font-thin',
+      extralight: 'font-extralight',
+      light: 'font-light',
+      normal: 'font-normal',
+      medium: 'font-medium',
+      semibold: 'font-semibold',
+      bold: 'font-bold',
+      extrabold: 'font-extrabold',
+      black: 'font-black',
+    },
+    leading: {
+      none: 'leading-none',
+      tight: 'leading-tight',
+      snug: 'leading-snug',
+      normal: 'leading-normal',
+      relaxed: 'leading-relaxed',
+      loose: 'leading-loose',
+    },
+    tracking: {
+      tighter: 'tracking-tighter',
+      tight: 'tracking-tight',
+      normal: 'tracking-normal',
+      wide: 'tracking-wide',
+      wider: 'tracking-wider',
+      widest: 'tracking-widest',
+    },
+    font: {
+      sans: 'font-sans',
+      mono: 'font-mono',
+    },
+    italic: {
+      true: 'italic',
+    },
+  },
+  defaultVariants: {
+    level: 'p',
+    size: 'body-medium',
+  },
+})
+
+export interface TextProps
+  extends React.HTMLAttributes<HTMLElement>,
+    VariantProps<typeof textVariants> {
+  children?: React.ReactNode
+  className?: string
+  el?: 'p' | 'span' | 'div'
 }
 
 export function Text({
   level,
   size,
   weight,
+  leading,
+  tracking,
+  font,
+  italic,
   children,
   className,
-  el = "p",
+  el = 'p',
   ...props
 }: TextProps) {
-  const Component = el;
+  const Component = el
 
   return (
     <Component
       className={cn(
-        'text',
-        textVariants({ 
-          level, 
-          size, 
-          weight 
+        textVariants({
+          level,
+          size,
+          weight,
+          leading,
+          tracking,
+          font,
+          italic,
         }),
-        className
+        className,
       )}
       {...props}
     >
       {children}
     </Component>
-  );
+  )
 }
