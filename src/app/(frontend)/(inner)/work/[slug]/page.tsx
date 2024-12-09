@@ -84,7 +84,7 @@ export default async function WorkPage({ params: paramsPromise }: Args) {
           <div className="w-full px-2 lg:w-[43.75%] lg:px-3 xl:px-4">
             <div className="w-full text-lg font-light text-zinc-400 xl:pr-10">
               {project.storyContent ? (
-                <RichText content={project.storyContent} enableProse={true} />
+                <RichText content={project.storyContent} enableGutter={false} />
               ) : (
                 <p className="mb-6">Add storyContent</p>
               )}

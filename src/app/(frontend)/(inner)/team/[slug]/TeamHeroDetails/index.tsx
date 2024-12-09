@@ -4,12 +4,12 @@ import { Title } from '@/components/Title'
 
 export function TeamHeroDetails({ team }: { team: Team }) {
   return (
-    <section className="w-full bg-brand-dark-bg py-10 text-black lg:pb-16 lg:pt-16">
-      <div className="px-2 sm:pl-6 sm:pr-6 xl:pl-12 xl:pr-12 min-[1450px]:pl-20 min-[1450px]:pr-20">
+    <section className="bg-brand-dark-bg w-full py-10 text-black lg:pt-16 lg:pb-16">
+      <div className="px-2 min-[1450px]:pr-20 min-[1450px]:pl-20 sm:pr-6 sm:pl-6 xl:pr-12 xl:pl-12">
         <div className="relative flex flex-wrap items-start justify-between">
-          <div className="relative flex w-full flex-wrap px-2 lg:mb-0 lg:w-[56.25%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="relative flex w-full flex-wrap px-2 lg:mb-0 lg:w-[56.25%] lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="order-1">
-              <div className="mb-3 inline-flex w-auto items-center xl:absolute xl:left-[1.00rem] xl:top-[0.50rem]">
+              <div className="mb-3 inline-flex w-auto items-center xl:absolute xl:top-[0.50rem] xl:left-[1.00rem]">
                 <div className="h-1.5 w-1.5 rounded-full bg-white" />
                 <div className="ml-2 font-light text-white">Meet {team.title}</div>
               </div>
@@ -30,12 +30,12 @@ export function TeamHeroDetails({ team }: { team: Team }) {
                     outlineWidth: '2px',
                   }}
                 >
-                  <div className="inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold px-5 py-2">
+                  <div className="bg-brand-gold inline-flex w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full px-5 py-2">
                     <div className="inline-flex">Get to know {team.title}</div>
                   </div>
-                  <div className="-ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-brand-gold" />
+                  <div className="bg-brand-gold -ml-1 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full" />
                 </a>
-                <div className="absolute right-0 top-0 z-20 flex h-9 w-9 items-center justify-center">
+                <div className="absolute top-0 right-0 z-20 flex h-9 w-9 items-center justify-center">
                   <div className="relative overflow-hidden">
                     <div>
                       <svg
@@ -50,7 +50,7 @@ export function TeamHeroDetails({ team }: { team: Team }) {
                         />
                       </svg>
                     </div>
-                    <div className="absolute left-0 top-0">
+                    <div className="absolute top-0 left-0">
                       <svg
                         className="h-3 w-3"
                         fill="rgb(1, 2, 2)"
@@ -68,9 +68,9 @@ export function TeamHeroDetails({ team }: { team: Team }) {
               </div>
             </div>
           </div>
-          <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-[43.75%] lg:pl-3 lg:pr-3 xl:pl-4 xl:pr-4">
+          <div className="w-full px-2 text-lg font-light text-zinc-400 lg:w-[43.75%] lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="mb-10 w-full xl:pr-10">
-              <RichText content={team.heroDescription} enableGutter={false} enableProse={false} />
+              <RichText content={team.heroDescription} enableGutter={false} />
             </div>
           </div>
         </div>

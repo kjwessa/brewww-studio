@@ -113,6 +113,7 @@
   --text-label-small--letter-spacing: var(--tracking-widest);
   --text-label-small--font-family: var(--font-primary);
   --text-label-small--text-transform: uppercase;
+
   /* Breakpoints */
   --breakpoint-xs: 375px;
   --breakpoint-sm: 640px;
