@@ -166,7 +166,6 @@ export default async function About() {
       </section>
 
       <AboutTestimonialSection testimonials={testimonials.docs} />
-
       <AboutWhySection />
 
       <section className="bg-zinc-950 text-white">

@@ -2,8 +2,9 @@
 
 import Image from 'next/image'
 import { Title } from '@/components/Title'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'motion/react'
 import { useRef, useEffect } from 'react'
+import { Section } from '@/components/layout/Section'
 
 export function AboutWhySection() {
   const sectionRef = useRef(null)

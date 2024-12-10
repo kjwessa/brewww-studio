@@ -3,7 +3,7 @@
 // Next Imports
 import Image from 'next/image'
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { Button } from '@/components/Button'
 import { Section } from '@/components/layout/Section'
 import { Container } from '@/components/layout/Container'

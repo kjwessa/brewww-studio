@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Technology, Media } from '@/payload-types'
-import { motion, useAnimationFrame } from 'framer-motion'
+import { motion, useAnimationFrame } from 'motion/react'
 import { LogoCard } from '@/components/LogoCard'
 import { Title } from '@/components/Title'
 import { Section } from '@/components/layout/Section'

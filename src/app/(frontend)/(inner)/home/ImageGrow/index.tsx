@@ -1,37 +1,32 @@
-"use client";
+'use client'
 
-import React, { useRef } from "react";
-import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useRef } from 'react'
+import Image from 'next/image'
+import { motion, useScroll, useTransform } from 'motion/react'
 
 export const ImageGrow: React.FC = () => {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "center center"]
-  });
+    offset: ['start end', 'center center'],
+  })
 
-  const scale = useTransform(scrollYProgress, [0, 1], [0.75, 1]);
-  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.75, 1])
+  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1])
 
   return (
     <section
       ref={sectionRef}
-      className="relative h-[80vh] w-full overflow-hidden rounded-md bg-brand-dark-bg px-2 py-2 text-white"
+      className="bg-brand-dark-bg relative h-[80vh] w-full overflow-hidden rounded-md px-2 py-2 text-white"
     >
-      <div
-        className="h-full w-full overflow-hidden rounded-xl bg-brand-dark-bg"
-      >
-        <motion.div 
-          className="h-full w-full overflow-hidden"
-          style={{ scale }}
-        >
+      <div className="bg-brand-dark-bg h-full w-full overflow-hidden rounded-xl">
+        <motion.div className="h-full w-full overflow-hidden" style={{ scale }}>
           <motion.div
             style={{
               position: 'relative',
               height: '100%',
               width: '100%',
-              scale: imageScale
+              scale: imageScale,
             }}
           >
             <Image
@@ -40,14 +35,14 @@ export const ImageGrow: React.FC = () => {
               fill
               className="object-cover"
               style={{
-                objectPosition: "50% 30%",
+                objectPosition: '50% 30%',
               }}
             />
           </motion.div>
         </motion.div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ImageGrow;
+export default ImageGrow
