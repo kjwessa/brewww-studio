@@ -12,7 +12,7 @@ interface LocationHeroTextProps {
 export function LocationHeroText({ location }: LocationHeroTextProps) {
   const title = `A Web Design Studio in ${location.locationCity}, ${location.locationState}.`
   return (
-    <Section theme="dark" bg="default">
+    <Section theme="dark" background="default">
       <Container size="3xl" spacing="large" spacingTop="3xl">
         <div className="flex w-full flex-wrap justify-between">
           <div className="w-full px-2 lg:w-[56.25%] lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">

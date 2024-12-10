@@ -15,7 +15,7 @@ export const LocationHeroImage: React.FC<LocationHeroImageProps> = ({ image }) =
   const imageAlt = image?.alt || 'Location Hero Image'
 
   return (
-    <Section theme="dark" bg="default">
+    <Section theme="dark" background="default">
       <Container size="3xl" spacing="none">
         <div className="relative flex w-full flex-wrap px-2 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
           <div className="relative h-[70vh] w-full overflow-hidden rounded-xl bg-zinc-900">
