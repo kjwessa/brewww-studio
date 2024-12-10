@@ -2,8 +2,23 @@ import { AboutHeroSection } from './AboutHeroSection'
 import Image from 'next/image'
 import { AboutOffsetImageSection } from './AboutOffsetImageSection'
 import { AboutWhySection } from './AboutWhySection'
+import { AboutTestimonialSection } from './AboutTestimonialSection'
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
 
-export default function About() {
+export default async function About() {
+  const payload = await getPayload({ config: configPromise })
+  const testimonials = await payload.find({
+    collection: 'testimonials',
+    limit: 1000,
+    sort: '-publishedOn',
+    where: {
+      _status: {
+        equals: 'published',
+      },
+    },
+  })
+
   return (
     <>
       <AboutHeroSection />
@@ -32,7 +47,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="relative bg-brand-dark-bg px-24 py-36 font-light text-white">
+      <section className="bg-brand-dark-bg relative px-24 py-36 font-light text-white">
         <div className="relative grid auto-cols-fr grid-cols-6 grid-rows-[auto_auto_auto_auto_auto_auto] gap-4">
           <div className="col-start-3 col-end-6 row-start-1 row-end-2 flex h-full w-full flex-col items-end justify-start font-bold uppercase">
             <div className="pb-5">+ Our Values</div>
@@ -60,7 +75,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="h-full w-full bg-brand-dark-bg pl-0 pr-28 text-white">
+      <section className="bg-brand-dark-bg h-full w-full pr-28 pl-0 text-white">
         <div className="flex h-screen w-full max-w-full overflow-visible">
           <Image
             src="/5f53f60a0033860407ff3718_ThebyWessa2020-6960.jpg"
@@ -116,9 +131,9 @@ export default function About() {
         </div>
       </section>
 
-      <section className="border-t-2 border-solid border-t-neutral-100/[0.23] bg-brand-dark-bg text-[1.38rem] font-light leading-7 text-zinc-100">
+      <section className="bg-brand-dark-bg border-t-2 border-solid border-t-neutral-100/[0.23] text-[1.38rem] leading-7 font-light text-zinc-100">
         <div className="container mx-auto py-16 lg:py-24">
-          <div className="float-left mr-5 mt-1 text-sm lg:mr-8 lg:mt-3 lg:min-w-[7.50rem]">
+          <div className="float-left mt-1 mr-5 text-sm lg:mt-3 lg:mr-8 lg:min-w-[7.50rem]">
             BREWWW
           </div>
           <h2 className="text-[5.00rem] leading-none">
@@ -128,7 +143,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="overflow-hidden bg-black py-12 text-[1.38rem] font-light leading-7 text-white lg:pb-20 lg:pl-0 lg:pr-0 lg:pt-20">
+      <section className="overflow-hidden bg-black py-12 text-[1.38rem] leading-7 font-light text-white lg:pt-20 lg:pr-0 lg:pb-20 lg:pl-0">
         <div className="m-auto max-w-[72.50rem] px-5">
           <h2 className="mb-8 text-[3.38rem] leading-none lg:mb-10 lg:max-w-[56.06rem]">
             At the heart of our success is our team of experienced professionals, each bringing
@@ -150,85 +165,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-zinc-100 pb-10 pt-8 text-[1.38rem] font-light leading-7 lg:pb-24 lg:pt-16">
-        <div className="relative m-auto max-w-[72.50rem] px-5">
-          <div className="mb-16 overflow-hidden border-t-2 border-solid border-t-black/[0.3] pt-3.5 text-sm uppercase">
-            <div className="relative pl-4">
-              <svg
-                className="absolute left-0 top-0 h-3.5 w-3"
-                fill="rgb(0, 0, 0)"
-                viewBox="0 0 1024 1024"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M496.398.001C495.423 280.462 276.399 509.551 0 526.59v2.027c266.073 16.404 478.978 229.308 495.385 495.382h2.027C514.455 747.605 743.541 528.58 1024 527.604 733.062 526.591 497.409 290.936 496.398.001z"
-                  fill="rgb(0, 0, 0)"
-                />
-              </svg>
-              CLIENT REVIEWS
-            </div>
-          </div>
-          <div className="rounded-2xl bg-gray-200 px-8 pb-6 pt-8 text-neutral-900 opacity-[0.9437] lg:pb-12 lg:pl-16 lg:pr-16 lg:pt-12">
-            <div className="m-auto h-auto overflow-hidden">
-              <div className="flex h-full w-full items-start">
-                <div className="h-auto w-full">
-                  <blockquote className="text-[3.88rem] leading-none">
-                    "We were impressed with their creativity, technical capabilities, and great
-                    strategies - so a one stop shop. And essentially, nice people delivering great
-                    work."
-                  </blockquote>
-                  <div className="mt-6 text-xl lg:mt-8">
-                    Marketing Co-ordinator, Nickerson Seeds
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="mt-16 flex">
-              <button className="flex h-12 w-12 cursor-pointer items-start rounded-full bg-neutral-900 px-1.5 py-1">
-                <svg
-                  className="m-auto h-3.5 w-3.5"
-                  fill="rgb(255, 255, 255)"
-                  viewBox="0 0 1024 1024"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="m149.96 547.433 335.788 335.788-57.264 57.264L-.001 512.001 428.484 83.516l57.264 57.264-325.67 325.672h863.921v80.983h-874.04z"
-                    fill="rgb(255, 255, 255)"
-                  />
-                </svg>
-              </button>
-              <button className="flex h-12 w-12 cursor-pointer items-start rounded-full bg-neutral-900 px-1.5 py-1">
-                <svg
-                  className="m-auto h-3.5 w-3.5"
-                  fill="rgb(255, 255, 255)"
-                  viewBox="0 0 1024 1024"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="m149.96 547.433 335.788 335.788-57.264 57.264L-.001 512.001 428.484 83.516l57.264 57.264-325.67 325.672h863.921v80.983h-874.04z"
-                    fill="rgb(255, 255, 255)"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div className="mt-7 flex gap-6 text-2xl lg:mt-12">
-            <Image
-              className="h-auto w-28 max-w-full lg:w-28"
-              src="https://showandtell.agency/stars.svg"
-              width={100}
-              height={100}
-              alt="Stars"
-            />
-            <span>
-              Rated 4.6 Stars on{' '}
-              <a className="underline" href="https://clutch.co/profile/">
-                Clutch ›
-              </a>
-            </span>
-          </div>
-        </div>
-      </section>
+      <AboutTestimonialSection testimonials={testimonials.docs} />
 
       <AboutWhySection />
 
@@ -241,13 +178,13 @@ export default function About() {
             }}
           >
             <p>
-              <span className="inline-block pr-9 text-sm uppercase text-stone-500">Hello!</span>
+              <span className="inline-block pr-9 text-sm text-stone-500 uppercase">Hello!</span>
               We're Brewww, a studio that builds brands and digital experiences worth remembering.
               Since 2017, we've partnered with clients like The Merry Beggars, IES National, and
               Pietra Fitness to turn ambitious ideas into reality
               <a className="inline-block underline" href="">
                 and more.
-                <span className="cursor-pointer text-sm uppercase text-stone-500">
+                <span className="cursor-pointer text-sm text-stone-500 uppercase">
                   <span className="inline-block align-top">(our work)</span>
                 </span>
               </a>
@@ -281,7 +218,7 @@ export default function About() {
                   height={248}
                 />
               </span>
-              <div className="text-sm uppercase text-stone-500">
+              <div className="text-sm text-stone-500 uppercase">
                 <span className="text-white">Kevin Wessa,</span> Founder and CEO of Brewww
               </div>
             </figure>
@@ -300,7 +237,7 @@ export default function About() {
               way, we're all in. (let's talk)
               <a className="inline-block underline" href="">
                 stands behind.
-                <span className="cursor-pointer text-sm uppercase text-stone-500">
+                <span className="cursor-pointer text-sm text-stone-500 uppercase">
                   <span className="inline-block align-top">
                     (Here's why{' '}
                     <svg
@@ -335,7 +272,7 @@ export default function About() {
               We are{' '}
               <a className="inline-block underline" href="">
                 curious individuals
-                <span className="cursor-pointer text-sm uppercase text-stone-500">
+                <span className="cursor-pointer text-sm text-stone-500 uppercase">
                   <span className="inline-block align-top">
                     (Meet us{' '}
                     <svg
@@ -379,7 +316,7 @@ export default function About() {
           >
             <div className="grid grid-flow-col grid-cols-[220px_220px] grid-rows-[3.75rem] justify-start gap-10">
               <a
-                className="flex items-center justify-center rounded-xs bg-brand-gold px-5 text-black"
+                className="bg-brand-gold flex items-center justify-center rounded-xs px-5 text-black"
                 href=""
               >
                 <span className="flex cursor-pointer items-center justify-between">
@@ -431,7 +368,7 @@ export default function About() {
         <div className="border-b-2 border-solid border-black">
           <div className="m-auto w-[95vw] max-w-[95vw]">
             <div className="m-auto flex min-h-[calc(240px)] max-w-[56.25rem] flex-col flex-wrap content-center items-center justify-center py-20 text-center">
-              <h1 className="mb-8 text-display-large leading-none">Future-Forward, Human-First</h1>
+              <h1 className="text-display-large mb-8 leading-none">Future-Forward, Human-First</h1>
               <h3 className="mb-8 text-[2.38rem] leading-none">
                 We're a team of strategists and creators who see beyond the obvious to craft brands
                 that endure. Our secret? We never forget that behind every pixel and strategy lives
@@ -517,7 +454,7 @@ export default function About() {
         </div>
         <div className="relative grid h-min w-full auto-rows-min grid-cols-[repeat(8,minmax(1px,1fr))] grid-rows-[repeat(1,min-content)] justify-center gap-8 min-[810px]:p-8">
           <div
-            className="relative flex h-min w-full content-center items-center justify-start self-start justify-self-start min-[810px]:items-start min-[810px]:pb-0 min-[810px]:pl-0 min-[810px]:pr-8 min-[810px]:pt-0"
+            className="relative flex h-min w-full content-center items-center justify-start self-start justify-self-start min-[810px]:items-start min-[810px]:pt-0 min-[810px]:pr-8 min-[810px]:pb-0 min-[810px]:pl-0"
             style={{ gridColumnEnd: 'span 3', gridRowStart: '1' }}
           >
             <div className="relative h-96 rounded-xl min-[810px]:h-72" style={{ flexGrow: '0.7' }}>
@@ -627,7 +564,7 @@ export default function About() {
               <div className="flex h-min w-full flex-wrap content-center items-center justify-start overflow-hidden">
                 <h1 className="leading-relaxed">
                   Cultivating an environment where
-                  <span className="rotate-15 inline-block transform rounded-full bg-black px-3 py-1 leading-relaxed text-white">
+                  <span className="inline-block rotate-15 transform rounded-full bg-black px-3 py-1 leading-relaxed text-white">
                     empathy
                   </span>
                   and understanding thrive.
@@ -650,15 +587,15 @@ export default function About() {
                   }}
                 >
                   <div className="relative flex h-min grow content-center items-center justify-start gap-[0.38rem]">
-                    <div className="absolute bottom-0 left-0 top-0 flex h-auto w-auto flex-col justify-start font-medium">
+                    <div className="absolute top-0 bottom-0 left-0 flex h-auto w-auto flex-col justify-start font-medium">
                       <p>●</p>
                     </div>
-                    <div className="absolute bottom-0 left-0 top-0 flex h-auto w-auto flex-col justify-start">
+                    <div className="absolute top-0 bottom-0 left-0 flex h-auto w-auto flex-col justify-start">
                       <p>ST/04</p>
                     </div>
                   </div>
                   <div className="relative flex h-min grow content-center items-center justify-start overflow-visible">
-                    <div className="absolute bottom-0 left-0 top-0 flex h-auto w-auto flex-col justify-start">
+                    <div className="absolute top-0 bottom-0 left-0 flex h-auto w-auto flex-col justify-start">
                       <p>Our principles</p>
                     </div>
                   </div>
@@ -669,7 +606,7 @@ export default function About() {
                     gridColumnEnd: 'span 5',
                   }}
                 >
-                  <div className="absolute bottom-0 left-0 top-0 flex h-auto w-auto flex-col justify-start">
+                  <div className="absolute top-0 bottom-0 left-0 flex h-auto w-auto flex-col justify-start">
                     <p className="text-right">
                       <a className="text-neutral-700" href="https://smalltribe.studio/./contact">
                         Let's work together
@@ -1193,7 +1130,7 @@ export default function About() {
       </section>
 
       <section className="flex min-h-[80vh] flex-col justify-between bg-white p-9 text-[2.75rem] leading-none text-stone-950">
-        <div className="absolute bottom-[830.13rem] left-0 right-0 top-[-3.13rem] z-[-1] bg-[linear-gradient(198.91deg,_rgb(255,_255,_255)_64.12%,_rgb(250,_246,_249)_72.26%,_rgb(251,_234,_248)_81.42%,_rgb(252,_213,_245)_89.56%,_rgb(254,_185,_241)_98.72%,_rgb(255,_173,_239)_101.78%)]" />
+        <div className="absolute top-[-3.13rem] right-0 bottom-[830.13rem] left-0 z-[-1] bg-[linear-gradient(198.91deg,_rgb(255,_255,_255)_64.12%,_rgb(250,_246,_249)_72.26%,_rgb(251,_234,_248)_81.42%,_rgb(252,_213,_245)_89.56%,_rgb(254,_185,_241)_98.72%,_rgb(255,_173,_239)_101.78%)]" />
         <div className="text-7xl">
           <h1 className="max-w-4xl">
             It's our pursuit to eradicate mediocrity from this world. And that makes 'becoming
@@ -1224,11 +1161,11 @@ export default function About() {
           </picture>
         </div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <h2 className="text-8xl font-bold uppercase text-white">Kill off the Average</h2>
+          <h2 className="text-8xl font-bold text-white uppercase">Kill off the Average</h2>
         </div>
       </section>
 
-      <section className="bg-white py-24 text-[1.38rem] font-light leading-7 text-stone-950">
+      <section className="bg-white py-24 text-[1.38rem] leading-7 font-light text-stone-950">
         <div className="container mx-auto">
           <div className="flex flex-wrap justify-between">
             <div className="mb-16 w-full">
