@@ -18,26 +18,9 @@ export function AboutHeroSection() {
             </Title>
           </div>
           <div className="relative col-start-2 col-end-6 row-start-4 row-end-6 h-[50vh] self-stretch">
-            <div className="absolute inset-0 z-0 overflow-hidden">
-              <Image
-                src="/5ecf34cf4752d3558ae5764d_IMG_0301.1200.jpg"
-                width={1000}
-                height={1000}
-                priority
-                alt="Blurred Studio Image"
-                className="h-[120%] w-[120%] object-cover"
-                style={{
-                  objectPosition: '50% 50%',
-                  filter: 'blur-sm(20px)',
-                  transform: 'scale(1.1)',
-                  marginLeft: '-10%',
-                  marginTop: '-10%',
-                }}
-              />
-            </div>
             <div className="relative z-10 h-full w-full overflow-hidden rounded-md">
               <Image
-                src="/5ecf34cf4752d3558ae5764d_IMG_0301.1200.jpg"
+                src="https://bucket.brewww.studio/brewww/media/IMG_0301.jpg"
                 width={1000}
                 height={1000}
                 priority
