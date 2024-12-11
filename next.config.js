@@ -52,6 +52,12 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.fhoke.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 }

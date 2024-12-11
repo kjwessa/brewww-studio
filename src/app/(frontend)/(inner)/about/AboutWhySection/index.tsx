@@ -83,7 +83,7 @@ export function AboutWhySection() {
             >
               <Image
                 className="absolute top-0 right-auto bottom-auto left-0 inline-block h-full w-full max-w-full rounded-md object-cover align-middle"
-                src="https://bucket.brewww.studio/brewww/media/temp-kevin-team.jpeg"
+                src="https://bucket.brewww.studio/brewww/media/space-sunrise-over-earth.full.jpg"
                 alt="Image 31"
                 fill
                 style={{ objectFit: 'cover' }}
@@ -97,7 +97,7 @@ export function AboutWhySection() {
             >
               <Image
                 className="absolute top-0 right-auto bottom-auto left-0 inline-block h-full w-full max-w-full rounded-md object-cover align-middle"
-                src="https://bucket.brewww.studio/brewww/media/temp-saint-dom.webp"
+                src="https://bucket.brewww.studio/brewww/media/space-sunrise-over-earth.full.jpg"
                 alt="Image 21"
                 fill
                 style={{ objectFit: 'cover' }}
@@ -111,7 +111,7 @@ export function AboutWhySection() {
             >
               <Image
                 className="absolute top-0 right-auto bottom-auto left-0 inline-block h-full w-full max-w-full rounded-md object-cover align-middle"
-                src="https://bucket.brewww.studio/brewww/media/temp-saint-john.webp"
+                src="https://bucket.brewww.studio/brewww/media/space-sunrise-over-earth.full.jpg"
                 alt="Image 41"
                 fill
                 style={{ objectFit: 'cover' }}
@@ -125,7 +125,7 @@ export function AboutWhySection() {
             >
               <Image
                 className="absolute top-0 right-auto bottom-auto left-0 inline-block h-full w-full max-w-full rounded-md object-cover align-middle"
-                src="https://bucket.brewww.studio/brewww/media/temp-custom-texas-living.jpeg"
+                src="https://bucket.brewww.studio/brewww/media/space-sunrise-over-earth.full.jpg"
                 alt="Image 51"
                 fill
                 style={{ objectFit: 'cover' }}
@@ -139,7 +139,7 @@ export function AboutWhySection() {
             >
               <Image
                 className="absolute top-0 right-auto bottom-auto left-0 inline-block h-full w-full max-w-full rounded-md object-cover align-middle"
-                src="https://bucket.brewww.studio/brewww/media/temp-sacred-heart.avif"
+                src="https://bucket.brewww.studio/brewww/media/space-sunrise-over-earth.full.jpg"
                 alt="Image 61"
                 fill
                 style={{ objectFit: 'cover' }}
