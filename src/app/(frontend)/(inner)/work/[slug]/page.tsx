@@ -14,6 +14,10 @@ import { Service } from '@/payload-types'
 import { ImageGrow } from './HeroImageGrow'
 
 export async function generateStaticParams() {
+  if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+    return []
+  }
+
   const payload = await getPayload({ config: configPromise })
   const projects = await payload.find({
     collection: 'projects',

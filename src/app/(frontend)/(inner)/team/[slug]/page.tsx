@@ -15,6 +15,10 @@ import { TeamBio } from './TeamBio'
 export const revalidate = 3600
 
 export async function generateStaticParams() {
+  if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+    return []
+  }
+
   const payload = await getPayload({ config: configPromise })
   const teams = await payload.find({
     collection: 'team',

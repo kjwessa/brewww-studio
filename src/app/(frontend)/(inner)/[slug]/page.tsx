@@ -17,6 +17,10 @@ import { PayloadRedirects } from '@/components/PayloadRedirects'
 
 // Generate static paths for all pages at build time
 export async function generateStaticParams() {
+  if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+    return []
+  }
+
   // Initialize Payload CMS client
   const payload = await getPayload({ config: configPromise })
 
