@@ -4,7 +4,7 @@ import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import { ImageGrow } from './ImageGrow/index'
 import { HomeHeroSection } from './HomeHeroSection/index'
-import { WorkGridSection } from './WorkGridSection/index'
+import { ProjectGridSection } from './ProjectGridSection/index'
 import { BlogGridSection } from './BlogGridSection/index'
 import { HomeServicesSection } from './HomeServicesSection/index'
 import { HomeAboutSection } from './HomeAboutSection'
@@ -53,7 +53,7 @@ export default async function Home() {
     <>
       <HomeHeroSection />
       <HomeAboutSection />
-      <WorkGridSection projects={projects.docs} />
+      <ProjectGridSection projects={projects.docs} />
       <ImageGrow />
       <HomeServicesSection services={services.docs} />
       <BlogGridSection posts={posts.docs} />

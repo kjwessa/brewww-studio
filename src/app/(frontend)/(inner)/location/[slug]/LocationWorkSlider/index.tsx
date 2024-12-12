@@ -1,6 +1,6 @@
 'use client'
 
-import { WorkCard } from '@/components/WorkCard'
+import { ProjectCard } from '@/components/ProjectCard'
 import { Title } from '@/components/Title'
 import { Project } from '@/payload-types'
 import { Button } from '@/components/Button'
@@ -67,7 +67,7 @@ export function LocationWorkSlider({ workItems }: LocationWorkSliderProps) {
           >
             {workItems.map((project) => (
               <SwiperSlide key={project.id}>
-                <WorkCard project={project} />
+                <ProjectCard project={project} />
               </SwiperSlide>
             ))}
           </Swiper>

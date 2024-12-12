@@ -1,20 +1,20 @@
-import { WorkCard } from '@/components/WorkCard'
+import { ProjectCard } from '@/components/ProjectCard'
 import { Project } from '@/payload-types'
 import { Section } from '@/components/layout/Section'
 import { Container } from '@/components/layout/Container'
 import { Title } from '@/components/Title'
 
-export async function WorkGridSection({ projects }: { projects: Project[] }) {
+export async function ProjectGridSection({ projects }: { projects: Project[] }) {
   return (
     <Section theme="dark" color="default">
       <Container size="full" spacing="large">
         <div className="flex flex-wrap">
           <div className="w-full px-2 md:mt-20 md:w-2/4 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="mb-16 w-full lg:mb-28">
-              {projects[0] && <WorkCard project={projects[0]} />}
+              {projects[0] && <ProjectCard project={projects[0]} />}
             </div>
             <div className="mb-16 w-full lg:mb-28">
-              {projects[1] && <WorkCard project={projects[1]} />}
+              {projects[1] && <ProjectCard project={projects[1]} />}
             </div>
             <div className="hidden w-full lg:flex">
               <div className="mb-10 flex w-full justify-center text-center">
@@ -101,10 +101,10 @@ export async function WorkGridSection({ projects }: { projects: Project[] }) {
               </div>
             </div>
             <div className="mb-16 w-full lg:mb-28">
-              {projects[2] && <WorkCard project={projects[2]} />}
+              {projects[2] && <ProjectCard project={projects[2]} />}
             </div>
             <div className="mb-16 w-full lg:mb-28">
-              {projects[3] && <WorkCard project={projects[3]} />}
+              {projects[3] && <ProjectCard project={projects[3]} />}
             </div>
           </div>
         </div>

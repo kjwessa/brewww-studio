@@ -4,11 +4,11 @@ import Image from 'next/image'
 import { Title } from '../Title'
 import { Text } from '../Text'
 
-export type WorkCardProps = {
+export type ProjectCardProps = {
   project: Project
 }
 
-export function WorkCard({ project }: WorkCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="relative w-full text-white">
       <Link href={`/work/${project.slug}`} className="relative flex flex-col items-start">

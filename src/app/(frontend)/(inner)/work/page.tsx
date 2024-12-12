@@ -1,6 +1,6 @@
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
-import { WorkCard } from '@/components/WorkCard'
+import { ProjectCard } from '@/components/ProjectCard'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ImageGrow } from './[slug]/HeroImageGrow'
@@ -245,7 +245,7 @@ export default async function WorkPage() {
                     </div>
                   </div>
                 )}
-                <WorkCard project={project} />
+                <ProjectCard project={project} />
               </div>
             )
           })}
