@@ -2,7 +2,7 @@
 
 import { WorkCard } from '@/components/WorkCard'
 import { Title } from '@/components/Title'
-import { Work } from '@/payload-types'
+import { Project } from '@/payload-types'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/layout/Container'
 import { Section } from '@/components/layout/Section'
@@ -13,7 +13,7 @@ import { useRef } from 'react'
 import { cn } from '@/utilities/cn'
 
 interface LocationWorkSliderProps {
-  workItems: Work[]
+  workItems: Project[]
 }
 
 export function LocationWorkSlider({ workItems }: LocationWorkSliderProps) {

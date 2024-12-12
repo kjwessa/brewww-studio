@@ -34,6 +34,7 @@ import * as migration_20241204_181721 from './20241204_181721';
 import * as migration_20241204_182212 from './20241204_182212';
 import * as migration_20241206_210445_remove_brands_logo_dark from './20241206_210445_remove_brands_logo_dark';
 import * as migration_20241206_210651_remove_featured_from_work_collection from './20241206_210651_remove_featured_from_work_collection';
+import * as migration_20241212_203503_change_work_to_projects from './20241212_203503_change_work_to_projects';
 
 export const migrations = [
   {
@@ -214,6 +215,11 @@ export const migrations = [
   {
     up: migration_20241206_210651_remove_featured_from_work_collection.up,
     down: migration_20241206_210651_remove_featured_from_work_collection.down,
-    name: '20241206_210651_remove_featured_from_work_collection'
+    name: '20241206_210651_remove_featured_from_work_collection',
+  },
+  {
+    up: migration_20241212_203503_change_work_to_projects.up,
+    down: migration_20241212_203503_change_work_to_projects.down,
+    name: '20241212_203503_change_work_to_projects'
   },
 ];

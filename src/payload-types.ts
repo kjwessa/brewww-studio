@@ -17,7 +17,7 @@ export interface Config {
     posts: Post;
     categories: Category;
     locations: Location;
-    work: Work;
+    projects: Project;
     faq: Faq;
     brands: Brand;
     technologies: Technology;
@@ -44,7 +44,7 @@ export interface Config {
     posts: PostsSelect<false> | PostsSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     locations: LocationsSelect<false> | LocationsSelect<true>;
-    work: WorkSelect<false> | WorkSelect<true>;
+    projects: ProjectsSelect<false> | ProjectsSelect<true>;
     faq: FaqSelect<false> | FaqSelect<true>;
     brands: BrandsSelect<false> | BrandsSelect<true>;
     technologies: TechnologiesSelect<false> | TechnologiesSelect<true>;
@@ -284,9 +284,9 @@ export interface Location {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "work".
+ * via the `definition` "projects".
  */
-export interface Work {
+export interface Project {
   id: string;
   title: string;
   tagline?: string | null;
@@ -805,8 +805,8 @@ export interface PayloadLockedDocument {
         value: string | Location;
       } | null)
     | ({
-        relationTo: 'work';
-        value: string | Work;
+        relationTo: 'projects';
+        value: string | Project;
       } | null)
     | ({
         relationTo: 'faq';
@@ -1066,9 +1066,9 @@ export interface LocationsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "work_select".
+ * via the `definition` "projects_select".
  */
-export interface WorkSelect<T extends boolean = true> {
+export interface ProjectsSelect<T extends boolean = true> {
   title?: T;
   tagline?: T;
   description?: T;

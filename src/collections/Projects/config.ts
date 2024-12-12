@@ -17,8 +17,8 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 
-export const Work: CollectionConfig = {
-  slug: 'work',
+export const Projects: CollectionConfig = {
+  slug: 'projects',
 
   //* Access Settings
   access: {
@@ -143,7 +143,7 @@ export const Work: CollectionConfig = {
       url: ({ data }) => {
         const path = generatePreviewPath({
           slug: typeof data?.slug === 'string' ? data.slug : '',
-          collection: 'work',
+          collection: 'projects',
         })
 
         return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
@@ -152,7 +152,7 @@ export const Work: CollectionConfig = {
     preview: (data) => {
       const path = generatePreviewPath({
         slug: typeof data?.slug === 'string' ? data.slug : '',
-        collection: 'work',
+        collection: 'projects',
       })
 
       return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
@@ -164,8 +164,8 @@ export const Work: CollectionConfig = {
   },
   defaultSort: 'title',
   labels: {
-    singular: 'Work',
-    plural: 'Works',
+    singular: 'Project',
+    plural: 'Projects',
   },
   versions: {
     drafts: { autosave: { interval: 100 } },

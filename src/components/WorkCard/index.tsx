@@ -1,11 +1,11 @@
-import { Work } from '@/payload-types'
+import { Project } from '@/payload-types'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Title } from '../Title'
 import { Text } from '../Text'
 
 export type WorkCardProps = {
-  project: Work
+  project: Project
 }
 
 export function WorkCard({ project }: WorkCardProps) {
@@ -13,15 +13,15 @@ export function WorkCard({ project }: WorkCardProps) {
     <div className="relative w-full text-white">
       <Link href={`/work/${project.slug}`} className="relative flex flex-col items-start">
         <div className="relative mb-6 w-full cursor-pointer overflow-hidden">
-          <div className="absolute right-0 top-0 z-20 pb-3 pl-3 pt-1">
-            <div className="-mb-2 -mr-2 flex flex-wrap items-center text-label-small text-white lg:-mb-3">
-              <div className="mb-2 mr-2 rounded-full bg-zinc-800 px-4 pb-1.5 pt-2 lg:mb-3 lg:mr-3">
+          <div className="absolute top-0 right-0 z-20 pt-1 pb-3 pl-3">
+            <div className="text-label-small -mr-2 -mb-2 flex flex-wrap items-center text-white lg:-mb-3">
+              <div className="mr-2 mb-2 rounded-full bg-zinc-800 px-4 pt-2 pb-1.5 lg:mr-3 lg:mb-3">
                 Branding
               </div>
-              <div className="mb-2 mr-2 rounded-full bg-zinc-800 px-4 pb-1.5 pt-2 lg:mb-3 lg:mr-3">
+              <div className="mr-2 mb-2 rounded-full bg-zinc-800 px-4 pt-2 pb-1.5 lg:mr-3 lg:mb-3">
                 Website
               </div>
-              <div className="mb-2 mr-2 hidden rounded-full bg-zinc-800 px-4 pb-1.5 pt-2 lg:mb-3 lg:mr-3 lg:inline-flex">
+              <div className="mr-2 mb-2 hidden rounded-full bg-zinc-800 px-4 pt-2 pb-1.5 lg:mr-3 lg:mb-3 lg:inline-flex">
                 SEO
               </div>
             </div>
@@ -36,7 +36,11 @@ export function WorkCard({ project }: WorkCardProps) {
                         ? project.image
                         : project.image?.sizes?.full?.url || project.image?.url || ''
                     }
-                    alt={(typeof project.image === 'object' && project.image?.alt) || project.title || ''}
+                    alt={
+                      (typeof project.image === 'object' && project.image?.alt) ||
+                      project.title ||
+                      ''
+                    }
                     fill
                     style={{ objectFit: 'cover' }}
                   />

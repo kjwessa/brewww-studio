@@ -34,7 +34,7 @@ export default async function Home() {
   })
 
   const projects = await payload.find({
-    collection: 'work',
+    collection: 'projects',
     limit: 4,
     sort: '-publishedOn',
     where: {

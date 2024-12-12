@@ -3,7 +3,7 @@ import { getPayload } from 'payload'
 import React, { cache } from 'react'
 import { RichText } from '@/components/RichText/index'
 import { notFound } from 'next/navigation'
-import { Work } from '@/payload-types'
+import { Project } from '@/payload-types'
 import Image from 'next/image'
 import Link from 'next/link'
 import { PayloadRedirects } from '@/components/PayloadRedirects'
@@ -16,7 +16,7 @@ import { ImageGrow } from './HeroImageGrow'
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
   const projects = await payload.find({
-    collection: 'work',
+    collection: 'projects',
     draft: false,
     limit: 1000,
     overrideAccess: false,
@@ -38,7 +38,7 @@ type Args = {
   }>
 }
 
-export default async function WorkPage({ params: paramsPromise }: Args) {
+export default async function ProjectPage({ params: paramsPromise }: Args) {
   const { slug = '' } = await paramsPromise
   const url = `/work/${slug}`
   const project = await queryPostBySlug({ slug })
@@ -1001,7 +1001,7 @@ const queryPostBySlug = cache(async ({ slug }: { slug: string }) => {
   const payload = await getPayload({ config: configPromise })
 
   const result = await payload.find({
-    collection: 'work',
+    collection: 'projects',
     draft,
     limit: 1,
     overrideAccess: draft,

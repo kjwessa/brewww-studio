@@ -27,7 +27,7 @@ import { Team } from '@/collections/Team/config'
 import { Technologies } from '@/collections/Technologies/config'
 import { Testimonials } from '@/collections/Testimonials/config'
 import { Users } from '@/collections/Users/config'
-import { Work } from '@/collections/Work/config'
+import { Projects } from '@/collections/Projects/config'
 
 //* Import Globals
 import { Header } from './globals/Header/index'
@@ -86,7 +86,7 @@ export default buildConfig({
     Posts,
     Categories,
     Location,
-    Work,
+    Projects,
     FAQ,
     Brands,
     Technologies,

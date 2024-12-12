@@ -75,7 +75,7 @@ async function getPageData({ slug }: { slug: string }) {
       },
     }),
     payload.find({
-      collection: 'work',
+      collection: 'projects',
       limit: 6,
       sort: '-publishedOn',
       where: {
@@ -128,10 +128,10 @@ export default async function LocationPage({ params, searchParams }: LocationPag
   return (
     <>
       <LocationHeroText
-        location={{ 
-          locationCity: location.locationCity, 
+        location={{
+          locationCity: location.locationCity,
           locationState: location.locationState,
-          heroDescription: location.heroDescription 
+          heroDescription: location.heroDescription,
         }}
       />
       <LocationHeroImage image={location.image as Media} />

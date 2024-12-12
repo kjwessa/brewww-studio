@@ -1,10 +1,10 @@
 import { WorkCard } from '@/components/WorkCard'
-import { Work } from '@/payload-types'
+import { Project } from '@/payload-types'
 import { Section } from '@/components/layout/Section'
 import { Container } from '@/components/layout/Container'
 import { Title } from '@/components/Title'
 
-export async function WorkGridSection({ projects }: { projects: Work[] }) {
+export async function WorkGridSection({ projects }: { projects: Project[] }) {
   return (
     <Section theme="dark" color="default">
       <Container size="full" spacing="large">
