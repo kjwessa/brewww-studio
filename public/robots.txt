@@ -7,5 +7,3 @@ Host: https://brewww.studio
 
 # Sitemaps
 Sitemap: https://brewww.studio/sitemap.xml
-Sitemap: https://brewww.studio/pages-sitemap.xml
-Sitemap: https://brewww.studio/posts-sitemap.xml
