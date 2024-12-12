@@ -43,7 +43,7 @@ export default async function BlogPage() {
   )
 
   return (
-    <Page theme="light">
+    <Page theme="dark">
       <CategoryBreadcrumbs
         categories={categories.docs}
         posts={posts.docs}

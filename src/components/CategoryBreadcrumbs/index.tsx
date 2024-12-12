@@ -56,7 +56,7 @@ export function CategoryBreadcrumbs({
   )
 
   return (
-    <Section theme="dark" color="default">
+    <Section theme="inherit" color="default">
       <Container size="3xl" spacing="small" spacingTop="large">
         <ul className="flex list-none flex-row flex-wrap gap-6">
           <li className="mb-2">

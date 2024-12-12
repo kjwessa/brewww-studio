@@ -26,7 +26,7 @@ export function FeaturedPostSection({ postsFeatured }: { postsFeatured: Post[] }
   const featuredPosts = postsFeatured.filter((post) => post.featured).slice(0, 4)
 
   return (
-    <Section theme="dark" color="default">
+    <Section theme="inherit" color="default">
       <Container size="full" spacing="large">
         <div className="mb-10 flex flex-col justify-between md:flex-row md:items-end">
           <div>

@@ -1,4 +1,4 @@
-import { Post, Category, Media } from '@root/payload-types'
+import { Post, Category } from '@root/payload-types'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -14,8 +14,8 @@ export function FeaturedPostCard({ post }: { post: Post }) {
                 : post.image?.sizes?.full?.url || post.image?.url || ''
             }
             alt={post.title}
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: 'cover' }}
             className="rounded-lg"
           />
           <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -24,7 +24,7 @@ export function FeaturedPostCard({ post }: { post: Post }) {
           <p className="mb-3 text-sm font-medium tracking-wider uppercase">
             {(post.categories[0] as Category)?.title || 'Uncategorized'}
           </p>
-          <h2 className="mb-0 text-3xl font-bold leading-tight">{post.title}</h2>
+          <h2 className="mb-0 text-3xl leading-tight font-bold">{post.title}</h2>
         </div>
       </Link>
     </div>
