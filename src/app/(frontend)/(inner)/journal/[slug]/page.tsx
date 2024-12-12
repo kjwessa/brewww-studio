@@ -18,11 +18,6 @@ import { JournalContent } from './JournalContent'
 export const revalidate = 3600
 
 export async function generateStaticParams() {
-  // Only generate static params in production on Vercel
-  if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
-    return []
-  }
-
   const payload = await getPayload({ config: configPromise })
   const posts = await payload.find({
     collection: 'posts',
@@ -51,7 +46,7 @@ export default async function PostPage({ params: paramsPromise }: Args) {
   const { slug = '' } = await paramsPromise
   const url = `/journal/${slug}`
   const payload = await getPayload({ config: configPromise })
-  
+
   const [post, categories, posts] = await Promise.all([
     queryPostBySlug({ slug }),
     payload.find({
@@ -68,7 +63,7 @@ export default async function PostPage({ params: paramsPromise }: Args) {
           equals: 'published',
         },
       },
-    })
+    }),
   ])
 
   if (!post) return <PayloadRedirects url={url} />
@@ -76,7 +71,7 @@ export default async function PostPage({ params: paramsPromise }: Args) {
   return (
     <div>
       <PayloadRedirects disableNotFound url={url} />
-      <CategoryBreadcrumbs 
+      <CategoryBreadcrumbs
         categories={categories.docs}
         posts={posts.docs}
         totalPostCount={posts.totalDocs}

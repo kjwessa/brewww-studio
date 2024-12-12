@@ -87,8 +87,11 @@ importers:
         specifier: 11.13.5
         version: 11.13.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       next:
-        specifier: ^15.1.0
+        specifier: 15.1.0
         version: 15.1.0(@babel/core@7.26.0)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@19.0.0-beta-37ed2a7-20241206)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sass@1.77.4)
+      next-sitemap:
+        specifier: ^4.2.3
+        version: 4.2.3(next@15.1.0(@babel/core@7.26.0)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@19.0.0-beta-37ed2a7-20241206)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sass@1.77.4))
       payload:
         specifier: ^3.6.0
         version: 3.6.0(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.6.3)
@@ -436,6 +439,9 @@ packages:
   '@babel/types@7.26.3':
     resolution: {integrity: sha512-vN5p+1kl59GVKMvTHt55NzzmYVxprfJD+ql7U9NFIfKCBkYE55LYtS+WtPlaYOyzydrKI8Nezd+aZextrd+FMA==}
     engines: {node: '>=6.9.0'}
+
+  '@corex/deepmerge@4.0.43':
+    resolution: {integrity: sha512-N8uEMrMPL0cu/bdboEWpQYb/0i2K5Qn8eCsxzOmxSggJbbQte7ljMRoXm917AbntqTGOzdTu+vP3KOOzoC70HQ==}
 
   '@dnd-kit/accessibility@3.1.1':
     resolution: {integrity: sha512-2P+YgaXF+gRsIihwwY1gCsQSYnu9Zyj2py8kY5fFvUM1qm2WA2u639R6YNVfU4GWr+ZM5mqEsfHZZLoRONbemw==}
@@ -1227,6 +1233,9 @@ packages:
 
   '@neondatabase/serverless@0.10.4':
     resolution: {integrity: sha512-2nZuh3VUO9voBauuh+IGYRhGU/MskWHt1IuZvHcJw6GLjDgtqj/KViKo7SIrLdGLdot7vFbiRRw+BgEy3wT9HA==}
+
+  '@next/env@13.5.7':
+    resolution: {integrity: sha512-uVuRqoj28Ys/AI/5gVEgRAISd0KWI0HRjOO1CTpNgmX3ZsHb5mdn14Y59yk0IxizXdo7ZjsI2S7qbWnO+GNBcA==}
 
   '@next/env@15.0.4':
     resolution: {integrity: sha512-WNRvtgnRVDD4oM8gbUcRc27IAhaL4eXQ/2ovGbgLnPGUvdyDr8UdXP4Q/IBDdAdojnD2eScryIDirv0YUCjUVw==}
@@ -4585,6 +4594,13 @@ packages:
   neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
 
+  next-sitemap@4.2.3:
+    resolution: {integrity: sha512-vjdCxeDuWDzldhCnyFCQipw5bfpl4HmZA7uoo3GAaYGjGgfL4Cxb1CiztPuWGmS+auYs7/8OekRS8C2cjdAsjQ==}
+    engines: {node: '>=14.18'}
+    hasBin: true
+    peerDependencies:
+      next: '*'
+
   next@15.1.0:
     resolution: {integrity: sha512-QKhzt6Y8rgLNlj30izdMbxAwjHMFANnLwDwZ+WQh5sMhyt4lEBqDK9QpvWHtIM4rINKPoJ8aiRZKg5ULSybVHw==}
     engines: {node: ^18.18.0 || ^19.8.0 || >= 20.0.0}
@@ -6495,6 +6511,8 @@ snapshots:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
 
+  '@corex/deepmerge@4.0.43': {}
+
   '@dnd-kit/accessibility@3.1.1(react@19.0.0)':
     dependencies:
       react: 19.0.0
@@ -7176,6 +7194,8 @@ snapshots:
   '@neondatabase/serverless@0.10.4':
     dependencies:
       '@types/pg': 8.11.6
+
+  '@next/env@13.5.7': {}
 
   '@next/env@15.0.4': {}
 
@@ -11289,6 +11309,14 @@ snapshots:
   natural-compare@1.4.0: {}
 
   neo-async@2.6.2: {}
+
+  next-sitemap@4.2.3(next@15.1.0(@babel/core@7.26.0)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@19.0.0-beta-37ed2a7-20241206)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sass@1.77.4)):
+    dependencies:
+      '@corex/deepmerge': 4.0.43
+      '@next/env': 13.5.7
+      fast-glob: 3.3.2
+      minimist: 1.2.8
+      next: 15.1.0(@babel/core@7.26.0)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@19.0.0-beta-37ed2a7-20241206)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sass@1.77.4)
 
   next@15.1.0(@babel/core@7.26.0)(@opentelemetry/api@1.9.0)(babel-plugin-react-compiler@19.0.0-beta-37ed2a7-20241206)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sass@1.77.4):
     dependencies:
