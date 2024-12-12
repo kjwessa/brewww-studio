@@ -7,6 +7,7 @@ import { Section } from '@/components/layout/Section'
 import { Container } from '@/components/layout/Container'
 import { FeaturedPostSection } from './_components/FeaturedPostSection'
 import { CategorySection } from './_components/CategorySection'
+import { Page } from '@/components/layout/Page'
 
 export const revalidate = 3600
 
@@ -42,14 +43,14 @@ export default async function BlogPage() {
   )
 
   return (
-    <>
+    <Page theme="light">
       <CategoryBreadcrumbs
         categories={categories.docs}
         posts={posts.docs}
         totalPostCount={posts.totalDocs}
       />
 
-      <Section theme="dark" color="default">
+      <Section theme="inherit" background="default">
         <Container size="3xl" spacing="large">
           <FeaturedPostSection postsFeatured={posts.docs} />
         </Container>
@@ -58,30 +59,30 @@ export default async function BlogPage() {
       <CategorySection
         posts={latestPosts}
         title="Latest Posts"
-        theme="light"
+        theme="invert"
         archiveLink="/category/archive"
       />
 
       <CategorySection
         posts={newsAndCulturePosts}
         title="News and Culture"
-        theme="dark"
+        theme="inherit"
         archiveLink="/category/news-culture"
       />
 
       <CategorySection
         posts={brandingPosts}
         title="Branding"
-        theme="light"
+        theme="invert"
         archiveLink="/category/branding"
       />
 
       <CategorySection
         posts={webDesignPosts}
         title="Web Design"
-        theme="dark"
+        theme="inherit"
         archiveLink="/category/web-design"
       />
-    </>
+    </Page>
   )
 }

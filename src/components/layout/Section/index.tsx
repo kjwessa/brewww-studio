@@ -118,8 +118,8 @@ export const Section = forwardRef<HTMLElement, SectionProps>(
     return (
       <Component
         ref={ref}
-        data-theme={theme !== 'inherit' ? theme : undefined}
-        data-background={background}
+        data-theme={theme === 'light' || theme === 'dark' ? theme : undefined}
+        data-theme-invert={theme === 'invert' || undefined}
         className={cn(sectionVariants({ theme, background }), className)}
         {...props}
       >

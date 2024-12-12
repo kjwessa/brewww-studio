@@ -21,8 +21,12 @@ import { generatePreviewPath } from '@/utilities/generatePreviewPath'
 import { populatePublishedOn } from '@/hooks/populatePublishedOn'
 import { revalidatePost } from './hooks/revalidatePost'
 import { setMetaImageFallback } from '@/hooks/setMetaImageFallback'
-
-import { BlocksFeature, HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
+import {
+  BlocksFeature,
+  HeadingFeature,
+  lexicalEditor,
+  LinkFeature,
+} from '@payloadcms/richtext-lexical'
 
 export const Posts: CollectionConfig = {
   slug: 'posts',

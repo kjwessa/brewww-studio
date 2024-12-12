@@ -64,7 +64,7 @@ export default async function InnerLayout({ children }: { children: React.ReactN
         <Grain>
           <LivePreviewListener />
           <Header />
-          <main className="min-h-[80vh]">{children}</main>
+          {children}
           <Footer />
         </Grain>
         <GridGuide />
