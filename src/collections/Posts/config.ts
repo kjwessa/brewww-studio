@@ -24,7 +24,7 @@ import { setMetaImageFallback } from '@/hooks/setMetaImageFallback'
 
 import { BlocksFeature, HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 
-export const BlogPosts: CollectionConfig = {
+export const Posts: CollectionConfig = {
   slug: 'posts',
 
   //* Access Settings

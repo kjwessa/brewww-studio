@@ -15,6 +15,9 @@ import {
   MetaDescriptionField,
 } from '@payloadcms/plugin-seo/fields'
 
+// Hooks
+import { populatePublishedOn } from '@/hooks/populatePublishedOn'
+
 // Utilities
 import { generatePreviewPath } from '@root/utilities/generatePreviewPath'
 
@@ -64,23 +67,13 @@ export const Playground: CollectionConfig = {
     {
       name: 'publishedOn',
       type: 'date',
-      required: false,
+      required: true,
       label: 'Published On',
       admin: {
         position: 'sidebar',
         date: {
           pickerAppearance: 'dayAndTime',
         },
-      },
-      hooks: {
-        beforeChange: [
-          ({ siblingData, value }) => {
-            if (siblingData._status === 'published' && !value) {
-              return new Date()
-            }
-            return value
-          },
-        ],
       },
     },
     {
@@ -132,6 +125,7 @@ export const Playground: CollectionConfig = {
   },
 
   hooks: {
+    beforeChange: [populatePublishedOn],
     afterRead: [
       ({ doc }) => {
         if (doc.publishedOn && typeof doc.publishedOn === 'object' && '$date' in doc.publishedOn) {

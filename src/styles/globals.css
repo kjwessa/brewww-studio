@@ -33,17 +33,17 @@
 
   /* Display Styles */
   --text-display-large: clamp(2.89rem, 1.47rem + 7.1vw, 9.31rem);
-  --text-display-large--line-height: var(--leading-tight);
+  --text-display-large--line-height: var(--leading-none);
   --text-display-large--letter-spacing: var(--tracking-tighter);
   --text-display-large--font-family: var(--font-secondary);
 
   --text-display-medium: clamp(2.57rem, 1.43rem + 5.7vw, 7.45rem);
-  --text-display-medium--line-height: var(--leading-tight);
+  --text-display-medium--line-height: var(--leading-none);
   --text-display-medium--letter-spacing: var(--tracking-tighter);
   --text-display-medium--font-family: var(--font-secondary);
 
   --text-display-small: clamp(2.28rem, 1.37rem + 4.55vw, 5.96rem);
-  --text-display-small--line-height: var(--leading-snug);
+  --text-display-small--line-height: var(--leading-none);
   --text-display-small--letter-spacing: var(--tracking-tight);
   --text-display-small--font-family: var(--font-secondary);
 

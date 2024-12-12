@@ -8,7 +8,7 @@ import { authenticated } from '@/access/authenticated'
 // Fields
 import { slugField } from '@/fields/slug'
 
-export const BlogCategories: CollectionConfig = {
+export const Categories: CollectionConfig = {
   slug: 'categories',
 
   //* Access Settings

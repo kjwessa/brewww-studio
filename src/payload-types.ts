@@ -463,7 +463,7 @@ export interface Play {
   description?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;
-  publishedOn?: string | null;
+  publishedOn: string;
   image?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;

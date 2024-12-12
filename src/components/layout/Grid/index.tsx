@@ -1,99 +1,161 @@
-import React, { ElementType } from 'react'
+/**
+ * Mathematical Grid System
+ *
+ * A grid system based on precise mathematical relationships derived from the site's
+ * max width. All measurements and proportions are calculated, not arbitrary.
+ */
+
+import React, { forwardRef, ElementType } from 'react'
 import { cn } from '@/utilities/cn'
-import { cva, type VariantProps } from 'class-variance-authority'
 
-const gridVariants = cva('grid w-full', {
-  variants: {
-    // Basic and responsive column layouts
-    cols: {
-      1: 'grid-cols-1',
-      2: 'grid-cols-1 md:grid-cols-2',
-      3: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
-      4: 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4',
-      6: 'grid-cols-2 md:grid-cols-3 lg:grid-cols-6',
-      12: 'grid-cols-4 md:grid-cols-8 lg:grid-cols-12',
+// Core calculation values that mirror our CSS system
+const baseGridStyles = {
+  '--site--max-width': 'min(var(--site--width, 1440px), 100vw)',
+  '--container--main': 'calc(var(--site--max-width) - var(--site--margin, 2rem) * 2)',
+  '--container--full': 'calc(100vw - var(--site--margin, 2rem) * 2)',
+  '--site--gutter-total': 'calc(var(--site--gutter, 2rem) * (var(--site--column-count, 12) - 1))',
+  '--column-width--1':
+    'calc((var(--container--main) - var(--site--gutter-total)) / var(--site--column-count, 12))',
+  '--column-width--plus-gutter': 'calc(var(--column-width--1) + var(--site--gutter, 2rem))',
+} as const
 
-      // Auto-fitting layouts
-      'auto-fit': 'grid-cols-[repeat(auto-fit,minmax(min(250px,100%),1fr))]',
-      'auto-fill': 'grid-cols-[repeat(auto-fill,minmax(min(250px,100%),1fr))]',
+// Types for grid configurations
+interface GridConfig {
+  /** Number of columns or special layout type */
+  cols?: number | 'breakout' | 'content' | 'sidebar' | 'aside'
+  /** Auto-grid settings */
+  auto?: {
+    mode: 'auto-fit' | 'auto-fill'
+    minWidth?: string
+    maxWidth?: string
+  }
+  /** Whether content should break out of container */
+  breakout?: boolean
+  /** Custom column template */
+  template?: string
+}
 
-      // Implicit grid features
-      auto: 'grid-cols-auto',
-      min: 'grid-auto-cols-min',
-      max: 'grid-auto-cols-max',
-      fr: 'grid-auto-cols-fr',
-
-      // Common layout patterns
-      'main-sidebar': 'grid-cols-1 lg:grid-cols-[1fr_300px]',
-      'sidebar-main': 'grid-cols-1 lg:grid-cols-[300px_1fr]',
-      featured: 'grid-cols-1 lg:grid-cols-[2fr_1fr]',
-    },
-    // Grid flow control
-    flow: {
-      row: 'grid-flow-row',
-      col: 'grid-flow-col',
-      dense: 'grid-flow-dense',
-      'row-dense': 'grid-flow-row-dense',
-      'col-dense': 'grid-flow-col-dense',
-    },
-    // Standard gap sizes
-    gap: {
-      none: 'gap-0',
-      small: 'gap-4',
-      medium: 'gap-6',
-      large: 'gap-8',
-      xlarge: 'gap-12',
-    },
-    // Alignment utilities
-    align: {
-      start: 'items-start',
-      center: 'items-center',
-      end: 'items-end',
-      stretch: 'items-stretch',
-      baseline: 'items-baseline',
-    },
-    justify: {
-      start: 'justify-start',
-      center: 'justify-center',
-      end: 'justify-end',
-      between: 'justify-between',
-      around: 'justify-around',
-      evenly: 'justify-evenly',
-    },
-  },
-  defaultVariants: {
-    cols: 1,
-    gap: 'medium',
-    flow: 'row',
-    align: 'stretch',
-    justify: 'start',
-  },
-})
-
-interface GridProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof gridVariants> {
+interface GridProps extends React.HTMLAttributes<HTMLElement> {
   as?: ElementType
   children: React.ReactNode
+  className?: string
+  config?: GridConfig
 }
 
-export const Grid = ({
-  as: Component = 'div',
-  cols,
-  flow,
-  gap,
-  align,
-  justify,
-  children,
-  className,
-  ...props
-}: GridProps) => {
-  return (
-    <Component
-      className={cn(gridVariants({ cols, flow, gap, align, justify }), className)}
-      {...props}
-    >
-      {children}
-    </Component>
-  )
-}
+/**
+ * Grid Component
+ *
+ * @example
+ * ```tsx
+ * // Basic grid using mathematical columns
+ * <Grid config={{ cols: 12 }}>
+ *   <GridItem span={6}>Half Width</GridItem>
+ * </Grid>
+ *
+ * // Breakout grid maintaining column relationships
+ * <Grid config={{ cols: 'breakout' }}>
+ *   <GridItem breakout>Full Width Content</GridItem>
+ *   <GridItem contained>Main Content</GridItem>
+ * </Grid>
+ *
+ * // Auto grid using column calculations
+ * <Grid
+ *   config={{
+ *     auto: {
+ *       mode: 'auto-fit',
+ *       minWidth: 'var(--column-width--2)',
+ *     }
+ *   }}
+ * >
+ *   <GridItem>Card</GridItem>
+ * </Grid>
+ * ```
+ */
+export const Grid = forwardRef<HTMLElement, GridProps>(
+  ({ as: Component = 'div', children, className, config, style, ...props }, ref) => {
+    // Generate grid template based on configuration
+    const gridTemplate = React.useMemo(() => {
+      if (!config) return {}
+
+      const { cols, auto, breakout, template } = config
+
+      // Handle special layouts
+      if (template) {
+        return { gridTemplateColumns: template }
+      }
+
+      if (breakout) {
+        return {
+          gridTemplateColumns: `
+          [full-start] minmax(0, 1fr)
+          [content-start] min(var(--container--main), 100% - var(--site--margin, 2rem) * 2)
+          [content-end] minmax(0, 1fr)
+          [full-end]
+        `,
+        }
+      }
+
+      // Handle auto grid
+      if (auto) {
+        return {
+          gridTemplateColumns: `repeat(
+          ${auto.mode},
+          minmax(${auto.minWidth || 'var(--column-width--2)'}, ${auto.maxWidth || '1fr'})
+        )`,
+        }
+      }
+
+      // Handle standard columns
+      if (typeof cols === 'number') {
+        return {
+          gridTemplateColumns: `repeat(${cols}, minmax(0, var(--column-width--1)))`,
+        }
+      }
+
+      // Handle named layouts
+      switch (cols) {
+        case 'sidebar':
+          return {
+            gridTemplateColumns: `
+            minmax(var(--column-width--2), 280px)
+            1fr
+          `,
+          }
+        case 'content':
+          return {
+            gridTemplateColumns: `
+            minmax(var(--column-width--6), 720px)
+            1fr
+          `,
+          }
+        case 'aside':
+          return {
+            gridTemplateColumns: `
+            1fr
+            minmax(var(--column-width--3), 380px)
+          `,
+          }
+        default:
+          return {}
+      }
+    }, [config])
+
+    return (
+      <Component
+        ref={ref}
+        className={cn('grid w-full', className)}
+        style={{
+          ...baseGridStyles,
+          ...gridTemplate,
+          gap: 'var(--site--gutter, 2rem)',
+          ...style,
+        }}
+        {...props}
+      >
+        {children}
+      </Component>
+    )
+  },
+)
+
+Grid.displayName = 'Grid'

@@ -10,8 +10,8 @@ import { plugins } from './plugin'
 import { defaultLexical } from './fields/defaultLexical'
 
 //* Import Collections
-import { BlogCategories } from '@/collections/BlogCategories/config'
-import { BlogPosts } from '@/collections/BlogPosts/config'
+import { Categories } from '@/collections/Categories/config'
+import { Posts } from '@/collections/Posts/config'
 import { Brands } from '@/collections/Brands/config'
 import { FAQ } from '@/collections/FAQ/config'
 import { Industries } from './collections/Industries/config'
@@ -83,8 +83,8 @@ export default buildConfig({
     Media,
     Users,
     Pages,
-    BlogPosts,
-    BlogCategories,
+    Posts,
+    Categories,
     Location,
     Work,
     FAQ,
