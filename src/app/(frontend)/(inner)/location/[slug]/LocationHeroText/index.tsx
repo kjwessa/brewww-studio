@@ -1,11 +1,13 @@
 import { Section } from '@/components/layout/Section'
 import { Title } from '@/components/Title'
 import { Container } from '@/components/layout/Container'
+import { RichText } from '@/components/RichText'
 
 interface LocationHeroTextProps {
   location: {
     locationCity: string
     locationState: string
+    heroDescription: any
   }
 }
 
@@ -27,20 +29,10 @@ export function LocationHeroText({ location }: LocationHeroTextProps) {
             </div>
           </div>
           <div className="mt-5 w-full px-2 text-lg font-light text-zinc-400 lg:mt-10 lg:w-[43.75%] lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
-            <div className="w-full space-y-10">
-              <p>
-                Here at Brewww, we offer honest advice, industry experience, and a great portfolio
-                of work.
-              </p>
-              <p>
-                UI/UX, wireframes, research and development — we understand all areas of web design.
-                We can take a start-up business with nothing to a fully functioning brand online and
-                offline. We can revamp an existing website or take a successful brand to the next
-                level. Our talented and creative in-house web design team will work alongside you in
-                collaboration to create a site that reflects your brand, talks to your audience with
-                meaning and personality, and has great functionality across the latest devices.
-              </p>
-            </div>
+            <RichText 
+              data={location.heroDescription}
+              className="w-full space-y-10"
+            />
           </div>
         </div>
       </Container>

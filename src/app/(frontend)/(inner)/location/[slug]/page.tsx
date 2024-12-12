@@ -128,7 +128,11 @@ export default async function LocationPage({ params, searchParams }: LocationPag
   return (
     <>
       <LocationHeroText
-        location={{ locationCity: location.locationCity, locationState: location.locationState }}
+        location={{ 
+          locationCity: location.locationCity, 
+          locationState: location.locationState,
+          heroDescription: location.heroDescription 
+        }}
       />
       <LocationHeroImage image={location.image as Media} />
       <LocationHeroDetails />

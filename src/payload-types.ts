@@ -257,11 +257,7 @@ export interface Category {
 export interface Location {
   id: string;
   title: string;
-  locationCity: string;
-  locationState: string;
-  heroTitle?: string | null;
-  image?: (string | null) | Media;
-  heroDescription?: {
+  heroDescription: {
     root: {
       type: string;
       children: {
@@ -275,7 +271,11 @@ export interface Location {
       version: number;
     };
     [k: string]: unknown;
-  } | null;
+  };
+  locationCity: string;
+  locationState: string;
+  heroTitle?: string | null;
+  image?: (string | null) | Media;
   slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;
@@ -1053,11 +1053,11 @@ export interface CategoriesSelect<T extends boolean = true> {
  */
 export interface LocationsSelect<T extends boolean = true> {
   title?: T;
+  heroDescription?: T;
   locationCity?: T;
   locationState?: T;
   heroTitle?: T;
   image?: T;
-  heroDescription?: T;
   slug?: T;
   slugLock?: T;
   updatedAt?: T;

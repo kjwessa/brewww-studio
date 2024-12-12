@@ -32,6 +32,15 @@ export const Location: CollectionConfig = {
       },
     },
     {
+      name: 'heroDescription',
+      type: 'richText',
+      label: 'Hero Description',
+      required: true,
+      admin: {
+        description: 'The hero description of the location.',
+      },
+    },
+    {
       name: 'locationCity',
       type: 'text',
       label: 'Location City',
@@ -68,15 +77,7 @@ export const Location: CollectionConfig = {
         description: 'The featured image displayed at the top of the location page.',
       },
     },
-    {
-      name: 'heroDescription',
-      type: 'richText',
-      label: 'Hero Description',
-      required: false,
-      admin: {
-        description: 'The hero description of the location.',
-      },
-    },
+
     ...slugField(),
   ],
 
