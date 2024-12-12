@@ -73,7 +73,7 @@ export const Location: CollectionConfig = {
       relationTo: 'media',
       required: false,
       admin: {
-        description: 'The featured image displayed at the top of the location page.',
+        position: 'sidebar',
       },
     },
     {

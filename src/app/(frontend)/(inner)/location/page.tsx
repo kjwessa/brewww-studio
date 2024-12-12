@@ -87,9 +87,7 @@ export default async function Page() {
                     <p className="line-clamp-1">{location.locationCity}</p>
                   </div>
                 )}
-                {location.heroTitle && (
-                  <p className="mb-4 line-clamp-2 text-sm text-gray-600">{location.heroTitle}</p>
-                )}
+
                 <div className="flex items-center font-medium text-blue-600">
                   <span>Explore Location</span>
                   <svg
