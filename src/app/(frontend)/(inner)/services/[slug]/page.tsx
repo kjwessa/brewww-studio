@@ -64,7 +64,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 </div>
               </div>
             </h1>
-            <div className="flex w-full justify-between pb-4 pt-16 text-2xl font-bold uppercase">
+            <div className="flex w-full justify-between pt-16 pb-4 text-2xl font-bold uppercase">
               <h2>Service</h2>
               <h2>01/03</h2>
             </div>
@@ -108,7 +108,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 </div>
               </div>
             </h1>
-            <div className="flex w-full justify-between pb-4 pt-16 text-2xl font-bold uppercase">
+            <div className="flex w-full justify-between pt-16 pb-4 text-2xl font-bold uppercase">
               <h2>Service</h2>
               <h2>03/03</h2>
             </div>
@@ -183,7 +183,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 </div>
               </div>
             </h1>
-            <div className="flex w-full justify-between pb-4 pt-16 text-2xl font-bold uppercase">
+            <div className="flex w-full justify-between pt-16 pb-4 text-2xl font-bold uppercase">
               <h2>Service</h2>
               <h2>02/03</h2>
             </div>
@@ -251,12 +251,12 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
         </div>
       </section>
 
-      <section className="w-full bg-brand-dark-bg text-white pb-16 pt-20">
+      <section className="bg-brand-dark-bg w-full pt-20 pb-16 text-white">
         <div className="mx-auto w-full max-w-[118.75rem] px-[4%]">
           <h3 className="inline-block text-lg uppercase min-[671px]:pl-6">
             Beautifully bespoke websites
           </h3>
-          <h2 className="text-[8.25rem] font-bold uppercase leading-none min-[769px]:mt-8">
+          <h2 className="text-[8.25rem] leading-none font-bold uppercase min-[769px]:mt-8">
             A leading Cleveland creative studio
           </h2>
           <p className="text-4xl min-[769px]:mt-12">
@@ -266,12 +266,12 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
           </p>
           <div className="mt-8">
             <a
-              className="relative inline-block overflow-hidden rounded-full bg-white text-center text-lg uppercase text-neutral-900"
+              className="relative inline-block overflow-hidden rounded-full bg-white text-center text-lg text-neutral-900 uppercase"
               href=""
             >
-              <span className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5">
+              <span className="relative cursor-pointer min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8">
                 Let&apos;s Work Together
-                <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5" />
+                <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-neutral-900 min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8" />
               </span>
             </a>
           </div>
@@ -280,7 +280,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
           <div className="relative">
             <ul className="list-none flex-wrap min-[769px]:flex">
               <li className="relative list-item min-[769px]:w-[30.9474%]">
-                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
+                <span className="absolute top-0 left-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
                   Websites
                 </span>
 
@@ -315,17 +315,17 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                       className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
                       href=""
                     >
-                      <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
+                      <span className="relative cursor-pointer min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5">
                         View
-                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
+                        <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-neutral-900 min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5" />
                       </span>
                     </a>
                   </div>
                 </div>
               </li>
 
-              <li className="relative list-item md:mt-12 min-[769px]:ml-auto min-[769px]:w-[65.4737%]">
-                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
+              <li className="relative list-item min-[769px]:ml-auto min-[769px]:w-[65.4737%] md:mt-12">
+                <span className="absolute top-0 left-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
                   Shops
                 </span>
 
@@ -360,17 +360,17 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                       className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
                       href=""
                     >
-                      <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
+                      <span className="relative cursor-pointer min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5">
                         View
-                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
+                        <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-neutral-900 min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5" />
                       </span>
                     </a>
                   </div>
                 </div>
               </li>
 
-              <li className="relative list-item md:mt-12 min-[769px]:mt-28 min-[769px]:w-[65.4737%]">
-                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
+              <li className="relative list-item min-[769px]:mt-28 min-[769px]:w-[65.4737%] md:mt-12">
+                <span className="absolute top-0 left-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
                   Websites
                 </span>
 
@@ -405,17 +405,17 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                       className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
                       href=""
                     >
-                      <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
+                      <span className="relative cursor-pointer min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5">
                         View
-                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
+                        <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-neutral-900 min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5" />
                       </span>
                     </a>
                   </div>
                 </div>
               </li>
 
-              <li className="relative list-item md:mt-12 min-[769px]:ml-auto min-[769px]:mt-28 min-[769px]:w-[30.9474%]">
-                <span className="absolute left-0 top-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
+              <li className="relative list-item min-[769px]:mt-28 min-[769px]:ml-auto min-[769px]:w-[30.9474%] md:mt-12">
+                <span className="absolute top-0 left-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
                   Websites
                 </span>
                 <a className="w-full overflow-hidden" href="">
@@ -449,9 +449,9 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                       className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
                       href=""
                     >
-                      <span className="relative cursor-pointer lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5">
+                      <span className="relative cursor-pointer min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5">
                         View
-                        <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-1.5 lg:pl-3.5 lg:pr-3.5 lg:pt-1.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 min-[1025px]:pr-3.5 min-[1025px]:pt-1.5" />
+                        <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-neutral-900 min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5" />
                       </span>
                     </a>
                   </div>
@@ -468,7 +468,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
             Powerful and scalable WordPress agency websites
           </h2>
 
-          <p className="text-4xl lg:mt-8 min-[1025px]:mt-12">
+          <p className="text-4xl min-[1025px]:mt-12 lg:mt-8">
             From interactive brochure sites and online stores to digital products that make your
             life easier, you can rely on WordPress to make your project a huge success. We'll plan,
             design, and deliver your website on time and within budget.
@@ -476,19 +476,19 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
         </div>
       </section>
 
-      <section className="bg-brand-dark-bg text-white min-[1600px]:pb-20 min-[1600px]:pt-20 min-[1920px]:pb-28 min-[1920px]:pt-28 min-[1921px]:pb-28 min-[1921px]:pt-28">
+      <section className="bg-brand-dark-bg text-white min-[1600px]:pt-20 min-[1600px]:pb-20 min-[1920px]:pt-28 min-[1920px]:pb-28 min-[1921px]:pt-28 min-[1921px]:pb-28">
         <div className="m-auto w-[92%] min-[769px]:flex min-[1600px]:mb-16 min-[1920px]:mb-24 min-[1921px]:mb-24 min-[1921px]:max-w-[118.75rem]">
           <div className="min-[769px]:w-[65.4737%]">
             <h6 className="inline-block text-lg uppercase min-[671px]:pl-6">How can we help?</h6>
 
-            <h2 className="lg:mt-10 min-[1025px]:mt-16" />
+            <h2 className="min-[1025px]:mt-16 lg:mt-10" />
           </div>
         </div>
 
         <div className="m-auto w-[92%] text-[1.38rem] leading-7 min-[1921px]:max-w-[118.75rem]">
-          <ul className="ml-auto grid grid-cols-1 gap-8 md:grid-cols-2 lg:w-full min-[1025px]:w-[65.4737%]">
+          <ul className="ml-auto grid grid-cols-1 gap-8 min-[1025px]:w-[65.4737%] md:grid-cols-2 lg:w-full">
             <li className="list-item">
-              <h2 className="text-[8.75rem] uppercase leading-none">
+              <h2 className="text-[8.75rem] leading-none uppercase">
                 <span className="text-[3.13rem] leading-none">Custom plugins + integrations</span>
               </h2>
               <p>
@@ -499,18 +499,18 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 functionality needs.
               </p>
               <a
-                className="relative mt-4 inline-block overflow-hidden rounded-full bg-white text-center text-lg uppercase text-neutral-900"
+                className="relative mt-4 inline-block overflow-hidden rounded-full bg-white text-center text-lg text-neutral-900 uppercase"
                 href=""
               >
-                <span className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5">
+                <span className="relative cursor-pointer min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8">
                   Learn More
-                  <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5" />
+                  <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-neutral-900 min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8" />
                 </span>
               </a>
             </li>
 
             <li className="list-item">
-              <h2 className="text-[8.75rem] uppercase leading-none">
+              <h2 className="text-[8.75rem] leading-none uppercase">
                 <span className="text-[3.13rem] leading-none">Page builder editor</span>
               </h2>
               <p>
@@ -521,18 +521,18 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 differently.
               </p>
               <a
-                className="relative mt-4 inline-block overflow-hidden rounded-full bg-white text-center text-lg uppercase text-neutral-900"
+                className="relative mt-4 inline-block overflow-hidden rounded-full bg-white text-center text-lg text-neutral-900 uppercase"
                 href=""
               >
-                <span className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5">
+                <span className="relative cursor-pointer min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8">
                   Learn More
-                  <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5" />
+                  <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-neutral-900 min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8" />
                 </span>
               </a>
             </li>
 
             <li className="list-item">
-              <h2 className="text-[8.75rem] uppercase leading-none">
+              <h2 className="text-[8.75rem] leading-none uppercase">
                 <span className="text-[3.13rem] leading-none">WordPress hosting</span>
               </h2>
               <p>
@@ -542,18 +542,18 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 WordPress website will be hosted on one of the most reliable and secure options.
               </p>
               <a
-                className="relative mt-4 inline-block overflow-hidden rounded-full bg-white text-center text-lg uppercase text-neutral-900"
+                className="relative mt-4 inline-block overflow-hidden rounded-full bg-white text-center text-lg text-neutral-900 uppercase"
                 href=""
               >
-                <span className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5">
+                <span className="relative cursor-pointer min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8">
                   Learn More
-                  <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5" />
+                  <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-neutral-900 min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8" />
                 </span>
               </a>
             </li>
 
             <li className="list-item">
-              <h2 className="text-[8.75rem] uppercase leading-none">
+              <h2 className="text-[8.75rem] leading-none uppercase">
                 <span className="text-[3.13rem] leading-none">WordPress monitoring</span>
               </h2>
               <p>
@@ -563,12 +563,12 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 by WordPress or plugin developers remain working.
               </p>
               <a
-                className="relative mt-4 inline-block overflow-hidden rounded-full bg-white text-center text-lg uppercase text-neutral-900"
+                className="relative mt-4 inline-block overflow-hidden rounded-full bg-white text-center text-lg text-neutral-900 uppercase"
                 href=""
               >
-                <span className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5">
+                <span className="relative cursor-pointer min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8">
                   Learn More
-                  <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5" />
+                  <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-neutral-900 min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8" />
                 </span>
               </a>
             </li>
@@ -590,23 +590,23 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
           />
         </div>
 
-            <div className="md:mt-10 lg:w-[48.2105%] min-[1025px]:w-[39.5789%]">
-              <div>
-                <h3 className="text-[7.50rem] uppercase leading-none">
-                  <span className="text-[6.25rem] leading-none">What is WordPress</span>
-                </h3>
+        <div className="min-[1025px]:w-[39.5789%] md:mt-10 lg:w-[48.2105%]">
+          <div>
+            <h3 className="text-[7.50rem] leading-none uppercase">
+              <span className="text-[6.25rem] leading-none">What is WordPress</span>
+            </h3>
 
-                <p className="text-[1.38rem] leading-7 lg:mt-8 min-[1025px]:mt-12">
-                  WordPress is an online, open-source website creation tool. In simple terms, WordPress
-                is a tool that we lean on to manage and maintain a websites content. Brands like
-                TechCrunch and Mashable use WordPress as do many other famous blogs, music sites, and
-                Fortune 500 companies, so you&apos;re in good company when choosing to use it.
-              </p>
-              </div>
-            </div>
+            <p className="text-[1.38rem] leading-7 min-[1025px]:mt-12 lg:mt-8">
+              WordPress is an online, open-source website creation tool. In simple terms, WordPress
+              is a tool that we lean on to manage and maintain a websites content. Brands like
+              TechCrunch and Mashable use WordPress as do many other famous blogs, music sites, and
+              Fortune 500 companies, so you&apos;re in good company when choosing to use it.
+            </p>
+          </div>
+        </div>
       </section>
 
-      <section className="bg-brand-dark-bg pb-20 pt-20 text-white">
+      <section className="bg-brand-dark-bg pt-20 pb-20 text-white">
         <div className="m-auto mb-16 w-[92%]">
           <div className="min-[769px]:flex min-[769px]:items-center">
             <div className="order-1 overflow-hidden min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
@@ -622,13 +622,13 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
               />
             </div>
 
-            <div className="md:mt-10 lg:w-[48.2105%] min-[1025px]:w-[39.5789%]">
+            <div className="min-[1025px]:w-[39.5789%] md:mt-10 lg:w-[48.2105%]">
               <div>
-                <h3 className="text-[7.50rem] uppercase leading-none">
+                <h3 className="text-[7.50rem] leading-none uppercase">
                   <span className="text-[6.25rem] leading-none">Why we like WordPress</span>
                 </h3>
 
-                <p className="text-[1.38rem] leading-7 lg:mt-8 min-[1025px]:mt-12">
+                <p className="text-[1.38rem] leading-7 min-[1025px]:mt-12 lg:mt-8">
                   Our team of WordPress developers are smart cookies. They&apos;ve created an
                   intelligent WordPress framework that they&apos;ve named &apos;Slate&apos;. Slate
                   helps them to build bespoke WordPress websites quickly without relying on hundreds
@@ -642,7 +642,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
         </div>
       </section>
 
-      <section className="relative bg-brand-dark-bg text-white pb-20 pt-20">
+      <section className="bg-brand-dark-bg relative pt-20 pb-20 text-white">
         <div className="m-auto w-[92%]">
           <div className="min-[769px]:flex min-[769px]:items-center">
             <div className="overflow-hidden min-[769px]:w-[48.2105%]">
@@ -658,20 +658,20 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
               />
             </div>
 
-            <div className="md:mt-10 min-[769px]:ml-auto lg:w-[48.2105%] min-[1025px]:w-[39.5789%]">
+            <div className="min-[769px]:ml-auto min-[1025px]:w-[39.5789%] md:mt-10 lg:w-[48.2105%]">
               <div>
-                <h3 className="text-[5.5rem] font-bold uppercase leading-none">
+                <h3 className="text-[5.5rem] leading-none font-bold uppercase">
                   Building with WordPress
                 </h3>
 
-                <p className="text-[1.38rem] leading-7 lg:mt-8 min-[1025px]:mt-12">
+                <p className="text-[1.38rem] leading-7 min-[1025px]:mt-12 lg:mt-8">
                   WordPress started in 2003 and was designed for building self-hosted blogs. While
                   we still use it to power your blog, it&apos;s now capable of managing every aspect
                   of your website. It&apos;s completely customisable, we can use it for almost
                   anything you throw at us.
                 </p>
 
-                <p className="text-[1.38rem] leading-7 lg:mt-8 min-[1025px]:mt-9">
+                <p className="text-[1.38rem] leading-7 min-[1025px]:mt-9 lg:mt-8">
                   We use WordPress to create everything from:
                 </p>
               </div>
@@ -689,7 +689,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                   eCommerce Shops and Stores
                 </li>
 
-                <li className="relative list-item pl-7 min-[671px]:ml-auto min-[671px]:mt-3 min-[671px]:w-[48.2105%]">
+                <li className="relative list-item pl-7 min-[671px]:mt-3 min-[671px]:ml-auto min-[671px]:w-[48.2105%]">
                   Client Portals
                 </li>
 
@@ -697,7 +697,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                   Online Proposal Systems
                 </li>
 
-                <li className="relative list-item pl-7 min-[671px]:ml-auto min-[671px]:mt-3 min-[671px]:w-[48.2105%]">
+                <li className="relative list-item pl-7 min-[671px]:mt-3 min-[671px]:ml-auto min-[671px]:w-[48.2105%]">
                   Microsites
                 </li>
 
@@ -710,7 +710,7 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
         </div>
       </section>
 
-      <section className="bg-white text-black pb-20 pt-20">
+      <section className="bg-white pt-20 pb-20 text-black">
         <div className="container mx-auto w-[92%] max-w-[118.75rem]">
           <div className="m-auto w-[65.4737%] min-[768px]:w-full">
             <blockquote>
@@ -732,36 +732,36 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
         </div>
       </section>
 
-      <section className="relative bg-brand-dark-bg text-white pb-20 pt-20">
-        <div className="m-auto w-[92%] text-center uppercase mb-16 max-w-[77.75rem]">
+      <section className="bg-brand-dark-bg relative pt-20 pb-20 text-white">
+        <div className="m-auto mb-16 w-[92%] max-w-[77.75rem] text-center uppercase">
           <div>
             <h2 className="inline-block text-lg min-[671px]:pl-6">
               Looking for a Cleveland Next JS agency?
             </h2>
 
-            <h2 className="text-[8rem] font-bold leading-none lg:mt-10 min-[1025px]:mt-16">
+            <h2 className="text-[8rem] leading-none font-bold min-[1025px]:mt-16 lg:mt-10">
               <span className="text-[7rem] leading-none">
                 We understand you and the space you play in
               </span>
             </h2>
 
-            <p className="text-[1.38rem] leading-7 lg:mt-8 min-[1025px]:mt-12">
+            <p className="text-[1.38rem] leading-7 min-[1025px]:mt-12 lg:mt-8">
               <a
                 className="relative inline-block overflow-hidden rounded-full bg-white text-lg text-neutral-900"
                 href="https://www.fhoke.com/contact/"
               >
-                <span className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5">
+                <span className="relative cursor-pointer min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8">
                   Contact Us
-                  <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5" />
+                  <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-neutral-900 min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8" />
                 </span>
               </a>{' '}
               <a
-                className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-lg lg:mt-8 min-[1025px]:mt-9"
+                className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-lg min-[1025px]:mt-9 lg:mt-8"
                 href="https://calendly.com/fhoke/15-minute-chat"
               >
-                <span className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5">
+                <span className="relative cursor-pointer min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8">
                   Book A Call
-                  <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-neutral-900 lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5" />
+                  <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-neutral-900 min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8" />
                 </span>
               </a>
             </p>
@@ -771,37 +771,37 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
 
       <div className="mt-16">
         <div className="overflow-hidden">
-          <div className="flex md:w-[168vw] lg:w-[132vw] w-[120vw] w-[96vw]">
-            <div className="flex md:w-[168vw] lg:w-[132vw] w-[120vw] w-[96vw]">
-              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 w-[96vw] w-[72vw]">
+          <div className="flex w-[120vw] md:w-[168vw] lg:w-[132vw]">
+            <div className="flex w-[120vw] md:w-[168vw] lg:w-[132vw]">
+              <div className="flex w-[96vw] items-center justify-center px-8 md:w-96 lg:w-96">
                 {'                                                                 '}
               </div>
 
-              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 w-[96vw] w-[72vw]">
+              <div className="flex w-[96vw] items-center justify-center px-8 md:w-96 lg:w-96">
                 {'                                                                 '}
               </div>
 
-              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 w-[96vw] w-[72vw]">
+              <div className="flex w-[96vw] items-center justify-center px-8 md:w-96 lg:w-96">
                 {'                                                                 '}
               </div>
 
-              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 w-[96vw] w-[72vw]">
+              <div className="flex w-[96vw] items-center justify-center px-8 md:w-96 lg:w-96">
                 {'                                                                 '}
               </div>
 
-              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 w-[96vw] w-[72vw]">
+              <div className="flex w-[96vw] items-center justify-center px-8 md:w-96 lg:w-96">
                 {'                                                                 '}
               </div>
 
-              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 w-[96vw] w-[72vw]">
+              <div className="flex w-[96vw] items-center justify-center px-8 md:w-96 lg:w-96">
                 {'                                                                 '}
               </div>
 
-              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 w-[96vw] w-[72vw]">
+              <div className="flex w-[96vw] items-center justify-center px-8 md:w-96 lg:w-96">
                 {'                                                                 '}
               </div>
 
-              <div className="flex items-center justify-center px-8 md:w-96 lg:w-96 w-[96vw] w-[72vw]">
+              <div className="flex w-[96vw] items-center justify-center px-8 md:w-96 lg:w-96">
                 {'                                                                 '}
               </div>
             </div>
@@ -809,15 +809,15 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
         </div>
       </div>
 
-      <section className="relative bg-white text-neutral-900 pb-20 pt-20">
-        <div className="m-auto w-[92%] mb-16">
+      <section className="relative bg-white pt-20 pb-20 text-neutral-900">
+        <div className="m-auto mb-16 w-[92%]">
           <div className="min-[769px]:flex min-[769px]:items-center">
             <div className="min-[769px]:w-[65.4737%]">
               <h6 className="inline-block text-lg uppercase min-[671px]:pl-6">
                 How else can we help?
               </h6>
 
-            <h2 className="text-[5rem] font-bold uppercase leading-none lg:mt-10 min-[1025px]:mt-16">
+              <h2 className="text-[5rem] leading-none font-bold uppercase min-[1025px]:mt-16 lg:mt-10">
                 We&apos;ll build you a brand, a website, or a shop
               </h2>
             </div>
@@ -825,9 +825,9 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
         </div>
 
         <div className="m-auto w-[92%] text-[1.38rem] leading-7">
-          <ul className="ml-auto grid grid-cols-1 gap-8 md:grid-cols-2 lg:w-full min-[1025px]:w-[65.4737%]">
+          <ul className="ml-auto grid grid-cols-1 gap-8 min-[1025px]:w-[65.4737%] md:grid-cols-2 lg:w-full">
             <li className="list-item">
-              <h2 className="text-[8.75rem] uppercase leading-none">
+              <h2 className="text-[8.75rem] leading-none uppercase">
                 <span className="text-[3.13rem] leading-none">WooCommerce</span>
               </h2>
               <p>
@@ -836,18 +836,18 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 to WooCommerce.
               </p>
               <a
-                className="relative inline-block overflow-hidden rounded-full bg-neutral-900 text-center text-lg uppercase text-white lg:mt-6 min-[1025px]:mt-8"
+                className="relative inline-block overflow-hidden rounded-full bg-neutral-900 text-center text-lg text-white uppercase min-[1025px]:mt-8 lg:mt-6"
                 href=""
               >
-                <span className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5">
+                <span className="relative cursor-pointer min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8">
                   Find out more
-                  <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5" />
+                  <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-white min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8" />
                 </span>
               </a>
             </li>
 
             <li className="list-item">
-              <h2 className="text-[8.75rem] uppercase leading-none">
+              <h2 className="text-[8.75rem] leading-none uppercase">
                 <span className="text-[3.13rem] leading-none">Shopify</span>
               </h2>
               <p>
@@ -856,18 +856,18 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 Shopify store look beautiful.
               </p>
               <a
-                className="relative inline-block overflow-hidden rounded-full bg-neutral-900 text-center text-lg uppercase text-white lg:mt-6 min-[1025px]:mt-8"
+                className="relative inline-block overflow-hidden rounded-full bg-neutral-900 text-center text-lg text-white uppercase min-[1025px]:mt-8 lg:mt-6"
                 href=""
               >
-                <span className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5">
+                <span className="relative cursor-pointer min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8">
                   Find out more
-                  <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5" />
+                  <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-white min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8" />
                 </span>
               </a>
             </li>
 
             <li className="list-item">
-              <h2 className="text-[8.75rem] uppercase leading-none">
+              <h2 className="text-[8.75rem] leading-none uppercase">
                 <span className="text-[3.13rem] leading-none">BigCommerce</span>
               </h2>
               <p>
@@ -876,18 +876,18 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 great and accelerate growth.
               </p>
               <a
-                className="relative inline-block overflow-hidden rounded-full bg-neutral-900 text-center text-lg uppercase text-white lg:mt-6 min-[1025px]:mt-8"
+                className="relative inline-block overflow-hidden rounded-full bg-neutral-900 text-center text-lg text-white uppercase min-[1025px]:mt-8 lg:mt-6"
                 href=""
               >
-                <span className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5">
+                <span className="relative cursor-pointer min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8">
                   Find out more
-                  <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5" />
+                  <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-white min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8" />
                 </span>
               </a>
             </li>
 
             <li className="list-item">
-              <h2 className="text-[8.75rem] uppercase leading-none">
+              <h2 className="text-[8.75rem] leading-none uppercase">
                 <span className="text-[3.13rem] leading-none">Branding</span>
               </h2>
               <p>
@@ -896,18 +896,18 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 icons to illustrations and more.
               </p>
               <a
-                className="relative inline-block overflow-hidden rounded-full bg-neutral-900 text-center text-lg uppercase text-white lg:mt-6 min-[1025px]:mt-8"
+                className="relative inline-block overflow-hidden rounded-full bg-neutral-900 text-center text-lg text-white uppercase min-[1025px]:mt-8 lg:mt-6"
                 href=""
               >
-                <span className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5">
+                <span className="relative cursor-pointer min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8">
                   Find out more
-                  <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5" />
+                  <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-white min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8" />
                 </span>
               </a>
             </li>
 
             <li className="list-item">
-              <h2 className="text-[8.75rem] uppercase leading-none">
+              <h2 className="text-[8.75rem] leading-none uppercase">
                 <span className="text-[3.13rem] leading-none">Website design</span>
               </h2>
               <p>
@@ -916,18 +916,18 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 beautiful and will generate more leads.
               </p>
               <a
-                className="relative inline-block overflow-hidden rounded-full bg-neutral-900 text-center text-lg uppercase text-white lg:mt-6 min-[1025px]:mt-8"
+                className="relative inline-block overflow-hidden rounded-full bg-neutral-900 text-center text-lg text-white uppercase min-[1025px]:mt-8 lg:mt-6"
                 href=""
               >
-                <span className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5">
+                <span className="relative cursor-pointer min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8">
                   Find out more
-                  <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5" />
+                  <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-white min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8" />
                 </span>
               </a>
             </li>
 
             <li className="list-item">
-              <h2 className="text-[8.75rem] uppercase leading-none">
+              <h2 className="text-[8.75rem] leading-none uppercase">
                 <span className="text-[3.13rem] leading-none">Laravel</span>
               </h2>
               <p>
@@ -936,12 +936,12 @@ export default async function ServicePage({ params: paramsPromise }: Args) {
                 online store owners.
               </p>
               <a
-                className="relative inline-block overflow-hidden rounded-full bg-neutral-900 text-center text-lg uppercase text-white lg:mt-6 min-[1025px]:mt-8"
+                className="relative inline-block overflow-hidden rounded-full bg-neutral-900 text-center text-lg text-white uppercase min-[1025px]:mt-8 lg:mt-6"
                 href=""
               >
-                <span className="relative cursor-pointer lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5">
+                <span className="relative cursor-pointer min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8">
                   Find out more
-                  <span className="absolute left-0 top-full w-full rounded-tl-full rounded-tr-full bg-white lg:pb-4 lg:pl-8 lg:pr-8 lg:pt-4 min-[1025px]:pb-5 min-[1025px]:pl-8 min-[1025px]:pr-8 min-[1025px]:pt-5" />
+                  <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-white min-[1025px]:pt-5 min-[1025px]:pr-8 min-[1025px]:pb-5 min-[1025px]:pl-8 lg:pt-4 lg:pr-8 lg:pb-4 lg:pl-8" />
                 </span>
               </a>
             </li>
