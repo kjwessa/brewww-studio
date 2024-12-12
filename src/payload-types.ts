@@ -274,8 +274,12 @@ export interface Location {
   };
   locationCity: string;
   locationState: string;
-  heroTitle?: string | null;
   image?: (string | null) | Media;
+  meta?: {
+    title?: string | null;
+    image?: (string | null) | Media;
+    description?: string | null;
+  };
   slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;
@@ -1056,8 +1060,14 @@ export interface LocationsSelect<T extends boolean = true> {
   heroDescription?: T;
   locationCity?: T;
   locationState?: T;
-  heroTitle?: T;
   image?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
   slug?: T;
   slugLock?: T;
   updatedAt?: T;

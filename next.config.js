@@ -7,6 +7,11 @@ const nextConfig = {
     reactCompiler: true,
   },
   reactStrictMode: true,
+  webpack: (config, { dev }) => {
+    // Set the appropriate devtool based on environment
+    config.devtool = dev ? 'eval-source-map' : 'hidden-source-map'
+    return config
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
@@ -75,6 +80,9 @@ const sentryConfig = {
   disableLogger: true,
   automaticVercelMonitors: true,
   deleteSourceMapsAfterUpload: true,
+  sourcemaps: {
+    assets: '.next/static/**/*',
+  },
 }
 
 // Apply both Payload and Sentry configurations

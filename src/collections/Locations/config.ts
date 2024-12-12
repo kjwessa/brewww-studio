@@ -7,6 +7,13 @@ import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
 // Fields
 import { slugField } from '@/fields/slug'
+import {
+  MetaDescriptionField,
+  MetaImageField,
+  MetaTitleField,
+  OverviewField,
+  PreviewField,
+} from '@payloadcms/plugin-seo/fields'
 
 export const Location: CollectionConfig = {
   slug: 'locations',
@@ -58,15 +65,7 @@ export const Location: CollectionConfig = {
         description: 'The state of the location.',
       },
     },
-    {
-      name: 'heroTitle',
-      type: 'text',
-      label: 'DELETE - Hero Title',
-      required: false,
-      admin: {
-        description: 'The hero title of the location as it appears around the site.',
-      },
-    },
+
     {
       name: 'image',
       type: 'upload',
@@ -76,6 +75,34 @@ export const Location: CollectionConfig = {
       admin: {
         description: 'The featured image displayed at the top of the location page.',
       },
+    },
+    {
+      type: 'tabs',
+      tabs: [
+        {
+          name: 'meta',
+          label: 'SEO',
+          fields: [
+            MetaTitleField({
+              hasGenerateFn: true,
+            }),
+            MetaImageField({
+              relationTo: 'media',
+            }),
+            MetaDescriptionField({}),
+            OverviewField({
+              titlePath: 'meta.title',
+              descriptionPath: 'meta.description',
+              imagePath: 'meta.image',
+            }),
+            PreviewField({
+              hasGenerateFn: true,
+              titlePath: 'meta.title',
+              descriptionPath: 'meta.description',
+            }),
+          ],
+        },
+      ],
     },
 
     ...slugField(),
