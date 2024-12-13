@@ -3,7 +3,7 @@ import { Section } from '@/components/layout/Section'
 export function ContactHeroSection() {
   return (
     <Section theme="inherit" background="default">
-      <div className="bg-brand-dark-bg px-2 py-24 min-[1450px]:pr-20 min-[1450px]:pl-20 min-[1800px]:pr-40 min-[1800px]:pl-40 min-[2100px]:pr-60 min-[2100px]:pl-60 sm:pr-6 sm:pl-6 xl:pr-12 xl:pl-12">
+      <div className="bg-brand-dark-bg px-2 py-24 min-[1450px]:pr-20 min-[1450px]:pl-20 sm:pr-6 sm:pl-6 xl:pr-12 xl:pl-12">
         <div className="flex w-full justify-between border-b-2 border-solid border-neutral-700 pb-12 lg:pb-12">
           <div className="relative mb-10 w-[62.5%] px-2 min-[1450px]:w-[81.25%] lg:mb-0 lg:w-3/4 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <div className="relative w-full">

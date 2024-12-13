@@ -1,11 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Section } from '@/components/layout/Section'
+import { Page } from '@/components/layout/Page'
 
 export default function WhyPage() {
   return (
-    <>
-      <section className="w-full bg-black px-6 py-16 text-[2.63rem] leading-none font-light text-white min-[1000px]:px-16">
-        <div className="mx-auto max-w-6xl">
+    <Page theme="light">
+      <Section theme="inherit" background="default">
+        <div className="mx-auto w-full max-w-6xl px-6 py-16 text-[2.63rem] leading-none font-light min-[1000px]:px-16">
           <h1>
             We imagine and craft brands that are more than symbols; they are catalysts for change.
             <br /> <br />
@@ -13,9 +15,9 @@ export default function WhyPage() {
             take impactful action.
           </h1>
         </div>
-      </section>
-      <section className="w-full bg-black px-6 py-20 font-light text-white">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-x-20 md:grid-cols-3">
+      </Section>
+      <Section theme="inherit" background="default">
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-x-20 px-6 py-20 font-light md:grid-cols-3">
           <div className="mb-10 pb-10 min-[1000px]:mb-0 min-[1000px]:pb-0">
             <h2 className="mb-6 text-[2.63rem] leading-none min-[1000px]:mb-8 min-[1000px]:max-w-[84%]">
               Brand Strategy
@@ -53,9 +55,9 @@ export default function WhyPage() {
             <div className="mt-6 text-[10.63rem] leading-none min-[1000px]:mt-12">03</div>
           </div>
         </div>
-      </section>
-      <section className="w-full bg-black py-16 font-light text-white">
-        <div className="mx-auto max-w-6xl px-6">
+      </Section>
+      <Section theme="inherit" background="default">
+        <div className="mx-auto w-full max-w-6xl px-6 py-16 font-light">
           <h2 className="mb-10 text-center text-3xl leading-none">Why Us</h2>
           <ul className="grid gap-10 border-t-2 border-neutral-600 pt-10 sm:grid-cols-2 lg:grid-cols-3">
             <li className="space-y-2">
@@ -102,57 +104,59 @@ export default function WhyPage() {
             </li>
           </ul>
         </div>
-      </section>
-      <section className="relative grid grid-cols-1 grid-rows-[1155px_104px] items-center justify-items-center bg-zinc-950 text-center text-neutral-400 uppercase lg:grid-cols-[105.63rem]">
-        <span className="text-[10rem] leading-none font-bold text-white lg:text-[20.75rem]">
-          <span className="relative flex items-center justify-between">
-            <span className="inline-block">
-              <span className="text-outline inline-block">Why</span>
+      </Section>
+      <Section theme="inherit" background="default">
+        <div className="relative grid grid-cols-1 grid-rows-[1155px_104px] items-center justify-items-center text-center uppercase lg:grid-cols-[105.63rem]">
+          <span className="text-[10rem] leading-none font-bold lg:text-[20.75rem]">
+            <span className="relative flex items-center justify-between">
+              <span className="inline-block">
+                <span className="text-outline inline-block">Why</span>
+              </span>
+              <div className="w-40"></div>
+              <span className="inline-block">
+                <span className="inline-block">Brewww</span>
+              </span>
             </span>
-            <div className="w-40"></div>
-            <span className="inline-block">
-              <span className="inline-block">Brewww</span>
+          </span>
+          <div className="absolute right-0 bottom-0 left-0 flex items-center justify-between px-20 pb-10 text-sm font-semibold">
+            <span>
+              <svg
+                className="inline-block h-3 w-3"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clipRule="evenodd"
+                  d="M11.2396 6.99425 6.58589 2.34052 7.99896.92517l7.06694 7.06695-.0005.00056.0044.00446-7.06126 7.07266-1.41421-1.4142 4.65307-4.66055-9.02388.00363-.0445.00002-.00081-2.00081.0445-.00002.00041 1.00041-.0004-1.00041 9.01688-.00362Z"
+                  fill="rgb(255, 255, 255)"
+                  fillRule="evenodd"
+                />
+              </svg>
+              Scroll to find out
             </span>
-          </span>
-        </span>
-        <div className="absolute right-0 bottom-0 left-0 flex items-center justify-between px-20 pb-10 text-sm font-semibold text-white">
-          <span>
-            <svg
-              className="inline-block h-3 w-3"
-              fill="none"
-              height="16"
-              viewBox="0 0 16 16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                clipRule="evenodd"
-                d="M11.2396 6.99425 6.58589 2.34052 7.99896.92517l7.06694 7.06695-.0005.00056.0044.00446-7.06126 7.07266-1.41421-1.4142 4.65307-4.66055-9.02388.00363-.0445.00002-.00081-2.00081.0445-.00002.00041 1.00041-.0004-1.00041 9.01688-.00362Z"
-                fill="rgb(255, 255, 255)"
-                fillRule="evenodd"
-              />
-            </svg>
-            Scroll to find out
-          </span>
-          <span>
-            <svg
-              className="inline h-3 w-3"
-              fill="none"
-              height="12"
-              viewBox="0 0 12 12"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="m6 0 .87252 3.89355 3.37008-2.13619-2.13615 3.37012L12 6l-3.89355.87252 2.13615 3.37008-3.37008-2.13615L6 12l-.87252-3.89355-3.37012 2.13615 2.13619-3.37008L0 6l3.89355-.87252-2.13619-3.37012 3.37012 2.13619L6 0Z"
-                fill="rgb(255, 255, 255)"
-              />
-            </svg>{' '}
-            (at least) Three key reasons
-          </span>
+            <span>
+              <svg
+                className="inline h-3 w-3"
+                fill="none"
+                height="12"
+                viewBox="0 0 12 12"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m6 0 .87252 3.89355 3.37008-2.13619-2.13615 3.37012L12 6l-3.89355.87252 2.13615 3.37008-3.37008-2.13615L6 12l-.87252-3.89355-3.37012 2.13615 2.13619-3.37008L0 6l3.89355-.87252-2.13619-3.37012 3.37012 2.13619L6 0Z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </svg>{' '}
+              (at least) Three key reasons
+            </span>
+          </div>
         </div>
-      </section>
+      </Section>
 
-      <section className="bg-black text-white">
-        <div className="pt-40 text-2xl font-light">
+      <Section theme="inherit" background="default">
+        <div className="py-24 pt-40 text-2xl font-light">
           <div className="px-4 md:px-20">
             <div className="m-auto w-full max-w-[112.50rem]">
               <div className="w-full max-w-[52.00rem] text-[5rem] leading-none font-bold md:text-[10.00rem]">
@@ -176,10 +180,10 @@ export default function WhyPage() {
             </div>
           </div>
         </div>
-      </section>
-      <section className="bg-white py-24">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 gap-8 text-2xl font-light text-black md:grid-cols-2">
+      </Section>
+      <Section theme="inherit" background="default">
+        <div className="mx-auto w-full max-w-6xl px-6 py-24">
+          <div className="grid grid-cols-1 gap-8 text-2xl font-light md:grid-cols-2">
             <div className="row-start-1 row-end-2 mx-0 mt-8 mb-0 md:col-start-2 md:col-end-3">
               <div>
                 We don&apos;t &apos;land and expand&apos;. We won&apos;t waste your time and money
@@ -209,9 +213,10 @@ export default function WhyPage() {
             </div>
           </div>
         </div>
-      </section>
-      <section className="bg-zinc-950 py-16 text-white">
-        <div className="container mx-auto px-4">
+      </Section>
+
+      <Section theme="inherit" background="default">
+        <div className="container mx-auto px-4 py-16">
           <h2 className="mb-12 text-center text-4xl leading-none font-bold uppercase sm:text-6xl lg:text-8xl xl:text-[10.50rem]">
             The Reputation
           </h2>
@@ -300,12 +305,12 @@ export default function WhyPage() {
             </figure>
           </div>
         </div>
-      </section>
+      </Section>
 
-      <section className="bg-zinc-950 text-neutral-400">
+      <Section theme="inherit" background="default">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 gap-x-20 gap-y-5 md:grid-cols-12">
-            <div className="text-center text-white md:col-span-12">
+            <div className="text-center md:col-span-12">
               <h2 className="m-0 text-5xl leading-none font-bold uppercase sm:text-7xl md:text-[10.50rem]">
                 The Culture
               </h2>
@@ -343,7 +348,7 @@ export default function WhyPage() {
               </ul>
               <div className="text-center">
                 <a
-                  className="mb-24 inline-block h-12 min-w-[9.88rem] bg-rose-600 px-5 text-sm font-bold text-white uppercase min-[1680px]:mb-48 min-[1680px]:h-16 min-[1680px]:min-w-[13.75rem] md:mb-36 md:min-w-[10.63rem]"
+                  className="mb-24 inline-block h-12 min-w-[9.88rem] bg-rose-600 px-5 text-sm font-bold uppercase min-[1680px]:mb-48 min-[1680px]:h-16 min-[1680px]:min-w-[13.75rem] md:mb-36 md:min-w-[10.63rem]"
                   href=""
                 >
                   <span className="flex h-full w-full cursor-pointer items-center justify-between">
@@ -396,11 +401,12 @@ export default function WhyPage() {
             </figure>
           </div>
         </div>
-      </section>
-      <section className="bg-zinc-950 py-16 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 grid-rows-[auto] gap-x-20 gap-y-5 text-neutral-400 lg:grid-cols-12">
-            <div className="col-span-1 text-white lg:col-span-12">
+      </Section>
+
+      <Section theme="inherit" background="default">
+        <div className="container mx-auto px-4 py-24">
+          <div className="grid grid-cols-1 grid-rows-[auto] gap-x-20 gap-y-5 lg:grid-cols-12">
+            <div className="col-span-1 lg:col-span-12">
               <h2 className="m-0 text-4xl leading-none font-bold uppercase sm:text-6xl md:text-8xl lg:text-[10.50rem]">
                 The Approach
               </h2>
@@ -486,10 +492,10 @@ export default function WhyPage() {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
-      <section className="flex min-h-[80vh] flex-col justify-between bg-black p-9 text-[2.75rem] leading-none text-white">
-        <div className="text-7xl">
+      <Section theme="inherit" background="default">
+        <div className="flex min-h-[80vh] flex-col justify-between p-9 text-[2.75rem] leading-none">
           <h1 className="max-w-4xl">
             Our 'strategy-first' mentality is tailored for companies looking for growth, change, or
             both. And we're ruthless when it comes to our mantra 'Boring is for the Competitors'.
@@ -505,8 +511,8 @@ export default function WhyPage() {
             </p>
           </div>
         </div>
-      </section>
-       <section className="bg-white py-24 text-[1.38rem] leading-7 text-stone-950">
+      </Section>
+      <Section theme="inherit" background="default">
         <div className="container mx-auto">
           <div className="flex flex-wrap justify-between">
             <div className="mb-16 w-full">
@@ -563,9 +569,9 @@ export default function WhyPage() {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
-      <section className="bg-stone-950 py-24 text-stone-50">
+      <Section theme="inherit" background="default">
         <div className="container mx-auto px-6">
           <h2 className="mb-16 text-5xl font-bold lg:text-7xl">
             We supply a wide range of premium products and services. Always tailor-made, always
@@ -642,7 +648,7 @@ export default function WhyPage() {
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </Section>
+    </Page>
   )
 }
