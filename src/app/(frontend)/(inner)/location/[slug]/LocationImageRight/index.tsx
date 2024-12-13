@@ -5,7 +5,7 @@ import { Container } from '@/components/layout/Container'
 
 export function LocationImageRight() {
   return (
-    <Section theme="dark" background="default">
+    <Section theme="inherit" background="default">
       <Container size="3xl" spacing="xlarge">
         <div className="flex w-full flex-col lg:flex-row-reverse lg:justify-between">
           <div className="relative mb-10 inline-flex w-full px-2 lg:mb-0 lg:w-2/4 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">

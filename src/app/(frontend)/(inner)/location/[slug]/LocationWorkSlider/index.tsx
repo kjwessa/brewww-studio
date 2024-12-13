@@ -21,7 +21,7 @@ export function LocationWorkSlider({ workItems }: LocationWorkSliderProps) {
   const navigationNextRef = useRef<HTMLButtonElement>(null)
 
   return (
-    <Section theme="dark" color="default">
+    <Section theme="inherit" background="default">
       <Container size="full" spacing="xlarge">
         <div className="mb-10 flex w-full flex-wrap items-end justify-between px-2">
           <div className="px-2 lg:w-auto lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">

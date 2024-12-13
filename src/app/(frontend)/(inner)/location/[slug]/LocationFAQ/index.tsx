@@ -7,7 +7,7 @@ import { Container } from '@/components/layout/Container'
 
 export function LocationFAQ({ faqs }: { faqs: Faq[] }) {
   return (
-    <Section theme="dark">
+    <Section theme="inherit" background="default">
       <Container size="3xl" spacing="3xl">
         <div className="flex flex-wrap justify-between">
           <div className="mb-10 w-full lg:mb-0 lg:w-1/3">

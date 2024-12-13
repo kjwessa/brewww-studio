@@ -58,7 +58,7 @@ export function LocationLogoSlider({ brands }: LocationLogoSliderProps) {
   }, [brands])
 
   return (
-    <Section theme="dark" background="default">
+    <Section theme="inherit" background="default">
       <Container size="3xl" spacing="xlarge">
         <div className="relative w-full overflow-hidden rounded-tr-3xl rounded-br-3xl rounded-bl-3xl bg-zinc-900 py-20 min-[1450px]:pt-32 min-[1450px]:pb-32 lg:pt-24 lg:pb-24">
           <div>

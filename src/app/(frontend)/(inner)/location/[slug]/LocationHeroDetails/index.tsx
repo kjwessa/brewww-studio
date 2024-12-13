@@ -5,7 +5,7 @@ import { Container } from '@/components/layout/Container'
 
 export function LocationHeroDetails() {
   return (
-    <Section theme="dark">
+    <Section theme="inherit" background="default">
       <Container size="2xl">
         <div className="flex w-full flex-wrap justify-between">
           <div className="relative mb-10 w-full px-2 lg:mb-0 lg:w-[56.25%] lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">

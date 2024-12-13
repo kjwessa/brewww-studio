@@ -24,6 +24,7 @@ import { LocationHeroDetails } from './LocationHeroDetails'
 import { LocationServiceDetails } from './LocationServiceDetails'
 import { LocationFAQ } from './LocationFAQ'
 import { LocationBlogSlider } from './LocationBlogSlider'
+import { Page } from '@/components/layout/Page'
 
 // Add type definition for page props
 type LocationPageProps = {
@@ -130,7 +131,7 @@ export default async function LocationPage({ params, searchParams }: LocationPag
   })
 
   return (
-    <>
+    <Page theme="dark">
       <LocationHeroText
         location={{
           locationCity: location.locationCity,
@@ -148,6 +149,6 @@ export default async function LocationPage({ params, searchParams }: LocationPag
       <LocationFAQ faqs={faqs} />
       <LocationWorkSlider workItems={workItems} />
       <LocationBlogSlider posts={posts} />
-    </>
+    </Page>
   )
 }

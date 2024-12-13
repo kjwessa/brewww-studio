@@ -62,7 +62,7 @@ export function LocationTechSlider({ technologies }: LocationTechSliderProps) {
   }, [technologies])
 
   return (
-    <Section theme="dark">
+    <Section theme="inherit" background="default">
       <Container size="full" spacing="xlarge">
         <div className="mb-32 flex w-full flex-wrap items-end justify-between px-2 text-5xl text-black min-[1450px]:pr-20 min-[1450px]:pl-20 min-[1800px]:pr-40 min-[1800px]:pl-40 min-[2100px]:pr-60 min-[2100px]:pl-60 sm:pr-6 sm:pl-6 xl:pr-12 xl:pl-12">
           <div className="px-2 text-white lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">

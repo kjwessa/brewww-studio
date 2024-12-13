@@ -25,7 +25,7 @@ export function LocationBlogSlider({ posts, title }: LocationBlogSliderProps) {
   if (!posts?.length) return null
 
   return (
-    <Section theme="dark">
+    <Section theme="inherit" background="default">
       <Container size="3xl" spacing="3xl">
         <div className="flex flex-col lg:flex-row lg:gap-12">
           {/* Left Column - Text and Button */}
