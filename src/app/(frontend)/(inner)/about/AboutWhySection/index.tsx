@@ -39,11 +39,8 @@ export function AboutWhySection() {
   }, [scrollYProgress, y1, y2, y3, y4, y5])
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative overflow-hidden bg-white pt-24 pb-48 font-medium text-black"
-    >
-      <div className="relative m-auto w-full max-w-[120.00rem] flex-col px-8">
+    <Section theme="inherit" background="default" ref={sectionRef}>
+      <div className="relative m-auto w-full max-w-[120.00rem] flex-col overflow-hidden px-8 pt-24 pb-48 font-medium">
         <div className="relative m-auto flex max-h-[93.00rem] min-h-screen w-full max-w-[100.50rem] items-center justify-center py-96">
           <div className="absolute top-1/2 left-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center">
             <div className="relative inline-block">
@@ -154,6 +151,6 @@ export function AboutWhySection() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

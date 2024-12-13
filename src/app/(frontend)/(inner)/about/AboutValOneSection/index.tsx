@@ -1,6 +1,8 @@
+import { Section } from '@/components/layout/Section'
+
 export function AboutValOneSection() {
   return (
-    <section className="bg-white text-black">
+    <Section theme="inherit" background="default">
       <div className="container mx-auto">
         <div className="flex h-min w-full flex-row content-start items-start justify-start gap-6 overflow-hidden py-20 text-xs text-gray-900 min-[810px]:flex-col">
           <div
@@ -27,6 +29,6 @@ export function AboutValOneSection() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

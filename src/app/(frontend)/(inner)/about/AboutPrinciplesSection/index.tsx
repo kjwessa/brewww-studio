@@ -1,6 +1,8 @@
+import { Section } from '@/components/layout/Section'
+
 export function AboutPrinciplesSection() {
   return (
-    <section className="bg-white text-black" id="our-principles">
+    <Section theme="inherit" background="default">
       <div className="container mx-auto">
         <div className="relative flex h-min w-full max-w-[90.00rem] flex-col content-start items-start justify-center gap-20 px-6 py-20 text-xs">
           <div className="relative h-auto w-full text-lg">
@@ -552,6 +554,6 @@ export function AboutPrinciplesSection() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

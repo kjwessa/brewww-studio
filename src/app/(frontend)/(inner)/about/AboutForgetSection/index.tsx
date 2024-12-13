@@ -1,7 +1,9 @@
+import { Section } from '@/components/layout/Section'
+
 export function AboutForgetSection() {
   return (
-    <section className="border-b-2 border-solid border-black bg-white text-black">
-      <div className="flex basis-full justify-between px-12 py-24">
+    <Section theme="inherit" background="default">
+      <div className="flex basis-full justify-between border-b-2 border-solid border-black px-12 py-24">
         <div className="flex basis-[47%] content-center items-center justify-center text-center">
           <div>
             <h3 className="mb-8 text-[2.38rem] leading-none">Let's not forget about people.</h3>
@@ -34,6 +36,6 @@ export function AboutForgetSection() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

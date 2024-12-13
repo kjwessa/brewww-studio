@@ -1,6 +1,8 @@
+import { Section } from '@/components/layout/Section'
+
 export function AboutExpectedSection() {
   return (
-    <section className="bg-brand-dark-bg text-white">
+    <Section theme="inherit" background="default">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <h2 className="mb-6 max-w-3xl text-4xl font-bold">Beyond the Expected</h2>
         <p className="mb-2 max-w-3xl text-lg">
@@ -21,6 +23,6 @@ export function AboutExpectedSection() {
           following trends and start setting them.
         </p>
       </div>
-    </section>
+    </Section>
   )
 }

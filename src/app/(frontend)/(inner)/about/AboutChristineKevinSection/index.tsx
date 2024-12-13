@@ -1,9 +1,10 @@
 import Image from 'next/image'
+import { Section } from '@/components/layout/Section'
 
 export function AboutChristineKevinSection() {
   return (
-    <section className="bg-brand-dark-bg h-full w-full pr-28 pl-0 text-white">
-      <div className="flex h-screen w-full max-w-full overflow-visible">
+    <Section theme="inherit" background="default">
+      <div className="flex h-full w-full max-w-full overflow-visible pr-28">
         <Image
           src="/5f53f60a0033860407ff3718_ThebyWessa2020-6960.jpg"
           width={1000}
@@ -15,6 +16,6 @@ export function AboutChristineKevinSection() {
           }}
         />
       </div>
-    </section>
+    </Section>
   )
 }

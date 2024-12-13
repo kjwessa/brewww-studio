@@ -6,7 +6,7 @@ import { CMSLink } from '@/components/Link'
 
 export function AboutHeroSection() {
   return (
-    <Section theme="dark" background="default">
+    <Section theme="inherit" background="default">
       <Container size="xl" spacing="2xl" className="pr-24 pl-60">
         <div className="grid-rows-auto 1fr)] grid auto-cols-fr grid-cols-[repeat(6, gap-4">
           <div className="col-span-4 row-start-1 row-end-2 flex h-full w-full flex-col items-start justify-start self-start">

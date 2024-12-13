@@ -1,9 +1,10 @@
+import { Section } from '@/components/layout/Section'
 import Image from 'next/image'
 
 export function AboutAncestorsSection() {
   return (
-    <section className="relative flex h-min w-full flex-col content-center items-center justify-center gap-10 bg-white px-6 py-20 text-xs text-black">
-      <div className="relative h-auto w-full">
+    <Section theme="inherit" background="default">
+      <div className="relative flex h-auto w-full flex-col content-center items-center justify-center gap-10 bg-white px-6 py-20 text-xs text-black">
         <div className="relative grid h-auto auto-rows-[minmax(0px,_1fr)] grid-cols-[146px_146px_146px_146px_146px_146px_146px_146px] grid-rows-[21.13rem] justify-start gap-8">
           <div
             className="relative flex h-min w-full content-center items-center justify-center gap-[0.63rem] self-start justify-self-start text-lg"
@@ -98,6 +99,6 @@ export function AboutAncestorsSection() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

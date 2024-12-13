@@ -1,10 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Section } from '@/components/layout/Section'
 
 export function AboutOffsetImageSection() {
   return (
-    <section className="about-intro">
-      <div className="bg-brand-gunmetal relative pt-4 pr-24 pb-12 text-white">
+    <Section theme="inherit" background="default">
+      <div className="relative pt-4 pr-24 pb-12">
         <div className="relative -mt-36 mr-24 h-[75vh] overflow-hidden">
           <Image
             src="https://bucket.brewww.studio/brewww/media/marybielskiandkevinwessa-6.jpg"
@@ -15,7 +16,7 @@ export function AboutOffsetImageSection() {
           />
         </div>
       </div>
-      <div className="bg-brand-gunmetal px-24 py-48 font-light text-white">
+      <div className="px-24 py-48">
         <div className="m-auto max-w-[62.50rem]">
           <div className="grid grid-cols-6">
             <div className="col-start-2 col-end-6 flex flex-col items-start justify-center">
@@ -37,6 +38,6 @@ export function AboutOffsetImageSection() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

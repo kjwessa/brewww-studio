@@ -1,9 +1,10 @@
 import Image from 'next/image'
+import { Section } from '@/components/layout/Section'
 
 export function AboutTeamSection() {
   return (
-    <section className="bg-brand-dark-bg px-6 py-12 font-light text-white md:px-24 md:py-48">
-      <div className="mx-auto max-w-5xl">
+    <Section theme="inherit" background="default">
+      <div className="mx-auto max-w-5xl md:px-24 md:py-48">
         <div className="grid gap-8 md:grid-cols-2 md:gap-x-12 md:gap-y-24">
           <div className="flex flex-col items-center text-center">
             <div className="w-96 pb-4">
@@ -41,6 +42,6 @@ export function AboutTeamSection() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

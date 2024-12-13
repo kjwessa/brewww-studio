@@ -1,9 +1,9 @@
 import Image from 'next/image'
-
+import { Section } from '@/components/layout/Section'
 export function AboutMediocritySection() {
   return (
-    <section className="bg-white py-24 text-[1.38rem] leading-7 font-light text-stone-950">
-      <div className="container mx-auto">
+    <Section theme="inherit" background="default">
+      <div className="container mx-auto py-24">
         <div className="flex flex-wrap justify-between">
           <div className="mb-16 w-full">
             <h2 className="max-w-3xl text-7xl">Mediocrity does not stand a chance with us</h2>
@@ -45,6 +45,6 @@ export function AboutMediocritySection() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

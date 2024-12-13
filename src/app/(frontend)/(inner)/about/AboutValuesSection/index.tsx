@@ -1,9 +1,9 @@
 import Image from 'next/image'
-
+import { Section } from '@/components/layout/Section'
 export function AboutValuesSection() {
   return (
-    <section className="bg-brand-dark-bg relative px-24 py-36 font-light text-white">
-      <div className="relative grid auto-cols-fr grid-cols-6 grid-rows-[auto_auto_auto_auto_auto_auto] gap-4">
+    <Section theme="inherit" background="default">
+      <div className="relative grid auto-cols-fr grid-cols-6 grid-rows-[auto_auto_auto_auto_auto_auto] gap-4 py-36">
         <div className="col-start-3 col-end-6 row-start-1 row-end-2 flex h-full w-full flex-col items-end justify-start font-bold uppercase">
           <div className="pb-5">+ Our Values</div>
         </div>
@@ -28,6 +28,6 @@ export function AboutValuesSection() {
           />
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

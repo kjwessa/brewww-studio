@@ -1,9 +1,9 @@
 import Image from 'next/image'
-
+import { Section } from '@/components/layout/Section'
 export function AboutWhatYouCanExpectSection() {
   return (
-    <section className="bg-zinc-950 text-white">
-      <article className="grid grid-cols-[103.906px_103.906px_103.906px_103.906px_103.906px_103.906px_103.906px_103.922px_103.906px_103.906px_103.906px_103.906px] grid-rows-[192px_auto_auto_auto_auto_76px] gap-x-10 gap-y-6">
+    <Section theme="inherit" background="default">
+      <article className="grid grid-cols-[103.906px_103.906px_103.906px_103.906px_103.906px_103.906px_103.906px_103.922px_103.906px_103.906px_103.906px_103.906px] grid-rows-[192px_auto_auto_auto_auto_76px] gap-x-10 gap-y-6 py-20">
         <div
           className="col-start-3 text-4xl"
           style={{
@@ -195,6 +195,6 @@ export function AboutWhatYouCanExpectSection() {
           </div>
         </div>
       </article>
-    </section>
+    </Section>
   )
 }

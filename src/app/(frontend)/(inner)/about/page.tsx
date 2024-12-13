@@ -21,6 +21,7 @@ import { AboutPrinciplesSection } from './AboutPrinciplesSection'
 import { AboutPursuitSection } from './AboutPursuitSection'
 import { AboutKillAverageSection } from './AboutKillAverageSection'
 import { AboutMediocritySection } from './AboutMediocritySection'
+import { Page } from '@/components/layout/Page'
 
 export default async function About() {
   const payload = await getPayload({ config: configPromise })
@@ -36,7 +37,7 @@ export default async function About() {
   })
 
   return (
-    <>
+    <Page theme="dark">
       <AboutHeroSection />
       <AboutOffsetImageSection />
       <AboutExpectedSection />
@@ -57,6 +58,6 @@ export default async function About() {
       <AboutPursuitSection />
       <AboutKillAverageSection />
       <AboutMediocritySection />
-    </>
+    </Page>
   )
 }

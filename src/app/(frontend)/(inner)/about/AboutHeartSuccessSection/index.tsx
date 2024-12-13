@@ -1,7 +1,9 @@
+import { Section } from '@/components/layout/Section'
+
 export function AboutHeartSuccessSection() {
   return (
-    <section className="overflow-hidden bg-black py-12 text-[1.38rem] leading-7 font-light text-white lg:pt-20 lg:pr-0 lg:pb-20 lg:pl-0">
-      <div className="m-auto max-w-[72.50rem] px-5">
+    <Section theme="inherit" background="default">
+      <div className="m-auto max-w-[72.50rem] overflow-hidden px-5 py-12 text-[1.38rem] leading-7 font-light lg:pt-20 lg:pr-0 lg:pb-20 lg:pl-0">
         <h2 className="mb-8 text-[3.38rem] leading-none lg:mb-10 lg:max-w-[56.06rem]">
           At the heart of our success is our team of experienced professionals, each bringing their
           unique expertise and creativity to the table. Our diverse team of creatives, strategists,
@@ -19,6 +21,6 @@ export function AboutHeartSuccessSection() {
           the architects of your digital success, turning your vision into a digital reality.
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

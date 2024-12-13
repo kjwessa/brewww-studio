@@ -7,14 +7,15 @@ import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { useRef } from 'react'
+import { Section } from '@/components/layout/Section'
 
 export function AboutTestimonialSection({ testimonials }: { testimonials: Testimonial[] }) {
   const prevRef = useRef<HTMLButtonElement>(null)
   const nextRef = useRef<HTMLButtonElement>(null)
 
   return (
-    <section className="relative overflow-hidden bg-zinc-100 pt-8 pb-10 text-[1.38rem] leading-7 font-light lg:pt-16 lg:pb-24">
-      <div className="relative m-auto max-w-[72.50rem] px-5">
+    <Section theme="inherit" background="default">
+      <div className="relative m-auto max-w-[72.50rem] overflow-hidden bg-zinc-100 px-5 pt-8 pb-10 text-[1.38rem] leading-7 font-light lg:pt-16 lg:pb-24">
         <div className="mb-16 overflow-hidden border-t-2 border-solid border-t-black/[0.3] pt-3.5 text-sm uppercase">
           <div className="relative pl-4">
             <svg
@@ -115,6 +116,6 @@ export function AboutTestimonialSection({ testimonials }: { testimonials: Testim
           </span>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

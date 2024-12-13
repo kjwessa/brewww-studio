@@ -1,6 +1,8 @@
+import { Section } from '@/components/layout/Section'
+
 export function AboutFutureSection() {
   return (
-    <section className="bg-white pt-16 text-black">
+    <Section theme="inherit" background="default">
       <div className="border-b-2 border-solid border-black">
         <div className="m-auto w-[95vw] max-w-[95vw]">
           <div className="m-auto flex min-h-[calc(240px)] max-w-[56.25rem] flex-col flex-wrap content-center items-center justify-center py-20 text-center">
@@ -13,6 +15,6 @@ export function AboutFutureSection() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }
