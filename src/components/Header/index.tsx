@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
-import React, { useState } from "react";
-import { getPayload } from "payload";
-import config from "@payload-config";
-import Image from "next/image";
-import Link from "next/link";
+import React, { useState } from 'react'
+import { getPayload } from 'payload'
+import config from '@payload-config'
+import Image from 'next/image'
+import Link from 'next/link'
 
-import { Button } from "@/components/Button";
+import { Button } from '@/components/Button'
 
 export default function Header() {
   // TODO: bring back the Payload call when the design is completed
@@ -14,29 +14,30 @@ export default function Header() {
   // TODO: bring back the header when the design is completed
   // const header = (await payload.findGlobal({ slug: "header" })) as HeaderData;
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+    setIsMenuOpen(!isMenuOpen)
+  }
 
   return (
     <>
-      <header className="top-0 z-50 w-full bg-brand-dark-bg text-sm text-neutral-400">
+      <header className="bg-brand-dark-bg top-0 z-50 w-full text-sm text-neutral-400">
         <div className="mx-auto max-w-[120rem] px-12">
           <div className="grid grid-cols-3 items-center py-4">
             <div className="flex">
               <Link href="/home">
                 <Image
                   className="w-36 max-w-full cursor-pointer"
-                  src="/images/brand/brewww-logotype-gold.png"
-                  alt="Brewww Logo"
+                  src="https://bucket.brewww.studio/brewww/media/brewww_logo_logotype_full_gold.svg"
+                  alt="Brewww Studio logo version logotype in brand gold"
                   width={144}
                   height={40}
+                  priority
                 />
               </Link>
             </div>
-            <nav className="flex items-center space-x-4 font-semibold uppercase text-white">
+            <nav className="flex items-center space-x-4 font-semibold text-white uppercase">
               <Link
                 className="relative inline-block min-w-max after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
                 href="/about"
@@ -81,10 +82,7 @@ export default function Header() {
                 {/* //TODO make sure this button is correctly linked */}
                 <Button href="/contact" label="Let's talk" />
               </div>
-              <button
-                className="h-12 min-w-8 cursor-pointer"
-                onClick={toggleMenu}
-              >
+              <button className="h-12 min-w-8 cursor-pointer" onClick={toggleMenu}>
                 <span className="flex h-full w-full items-center justify-center">
                   {!isMenuOpen ? (
                     <svg
@@ -151,16 +149,13 @@ export default function Header() {
         </div>
       </header>
       <div
-        className={`fixed inset-0 z-50 h-screen w-screen bg-brand-gold transition-opacity duration-300 ${
-          isMenuOpen ? "opacity-100" : "pointer-events-none opacity-0"
+        className={`bg-brand-gold fixed inset-0 z-50 h-screen w-screen transition-opacity duration-300 ${
+          isMenuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
         }`}
       >
-        <div className="relative m-2 flex h-[calc(100vh-1rem)] w-[calc(100vw-1rem)] flex-col justify-between overflow-hidden rounded-md bg-brand-dark-surface p-6">
+        <div className="bg-brand-dark-surface relative m-2 flex h-[calc(100vh-1rem)] w-[calc(100vw-1rem)] flex-col justify-between overflow-hidden rounded-md p-6">
           <div className="relative z-10 flex justify-end">
-            <button
-              onClick={toggleMenu}
-              className="text-white focus:outline-hidden"
-            >
+            <button onClick={toggleMenu} className="text-white focus:outline-hidden">
               <svg
                 width="32"
                 height="32"
@@ -188,7 +183,7 @@ export default function Header() {
             </button>
           </div>
           <div className="relative z-10 flex flex-col gap-y-4 pb-6 pl-6">
-            <div className="w-full overflow-hidden text-8xl uppercase leading-none text-white">
+            <div className="w-full overflow-hidden text-8xl leading-none text-white uppercase">
               <Link
                 className="group relative flex w-full max-w-full items-center justify-start opacity-[0.35] transition-opacity duration-300 hover:opacity-100"
                 href=""
@@ -199,7 +194,7 @@ export default function Header() {
                 <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </div>
-            <div className="w-full overflow-hidden text-8xl uppercase leading-none text-white">
+            <div className="w-full overflow-hidden text-8xl leading-none text-white uppercase">
               <Link
                 className="group relative flex w-full max-w-full items-center justify-start opacity-[0.35] transition-opacity duration-300 hover:opacity-100"
                 href=""
@@ -210,7 +205,7 @@ export default function Header() {
                 <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </div>
-            <div className="w-full overflow-hidden text-8xl uppercase leading-none text-white">
+            <div className="w-full overflow-hidden text-8xl leading-none text-white uppercase">
               <Link
                 className="group relative flex w-full max-w-full items-center justify-start opacity-[0.35] transition-opacity duration-300 hover:opacity-100"
                 href=""
@@ -221,7 +216,7 @@ export default function Header() {
                 <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </div>
-            <div className="w-full overflow-hidden text-8xl uppercase leading-none text-white">
+            <div className="w-full overflow-hidden text-8xl leading-none text-white uppercase">
               <Link
                 className="group relative flex w-full max-w-full items-center justify-start opacity-[0.35] transition-opacity duration-300 hover:opacity-100"
                 href=""
@@ -236,5 +231,5 @@ export default function Header() {
         </div>
       </div>
     </>
-  );
+  )
 }
