@@ -5,7 +5,6 @@ import { GridGuide } from '@/components/layout/GridGuide/index'
 import { Grain } from '@/components/Grain/index'
 import { AdminBar } from '@/components/AdminBar'
 import { draftMode } from 'next/headers'
-import Link from 'next/link'
 
 const DMSans = localFont({
   variable: '--font-dm-sans',
@@ -41,12 +40,6 @@ export default async function InnerLayout({ children }: { children: React.ReactN
       </head>
       <body className="bg-gray-950 text-gray-50 antialiased">
         <AdminBar adminBarProps={{ preview: isEnabled }} />
-        <Link 
-          href="/home" 
-          className="fixed top-4 right-4 z-50 px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-md transition-colors duration-200"
-        >
-          {'Back to Site'}
-        </Link>
         <Grain>
           <LivePreviewListener />
           {children}

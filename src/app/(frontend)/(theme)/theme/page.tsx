@@ -1,8 +1,17 @@
+'use client'
+
 import { Button } from '@/components/Button'
 import { TypographySection } from './TypographySection'
+import { ThemeNavigation } from './Navigation'
+import { Page } from '@/components/layout/Page'
+import { useState } from 'react'
+
 export default function StylesPage() {
+  const [theme, setTheme] = useState<'dark' | 'light'>('light')
+
   return (
-    <div className="bg-brand-dark-bg p-8">
+    <Page theme={theme}>
+      <ThemeNavigation theme={theme} onThemeChange={setTheme} />
       <TypographySection />
       <h1 className="mb-8 text-4xl font-bold">Button Styleguide</h1>
 
@@ -54,6 +63,6 @@ export default function StylesPage() {
         <h2 className="mb-4 text-2xl font-semibold">As Link</h2>
         <Button el="link" href="/example" label="Link Button" />
       </section>
-    </div>
+    </Page>
   )
 }

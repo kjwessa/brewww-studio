@@ -2,6 +2,8 @@
 
 import { Title } from '@/components/Title'
 import { useEffect, useState } from 'react'
+import { Section } from '@/components/layout/Section'
+import { Container } from '@/components/layout/Container'
 
 type TitleSize =
   | 'display-large'
@@ -49,7 +51,7 @@ export function TypographySection() {
     // Initial measurement after a short delay to ensure styles are applied
     const timeoutId = setTimeout(updateStyles, 100)
     window.addEventListener('resize', updateStyles)
-    
+
     return () => {
       clearTimeout(timeoutId)
       window.removeEventListener('resize', updateStyles)
@@ -69,35 +71,39 @@ export function TypographySection() {
   ]
 
   return (
-    <div className="space-y-12">
-      {typographyItems.map(({ size, label }) => (
-        <div key={size} className="space-y-2">
-          <div data-typography-item={size}>
-            <Title size={size} el="h2">
-              We craft brands beyond tomorrow
-            </Title>
-          </div>
-          <div className="space-y-1 text-sm text-gray-500">
-            <div>{label}</div>
-            {styles[size] && (
-              <div className="space-y-1 pl-4">
-                <div>
-                  <span className="text-gray-400">font-size: </span>
-                  {styles[size].fontSize.rem} / {styles[size].fontSize.px}
-                </div>
-                <div>
-                  <span className="text-gray-400">font-weight: </span>
-                  {styles[size].fontWeight}
-                </div>
-                <div>
-                  <span className="text-gray-400">letter-spacing: </span>
-                  {styles[size].letterSpacing}
-                </div>
+    <Section theme="inherit" background="default">
+      <Container spacing="large">
+        <div className="space-y-12">
+          {typographyItems.map(({ size, label }) => (
+            <div key={size} className="space-y-2">
+              <div data-typography-item={size}>
+                <Title size={size} el="h2">
+                  We craft brands beyond tomorrow
+                </Title>
               </div>
-            )}
-          </div>
+              <div className="space-y-1 text-sm text-gray-500">
+                <div>{label}</div>
+                {styles[size] && (
+                  <div className="space-y-1 pl-4">
+                    <div>
+                      <span className="text-gray-400">font-size: </span>
+                      {styles[size].fontSize.rem} / {styles[size].fontSize.px}
+                    </div>
+                    <div>
+                      <span className="text-gray-400">font-weight: </span>
+                      {styles[size].fontWeight}
+                    </div>
+                    <div>
+                      <span className="text-gray-400">letter-spacing: </span>
+                      {styles[size].letterSpacing}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </Container>
+    </Section>
   )
 }
