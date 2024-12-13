@@ -1,8 +1,9 @@
-import { Button } from "@/components/Button";
-
+import { Button } from '@/components/Button'
+import { TypographySection } from './TypographySection'
 export default function StylesPage() {
   return (
     <div className="bg-brand-dark-bg p-8">
+      <TypographySection />
       <h1 className="mb-8 text-4xl font-bold">Button Styleguide</h1>
 
       <section className="mb-8">
@@ -54,5 +55,5 @@ export default function StylesPage() {
         <Button el="link" href="/example" label="Link Button" />
       </section>
     </div>
-  );
+  )
 }
