@@ -1,5 +1,6 @@
-import { Section } from '@/components/layout/Section'
 import { useEffect, useState } from 'react'
+import { Section } from '@/components/layout/Section'
+import { Container } from '@/components/layout/Container'
 
 interface SwitchProps {
   checked: boolean
@@ -20,7 +21,7 @@ const Switch = ({ checked, onCheckedChange, label }: SwitchProps) => {
         }`}
       >
         <span
-          className={`block h-5 w-5 translate-y-0.5 rounded-full bg-background transition-transform duration-200 ease-in-out ${
+          className={`bg-background block h-5 w-5 translate-y-0.5 rounded-full transition-transform duration-200 ease-in-out ${
             checked ? 'translate-x-5' : 'translate-x-0.5'
           }`}
         />
@@ -62,7 +63,12 @@ const ColorCard = ({ name, colorVar }: ColorCardProps) => {
         const [r, g, b] = rgbMatch.map(Number)
 
         // Convert to HEX
-        const hex = '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('').toUpperCase()
+        const hex =
+          '#' +
+          [r, g, b]
+            .map((x) => x.toString(16).padStart(2, '0'))
+            .join('')
+            .toUpperCase()
 
         // Convert to HSL
         const r1 = r / 255
@@ -70,7 +76,9 @@ const ColorCard = ({ name, colorVar }: ColorCardProps) => {
         const b1 = b / 255
         const max = Math.max(r1, g1, b1)
         const min = Math.min(r1, g1, b1)
-        let h = 0, s = 0, l = (max + min) / 2
+        let h = 0,
+          s = 0,
+          l = (max + min) / 2
 
         if (max !== min) {
           const d = max - min
@@ -115,7 +123,7 @@ const ColorCard = ({ name, colorVar }: ColorCardProps) => {
       />
       <div className="space-y-1 text-center">
         <span className="text-body-medium font-medium">{name}</span>
-        <div className="space-y-0.5 font-mono text-xs text-muted-foreground">
+        <div className="text-muted-foreground space-y-0.5 font-mono text-xs">
           <span className="block">{colorFormats.hex}</span>
           <span className="block">{colorFormats.hsl}</span>
           <span className="block">{colorFormats.oklch}</span>
@@ -140,53 +148,56 @@ export const ColorSection = ({ defaultTheme }: ColorSectionProps) => {
     }
   }, [defaultTheme, overrideTheme])
 
-  const colors = currentTheme === 'light' ? [
-    { name: 'Background', var: '--color-background-light' },
-    { name: 'Foreground', var: '--color-foreground-light' },
-    { name: 'Card', var: '--color-card-light' },
-    { name: 'Card Foreground', var: '--color-card-foreground-light' },
-    { name: 'Popover', var: '--color-popover-light' },
-    { name: 'Popover Foreground', var: '--color-popover-foreground-light' },
-    { name: 'Primary', var: '--color-primary-light' },
-    { name: 'Primary Foreground', var: '--color-primary-foreground-light' },
-    { name: 'Secondary', var: '--color-secondary-light' },
-    { name: 'Secondary Foreground', var: '--color-secondary-foreground-light' },
-    { name: 'Muted', var: '--color-muted-light' },
-    { name: 'Muted Foreground', var: '--color-muted-foreground-light' },
-    { name: 'Accent', var: '--color-accent-light' },
-    { name: 'Accent Foreground', var: '--color-accent-foreground-light' },
-    { name: 'Destructive', var: '--color-destructive-light' },
-    { name: 'Destructive Foreground', var: '--color-destructive-foreground-light' },
-    { name: 'Border', var: '--color-border-light' },
-    { name: 'Input', var: '--color-input-light' },
-    { name: 'Ring', var: '--color-ring-light' },
-  ] : [
-    { name: 'Background', var: '--color-background-dark' },
-    { name: 'Foreground', var: '--color-foreground-dark' },
-    { name: 'Card', var: '--color-card-dark' },
-    { name: 'Card Foreground', var: '--color-card-foreground-dark' },
-    { name: 'Popover', var: '--color-popover-dark' },
-    { name: 'Popover Foreground', var: '--color-popover-foreground-dark' },
-    { name: 'Primary', var: '--color-primary-dark' },
-    { name: 'Primary Foreground', var: '--color-primary-foreground-dark' },
-    { name: 'Secondary', var: '--color-secondary-dark' },
-    { name: 'Secondary Foreground', var: '--color-secondary-foreground-dark' },
-    { name: 'Muted', var: '--color-muted-dark' },
-    { name: 'Muted Foreground', var: '--color-muted-foreground-dark' },
-    { name: 'Accent', var: '--color-accent-dark' },
-    { name: 'Accent Foreground', var: '--color-accent-foreground-dark' },
-    { name: 'Destructive', var: '--color-destructive-dark' },
-    { name: 'Destructive Foreground', var: '--color-destructive-foreground-dark' },
-    { name: 'Border', var: '--color-border-dark' },
-    { name: 'Input', var: '--color-input-dark' },
-    { name: 'Ring', var: '--color-ring-dark' },
-  ]
+  const colors =
+    currentTheme === 'light'
+      ? [
+          { name: 'Background', var: '--color-background-light' },
+          { name: 'Foreground', var: '--color-foreground-light' },
+          { name: 'Card', var: '--color-card-light' },
+          { name: 'Card Foreground', var: '--color-card-foreground-light' },
+          { name: 'Popover', var: '--color-popover-light' },
+          { name: 'Popover Foreground', var: '--color-popover-foreground-light' },
+          { name: 'Primary', var: '--color-primary-light' },
+          { name: 'Primary Foreground', var: '--color-primary-foreground-light' },
+          { name: 'Secondary', var: '--color-secondary-light' },
+          { name: 'Secondary Foreground', var: '--color-secondary-foreground-light' },
+          { name: 'Muted', var: '--color-muted-light' },
+          { name: 'Muted Foreground', var: '--color-muted-foreground-light' },
+          { name: 'Accent', var: '--color-accent-light' },
+          { name: 'Accent Foreground', var: '--color-accent-foreground-light' },
+          { name: 'Destructive', var: '--color-destructive-light' },
+          { name: 'Destructive Foreground', var: '--color-destructive-foreground-light' },
+          { name: 'Border', var: '--color-border-light' },
+          { name: 'Input', var: '--color-input-light' },
+          { name: 'Ring', var: '--color-ring-light' },
+        ]
+      : [
+          { name: 'Background', var: '--color-background-dark' },
+          { name: 'Foreground', var: '--color-foreground-dark' },
+          { name: 'Card', var: '--color-card-dark' },
+          { name: 'Card Foreground', var: '--color-card-foreground-dark' },
+          { name: 'Popover', var: '--color-popover-dark' },
+          { name: 'Popover Foreground', var: '--color-popover-foreground-dark' },
+          { name: 'Primary', var: '--color-primary-dark' },
+          { name: 'Primary Foreground', var: '--color-primary-foreground-dark' },
+          { name: 'Secondary', var: '--color-secondary-dark' },
+          { name: 'Secondary Foreground', var: '--color-secondary-foreground-dark' },
+          { name: 'Muted', var: '--color-muted-dark' },
+          { name: 'Muted Foreground', var: '--color-muted-foreground-dark' },
+          { name: 'Accent', var: '--color-accent-dark' },
+          { name: 'Accent Foreground', var: '--color-accent-foreground-dark' },
+          { name: 'Destructive', var: '--color-destructive-dark' },
+          { name: 'Destructive Foreground', var: '--color-destructive-foreground-dark' },
+          { name: 'Border', var: '--color-border-dark' },
+          { name: 'Input', var: '--color-input-dark' },
+          { name: 'Ring', var: '--color-ring-dark' },
+        ]
 
   const handleThemeToggle = () => {
     if (!overrideTheme) {
       setOverrideTheme(true)
     }
-    setCurrentTheme(current => current === 'light' ? 'dark' : 'light')
+    setCurrentTheme((current) => (current === 'light' ? 'dark' : 'light'))
   }
 
   const handleOverrideToggle = (checked: boolean) => {
@@ -197,8 +208,8 @@ export const ColorSection = ({ defaultTheme }: ColorSectionProps) => {
   }
 
   return (
-    <Section theme={currentTheme}>
-      <div className="container">
+    <Section theme={currentTheme} background="default">
+      <Container size="3xl" spacing="large">
         <div className="mb-12 flex items-center justify-between">
           <h2 className="text-headline-small">Color System</h2>
           <div className="flex items-center gap-8">
@@ -221,7 +232,7 @@ export const ColorSection = ({ defaultTheme }: ColorSectionProps) => {
             <ColorCard key={color.var} name={color.name} colorVar={color.var} />
           ))}
         </div>
-      </div>
+      </Container>
     </Section>
   )
 }

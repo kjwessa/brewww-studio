@@ -27,12 +27,12 @@ export function ThemeNavigation({ theme, onThemeChange }: ThemeNavigationProps) 
   }
 
   return (
-    <Section 
-      theme="inherit" 
-      background="default" 
+    <Section
+      theme="inherit"
+      background="default"
       className={`sticky top-0 z-50 transition-shadow duration-200 ${hasScrolled ? 'shadow-md' : ''}`}
     >
-      <Container spacing="small">
+      <Container size="3xl" spacing="none" className="py-4">
         <nav className="flex items-center justify-between px-4">
           <Link
             href="/home"
