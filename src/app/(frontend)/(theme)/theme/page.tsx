@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/Button'
 import { TypographySection } from './TypographySection'
+import { ColorSection } from './ColorSection'
 import { ThemeNavigation } from './Navigation'
 import { Page } from '@/components/layout/Page'
 import { useState } from 'react'
@@ -13,6 +14,7 @@ export default function StylesPage() {
     <Page theme={theme}>
       <ThemeNavigation theme={theme} onThemeChange={setTheme} />
       <TypographySection />
+      <ColorSection />
       <h1 className="mb-8 text-4xl font-bold">Button Styleguide</h1>
 
       <section className="mb-8">
