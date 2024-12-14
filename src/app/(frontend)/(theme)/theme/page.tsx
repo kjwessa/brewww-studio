@@ -14,7 +14,7 @@ export default function StylesPage() {
     <Page theme={theme}>
       <ThemeNavigation theme={theme} onThemeChange={setTheme} />
       <TypographySection />
-      <ColorSection />
+      <ColorSection defaultTheme={theme} />
       <h1 className="mb-8 text-4xl font-bold">Button Styleguide</h1>
 
       <section className="mb-8">

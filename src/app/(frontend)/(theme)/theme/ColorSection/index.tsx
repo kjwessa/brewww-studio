@@ -1,6 +1,34 @@
 import { Section } from '@/components/layout/Section'
 import { useEffect, useState } from 'react'
 
+interface SwitchProps {
+  checked: boolean
+  onCheckedChange: (checked: boolean) => void
+  label?: string
+}
+
+const Switch = ({ checked, onCheckedChange, label }: SwitchProps) => {
+  return (
+    <label className="inline-flex cursor-pointer items-center">
+      {label && <span className="mr-2 text-sm">{label}</span>}
+      <button
+        role="switch"
+        aria-checked={checked}
+        onClick={() => onCheckedChange(!checked)}
+        className={`relative h-6 w-11 rounded-full transition-colors duration-200 ease-in-out ${
+          checked ? 'bg-primary' : 'bg-muted'
+        }`}
+      >
+        <span
+          className={`block h-5 w-5 translate-y-0.5 rounded-full bg-background transition-transform duration-200 ease-in-out ${
+            checked ? 'translate-x-5' : 'translate-x-0.5'
+          }`}
+        />
+      </button>
+    </label>
+  )
+}
+
 interface ColorCardProps {
   name: string
   colorVar: string
@@ -97,8 +125,22 @@ const ColorCard = ({ name, colorVar }: ColorCardProps) => {
   )
 }
 
-export const ColorSection = () => {
-  const lightColors = [
+interface ColorSectionProps {
+  defaultTheme: 'light' | 'dark'
+}
+
+export const ColorSection = ({ defaultTheme }: ColorSectionProps) => {
+  const [overrideTheme, setOverrideTheme] = useState(false)
+  const [currentTheme, setCurrentTheme] = useState<'light' | 'dark'>(defaultTheme)
+
+  // Update current theme when default theme changes, unless overridden
+  useEffect(() => {
+    if (!overrideTheme) {
+      setCurrentTheme(defaultTheme)
+    }
+  }, [defaultTheme, overrideTheme])
+
+  const colors = currentTheme === 'light' ? [
     { name: 'Background', var: '--color-background-light' },
     { name: 'Foreground', var: '--color-foreground-light' },
     { name: 'Card', var: '--color-card-light' },
@@ -118,9 +160,7 @@ export const ColorSection = () => {
     { name: 'Border', var: '--color-border-light' },
     { name: 'Input', var: '--color-input-light' },
     { name: 'Ring', var: '--color-ring-light' },
-  ]
-
-  const darkColors = [
+  ] : [
     { name: 'Background', var: '--color-background-dark' },
     { name: 'Foreground', var: '--color-foreground-dark' },
     { name: 'Card', var: '--color-card-dark' },
@@ -142,29 +182,46 @@ export const ColorSection = () => {
     { name: 'Ring', var: '--color-ring-dark' },
   ]
 
-  return (
-    <div className="space-y-16">
-      <Section>
-        <div className="container">
-          <h2 className="text-headline-small mb-12">Light Theme Colors</h2>
-          <div className="grid auto-rows-fr grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-8">
-            {lightColors.map((color) => (
-              <ColorCard key={color.var} name={color.name} colorVar={color.var} />
-            ))}
-          </div>
-        </div>
-      </Section>
+  const handleThemeToggle = () => {
+    if (!overrideTheme) {
+      setOverrideTheme(true)
+    }
+    setCurrentTheme(current => current === 'light' ? 'dark' : 'light')
+  }
 
-      <Section theme="dark">
-        <div className="container">
-          <h2 className="text-headline-small mb-12">Dark Theme Colors</h2>
-          <div className="grid auto-rows-fr grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-8">
-            {darkColors.map((color) => (
-              <ColorCard key={color.var} name={color.name} colorVar={color.var} />
-            ))}
+  const handleOverrideToggle = (checked: boolean) => {
+    setOverrideTheme(checked)
+    if (!checked) {
+      setCurrentTheme(defaultTheme)
+    }
+  }
+
+  return (
+    <Section theme={currentTheme}>
+      <div className="container">
+        <div className="mb-12 flex items-center justify-between">
+          <h2 className="text-headline-small">Color System</h2>
+          <div className="flex items-center gap-8">
+            <Switch
+              checked={overrideTheme}
+              onCheckedChange={handleOverrideToggle}
+              label="Override Navigation Theme"
+            />
+            {overrideTheme && (
+              <Switch
+                checked={currentTheme === 'dark'}
+                onCheckedChange={handleThemeToggle}
+                label="Dark Mode"
+              />
+            )}
           </div>
         </div>
-      </Section>
-    </div>
+        <div className="grid auto-rows-fr grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-8">
+          {colors.map((color) => (
+            <ColorCard key={color.var} name={color.name} colorVar={color.var} />
+          ))}
+        </div>
+      </div>
+    </Section>
   )
 }
