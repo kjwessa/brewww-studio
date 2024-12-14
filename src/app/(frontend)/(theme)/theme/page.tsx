@@ -6,12 +6,14 @@ import { ColorSection } from './_components/ColorSection'
 import { ThemeNavigation } from './_components/Navigation'
 import { Page } from '@/components/layout/Page'
 import { useState } from 'react'
+import { ThemeIntroSection } from './_components/ThemeIntroSection'
 
 export default function StylesPage() {
   const [theme, setTheme] = useState<'dark' | 'light'>('light')
 
   return (
     <Page theme={theme}>
+      <ThemeIntroSection />
       <ThemeNavigation theme={theme} onThemeChange={setTheme} />
       <TypographySection />
       <ColorSection defaultTheme={theme} />

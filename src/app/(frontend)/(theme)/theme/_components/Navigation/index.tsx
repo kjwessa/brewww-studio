@@ -55,9 +55,7 @@ export function ThemeNavigation({ theme, onThemeChange }: ThemeNavigationProps) 
     <Section
       theme="inherit"
       background="default"
-      className={`sticky top-0 z-50 transition-all duration-200 ${
-        hasScrolled ? 'shadow-[0_2px_12px_rgba(0,0,0,0.08)]' : ''
-      }`}
+      className="sticky top-0 z-50 shadow-[0_2px_8px_rgba(0,0,0,0.06)] transition-all duration-200"
     >
       <Container size="3xl" spacing="none" className="py-3">
         <nav className="flex items-center justify-between px-4">

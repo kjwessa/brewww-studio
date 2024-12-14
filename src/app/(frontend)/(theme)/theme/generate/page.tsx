@@ -1,0 +1,104 @@
+'use client'
+
+import { useState } from 'react'
+
+export default function FluidBuilderPage() {
+  const [settings, setSettings] = useState({
+    webflowWidth: 90, // Max width where scaling stops
+    figmaWidth: 90, // Base design width
+    minWidth: 20, // Min width where scaling stops
+  })
+
+  return (
+    <div className="container mx-auto space-y-8 py-8">
+      <h1 className="text-4xl font-bold">Fluid Builder</h1>
+
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        {/* Webflow Site Width */}
+        <div className="rounded-lg border bg-white p-6 shadow-sm">
+          <div className="space-y-4">
+            <label htmlFor="webflowWidth" className="block">
+              Webflow Site Width
+              <span className="block text-sm text-gray-500">
+                stop scaling up at this screen size
+              </span>
+            </label>
+            <div className="flex items-center space-x-2">
+              <input
+                id="webflowWidth"
+                type="number"
+                className="w-full rounded border px-3 py-2"
+                value={settings.webflowWidth}
+                onChange={(e) =>
+                  setSettings({
+                    ...settings,
+                    webflowWidth: Number(e.target.value),
+                  })
+                }
+              />
+              <span className="text-gray-500">REM</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Figma Design Width */}
+        <div className="rounded-lg border bg-white p-6 shadow-sm">
+          <div className="space-y-4">
+            <label htmlFor="figmaWidth" className="block">
+              Figma Design Width
+              <span className="block text-sm text-gray-500">scale from this screen size</span>
+            </label>
+            <div className="flex items-center space-x-2">
+              <input
+                id="figmaWidth"
+                type="number"
+                className="w-full rounded border px-3 py-2"
+                value={settings.figmaWidth}
+                onChange={(e) =>
+                  setSettings({
+                    ...settings,
+                    figmaWidth: Number(e.target.value),
+                  })
+                }
+              />
+              <span className="text-gray-500">REM</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Min Screen Width */}
+        <div className="rounded-lg border bg-white p-6 shadow-sm">
+          <div className="space-y-4">
+            <label htmlFor="minWidth" className="block">
+              Min Screen Width
+              <span className="block text-sm text-gray-500">
+                stop scaling down at this screen size
+              </span>
+            </label>
+            <div className="flex items-center space-x-2">
+              <input
+                id="minWidth"
+                type="number"
+                className="w-full rounded border px-3 py-2"
+                value={settings.minWidth}
+                onChange={(e) =>
+                  setSettings({
+                    ...settings,
+                    minWidth: Number(e.target.value),
+                  })
+                }
+              />
+              <span className="text-gray-500">REM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Generated Values */}
+      <div className="mt-8 rounded-lg border bg-white p-6 shadow-sm">
+        <h2 className="mb-4 text-2xl font-semibold">Generated Values</h2>
+        {/* Add fluid calculation display here */}
+      </div>
+    </div>
+  )
+}
