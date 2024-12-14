@@ -1,9 +1,9 @@
 'use client'
 
 import { Button } from '@/components/Button'
-import { TypographySection } from './TypographySection'
-import { ColorSection } from './ColorSection'
-import { ThemeNavigation } from './Navigation'
+import { TypographySection } from './_components/TypographySection'
+import { ColorSection } from './_components/ColorSection'
+import { ThemeNavigation } from './_components/Navigation'
 import { Page } from '@/components/layout/Page'
 import { useState } from 'react'
 
