@@ -26,6 +26,9 @@
     "ci": "pnpm payload migrate && pnpm build"
   },
   "dependencies": {
+    "@dnd-kit/core": "6.3.1",
+    "@dnd-kit/sortable": "10.0.0",
+    "@dnd-kit/utilities": "3.2.2",
     "@neondatabase/serverless": "0.10.4",
     "@payloadcms/db-postgres": "^3.6.0",
     "@payloadcms/email-nodemailer": "^3.6.0",
