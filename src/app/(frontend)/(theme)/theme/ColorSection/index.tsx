@@ -208,7 +208,7 @@ export const ColorSection = ({ defaultTheme }: ColorSectionProps) => {
   }
 
   return (
-    <Section theme={currentTheme} background="default">
+    <Section id="colors" theme={currentTheme} background="default">
       <Container size="3xl" spacing="large">
         <div className="mb-12 flex items-center justify-between">
           <h2 className="text-headline-small">Color System</h2>

@@ -91,7 +91,7 @@ export function TypographySection() {
   ]
 
   return (
-    <Section theme="inherit" background="default">
+    <Section id="typography" theme="inherit" background="default">
       <Container size="3xl" spacing="large">
         <div className="space-y-12">
           <div className="space-y-12">
