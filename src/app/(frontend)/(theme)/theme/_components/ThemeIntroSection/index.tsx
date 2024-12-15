@@ -3,6 +3,7 @@
 import { Container } from '@/components/layout/Container'
 import { Section } from '@/components/layout/Section'
 import { Title } from '@/components/Title'
+import { SpecialButton } from '../SpecialButton'
 
 export function ThemeIntroSection() {
   return (
@@ -15,6 +16,9 @@ export function ThemeIntroSection() {
           <p className="text-[var(--text-lg)] text-[var(--color-muted-foreground)] max-w-2xl mx-auto">
             Generate a custom theme for your Brewww project. Adjust spacing, colors, typography, and more to create a cohesive design system that matches your brand.
           </p>
+          <div className="pt-4">
+            <SpecialButton />
+          </div>
         </div>
       </Container>
     </Section>
