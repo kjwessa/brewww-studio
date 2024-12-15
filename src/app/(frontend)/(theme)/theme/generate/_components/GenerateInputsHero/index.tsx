@@ -2,14 +2,10 @@
 
 import { Container } from '@/components/layout/Container'
 import { Section } from '@/components/layout/Section'
-import { useState } from 'react'
+import { useThemeGenerate } from '../../_context/ThemeGenerateContext'
 
 export function GenerateInputsHero() {
-  const [settings, setSettings] = useState({
-    maxWidth: 90, // Max width where scaling stops
-    figmaWidth: 90, // Base design width
-    minWidth: 20, // Min width where scaling stops
-  })
+  const { settings, setSettings } = useThemeGenerate()
 
   return (
     <Section theme="inherit" background="default">

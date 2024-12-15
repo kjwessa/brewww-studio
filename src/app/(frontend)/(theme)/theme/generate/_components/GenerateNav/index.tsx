@@ -3,6 +3,7 @@
 import { Container } from '@/components/layout/Container'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useThemeGenerate } from '../../_context/ThemeGenerateContext'
 
 interface NavItem {
   name: string
@@ -19,10 +20,10 @@ const navigation: NavItem[] = [
 
 export function GenerateNav() {
   const pathname = usePathname()
+  const { resetToDefaults } = useThemeGenerate()
 
   const handleResetValues = () => {
-    // TODO: Implement reset functionality
-    console.log('Reset values clicked')
+    resetToDefaults()
   }
 
   return (

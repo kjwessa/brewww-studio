@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Section } from '@/components/layout/Section';
 import { Container } from '@/components/layout/Container';
+import { useThemeGenerate } from '../../_context/ThemeGenerateContext';
 import {
   DndContext,
   closestCenter,
@@ -104,30 +105,22 @@ const SortableItem = ({ variable, onRemove, onUpdate }: SortableItemProps) => {
   );
 };
 
-export const GenerateTitleSection = () => {
+export function GenerateTitleSection() {
+  const { variables, setVariables } = useThemeGenerate();
   const [desktopRatio, setDesktopRatio] = useState<number>(1.39);
   const [mobileRatio, setMobileRatio] = useState<number>(1.26);
-  const [variables, setVariables] = useState<HeadingVariable[]>([
-    { id: '1', name: '--display-font-size', desktopSize: 7.21, mobileSize: 4.00, scaleIndex: 6, unit: 'rem' },
-    { id: '2', name: '--h1-font-size', desktopSize: 5.19, mobileSize: 3.18, scaleIndex: 5, unit: 'rem' },
-    { id: '3', name: '--h2-font-size', desktopSize: 3.73, mobileSize: 2.52, scaleIndex: 4, unit: 'rem' },
-    { id: '4', name: '--h3-font-size', desktopSize: 2.69, mobileSize: 2.00, scaleIndex: 3, unit: 'rem' },
-    { id: '5', name: '--h4-font-size', desktopSize: 1.93, mobileSize: 1.59, scaleIndex: 2, unit: 'rem' },
-    { id: '6', name: '--h5-font-size', desktopSize: 1.39, mobileSize: 1.26, scaleIndex: 1, unit: 'rem' },
-    { id: '7', name: '--h6-font-size', desktopSize: 1.00, mobileSize: 1.00, scaleIndex: 0, unit: 'rem' },
-  ]);
   const [displayUnit, setDisplayUnit] = useState('rem');
 
   // Update desktop sizes when the ratio changes
   useEffect(() => {
     const baseSize = 1.00; // h6 size
-    setVariables(prevVariables => 
-      prevVariables.map(variable => ({
+    setVariables((prevVariables) =>
+      prevVariables.map((variable) => ({
         ...variable,
-        desktopSize: Number((baseSize * Math.pow(desktopRatio, variable.scaleIndex)).toFixed(2))
+        desktopSize: Number((baseSize * Math.pow(desktopRatio, variable.scaleIndex)).toFixed(2)),
       }))
     );
-  }, [desktopRatio]);
+  }, [desktopRatio, setVariables]);
 
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -141,15 +134,18 @@ export const GenerateTitleSection = () => {
     const newScaleIndex = variables.length;
     const baseSize = 1.00;
     const newDesktopSize = Number((baseSize * Math.pow(desktopRatio, newScaleIndex)).toFixed(2));
-    
-    setVariables([...variables, { 
-      id: newId, 
-      name: '', 
-      desktopSize: newDesktopSize,
-      mobileSize: 1, 
-      scaleIndex: newScaleIndex,
-      unit: displayUnit
-    }]);
+
+    setVariables([
+      ...variables,
+      {
+        id: newId,
+        name: '',
+        desktopSize: newDesktopSize,
+        mobileSize: 1,
+        scaleIndex: newScaleIndex,
+        unit: displayUnit,
+      },
+    ]);
   };
 
   const handleRemoveVariable = (index: number) => {
@@ -169,13 +165,15 @@ export const GenerateTitleSection = () => {
       setVariables((items) => {
         const oldIndex = items.findIndex((item) => item.id === active.id);
         const newIndex = items.findIndex((item) => item.id === over.id);
-        
+
         // Update scale indices after reordering
         const reorderedItems = arrayMove(items, oldIndex, newIndex);
         return reorderedItems.map((item, index) => ({
           ...item,
           scaleIndex: reorderedItems.length - 1 - index,
-          desktopSize: Number((1.00 * Math.pow(desktopRatio, reorderedItems.length - 1 - index)).toFixed(2))
+          desktopSize: Number(
+            (1.00 * Math.pow(desktopRatio, reorderedItems.length - 1 - index)).toFixed(2)
+          ),
         }));
       });
     }
@@ -183,11 +181,13 @@ export const GenerateTitleSection = () => {
 
   // Update all variables when display unit changes
   useEffect(() => {
-    setVariables(variables.map(variable => ({
-      ...variable,
-      unit: displayUnit
-    })));
-  }, [displayUnit]);
+    setVariables((prevVariables) =>
+      prevVariables.map((variable) => ({
+        ...variable,
+        unit: displayUnit,
+      }))
+    );
+  }, [displayUnit, setVariables]);
 
   return (
     <Section theme="inherit" background="default">

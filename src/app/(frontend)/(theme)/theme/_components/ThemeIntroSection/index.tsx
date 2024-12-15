@@ -1,21 +1,20 @@
-import { Section } from '@/components/layout/Section'
+'use client'
+
 import { Container } from '@/components/layout/Container'
+import { Section } from '@/components/layout/Section'
 import { Title } from '@/components/Title'
-import { Text } from '@/components/Text'
 
 export function ThemeIntroSection() {
   return (
-    <Section theme="inherit" background="primary">
-      <Container size="3xl" spacing="medium">
-        <div className="flex flex-col items-center text-center">
-          <Title size="display-small" className="mb-6">
-            Forward Slash
+    <Section theme="inherit" background="default">
+      <Container size="3xl" spacing="large">
+        <div className="text-center space-y-6">
+          <Title size="display-medium" className="text-[var(--color-foreground)]">
+            Brewww Theme
           </Title>
-          <Text size="body-large" className="max-w-2xl text-zinc-400">
-            Explore our design system and theme configuration. This page showcases our typography,
-            colors, components, and design tokens that create a consistent and beautiful user
-            experience across our platform.
-          </Text>
+          <p className="text-[var(--text-lg)] text-[var(--color-muted-foreground)] max-w-2xl mx-auto">
+            Generate a custom theme for your Brewww project. Adjust spacing, colors, typography, and more to create a cohesive design system that matches your brand.
+          </p>
         </div>
       </Container>
     </Section>
