@@ -9,9 +9,25 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  display: inline-block;
+  min-width: 180px;
+  text-align: center;
 }
 
 .specialButton:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(255, 107, 0, 0.2);
+}
+
+.specialButton span {
+  display: inline-block;
+  transition: color 0.15s ease;
+}
+
+.specialButton span.space {
+  margin: 0 0.25em;
+}
+
+.specialButton .scrambling {
+  color: rgba(255, 255, 255, 0.7);
 }
