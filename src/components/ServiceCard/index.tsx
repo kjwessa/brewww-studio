@@ -1,111 +1,105 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
+import React, { useContext } from 'react'
 import { Service, Media } from '@/payload-types'
 import Image from 'next/image'
 import Link from 'next/link'
-import gsap from 'gsap'
+import { motion, useAnimationControls } from 'motion/react'
 
-export function ServiceCard({ service }: { service: Service }) {
-  const cardRef = useRef<HTMLDivElement>(null)
+// Create a context for managing card opacity
+const ServiceCardContext = React.createContext<{
+  updateOtherCards: (hoveredIndex: number, progress: number) => void
+  registerCard: (index: number, setOpacity: (opacity: number) => void) => void
+}>({
+  updateOtherCards: () => {},
+  registerCard: () => {},
+})
 
-  useEffect(() => {
-    if (!cardRef.current) return
+export function ServiceCardProvider({ children }: { children: React.ReactNode }) {
+  const cardSetters = React.useRef<Map<number, (opacity: number) => void>>(new Map())
 
-    const card = cardRef.current
-    const image = card.querySelector('.service-card-image') as HTMLElement
-    const text = card.querySelector('.service-card-text') as HTMLElement
-    const allCards = document.querySelectorAll('.service-card')
-
-    const timeline = gsap.timeline({ paused: true })
-
-    timeline.to(image, {
-      width: '180px',
-      duration: 0.5,
-      ease: 'power2.out',
+  const updateOtherCards = (hoveredIndex: number, progress: number) => {
+    cardSetters.current.forEach((setOpacity, index) => {
+      if (index !== hoveredIndex) {
+        const opacity = Math.max(0.3, 1 - 0.7 * progress * (1 - index / cardSetters.current.size))
+        setOpacity(opacity)
+      }
     })
+  }
 
-    timeline.to(
-      text,
-      {
-        x: '8%',
-        duration: 0.5,
-        ease: 'power2.out',
-      },
-      0,
-    )
-
-    const updateOpacity = (progress: number) => {
-      allCards.forEach((otherCard, index) => {
-        if (otherCard !== card) {
-          const opacity = gsap.utils.clamp(
-            0.3,
-            1,
-            1 - 0.7 * progress * (1 - index / allCards.length),
-          )
-          gsap.to(otherCard, {
-            opacity: opacity,
-            duration: 0.3,
-            ease: 'power2.out',
-          })
-        }
-      })
-    }
-
-    timeline.to(
-      {},
-      {
-        duration: 0.5,
-        onUpdate: () => updateOpacity(timeline.progress()),
-      },
-      0,
-    )
-
-    let currentProgress = 0
-
-    const playAnimation = () => {
-      console.log('Hover on - Opacity:', 1 - currentProgress)
-      gsap.to(timeline, {
-        progress: 1,
-        duration: 0.8, // Increased duration for slower hover on effect
-        ease: 'power2.out',
-        overwrite: true,
-        onUpdate: () => {
-          currentProgress = timeline.progress()
-        },
-      })
-    }
-
-    const reverseAnimation = () => {
-      console.log('Hover off - Opacity:', 1 - currentProgress)
-      gsap.to(timeline, {
-        progress: 0,
-        duration: 0.3, // Decreased duration for faster hover off effect
-        ease: 'power2.in',
-        overwrite: true,
-        onUpdate: () => {
-          currentProgress = timeline.progress()
-        },
-      })
-    }
-
-    card.addEventListener('mouseenter', playAnimation)
-    card.addEventListener('mouseleave', reverseAnimation)
-
-    return () => {
-      card.removeEventListener('mouseenter', playAnimation)
-      card.removeEventListener('mouseleave', reverseAnimation)
-      timeline.kill()
-    }
-  }, [])
+  const registerCard = (index: number, setOpacity: (opacity: number) => void) => {
+    cardSetters.current.set(index, setOpacity)
+  }
 
   return (
-    <div ref={cardRef} className="service-card w-full border-b-2 border-solid border-neutral-700">
+    <ServiceCardContext.Provider value={{ updateOtherCards, registerCard }}>
+      {children}
+    </ServiceCardContext.Provider>
+  )
+}
+
+export function ServiceCard({ service, index = 0 }: { service: Service; index?: number }) {
+  const controls = useAnimationControls()
+  const [opacity, setOpacity] = React.useState(1)
+  const [isHovered, setIsHovered] = React.useState(false)
+  const { updateOtherCards, registerCard } = useContext(ServiceCardContext)
+
+  React.useEffect(() => {
+    registerCard(index, setOpacity)
+  }, [index, registerCard])
+
+  const handleHoverStart = async () => {
+    setIsHovered(true)
+    controls.start({
+      width: '180px',
+      transition: {
+        duration: 0.5,
+        ease: [0.43, 0.13, 0.23, 0.96], // power2.out
+      },
+    })
+
+    let progress = 0
+    const interval = setInterval(() => {
+      progress = Math.min(1, progress + 0.1)
+      updateOtherCards(index, progress)
+      if (progress >= 1) clearInterval(interval)
+    }, 50)
+  }
+
+  const handleHoverEnd = async () => {
+    setIsHovered(false)
+    controls.start({
+      width: '0px',
+      transition: {
+        duration: 0.3,
+        ease: [0.43, 0.13, 0.23, 0.96], // power2.in
+      },
+    })
+
+    let progress = 1
+    const interval = setInterval(() => {
+      progress = Math.max(0, progress - 0.2)
+      updateOtherCards(index, progress)
+      if (progress <= 0) clearInterval(interval)
+    }, 30)
+  }
+
+  return (
+    <motion.div
+      style={{ opacity }}
+      className="service-card w-full border-b-2 border-solid border-neutral-700"
+    >
       <Link
         href={`/services/${service.slug}`}
         className="flex w-full items-center py-4 lg:pt-6 lg:pb-6"
+        onMouseEnter={handleHoverStart}
+        onMouseLeave={handleHoverEnd}
       >
-        <div className="service-card-image inline-flex h-16 w-0 items-center justify-center overflow-hidden rounded-2xl bg-neutral-950 min-[1800px]:h-40 md:h-28 lg:h-36">
+        <motion.div
+          animate={controls}
+          initial={{ width: 0 }}
+          className="service-card-image inline-flex h-16 items-center justify-center overflow-hidden rounded-2xl bg-neutral-950 min-[1800px]:h-40 md:h-28 lg:h-36"
+        >
           {service.image && (
             <Image
               src={(service.image as Media)?.url || ''}
@@ -115,11 +109,18 @@ export function ServiceCard({ service }: { service: Service }) {
               className="h-full w-full object-cover"
             />
           )}
-        </div>
-        <div className="service-card-text text-display-medium ml-3 inline-flex leading-none text-white">
+        </motion.div>
+        <motion.div
+          className="service-card-text text-display-medium ml-3 inline-flex leading-none text-white"
+          animate={{ x: isHovered ? '8%' : '0%' }}
+          transition={{
+            duration: 0.5,
+            ease: [0.43, 0.13, 0.23, 0.96],
+          }}
+        >
           <div>{service.title}</div>
-        </div>
+        </motion.div>
       </Link>
-    </div>
+    </motion.div>
   )
 }
