@@ -23,7 +23,7 @@ import { MediaBlock } from '@/blocks/MediaBlock/config'
 import { LandingHero } from '@/heros/LandingHero/config'
 
 // Utilities Imports
-import { generatePreviewPath } from '@root/utilities/generatePreviewPath'
+import { generatePreviewPath } from '@/utilities/generatePreviewPath'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
@@ -48,9 +48,9 @@ export const Pages: CollectionConfig = {
     {
       type: 'tabs',
       tabs: [
-        { 
+        {
           label: 'Hero',
-          fields: [LandingHero]
+          fields: [LandingHero],
         },
         {
           label: 'Content',
@@ -96,22 +96,20 @@ export const Pages: CollectionConfig = {
   admin: {
     useAsTitle: 'title',
     livePreview: {
-      url: ({ data }) => {
-        const path = generatePreviewPath({
+      url: ({ data, req }) => {
+        return generatePreviewPath({
           slug: typeof data?.slug === 'string' ? data.slug : '',
           collection: 'pages',
+          req,
         })
-
-        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
       },
     },
-    preview: (data) => {
-      const path = generatePreviewPath({
+    preview: (data, { req }) => {
+      return generatePreviewPath({
         slug: typeof data?.slug === 'string' ? data.slug : '',
         collection: 'pages',
+        req,
       })
-
-      return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
     },
   },
   hooks: {

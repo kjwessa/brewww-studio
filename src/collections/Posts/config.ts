@@ -186,23 +186,22 @@ export const Posts: CollectionConfig = {
     group: 'Blog Posts',
     listSearchableFields: ['title'],
     livePreview: {
-      url: ({ data }) => {
+      url: ({ data, req }) => {
         const path = generatePreviewPath({
           slug: typeof data?.slug === 'string' ? data.slug : '',
           collection: 'posts',
+          req,
         })
 
-        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
+        return path
       },
     },
-    preview: (data) => {
-      const path = generatePreviewPath({
+    preview: (data, { req }) =>
+      generatePreviewPath({
         slug: typeof data?.slug === 'string' ? data.slug : '',
         collection: 'posts',
-      })
-
-      return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
-    },
+        req,
+      }),
     pagination: {
       defaultLimit: 100,
       limits: [25, 50, 100],
