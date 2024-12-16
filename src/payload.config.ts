@@ -14,13 +14,11 @@ import { Categories } from '@/collections/Categories/config'
 import { Posts } from '@/collections/Posts/config'
 import { Brands } from '@/collections/Brands/config'
 import { FAQ } from '@/collections/FAQ/config'
-import { Journeys } from '@/collections/Journeys/config'
 import { Location } from '@/collections/Locations/config'
 import { Media } from '@/collections/Media/config'
 import { Pages } from '@/collections/Pages/config'
 import { Pillars } from '@/collections/Pillars/config'
 import { Playground } from '@/collections/Play/config'
-import { Results } from '@/collections/Results/config'
 import { Services } from '@/collections/Services/config'
 import { Team } from '@/collections/Team/config'
 import { Technologies } from '@/collections/Technologies/config'
@@ -93,9 +91,7 @@ export default buildConfig({
     Services,
     Pillars,
     Playground,
-    Results,
     Team,
-    Journeys,
   ],
   db: postgresAdapter({
     pool: {

@@ -38,6 +38,8 @@ import * as migration_20241212_203503_change_work_to_projects from './20241212_2
 import * as migration_20241212_234958_add_meta_fields_to_locations from './20241212_234958_add_meta_fields_to_locations';
 import * as migration_20241212_235030_remove_herotitle_from_locations from './20241212_235030_remove_herotitle_from_locations';
 import * as migration_20241216_154941_remove_industries_from_collections from './20241216_154941_remove_industries_from_collections';
+import * as migration_20241216_160232_remove_results_from_collections from './20241216_160232_remove_results_from_collections';
+import * as migration_20241216_160557_drop_journeys_collection from './20241216_160557_drop_journeys_collection';
 
 export const migrations = [
   {
@@ -238,6 +240,16 @@ export const migrations = [
   {
     up: migration_20241216_154941_remove_industries_from_collections.up,
     down: migration_20241216_154941_remove_industries_from_collections.down,
-    name: '20241216_154941_remove_industries_from_collections'
+    name: '20241216_154941_remove_industries_from_collections',
+  },
+  {
+    up: migration_20241216_160232_remove_results_from_collections.up,
+    down: migration_20241216_160232_remove_results_from_collections.down,
+    name: '20241216_160232_remove_results_from_collections',
+  },
+  {
+    up: migration_20241216_160557_drop_journeys_collection.up,
+    down: migration_20241216_160557_drop_journeys_collection.down,
+    name: '20241216_160557_drop_journeys_collection'
   },
 ];

@@ -25,9 +25,7 @@ export interface Config {
     services: Service;
     pillars: Pillar;
     play: Play;
-    results: Result;
     team: Team;
-    journeys: Journey;
     redirects: Redirect;
     forms: Form;
     'form-submissions': FormSubmission;
@@ -51,9 +49,7 @@ export interface Config {
     services: ServicesSelect<false> | ServicesSelect<true>;
     pillars: PillarsSelect<false> | PillarsSelect<true>;
     play: PlaySelect<false> | PlaySelect<true>;
-    results: ResultsSelect<false> | ResultsSelect<true>;
     team: TeamSelect<false> | TeamSelect<true>;
-    journeys: JourneysSelect<false> | JourneysSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
@@ -473,21 +469,6 @@ export interface Play {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "results".
- */
-export interface Result {
-  id: string;
-  title: string;
-  client?: (string | null) | Brand;
-  number?: string | null;
-  support?: string | null;
-  description?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "team".
  */
 export interface Team {
@@ -538,20 +519,6 @@ export interface Team {
     image?: (string | null) | Media;
     description?: string | null;
   };
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "journeys".
- */
-export interface Journey {
-  id: string;
-  title: string;
-  tagline?: string | null;
-  slug?: string | null;
-  slugLock?: boolean | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -824,16 +791,8 @@ export interface PayloadLockedDocument {
         value: string | Play;
       } | null)
     | ({
-        relationTo: 'results';
-        value: string | Result;
-      } | null)
-    | ({
         relationTo: 'team';
         value: string | Team;
-      } | null)
-    | ({
-        relationTo: 'journeys';
-        value: string | Journey;
       } | null)
     | ({
         relationTo: 'redirects';
@@ -1182,20 +1141,6 @@ export interface PlaySelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "results_select".
- */
-export interface ResultsSelect<T extends boolean = true> {
-  title?: T;
-  client?: T;
-  number?: T;
-  support?: T;
-  description?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  _status?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "team_select".
  */
 export interface TeamSelect<T extends boolean = true> {
@@ -1219,19 +1164,6 @@ export interface TeamSelect<T extends boolean = true> {
         image?: T;
         description?: T;
       };
-  updatedAt?: T;
-  createdAt?: T;
-  _status?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "journeys_select".
- */
-export interface JourneysSelect<T extends boolean = true> {
-  title?: T;
-  tagline?: T;
-  slug?: T;
-  slugLock?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
