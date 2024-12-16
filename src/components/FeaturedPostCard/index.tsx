@@ -15,6 +15,8 @@ export function FeaturedPostCard({ post }: { post: Post }) {
             }
             alt={post.title}
             fill
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 85vw, 75vw"
             style={{ objectFit: 'cover' }}
             className="rounded-lg"
           />

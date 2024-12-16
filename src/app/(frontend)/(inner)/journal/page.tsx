@@ -1,12 +1,10 @@
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
-import { BlogCard } from '@/components/BlogCard/index'
 import { CategoryBreadcrumbs } from '@/components/CategoryBreadcrumbs'
-import { Post, Category } from '@/payload-types'
 import { Section } from '@/components/layout/Section'
 import { Container } from '@/components/layout/Container'
-import { FeaturedPostSection } from './_components/FeaturedPostSection'
-import { CategorySection } from './_components/CategorySection'
+import { FeaturedPostSection } from '@/components/FeaturedPostSection'
+import { CategorySection } from '@/components/CategorySection'
 import { Page } from '@/components/layout/Page'
 
 export const revalidate = 3600

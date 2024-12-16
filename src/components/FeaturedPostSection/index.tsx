@@ -14,7 +14,7 @@ import { Text } from '@/components/Text'
 import 'swiper/css'
 import 'swiper/css/navigation'
 
-import { FeaturedPostCard } from '../FeaturedPostCard'
+import { FeaturedPostCard } from '@/components/FeaturedPostCard'
 
 export function FeaturedPostSection({ postsFeatured }: { postsFeatured: Post[] }) {
   const navigationPrevRef = useRef<HTMLButtonElement>(null)
