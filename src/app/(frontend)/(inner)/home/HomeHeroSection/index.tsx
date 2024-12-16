@@ -22,7 +22,7 @@ const StarSVG = ({ isPulsing }: { isPulsing: boolean }) => (
         ? {
             duration: 2,
             repeat: Infinity,
-            ease: [0.45, 0, 0.55, 1], // Matching GSAP's sine.inOut
+            ease: [0.45, 0, 0.55, 1],
           }
         : {}
     }
@@ -103,9 +103,7 @@ export function HomeHeroSection() {
           <span className="opacity-30"></span>
           <span>we craft brands beyond tomorrow.</span>
         </h1>
-        <p
-          className="text-body-medium mx-auto mt-6 max-w-3xl text-center opacity-70 md:text-2xl"
-        >
+        <p className="text-body-medium mx-auto mt-6 max-w-3xl text-center opacity-70 md:text-2xl">
           Brewww is the talent, tools, and deliverables to move you from today's reality to
           tomorrow's potential.
         </p>
