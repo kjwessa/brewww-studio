@@ -13,19 +13,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <div className="relative w-full text-white">
       <Link href={`/work/${project.slug}`} className="relative flex flex-col items-start">
         <div className="relative mb-6 w-full cursor-pointer overflow-hidden">
-          <div className="absolute top-0 right-0 z-20 pt-1 pb-3 pl-3">
-            <div className="text-label-small -mr-2 -mb-2 flex flex-wrap items-center text-white lg:-mb-3">
-              <div className="mr-2 mb-2 rounded-full bg-zinc-800 px-4 pt-2 pb-1.5 lg:mr-3 lg:mb-3">
-                Branding
-              </div>
-              <div className="mr-2 mb-2 rounded-full bg-zinc-800 px-4 pt-2 pb-1.5 lg:mr-3 lg:mb-3">
-                Website
-              </div>
-              <div className="mr-2 mb-2 hidden rounded-full bg-zinc-800 px-4 pt-2 pb-1.5 lg:mr-3 lg:mb-3 lg:inline-flex">
-                SEO
-              </div>
-            </div>
-          </div>
           <div className="relative w-full overflow-hidden rounded-lg bg-zinc-800 text-black">
             <div className="relative w-full overflow-hidden">
               <div className="w-full">
@@ -42,6 +29,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
                       ''
                     }
                     fill
+                    sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    quality={85}
+                    loading="lazy"
+                    className="object-cover"
                     style={{ objectFit: 'cover' }}
                   />
                 </div>
