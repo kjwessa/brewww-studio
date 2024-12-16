@@ -5,7 +5,7 @@ import { Container } from '@/components/layout/Container'
 
 export function HomeServicesSection({ services }: { services: Service[] }) {
   return (
-    <Section theme="dark" color="default">
+    <Section theme="inherit" color="default">
       <Container size="3xl" spacing="2xl">
         <div className="w-full rounded-xl bg-zinc-900 py-20 text-black">
           <div className="bg-zinc-900 px-2">

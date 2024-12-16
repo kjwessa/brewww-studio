@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export function HomeResultsSection() {
   return (
-    <Section theme="dark" color="default">
+    <Section theme="inherit" color="default">
       <Container size="large" spacing="large">
         <div className="relative grid h-[40.63rem] auto-cols-fr grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr] grid-rows-[minmax(auto,.25fr)_auto_auto_auto_auto_auto_minmax(auto,.25fr)] gap-4">
           <div className="relative z-10 col-start-1 col-end-6 row-start-1 row-end-4 self-center">

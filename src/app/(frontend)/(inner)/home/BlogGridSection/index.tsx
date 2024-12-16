@@ -7,7 +7,7 @@ import { Container } from '@/components/layout/Container'
 
 export function BlogGridSection({ posts }: { posts: Post[] }) {
   return (
-    <Section theme="light" background="default">
+    <Section theme="invert" background="default">
       <Container size="3xl" spacing="large">
         <div className="relative z-10 m-auto w-full px-24 pt-24">
           <div className="flex flex-wrap px-24">

@@ -6,7 +6,7 @@ import { Title } from '@/components/Title'
 
 export async function ProjectGridSection({ projects }: { projects: Project[] }) {
   return (
-    <Section theme="dark" color="default">
+    <Section theme="inherit" color="default">
       <Container size="full" spacing="large">
         <div className="flex flex-wrap">
           <div className="w-full px-2 md:mt-20 md:w-2/4 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">

@@ -1,99 +1,110 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { motion } from 'motion/react'
 
-const StarSVG = ({ isPulsing }: { isPulsing: boolean }) => (
+const StarSVG = React.memo(({ isPulsing }: { isPulsing: boolean }) => (
   <motion.svg
     width="4"
     height="4"
     viewBox="0 0 4 4"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    initial={{ opacity: 0.5 }}
     animate={
       isPulsing
         ? {
             opacity: [0.5, 0.2, 0.5],
           }
-        : {}
+        : undefined
     }
     transition={
       isPulsing
         ? {
             duration: 2,
             repeat: Infinity,
-            ease: [0.45, 0, 0.55, 1],
+            ease: 'easeInOut',
           }
-        : {}
+        : undefined
     }
   >
-    <circle cx="2" cy="2" r="1" fill="white" opacity="0.5" />
+    <circle cx="2" cy="2" r="1" fill="white" />
   </motion.svg>
-)
+))
 
-export function HomeHeroSection() {
+StarSVG.displayName = 'StarSVG'
+
+function ClientStars() {
   const [stars, setStars] = useState<React.ReactElement[]>([])
-  const heroMessageRef = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
-    const generateStars = () => {
-      const newStars: React.ReactElement[] = []
-      for (let i = 0; i < 200; i++) {
-        const top = `${Math.random() * 100}%`
-        const left = `${Math.random() * 100}%`
-        const isPulsing = i % 4 === 0
-        newStars.push(
-          <motion.div key={i} style={{ position: 'absolute', top, left }}>
-            <StarSVG isPulsing={isPulsing} />
-          </motion.div>,
-        )
-      }
-      setStars(newStars)
-    }
-
-    generateStars()
+    const newStars = Array.from({ length: 100 }, (_, i) => ({
+      id: i,
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      isPulsing: i % 4 === 0,
+    })).map(({ id, top, left, isPulsing }) => (
+      <motion.div
+        key={id}
+        className="absolute"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: id * 0.01 }}
+        style={{ top, left }}
+      >
+        <StarSVG isPulsing={isPulsing} />
+      </motion.div>
+    ))
+    
+    setStars(newStars)
   }, [])
 
-  const getRandomInRange = (min: number, max: number) => {
-    return Math.random() * (max - min) + min
-  }
+  return <div className="absolute inset-0 overflow-hidden pointer-events-none">{stars}</div>
+}
+
+export function HomeHeroSection() {
+  const heroMessageRef = useRef<HTMLHeadingElement>(null)
 
   const blurVariants = {
     animate: {
-      rotate: [-30, 30],
-      scale: [0.8, 1.2],
-      opacity: [0.6, 1],
+      rotate: [-15, 15],
+      scale: [0.9, 1.1],
+      opacity: [0.7, 0.9],
     },
   }
 
   const blurTransition = (delay: number = 0) => ({
     rotate: {
-      duration: getRandomInRange(10, 20),
+      duration: 15,
       repeat: Infinity,
       repeatType: 'reverse' as const,
-      ease: [0.45, 0, 0.55, 1],
+      ease: 'easeInOut',
     },
     scale: {
-      duration: getRandomInRange(8, 15),
+      duration: 12,
       repeat: Infinity,
       repeatType: 'reverse' as const,
-      ease: [0.45, 0, 0.55, 1],
+      ease: 'easeInOut',
     },
     opacity: {
-      duration: getRandomInRange(3, 7),
+      duration: 5,
       repeat: Infinity,
       repeatType: 'reverse' as const,
-      ease: [0.45, 0, 0.55, 1],
+      ease: 'easeInOut',
     },
     delay,
   })
+
+  const getRandomInRange = (min: number, max: number) => {
+    return Math.random() * (max - min) + min
+  }
 
   return (
     <section
       className="from-brand-dark-bg to-brand-dark-surface relative flex min-h-[100vh] items-center justify-center overflow-hidden bg-linear-to-b text-zinc-50"
       id="hero"
     >
-      <div className="absolute inset-0 overflow-hidden">{stars}</div>
+      <ClientStars />
       <div className="relative z-10 container mx-auto px-4 py-4">
         <h1
           ref={heroMessageRef}

@@ -9,6 +9,7 @@ import { HomeAboutSection } from './HomeAboutSection'
 import { HomeImpactSection } from './HomeImpactSection'
 import { HomeResultsSection } from './HomeResultsSection'
 import { HomeServicesArchiveSection } from './HomeServicesArchiveSection'
+import { Page } from '@/components/layout/Page'
 
 export default async function Home() {
   const payload = await getPayload({ config: configPromise })
@@ -50,7 +51,7 @@ export default async function Home() {
   ])
 
   return (
-    <>
+    <Page theme="dark">
       <HomeHeroSection />
       <HomeAboutSection />
       <ProjectGridSection projects={projects.docs} />
@@ -60,6 +61,6 @@ export default async function Home() {
       <HomeImpactSection />
       <HomeResultsSection />
       <HomeServicesArchiveSection />
-    </>
+    </Page>
   )
 }

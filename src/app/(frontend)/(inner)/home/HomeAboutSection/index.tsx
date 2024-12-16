@@ -4,7 +4,7 @@ import { Container } from '@/components/layout/Container'
 
 export function HomeAboutSection() {
   return (
-    <Section theme="dark">
+    <Section theme="inherit" background="default">
       <Container size="3xl" spacing="3xl">
         <div className="flex flex-col items-center">
           <div className="grid grid-cols-12 py-16 sm:py-24 md:py-32">

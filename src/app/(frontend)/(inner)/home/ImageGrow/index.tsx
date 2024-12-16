@@ -3,6 +3,8 @@
 import React, { useRef } from 'react'
 import Image from 'next/image'
 import { motion, useScroll, useTransform } from 'motion/react'
+import { Container } from '@/components/layout/Container'
+import { Section } from '@/components/layout/Section'
 
 export const ImageGrow: React.FC = () => {
   const sectionRef = useRef(null)
@@ -15,11 +17,11 @@ export const ImageGrow: React.FC = () => {
   const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1])
 
   return (
-    <section
+    <Section
       ref={sectionRef}
-      className="bg-brand-dark-bg relative h-[80vh] w-full overflow-hidden rounded-md px-2 py-2 text-white"
+      className="bg-brand-dark-bg relative h-[80vh] w-full overflow-hidden text-white"
     >
-      <div className="bg-brand-dark-bg h-full w-full overflow-hidden rounded-xl">
+      <Container size="full" spacing="none" className="h-full w-full overflow-hidden rounded-3xl">
         <motion.div className="h-full w-full overflow-hidden" style={{ scale }}>
           <motion.div
             style={{
@@ -40,8 +42,8 @@ export const ImageGrow: React.FC = () => {
             />
           </motion.div>
         </motion.div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   )
 }
 
