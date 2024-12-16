@@ -26,7 +26,6 @@ export interface Config {
     pillars: Pillar;
     play: Play;
     results: Result;
-    industries: Industry;
     team: Team;
     journeys: Journey;
     redirects: Redirect;
@@ -53,7 +52,6 @@ export interface Config {
     pillars: PillarsSelect<false> | PillarsSelect<true>;
     play: PlaySelect<false> | PlaySelect<true>;
     results: ResultsSelect<false> | ResultsSelect<true>;
-    industries: IndustriesSelect<false> | IndustriesSelect<true>;
     team: TeamSelect<false> | TeamSelect<true>;
     journeys: JourneysSelect<false> | JourneysSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
@@ -490,21 +488,6 @@ export interface Result {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "industries".
- */
-export interface Industry {
-  id: string;
-  title: string;
-  tagline?: string | null;
-  slug?: string | null;
-  slugLock?: boolean | null;
-  description?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "team".
  */
 export interface Team {
@@ -843,10 +826,6 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'results';
         value: string | Result;
-      } | null)
-    | ({
-        relationTo: 'industries';
-        value: string | Industry;
       } | null)
     | ({
         relationTo: 'team';
@@ -1210,20 +1189,6 @@ export interface ResultsSelect<T extends boolean = true> {
   client?: T;
   number?: T;
   support?: T;
-  description?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  _status?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "industries_select".
- */
-export interface IndustriesSelect<T extends boolean = true> {
-  title?: T;
-  tagline?: T;
-  slug?: T;
-  slugLock?: T;
   description?: T;
   updatedAt?: T;
   createdAt?: T;

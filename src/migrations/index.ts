@@ -37,6 +37,7 @@ import * as migration_20241206_210651_remove_featured_from_work_collection from 
 import * as migration_20241212_203503_change_work_to_projects from './20241212_203503_change_work_to_projects';
 import * as migration_20241212_234958_add_meta_fields_to_locations from './20241212_234958_add_meta_fields_to_locations';
 import * as migration_20241212_235030_remove_herotitle_from_locations from './20241212_235030_remove_herotitle_from_locations';
+import * as migration_20241216_154941_remove_industries_from_collections from './20241216_154941_remove_industries_from_collections';
 
 export const migrations = [
   {
@@ -232,6 +233,11 @@ export const migrations = [
   {
     up: migration_20241212_235030_remove_herotitle_from_locations.up,
     down: migration_20241212_235030_remove_herotitle_from_locations.down,
-    name: '20241212_235030_remove_herotitle_from_locations'
+    name: '20241212_235030_remove_herotitle_from_locations',
+  },
+  {
+    up: migration_20241216_154941_remove_industries_from_collections.up,
+    down: migration_20241216_154941_remove_industries_from_collections.down,
+    name: '20241216_154941_remove_industries_from_collections'
   },
 ];

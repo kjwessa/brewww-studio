@@ -14,7 +14,6 @@ import { Categories } from '@/collections/Categories/config'
 import { Posts } from '@/collections/Posts/config'
 import { Brands } from '@/collections/Brands/config'
 import { FAQ } from '@/collections/FAQ/config'
-import { Industries } from './collections/Industries/config'
 import { Journeys } from '@/collections/Journeys/config'
 import { Location } from '@/collections/Locations/config'
 import { Media } from '@/collections/Media/config'
@@ -95,7 +94,6 @@ export default buildConfig({
     Pillars,
     Playground,
     Results,
-    Industries,
     Team,
     Journeys,
   ],
