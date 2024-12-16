@@ -20,6 +20,8 @@ export const BlogCard = ({ post }: { post: Post }) => {
             }
             alt={post.title}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 30vw"
+            loading="lazy"
           />
         )}
       </div>

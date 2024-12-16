@@ -1,5 +1,5 @@
 // Next Imports
-import React, { cache } from 'react'
+import React from 'react'
 import type { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 
@@ -15,7 +15,7 @@ import { JournalHero } from './JournalHero'
 import { JournalHeroImage } from './JournalHeroImage'
 import { JournalContent } from './JournalContent'
 
-export const revalidate = 3600
+export const revalidate = 86400 // 24 hours
 
 export async function generateStaticParams() {
   if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
@@ -94,7 +94,7 @@ export async function generateMetadata({ params: paramsPromise }: Args): Promise
   return generateMeta({ doc: post })
 }
 
-const queryPostBySlug = cache(async ({ slug }: { slug: string }) => {
+const queryPostBySlug = async ({ slug }: { slug: string }) => {
   const { isEnabled: draft } = await draftMode()
 
   const payload = await getPayload({ config: configPromise })
@@ -113,4 +113,4 @@ const queryPostBySlug = cache(async ({ slug }: { slug: string }) => {
   })
 
   return result.docs?.[0] || null
-})
+}

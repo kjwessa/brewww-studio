@@ -4,83 +4,90 @@ import { CategoryBreadcrumbs } from '@/components/CategoryBreadcrumbs'
 import { Section } from '@/components/layout/Section'
 import { Container } from '@/components/layout/Container'
 import { FeaturedPostSection } from '@/components/FeaturedPostSection'
-import { CategorySection } from '@/components/CategorySection'
+import { SuspendedCategorySection } from '@/components/CategorySection/suspended'
 import { Page } from '@/components/layout/Page'
 
-export const revalidate = 3600
+export const revalidate = 21600 // 6 hours
 
 export default async function BlogPage() {
-  const payload = await getPayload({ config: configPromise })
-  const posts = await payload.find({
-    collection: 'posts',
-    limit: 1000,
-    sort: '-publishedOn',
-    where: {
-      _status: {
-        equals: 'published',
-      },
-    },
-  })
+  try {
+    const payload = await getPayload({ config: configPromise })
+    const [posts, categories] = await Promise.all([
+      payload.find({
+        collection: 'posts',
+        limit: 100,
+        sort: '-publishedOn',
+        where: {
+          _status: {
+            equals: 'published',
+          },
+        },
+        depth: 1,
+      }),
+      payload.find({
+        collection: 'categories',
+        limit: 1000,
+        sort: '-publishedOn',
+      })
+    ])
 
-  const categories = await payload.find({
-    collection: 'categories',
-    limit: 1000,
-    sort: '-publishedOn',
-  })
+    // Get posts for each category
+    const latestPosts = posts.docs.slice(0, 5)
+    const newsAndCulturePosts = posts.docs.filter((post) =>
+      post.categories?.some((cat) => typeof cat !== 'string' && cat.title === 'News & Culture'),
+    ).slice(0, 5)
+    const brandingPosts = posts.docs.filter((post) =>
+      post.categories?.some((cat) => typeof cat !== 'string' && cat.title === 'Branding'),
+    ).slice(0, 5)
+    const webDesignPosts = posts.docs.filter((post) =>
+      post.categories?.some((cat) => typeof cat !== 'string' && cat.title === 'Web Design'),
+    ).slice(0, 5)
 
-  // Get posts for each category
-  const latestPosts = posts.docs.slice(0, 5)
-  const newsAndCulturePosts = posts.docs.filter((post) =>
-    post.categories?.some((cat) => typeof cat !== 'string' && cat.title === 'News & Culture'),
-  )
-  const brandingPosts = posts.docs.filter((post) =>
-    post.categories?.some((cat) => typeof cat !== 'string' && cat.title === 'Branding'),
-  )
-  const webDesignPosts = posts.docs.filter((post) =>
-    post.categories?.some((cat) => typeof cat !== 'string' && cat.title === 'Web Design'),
-  )
+    return (
+      <Page theme="dark">
+        <CategoryBreadcrumbs
+          categories={categories.docs}
+          posts={posts.docs}
+          totalPostCount={posts.totalDocs}
+        />
 
-  return (
-    <Page theme="dark">
-      <CategoryBreadcrumbs
-        categories={categories.docs}
-        posts={posts.docs}
-        totalPostCount={posts.totalDocs}
-      />
+        <Section theme="inherit" background="default">
+          <Container size="3xl" spacing="large">
+            <FeaturedPostSection postsFeatured={posts.docs} />
+          </Container>
+        </Section>
 
-      <Section theme="inherit" background="default">
-        <Container size="3xl" spacing="large">
-          <FeaturedPostSection postsFeatured={posts.docs} />
-        </Container>
-      </Section>
+        <SuspendedCategorySection
+          posts={latestPosts}
+          title="Latest Posts"
+          theme="invert"
+          archiveLink="/category/archive"
+        />
 
-      <CategorySection
-        posts={latestPosts}
-        title="Latest Posts"
-        theme="invert"
-        archiveLink="/category/archive"
-      />
+        <SuspendedCategorySection
+          posts={newsAndCulturePosts}
+          title="News and Culture"
+          theme="inherit"
+          archiveLink="/category/news-culture"
+        />
 
-      <CategorySection
-        posts={newsAndCulturePosts}
-        title="News and Culture"
-        theme="inherit"
-        archiveLink="/category/news-culture"
-      />
+        <SuspendedCategorySection
+          posts={brandingPosts}
+          title="Branding"
+          theme="invert"
+          archiveLink="/category/branding"
+        />
 
-      <CategorySection
-        posts={brandingPosts}
-        title="Branding"
-        theme="invert"
-        archiveLink="/category/branding"
-      />
-
-      <CategorySection
-        posts={webDesignPosts}
-        title="Web Design"
-        theme="inherit"
-        archiveLink="/category/web-design"
-      />
-    </Page>
-  )
+        <SuspendedCategorySection
+          posts={webDesignPosts}
+          title="Web Design"
+          theme="inherit"
+          archiveLink="/category/web-design"
+        />
+      </Page>
+    )
+  } catch (error) {
+    console.error(error)
+    throw error
+  }
 }
