@@ -40,6 +40,7 @@ import * as migration_20241212_235030_remove_herotitle_from_locations from './20
 import * as migration_20241216_154941_remove_industries_from_collections from './20241216_154941_remove_industries_from_collections';
 import * as migration_20241216_160232_remove_results_from_collections from './20241216_160232_remove_results_from_collections';
 import * as migration_20241216_160557_drop_journeys_collection from './20241216_160557_drop_journeys_collection';
+import * as migration_20241216_205318_add_landinghero_block_to_pages from './20241216_205318_add_landinghero_block_to_pages';
 
 export const migrations = [
   {
@@ -250,6 +251,11 @@ export const migrations = [
   {
     up: migration_20241216_160557_drop_journeys_collection.up,
     down: migration_20241216_160557_drop_journeys_collection.down,
-    name: '20241216_160557_drop_journeys_collection'
+    name: '20241216_160557_drop_journeys_collection',
+  },
+  {
+    up: migration_20241216_205318_add_landinghero_block_to_pages.up,
+    down: migration_20241216_205318_add_landinghero_block_to_pages.down,
+    name: '20241216_205318_add_landinghero_block_to_pages'
   },
 ];

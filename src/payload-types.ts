@@ -168,6 +168,13 @@ export interface User {
 export interface Page {
   id: string;
   title: string;
+  hero: {
+    type: 'landing';
+    heroTitle?: string | null;
+    locationText?: string | null;
+    descriptionText?: string | null;
+    image?: (string | null) | Media;
+  };
   layout?: MediaBlock[] | null;
   meta?: {
     title?: string | null;
@@ -925,6 +932,15 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface PagesSelect<T extends boolean = true> {
   title?: T;
+  hero?:
+    | T
+    | {
+        type?: T;
+        heroTitle?: T;
+        locationText?: T;
+        descriptionText?: T;
+        image?: T;
+      };
   layout?:
     | T
     | {

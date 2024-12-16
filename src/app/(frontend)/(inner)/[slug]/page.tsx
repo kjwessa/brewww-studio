@@ -10,17 +10,15 @@ import type { Page as PageType } from '@/payload-types'
 
 // Block Imports
 import { RenderBlocks } from '@/blocks/RenderBlocks'
+import { RenderHero } from '@/heros/RenderHero' // Import RenderHero component
 
 // Utilities
 import { generateMeta } from '@/utilities/generateMeta'
 import { PayloadRedirects } from '@/components/PayloadRedirects'
+import { LivePreviewListener } from '@/components/LivePreviewListener'
 
 // Generate static paths for all pages at build time
 export async function generateStaticParams() {
-  if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
-    return []
-  }
-
   // Initialize Payload CMS client
   const payload = await getPayload({ config: configPromise })
 
@@ -30,6 +28,10 @@ export async function generateStaticParams() {
     draft: false, // Only get published pages
     limit: 1000, // Fetch up to 1000 pages
     overrideAccess: false, // Use default access control
+    pagination: false, // Disable pagination
+    select: {
+      slug: true, // Only fetch the slug field
+    },
   })
 
   // Transform page documents into path parameters
@@ -53,8 +55,12 @@ type Args = {
 
 // Main page component that handles dynamic routing based on slug parameter
 export default async function Page({ params: paramsPromise }: Args) {
+  // Initialize draft mode
+  const { isEnabled: draft } = await draftMode()
+
   // Extract slug from params, defaulting to 'home' if not provided
   const { slug = 'home' } = await paramsPromise
+
   // Construct the full URL path
   const url = '/' + slug
 
@@ -71,12 +77,16 @@ export default async function Page({ params: paramsPromise }: Args) {
     return <PayloadRedirects url={url} />
   }
 
-  // Extract the layout blocks from the page data
-  const { layout } = page
+  // Extract the layout blocks and hero from the page data
+  const { layout, hero } = page
   return (
-    <article className="bg-blue-500">
+    <article className="pt-16 pb-24">
       {/* Handle any configured redirects, but don't show 404 */}
       <PayloadRedirects disableNotFound url={url} />
+      {/* Render the live preview listener if in draft mode */}
+      {draft && <LivePreviewListener />}
+      {/* Render the hero section if it exists */}
+      {hero && <RenderHero {...hero} />}
       {/* Render the page content blocks */}
       <RenderBlocks blocks={layout || []} />
     </article>
@@ -110,6 +120,7 @@ const queryPageBySlug = cache(async ({ slug }: { slug: string }) => {
     collection: 'pages',
     draft, // Use draft version if draft mode is enabled
     limit: 1, // Only fetch one document
+    pagination: false, // Disable pagination
     overrideAccess: draft, // Override access control in draft mode
     where: {
       slug: {

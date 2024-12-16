@@ -5,6 +5,9 @@ import type { CollectionConfig } from 'payload'
 import { authenticated } from '@/access/authenticated'
 import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
+// Hooks Imports
+import { revalidatePage, revalidateDelete } from './hooks/revalidatePage'
+
 // Field Imports
 import { slugField } from '@/fields/slug'
 import {
@@ -17,6 +20,7 @@ import {
 
 // Block Imports
 import { MediaBlock } from '@/blocks/MediaBlock/config'
+import { LandingHero } from '@/heros/LandingHero/config'
 
 // Utilities Imports
 import { generatePreviewPath } from '@root/utilities/generatePreviewPath'
@@ -44,6 +48,10 @@ export const Pages: CollectionConfig = {
     {
       type: 'tabs',
       tabs: [
+        { 
+          label: 'Hero',
+          fields: [LandingHero]
+        },
         {
           label: 'Content',
           fields: [
@@ -105,6 +113,10 @@ export const Pages: CollectionConfig = {
 
       return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
     },
+  },
+  hooks: {
+    beforeDelete: [revalidateDelete],
+    afterChange: [revalidatePage],
   },
   versions: {
     drafts: { autosave: { interval: 100 } },

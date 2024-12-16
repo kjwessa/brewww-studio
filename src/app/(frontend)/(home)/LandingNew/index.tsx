@@ -54,51 +54,6 @@ export function LandingNew() {
         </div>
       </section>
 
-      <section>
-        <div className="relative z-3 flex h-[100svh] flex-col justify-between px-4 pt-16 pb-4">
-          <h1 className="mx-0 my-3 text-[10.63rem] leading-none font-medium text-white">
-            We craft brands beyond tomorrow.
-          </h1>
-          <div className="grid w-full auto-cols-fr grid-cols-12 grid-rows-[auto] content-start gap-4">
-            <div className="col-start-1 col-end-3 row-start-1 row-end-2 self-end text-white">
-              PENSACOLA / FL
-            </div>
-            <p className="col-span-3 col-start-4 row-start-1 row-end-2 text-xl text-white">
-              Brewww Studio has the talent, tools, and deliverables to strengthen your brand in the
-              now and be ready for what's next.
-            </p>
-            <div
-              className="col-start-12 col-end-13 row-start-1 row-end-2 h-6 w-6 self-end justify-self-end overflow-hidden"
-              style={{
-                gridArea: '1 / 12 / 2 / 13',
-              }}
-            >
-              <Link href="#about">
-                <Image
-                  className="inline-block h-6 w-6 max-w-full align-middle"
-                  src="https://cdn.prod.website-files.com/66cdf161f4a7beffc3fd8b80/66cdf5d728a66eec679815ec_Down-Arrow.svg"
-                  alt="Down Arrow"
-                  width={24}
-                  height={24}
-                />
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="absolute top-0 bottom-0 left-0 z-1 h-[100svh] w-full overflow-hidden">
-          <div className="relative h-[100svh] w-full overflow-hidden text-white">
-            <Image
-              src="https://bucket.brewww.studio/brewww/media/space-sunrise-over-earth.full.jpg"
-              alt="Background image"
-              fill
-              priority
-              style={{ objectFit: 'cover' }}
-            />
-          </div>
-          <div className="absolute top-0 bottom-0 left-0 z-2 bg-black/[0.5]" />
-        </div>
-      </section>
-
       <section className="flex flex-col gap-24 bg-white py-24 text-sm text-black" id="about">
         <div className="container mx-auto grid grid-cols-12 gap-4">
           <h2 className="col-span-1">Meet Brewww Studio</h2>
