@@ -25,6 +25,7 @@ import { CallToAction } from '@/blocks/CallToAction/config'
 import { LandingAbout } from '@/blocks/LandingAbout/config'
 import { LandingHero } from '@/heros/LandingHero/config'
 import { LandingWork } from '@/blocks/LandingWork/config'
+import { LandingFooter } from '@/blocks/LandingFooter/config'
 
 // Utilities Imports
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
@@ -64,7 +65,7 @@ export const Pages: CollectionConfig = {
               type: 'blocks',
               label: 'Layout',
               required: false,
-              blocks: [MediaBlock, Banner, CallToAction, LandingAbout, LandingWork],
+              blocks: [MediaBlock, Banner, CallToAction, LandingAbout, LandingWork, LandingFooter],
             },
           ],
         },

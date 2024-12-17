@@ -8,6 +8,7 @@ import { BannerBlock } from '@/blocks/Banner/Component'
 import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 import { LandingAboutBlock } from '@/blocks/LandingAbout/Component'
 import { LandingWorkBlock } from '@/blocks/LandingWork/Component'
+import { LandingFooterBlock } from '@/blocks/LandingFooter/Component'
 
 /**
  * Block Components Registry
@@ -29,6 +30,7 @@ const blockComponents = {
   ctaBlock: CallToActionBlock,
   landingAbout: LandingAboutBlock,  // matches slug: 'landingAbout' in LandingAbout/config.ts
   landingWork: LandingWorkBlock,    // matches slug: 'landingWork' in LandingWork/config.ts
+  landingFooter: LandingFooterBlock, // matches slug: 'landingFooter' in LandingFooter/config.ts
 } as const
 
 /**

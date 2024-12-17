@@ -175,7 +175,9 @@ export interface Page {
     descriptionText?: string | null;
     image?: (string | null) | Media;
   };
-  layout?: (MediaBlock | BannerBlock | CallToActionBlock | LandingAboutBlock | LandingWorkBlock)[] | null;
+  layout?:
+    | (MediaBlock | BannerBlock | CallToActionBlock | LandingAboutBlock | LandingWorkBlock | LandingFooterBlock)[]
+    | null;
   meta?: {
     title?: string | null;
     image?: (string | null) | Media;
@@ -355,6 +357,28 @@ export interface Brand {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "LandingFooterBlock".
+ */
+export interface LandingFooterBlock {
+  mainLinks: {
+    text: string;
+    href: string;
+    id?: string | null;
+  }[];
+  socialLinks: {
+    platform: string;
+    href: string;
+    id?: string | null;
+  }[];
+  consultationText: string;
+  ctaText: string;
+  ctaLink: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'landingFooter';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1054,6 +1078,7 @@ export interface PagesSelect<T extends boolean = true> {
         cta?: T | CallToActionBlockSelect<T>;
         landingAbout?: T | LandingAboutBlockSelect<T>;
         landingWork?: T | LandingWorkBlockSelect<T>;
+        landingFooter?: T | LandingFooterBlockSelect<T>;
       };
   meta?:
     | T
@@ -1133,6 +1158,31 @@ export interface LandingWorkBlockSelect<T extends boolean = true> {
   viewAllText?: T;
   viewAllLink?: T;
   projects?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "LandingFooterBlock_select".
+ */
+export interface LandingFooterBlockSelect<T extends boolean = true> {
+  mainLinks?:
+    | T
+    | {
+        text?: T;
+        href?: T;
+        id?: T;
+      };
+  socialLinks?:
+    | T
+    | {
+        platform?: T;
+        href?: T;
+        id?: T;
+      };
+  consultationText?: T;
+  ctaText?: T;
+  ctaLink?: T;
   id?: T;
   blockName?: T;
 }

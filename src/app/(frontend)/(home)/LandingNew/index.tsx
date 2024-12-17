@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 // Local components
 import { LandingPortfolioCard } from '@/components/LandingPortfolioCard'
-import { LandingServiceAccordion } from '../LandingServiceAccordion'
+import { LandingServiceAccordion } from '@/components/LandingServiceAccordion'
 import { LandingFooter } from '../LandingFooter'
 
 export function LandingNew() {
