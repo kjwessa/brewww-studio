@@ -10,6 +10,7 @@ import { LandingAboutBlock } from '@/blocks/LandingAbout/Component'
 import { LandingWorkBlock } from '@/blocks/LandingWork/Component'
 import { LandingFooterBlock } from '@/blocks/LandingFooter/Component'
 import { LandingServiceBlock } from '@/blocks/LandingService/Component'
+import { LandingImageBlock } from '@/blocks/LandingImage/Component'
 
 /**
  * Block Components Registry
@@ -26,13 +27,14 @@ import { LandingServiceBlock } from '@/blocks/LandingService/Component'
  * If the keys don't match the slugs exactly, the blocks won't render.
  */
 const blockComponents = {
-  mediaBlock: MediaBlock,
-  bannerBlock: BannerBlock,
-  ctaBlock: CallToActionBlock,
+  mediaBlock: MediaBlock, // matches slug: 'mediaBlock' in MediaBlock/config.ts
+  bannerBlock: BannerBlock, // matches slug: 'banner' in Banner/config.ts
+  ctaBlock: CallToActionBlock, // matches slug: 'cta' in CallToAction/config.ts
   landingAbout: LandingAboutBlock,  // matches slug: 'landingAbout' in LandingAbout/config.ts
   landingWork: LandingWorkBlock,    // matches slug: 'landingWork' in LandingWork/config.ts
   landingFooter: LandingFooterBlock, // matches slug: 'landingFooter' in LandingFooter/config.ts
   landingService: LandingServiceBlock, // matches slug: 'landingService' in LandingService/config.ts
+  landingImage: LandingImageBlock, // matches slug: 'landingImage' in LandingImage/config.ts
 } as const
 
 /**

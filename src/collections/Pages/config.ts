@@ -27,6 +27,7 @@ import { LandingHero } from '@/heros/LandingHero/config'
 import { LandingWork } from '@/blocks/LandingWork/config'
 import { LandingFooter } from '@/blocks/LandingFooter/config'
 import { LandingService } from '@/blocks/LandingService/config'
+import { LandingImage } from '@/blocks/LandingImage/config'
 
 // Utilities Imports
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
@@ -75,6 +76,7 @@ export const Pages: CollectionConfig = {
                 LandingWork,
                 LandingFooter,
                 LandingService,
+                LandingImage,
               ],
             },
           ],
