@@ -6,11 +6,13 @@ import type { Page } from '@/payload-types'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { BannerBlock } from '@/blocks/Banner/Component'
 import { CallToActionBlock } from '@/blocks/CallToAction/Component'
+import { LandingAboutBlock } from '@/blocks/LandingAbout/Component'
 
 const blockComponents = {
   mediaBlock: MediaBlock,
   bannerBlock: BannerBlock,
   ctaBlock: CallToActionBlock,
+  landingAboutBlock: LandingAboutBlock,
 } as const
 
 /**

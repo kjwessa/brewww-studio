@@ -48,17 +48,6 @@ export function LandingHero({ heroTitle, locationText, descriptionText, image }:
             <p className="col-span-3 col-start-4 row-start-1 row-end-2 text-xl text-white">
               {descriptionText}
             </p>
-            <div className="col-start-12 col-end-13 row-start-1 row-end-2 h-6 w-6 self-end justify-self-end overflow-hidden">
-              <Link href="#about">
-                <Image
-                  className="inline-block h-6 w-6 max-w-full align-middle"
-                  src="/assets/arrow-down.svg"
-                  alt="Scroll down"
-                  width={24}
-                  height={24}
-                />
-              </Link>
-            </div>
           </div>
         </div>
 

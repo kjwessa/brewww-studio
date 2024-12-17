@@ -175,7 +175,7 @@ export interface Page {
     descriptionText?: string | null;
     image?: (string | null) | Media;
   };
-  layout?: (MediaBlock | BannerBlock | CallToActionBlock)[] | null;
+  layout?: (MediaBlock | BannerBlock | CallToActionBlock | LandingAboutBlock)[] | null;
   meta?: {
     title?: string | null;
     image?: (string | null) | Media;
@@ -262,6 +262,31 @@ export interface CallToActionBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'cta';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "LandingAboutBlock".
+ */
+export interface LandingAboutBlock {
+  title: string;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'landingAbout';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1012,6 +1037,7 @@ export interface PagesSelect<T extends boolean = true> {
         mediaBlock?: T | MediaBlockSelect<T>;
         banner?: T | BannerBlockSelect<T>;
         cta?: T | CallToActionBlockSelect<T>;
+        landingAbout?: T | LandingAboutBlockSelect<T>;
       };
   meta?:
     | T
@@ -1067,6 +1093,16 @@ export interface CallToActionBlockSelect<T extends boolean = true> {
             };
         id?: T;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "LandingAboutBlock_select".
+ */
+export interface LandingAboutBlockSelect<T extends boolean = true> {
+  title?: T;
+  content?: T;
   id?: T;
   blockName?: T;
 }

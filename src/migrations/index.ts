@@ -42,6 +42,7 @@ import * as migration_20241216_160232_remove_results_from_collections from './20
 import * as migration_20241216_160557_drop_journeys_collection from './20241216_160557_drop_journeys_collection';
 import * as migration_20241216_205318_add_landinghero_block_to_pages from './20241216_205318_add_landinghero_block_to_pages';
 import * as migration_20241217_152047_add_banner_and_cta_block from './20241217_152047_add_banner_and_cta_block';
+import * as migration_20241217_191311_add_landingabout_block from './20241217_191311_add_landingabout_block';
 
 export const migrations = [
   {
@@ -262,6 +263,11 @@ export const migrations = [
   {
     up: migration_20241217_152047_add_banner_and_cta_block.up,
     down: migration_20241217_152047_add_banner_and_cta_block.down,
-    name: '20241217_152047_add_banner_and_cta_block'
+    name: '20241217_152047_add_banner_and_cta_block',
+  },
+  {
+    up: migration_20241217_191311_add_landingabout_block.up,
+    down: migration_20241217_191311_add_landingabout_block.down,
+    name: '20241217_191311_add_landingabout_block'
   },
 ];
