@@ -45,6 +45,7 @@ import * as migration_20241217_152047_add_banner_and_cta_block from './20241217_
 import * as migration_20241217_191311_add_landingabout_block from './20241217_191311_add_landingabout_block';
 import * as migration_20241217_193500_add_landingworkblock from './20241217_193500_add_landingworkblock';
 import * as migration_20241217_200915_add_landingfooter_block from './20241217_200915_add_landingfooter_block';
+import * as migration_20241217_202946_add_landingservice_block from './20241217_202946_add_landingservice_block';
 
 export const migrations = [
   {
@@ -280,6 +281,11 @@ export const migrations = [
   {
     up: migration_20241217_200915_add_landingfooter_block.up,
     down: migration_20241217_200915_add_landingfooter_block.down,
-    name: '20241217_200915_add_landingfooter_block'
+    name: '20241217_200915_add_landingfooter_block',
+  },
+  {
+    up: migration_20241217_202946_add_landingservice_block.up,
+    down: migration_20241217_202946_add_landingservice_block.down,
+    name: '20241217_202946_add_landingservice_block'
   },
 ];

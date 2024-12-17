@@ -26,6 +26,7 @@ import { LandingAbout } from '@/blocks/LandingAbout/config'
 import { LandingHero } from '@/heros/LandingHero/config'
 import { LandingWork } from '@/blocks/LandingWork/config'
 import { LandingFooter } from '@/blocks/LandingFooter/config'
+import { LandingService } from '@/blocks/LandingService/config'
 
 // Utilities Imports
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
@@ -50,6 +51,7 @@ export const Pages: CollectionConfig = {
       required: true,
       unique: true,
     },
+    ...slugField(),
     {
       type: 'tabs',
       tabs: [
@@ -65,7 +67,15 @@ export const Pages: CollectionConfig = {
               type: 'blocks',
               label: 'Layout',
               required: false,
-              blocks: [MediaBlock, Banner, CallToAction, LandingAbout, LandingWork, LandingFooter],
+              blocks: [
+                MediaBlock,
+                Banner,
+                CallToAction,
+                LandingAbout,
+                LandingWork,
+                LandingFooter,
+                LandingService,
+              ],
             },
           ],
         },
@@ -94,7 +104,6 @@ export const Pages: CollectionConfig = {
         },
       ],
     },
-    ...slugField(),
   ],
 
   //* Admin Settings

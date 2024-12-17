@@ -168,6 +168,8 @@ export interface User {
 export interface Page {
   id: string;
   title: string;
+  slug?: string | null;
+  slugLock?: boolean | null;
   hero: {
     type: 'landing';
     heroTitle?: string | null;
@@ -176,15 +178,21 @@ export interface Page {
     image?: (string | null) | Media;
   };
   layout?:
-    | (MediaBlock | BannerBlock | CallToActionBlock | LandingAboutBlock | LandingWorkBlock | LandingFooterBlock)[]
+    | (
+        | MediaBlock
+        | BannerBlock
+        | CallToActionBlock
+        | LandingAboutBlock
+        | LandingWorkBlock
+        | LandingFooterBlock
+        | LandingServiceBlock
+      )[]
     | null;
   meta?: {
     title?: string | null;
     image?: (string | null) | Media;
     description?: string | null;
   };
-  slug?: string | null;
-  slugLock?: boolean | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -379,6 +387,26 @@ export interface LandingFooterBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'landingFooter';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "LandingServiceBlock".
+ */
+export interface LandingServiceBlock {
+  services: {
+    id: string | null;
+    serviceName: string;
+    description: string;
+    mainImage: string | Media;
+    hoverImage: string | Media;
+    tools: {
+      name: string;
+      id?: string | null;
+    }[];
+  }[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'landingService';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1061,6 +1089,8 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface PagesSelect<T extends boolean = true> {
   title?: T;
+  slug?: T;
+  slugLock?: T;
   hero?:
     | T
     | {
@@ -1079,6 +1109,7 @@ export interface PagesSelect<T extends boolean = true> {
         landingAbout?: T | LandingAboutBlockSelect<T>;
         landingWork?: T | LandingWorkBlockSelect<T>;
         landingFooter?: T | LandingFooterBlockSelect<T>;
+        landingService?: T | LandingServiceBlockSelect<T>;
       };
   meta?:
     | T
@@ -1087,8 +1118,6 @@ export interface PagesSelect<T extends boolean = true> {
         image?: T;
         description?: T;
       };
-  slug?: T;
-  slugLock?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
@@ -1183,6 +1212,29 @@ export interface LandingFooterBlockSelect<T extends boolean = true> {
   consultationText?: T;
   ctaText?: T;
   ctaLink?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "LandingServiceBlock_select".
+ */
+export interface LandingServiceBlockSelect<T extends boolean = true> {
+  services?:
+    | T
+    | {
+        id?: T;
+        serviceName?: T;
+        description?: T;
+        mainImage?: T;
+        hoverImage?: T;
+        tools?:
+          | T
+          | {
+              name?: T;
+              id?: T;
+            };
+      };
   id?: T;
   blockName?: T;
 }
