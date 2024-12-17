@@ -9,12 +9,26 @@ import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 import { LandingAboutBlock } from '@/blocks/LandingAbout/Component'
 import { LandingWorkBlock } from '@/blocks/LandingWork/Component'
 
+/**
+ * Block Components Registry
+ * 
+ * IMPORTANT: The keys in this object MUST match the 'slug' property defined in each block's config file.
+ * For example, if a block config has:
+ *   export const MyBlock: Block = {
+ *     slug: 'myBlock',
+ *     ...
+ *   }
+ * Then the key in this object must be 'myBlock', NOT 'myBlockBlock' or anything else.
+ * 
+ * This is because Payload CMS uses the slug to identify block types in the data it sends.
+ * If the keys don't match the slugs exactly, the blocks won't render.
+ */
 const blockComponents = {
   mediaBlock: MediaBlock,
   bannerBlock: BannerBlock,
   ctaBlock: CallToActionBlock,
-  landingAboutBlock: LandingAboutBlock,
-  landingWorkBlock: LandingWorkBlock,
+  landingAbout: LandingAboutBlock,  // matches slug: 'landingAbout' in LandingAbout/config.ts
+  landingWork: LandingWorkBlock,    // matches slug: 'landingWork' in LandingWork/config.ts
 } as const
 
 /**
@@ -25,6 +39,17 @@ const blockComponents = {
  *
  * @param props.blocks - Array of content blocks from the page layout
  * @returns React elements for each block or null if no blocks exist
+ *
+ * @example
+ * // When adding a new block:
+ * // 1. Create your block config with a slug
+ * // export const MyBlock: Block = { slug: 'myBlock', ... }
+ * // 
+ * // 2. Add your component to blockComponents using the EXACT SAME slug
+ * // const blockComponents = {
+ * //   myBlock: MyBlockComponent,  // Key must match slug
+ * //   ...
+ * // }
  */
 export const RenderBlocks: React.FC<{
   blocks: NonNullable<Page['layout']>[number][]

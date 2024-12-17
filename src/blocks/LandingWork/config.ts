@@ -44,8 +44,8 @@ export const LandingWork: Block = {
       relationTo: 'projects',
       hasMany: true,
       required: true,
-      min: 4,
-      max: 6,
+      minRows: 4,
+      maxRows: 6,
     },
   ],
 }
