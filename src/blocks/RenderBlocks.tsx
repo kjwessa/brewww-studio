@@ -4,13 +4,14 @@ import React, { Fragment } from 'react'
 import type { Page } from '@/payload-types'
 
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
+import { BannerBlock } from '@/blocks/Banner/Component'
+import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 
 const blockComponents = {
   mediaBlock: MediaBlock,
+  bannerBlock: BannerBlock,
+  ctaBlock: CallToActionBlock,
 } as const
-
-// Define the block type using the non-null array element type
-type PageLayoutBlock = NonNullable<Page['layout']>[number]
 
 /**
  * RenderBlocks Component
@@ -22,7 +23,7 @@ type PageLayoutBlock = NonNullable<Page['layout']>[number]
  * @returns React elements for each block or null if no blocks exist
  */
 export const RenderBlocks: React.FC<{
-  blocks: PageLayoutBlock[]
+  blocks: NonNullable<Page['layout']>[number][]
 }> = (props) => {
   const { blocks } = props
 
@@ -54,7 +55,7 @@ export const RenderBlocks: React.FC<{
                 // Wrap each block in a div with consistent vertical spacing
                 // Use index as key since blocks don't have guaranteed unique IDs
                 <div className="my-16" key={index}>
-                  {/* Spread all block properties to the component */}
+                  {/* Spread block properties except blockType to the component */}
                   <Block {...block} />
                 </div>
               )

@@ -41,6 +41,7 @@ import * as migration_20241216_154941_remove_industries_from_collections from '.
 import * as migration_20241216_160232_remove_results_from_collections from './20241216_160232_remove_results_from_collections';
 import * as migration_20241216_160557_drop_journeys_collection from './20241216_160557_drop_journeys_collection';
 import * as migration_20241216_205318_add_landinghero_block_to_pages from './20241216_205318_add_landinghero_block_to_pages';
+import * as migration_20241217_152047_add_banner_and_cta_block from './20241217_152047_add_banner_and_cta_block';
 
 export const migrations = [
   {
@@ -256,6 +257,11 @@ export const migrations = [
   {
     up: migration_20241216_205318_add_landinghero_block_to_pages.up,
     down: migration_20241216_205318_add_landinghero_block_to_pages.down,
-    name: '20241216_205318_add_landinghero_block_to_pages'
+    name: '20241216_205318_add_landinghero_block_to_pages',
+  },
+  {
+    up: migration_20241217_152047_add_banner_and_cta_block.up,
+    down: migration_20241217_152047_add_banner_and_cta_block.down,
+    name: '20241217_152047_add_banner_and_cta_block'
   },
 ];

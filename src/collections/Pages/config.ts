@@ -20,6 +20,8 @@ import {
 
 // Block Imports
 import { MediaBlock } from '@/blocks/MediaBlock/config'
+import { Banner } from '@/blocks/Banner/config'
+import { CallToAction } from '@/blocks/CallToAction/config'
 import { LandingHero } from '@/heros/LandingHero/config'
 
 // Utilities Imports
@@ -60,7 +62,7 @@ export const Pages: CollectionConfig = {
               type: 'blocks',
               label: 'Layout',
               required: false,
-              blocks: [MediaBlock],
+              blocks: [MediaBlock, Banner, CallToAction],
             },
           ],
         },
