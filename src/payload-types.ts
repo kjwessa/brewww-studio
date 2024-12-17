@@ -175,7 +175,7 @@ export interface Page {
     descriptionText?: string | null;
     image?: (string | null) | Media;
   };
-  layout?: (MediaBlock | BannerBlock | CallToActionBlock | LandingAboutBlock)[] | null;
+  layout?: (MediaBlock | BannerBlock | CallToActionBlock | LandingAboutBlock | LandingWorkBlock)[] | null;
   meta?: {
     title?: string | null;
     image?: (string | null) | Media;
@@ -290,6 +290,74 @@ export interface LandingAboutBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "LandingWorkBlock".
+ */
+export interface LandingWorkBlock {
+  date: string;
+  sectionTitle: string;
+  description: string;
+  viewAllText: string;
+  viewAllLink: string;
+  projects: (string | Project)[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'landingWork';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects".
+ */
+export interface Project {
+  id: string;
+  title: string;
+  tagline?: string | null;
+  description?: string | null;
+  storyTitle?: string | null;
+  storyContent?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  meta?: {
+    title?: string | null;
+    image?: (string | null) | Media;
+    description?: string | null;
+  };
+  slug?: string | null;
+  slugLock?: boolean | null;
+  image: string | Media;
+  brand: string | Brand;
+  projectLink?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "brands".
+ */
+export interface Brand {
+  id: string;
+  title: string;
+  logoLight?: (string | null) | Media;
+  city?: string | null;
+  state?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "posts".
  */
 export interface Post {
@@ -373,59 +441,6 @@ export interface Location {
   };
   slug?: string | null;
   slugLock?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "projects".
- */
-export interface Project {
-  id: string;
-  title: string;
-  tagline?: string | null;
-  description?: string | null;
-  storyTitle?: string | null;
-  storyContent?: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  meta?: {
-    title?: string | null;
-    image?: (string | null) | Media;
-    description?: string | null;
-  };
-  slug?: string | null;
-  slugLock?: boolean | null;
-  image: string | Media;
-  brand: string | Brand;
-  projectLink?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "brands".
- */
-export interface Brand {
-  id: string;
-  title: string;
-  logoLight?: (string | null) | Media;
-  city?: string | null;
-  state?: string | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -1038,6 +1053,7 @@ export interface PagesSelect<T extends boolean = true> {
         banner?: T | BannerBlockSelect<T>;
         cta?: T | CallToActionBlockSelect<T>;
         landingAbout?: T | LandingAboutBlockSelect<T>;
+        landingWork?: T | LandingWorkBlockSelect<T>;
       };
   meta?:
     | T
@@ -1103,6 +1119,20 @@ export interface CallToActionBlockSelect<T extends boolean = true> {
 export interface LandingAboutBlockSelect<T extends boolean = true> {
   title?: T;
   content?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "LandingWorkBlock_select".
+ */
+export interface LandingWorkBlockSelect<T extends boolean = true> {
+  date?: T;
+  sectionTitle?: T;
+  description?: T;
+  viewAllText?: T;
+  viewAllLink?: T;
+  projects?: T;
   id?: T;
   blockName?: T;
 }

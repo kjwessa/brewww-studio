@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 // Local components
-import { LandingPortfolioCard } from '../LandingPortfolioCard'
+import { LandingPortfolioCard } from '@/components/LandingPortfolioCard'
 import { LandingServiceAccordion } from '../LandingServiceAccordion'
 import { LandingFooter } from '../LandingFooter'
 
@@ -108,25 +108,21 @@ export function LandingNew() {
             href="https://luminous-template.webflow.io/work/jimmy-wood-portfolio"
             imageUrl="https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379.webp"
             title="Jimmy Wood Portfolio"
-            category="Visual Identity"
           />
           <LandingPortfolioCard
             href="https://luminous-template.webflow.io/work/jimmy-wood-portfolio"
             imageUrl="https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379.webp"
             title="Jimmy Wood Portfolio"
-            category="Visual Identity"
           />
           <LandingPortfolioCard
             href="https://luminous-template.webflow.io/work/jimmy-wood-portfolio"
             imageUrl="https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379.webp"
             title="Jimmy Wood Portfolio"
-            category="Visual Identity"
           />
           <LandingPortfolioCard
             href="https://luminous-template.webflow.io/work/jimmy-wood-portfolio"
             imageUrl="https://cdn.prod.website-files.com/66d183e958b40be346c82415/66e6841d1167498ba9dda4af_Group%20379.webp"
             title="Jimmy Wood Portfolio"
-            category="Visual Identity"
           />
         </div>
       </section>

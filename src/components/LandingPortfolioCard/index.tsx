@@ -4,14 +4,12 @@ import Link from "next/link";
 interface LandingPortfolioCardProps {
   imageUrl: string;
   title: string;
-  category: string;
   href: string;
 }
 
 export function LandingPortfolioCard({
   imageUrl,
   title,
-  category,
   href,
 }: LandingPortfolioCardProps) {
   return (
@@ -36,7 +34,6 @@ export function LandingPortfolioCard({
           <div className="text-black">{title}</div>
           <div className="h-0 w-full bg-black" />
         </div>
-        <div className="text-black">{category}</div>
       </div>
     </Link>
   );

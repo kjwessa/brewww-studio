@@ -7,12 +7,14 @@ import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { BannerBlock } from '@/blocks/Banner/Component'
 import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 import { LandingAboutBlock } from '@/blocks/LandingAbout/Component'
+import { LandingWorkBlock } from '@/blocks/LandingWork/Component'
 
 const blockComponents = {
   mediaBlock: MediaBlock,
   bannerBlock: BannerBlock,
   ctaBlock: CallToActionBlock,
   landingAboutBlock: LandingAboutBlock,
+  landingWorkBlock: LandingWorkBlock,
 } as const
 
 /**
