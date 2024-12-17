@@ -1,45 +1,55 @@
 import React from 'react'
-import { LandingHero, type LandingHeroProps } from '@/heros/LandingHero/Component'
+import { LandingHero } from '@/heros/LandingHero/Component'
 import type { Page } from '@/payload-types'
 
-type BaseHeroProps = {
-  type: string
-}
+// Define hero components registry with type safety
+const heroComponents = {
+  landing: LandingHero,
+} as const
 
-type HeroProps = BaseHeroProps & {
-  type: 'landing'
+type HeroTypes = keyof typeof heroComponents
+
+/**
+ * RenderHero Component
+ *
+ * Renders a hero section from a Payload page field group.
+ * Each hero type is rendered using its corresponding React component.
+ *
+ * @param props - Hero field group data from the page
+ * @returns React element for the hero or null if invalid
+ */
+export const RenderHero: React.FC<{
+  type: HeroTypes
   heroTitle?: string | null
   locationText?: string | null
   descriptionText?: string | null
   image?: Page['hero']['image']
-}
+}> = (props) => {
+  const { type, ...heroProps } = props
 
-const heroes = {
-  landing: LandingHero,
-} as const
+  // Get the component for this hero type
+  const HeroComponent = heroComponents[type]
 
-export const RenderHero: React.FC<HeroProps> = (props) => {
-  const { type } = props
-  if (!type) return null
-
-  const HeroComponent = heroes[type]
-  if (!HeroComponent) return null
-
-  // Only render if all required props are present and image is an object
-  if (
-    type === 'landing' && 
-    props.heroTitle && 
-    props.locationText && 
-    props.descriptionText && 
-    props.image && 
-    typeof props.image === 'object'
-  ) {
-    return <HeroComponent 
-      heroTitle={props.heroTitle}
-      locationText={props.locationText}
-      descriptionText={props.descriptionText}
-      image={props.image}
-    />
+  // Type guard for hero-specific props
+  switch (type) {
+    case 'landing':
+      if (
+        heroProps.heroTitle &&
+        heroProps.locationText &&
+        heroProps.descriptionText &&
+        heroProps.image &&
+        typeof heroProps.image === 'object'
+      ) {
+        return (
+          <HeroComponent
+            heroTitle={heroProps.heroTitle}
+            locationText={heroProps.locationText}
+            descriptionText={heroProps.descriptionText}
+            image={heroProps.image}
+          />
+        )
+      }
+      break
   }
 
   return null
