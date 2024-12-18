@@ -16,6 +16,9 @@ import {
 import { slugField } from '@/fields/slug'
 import { HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 
+// Hooks
+import { revalidateTeam, revalidateDelete } from './hooks/revalidateTeam'
+
 export const Team: CollectionConfig = {
   slug: 'team',
 
@@ -188,5 +191,9 @@ export const Team: CollectionConfig = {
   versions: {
     drafts: { autosave: { interval: 100 } },
     maxPerDoc: 25,
+  },
+  hooks: {
+    afterChange: [revalidateTeam],
+    afterDelete: [revalidateDelete],
   },
 }

@@ -23,8 +23,8 @@ export const Categories: CollectionConfig = {
   fields: [
     {
       name: 'title',
-      type: 'text',
       label: 'Category Title',
+      type: 'text',
       unique: true,
       required: true,
       admin: {
@@ -32,6 +32,13 @@ export const Categories: CollectionConfig = {
       },
     },
     ...slugField(),
+    {
+      name: 'relatedPosts',
+      label: 'Related Posts',
+      type: 'join',
+      collection: 'posts',
+      on: 'categories',
+    },
   ],
 
   //* Admin Settings

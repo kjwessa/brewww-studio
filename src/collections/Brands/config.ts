@@ -20,8 +20,8 @@ export const Brands: CollectionConfig = {
   fields: [
     {
       name: 'title',
+      label: 'Brand Name',
       type: 'text',
-      label: 'Name',
       required: true,
       unique: true,
       admin: {
@@ -30,31 +30,36 @@ export const Brands: CollectionConfig = {
     },
     {
       name: 'logoLight',
+      label: 'Logo Light',
       type: 'upload',
       relationTo: 'media',
       required: false,
-      label: 'Logo Light',
       admin: {
         description: 'Add the light version of the logo that appears on dark backgrounds',
       },
     },
     {
-      name: 'city',
-      type: 'text',
-      label: 'City',
-      required: false,
-      admin: {
-        description: 'The closest major city to the client.',
-      },
-    },
-    {
-      name: 'state',
-      type: 'text',
-      label: 'State',
-      required: false,
-      admin: {
-        description: 'The state where the client is based.',
-      },
+      type: 'row',
+      fields: [
+        {
+          name: 'city',
+          label: 'City',
+          type: 'text',
+          required: false,
+          admin: {
+            description: 'The closest major city to the client.',
+          },
+        },
+        {
+          name: 'state',
+          label: 'State',
+          type: 'text',
+          required: false,
+          admin: {
+            description: 'The state where the client is based.',
+          },
+        },
+      ],
     },
   ],
 

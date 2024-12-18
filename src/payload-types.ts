@@ -33,7 +33,11 @@ export interface Config {
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
-  collectionsJoins: {};
+  collectionsJoins: {
+    categories: {
+      relatedPosts: 'posts';
+    };
+  };
   collectionsSelect: {
     media: MediaSelect<false> | MediaSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
@@ -427,8 +431,14 @@ export interface LandingImageBlock {
 export interface Post {
   id: string;
   title: string;
+  slug?: string | null;
+  slugLock?: boolean | null;
   tagline?: string | null;
   description?: string | null;
+  publishedOn: string;
+  image: string | Media;
+  featured?: boolean | null;
+  readTime?: number | null;
   content: {
     root: {
       type: string;
@@ -450,12 +460,6 @@ export interface Post {
     image?: (string | null) | Media;
     description?: string | null;
   };
-  slug?: string | null;
-  slugLock?: boolean | null;
-  publishedOn: string;
-  image: string | Media;
-  featured?: boolean | null;
-  readTime?: number | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -469,6 +473,10 @@ export interface Category {
   title: string;
   slug?: string | null;
   slugLock?: boolean | null;
+  relatedPosts?: {
+    docs?: (string | Post)[] | null;
+    hasNextPage?: boolean | null;
+  } | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -1267,8 +1275,14 @@ export interface LandingImageBlockSelect<T extends boolean = true> {
  */
 export interface PostsSelect<T extends boolean = true> {
   title?: T;
+  slug?: T;
+  slugLock?: T;
   tagline?: T;
   description?: T;
+  publishedOn?: T;
+  image?: T;
+  featured?: T;
+  readTime?: T;
   content?: T;
   categories?: T;
   meta?:
@@ -1278,12 +1292,6 @@ export interface PostsSelect<T extends boolean = true> {
         image?: T;
         description?: T;
       };
-  slug?: T;
-  slugLock?: T;
-  publishedOn?: T;
-  image?: T;
-  featured?: T;
-  readTime?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
@@ -1296,6 +1304,7 @@ export interface CategoriesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
   slugLock?: T;
+  relatedPosts?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;

@@ -1,7 +1,5 @@
-// Payload Imports
+// Payload
 import type { CollectionConfig } from 'payload'
-
-// Access Control
 import { authenticated } from '@/access/authenticated'
 import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 
@@ -51,6 +49,7 @@ export const Posts: CollectionConfig = {
         description: 'The title of the article as it appears around the site.',
       },
     },
+    ...slugField(),
     {
       name: 'tagline',
       type: 'text',
@@ -69,73 +68,6 @@ export const Posts: CollectionConfig = {
         description: 'The description of the article as it appears around the site.',
       },
     },
-    {
-      type: 'tabs',
-      tabs: [
-        {
-          label: 'Content',
-          fields: [
-            {
-              name: 'content',
-              type: 'richText',
-              editor: lexicalEditor({
-                features: ({ defaultFeatures }) => [
-                  ...defaultFeatures,
-                  HeadingFeature({
-                    enabledHeadingSizes: ['h2', 'h3', 'h4'],
-                  }),
-                  BlocksFeature({
-                    blocks: [],
-                  }),
-                ],
-              }),
-              label: false,
-              required: true,
-            },
-          ],
-        },
-        {
-          label: 'Meta',
-          fields: [
-            {
-              name: 'categories',
-              type: 'relationship',
-              admin: {
-                position: 'sidebar',
-              },
-              hasMany: true,
-              relationTo: 'categories',
-              required: true,
-            },
-          ],
-        },
-        {
-          name: 'meta',
-          label: 'SEO',
-          fields: [
-            MetaTitleField({
-              hasGenerateFn: true,
-            }),
-            MetaImageField({
-              relationTo: 'media',
-            }),
-            MetaDescriptionField({}),
-            OverviewField({
-              titlePath: 'meta.title',
-              descriptionPath: 'meta.description',
-              imagePath: 'meta.image',
-            }),
-            PreviewField({
-              hasGenerateFn: true,
-              titlePath: 'meta.title',
-              descriptionPath: 'meta.description',
-            }),
-          ],
-        },
-      ],
-    },
-    ...slugField(),
-
     {
       name: 'publishedOn',
       type: 'date',
@@ -176,6 +108,72 @@ export const Posts: CollectionConfig = {
       admin: {
         position: 'sidebar',
       },
+    },
+    {
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Content',
+          fields: [
+            {
+              name: 'content',
+              type: 'richText',
+              editor: lexicalEditor({
+                features: ({ defaultFeatures }) => [
+                  ...defaultFeatures,
+                  HeadingFeature({
+                    enabledHeadingSizes: ['h2', 'h3', 'h4'],
+                  }),
+                  BlocksFeature({
+                    blocks: [],
+                  }),
+                ],
+              }),
+              label: false,
+              required: true,
+            },
+          ],
+        },
+        {
+          label: 'Meta',
+          fields: [
+            {
+              name: 'categories',
+              label: 'Categories',
+              type: 'relationship',
+              admin: {
+                position: 'sidebar',
+              },
+              hasMany: true,
+              relationTo: 'categories',
+              required: true,
+            },
+          ],
+        },
+        {
+          name: 'meta',
+          label: 'SEO',
+          fields: [
+            MetaTitleField({
+              hasGenerateFn: true,
+            }),
+            MetaImageField({
+              relationTo: 'media',
+            }),
+            MetaDescriptionField({}),
+            OverviewField({
+              titlePath: 'meta.title',
+              descriptionPath: 'meta.description',
+              imagePath: 'meta.image',
+            }),
+            PreviewField({
+              hasGenerateFn: true,
+              titlePath: 'meta.title',
+              descriptionPath: 'meta.description',
+            }),
+          ],
+        },
+      ],
     },
   ],
 
