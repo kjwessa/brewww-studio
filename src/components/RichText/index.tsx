@@ -1,4 +1,8 @@
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
+import type { MediaBlock as MediaBlockProps } from '@/payload-types'
+import { CodeBlock } from '@/blocks/Code/Component'
+import { CodeBlock as CodeBlockProps } from '@/payload-types'
+
 import { DefaultNodeTypes, SerializedBlockNode } from '@payloadcms/richtext-lexical'
 import { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
 import {
@@ -7,11 +11,10 @@ import {
 } from '@payloadcms/richtext-lexical/react'
 import { cva, type VariantProps } from 'class-variance-authority'
 
-import type { MediaBlock as MediaBlockProps } from '@/payload-types'
 import { cn } from '@/utilities/cn'
 import typographyPresets from './presets'
 
-type NodeTypes = DefaultNodeTypes | SerializedBlockNode<MediaBlockProps>
+type NodeTypes = DefaultNodeTypes | SerializedBlockNode<MediaBlockProps> | SerializedBlockNode<CodeBlockProps>
 
 const richTextVariants = cva('', {
   variants: {
@@ -37,13 +40,7 @@ type Props = VariantProps<typeof richTextVariants> & {
 } & React.HTMLAttributes<HTMLDivElement>
 
 export function RichText(props: Props) {
-  const { 
-    className, 
-    enableGutter = true, 
-    preset = 'default',
-    data,
-    ...rest 
-  } = props
+  const { className, enableGutter = true, preset = 'default', data, ...rest } = props
 
   if (!data) return null
 
@@ -53,31 +50,19 @@ export function RichText(props: Props) {
     return {
       ...defaultConverters,
       paragraph: ({ node, nodesToJSX }) => (
-        <p className={presetClasses.paragraph}>
-          {nodesToJSX({ nodes: node.children })}
-        </p>
+        <p className={presetClasses.paragraph}>{nodesToJSX({ nodes: node.children })}</p>
       ),
       heading: ({ node, nodesToJSX }) => {
         const Tag = node.tag as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
         const headingClass = presetClasses[node.tag as keyof typeof presetClasses]
-        return (
-          <Tag className={headingClass}>
-            {nodesToJSX({ nodes: node.children })}
-          </Tag>
-        )
+        return <Tag className={headingClass}>{nodesToJSX({ nodes: node.children })}</Tag>
       },
       list: ({ node, nodesToJSX }) => {
         const Tag = node.tag as 'ul' | 'ol'
-        return (
-          <Tag className={presetClasses.list}>
-            {nodesToJSX({ nodes: node.children })}
-          </Tag>
-        )
+        return <Tag className={presetClasses.list}>{nodesToJSX({ nodes: node.children })}</Tag>
       },
       listitem: ({ node, nodesToJSX }) => (
-        <li className={presetClasses.listItem}>
-          {nodesToJSX({ nodes: node.children })}
-        </li>
+        <li className={presetClasses.listItem}>{nodesToJSX({ nodes: node.children })}</li>
       ),
       quote: ({ node, nodesToJSX }) => (
         <blockquote className={presetClasses.quote}>
@@ -100,20 +85,20 @@ export function RichText(props: Props) {
             disableInnerContainer={true}
           />
         ),
+        code: ({ node }) => (
+          <CodeBlock
+            className="col-span-3 col-start-1"
+            {...node.fields}
+            language={node.fields.language || undefined}
+          />
+        ),
       },
     }
   }
-  
+
   return (
-    <div className={cn(
-      richTextVariants({ enableGutter, preset }),
-      className
-    )}>
-      <RichTextWithoutBlocks
-        data={data}
-        converters={customConverters}
-        {...rest}
-      />
+    <div className={cn(richTextVariants({ enableGutter, preset }), className)}>
+      <RichTextWithoutBlocks data={data} converters={customConverters} {...rest} />
     </div>
   )
 }

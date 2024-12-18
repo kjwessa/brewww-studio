@@ -14,6 +14,8 @@ import {
 
 import { slugField } from '@/fields/slug'
 
+import { MediaBlock } from '@/blocks/MediaBlock/config'
+import { Code } from '@/blocks/Code/config'
 // Utilities & Hooks
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
 import { populatePublishedOn } from '@/hooks/populatePublishedOn'
@@ -142,7 +144,7 @@ export const Posts: CollectionConfig = {
                     enabledHeadingSizes: ['h2', 'h3', 'h4'],
                   }),
                   BlocksFeature({
-                    blocks: [],
+                    blocks: [MediaBlock, Code],
                   }),
                 ],
               }),

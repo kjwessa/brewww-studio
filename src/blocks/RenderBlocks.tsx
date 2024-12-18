@@ -11,10 +11,11 @@ import { LandingWorkBlock } from '@/blocks/LandingWork/Component'
 import { LandingFooterBlock } from '@/blocks/LandingFooter/Component'
 import { LandingServiceBlock } from '@/blocks/LandingService/Component'
 import { LandingImageBlock } from '@/blocks/LandingImage/Component'
+import { FormBlock } from '@/blocks/Form/Component'
 
 /**
  * Block Components Registry
- * 
+ *
  * IMPORTANT: The keys in this object MUST match the 'slug' property defined in each block's config file.
  * For example, if a block config has:
  *   export const MyBlock: Block = {
@@ -22,7 +23,7 @@ import { LandingImageBlock } from '@/blocks/LandingImage/Component'
  *     ...
  *   }
  * Then the key in this object must be 'myBlock', NOT 'myBlockBlock' or anything else.
- * 
+ *
  * This is because Payload CMS uses the slug to identify block types in the data it sends.
  * If the keys don't match the slugs exactly, the blocks won't render.
  */
@@ -30,11 +31,12 @@ const blockComponents = {
   mediaBlock: MediaBlock, // matches slug: 'mediaBlock' in MediaBlock/config.ts
   bannerBlock: BannerBlock, // matches slug: 'banner' in Banner/config.ts
   ctaBlock: CallToActionBlock, // matches slug: 'cta' in CallToAction/config.ts
-  landingAbout: LandingAboutBlock,  // matches slug: 'landingAbout' in LandingAbout/config.ts
-  landingWork: LandingWorkBlock,    // matches slug: 'landingWork' in LandingWork/config.ts
+  landingAbout: LandingAboutBlock, // matches slug: 'landingAbout' in LandingAbout/config.ts
+  landingWork: LandingWorkBlock, // matches slug: 'landingWork' in LandingWork/config.ts
   landingFooter: LandingFooterBlock, // matches slug: 'landingFooter' in LandingFooter/config.ts
   landingService: LandingServiceBlock, // matches slug: 'landingService' in LandingService/config.ts
   landingImage: LandingImageBlock, // matches slug: 'landingImage' in LandingImage/config.ts
+  form: FormBlock, // matches slug: 'form' in Form/config.ts
 } as const
 
 /**
@@ -50,7 +52,7 @@ const blockComponents = {
  * // When adding a new block:
  * // 1. Create your block config with a slug
  * // export const MyBlock: Block = { slug: 'myBlock', ... }
- * // 
+ * //
  * // 2. Add your component to blockComponents using the EXACT SAME slug
  * // const blockComponents = {
  * //   myBlock: MyBlockComponent,  // Key must match slug
