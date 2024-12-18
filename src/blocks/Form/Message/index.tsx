@@ -1,8 +1,8 @@
 import { RichText } from '@/components/RichText'
-import { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
 import React from 'react'
 
 import { Width } from '../Width'
+import { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
 
 export const Message: React.FC = ({ message }: { message: SerializedEditorState }) => {
   return (

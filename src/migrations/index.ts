@@ -53,6 +53,7 @@ import * as migration_20241218_164540_add_exclude_from_sitemap_to_team from './2
 import * as migration_20241218_164733_add_remove_from_sitemap_for_locations from './20241218_164733_add_remove_from_sitemap_for_locations';
 import * as migration_20241218_164850_add_exclude_from_sitemap_to_projects from './20241218_164850_add_exclude_from_sitemap_to_projects';
 import * as migration_20241218_172603_add_remove_from_sitemap_to_services from './20241218_172603_add_remove_from_sitemap_to_services';
+import * as migration_20241218_193659_add_form_block_to_pages from './20241218_193659_add_form_block_to_pages';
 
 export const migrations = [
   {
@@ -328,6 +329,11 @@ export const migrations = [
   {
     up: migration_20241218_172603_add_remove_from_sitemap_to_services.up,
     down: migration_20241218_172603_add_remove_from_sitemap_to_services.down,
-    name: '20241218_172603_add_remove_from_sitemap_to_services'
+    name: '20241218_172603_add_remove_from_sitemap_to_services',
+  },
+  {
+    up: migration_20241218_193659_add_form_block_to_pages.up,
+    down: migration_20241218_193659_add_form_block_to_pages.down,
+    name: '20241218_193659_add_form_block_to_pages'
   },
 ];
