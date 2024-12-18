@@ -57,6 +57,16 @@ export const Location: CollectionConfig = {
       },
     },
     {
+      name: 'excludeFromSitemap',
+      type: 'checkbox',
+      label: 'Exclude from Sitemap',
+      defaultValue: false,
+      admin: {
+        description: 'If checked, this location will not appear in the sitemap',
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'locationState',
       type: 'text',
       label: 'Location State',

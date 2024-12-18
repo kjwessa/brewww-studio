@@ -328,6 +328,7 @@ export interface Project {
   title: string;
   tagline?: string | null;
   description?: string | null;
+  excludeFromSitemap?: boolean | null;
   storyTitle?: string | null;
   storyContent?: {
     root: {
@@ -437,6 +438,7 @@ export interface Post {
   tagline?: string | null;
   description?: string | null;
   publishedOn: string;
+  excludeFromSitemap?: boolean | null;
   image: string | Media;
   featured?: boolean | null;
   readTime?: number | null;
@@ -505,6 +507,7 @@ export interface Location {
     [k: string]: unknown;
   };
   locationCity: string;
+  excludeFromSitemap?: boolean | null;
   locationState: string;
   image?: (string | null) | Media;
   meta?: {
@@ -592,6 +595,7 @@ export interface Service {
   id: string;
   title: string;
   tagline?: string | null;
+  excludeFromSitemap?: boolean | null;
   slug?: string | null;
   slugLock?: boolean | null;
   meta?: {
@@ -662,6 +666,7 @@ export interface Team {
   slug?: string | null;
   slugLock?: boolean | null;
   role: string;
+  excludeFromSitemap?: boolean | null;
   image: string | Media;
   bioImage: string | Media;
   heroTitle: string;
@@ -1282,6 +1287,7 @@ export interface PostsSelect<T extends boolean = true> {
   tagline?: T;
   description?: T;
   publishedOn?: T;
+  excludeFromSitemap?: T;
   image?: T;
   featured?: T;
   readTime?: T;
@@ -1319,6 +1325,7 @@ export interface LocationsSelect<T extends boolean = true> {
   title?: T;
   heroDescription?: T;
   locationCity?: T;
+  excludeFromSitemap?: T;
   locationState?: T;
   image?: T;
   meta?:
@@ -1342,6 +1349,7 @@ export interface ProjectsSelect<T extends boolean = true> {
   title?: T;
   tagline?: T;
   description?: T;
+  excludeFromSitemap?: T;
   storyTitle?: T;
   storyContent?: T;
   meta?:
@@ -1415,6 +1423,7 @@ export interface TestimonialsSelect<T extends boolean = true> {
 export interface ServicesSelect<T extends boolean = true> {
   title?: T;
   tagline?: T;
+  excludeFromSitemap?: T;
   slug?: T;
   slugLock?: T;
   meta?:
@@ -1470,6 +1479,7 @@ export interface TeamSelect<T extends boolean = true> {
   slug?: T;
   slugLock?: T;
   role?: T;
+  excludeFromSitemap?: T;
   image?: T;
   bioImage?: T;
   heroTitle?: T;

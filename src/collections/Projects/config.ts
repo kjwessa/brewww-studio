@@ -59,6 +59,16 @@ export const Projects: CollectionConfig = {
       },
     },
     {
+      name: 'excludeFromSitemap',
+      type: 'checkbox',
+      label: 'Exclude from Sitemap',
+      defaultValue: true,
+      admin: {
+        description: 'If checked, this project will not appear in the sitemap',
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'storyTitle',
       type: 'text',
       label: 'Story Title',

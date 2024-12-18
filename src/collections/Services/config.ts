@@ -52,6 +52,16 @@ export const Services: CollectionConfig = {
         description: 'The tagline of the service as it appears around the site.',
       },
     },
+    {
+      name: 'excludeFromSitemap',
+      type: 'checkbox',
+      label: 'Exclude from Sitemap',
+      defaultValue: true,
+      admin: {
+        description: 'If checked, this service will not appear in the sitemap',
+        position: 'sidebar',
+      },
+    },
     ...slugField(),
     {
       type: 'tabs',

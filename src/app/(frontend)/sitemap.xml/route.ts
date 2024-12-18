@@ -48,7 +48,7 @@ const getAllSitemap = unstable_cache(
     ]
 
     // Fetch all content types in parallel
-    const [pages, posts, team, locations] = await Promise.all([
+    const [pages, posts, team, locations, projects, services] = await Promise.all([
       payload.find({
         collection: 'pages',
         overrideAccess: false,
@@ -83,9 +83,18 @@ const getAllSitemap = unstable_cache(
         limit: 1000,
         pagination: false,
         where: {
-          _status: {
-            equals: 'published',
-          },
+          and: [
+            {
+              _status: {
+                equals: 'published',
+              },
+            },
+            {
+              excludeFromSitemap: {
+                equals: false,
+              },
+            },
+          ],
         },
         select: {
           slug: true,
@@ -100,9 +109,18 @@ const getAllSitemap = unstable_cache(
         limit: 1000,
         pagination: false,
         where: {
-          _status: {
-            equals: 'published',
-          },
+          and: [
+            {
+              _status: {
+                equals: 'published',
+              },
+            },
+            {
+              excludeFromSitemap: {
+                equals: false,
+              },
+            },
+          ],
         },
         select: {
           slug: true,
@@ -117,9 +135,70 @@ const getAllSitemap = unstable_cache(
         limit: 1000,
         pagination: false,
         where: {
-          _status: {
-            equals: 'published',
-          },
+          and: [
+            {
+              _status: {
+                equals: 'published',
+              },
+            },
+            {
+              excludeFromSitemap: {
+                equals: false,
+              },
+            },
+          ],
+        },
+        select: {
+          slug: true,
+          updatedAt: true,
+        },
+      }),
+      payload.find({
+        collection: 'projects',
+        overrideAccess: false,
+        draft: false,
+        depth: 0,
+        limit: 1000,
+        pagination: false,
+        where: {
+          and: [
+            {
+              _status: {
+                equals: 'published',
+              },
+            },
+            {
+              excludeFromSitemap: {
+                equals: false,
+              },
+            },
+          ],
+        },
+        select: {
+          slug: true,
+          updatedAt: true,
+        },
+      }),
+      payload.find({
+        collection: 'services',
+        overrideAccess: false,
+        draft: false,
+        depth: 0,
+        limit: 1000,
+        pagination: false,
+        where: {
+          and: [
+            {
+              _status: {
+                equals: 'published',
+              },
+            },
+            {
+              excludeFromSitemap: {
+                equals: false,
+              },
+            },
+          ],
         },
         select: {
           slug: true,
@@ -176,8 +255,32 @@ const getAllSitemap = unstable_cache(
           }))
       : []
 
+    // Transform projects
+    const projectsSitemap: SitemapField[] = projects.docs
+      ? projects.docs
+          .filter((project) => Boolean(project?.slug))
+          .map((project) => ({
+            loc: `${SITE_URL}/work/${project?.slug}`,
+            lastmod: project.updatedAt || dateFallback,
+            changefreq: 'weekly',
+            priority: 0.7,
+          }))
+      : []
+
+    // Transform services
+    const servicesSitemap: SitemapField[] = services.docs
+      ? services.docs
+          .filter((service) => Boolean(service?.slug))
+          .map((service) => ({
+            loc: `${SITE_URL}/services/${service?.slug}`,
+            lastmod: service.updatedAt || dateFallback,
+            changefreq: 'weekly',
+            priority: 0.8,
+          }))
+      : []
+
     // Combine all sitemaps, filtering out any duplicates
-    const allUrls = [...staticPages, ...pagesSitemap, ...postsSitemap, ...teamSitemap, ...locationsSitemap]
+    const allUrls = [...staticPages, ...pagesSitemap, ...postsSitemap, ...teamSitemap, ...locationsSitemap, ...projectsSitemap, ...servicesSitemap]
     const uniqueUrls = Array.from(new Map(allUrls.map((item) => [item.loc, item])).values())
 
     return uniqueUrls

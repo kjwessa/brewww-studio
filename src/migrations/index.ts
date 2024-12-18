@@ -48,6 +48,11 @@ import * as migration_20241217_200915_add_landingfooter_block from './20241217_2
 import * as migration_20241217_202946_add_landingservice_block from './20241217_202946_add_landingservice_block';
 import * as migration_20241217_205829_add_landingimage_block from './20241217_205829_add_landingimage_block';
 import * as migration_20241218_164215_add_exclude_from_sitemap_to_pages from './20241218_164215_add_exclude_from_sitemap_to_pages';
+import * as migration_20241218_164441_add_exclude_from_sitemap_to_posts from './20241218_164441_add_exclude_from_sitemap_to_posts';
+import * as migration_20241218_164540_add_exclude_from_sitemap_to_team from './20241218_164540_add_exclude_from_sitemap_to_team';
+import * as migration_20241218_164733_add_remove_from_sitemap_for_locations from './20241218_164733_add_remove_from_sitemap_for_locations';
+import * as migration_20241218_164850_add_exclude_from_sitemap_to_projects from './20241218_164850_add_exclude_from_sitemap_to_projects';
+import * as migration_20241218_172603_add_remove_from_sitemap_to_services from './20241218_172603_add_remove_from_sitemap_to_services';
 
 export const migrations = [
   {
@@ -298,6 +303,31 @@ export const migrations = [
   {
     up: migration_20241218_164215_add_exclude_from_sitemap_to_pages.up,
     down: migration_20241218_164215_add_exclude_from_sitemap_to_pages.down,
-    name: '20241218_164215_add_exclude_from_sitemap_to_pages'
+    name: '20241218_164215_add_exclude_from_sitemap_to_pages',
+  },
+  {
+    up: migration_20241218_164441_add_exclude_from_sitemap_to_posts.up,
+    down: migration_20241218_164441_add_exclude_from_sitemap_to_posts.down,
+    name: '20241218_164441_add_exclude_from_sitemap_to_posts',
+  },
+  {
+    up: migration_20241218_164540_add_exclude_from_sitemap_to_team.up,
+    down: migration_20241218_164540_add_exclude_from_sitemap_to_team.down,
+    name: '20241218_164540_add_exclude_from_sitemap_to_team',
+  },
+  {
+    up: migration_20241218_164733_add_remove_from_sitemap_for_locations.up,
+    down: migration_20241218_164733_add_remove_from_sitemap_for_locations.down,
+    name: '20241218_164733_add_remove_from_sitemap_for_locations',
+  },
+  {
+    up: migration_20241218_164850_add_exclude_from_sitemap_to_projects.up,
+    down: migration_20241218_164850_add_exclude_from_sitemap_to_projects.down,
+    name: '20241218_164850_add_exclude_from_sitemap_to_projects',
+  },
+  {
+    up: migration_20241218_172603_add_remove_from_sitemap_to_services.up,
+    down: migration_20241218_172603_add_remove_from_sitemap_to_services.down,
+    name: '20241218_172603_add_remove_from_sitemap_to_services'
   },
 ];

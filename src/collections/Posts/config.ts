@@ -81,6 +81,16 @@ export const Posts: CollectionConfig = {
       },
     },
     {
+      name: 'excludeFromSitemap',
+      type: 'checkbox',
+      label: 'Exclude from Sitemap',
+      defaultValue: false,
+      admin: {
+        description: 'If checked, this post will not appear in the sitemap',
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'image',
       type: 'upload',
       relationTo: 'media',
