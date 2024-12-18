@@ -15,6 +15,9 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 
+// Hooks
+import { revalidateLocation, revalidateDelete } from './hooks/revalidateLocation'
+
 export const Location: CollectionConfig = {
   slug: 'locations',
 
@@ -24,6 +27,11 @@ export const Location: CollectionConfig = {
     delete: authenticated,
     read: authenticatedOrPublished,
     update: authenticated,
+  },
+
+  hooks: {
+    afterChange: [revalidateLocation],
+    afterDelete: [revalidateDelete],
   },
 
   //* Collection Fields
