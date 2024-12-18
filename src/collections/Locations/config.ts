@@ -18,6 +18,9 @@ import {
 // Hooks
 import { revalidateLocation, revalidateDelete } from './hooks/revalidateLocation'
 
+// Utilities
+import { generatePreviewPath } from '@/utilities/generatePreviewPath'
+
 export const Location: CollectionConfig = {
   slug: 'locations',
 
@@ -51,22 +54,27 @@ export const Location: CollectionConfig = {
       },
     },
     {
-      name: 'locationCity',
-      type: 'text',
-      label: 'Location City',
-      required: true,
-      admin: {
-        description: 'The city of the location.',
-      },
-    },
-    {
-      name: 'locationState',
-      type: 'text',
-      label: 'Location State',
-      required: true,
-      admin: {
-        description: 'The state of the location.',
-      },
+      type: 'row',
+      fields: [
+        {
+          name: 'locationCity',
+          type: 'text',
+          label: 'Location City',
+          required: true,
+          admin: {
+            description: 'The city of the location.',
+          },
+        },
+        {
+          name: 'locationState',
+          type: 'text',
+          label: 'Location State',
+          required: true,
+          admin: {
+            description: 'The state of the location.',
+          },
+        },
+      ],
     },
     {
       name: 'image',
@@ -132,6 +140,23 @@ export const Location: CollectionConfig = {
     defaultColumns: ['title', '_status', 'updatedAt'],
     group: 'Service',
     listSearchableFields: ['title', 'locationCity', 'locationState'],
+    livePreview: {
+      url: ({ data, req }) => {
+        const path = generatePreviewPath({
+          slug: typeof data?.slug === 'string' ? data.slug : '',
+          collection: 'locations',
+          req,
+        })
+
+        return path
+      },
+    },
+    preview: (data, { req }) =>
+      generatePreviewPath({
+        slug: typeof data?.slug === 'string' ? data.slug : '',
+        collection: 'locations',
+        req,
+      }),
     pagination: {
       defaultLimit: 50,
       limits: [10, 25, 50, 100],

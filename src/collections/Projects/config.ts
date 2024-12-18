@@ -157,6 +157,23 @@ export const Projects: CollectionConfig = {
     defaultColumns: ['title', '_status', 'updatedAt'],
     group: 'Portfolio',
     listSearchableFields: ['title'],
+    livePreview: {
+      url: ({ data, req }) => {
+        const path = generatePreviewPath({
+          slug: typeof data?.slug === 'string' ? data.slug : '',
+          collection: 'projects',
+          req,
+        })
+
+        return path
+      },
+    },
+    preview: (data, { req }) =>
+      generatePreviewPath({
+        slug: typeof data?.slug === 'string' ? data.slug : '',
+        collection: 'projects',
+        req,
+      }),
     pagination: {
       defaultLimit: 50,
       limits: [10, 25, 50, 100],

@@ -19,6 +19,9 @@ import { HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 // Hooks
 import { revalidateTeam, revalidateDelete } from './hooks/revalidateTeam'
 
+// Utilities
+import { generatePreviewPath } from '@/utilities/generatePreviewPath'
+
 export const Team: CollectionConfig = {
   slug: 'team',
 
@@ -193,6 +196,23 @@ export const Team: CollectionConfig = {
     defaultColumns: ['title', '_status', 'updatedAt'],
     group: 'Company',
     listSearchableFields: ['title'],
+    livePreview: {
+      url: ({ data, req }) => {
+        const path = generatePreviewPath({
+          slug: typeof data?.slug === 'string' ? data.slug : '',
+          collection: 'team',
+          req,
+        })
+
+        return path
+      },
+    },
+    preview: (data, { req }) =>
+      generatePreviewPath({
+        slug: typeof data?.slug === 'string' ? data.slug : '',
+        collection: 'team',
+        req,
+      }),
     pagination: {
       defaultLimit: 50,
       limits: [10, 25, 50, 100],

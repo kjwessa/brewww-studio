@@ -134,6 +134,23 @@ export const Services: CollectionConfig = {
     defaultColumns: ['title', '_status', 'updatedAt'],
     group: 'Service',
     listSearchableFields: ['title'],
+    livePreview: {
+      url: ({ data, req }) => {
+        const path = generatePreviewPath({
+          slug: typeof data?.slug === 'string' ? data.slug : '',
+          collection: 'services',
+          req,
+        })
+
+        return path
+      },
+    },
+    preview: (data, { req }) =>
+      generatePreviewPath({
+        slug: typeof data?.slug === 'string' ? data.slug : '',
+        collection: 'services',
+        req,
+      }),
     pagination: {
       defaultLimit: 50,
       limits: [10, 25, 50, 100],
