@@ -193,6 +193,7 @@ export interface Page {
         | LandingFooterBlock
         | LandingServiceBlock
         | LandingImageBlock
+        | BeforeAfterSliderBlock
       )[]
     | null;
   meta?: {
@@ -616,6 +617,18 @@ export interface LandingImageBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'landingImage';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "BeforeAfterSliderBlock".
+ */
+export interface BeforeAfterSliderBlock {
+  beforeImage: string | Media;
+  afterImage: string | Media;
+  backgroundColor: 'bg-neutral-950' | 'bg-white' | 'bg-neutral-100';
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'beforeAfterSlider';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1166,6 +1179,7 @@ export interface PagesSelect<T extends boolean = true> {
         landingFooter?: T | LandingFooterBlockSelect<T>;
         landingService?: T | LandingServiceBlockSelect<T>;
         landingImage?: T | LandingImageBlockSelect<T>;
+        beforeAfterSlider?: T | BeforeAfterSliderBlockSelect<T>;
       };
   meta?:
     | T
@@ -1312,6 +1326,17 @@ export interface LandingServiceBlockSelect<T extends boolean = true> {
 export interface LandingImageBlockSelect<T extends boolean = true> {
   image?: T;
   alt?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "BeforeAfterSliderBlock_select".
+ */
+export interface BeforeAfterSliderBlockSelect<T extends boolean = true> {
+  beforeImage?: T;
+  afterImage?: T;
+  backgroundColor?: T;
   id?: T;
   blockName?: T;
 }

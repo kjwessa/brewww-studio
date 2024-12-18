@@ -12,6 +12,7 @@ import { LandingFooterBlock } from '@/blocks/LandingFooter/Component'
 import { LandingServiceBlock } from '@/blocks/LandingService/Component'
 import { LandingImageBlock } from '@/blocks/LandingImage/Component'
 import { FormBlock } from '@/blocks/Form/Component'
+import { BeforeAfterSliderBlock } from '@/blocks/BeforeAfterSlider/Component'
 
 /**
  * Block Components Registry
@@ -37,6 +38,7 @@ const blockComponents = {
   landingService: LandingServiceBlock, // matches slug: 'landingService' in LandingService/config.ts
   landingImage: LandingImageBlock, // matches slug: 'landingImage' in LandingImage/config.ts
   form: FormBlock, // matches slug: 'form' in Form/config.ts
+  beforeAfterSlider: BeforeAfterSliderBlock, // matches slug: 'beforeAfterSlider' in BeforeAfterSlider/config.ts
 } as const
 
 /**

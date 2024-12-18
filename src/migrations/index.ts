@@ -54,6 +54,7 @@ import * as migration_20241218_164733_add_remove_from_sitemap_for_locations from
 import * as migration_20241218_164850_add_exclude_from_sitemap_to_projects from './20241218_164850_add_exclude_from_sitemap_to_projects';
 import * as migration_20241218_172603_add_remove_from_sitemap_to_services from './20241218_172603_add_remove_from_sitemap_to_services';
 import * as migration_20241218_193659_add_form_block_to_pages from './20241218_193659_add_form_block_to_pages';
+import * as migration_20241218_201257_add_beforeAfterSlider_block_option from './20241218_201257_add_beforeAfterSlider_block_option';
 
 export const migrations = [
   {
@@ -334,6 +335,11 @@ export const migrations = [
   {
     up: migration_20241218_193659_add_form_block_to_pages.up,
     down: migration_20241218_193659_add_form_block_to_pages.down,
-    name: '20241218_193659_add_form_block_to_pages'
+    name: '20241218_193659_add_form_block_to_pages',
+  },
+  {
+    up: migration_20241218_201257_add_beforeAfterSlider_block_option.up,
+    down: migration_20241218_201257_add_beforeAfterSlider_block_option.down,
+    name: '20241218_201257_add_beforeAfterSlider_block_option'
   },
 ];
