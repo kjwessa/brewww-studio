@@ -6,7 +6,9 @@ const SITE_URL =
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: SITE_URL,
+  autoLastmod: true,
   generateRobotsTxt: true,
+  exclude: ['/admin/*', '/landing/*', '/theme/*'],
   generateIndexSitemap: false,
   generateSitemap: false,
   robotsTxtOptions: {
@@ -16,8 +18,6 @@ module.exports = {
         disallow: '/admin/*',
       },
     ],
-    additionalSitemaps: [
-      `${SITE_URL}/sitemap.xml`,
-    ],
+    additionalSitemaps: [`${SITE_URL}/sitemap.xml`],
   },
 }
