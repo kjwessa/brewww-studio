@@ -204,12 +204,12 @@ export const Team: CollectionConfig = {
     singular: 'Team Member',
     plural: 'Team',
   },
-  versions: {
-    drafts: { autosave: { interval: 100 } },
-    maxPerDoc: 25,
-  },
   hooks: {
     afterChange: [revalidateTeam],
     afterDelete: [revalidateDelete],
+  },
+  versions: {
+    drafts: { autosave: { interval: 100 } },
+    maxPerDoc: 25,
   },
 }

@@ -229,12 +229,12 @@ export const Posts: CollectionConfig = {
     singular: 'Post',
     plural: 'Posts',
   },
-  versions: {
-    drafts: { autosave: { interval: 100 } },
-    maxPerDoc: 25,
-  },
   hooks: {
     beforeChange: [populatePublishedOn, setMetaImageFallback],
     afterChange: [revalidatePost],
+  },
+  versions: {
+    drafts: { autosave: { interval: 100 } },
+    maxPerDoc: 25,
   },
 }

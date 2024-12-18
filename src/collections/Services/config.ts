@@ -34,11 +34,6 @@ export const Services: CollectionConfig = {
     update: authenticated,
   },
 
-  hooks: {
-    afterChange: [revalidateService],
-    afterDelete: [revalidateDelete],
-  },
-
   //* Collection Fields
   fields: [
     {
@@ -149,6 +144,10 @@ export const Services: CollectionConfig = {
   labels: {
     singular: 'Service',
     plural: 'Services',
+  },
+  hooks: {
+    afterChange: [revalidateService],
+    afterDelete: [revalidateDelete],
   },
   versions: {
     drafts: { autosave: { interval: 100 } },

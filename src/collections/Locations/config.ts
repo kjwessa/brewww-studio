@@ -29,11 +29,6 @@ export const Location: CollectionConfig = {
     update: authenticated,
   },
 
-  hooks: {
-    afterChange: [revalidateLocation],
-    afterDelete: [revalidateDelete],
-  },
-
   //* Collection Fields
   fields: [
     {
@@ -147,6 +142,10 @@ export const Location: CollectionConfig = {
   labels: {
     singular: 'Location',
     plural: 'Locations',
+  },
+  hooks: {
+    afterChange: [revalidateLocation],
+    afterDelete: [revalidateDelete],
   },
   versions: {
     drafts: { autosave: { interval: 100 } },

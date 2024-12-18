@@ -31,11 +31,6 @@ export const Projects: CollectionConfig = {
     update: authenticated,
   },
 
-  hooks: {
-    afterChange: [revalidateProject],
-    afterDelete: [revalidateDelete],
-  },
-
   //* Collection Fields
   fields: [
     {
@@ -171,6 +166,10 @@ export const Projects: CollectionConfig = {
   labels: {
     singular: 'Project',
     plural: 'Projects',
+  },
+  hooks: {
+    afterChange: [revalidateProject],
+    afterDelete: [revalidateDelete],
   },
   versions: {
     drafts: { autosave: { interval: 100 } },
