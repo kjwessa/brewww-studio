@@ -8,6 +8,9 @@ import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
 // Fields
 import { slugField } from '@/fields/slug'
 
+// Hooks
+import { revalidateProject, revalidateDelete } from './hooks/revalidateProject'
+
 import { generatePreviewPath } from '@root/utilities/generatePreviewPath'
 import {
   MetaDescriptionField,
@@ -26,6 +29,11 @@ export const Projects: CollectionConfig = {
     delete: authenticated,
     read: authenticatedOrPublished,
     update: authenticated,
+  },
+
+  hooks: {
+    afterChange: [revalidateProject],
+    afterDelete: [revalidateDelete],
   },
 
   //* Collection Fields
