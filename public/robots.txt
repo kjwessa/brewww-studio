@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Disallow: /admin/*
-
-# Host
-Host: https://brewww.studio
-
-# Sitemaps
-Sitemap: https://brewww.studio/sitemap.xml

@@ -1,8 +1,13 @@
-import { getServerSideSitemap } from 'next-sitemap'
-import type { ISitemapField } from 'next-sitemap'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import { unstable_cache } from 'next/cache'
+
+interface SitemapField {
+  loc: string
+  lastmod?: string
+  changefreq?: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never'
+  priority?: number
+}
 
 const getAllSitemap = unstable_cache(
   async () => {
@@ -15,17 +20,23 @@ const getAllSitemap = unstable_cache(
     const dateFallback = new Date().toISOString()
 
     // Important static pages that should always be in sitemap
-    const staticPages: ISitemapField[] = [
+    const staticPages: SitemapField[] = [
+      {
+        loc: SITE_URL,
+        lastmod: dateFallback,
+        changefreq: 'daily',
+        priority: 1.0,
+      },
       {
         loc: `${SITE_URL}/about`,
         lastmod: dateFallback,
-        changefreq: 'daily',
+        changefreq: 'weekly',
         priority: 0.8,
       },
       {
         loc: `${SITE_URL}/contact`,
         lastmod: dateFallback,
-        changefreq: 'daily',
+        changefreq: 'weekly',
         priority: 0.8,
       },
       {
@@ -34,16 +45,10 @@ const getAllSitemap = unstable_cache(
         changefreq: 'daily',
         priority: 0.7,
       },
-      {
-        loc: `${SITE_URL}/location`,
-        lastmod: dateFallback,
-        changefreq: 'daily',
-        priority: 0.7,
-      },
     ]
 
     // Fetch all content types in parallel
-    const [pages, posts, locations] = await Promise.all([
+    const [pages, posts, team, locations] = await Promise.all([
       payload.find({
         collection: 'pages',
         overrideAccess: false,
@@ -79,6 +84,23 @@ const getAllSitemap = unstable_cache(
         },
       }),
       payload.find({
+        collection: 'team',
+        overrideAccess: false,
+        draft: false,
+        depth: 0,
+        limit: 1000,
+        pagination: false,
+        where: {
+          _status: {
+            equals: 'published',
+          },
+        },
+        select: {
+          slug: true,
+          updatedAt: true,
+        },
+      }),
+      payload.find({
         collection: 'locations',
         overrideAccess: false,
         draft: false,
@@ -98,55 +120,89 @@ const getAllSitemap = unstable_cache(
     ])
 
     // Transform pages
-    const pagesSitemap: ISitemapField[] = pages.docs
+    const pagesSitemap: SitemapField[] = pages.docs
       ? pages.docs
           .filter((page) => Boolean(page?.slug))
           .map((page) => ({
-            loc: page?.slug === 'home' ? `${SITE_URL}/` : `${SITE_URL}/${page?.slug}`,
+            loc: page?.slug === 'home' ? SITE_URL : `${SITE_URL}/${page?.slug}`,
             lastmod: page.updatedAt || dateFallback,
             changefreq: 'daily',
-            priority: 0.7,
+            priority: page?.slug === 'home' ? 1.0 : 0.7,
           }))
       : []
 
     // Transform posts
-    const postsSitemap: ISitemapField[] = posts.docs
+    const postsSitemap: SitemapField[] = posts.docs
       ? posts.docs
           .filter((post) => Boolean(post?.slug))
           .map((post) => ({
             loc: `${SITE_URL}/journal/${post?.slug}`,
             lastmod: post.updatedAt || dateFallback,
-            changefreq: 'daily',
+            changefreq: 'weekly',
+            priority: 0.6,
+          }))
+      : []
+
+    // Transform team
+    const teamSitemap: SitemapField[] = team.docs
+      ? team.docs
+          .filter((member) => Boolean(member?.slug))
+          .map((member) => ({
+            loc: `${SITE_URL}/team/${member?.slug}`,
+            lastmod: member.updatedAt || dateFallback,
+            changefreq: 'weekly',
             priority: 0.6,
           }))
       : []
 
     // Transform locations
-    const locationsSitemap: ISitemapField[] = locations.docs
+    const locationsSitemap: SitemapField[] = locations.docs
       ? locations.docs
           .filter((location) => Boolean(location?.slug))
           .map((location) => ({
             loc: `${SITE_URL}/location/${location?.slug}`,
             lastmod: location.updatedAt || dateFallback,
-            changefreq: 'daily',
+            changefreq: 'weekly',
             priority: 0.7,
           }))
       : []
 
-    // Combine all sitemaps, filtering out any duplicates that might exist in both static and dynamic pages
-    const allUrls = [...staticPages, ...pagesSitemap, ...postsSitemap, ...locationsSitemap]
+    // Combine all sitemaps, filtering out any duplicates
+    const allUrls = [...staticPages, ...pagesSitemap, ...postsSitemap, ...teamSitemap, ...locationsSitemap]
     const uniqueUrls = Array.from(new Map(allUrls.map((item) => [item.loc, item])).values())
 
     return uniqueUrls
   },
   ['sitemap'],
   {
-    tags: ['sitemap'],
+    tags: ['sitemap', 'pages-sitemap', 'posts-sitemap', 'team-sitemap', 'locations-sitemap'],
     revalidate: 3600, // Revalidate every hour
   },
 )
 
 export async function GET() {
   const sitemap = await getAllSitemap()
-  return getServerSideSitemap(sitemap)
-}
+  
+  // Create the XML sitemap
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  ${sitemap
+    .map(
+      (url) => `
+  <url>
+    <loc>${url.loc}</loc>
+    ${url.lastmod ? `<lastmod>${url.lastmod}</lastmod>` : ''}
+    ${url.changefreq ? `<changefreq>${url.changefreq}</changefreq>` : ''}
+    ${url.priority ? `<priority>${url.priority}</priority>` : ''}
+  </url>`,
+    )
+    .join('')}
+</urlset>`
+
+  return new Response(xml, {
+    headers: {
+      'Content-Type': 'application/xml',
+      'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=3600',
+    },
+  })
+} 
