@@ -15,6 +15,9 @@ import {
   MetaDescriptionField,
 } from '@payloadcms/plugin-seo/fields'
 
+// Hooks
+import { revalidateService, revalidateDelete } from './hooks/revalidateService'
+
 // Utilities
 import { generatePreviewPath } from '@root/utilities/generatePreviewPath'
 import { HeadingFeature } from '@payloadcms/richtext-lexical'
@@ -29,6 +32,11 @@ export const Services: CollectionConfig = {
     delete: authenticated,
     read: authenticatedOrPublished,
     update: authenticated,
+  },
+
+  hooks: {
+    afterChange: [revalidateService],
+    afterDelete: [revalidateDelete],
   },
 
   //* Collection Fields
@@ -92,7 +100,7 @@ export const Services: CollectionConfig = {
           name: 'excludeFromSitemap',
           type: 'checkbox',
           label: 'Exclude from Sitemap',
-          defaultValue: true,
+          defaultValue: false,
         },
       ],
     },
