@@ -54,6 +54,16 @@ export const Pages: CollectionConfig = {
     },
     ...slugField(),
     {
+      name: 'excludeFromSitemap',
+      type: 'checkbox',
+      label: 'Exclude from Sitemap',
+      defaultValue: false,
+      admin: {
+        description: 'If checked, this page will not appear in the sitemap',
+        position: 'sidebar',
+      },
+    },
+    {
       type: 'tabs',
       tabs: [
         {

@@ -57,9 +57,18 @@ const getAllSitemap = unstable_cache(
         limit: 1000,
         pagination: false,
         where: {
-          _status: {
-            equals: 'published',
-          },
+          and: [
+            {
+              _status: {
+                equals: 'published',
+              },
+            },
+            {
+              excludeFromSitemap: {
+                equals: false,
+              },
+            },
+          ],
         },
         select: {
           slug: true,

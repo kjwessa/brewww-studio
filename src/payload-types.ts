@@ -174,6 +174,7 @@ export interface Page {
   title: string;
   slug?: string | null;
   slugLock?: boolean | null;
+  excludeFromSitemap?: boolean | null;
   hero: {
     type: 'landing';
     heroTitle?: string | null;
@@ -1111,6 +1112,7 @@ export interface PagesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
   slugLock?: T;
+  excludeFromSitemap?: T;
   hero?:
     | T
     | {
