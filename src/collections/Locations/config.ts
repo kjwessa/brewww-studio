@@ -50,7 +50,7 @@ export const Location: CollectionConfig = {
       label: 'Hero Description',
       required: true,
       admin: {
-        description: 'The hero description of the location.',
+        description: 'The hero description of the location. Will later be replaced with blocks.',
       },
     },
     {

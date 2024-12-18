@@ -645,6 +645,7 @@ export interface Post {
   image: string | Media;
   featured?: boolean | null;
   readTime?: number | null;
+  categories: (string | Category)[];
   excludeFromSitemap?: boolean | null;
   content: {
     root: {
@@ -661,7 +662,6 @@ export interface Post {
     };
     [k: string]: unknown;
   };
-  categories: (string | Category)[];
   meta?: {
     title?: string | null;
     image?: (string | null) | Media;
@@ -1354,9 +1354,9 @@ export interface PostsSelect<T extends boolean = true> {
   image?: T;
   featured?: T;
   readTime?: T;
+  categories?: T;
   excludeFromSitemap?: T;
   content?: T;
-  categories?: T;
   meta?:
     | T
     | {

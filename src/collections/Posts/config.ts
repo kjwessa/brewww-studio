@@ -25,7 +25,10 @@ import { revalidatePost } from './hooks/revalidatePost'
 import { setMetaImageFallback } from '@/hooks/setMetaImageFallback'
 import {
   BlocksFeature,
+  FixedToolbarFeature,
   HeadingFeature,
+  HorizontalRuleFeature,
+  InlineToolbarFeature,
   lexicalEditor,
   LinkFeature,
 } from '@payloadcms/richtext-lexical'
@@ -115,6 +118,17 @@ export const Posts: CollectionConfig = {
       },
     },
     {
+      name: 'categories',
+      label: 'Categories',
+      type: 'relationship',
+      admin: {
+        position: 'sidebar',
+      },
+      hasMany: true,
+      relationTo: 'categories',
+      required: true,
+    },
+    {
       label: ({ data }) => data?.title || 'Advanced',
       type: 'collapsible',
       admin: {
@@ -140,33 +154,22 @@ export const Posts: CollectionConfig = {
               name: 'content',
               type: 'richText',
               editor: lexicalEditor({
-                features: ({ defaultFeatures }) => [
-                  ...defaultFeatures,
-                  HeadingFeature({
-                    enabledHeadingSizes: ['h2', 'h3', 'h4'],
-                  }),
-                  BlocksFeature({
-                    blocks: [MediaBlock, Code, BeforeAfterSlider],
-                  }),
-                ],
+                features: ({ rootFeatures }) => {
+                  return [
+                    ...rootFeatures,
+                    HeadingFeature({
+                      enabledHeadingSizes: ['h2', 'h3', 'h4'],
+                    }),
+                    BlocksFeature({
+                      blocks: [MediaBlock, Code, BeforeAfterSlider],
+                    }),
+                    FixedToolbarFeature(),
+                    InlineToolbarFeature(),
+                    HorizontalRuleFeature(),
+                  ]
+                },
               }),
               label: false,
-              required: true,
-            },
-          ],
-        },
-        {
-          label: 'Meta',
-          fields: [
-            {
-              name: 'categories',
-              label: 'Categories',
-              type: 'relationship',
-              admin: {
-                position: 'sidebar',
-              },
-              hasMany: true,
-              relationTo: 'categories',
               required: true,
             },
           ],
