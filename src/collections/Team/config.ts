@@ -18,6 +18,7 @@ import { HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 
 // Hooks
 import { revalidateTeam, revalidateDelete } from './hooks/revalidateTeam'
+import { setMetaImageFallback } from '@/hooks/setMetaImageFallback'
 
 // Utilities
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
@@ -225,6 +226,7 @@ export const Team: CollectionConfig = {
     plural: 'Team',
   },
   hooks: {
+    beforeChange: [setMetaImageFallback],
     afterChange: [revalidateTeam],
     afterDelete: [revalidateDelete],
   },

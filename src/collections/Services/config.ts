@@ -17,6 +17,7 @@ import {
 
 // Hooks
 import { revalidateService, revalidateDelete } from './hooks/revalidateService'
+import { setMetaImageFallback } from '@/hooks/setMetaImageFallback'
 
 // Utilities
 import { generatePreviewPath } from '@root/utilities/generatePreviewPath'
@@ -163,6 +164,7 @@ export const Services: CollectionConfig = {
     plural: 'Services',
   },
   hooks: {
+    beforeChange: [setMetaImageFallback],
     afterChange: [revalidateService],
     afterDelete: [revalidateDelete],
   },

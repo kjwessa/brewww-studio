@@ -21,7 +21,7 @@ import { BeforeAfterSlider } from '@/blocks/BeforeAfterSlider/config'
 // Utilities & Hooks
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
 import { populatePublishedOn } from '@/hooks/populatePublishedOn'
-import { revalidatePost } from './hooks/revalidatePost'
+import { revalidateDelete, revalidatePost } from './hooks/revalidatePost'
 import { setMetaImageFallback } from '@/hooks/setMetaImageFallback'
 import {
   BlocksFeature,
@@ -239,6 +239,7 @@ export const Posts: CollectionConfig = {
   hooks: {
     beforeChange: [populatePublishedOn, setMetaImageFallback],
     afterChange: [revalidatePost],
+    afterDelete: [revalidateDelete],
   },
   versions: {
     drafts: { autosave: { interval: 100 } },

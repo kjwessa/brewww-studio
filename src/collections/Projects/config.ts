@@ -10,6 +10,7 @@ import { slugField } from '@/fields/slug'
 
 // Hooks
 import { revalidateProject, revalidateDelete } from './hooks/revalidateProject'
+import { setMetaImageFallback } from '@/hooks/setMetaImageFallback'
 
 import { generatePreviewPath } from '@root/utilities/generatePreviewPath'
 import {
@@ -185,6 +186,7 @@ export const Projects: CollectionConfig = {
     plural: 'Projects',
   },
   hooks: {
+    beforeChange: [setMetaImageFallback],
     afterChange: [revalidateProject],
     afterDelete: [revalidateDelete],
   },

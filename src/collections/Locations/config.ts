@@ -17,6 +17,7 @@ import {
 
 // Hooks
 import { revalidateLocation, revalidateDelete } from './hooks/revalidateLocation'
+import { setMetaImageFallback } from '@/hooks/setMetaImageFallback'
 
 // Utilities
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
@@ -169,6 +170,7 @@ export const Location: CollectionConfig = {
     plural: 'Locations',
   },
   hooks: {
+    beforeChange: [setMetaImageFallback],
     afterChange: [revalidateLocation],
     afterDelete: [revalidateDelete],
   },
