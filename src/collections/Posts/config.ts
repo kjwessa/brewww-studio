@@ -80,16 +80,7 @@ export const Posts: CollectionConfig = {
         },
       },
     },
-    {
-      name: 'excludeFromSitemap',
-      type: 'checkbox',
-      label: 'Exclude from Sitemap',
-      defaultValue: false,
-      admin: {
-        description: 'If checked, this post will not appear in the sitemap',
-        position: 'sidebar',
-      },
-    },
+
     {
       name: 'image',
       type: 'upload',
@@ -118,6 +109,22 @@ export const Posts: CollectionConfig = {
       admin: {
         position: 'sidebar',
       },
+    },
+    {
+      label: ({ data }) => data?.title || 'Advanced',
+      type: 'collapsible',
+      admin: {
+        initCollapsed: false,
+        description: 'Advanced settings for the Post',
+      },
+      fields: [
+        {
+          name: 'excludeFromSitemap',
+          type: 'checkbox',
+          label: 'Exclude from Sitemap',
+          defaultValue: false,
+        },
+      ],
     },
     {
       type: 'tabs',

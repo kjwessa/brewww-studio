@@ -59,16 +59,6 @@ export const Projects: CollectionConfig = {
       },
     },
     {
-      name: 'excludeFromSitemap',
-      type: 'checkbox',
-      label: 'Exclude from Sitemap',
-      defaultValue: true,
-      admin: {
-        description: 'If checked, this project will not appear in the sitemap',
-        position: 'sidebar',
-      },
-    },
-    {
       name: 'storyTitle',
       type: 'text',
       label: 'Story Title',
@@ -79,6 +69,53 @@ export const Projects: CollectionConfig = {
       type: 'richText',
       label: 'Story Content',
       required: false,
+    },
+    ...slugField(),
+    {
+      name: 'image',
+      type: 'upload',
+      label: 'Featured Image',
+      required: true,
+      relationTo: 'media',
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'brand',
+      type: 'relationship',
+      relationTo: 'brands',
+      hasMany: false,
+      required: true,
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'projectLink',
+      type: 'text',
+      label: 'Project Link',
+      required: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
+
+    {
+      label: ({ data }) => data?.title || 'Advanced',
+      type: 'collapsible',
+      admin: {
+        initCollapsed: false,
+        description: 'Advanced settings for the Project',
+      },
+      fields: [
+        {
+          name: 'excludeFromSitemap',
+          type: 'checkbox',
+          label: 'Exclude from Sitemap',
+          defaultValue: true,
+        },
+      ],
     },
     {
       type: 'tabs',
@@ -107,38 +144,6 @@ export const Projects: CollectionConfig = {
           ],
         },
       ],
-    },
-
-    ...slugField(),
-    {
-      name: 'image',
-      type: 'upload',
-      label: 'Featured Image',
-      required: true,
-      relationTo: 'media',
-      admin: {
-        position: 'sidebar',
-      },
-    },
-    {
-      name: 'brand',
-      type: 'relationship',
-      relationTo: 'brands',
-      hasMany: false,
-      required: true,
-      admin: {
-        position: 'sidebar',
-      },
-    },
-
-    {
-      name: 'projectLink',
-      type: 'text',
-      label: 'Project Link',
-      required: false,
-      admin: {
-        position: 'sidebar',
-      },
     },
   ],
 

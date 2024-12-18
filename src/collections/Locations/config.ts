@@ -57,16 +57,6 @@ export const Location: CollectionConfig = {
       },
     },
     {
-      name: 'excludeFromSitemap',
-      type: 'checkbox',
-      label: 'Exclude from Sitemap',
-      defaultValue: false,
-      admin: {
-        description: 'If checked, this location will not appear in the sitemap',
-        position: 'sidebar',
-      },
-    },
-    {
       name: 'locationState',
       type: 'text',
       label: 'Location State',
@@ -75,7 +65,6 @@ export const Location: CollectionConfig = {
         description: 'The state of the location.',
       },
     },
-
     {
       name: 'image',
       type: 'upload',
@@ -85,6 +74,22 @@ export const Location: CollectionConfig = {
       admin: {
         position: 'sidebar',
       },
+    },
+    {
+      label: ({ data }) => data?.title || 'Advanced',
+      type: 'collapsible',
+      admin: {
+        initCollapsed: false,
+        description: 'Advanced settings for the Location',
+      },
+      fields: [
+        {
+          name: 'excludeFromSitemap',
+          type: 'checkbox',
+          label: 'Exclude from Sitemap',
+          defaultValue: false,
+        },
+      ],
     },
     {
       type: 'tabs',

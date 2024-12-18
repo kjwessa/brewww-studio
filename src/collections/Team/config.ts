@@ -48,16 +48,7 @@ export const Team: CollectionConfig = {
         position: 'sidebar',
       },
     },
-    {
-      name: 'excludeFromSitemap',
-      type: 'checkbox',
-      label: 'Exclude from Sitemap',
-      defaultValue: false,
-      admin: {
-        description: 'If checked, this team member will not appear in the sitemap',
-        position: 'sidebar',
-      },
-    },
+
     {
       name: 'image',
       type: 'upload',
@@ -150,6 +141,21 @@ export const Team: CollectionConfig = {
       label: 'Facebook Link',
       required: false,
       admin: { position: 'sidebar' },
+    },
+    {
+      label: ({ data }) => data?.title || 'Advanced',
+      type: 'collapsible',
+      fields: [
+        {
+          name: 'excludeFromSitemap',
+          type: 'checkbox',
+          label: 'Exclude from Sitemap',
+          defaultValue: false,
+          admin: {
+            description: 'If checked, this team member will not appear in the sitemap',
+          },
+        },
+      ],
     },
     {
       type: 'tabs',

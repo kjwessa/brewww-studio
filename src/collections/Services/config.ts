@@ -52,17 +52,50 @@ export const Services: CollectionConfig = {
         description: 'The tagline of the service as it appears around the site.',
       },
     },
+    ...slugField(),
     {
-      name: 'excludeFromSitemap',
-      type: 'checkbox',
-      label: 'Exclude from Sitemap',
-      defaultValue: true,
+      name: 'description',
+      type: 'textarea',
+      label: 'Description',
+      required: false,
       admin: {
-        description: 'If checked, this service will not appear in the sitemap',
+        description: 'The description of the service as it appears around the site.',
+      },
+    },
+    {
+      name: 'overview',
+      type: 'richText',
+      label: 'Overview',
+      editor: lexicalEditor({
+        features: ({ defaultFeatures }) => [...defaultFeatures, HeadingFeature({})],
+      }),
+    },
+    {
+      name: 'image',
+      type: 'upload',
+      label: 'Featured Image',
+      required: false,
+      relationTo: 'media',
+      admin: {
         position: 'sidebar',
       },
     },
-    ...slugField(),
+    {
+      label: ({ data }) => data?.title || 'Advanced',
+      type: 'collapsible',
+      admin: {
+        initCollapsed: false,
+        description: 'Advanced settings for the service',
+      },
+      fields: [
+        {
+          name: 'excludeFromSitemap',
+          type: 'checkbox',
+          label: 'Exclude from Sitemap',
+          defaultValue: true,
+        },
+      ],
+    },
     {
       type: 'tabs',
       tabs: [
@@ -90,33 +123,6 @@ export const Services: CollectionConfig = {
           ],
         },
       ],
-    },
-    {
-      name: 'description',
-      type: 'textarea',
-      label: 'Description',
-      required: false,
-      admin: {
-        description: 'The description of the service as it appears around the site.',
-      },
-    },
-    {
-      name: 'overview',
-      type: 'richText',
-      label: 'Overview',
-      editor: lexicalEditor({
-        features: ({ defaultFeatures }) => [...defaultFeatures, HeadingFeature({})],
-      }),
-    },
-    {
-      name: 'image',
-      type: 'upload',
-      label: 'Featured Image',
-      required: false,
-      relationTo: 'media',
-      admin: {
-        position: 'sidebar',
-      },
     },
   ],
 

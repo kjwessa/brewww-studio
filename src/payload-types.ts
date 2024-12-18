@@ -328,7 +328,6 @@ export interface Project {
   title: string;
   tagline?: string | null;
   description?: string | null;
-  excludeFromSitemap?: boolean | null;
   storyTitle?: string | null;
   storyContent?: {
     root: {
@@ -345,16 +344,17 @@ export interface Project {
     };
     [k: string]: unknown;
   } | null;
-  meta?: {
-    title?: string | null;
-    image?: (string | null) | Media;
-    description?: string | null;
-  };
   slug?: string | null;
   slugLock?: boolean | null;
   image: string | Media;
   brand: string | Brand;
   projectLink?: string | null;
+  excludeFromSitemap?: boolean | null;
+  meta?: {
+    title?: string | null;
+    image?: (string | null) | Media;
+    description?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -438,10 +438,10 @@ export interface Post {
   tagline?: string | null;
   description?: string | null;
   publishedOn: string;
-  excludeFromSitemap?: boolean | null;
   image: string | Media;
   featured?: boolean | null;
   readTime?: number | null;
+  excludeFromSitemap?: boolean | null;
   content: {
     root: {
       type: string;
@@ -507,9 +507,9 @@ export interface Location {
     [k: string]: unknown;
   };
   locationCity: string;
-  excludeFromSitemap?: boolean | null;
   locationState: string;
   image?: (string | null) | Media;
+  excludeFromSitemap?: boolean | null;
   meta?: {
     title?: string | null;
     image?: (string | null) | Media;
@@ -595,14 +595,8 @@ export interface Service {
   id: string;
   title: string;
   tagline?: string | null;
-  excludeFromSitemap?: boolean | null;
   slug?: string | null;
   slugLock?: boolean | null;
-  meta?: {
-    title?: string | null;
-    image?: (string | null) | Media;
-    description?: string | null;
-  };
   description?: string | null;
   overview?: {
     root: {
@@ -620,6 +614,12 @@ export interface Service {
     [k: string]: unknown;
   } | null;
   image?: (string | null) | Media;
+  excludeFromSitemap?: boolean | null;
+  meta?: {
+    title?: string | null;
+    image?: (string | null) | Media;
+    description?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -666,7 +666,6 @@ export interface Team {
   slug?: string | null;
   slugLock?: boolean | null;
   role: string;
-  excludeFromSitemap?: boolean | null;
   image: string | Media;
   bioImage: string | Media;
   heroTitle: string;
@@ -704,6 +703,7 @@ export interface Team {
   linkLinkedin?: string | null;
   linkInstagram?: string | null;
   linkFacebook?: string | null;
+  excludeFromSitemap?: boolean | null;
   meta?: {
     title?: string | null;
     image?: (string | null) | Media;
@@ -1287,10 +1287,10 @@ export interface PostsSelect<T extends boolean = true> {
   tagline?: T;
   description?: T;
   publishedOn?: T;
-  excludeFromSitemap?: T;
   image?: T;
   featured?: T;
   readTime?: T;
+  excludeFromSitemap?: T;
   content?: T;
   categories?: T;
   meta?:
@@ -1325,9 +1325,9 @@ export interface LocationsSelect<T extends boolean = true> {
   title?: T;
   heroDescription?: T;
   locationCity?: T;
-  excludeFromSitemap?: T;
   locationState?: T;
   image?: T;
+  excludeFromSitemap?: T;
   meta?:
     | T
     | {
@@ -1349,9 +1349,14 @@ export interface ProjectsSelect<T extends boolean = true> {
   title?: T;
   tagline?: T;
   description?: T;
-  excludeFromSitemap?: T;
   storyTitle?: T;
   storyContent?: T;
+  slug?: T;
+  slugLock?: T;
+  image?: T;
+  brand?: T;
+  projectLink?: T;
+  excludeFromSitemap?: T;
   meta?:
     | T
     | {
@@ -1359,11 +1364,6 @@ export interface ProjectsSelect<T extends boolean = true> {
         image?: T;
         description?: T;
       };
-  slug?: T;
-  slugLock?: T;
-  image?: T;
-  brand?: T;
-  projectLink?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
@@ -1423,9 +1423,12 @@ export interface TestimonialsSelect<T extends boolean = true> {
 export interface ServicesSelect<T extends boolean = true> {
   title?: T;
   tagline?: T;
-  excludeFromSitemap?: T;
   slug?: T;
   slugLock?: T;
+  description?: T;
+  overview?: T;
+  image?: T;
+  excludeFromSitemap?: T;
   meta?:
     | T
     | {
@@ -1433,9 +1436,6 @@ export interface ServicesSelect<T extends boolean = true> {
         image?: T;
         description?: T;
       };
-  description?: T;
-  overview?: T;
-  image?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
@@ -1479,7 +1479,6 @@ export interface TeamSelect<T extends boolean = true> {
   slug?: T;
   slugLock?: T;
   role?: T;
-  excludeFromSitemap?: T;
   image?: T;
   bioImage?: T;
   heroTitle?: T;
@@ -1489,6 +1488,7 @@ export interface TeamSelect<T extends boolean = true> {
   linkLinkedin?: T;
   linkInstagram?: T;
   linkFacebook?: T;
+  excludeFromSitemap?: T;
   meta?:
     | T
     | {
