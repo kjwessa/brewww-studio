@@ -860,7 +860,6 @@ export interface Pillar {
   id: string;
   title: string;
   tagline?: string | null;
-  services?: (string | null) | Service;
   slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;
@@ -1557,7 +1556,6 @@ export interface ServicesSelect<T extends boolean = true> {
 export interface PillarsSelect<T extends boolean = true> {
   title?: T;
   tagline?: T;
-  services?: T;
   slug?: T;
   slugLock?: T;
   updatedAt?: T;

@@ -59,6 +59,7 @@ import * as migration_20241219_000629_add_snippets_to_brands from './20241219_00
 import * as migration_20241219_195646_add_testimonial_block from './20241219_195646_add_testimonial_block';
 import * as migration_20241219_202249_add_FAQ_block from './20241219_202249_add_FAQ_block';
 import * as migration_20241219_214618_add_service_category_relationship from './20241219_214618_add_service_category_relationship';
+import * as migration_20241219_214853_drop_service_relationship_from_pillars from './20241219_214853_drop_service_relationship_from_pillars';
 
 export const migrations = [
   {
@@ -364,6 +365,11 @@ export const migrations = [
   {
     up: migration_20241219_214618_add_service_category_relationship.up,
     down: migration_20241219_214618_add_service_category_relationship.down,
-    name: '20241219_214618_add_service_category_relationship'
+    name: '20241219_214618_add_service_category_relationship',
+  },
+  {
+    up: migration_20241219_214853_drop_service_relationship_from_pillars.up,
+    down: migration_20241219_214853_drop_service_relationship_from_pillars.down,
+    name: '20241219_214853_drop_service_relationship_from_pillars'
   },
 ];

@@ -41,16 +41,7 @@ export const Pillars: CollectionConfig = {
         description: 'Add the tagline for the pillar here.',
       },
     },
-    {
-      name: 'services',
-      type: 'relationship',
-      relationTo: 'services',
-      label: 'Services',
-      required: false,
-      admin: {
-        position: 'sidebar',
-      },
-    },
+
     ...slugField(),
   ],
 
