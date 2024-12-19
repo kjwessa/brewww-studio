@@ -88,7 +88,11 @@ export const Services: CollectionConfig = {
       name: 'category',
       type: 'relationship',
       relationTo: 'pillars',
+      required: true,
       hasMany: false,
+      admin: {
+        position: 'sidebar',
+      },
     },
     {
       label: ({ data }) => data?.title || 'Advanced',

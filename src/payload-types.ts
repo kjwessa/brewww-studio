@@ -37,6 +37,9 @@ export interface Config {
     categories: {
       relatedPosts: 'posts';
     };
+    pillars: {
+      relatedServices: 'services';
+    };
   };
   collectionsSelect: {
     media: MediaSelect<false> | MediaSelect<true>;
@@ -841,7 +844,7 @@ export interface Service {
     [k: string]: unknown;
   } | null;
   image?: (string | null) | Media;
-  category?: (string | null) | Pillar;
+  category: string | Pillar;
   excludeFromSitemap?: boolean | null;
   meta?: {
     title?: string | null;
@@ -860,6 +863,10 @@ export interface Pillar {
   id: string;
   title: string;
   tagline?: string | null;
+  relatedServices?: {
+    docs?: (string | Service)[] | null;
+    hasNextPage?: boolean | null;
+  } | null;
   slug?: string | null;
   slugLock?: boolean | null;
   updatedAt: string;
@@ -1556,6 +1563,7 @@ export interface ServicesSelect<T extends boolean = true> {
 export interface PillarsSelect<T extends boolean = true> {
   title?: T;
   tagline?: T;
+  relatedServices?: T;
   slug?: T;
   slugLock?: T;
   updatedAt?: T;
