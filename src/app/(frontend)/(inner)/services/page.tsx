@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { LinkMain } from '@/components/LinkMain'
+import { LinkMain } from '@/components/LinkMain/index'
 import Link from 'next/link'
 import { Title } from '@/components/Title'
 import { Text } from '@/components/Text'
@@ -40,12 +40,12 @@ export default function ServicesPage() {
         title="Support"
         tagline="Lean on our in-house team to support with your design, development and seo needs."
         services={[
-          { number: "01", title: "SEO", href: "/services/seo" },
-          { number: "02", title: "Web Hosting", href: "/services/web-hosting" },
-          { number: "03", title: "Shape Support", href: "/services/shape-support" },
-          { number: "04", title: "PPC", href: "/services/ppc" },
-          { number: "05", title: "Content Writing", href: "/services/content-writing" },
-          { number: "06", title: "Craft CMS", href: "/services/craft-cms" }
+          { number: '01', title: 'SEO', href: '/services/seo' },
+          { number: '02', title: 'Web Hosting', href: '/services/web-hosting' },
+          { number: '03', title: 'Shape Support', href: '/services/shape-support' },
+          { number: '04', title: 'PPC', href: '/services/ppc' },
+          { number: '05', title: 'Content Writing', href: '/services/content-writing' },
+          { number: '06', title: 'Craft CMS', href: '/services/craft-cms' },
         ]}
       />
 
