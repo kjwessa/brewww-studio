@@ -14,6 +14,7 @@ import { LandingImageBlock } from '@/blocks/LandingImage/Component'
 import { FormBlock } from '@/blocks/Form/Component'
 import { BeforeAfterSliderBlock } from '@/blocks/BeforeAfterSlider/Component'
 import { TestimonialBlock } from '@/blocks/Testimonial/Component'
+import { FAQBlock } from '@/blocks/FAQ/Component'
 
 /**
  * Block Components Registry
@@ -41,6 +42,7 @@ const blockComponents = {
   form: FormBlock, // matches slug: 'form' in Form/config.ts
   beforeAfterSlider: BeforeAfterSliderBlock, // matches slug: 'beforeAfterSlider' in BeforeAfterSlider/config.ts
   testimonial: TestimonialBlock, // matches slug: 'testimonial' in Testimonial/config.ts
+  faqBlock: FAQBlock, // matches slug: 'faqBlock' in FAQ/config.ts
 } as const
 
 /**
@@ -110,7 +112,5 @@ export const RenderBlocks: React.FC<{
     )
   }
 
-  // Return null if there are no blocks to render
-  // This allows the page to render without blocks
   return null
 }

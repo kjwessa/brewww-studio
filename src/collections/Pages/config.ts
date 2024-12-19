@@ -31,6 +31,7 @@ import { LandingImage } from '@/blocks/LandingImage/config'
 import { FormBlock } from '@/blocks/Form/config'
 import { BeforeAfterSlider } from '@/blocks/BeforeAfterSlider/config'
 import { TestimonialBlock } from '@/blocks/Testimonial/config'
+import { FAQ } from '@/blocks/FAQ/config'
 
 // Utilities Imports
 import { generatePreviewPath } from '@/utilities/generatePreviewPath'
@@ -99,6 +100,7 @@ export const Pages: CollectionConfig = {
                 LandingImage,
                 BeforeAfterSlider,
                 TestimonialBlock,
+                FAQ,
               ],
             },
           ],

@@ -195,6 +195,7 @@ export interface Page {
         | LandingImageBlock
         | BeforeAfterSliderBlock
         | TestimonialBlock
+        | FAQBlock
       )[]
     | null;
   meta?: {
@@ -672,6 +673,42 @@ export interface Testimonial {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FAQBlock".
+ */
+export interface FAQBlock {
+  faqs: (string | Faq)[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'faqBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faq".
+ */
+export interface Faq {
+  id: string;
+  title: string;
+  answer: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "posts".
  */
 export interface Post {
@@ -761,32 +798,6 @@ export interface Location {
   };
   slug?: string | null;
   slugLock?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "faq".
- */
-export interface Faq {
-  id: string;
-  title: string;
-  answer: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -1193,6 +1204,7 @@ export interface PagesSelect<T extends boolean = true> {
         landingImage?: T | LandingImageBlockSelect<T>;
         beforeAfterSlider?: T | BeforeAfterSliderBlockSelect<T>;
         testimonial?: T | TestimonialBlockSelect<T>;
+        faqBlock?: T | FAQBlockSelect<T>;
       };
   meta?:
     | T
@@ -1359,6 +1371,15 @@ export interface BeforeAfterSliderBlockSelect<T extends boolean = true> {
  */
 export interface TestimonialBlockSelect<T extends boolean = true> {
   testimonial?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FAQBlock_select".
+ */
+export interface FAQBlockSelect<T extends boolean = true> {
+  faqs?: T;
   id?: T;
   blockName?: T;
 }
