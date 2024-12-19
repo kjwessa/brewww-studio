@@ -41,7 +41,6 @@ export const Pillars: CollectionConfig = {
         description: 'Add the tagline for the pillar here.',
       },
     },
-
     ...slugField(),
   ],
 
