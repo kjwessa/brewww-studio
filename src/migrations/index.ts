@@ -55,6 +55,7 @@ import * as migration_20241218_164850_add_exclude_from_sitemap_to_projects from 
 import * as migration_20241218_172603_add_remove_from_sitemap_to_services from './20241218_172603_add_remove_from_sitemap_to_services';
 import * as migration_20241218_193659_add_form_block_to_pages from './20241218_193659_add_form_block_to_pages';
 import * as migration_20241218_201257_add_beforeAfterSlider_block_option from './20241218_201257_add_beforeAfterSlider_block_option';
+import * as migration_20241219_000629_add_snippets_to_brands from './20241219_000629_add_snippets_to_brands';
 
 export const migrations = [
   {
@@ -340,6 +341,11 @@ export const migrations = [
   {
     up: migration_20241218_201257_add_beforeAfterSlider_block_option.up,
     down: migration_20241218_201257_add_beforeAfterSlider_block_option.down,
-    name: '20241218_201257_add_beforeAfterSlider_block_option'
+    name: '20241218_201257_add_beforeAfterSlider_block_option',
+  },
+  {
+    up: migration_20241219_000629_add_snippets_to_brands.up,
+    down: migration_20241219_000629_add_snippets_to_brands.down,
+    name: '20241219_000629_add_snippets_to_brands'
   },
 ];

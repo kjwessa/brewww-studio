@@ -39,6 +39,15 @@ export const Brands: CollectionConfig = {
       },
     },
     {
+      name: 'snippet',
+      label: 'Snippet',
+      type: 'textarea',
+      required: false,
+      admin: {
+        description: 'Add a short description of the brand that appears on the brand page.',
+      },
+    },
+    {
       type: 'row',
       fields: [
         {
