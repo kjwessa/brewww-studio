@@ -28,7 +28,7 @@ export default async function LocationPage() {
             {locations.docs.map((location) => (
               <Link
                 key={location.id}
-                href={`/location/${location.slug}`}
+                href={`/in/${location.slug}`}
                 className="group transform overflow-hidden rounded-2xl bg-white shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="relative h-56 w-full overflow-hidden">

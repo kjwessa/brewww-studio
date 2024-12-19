@@ -248,7 +248,7 @@ const getAllSitemap = unstable_cache(
       ? locations.docs
           .filter((location) => Boolean(location?.slug))
           .map((location) => ({
-            loc: `${SITE_URL}/location/${location?.slug}`,
+            loc: `${SITE_URL}/in/${location?.slug}`,
             lastmod: location.updatedAt || dateFallback,
             changefreq: 'weekly',
             priority: 0.7,
@@ -287,7 +287,7 @@ const getAllSitemap = unstable_cache(
   },
   ['sitemap'],
   {
-    tags: ['sitemap', 'pages-sitemap', 'posts-sitemap', 'team-sitemap', 'locations-sitemap', 'projects-sitemap', 'services-sitemap'],
+    tags: ['sitemap', 'pages-sitemap', 'posts-sitemap', 'team-sitemap', 'in-sitemap', 'projects-sitemap', 'services-sitemap'],
     revalidate: 3600, // Revalidate every hour
   },
 )

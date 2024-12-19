@@ -9,22 +9,22 @@ export const revalidateLocation: CollectionAfterChangeHook<Location> = ({
 }) => {
   if (!context.disableRevalidate) {
     if (doc._status === 'published') {
-      const path = `/location/${doc.slug}`
+      const path = `/in/${doc.slug}`
 
       payload.logger.info(`Revalidating location at path: ${path}`)
 
       revalidatePath(path)
-      revalidateTag('locations-sitemap')
+      revalidateTag('in-sitemap')
     }
 
     // If the location was previously published, we need to revalidate the old path
     if (previousDoc._status === 'published' && doc._status !== 'published') {
-      const oldPath = `/location/${previousDoc.slug}`
+      const oldPath = `/in/${previousDoc.slug}`
 
       payload.logger.info(`Revalidating old location at path: ${oldPath}`)
 
       revalidatePath(oldPath)
-      revalidateTag('locations-sitemap')
+      revalidateTag('in-sitemap')
     }
   }
   return doc
@@ -32,10 +32,10 @@ export const revalidateLocation: CollectionAfterChangeHook<Location> = ({
 
 export const revalidateDelete: CollectionAfterDeleteHook<Location> = ({ doc, req: { context } }) => {
   if (!context.disableRevalidate) {
-    const path = `/location/${doc?.slug}`
+    const path = `/in/${doc?.slug}`
 
     revalidatePath(path)
-    revalidateTag('locations-sitemap')
+    revalidateTag('in-sitemap')
   }
 
   return doc

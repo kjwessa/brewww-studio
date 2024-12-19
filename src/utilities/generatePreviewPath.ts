@@ -9,10 +9,12 @@ import { PayloadRequest, CollectionSlug } from 'payload'
  * Maps collection slugs to their corresponding URL prefixes
  * - posts: Prefixed with '/posts'
  * - pages: No prefix (empty string) as they're at root level
+ * - locations: Prefixed with '/in'
  */
 const collectionPrefixMap: Partial<Record<CollectionSlug, string>> = {
   posts: '/journal',
   pages: '',
+  locations: '/in',
 }
 
 /**
