@@ -56,6 +56,7 @@ import * as migration_20241218_172603_add_remove_from_sitemap_to_services from '
 import * as migration_20241218_193659_add_form_block_to_pages from './20241218_193659_add_form_block_to_pages';
 import * as migration_20241218_201257_add_beforeAfterSlider_block_option from './20241218_201257_add_beforeAfterSlider_block_option';
 import * as migration_20241219_000629_add_snippets_to_brands from './20241219_000629_add_snippets_to_brands';
+import * as migration_20241219_195646_add_testimonial_block from './20241219_195646_add_testimonial_block';
 
 export const migrations = [
   {
@@ -346,6 +347,11 @@ export const migrations = [
   {
     up: migration_20241219_000629_add_snippets_to_brands.up,
     down: migration_20241219_000629_add_snippets_to_brands.down,
-    name: '20241219_000629_add_snippets_to_brands'
+    name: '20241219_000629_add_snippets_to_brands',
+  },
+  {
+    up: migration_20241219_195646_add_testimonial_block.up,
+    down: migration_20241219_195646_add_testimonial_block.down,
+    name: '20241219_195646_add_testimonial_block'
   },
 ];
