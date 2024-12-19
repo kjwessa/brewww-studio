@@ -58,6 +58,7 @@ import * as migration_20241218_201257_add_beforeAfterSlider_block_option from '.
 import * as migration_20241219_000629_add_snippets_to_brands from './20241219_000629_add_snippets_to_brands';
 import * as migration_20241219_195646_add_testimonial_block from './20241219_195646_add_testimonial_block';
 import * as migration_20241219_202249_add_FAQ_block from './20241219_202249_add_FAQ_block';
+import * as migration_20241219_214618_add_service_category_relationship from './20241219_214618_add_service_category_relationship';
 
 export const migrations = [
   {
@@ -358,6 +359,11 @@ export const migrations = [
   {
     up: migration_20241219_202249_add_FAQ_block.up,
     down: migration_20241219_202249_add_FAQ_block.down,
-    name: '20241219_202249_add_FAQ_block'
+    name: '20241219_202249_add_FAQ_block',
+  },
+  {
+    up: migration_20241219_214618_add_service_category_relationship.up,
+    down: migration_20241219_214618_add_service_category_relationship.down,
+    name: '20241219_214618_add_service_category_relationship'
   },
 ];

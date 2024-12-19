@@ -841,6 +841,7 @@ export interface Service {
     [k: string]: unknown;
   } | null;
   image?: (string | null) | Media;
+  category?: (string | null) | Pillar;
   excludeFromSitemap?: boolean | null;
   meta?: {
     title?: string | null;
@@ -1536,6 +1537,7 @@ export interface ServicesSelect<T extends boolean = true> {
   description?: T;
   overview?: T;
   image?: T;
+  category?: T;
   excludeFromSitemap?: T;
   meta?:
     | T

@@ -85,6 +85,12 @@ export const Services: CollectionConfig = {
       },
     },
     {
+      name: 'category',
+      type: 'relationship',
+      relationTo: 'pillars',
+      hasMany: false,
+    },
+    {
       label: ({ data }) => data?.title || 'Advanced',
       type: 'collapsible',
       admin: {
