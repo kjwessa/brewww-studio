@@ -628,7 +628,7 @@ export interface Brand {
   /**
    * The industry that the brand belongs to.
    */
-  industry?: (string | null) | Industry;
+  industry: string | Industry;
   /**
    * Add the light version of the logo that appears on dark backgrounds
    */
@@ -640,11 +640,11 @@ export interface Brand {
   /**
    * The closest major city to the client.
    */
-  city?: string | null;
+  city: string;
   /**
    * The state where the client is based.
    */
-  state?: string | null;
+  state: string;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;

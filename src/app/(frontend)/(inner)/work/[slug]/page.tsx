@@ -3,7 +3,7 @@ import { getPayload } from 'payload'
 import React, { cache } from 'react'
 import { RichText } from '@/components/RichText/index'
 import { notFound } from 'next/navigation'
-import { Project } from '@/payload-types'
+import { Project, Brand, Industry } from '@/payload-types'
 import Image from 'next/image'
 import Link from 'next/link'
 import { PayloadRedirects } from '@/components/PayloadRedirects'
@@ -96,15 +96,27 @@ export default async function ProjectPage({ params: paramsPromise }: Args) {
             <div className="mt-6 flex w-full max-w-2xl flex-wrap justify-between pr-6 lg:mt-10 lg:pr-0">
               <div className="mb-3 pr-8 lg:mb-0">
                 <div className="text-sm font-light text-neutral-400">Client</div>
-                <div className="text-2xl text-white">{project.title}</div>
+                <div className="text-2xl text-white">
+                  {typeof project.brand === 'object' ? project.brand.title : project.title}
+                </div>
+              </div>
+              <div className="mb-3 pr-8 lg:mb-0">
+                <div className="text-sm font-light text-neutral-400">Location</div>
+                <div className="text-2xl text-white">
+                  {typeof project.brand === 'object' && project.brand.city && project.brand.state
+                    ? `${project.brand.city}, ${project.brand.state}`
+                    : 'Location, Somewhere'}
+                </div>
               </div>
               <div className="mb-3 pr-8 lg:mb-0">
                 <div className="text-sm font-light text-neutral-400">Industry</div>
-                <div className="text-2xl text-white">Craft Brewing</div>
-              </div>
-              <div className="pr-8 lg:mb-0">
-                <div className="text-sm font-light text-neutral-400">Duration</div>
-                <div className="text-2xl text-white">16 Weeks</div>
+                <div className="text-2xl text-white">
+                  {typeof project.brand === 'object' &&
+                  project.brand.industry !== null &&
+                  typeof project.brand.industry === 'object'
+                    ? project.brand.industry.title
+                    : 'Some Industry'}
+                </div>
               </div>
             </div>
           </div>
@@ -1015,6 +1027,7 @@ const queryPostBySlug = cache(async ({ slug }: { slug: string }) => {
         equals: slug,
       },
     },
+    depth: 1,
   })
 
   return result.docs?.[0] || null

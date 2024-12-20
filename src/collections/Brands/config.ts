@@ -34,7 +34,7 @@ export const Brands: CollectionConfig = {
       type: 'relationship',
       relationTo: 'industries',
       hasMany: false,
-      required: false,
+      required: true,
       admin: {
         description: 'The industry that the brand belongs to.',
         position: 'sidebar',
@@ -66,7 +66,7 @@ export const Brands: CollectionConfig = {
           name: 'city',
           label: 'City',
           type: 'text',
-          required: false,
+          required: true,
           admin: {
             description: 'The closest major city to the client.',
           },
@@ -75,7 +75,7 @@ export const Brands: CollectionConfig = {
           name: 'state',
           label: 'State',
           type: 'text',
-          required: false,
+          required: true,
           admin: {
             description: 'The state where the client is based.',
           },
