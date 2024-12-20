@@ -48,7 +48,7 @@ const ClientGrid = ({ brands }: { brands: Brand[] }) => (
             {brand.snippet && <p className="mb-4 max-w-md text-gray-300">{brand.snippet}</p>}
             {brand.caseStudy && (
               <Link
-                href={`/projects/${brand.caseStudy.slug}`}
+                href={`/work/${brand.caseStudy.slug}`}
                 className="text-white underline transition-colors hover:text-gray-300"
               >
                 View Case Study
