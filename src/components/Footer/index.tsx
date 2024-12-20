@@ -125,9 +125,6 @@ export default async function Footer() {
           <div className="w-2/4 md:w-1/4 lg:w-1/4 xl:w-72">
             <div className="mb-3 font-light text-zinc-100">Explore</div>
             <ul className="list-none">
-              <li className="flex items-center">
-                <FooterLink href="/home" label="Home" />
-              </li>
               <li className="mt-1 flex items-center">
                 <FooterLink href="/work" label="Work" />
               </li>
@@ -140,6 +137,9 @@ export default async function Footer() {
 
               <li className="mt-1 flex items-center">
                 <FooterLink href="/contact" label="Contact" />
+              </li>
+              <li className="mt-1 flex items-center">
+                <FooterLink href="/clients" label="Clients" />
               </li>
             </ul>
           </div>
