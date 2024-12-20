@@ -50,6 +50,7 @@ export const Pillars: CollectionConfig = {
         description: 'Add the overview for the pillar here.',
       },
     },
+    ...slugField(),
     {
       name: 'image',
       type: 'upload',
@@ -67,7 +68,6 @@ export const Pillars: CollectionConfig = {
       collection: 'services',
       on: 'category',
     },
-    ...slugField(),
   ],
 
   //* Admin Settings

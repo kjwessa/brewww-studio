@@ -864,13 +864,13 @@ export interface Pillar {
   title: string;
   tagline: string;
   overview: string;
+  slug?: string | null;
+  slugLock?: boolean | null;
   image?: (string | null) | Media;
   relatedServices?: {
     docs?: (string | Service)[] | null;
     hasNextPage?: boolean | null;
   } | null;
-  slug?: string | null;
-  slugLock?: boolean | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -1566,10 +1566,10 @@ export interface PillarsSelect<T extends boolean = true> {
   title?: T;
   tagline?: T;
   overview?: T;
-  image?: T;
-  relatedServices?: T;
   slug?: T;
   slugLock?: T;
+  image?: T;
+  relatedServices?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;

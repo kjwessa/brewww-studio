@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf node_modules .next",
     "reinstall": "rm -rf node_modules .next pnpm-lock.yaml && pnpm store prune && pnpm install && pnpm generate:importmap && pnpm generate:types",
-    "dev": "NODE_OPTIONS=--no-deprecation next dev",
+    "dev": "NODE_OPTIONS=--no-deprecation next dev --turbo",
     "build": "NODE_OPTIONS=--no-deprecation next build",
     "start": "NODE_OPTIONS=--no-deprecation next start",
     "build:start": "NODE_OPTIONS=--no-deprecation next build && next start",
@@ -54,7 +54,7 @@
     "jsonwebtoken": "9.0.2",
     "lucide-react": "^0.378.0",
     "motion": "11.13.5",
-    "next": "15.1.0",
+    "next": "15.1.2",
     "payload": "^3.9.0",
     "payload-admin-bar": "^1.0.6",
     "playwright": "^1.49.0",
