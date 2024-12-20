@@ -26,6 +26,7 @@ export interface Config {
     pillars: Pillar;
     play: Play;
     team: Team;
+    industries: Industry;
     redirects: Redirect;
     forms: Form;
     'form-submissions': FormSubmission;
@@ -57,6 +58,7 @@ export interface Config {
     pillars: PillarsSelect<false> | PillarsSelect<true>;
     play: PlaySelect<false> | PlaySelect<true>;
     team: TeamSelect<false> | TeamSelect<true>;
+    industries: IndustriesSelect<false> | IndustriesSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
@@ -624,6 +626,10 @@ export interface Brand {
    */
   title: string;
   /**
+   * The industry that the brand belongs to.
+   */
+  industry?: (string | null) | Industry;
+  /**
    * Add the light version of the logo that appears on dark backgrounds
    */
   logoLight?: (string | null) | Media;
@@ -639,6 +645,20 @@ export interface Brand {
    * The state where the client is based.
    */
   state?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "industries".
+ */
+export interface Industry {
+  id: string;
+  /**
+   * Add the industry name as it will appear around the site.
+   */
+  title: string;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -1228,6 +1248,10 @@ export interface PayloadLockedDocument {
         value: string | Team;
       } | null)
     | ({
+        relationTo: 'industries';
+        value: string | Industry;
+      } | null)
+    | ({
         relationTo: 'redirects';
         value: string | Redirect;
       } | null)
@@ -1678,6 +1702,7 @@ export interface FaqSelect<T extends boolean = true> {
  */
 export interface BrandsSelect<T extends boolean = true> {
   title?: T;
+  industry?: T;
   logoLight?: T;
   snippet?: T;
   city?: T;
@@ -1793,6 +1818,16 @@ export interface TeamSelect<T extends boolean = true> {
         image?: T;
         description?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "industries_select".
+ */
+export interface IndustriesSelect<T extends boolean = true> {
+  title?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;

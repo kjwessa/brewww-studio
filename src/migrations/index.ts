@@ -69,6 +69,8 @@ import * as migration_20241220_202104_add_archiveprocess_to_work from './2024122
 import * as migration_20241220_202135_add_archiveresults_to_work from './20241220_202135_add_archiveresults_to_work';
 import * as migration_20241220_202201_add_archivehighlights_to_work from './20241220_202201_add_archivehighlights_to_work';
 import * as migration_20241220_202904_add_tagline_to_work from './20241220_202904_add_tagline_to_work';
+import * as migration_20241220_205909_add_industries_collection from './20241220_205909_add_industries_collection';
+import * as migration_20241220_210619_add_industries_relationship_to_brands from './20241220_210619_add_industries_relationship_to_brands';
 
 export const migrations = [
   {
@@ -424,6 +426,16 @@ export const migrations = [
   {
     up: migration_20241220_202904_add_tagline_to_work.up,
     down: migration_20241220_202904_add_tagline_to_work.down,
-    name: '20241220_202904_add_tagline_to_work'
+    name: '20241220_202904_add_tagline_to_work',
+  },
+  {
+    up: migration_20241220_205909_add_industries_collection.up,
+    down: migration_20241220_205909_add_industries_collection.down,
+    name: '20241220_205909_add_industries_collection',
+  },
+  {
+    up: migration_20241220_210619_add_industries_relationship_to_brands.up,
+    down: migration_20241220_210619_add_industries_relationship_to_brands.down,
+    name: '20241220_210619_add_industries_relationship_to_brands'
   },
 ];

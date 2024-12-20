@@ -25,6 +25,7 @@ import { Technologies } from '@/collections/Technologies/config'
 import { Testimonials } from '@/collections/Testimonials/config'
 import { Users } from '@/collections/Users/config'
 import { Projects } from '@/collections/Projects/config'
+import { Industries } from '@/collections/Industries/config'
 
 //* Import Globals
 import { Header } from './globals/Header/index'
@@ -92,6 +93,7 @@ export default buildConfig({
     Pillars,
     Playground,
     Team,
+    Industries,
   ],
   db: postgresAdapter({
     pool: {

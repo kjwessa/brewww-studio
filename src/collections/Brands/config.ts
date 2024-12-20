@@ -29,6 +29,18 @@ export const Brands: CollectionConfig = {
       },
     },
     {
+      name: 'industry',
+      label: 'Industry',
+      type: 'relationship',
+      relationTo: 'industries',
+      hasMany: false,
+      required: false,
+      admin: {
+        description: 'The industry that the brand belongs to.',
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'logoLight',
       label: 'Logo Light',
       type: 'upload',
