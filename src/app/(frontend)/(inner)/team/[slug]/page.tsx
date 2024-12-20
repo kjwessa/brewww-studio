@@ -12,13 +12,9 @@ import { TeamHero } from './TeamHero'
 import { TeamHeroDetails } from './TeamHeroDetails'
 import { TeamBio } from './TeamBio'
 
-export const revalidate = 3600
+export const dynamic = 'force-static'
 
 export async function generateStaticParams() {
-  if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
-    return []
-  }
-
   const payload = await getPayload({ config: configPromise })
   const teams = await payload.find({
     collection: 'team',

@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf node_modules .next",
     "reinstall": "rm -rf node_modules .next pnpm-lock.yaml && pnpm store prune && pnpm install && pnpm generate:importmap && pnpm generate:types",
-    "dev": "NODE_OPTIONS=--no-deprecation next dev --turbo",
+    "dev": "NODE_OPTIONS=--no-deprecation next dev --turbopack",
     "build": "NODE_OPTIONS=--no-deprecation next build",
     "start": "NODE_OPTIONS=--no-deprecation next start",
     "build:start": "NODE_OPTIONS=--no-deprecation next build && next start",
