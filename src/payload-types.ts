@@ -552,6 +552,10 @@ export interface Project {
    */
   snippet?: string | null;
   /**
+   * The tagline of the project as it appears around the site.
+   */
+  tagline?: string | null;
+  /**
    * The description of the project as it appears around the site.
    */
   description?: string | null;
@@ -1631,6 +1635,7 @@ export interface LocationsSelect<T extends boolean = true> {
 export interface ProjectsSelect<T extends boolean = true> {
   title?: T;
   snippet?: T;
+  tagline?: T;
   description?: T;
   archiveStory?: T;
   archiveDetails?: T;

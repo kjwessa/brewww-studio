@@ -54,6 +54,15 @@ export const Projects: CollectionConfig = {
       },
     },
     {
+      name: 'tagline',
+      type: 'text',
+      label: 'Tagline',
+      required: false,
+      admin: {
+        description: 'The tagline of the project as it appears around the site.',
+      },
+    },
+    {
       name: 'description',
       type: 'textarea',
       label: 'Description',

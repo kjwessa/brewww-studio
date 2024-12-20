@@ -68,6 +68,7 @@ import * as migration_20241220_202032_add_archivedetails_to_work from './2024122
 import * as migration_20241220_202104_add_archiveprocess_to_work from './20241220_202104_add_archiveprocess_to_work';
 import * as migration_20241220_202135_add_archiveresults_to_work from './20241220_202135_add_archiveresults_to_work';
 import * as migration_20241220_202201_add_archivehighlights_to_work from './20241220_202201_add_archivehighlights_to_work';
+import * as migration_20241220_202904_add_tagline_to_work from './20241220_202904_add_tagline_to_work';
 
 export const migrations = [
   {
@@ -418,6 +419,11 @@ export const migrations = [
   {
     up: migration_20241220_202201_add_archivehighlights_to_work.up,
     down: migration_20241220_202201_add_archivehighlights_to_work.down,
-    name: '20241220_202201_add_archivehighlights_to_work'
+    name: '20241220_202201_add_archivehighlights_to_work',
+  },
+  {
+    up: migration_20241220_202904_add_tagline_to_work.up,
+    down: migration_20241220_202904_add_tagline_to_work.down,
+    name: '20241220_202904_add_tagline_to_work'
   },
 ];
