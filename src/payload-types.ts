@@ -548,13 +548,33 @@ export interface Project {
    */
   title: string;
   /**
-   * The tagline of the project as it appears around the site.
+   * The snippet of the project as it appears around the site.
    */
-  tagline?: string | null;
+  snippet?: string | null;
   /**
    * The description of the project as it appears around the site.
    */
   description?: string | null;
+  /**
+   * The archived Story content of the project from the original project.
+   */
+  archiveStory?: string | null;
+  /**
+   * The archived Details content of the project from the original project.
+   */
+  archiveDetails?: string | null;
+  /**
+   * The archived Process content of the project from the original project.
+   */
+  archiveProcess?: string | null;
+  /**
+   * The archived Results content of the project from the original project.
+   */
+  archiveResults?: string | null;
+  /**
+   * The archived Highlights content of the project from the original project.
+   */
+  archiveHighlights?: string | null;
   storyTitle?: string | null;
   storyContent?: {
     root: {
@@ -1610,8 +1630,13 @@ export interface LocationsSelect<T extends boolean = true> {
  */
 export interface ProjectsSelect<T extends boolean = true> {
   title?: T;
-  tagline?: T;
+  snippet?: T;
   description?: T;
+  archiveStory?: T;
+  archiveDetails?: T;
+  archiveProcess?: T;
+  archiveResults?: T;
+  archiveHighlights?: T;
   storyTitle?: T;
   storyContent?: T;
   slug?: T;

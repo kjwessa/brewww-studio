@@ -49,7 +49,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         <Title el="h3" size="title-medium" className="max-w-2xl leading-none">
-          {project.tagline}
+          {project.snippet}
         </Title>
       </Link>
     </div>

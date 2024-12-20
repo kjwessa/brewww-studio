@@ -62,7 +62,7 @@ export default async function ProjectPage({ params: paramsPromise }: Args) {
                   <div className="ml-3 h-1.5 w-1.5 rounded-full bg-zinc-400" />
                   <div className="ml-3 font-light">{project.title}</div>
                 </div>
-                <h1 className="text-headline-medium leading-none text-white">{project.tagline}</h1>
+                <h1 className="text-headline-medium leading-none text-white">{project.snippet}</h1>
               </div>
             </div>
           </div>

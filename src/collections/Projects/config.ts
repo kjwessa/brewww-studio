@@ -45,12 +45,12 @@ export const Projects: CollectionConfig = {
       },
     },
     {
-      name: 'tagline',
+      name: 'snippet',
       type: 'text',
-      label: 'Tagline',
+      label: 'Project Snippet',
       required: false,
       admin: {
-        description: 'The tagline of the project as it appears around the site.',
+        description: 'The snippet of the project as it appears around the site.',
       },
     },
     {
@@ -60,6 +60,51 @@ export const Projects: CollectionConfig = {
       required: false,
       admin: {
         description: 'The description of the project as it appears around the site.',
+      },
+    },
+    {
+      name: 'archiveStory',
+      type: 'textarea',
+      label: 'The Story - Archived Content',
+      required: false,
+      admin: {
+        description: 'The archived Story content of the project from the original project.',
+      },
+    },
+    {
+      name: 'archiveDetails',
+      type: 'textarea',
+      label: 'The Details - Archived Content',
+      required: false,
+      admin: {
+        description: 'The archived Details content of the project from the original project.',
+      },
+    },
+    {
+      name: 'archiveProcess',
+      type: 'textarea',
+      label: 'The Process - Archived Content',
+      required: false,
+      admin: {
+        description: 'The archived Process content of the project from the original project.',
+      },
+    },
+    {
+      name: 'archiveResults',
+      type: 'textarea',
+      label: 'The Results - Archived Content',
+      required: false,
+      admin: {
+        description: 'The archived Results content of the project from the original project.',
+      },
+    },
+    {
+      name: 'archiveHighlights',
+      type: 'textarea',
+      label: 'The Highlights - Archived Content',
+      required: false,
+      admin: {
+        description: 'The archived Highlights content of the project from the original project.',
       },
     },
     {

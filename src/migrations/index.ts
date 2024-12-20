@@ -62,6 +62,12 @@ import * as migration_20241219_214618_add_service_category_relationship from './
 import * as migration_20241219_214853_drop_service_relationship_from_pillars from './20241219_214853_drop_service_relationship_from_pillars';
 import * as migration_20241220_160644_add_overview_to_pillars from './20241220_160644_add_overview_to_pillars';
 import * as migration_20241220_161050_add_image_to_service_pillar from './20241220_161050_add_image_to_service_pillar';
+import * as migration_20241220_201434_update_work_tagline_to_snippet from './20241220_201434_update_work_tagline_to_snippet';
+import * as migration_20241220_201954_add_archivestory_to_work from './20241220_201954_add_archivestory_to_work';
+import * as migration_20241220_202032_add_archivedetails_to_work from './20241220_202032_add_archivedetails_to_work';
+import * as migration_20241220_202104_add_archiveprocess_to_work from './20241220_202104_add_archiveprocess_to_work';
+import * as migration_20241220_202135_add_archiveresults_to_work from './20241220_202135_add_archiveresults_to_work';
+import * as migration_20241220_202201_add_archivehighlights_to_work from './20241220_202201_add_archivehighlights_to_work';
 
 export const migrations = [
   {
@@ -382,6 +388,36 @@ export const migrations = [
   {
     up: migration_20241220_161050_add_image_to_service_pillar.up,
     down: migration_20241220_161050_add_image_to_service_pillar.down,
-    name: '20241220_161050_add_image_to_service_pillar'
+    name: '20241220_161050_add_image_to_service_pillar',
+  },
+  {
+    up: migration_20241220_201434_update_work_tagline_to_snippet.up,
+    down: migration_20241220_201434_update_work_tagline_to_snippet.down,
+    name: '20241220_201434_update_work_tagline_to_snippet',
+  },
+  {
+    up: migration_20241220_201954_add_archivestory_to_work.up,
+    down: migration_20241220_201954_add_archivestory_to_work.down,
+    name: '20241220_201954_add_archivestory_to_work',
+  },
+  {
+    up: migration_20241220_202032_add_archivedetails_to_work.up,
+    down: migration_20241220_202032_add_archivedetails_to_work.down,
+    name: '20241220_202032_add_archivedetails_to_work',
+  },
+  {
+    up: migration_20241220_202104_add_archiveprocess_to_work.up,
+    down: migration_20241220_202104_add_archiveprocess_to_work.down,
+    name: '20241220_202104_add_archiveprocess_to_work',
+  },
+  {
+    up: migration_20241220_202135_add_archiveresults_to_work.up,
+    down: migration_20241220_202135_add_archiveresults_to_work.down,
+    name: '20241220_202135_add_archiveresults_to_work',
+  },
+  {
+    up: migration_20241220_202201_add_archivehighlights_to_work.up,
+    down: migration_20241220_202201_add_archivehighlights_to_work.down,
+    name: '20241220_202201_add_archivehighlights_to_work'
   },
 ];
