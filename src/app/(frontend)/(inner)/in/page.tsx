@@ -5,6 +5,9 @@ import Image from 'next/image'
 import { Media } from '@/payload-types'
 import { Section } from '@/components/layout/Section'
 import { Page } from '@/components/layout/Page'
+
+export const revalidate = 21600 // 6 hours
+
 export default async function LocationPage() {
   const payload = await getPayload({ config: configPromise })
   const locations = await payload.find({
@@ -63,7 +66,7 @@ export default async function LocationPage() {
                   <h2 className="mb-2 text-xl font-bold text-gray-900 transition-colors group-hover:text-blue-600">
                     {location.title}
                   </h2>
-                  {location.locationCity && (
+                  {(location.locationCity || location.locationState) && (
                     <div className="mb-4 flex items-center text-sm text-gray-600">
                       <svg
                         className="mr-2 h-4 w-4"
@@ -84,7 +87,9 @@ export default async function LocationPage() {
                           d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                         />
                       </svg>
-                      <p className="line-clamp-1">{location.locationCity}</p>
+                      <p className="line-clamp-1">
+                        {[location.locationCity, location.locationState].filter(Boolean).join(', ')}
+                      </p>
                     </div>
                   )}
 

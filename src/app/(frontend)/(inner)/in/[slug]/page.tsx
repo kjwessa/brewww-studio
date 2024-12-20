@@ -1,9 +1,6 @@
 // Next Imports
 import React from 'react'
-import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import Image from 'next/image'
-import Link from 'next/link'
 
 // Payload Imports
 // import { PayloadRedirects } from '@/components/PayloadRedirects'
@@ -33,10 +30,6 @@ type LocationPageProps = {
 }
 
 export async function generateStaticParams() {
-  if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
-    return []
-  }
-
   const payload = await getPayload({ config: configPromise })
   const locations = await payload.find({
     collection: 'locations',
