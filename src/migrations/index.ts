@@ -61,6 +61,7 @@ import * as migration_20241219_202249_add_FAQ_block from './20241219_202249_add_
 import * as migration_20241219_214618_add_service_category_relationship from './20241219_214618_add_service_category_relationship';
 import * as migration_20241219_214853_drop_service_relationship_from_pillars from './20241219_214853_drop_service_relationship_from_pillars';
 import * as migration_20241220_160644_add_overview_to_pillars from './20241220_160644_add_overview_to_pillars';
+import * as migration_20241220_161050_add_image_to_service_pillar from './20241220_161050_add_image_to_service_pillar';
 
 export const migrations = [
   {
@@ -376,6 +377,11 @@ export const migrations = [
   {
     up: migration_20241220_160644_add_overview_to_pillars.up,
     down: migration_20241220_160644_add_overview_to_pillars.down,
-    name: '20241220_160644_add_overview_to_pillars'
+    name: '20241220_160644_add_overview_to_pillars',
+  },
+  {
+    up: migration_20241220_161050_add_image_to_service_pillar.up,
+    down: migration_20241220_161050_add_image_to_service_pillar.down,
+    name: '20241220_161050_add_image_to_service_pillar'
   },
 ];

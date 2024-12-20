@@ -7,6 +7,7 @@ import { Section } from '@/components/layout/Section'
 interface ServicesPillarSectionProps {
   title: string
   tagline: string
+  overview: string
   services: Array<{
     number: string
     title: string
@@ -14,7 +15,12 @@ interface ServicesPillarSectionProps {
   }>
 }
 
-export function ServicesPillarSection({ title, tagline, services }: ServicesPillarSectionProps) {
+export function ServicesPillarSection({
+  title,
+  tagline,
+  overview,
+  services,
+}: ServicesPillarSectionProps) {
   return (
     <Section theme="dark" color="default">
       <Container size="3xl" spacing="2xl">
@@ -32,6 +38,9 @@ export function ServicesPillarSection({ title, tagline, services }: ServicesPill
           <div className="mb-5 w-full px-2 text-[2.50rem] leading-none lg:mb-0 lg:w-[43.75%] lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">
             <Text size="body-large" className="pr-10 lg:pr-0">
               {tagline}
+            </Text>
+            <Text size="body-small" className="mt-10 pr-10 lg:pr-0">
+              {overview}
             </Text>
           </div>
           <div className="mb-5 w-full px-2 min-[2100px]:w-[43.75%] lg:w-2/4 lg:pr-3 lg:pl-3 xl:pr-4 xl:pl-4">

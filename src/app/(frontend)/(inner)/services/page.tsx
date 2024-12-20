@@ -52,6 +52,7 @@ export default async function ServicesPage() {
     return {
       title: pillar.title,
       tagline: pillar.tagline,
+      overview: pillar.overview,
       services: pillarServices.map((service, index) => ({
         number: `${(index + 1).toString().padStart(2, '0')}`,
         title: service.title,
@@ -69,6 +70,7 @@ export default async function ServicesPage() {
           title={pillar.title}
           tagline={pillar.tagline}
           services={pillar.services}
+          overview={pillar.overview}
         />
       ))}
 

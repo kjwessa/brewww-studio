@@ -51,6 +51,16 @@ export const Pillars: CollectionConfig = {
       },
     },
     {
+      name: 'image',
+      type: 'upload',
+      label: 'Featured Image',
+      required: false,
+      relationTo: 'media',
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'relatedServices',
       label: 'Related Services',
       type: 'join',
