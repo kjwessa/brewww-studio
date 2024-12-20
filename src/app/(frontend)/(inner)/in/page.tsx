@@ -18,7 +18,7 @@ export default async function LocationPage() {
       <Section theme="inherit" background="default">
         <div className="container mx-auto px-4 py-16">
           <div className="mb-16 text-center">
-            <h1 className="mb-4 text-4xl font-bold md:text-5xl">Our Global Locations</h1>
+            <h1 className="mb-4 text-4xl font-bold md:text-5xl">Our National Locations</h1>
             <p className="mx-auto max-w-2xl text-lg">
               Discover our presence and services across different locations.
             </p>
