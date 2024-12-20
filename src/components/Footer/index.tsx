@@ -114,11 +114,11 @@ export default async function Footer() {
               </li>
 
               <li className="mt-1 flex items-center">
-                <FooterLink href="/faqs" label="FAQs" />
+                <FooterLink href="/faq" label="FAQ" />
               </li>
 
               <li className="mt-1 flex items-center">
-                <FooterLink href="/blog" label="Blog" />
+                <FooterLink href="/journal" label="Journal" />
               </li>
             </ul>
           </div>
