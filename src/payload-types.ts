@@ -108,7 +108,13 @@ export interface UserAuthOperations {
  */
 export interface Media {
   id: string;
+  /**
+   * This is the alt text for the image
+   */
   alt: string;
+  /**
+   * This is the caption for the image. Optional, but helpful for Blog Posts requiring a caption.
+   */
   caption?: string | null;
   fileHash?: string | null;
   prefix?: string | null;
@@ -203,6 +209,9 @@ export interface Page {
     | null;
   meta?: {
     title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
     image?: (string | null) | Media;
     description?: string | null;
   };
@@ -363,6 +372,9 @@ export interface Form {
       )[]
     | null;
   submitButtonLabel?: string | null;
+  /**
+   * Choose whether to display an on-page message or redirect to a different page after they submit the form.
+   */
   confirmationType?: ('message' | 'redirect') | null;
   confirmationMessage?: {
     root: {
@@ -382,6 +394,9 @@ export interface Form {
   redirect?: {
     url: string;
   };
+  /**
+   * Send custom emails when the form submits. Use comma separated lists to send the same email to multiple recipients. To reference a value from this form, wrap that field's name with double curly brackets, i.e. {{firstName}}. You can use a wildcard {{*}} to output all data and {{*:table}} to format it as an HTML table in the email.
+   */
   emails?:
     | {
         emailTo?: string | null;
@@ -390,6 +405,9 @@ export interface Form {
         replyTo?: string | null;
         emailFrom?: string | null;
         subject: string;
+        /**
+         * Enter the message that should be sent in this email.
+         */
         message?: {
           root: {
             type: string;
@@ -467,6 +485,9 @@ export interface CallToActionBlock {
           } | null;
           url?: string | null;
           label: string;
+          /**
+           * Choose how the link should be rendered.
+           */
           appearance?: ('default' | 'outline') | null;
         };
         id?: string | null;
@@ -522,8 +543,17 @@ export interface LandingWorkBlock {
  */
 export interface Project {
   id: string;
+  /**
+   * The title of the project as it appears around the site.
+   */
   title: string;
+  /**
+   * The tagline of the project as it appears around the site.
+   */
   tagline?: string | null;
+  /**
+   * The description of the project as it appears around the site.
+   */
   description?: string | null;
   storyTitle?: string | null;
   storyContent?: {
@@ -549,6 +579,9 @@ export interface Project {
   excludeFromSitemap?: boolean | null;
   meta?: {
     title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
     image?: (string | null) | Media;
     description?: string | null;
   };
@@ -562,10 +595,25 @@ export interface Project {
  */
 export interface Brand {
   id: string;
+  /**
+   * Add the client name as it will appear around the site.
+   */
   title: string;
+  /**
+   * Add the light version of the logo that appears on dark backgrounds
+   */
   logoLight?: (string | null) | Media;
+  /**
+   * Add a short description of the brand that appears on the brand page.
+   */
   snippet?: string | null;
+  /**
+   * The closest major city to the client.
+   */
   city?: string | null;
+  /**
+   * The state where the client is based.
+   */
   state?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -641,6 +689,9 @@ export interface BeforeAfterSliderBlock {
  * via the `definition` "TestimonialBlock".
  */
 export interface TestimonialBlock {
+  /**
+   * Select a testimonial to display in this block
+   */
   testimonial: string | Testimonial;
   id?: string | null;
   blockName?: string | null;
@@ -652,8 +703,17 @@ export interface TestimonialBlock {
  */
 export interface Testimonial {
   id: string;
+  /**
+   * Add the title of the testimonial here.
+   */
   title: string;
+  /**
+   * Add a short excerpt of the testimonial here.
+   */
   callout: string;
+  /**
+   * Add the full testimonial content here.
+   */
   testimonial: {
     root: {
       type: string;
@@ -669,6 +729,9 @@ export interface Testimonial {
     };
     [k: string]: unknown;
   };
+  /**
+   * Add the name of the person that left the testimonial
+   */
   author: string;
   updatedAt: string;
   createdAt: string;
@@ -679,6 +742,9 @@ export interface Testimonial {
  * via the `definition` "FAQBlock".
  */
 export interface FAQBlock {
+  /**
+   * Select FAQs to display in this block
+   */
   faqs: (string | Faq)[];
   id?: string | null;
   blockName?: string | null;
@@ -716,10 +782,19 @@ export interface Faq {
  */
 export interface Post {
   id: string;
+  /**
+   * The title of the article as it appears around the site.
+   */
   title: string;
   slug?: string | null;
   slugLock?: boolean | null;
+  /**
+   * The tagline of the article as it appears around the site.
+   */
   tagline?: string | null;
+  /**
+   * The description of the article as it appears around the site.
+   */
   description?: string | null;
   publishedOn: string;
   image: string | Media;
@@ -744,6 +819,9 @@ export interface Post {
   };
   meta?: {
     title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
     image?: (string | null) | Media;
     description?: string | null;
   };
@@ -757,6 +835,9 @@ export interface Post {
  */
 export interface Category {
   id: string;
+  /**
+   * The title of the category as it appears around the site.
+   */
   title: string;
   slug?: string | null;
   slugLock?: boolean | null;
@@ -774,7 +855,13 @@ export interface Category {
  */
 export interface Location {
   id: string;
+  /**
+   * The title of the location as it appears around the site.
+   */
   title: string;
+  /**
+   * The hero description of the location. Will later be replaced with blocks.
+   */
   heroDescription: {
     root: {
       type: string;
@@ -790,12 +877,21 @@ export interface Location {
     };
     [k: string]: unknown;
   };
+  /**
+   * The city of the location.
+   */
   locationCity: string;
+  /**
+   * The state of the location.
+   */
   locationState: string;
   image?: (string | null) | Media;
   excludeFromSitemap?: boolean | null;
   meta?: {
     title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
     image?: (string | null) | Media;
     description?: string | null;
   };
@@ -811,6 +907,9 @@ export interface Location {
  */
 export interface Technology {
   id: string;
+  /**
+   * Add the title of the technology here.
+   */
   title: string;
   logoLight?: (string | null) | Media;
   updatedAt: string;
@@ -823,10 +922,19 @@ export interface Technology {
  */
 export interface Service {
   id: string;
+  /**
+   * The name of the service as it appears around the site.
+   */
   title: string;
+  /**
+   * The tagline of the service as it appears around the site.
+   */
   tagline?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;
+  /**
+   * The description of the service as it appears around the site.
+   */
   description?: string | null;
   overview?: {
     root: {
@@ -848,6 +956,9 @@ export interface Service {
   excludeFromSitemap?: boolean | null;
   meta?: {
     title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
     image?: (string | null) | Media;
     description?: string | null;
   };
@@ -861,8 +972,17 @@ export interface Service {
  */
 export interface Pillar {
   id: string;
+  /**
+   * Add the title of the pillar here.
+   */
   title: string;
+  /**
+   * Add the tagline for the pillar here.
+   */
   tagline: string;
+  /**
+   * Add the overview for the pillar here.
+   */
   overview: string;
   slug?: string | null;
   slugLock?: boolean | null;
@@ -881,8 +1001,17 @@ export interface Pillar {
  */
 export interface Play {
   id: string;
+  /**
+   * Add the title of the Playground case study here.
+   */
   title: string;
+  /**
+   * Add the tagline for the playground here.
+   */
   tagline?: string | null;
+  /**
+   * Add the description for the playground here.
+   */
   description?: string | null;
   slug?: string | null;
   slugLock?: boolean | null;
@@ -904,7 +1033,13 @@ export interface Team {
   role: string;
   image: string | Media;
   bioImage: string | Media;
+  /**
+   * Will be later replaced by blocks, but for now allows a unique title to appear in the hero
+   */
   heroTitle: string;
+  /**
+   * Will be later replaced by blocks, but for now allows a unique description to appear in the hero
+   */
   heroDescription: {
     root: {
       type: string;
@@ -920,6 +1055,9 @@ export interface Team {
     };
     [k: string]: unknown;
   };
+  /**
+   * The biography of the team member.
+   */
   bio: {
     root: {
       type: string;
@@ -939,9 +1077,15 @@ export interface Team {
   linkLinkedin?: string | null;
   linkInstagram?: string | null;
   linkFacebook?: string | null;
+  /**
+   * If checked, this team member will not appear in the sitemap
+   */
   excludeFromSitemap?: boolean | null;
   meta?: {
     title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
     image?: (string | null) | Media;
     description?: string | null;
   };
@@ -955,6 +1099,9 @@ export interface Team {
  */
 export interface Redirect {
   id: string;
+  /**
+   * You will need to rebuild the website when changing this field.
+   */
   from: string;
   to?: {
     type?: ('reference' | 'custom') | null;
@@ -1840,6 +1987,9 @@ export interface Header {
 export interface Footer {
   id: string;
   logo?: (string | null) | Media;
+  /**
+   * Appears in the footer
+   */
   copyrightNotice?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;

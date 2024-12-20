@@ -6,6 +6,7 @@ const nextConfig = {
   experimental: {
     reactCompiler: true,
   },
+  serverExternalPackages: ['pg'],
   reactStrictMode: true,
 
   images: {
