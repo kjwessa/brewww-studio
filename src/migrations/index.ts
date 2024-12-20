@@ -60,6 +60,7 @@ import * as migration_20241219_195646_add_testimonial_block from './20241219_195
 import * as migration_20241219_202249_add_FAQ_block from './20241219_202249_add_FAQ_block';
 import * as migration_20241219_214618_add_service_category_relationship from './20241219_214618_add_service_category_relationship';
 import * as migration_20241219_214853_drop_service_relationship_from_pillars from './20241219_214853_drop_service_relationship_from_pillars';
+import * as migration_20241220_160644_add_overview_to_pillars from './20241220_160644_add_overview_to_pillars';
 
 export const migrations = [
   {
@@ -370,6 +371,11 @@ export const migrations = [
   {
     up: migration_20241219_214853_drop_service_relationship_from_pillars.up,
     down: migration_20241219_214853_drop_service_relationship_from_pillars.down,
-    name: '20241219_214853_drop_service_relationship_from_pillars'
+    name: '20241219_214853_drop_service_relationship_from_pillars',
+  },
+  {
+    up: migration_20241220_160644_add_overview_to_pillars.up,
+    down: migration_20241220_160644_add_overview_to_pillars.down,
+    name: '20241220_160644_add_overview_to_pillars'
   },
 ];

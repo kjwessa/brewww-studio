@@ -42,6 +42,15 @@ export const Pillars: CollectionConfig = {
       },
     },
     {
+      name: 'overview',
+      type: 'textarea',
+      label: 'Overview',
+      required: true,
+      admin: {
+        description: 'Add the overview for the pillar here.',
+      },
+    },
+    {
       name: 'relatedServices',
       label: 'Related Services',
       type: 'join',

@@ -863,6 +863,7 @@ export interface Pillar {
   id: string;
   title: string;
   tagline: string;
+  overview: string;
   relatedServices?: {
     docs?: (string | Service)[] | null;
     hasNextPage?: boolean | null;
@@ -1563,6 +1564,7 @@ export interface ServicesSelect<T extends boolean = true> {
 export interface PillarsSelect<T extends boolean = true> {
   title?: T;
   tagline?: T;
+  overview?: T;
   relatedServices?: T;
   slug?: T;
   slugLock?: T;
