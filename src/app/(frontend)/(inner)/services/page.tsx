@@ -6,48 +6,71 @@ import { Text } from '@/components/Text'
 import { ServiceCategoryCard } from '@/components/ServiceCategoryCard'
 import { ServicesHero } from './ServicesHero'
 import { ServicesPillarSection } from './ServicesPillarSection'
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
+import { Pillar, Service } from '@/payload-types'
+import { Page } from '@/components/layout/Page'
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const payload = await getPayload({ config: configPromise })
+
+  const [pillars, services] = await Promise.all([
+    payload.find({
+      collection: 'pillars',
+      limit: 1000,
+      sort: 'title',
+      where: {
+        _status: {
+          equals: 'published',
+        },
+      },
+      depth: 1,
+    }),
+    payload.find({
+      collection: 'services',
+      limit: 1000,
+      sort: 'title',
+      where: {
+        _status: {
+          equals: 'published',
+        },
+      },
+      depth: 1,
+    }),
+  ])
+
+  // Create a map of services by pillar
+  const servicesByPillar = pillars.docs.map((pillar) => {
+    const pillarServices = services.docs.filter((service) => {
+      return (
+        service.category &&
+        typeof service.category === 'object' &&
+        service.category.id === pillar.id
+      )
+    })
+
+    return {
+      title: pillar.title,
+      tagline: pillar.tagline,
+      services: pillarServices.map((service, index) => ({
+        number: `${(index + 1).toString().padStart(2, '0')}`,
+        title: service.title,
+        href: `/services/${service.slug}`,
+      })),
+    }
+  })
+
   return (
-    <>
+    <Page theme="light">
       <ServicesHero />
-      <ServicesPillarSection
-        title="Design"
-        tagline="Brand designers and web designers in-house crafting visuals to match your brand values."
-        services={[
-          { number: '01', title: 'Brand Identity', href: '/services/brand-identity' },
-          { number: '02', title: 'Web Design', href: '/services/web-design' },
-          { number: '03', title: 'eCommerce', href: '/services/ecommerce' },
-          { number: '04', title: 'Shopify', href: '/services/shopify' },
-          { number: '05', title: 'Graphic Design', href: '/services/graphic-design' },
-        ]}
-      />
-
-      <ServicesPillarSection
-        title="Develop"
-        tagline="Web development to the highest standards, and matching the latest industry requirements."
-        services={[
-          { number: '01', title: 'Web Development', href: '/services/web-development' },
-          { number: '02', title: 'Craft CMS', href: '/services/craft-cms' },
-          { number: '03', title: 'Shopify', href: '/services/shopify' },
-          { number: '04', title: 'Craft Commerce', href: '/services/craft-commerce' },
-          { number: '05', title: 'eCommerce', href: '/services/ecommerce' },
-          { number: '06', title: 'Technical SEO', href: '/services/technical-seo' },
-        ]}
-      />
-
-      <ServicesPillarSection
-        title="Support"
-        tagline="Lean on our in-house team to support with your design, development and seo needs."
-        services={[
-          { number: '01', title: 'SEO', href: '/services/seo' },
-          { number: '02', title: 'Web Hosting', href: '/services/web-hosting' },
-          { number: '03', title: 'Shape Support', href: '/services/shape-support' },
-          { number: '04', title: 'PPC', href: '/services/ppc' },
-          { number: '05', title: 'Content Writing', href: '/services/content-writing' },
-          { number: '06', title: 'Craft CMS', href: '/services/craft-cms' },
-        ]}
-      />
+      {servicesByPillar.map((pillar, index) => (
+        <ServicesPillarSection
+          key={index}
+          title={pillar.title}
+          tagline={pillar.tagline}
+          services={pillar.services}
+        />
+      ))}
 
       <section className="flex bg-white text-stone-950">
         <div className="relative flex h-[50.46rem] w-full">
@@ -873,6 +896,6 @@ export default function ServicesPage() {
           </section>
         </div>
       </section>
-    </>
+    </Page>
   )
 }

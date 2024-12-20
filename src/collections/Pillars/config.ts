@@ -36,7 +36,7 @@ export const Pillars: CollectionConfig = {
       name: 'tagline',
       type: 'text',
       label: 'Tagline',
-      required: false,
+      required: true,
       admin: {
         description: 'Add the tagline for the pillar here.',
       },

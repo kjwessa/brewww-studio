@@ -862,7 +862,7 @@ export interface Service {
 export interface Pillar {
   id: string;
   title: string;
-  tagline?: string | null;
+  tagline: string;
   relatedServices?: {
     docs?: (string | Service)[] | null;
     hasNextPage?: boolean | null;
