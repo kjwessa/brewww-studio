@@ -8,13 +8,14 @@ import { ServicesHero } from './ServicesHero'
 import { ServicesPillarSection } from './ServicesPillarSection'
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
-import { Pillar, Service } from '@/payload-types'
+import { Pillar, Service, Project } from '@/payload-types'
 import { Page } from '@/components/layout/Page'
+import { ServiceCardTall } from '@/components/ServiceCardTall'
 
 export default async function ServicesPage() {
   const payload = await getPayload({ config: configPromise })
 
-  const [pillars, services] = await Promise.all([
+  const [pillars, services, projects] = await Promise.all([
     payload.find({
       collection: 'pillars',
       limit: 1000,
@@ -36,6 +37,17 @@ export default async function ServicesPage() {
         },
       },
       depth: 1,
+    }),
+    payload.find({
+      collection: 'projects',
+      limit: 2,
+      sort: 'createdAt',
+      where: {
+        _status: {
+          equals: 'published',
+        },
+      },
+      depth: 3,
     }),
   ])
 
@@ -99,7 +111,6 @@ export default async function ServicesPage() {
             for you.
           </Text>
         </div>
-       
       </section>
       <section className="bg-white text-stone-950">
         <div className="mx-auto w-full max-w-6xl px-8 py-24">
@@ -264,8 +275,8 @@ export default async function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white text-[1.38rem] leading-7 text-stone-950 min-[1600px]:pt-20 min-[1600px]:pb-20 min-[1920px]:pt-28 min-[1920px]:pb-28 min-[1921px]:pt-28 min-[1921px]:pb-28">
-        <div className="m-auto w-[92%] min-[769px]:flex min-[1921px]:max-w-[118.75rem]">
+      <section className="relative overflow-hidden bg-white text-[1.38rem] leading-7 text-stone-950 min-[1600px]:pt-20 min-[1600px]:pb-20">
+        <div className="m-auto w-[92%] min-[769px]:flex">
           <div className="text-[3.13rem] leading-none uppercase min-[769px]:w-96">
             <p className="opacity-10">01</p>
             <h2>
@@ -274,7 +285,7 @@ export default async function ServicesPage() {
           </div>
 
           <div className="min-[769px]:ml-auto min-[769px]:w-[65.4737%]">
-            <div className="min-[1600px]:mb-10 min-[1920px]:mb-12 min-[1921px]:mb-12">
+            <div className="min-[1600px]:mb-10 min-[1920px]:mb-12">
               <h2 className="text-[6rem] leading-none font-black uppercase">
                 Building the foundations for a successful project
               </h2>
@@ -296,7 +307,7 @@ export default async function ServicesPage() {
                   </h3>
                 </a>
 
-                <div className="border-t-2 border-solid border-neutral-900 pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24 min-[1921px]:pb-24">
+                <div className="border-t-2 border-solid border-neutral-900 pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24">
                   We'll listen to your goals and get to know your business. We'll research your
                   competitors, identify how we can make an impact, and help solve your customer's
                   needs. We work with you to refine your ideas and present solutions to help you
@@ -313,7 +324,7 @@ export default async function ServicesPage() {
                   </h3>
                 </a>
 
-                <div className="border-t-2 border-solid border-neutral-900 pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24 min-[1921px]:pb-24">
+                <div className="border-t-2 border-solid border-neutral-900 pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24">
                   How your visitors engage with the content on your website is important to us.
                   We'll wireframe your new website to map out a straightforward user journey, from
                   the very first impression, to how they navigate the pages and content. This helps
@@ -331,7 +342,7 @@ export default async function ServicesPage() {
                   </h3>
                 </a>
 
-                <div className="border-t-2 border-solid border-neutral-900 pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24 min-[1921px]:pb-24">
+                <div className="border-t-2 border-solid border-neutral-900 pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24">
                   With over 15 years of experience running complex design and build projects, we
                   have established a solid process of managing studio projects that teams on both
                   sides oversee. Our team will cut through the jargon and keep you updated at every
@@ -341,102 +352,47 @@ export default async function ServicesPage() {
             </ul>
           </div>
         </div>
-        <div className="m-auto w-[92%] pt-24 min-[1921px]:max-w-[118.75rem]">
+        <div className="m-auto w-[92%] pt-24 pb-24">
           <div className="relative">
-            <ul className="list-none flex-wrap min-[769px]:flex">
-              <li className="relative list-item min-[769px]:w-[48.2105%]">
-                <span className="absolute top-0 left-0 z-2 w-full text-lg text-white uppercase min-[1025px]:p-8">
-                  <Link href="">Websites</Link>
-                </span>
-
-                <Link className="w-full overflow-hidden" href="">
-                  <picture className="h-auto max-w-full cursor-pointer">
-                    <img
-                      className="h-auto w-full max-w-full"
-                      src="https://www.fhoke.com/wp-content/uploads/2022/03/heritage-driven-header-916x1100.jpg"
-                      alt="Heritage Driven header image"
-                    />
-                  </picture>
-                </Link>
-
-                <div className="flex justify-between min-[1025px]:mt-5">
-                  <div className="grow">
-                    <h5>
-                      <Link className="inline-block" href="">
-                        Heritage Driven
-                      </Link>
-                    </h5>
-
-                    <p className="opacity-50">Redefining an automotive icon.</p>
-                  </div>
-
-                  <div className="ml-5 text-lg uppercase">
-                    <Link
-                      className="relative inline-block overflow-hidden rounded-full bg-gray-200 text-center"
-                      href=""
-                    >
-                      <span className="relative cursor-pointer min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5">
-                        View
-                        <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-white min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5" />
-                      </span>
-                    </Link>
-                  </div>
-                </div>
-              </li>
-
-              <li className="relative list-item min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
-                <span className="absolute top-0 left-0 z-2 w-full text-lg text-white uppercase min-[1025px]:p-8">
-                  <Link href="">Websites</Link>
-                </span>
-
-                <Link className="w-full overflow-hidden" href="">
-                  <picture className="h-auto max-w-full cursor-pointer">
-                    <img
-                      className="h-auto w-full max-w-full"
-                      src="https://www.fhoke.com/wp-content/uploads/2020/11/neck-of-the-woods-films-header-916x1100.png"
-                      alt="Neck of The Woods Films header image"
-                    />
-                  </picture>
-                </Link>
-
-                <div className="flex justify-between min-[1025px]:mt-5">
-                  <div className="grow">
-                    <h5>
-                      <Link className="inline-block" href="">
-                        Neck of The Woods
-                      </Link>
-                    </h5>
-
-                    <p className="opacity-50">A powerful story can change everything.</p>
-                  </div>
-
-                  <div className="ml-5 text-lg uppercase">
-                    <Link
-                      className="relative inline-block overflow-hidden rounded-full bg-gray-200 text-center"
-                      href=""
-                    >
-                      <span className="relative cursor-pointer min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5">
-                        View
-                        <span className="absolute top-full left-0 w-full rounded-tl-full rounded-tr-full bg-white min-[1025px]:pt-1.5 min-[1025px]:pr-3.5 min-[1025px]:pb-1.5 min-[1025px]:pl-3.5 lg:pt-1.5 lg:pr-3.5 lg:pb-1.5 lg:pl-3.5" />
-                      </span>
-                    </Link>
-                  </div>
-                </div>
-              </li>
+            <ul className="grid grid-cols-2 gap-8">
+              {projects.docs.map((project) => {
+                const projectData = project as unknown as {
+                  id: string
+                  title: string
+                  snippet: string
+                  slug: string
+                  image: {
+                    url: string
+                    alt: string
+                  }
+                }
+                return (
+                  <ServiceCardTall
+                    key={projectData.id}
+                    title={projectData.title}
+                    description={projectData.snippet || ''}
+                    href={`/projects/${projectData.slug}`}
+                    mainImage={{
+                      url: projectData.image?.url || '/images/project-placeholder.jpg',
+                      alt: projectData.image?.alt || `${projectData.title} header image`,
+                    }}
+                  />
+                )
+              })}
             </ul>
           </div>
         </div>
       </section>
 
-      <section className="bg-brand-dark-bg relative text-white min-[1600px]:py-20 min-[1920px]:py-28 min-[1921px]:py-28">
-        <div className="m-auto w-[92%] min-[769px]:flex min-[1921px]:max-w-[118.75rem]">
+      <section className="bg-brand-dark-bg relative text-white min-[1600px]:py-20 min-[1920px]:py-28">
+        <div className="m-auto w-[92%] min-[769px]:flex">
           <div className="text-[3.13rem] leading-none uppercase min-[769px]:w-96">
             <p className="opacity-10">02</p>
             <h2>Design</h2>
           </div>
 
           <div className="min-[769px]:ml-auto min-[769px]:w-[65.4737%]">
-            <div className="text-4xl min-[1600px]:mb-10 min-[1920px]:mb-12 min-[1921px]:mb-12">
+            <div className="text-4xl min-[1600px]:mb-10 min-[1920px]:mb-12">
               <h2 className="text-[6rem] leading-none font-black uppercase">
                 Concepts and visuals that achieve your commercial goals
               </h2>
@@ -455,7 +411,7 @@ export default async function ServicesPage() {
                     Branding + Identity
                   </h3>
                 </a>
-                <div className="border-t-2 border-solid border-white pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24 min-[1921px]:pb-24">
+                <div className="border-t-2 border-solid border-white pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24">
                   A brand isn't just about a logo. We take an identity and create visuals that
                   showcase your products and services using the right messaging and materials.
                   Working with existing brands or helping start-ups, we work with you to design
@@ -470,7 +426,7 @@ export default async function ServicesPage() {
                     Website Design
                   </h3>
                 </a>
-                <div className="border-t-2 border-solid border-white pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24 min-[1921px]:pb-24">
+                <div className="border-t-2 border-solid border-white pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24">
                   Obsessed with details, we create the assets your company needs to build a
                   best-in-breed brand. A valuable marketing tool, we approach your website project
                   with a focus on creativity, usability, and conversions.
@@ -480,7 +436,7 @@ export default async function ServicesPage() {
           </div>
         </div>
 
-        <div className="m-auto w-[92%] pt-24 min-[1921px]:max-w-[118.75rem]">
+        <div className="m-auto w-[92%] pt-24">
           <div className="relative">
             <ul className="list-none flex-wrap min-[769px]:flex">
               <li className="relative list-item min-[769px]:w-[48.2105%]">
@@ -563,8 +519,8 @@ export default async function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative bg-white text-[1.38rem] leading-7 text-neutral-900 min-[1600px]:py-20 min-[1920px]:py-28 min-[1921px]:py-28">
-        <div className="m-auto w-[92%] min-[769px]:flex min-[1921px]:max-w-[118.75rem]">
+      <section className="relative bg-white text-[1.38rem] leading-7 text-neutral-900 min-[1600px]:py-20 min-[1920px]:py-28">
+        <div className="m-auto w-[92%] min-[769px]:flex">
           <div className="min-[769px]:flex">
             <div className="text-[3.13rem] leading-none uppercase min-[769px]:w-96">
               <p className="opacity-10">03</p>
@@ -572,7 +528,7 @@ export default async function ServicesPage() {
             </div>
 
             <div className="min-[769px]:ml-auto min-[769px]:w-[65.4737%]">
-              <div className="text-4xl min-[1600px]:mb-10 min-[1920px]:mb-12 min-[1921px]:mb-12">
+              <div className="text-4xl min-[1600px]:mb-10 min-[1920px]:mb-12">
                 <h2 className="text-[6rem] leading-none font-black uppercase">
                   Bespoke website development delivered with flair
                 </h2>
@@ -590,7 +546,7 @@ export default async function ServicesPage() {
                       Next.js
                     </h3>
                   </a>
-                  <div className="border-t-2 border-solid border-neutral-900 pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24 min-[1921px]:pb-24">
+                  <div className="border-t-2 border-solid border-neutral-900 pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24">
                     We've embraced Next.js as our go-to React framework for building modern web
                     applications. Its powerful features like server-side rendering, static site
                     generation, and API routes make it an excellent choice for creating fast,
@@ -685,15 +641,15 @@ export default async function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-brand-dark-bg relative text-white min-[1600px]:py-20 min-[1920px]:py-28 min-[1921px]:py-28">
-        <div className="m-auto w-[92%] min-[769px]:flex min-[1921px]:max-w-[118.75rem]">
+      <section className="bg-brand-dark-bg relative text-white min-[1600px]:py-20 min-[1920px]:py-28">
+        <div className="m-auto w-[92%] min-[769px]:flex">
           <div className="text-[3.13rem] leading-none uppercase min-[769px]:w-96">
             <p className="opacity-10">04</p>
             <h2>Grow</h2>
           </div>
 
           <div className="min-[769px]:ml-auto min-[769px]:w-[65.4737%]">
-            <div className="text-4xl min-[1600px]:mb-10 min-[1920px]:mb-12 min-[1921px]:mb-12">
+            <div className="text-4xl min-[1600px]:mb-10 min-[1920px]:mb-12">
               <h2 className="text-[6rem] leading-none font-black uppercase">
                 Supporting the growth of your business
               </h2>
@@ -713,7 +669,7 @@ export default async function ServicesPage() {
                   </h3>
                 </a>
 
-                <div className="border-t-2 border-solid border-white pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24 min-[1921px]:pb-24">
+                <div className="border-t-2 border-solid border-white pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24">
                   We're not just good at building websites; we're also great at building online apps
                   to help your day-to-day run more smoothly. We have experience creating proposal
                   tools, project management portals, and complex survey systems. Got an idea, let us
@@ -727,7 +683,7 @@ export default async function ServicesPage() {
                     Digital Marketing
                   </h3>
                 </a>
-                <div className="border-t-2 border-solid border-white pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24 min-[1921px]:pb-24">
+                <div className="border-t-2 border-solid border-white pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24">
                   Our digital marketing strategies are designed to boost your online presence and
                   drive results. From SEO and content marketing to social media campaigns, we help
                   you reach your target audience effectively.
@@ -740,7 +696,7 @@ export default async function ServicesPage() {
                     Ongoing Support
                   </h3>
                 </a>
-                <div className="border-t-2 border-solid border-white pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24 min-[1921px]:pb-24">
+                <div className="border-t-2 border-solid border-white pt-8 min-[1600px]:pb-16 min-[1920px]:pb-24">
                   We provide continuous support and maintenance for your digital assets, ensuring
                   they remain up-to-date, secure, and optimized for performance.
                 </div>
@@ -749,17 +705,17 @@ export default async function ServicesPage() {
           </div>
         </div>
         <div>
-          <section className="bg-brand-dark-bg relative overflow-hidden text-white min-[1600px]:pt-20 min-[1600px]:pb-20 min-[1920px]:pt-28 min-[1920px]:pb-28 min-[1921px]:pt-28 min-[1921px]:pb-28">
-            <div className="m-auto w-[92%] text-lg uppercase min-[1600px]:mb-10 min-[1920px]:mb-12 min-[1921px]:mb-12 min-[1921px]:max-w-[118.75rem]">
+          <section className="bg-brand-dark-bg relative overflow-hidden text-white min-[1600px]:pt-20 min-[1600px]:pb-20 min-[1920px]:pt-28 min-[1920px]:pb-28">
+            <div className="m-auto w-[92%] text-lg uppercase min-[1600px]:mb-10 min-[1920px]:mb-12">
               <p className="inline-block min-[671px]:pl-6">Related Projects</p>
             </div>
 
-            <div className="m-auto w-[92%] text-[1.38rem] leading-7 min-[1921px]:max-w-[118.75rem]">
+            <div className="m-auto w-[92%] text-[1.38rem] leading-7">
               <div className="relative">
                 <ul className="list-none flex-wrap min-[769px]:flex">
                   <li className="relative list-item min-[769px]:w-[48.2105%]">
                     <span className="absolute top-0 left-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
-                      Websites
+                      Website
                     </span>
                     <Link className="w-full overflow-hidden" href="">
                       <picture className="h-auto max-w-full cursor-pointer">
