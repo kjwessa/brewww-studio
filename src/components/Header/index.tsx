@@ -7,6 +7,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { Button } from '@/components/Button'
+import OffCanvas from './OffCanvas'
+import MenuButton from './MenuButton'
 
 export default function Header() {
   // TODO: bring back the Payload call when the design is completed
@@ -82,154 +84,12 @@ export default function Header() {
                 {/* //TODO make sure this button is correctly linked */}
                 <Button href="/contact" label="Let's talk" />
               </div>
-              <button className="h-12 min-w-8 cursor-pointer" onClick={toggleMenu}>
-                <span className="flex h-full w-full items-center justify-center">
-                  {!isMenuOpen ? (
-                    <svg
-                      width="24"
-                      height="24"
-                      strokeWidth="1.5"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      color="#000000"
-                    >
-                      <path
-                        d="M3 5H21"
-                        stroke="#FFFFFF"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                      <path
-                        d="M3 12H21"
-                        stroke="#FFFFFF"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                      <path
-                        d="M3 19H21"
-                        stroke="#FFFFFF"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                    </svg>
-                  ) : (
-                    <svg
-                      width="24"
-                      height="24"
-                      strokeWidth="1.5"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      color="#000000"
-                    >
-                      <path
-                        d="M9.87871 14.1213L12 12M14.1213 9.87868L12 12M12 12L9.87871 9.87868M12 12L14.1213 14.1213"
-                        stroke="#FFFFFF"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                      <path
-                        d="M21 3.6V20.4C21 20.7314 20.7314 21 20.4 21H3.6C3.26863 21 3 20.7314 3 20.4V3.6C3 3.26863 3.26863 3 3.6 3H20.4C20.7314 3 21 3.26863 21 3.6Z"
-                        stroke="#FFFFFF"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                    </svg>
-                  )}
-                </span>
-              </button>
             </div>
           </div>
         </div>
       </header>
-      <div
-        className={`bg-brand-gold fixed inset-0 z-50 h-screen w-screen transition-opacity duration-300 ${
-          isMenuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
-        }`}
-      >
-        <div className="bg-brand-dark-surface relative m-2 flex h-[calc(100vh-1rem)] w-[calc(100vw-1rem)] flex-col justify-between overflow-hidden rounded-md p-6">
-          <div className="relative z-10 flex justify-end">
-            <button onClick={toggleMenu} className="text-white focus:outline-hidden">
-              <svg
-                width="32"
-                height="32"
-                strokeWidth="1.5"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                color="#FFFFFF"
-              >
-                <path
-                  d="M9.87871 14.1213L12 12M14.1213 9.87868L12 12M12 12L9.87871 9.87868M12 12L14.1213 14.1213"
-                  stroke="#FFFFFF"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></path>
-                <path
-                  d="M21 3.6V20.4C21 20.7314 20.7314 21 20.4 21H3.6C3.26863 21 3 20.7314 3 20.4V3.6C3 3.26863 3.26863 3 3.6 3H20.4C20.7314 3 21 3.26863 21 3.6Z"
-                  stroke="#FFFFFF"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></path>
-              </svg>
-            </button>
-          </div>
-          <div className="relative z-10 flex flex-col gap-y-4 pb-6 pl-6">
-            <div className="w-full overflow-hidden text-8xl leading-none text-white uppercase">
-              <Link
-                className="group relative flex w-full max-w-full items-center justify-start opacity-[0.35] transition-opacity duration-300 hover:opacity-100"
-                href=""
-              >
-                <div className="grid cursor-pointer auto-cols-fr grid-cols-[auto_auto] grid-rows-[auto] items-center justify-items-center">
-                  <div className="col-span-1 row-span-1 -mb-1">Work</div>
-                </div>
-                <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </div>
-            <div className="w-full overflow-hidden text-8xl leading-none text-white uppercase">
-              <Link
-                className="group relative flex w-full max-w-full items-center justify-start opacity-[0.35] transition-opacity duration-300 hover:opacity-100"
-                href=""
-              >
-                <div className="grid cursor-pointer auto-cols-fr grid-cols-[auto_auto] grid-rows-[auto] items-center justify-items-center">
-                  <div className="col-span-1 row-span-1 -mb-1">About</div>
-                </div>
-                <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </div>
-            <div className="w-full overflow-hidden text-8xl leading-none text-white uppercase">
-              <Link
-                className="group relative flex w-full max-w-full items-center justify-start opacity-[0.35] transition-opacity duration-300 hover:opacity-100"
-                href=""
-              >
-                <div className="grid cursor-pointer auto-cols-fr grid-cols-[auto_auto] grid-rows-[auto] items-center justify-items-center">
-                  <div className="col-span-1 row-span-1 -mb-1">Play</div>
-                </div>
-                <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </div>
-            <div className="w-full overflow-hidden text-8xl leading-none text-white uppercase">
-              <Link
-                className="group relative flex w-full max-w-full items-center justify-start opacity-[0.35] transition-opacity duration-300 hover:opacity-100"
-                href=""
-              >
-                <div className="grid cursor-pointer auto-cols-fr grid-cols-[auto_auto] grid-rows-[auto] items-center justify-items-center">
-                  <div className="col-span-1 row-span-1 -mb-1">Contact</div>
-                </div>
-                <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+      <MenuButton isOpen={isMenuOpen} toggleMenu={toggleMenu} />
+      <OffCanvas isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
     </>
   )
 }
