@@ -40,7 +40,7 @@ export default async function ServicesPage() {
     }),
     payload.find({
       collection: 'projects',
-      limit: 2,
+      limit: 4,
       sort: 'createdAt',
       where: {
         _status: {
@@ -352,10 +352,10 @@ export default async function ServicesPage() {
             </ul>
           </div>
         </div>
-        <div className="m-auto w-[92%] pt-24 pb-24">
+        <div className="m-auto w-[92%] pt-24">
           <div className="relative">
             <ul className="grid grid-cols-2 gap-8">
-              {projects.docs.map((project) => {
+              {projects.docs.slice(2, 4).map((project) => {
                 const projectData = project as unknown as {
                   id: string
                   title: string
@@ -438,83 +438,7 @@ export default async function ServicesPage() {
 
         <div className="m-auto w-[92%] pt-24">
           <div className="relative">
-            <ul className="list-none flex-wrap min-[769px]:flex">
-              <li className="relative list-item min-[769px]:w-[48.2105%]">
-                <span className="absolute top-0 left-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
-                  <Link href="">Shops</Link>
-                </span>
-
-                <Link className="w-full overflow-hidden" href="">
-                  <picture className="h-auto max-w-full cursor-pointer">
-                    <img
-                      className="h-auto w-full max-w-full"
-                      src="https://www.fhoke.com/wp-content/uploads/2021/12/combat-fuel-header-916x1100.jpg"
-                      alt="Combat Fuel header"
-                    />
-                  </picture>
-                </Link>
-
-                <div className="flex justify-between min-[1025px]:mt-5">
-                  <div className="grow">
-                    <h5>
-                      <Link className="inline-block" href="">
-                        Combat Fuel
-                      </Link>
-                    </h5>
-                    <p className="opacity-50">Giving supplements a shake-up.</p>
-                  </div>
-
-                  <div className="ml-5 text-lg uppercase">
-                    <Link
-                      className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
-                      href=""
-                    >
-                      <span className="relative cursor-pointer min-[1025px]:p-1.5 lg:p-1.5">
-                        View
-                      </span>
-                    </Link>
-                  </div>
-                </div>
-              </li>
-
-              <li className="relative list-item min-[769px]:ml-auto min-[769px]:w-[48.2105%]">
-                <span className="absolute top-0 left-0 z-2 w-full text-lg uppercase min-[1025px]:p-8">
-                  Shops
-                </span>
-
-                <Link className="w-full overflow-hidden" href="">
-                  <picture className="h-auto max-w-full cursor-pointer">
-                    <img
-                      className="h-auto w-full max-w-full"
-                      src="https://www.fhoke.com/wp-content/uploads/2022/10/Xpert-Header-916x1100.jpg"
-                      alt="Xpert Workwear"
-                    />
-                  </picture>
-                </Link>
-
-                <div className="flex justify-between min-[1025px]:mt-5">
-                  <div className="grow">
-                    <h5>
-                      <Link className="inline-block" href="">
-                        Xpert Workwear
-                      </Link>
-                    </h5>
-                    <p className="opacity-50">Built to last.</p>
-                  </div>
-
-                  <div className="ml-5 text-lg uppercase">
-                    <Link
-                      className="relative inline-block overflow-hidden rounded-full bg-zinc-800 text-center"
-                      href=""
-                    >
-                      <span className="relative cursor-pointer min-[1025px]:p-1.5 lg:p-1.5">
-                        View
-                      </span>
-                    </Link>
-                  </div>
-                </div>
-              </li>
-            </ul>
+            <ul className="list-none flex-wrap min-[769px]:flex"></ul>
           </div>
         </div>
       </section>
